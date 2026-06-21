@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "AI සහායක",
   "aiAssistantDescription": "අපගේ AI සහායක සමඟ බුද්ධිමත් යෝජනා, වට්ටෝරු සහ පුද්ගලානුකූල ඉඟි ලබා ගන්න.",
   "aiAssistantTitle": "AI සහකාර",
+  "aiCapabilitiesBudget": "අයවැය සහ මිල ගණන්",
+  "aiCapabilitiesLists": "සාප්පු සවාරි ලැයිස්තු",
+  "aiCapabilitiesOrganize": "සංවිධානය",
+  "aiCapabilitiesRecipes": "වට්ටෝරු සහ මෙනු",
+  "aiCapabilitiesTitle": "මට කළ හැක්කේ කුමක් ද?",
   "aiConnectionError": "AI සේවාවට සම්බන්ධ වීමට නොහැකි විය. ඔබගේ සම්බන්ධතාවය පරීක්ෂා කරන්න.",
   "aiCreditsRemaining": "{remaining} ණය ඉතිරිව ඇත",
   "aiEmptyResponseError": "AI සේවාව හිස් ප්‍රතිචාරයක් ලබා දුන්නේය.",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "මිලදී ගත් ලෙස සලකුණු කරන්න",
   "markItemsToSeeAnalysis": "විශ්ලේෂණය බැලීමට අයිතම මිලදී ගත් ලෙස සලකුණු කරන්න.",
   "marketMode": "වෙළඳපල මාදිලිය",
+  "marketModeDescription": "ඔබ සාප්පු යන විට අයිතම පරීක්ෂා කරන්න",
   "marketsToAvoid": "වළක්වා ගත යුතු වෙළඳපල",
   "marketsToAvoidHint": "උදා: Market Y, Market Z",
   "mealPlannerAddMeal": "කෑම එකතු කරන්න",
   "mealPlannerAddType": "ආහාර වර්ගය එකතු කරන්න",
+  "mealPlannerBudgetGoalNav": "ආහාර සැලසුම්කරුගේ අයවැය",
+  "mealPlannerBudgetGoalSubtitle": "ආහාර සැලසුම් කිරීම සඳහා මාසික වියදම් ඉලක්කය",
+  "mealPlannerBudgetMonthCost": "මාසය: {amount}",
+  "mealPlannerBudgetRemoveGoal": "ඉලක්කය ඉවත් කරන්න",
+  "mealPlannerBudgetTodayCost": "අද: {amount}",
+  "mealPlannerBudgetWeekCost": "සතිය: {amount}",
   "mealPlannerCustomTypeLabel": "අභිරුචි වර්ගය",
   "mealPlannerDateLabel": "දිනය",
   "mealPlannerDefaultTypeLabel": "පෙරනිමි වර්ගය",
@@ -2004,6 +2061,7 @@
   "navRecipes": "වට්ටෝරු",
   "newCategoryDialog": "නව කාණ්ඩය",
   "newChat": "නව කතාබස්",
+  "newChatStarted": "නව කතාබස් ආරම්භ විය",
   "newListTitle": "නව සාප්පු ලැයිස්තුව",
   "newPantryList": "පැන්ට්‍රි සාප්පු",
   "newRecipe": "නව වට්ටෝරුව",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "ඔබගේ ලැයිස්තු විමසමින්...",
   "quickActionAi": "කිපි සමඟ කතාබස් කරන්න",
   "quickActionPantry": "පැන්ට්රිය බලන්න",
+  "quickAddToList": "ලැයිස්තුවට එකතු කරන්න",
   "quickRecipe": "ඉක්මන් වට්ටෝරුව",
   "quickRecipePrompt": "මගේ ලැයිස්තුවේ ඇති අයිතම සමඟ වට්ටෝරු යෝජනා කරන්න.",
   "quickReplies": "ඉක්මන් පිළිතුරු:",

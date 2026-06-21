@@ -1,8 +1,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 
 class AnalyticsService {
-  AnalyticsService({FirebaseAnalytics? analytics})
-      : _analytics = analytics;
+  AnalyticsService({FirebaseAnalytics? analytics}) : _analytics = analytics;
 
   final FirebaseAnalytics? _analytics;
 
@@ -51,7 +50,70 @@ class AnalyticsService {
     await _analytics?.logEvent(name: 'onboarding_completed');
   }
 
-  Future<void> logEvent({required String name, Map<String, Object>? parameters}) async {
+  Future<void> logOnboardingStarted() async {
+    await logEvent(name: 'onboarding_started');
+  }
+
+  Future<void> logOnboardingStepViewed({
+    required int step,
+    required String name,
+  }) async {
+    await logEvent(
+      name: 'onboarding_step_viewed',
+      parameters: {'step': step, 'step_name': name},
+    );
+  }
+
+  Future<void> logOnboardingStepCompleted({
+    required int step,
+    required String name,
+    int? durationMs,
+  }) async {
+    await logEvent(
+      name: 'onboarding_step_completed',
+      parameters: {
+        'step': step,
+        'step_name': name,
+        if (durationMs != null) 'duration_ms': durationMs,
+      },
+    );
+  }
+
+  Future<void> logOnboardingListGeneration({
+    required String status,
+    String? source,
+    int? itemCount,
+    String? errorCategory,
+  }) async {
+    await logEvent(
+      name: 'onboarding_list_generation_$status',
+      parameters: {
+        if (source != null) 'creation_source': source,
+        if (itemCount != null) 'item_count': itemCount,
+        if (errorCategory != null) 'error_category': errorCategory,
+      },
+    );
+  }
+
+  Future<void> logOnboardingPlanSelected({
+    required String packageType,
+    required bool hasTrial,
+    int? trialDays,
+  }) async {
+    await logEvent(
+      name: 'onboarding_plan_selected',
+      parameters: {
+        'package_type': packageType,
+        'has_trial': hasTrial ? 1 : 0,
+        if (trialDays != null) 'trial_days': trialDays,
+      },
+    );
+  }
+
+  Future<void> logEvent({
+    required String name,
+    Map<String, Object>? parameters,
+  }) async {
     await _analytics?.logEvent(name: name, parameters: parameters);
   }
 }

@@ -3,9 +3,13 @@
 
 import json
 import sys
+import socket
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
+
+# Aumenta o timeout global do socket para evitar interrupções no upload de arquivos grandes
+socket.setdefaulttimeout(600) # 10 minutos
 
 SERVICE_ACCOUNT_FILE = "/Users/absondutragalvao/play-console-sa.json"
 AAB_PATH = "/Users/absondutragalvao/corujatech projetos/shopping_list/build/app/outputs/bundle/release/app-release.aab"

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/ai/widgets/ai_chat_panel.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/theme/tokens.dart';
 
 class AiChatSheet extends ConsumerWidget {
   const AiChatSheet({
@@ -9,11 +10,15 @@ class AiChatSheet extends ConsumerWidget {
     this.listId,
     this.listName,
     this.onOrganizeRequested,
+    this.onItemsAdded,
+    this.onNavigateToRecipe,
   });
 
   final String? listId;
   final String? listName;
   final VoidCallback? onOrganizeRequested;
+  final VoidCallback? onItemsAdded;
+  final void Function(String recipeId)? onNavigateToRecipe;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -33,10 +38,14 @@ class AiChatSheet extends ConsumerWidget {
           child: Container(
             decoration: BoxDecoration(
               color: theme.colorScheme.surface,
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(RadiusTokens.xxl),
+              ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withAlpha((0.1 * 255).toInt()),
+                  color: theme.colorScheme.shadow.withAlpha(
+                    (0.1 * 255).toInt(),
+                  ),
                   blurRadius: 20,
                   offset: const Offset(0, -5),
                 ),
@@ -44,19 +53,22 @@ class AiChatSheet extends ConsumerWidget {
             ),
             child: Column(
               children: [
-                const SizedBox(height: 8),
+                const SizedBox(height: Spacing.xs),
                 Center(
                   child: Container(
                     width: 36,
                     height: 4,
                     decoration: BoxDecoration(
                       color: theme.colorScheme.outlineVariant,
-                      borderRadius: BorderRadius.circular(2),
+                      borderRadius: BorderRadius.circular(RadiusTokens.bar),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: Spacing.md,
+                    vertical: Spacing.xs,
+                  ),
                   child: Row(
                     children: [
                       Text(
@@ -71,7 +83,10 @@ class AiChatSheet extends ConsumerWidget {
                         icon: const Icon(Icons.close, size: 18),
                         label: Text(l10n.closeSheet),
                         style: TextButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: Spacing.xs,
+                            vertical: 0,
+                          ),
                           minimumSize: Size.zero,
                           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         ),
@@ -86,6 +101,8 @@ class AiChatSheet extends ConsumerWidget {
                     listName: listName,
                     compact: true,
                     onOrganizeRequested: onOrganizeRequested,
+                    onItemsAdded: onItemsAdded,
+                    onNavigateToRecipe: onNavigateToRecipe,
                   ),
                 ),
               ],

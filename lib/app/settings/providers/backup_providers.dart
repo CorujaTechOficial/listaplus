@@ -37,10 +37,7 @@ class BackupService {
   Future<void> shareBackup() async {
     final json = await exportToJson();
     await SharePlus.instance.share(
-      ShareParams(
-        text: json,
-        subject: 'KipiList - Backup',
-      ),
+      ShareParams(text: json, subject: 'KipiList - Backup'),
     );
   }
 
@@ -65,9 +62,10 @@ class BackupService {
         final itemsData = listEntry['items'] as List<dynamic>;
 
         final list = ShoppingList.fromJson(listData);
-        final items = itemsData.map((i) {
-          return ShoppingItem.fromJson(i as Map<String, dynamic>);
-        }).toList();
+        final items =
+            itemsData.map((i) {
+              return ShoppingItem.fromJson(i as Map<String, dynamic>);
+            }).toList();
 
         try {
           await service.saveList(list);

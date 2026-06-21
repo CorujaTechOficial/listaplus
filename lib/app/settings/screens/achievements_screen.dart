@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/settings/providers/settings_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
-import 'package:shopping_list/core/theme/app_theme.dart';
-import 'package:shopping_list/core/theme/colors.dart';
+import 'package:shopping_list/theme/app_theme.dart';
+import 'package:shopping_list/theme/colors.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:shopping_list/core/providers/monetization_providers.dart';
+import 'package:shopping_list/app/settings/screens/paywall_screen.dart';
+import 'package:shopping_list/theme/page_transitions.dart';
 
 class AchievementsScreen extends ConsumerWidget {
   const AchievementsScreen({super.key});
@@ -17,80 +20,149 @@ class AchievementsScreen extends ConsumerWidget {
     final stats = ref.watch(userStatsProvider);
     final theme = Theme.of(context);
     final semanticColors = AppSemanticColors.of(context);
-    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
+    final currencyCode = resolveCurrencyCode(
+      ref.watch(currencySettingProvider),
+      Localizations.localeOf(context),
+    );
+    final isPremium = ref.watch(premiumProvider).value ?? false;
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.myAchievements)),
       body: SafeArea(
         child: ListView(
-        padding: const EdgeInsets.all(Spacing.md),
-        children: [
-          _buildStatCard(
-            context,
-            l10n.itemsPurchased,
-            stats.totalItemsBought.toString(),
-            Icons.shopping_bag,
-            semanticColors.info,
-          ),
-          const SizedBox(height: Spacing.md),
-          _buildStatCard(
-            context,
-            l10n.totalSavings,
-            formatCurrency(stats.totalSavings, currencyCode),
-            Icons.savings,
-            semanticColors.success,
-          ),
-          const SizedBox(height: Spacing.md),
-          _buildStatCard(
-            context,
-            l10n.currentStreak,
-            l10n.streakDays(stats.currentStreak),
-            Icons.local_fire_department,
-            semanticColors.warning,
-          ),
-          const SizedBox(height: Spacing.xl),
-          Text(
-            l10n.unlockedBadges,
-            style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: Spacing.md),
-          Wrap(
-            spacing: Spacing.md,
-            runSpacing: Spacing.md,
-            children: [
-              _AchievementBadge(
-                label: l10n.badgeBeginner,
-                icon: Icons.star_border,
-                unlocked: stats.totalItemsBought >= 10,
-                color: Theme.of(context).colorScheme.tertiary,
+          padding: const EdgeInsets.all(Spacing.md),
+          children: [
+            _buildStatCard(
+              context,
+              l10n.itemsPurchased,
+              stats.totalItemsBought.toString(),
+              Icons.shopping_bag,
+              semanticColors.info,
+            ),
+            const SizedBox(height: Spacing.md),
+            _buildStatCard(
+              context,
+              l10n.totalSavings,
+              formatCurrency(stats.totalSavings, currencyCode),
+              Icons.savings,
+              semanticColors.success,
+            ),
+            const SizedBox(height: Spacing.md),
+            _buildStatCard(
+              context,
+              l10n.currentStreak,
+              l10n.streakDays(stats.currentStreak),
+              Icons.local_fire_department,
+              semanticColors.warning,
+            ),
+            const SizedBox(height: Spacing.xl),
+            Text(
+              l10n.unlockedBadges,
+              style: theme.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.bold,
               ),
-              _AchievementBadge(
-                label: l10n.badgeOrganized,
-                icon: Icons.check_circle_outline,
-                unlocked: stats.totalItemsBought >= 50,
-                color: Theme.of(context).colorScheme.outline,
-              ),
-              _AchievementBadge(
-                label: l10n.badgeSavingMaster,
-                icon: Icons.workspace_premium,
-                unlocked: stats.totalSavings >= 100,
+            ),
+            const SizedBox(height: Spacing.md),
+            Wrap(
+              spacing: Spacing.md,
+              runSpacing: Spacing.md,
+              children: [
+                _AchievementBadge(
+                  label: l10n.badgeBeginner,
+                  icon: Icons.star_border,
+                  unlocked: stats.totalItemsBought >= 10,
+                  color: Theme.of(context).colorScheme.tertiary,
+                ),
+                _AchievementBadge(
+                  label: l10n.badgeOrganized,
+                  icon: Icons.check_circle_outline,
+                  unlocked: stats.totalItemsBought >= 50,
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                _AchievementBadge(
+                  label: l10n.badgeSavingMaster,
+                  icon: Icons.workspace_premium,
+                  unlocked: stats.totalSavings >= 100,
+                  color: AppColors.premiumAmber,
+                ),
+                _AchievementBadge(
+                  label: l10n.badgeSuperPlanner,
+                  icon: Icons.auto_awesome,
+                  unlocked: stats.currentStreak >= 7,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+              ],
+            ),
+            const SizedBox(height: Spacing.xl),
+            Text(
+              l10n.kipiListProActive,
+              style: theme.textTheme.titleLarge?.copyWith(
                 color: AppColors.premiumAmber,
+                fontWeight: FontWeight.bold,
               ),
-              _AchievementBadge(
-                label: l10n.badgeSuperPlanner,
-                icon: Icons.auto_awesome,
-                unlocked: stats.currentStreak >= 7,
-                color: Theme.of(context).colorScheme.secondary,
-              ),
-            ],
-          ),
-        ],
-      ),
+            ),
+            const SizedBox(height: Spacing.md),
+            Wrap(
+              spacing: Spacing.md,
+              runSpacing: Spacing.md,
+              children: [
+                _AchievementBadge(
+                  label: l10n.badgeSavingMaster,
+                  icon: Icons.insights,
+                  unlocked: isPremium,
+                  color: AppColors.premiumAmber,
+                  isPremium: true,
+                  onTap:
+                      isPremium
+                          ? null
+                          : () => Navigator.push(
+                            context,
+                            fadeSlideRoute<void>(const PaywallScreen()),
+                          ),
+                ),
+                _AchievementBadge(
+                  label: l10n.badgeSuperPlanner,
+                  icon: Icons.calendar_month,
+                  unlocked: isPremium,
+                  color: AppColors.premiumAmber,
+                  isPremium: true,
+                  onTap:
+                      isPremium
+                          ? null
+                          : () => Navigator.push(
+                            context,
+                            fadeSlideRoute<void>(const PaywallScreen()),
+                          ),
+                ),
+                _AchievementBadge(
+                  label: l10n.badgeOrganized,
+                  icon: Icons.family_restroom,
+                  unlocked: isPremium,
+                  color: AppColors.premiumAmber,
+                  isPremium: true,
+                  onTap:
+                      isPremium
+                          ? null
+                          : () => Navigator.push(
+                            context,
+                            fadeSlideRoute<void>(const PaywallScreen()),
+                          ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _buildStatCard(BuildContext context, String title, String value, IconData icon, Color color) {
+  Widget _buildStatCard(
+    BuildContext context,
+    String title,
+    String value,
+    IconData icon,
+    Color color,
+  ) {
     final theme = Theme.of(context);
     return Card(
       child: Padding(
@@ -110,7 +182,12 @@ class AchievementsScreen extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(title, style: theme.textTheme.labelMedium),
-                Text(value, style: theme.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold)),
+                Text(
+                  value,
+                  style: theme.textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             ),
           ],
@@ -126,47 +203,70 @@ class _AchievementBadge extends StatelessWidget {
     required this.icon,
     required this.unlocked,
     required this.color,
+    this.isPremium = false,
+    this.onTap,
   });
 
   final String label;
   final IconData icon;
   final bool unlocked;
   final Color color;
+  final bool isPremium;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    return Column(
-      children: [
-        Container(
-          width: 80,
-          height: 80,
-          decoration: BoxDecoration(
-            color: unlocked
-                ? color.withAlpha((0.2 * 255).toInt())
-                : colorScheme.surfaceContainerHighest,
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: unlocked ? color : colorScheme.outline,
-              width: 2,
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(RadiusTokens.lg),
+      child: Padding(
+        padding: const EdgeInsets.all(Spacing.xs),
+        child: Column(
+          children: [
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  width: 80,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    color:
+                        unlocked
+                            ? color.withAlpha((0.2 * 255).toInt())
+                            : colorScheme.surfaceContainerHighest,
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: unlocked ? color : colorScheme.outline,
+                      width: 2,
+                    ),
+                  ),
+                  child: Icon(
+                    icon,
+                    size: 40,
+                    color: unlocked ? color : colorScheme.outline,
+                  ),
+                ),
+                if (isPremium && !unlocked)
+                  const Icon(
+                    Icons.lock,
+                    size: 26,
+                    color: AppColors.premiumAmber,
+                  ),
+              ],
             ),
-          ),
-          child: Icon(
-            icon,
-            size: 40,
-            color: unlocked ? color : colorScheme.outline,
-          ),
+            const SizedBox(height: Spacing.xs),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: unlocked ? FontWeight.bold : FontWeight.normal,
+                color: unlocked ? null : colorScheme.outline,
+              ),
+            ),
+          ],
         ),
-        const SizedBox(height: 8),
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: unlocked ? FontWeight.bold : FontWeight.normal,
-            color: unlocked ? null : colorScheme.outline,
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

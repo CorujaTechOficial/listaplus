@@ -11,8 +11,9 @@ import 'package:shopping_list/app/lists/widgets/edit_item_dialog.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
-import 'package:shopping_list/core/theme/tokens.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/core/utils/snack_bar_utils.dart';
+import 'package:shopping_list/app/shared/widgets/tactile_container.dart';
 
 const double _kQuantityControlsBreakpoint = 380;
 
@@ -54,12 +55,14 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
       duration: const Duration(milliseconds: 250),
       vsync: this,
     );
-    _sizeAnim = Tween<double>(begin: 1.0, end: 0.0).animate(
-      CurvedAnimation(parent: _exitController, curve: Curves.easeIn),
-    );
-    _opacityAnim = Tween<double>(begin: 1.0, end: 0.0).animate(
-      CurvedAnimation(parent: _exitController, curve: Curves.easeIn),
-    );
+    _sizeAnim = Tween<double>(
+      begin: 1.0,
+      end: 0.0,
+    ).animate(CurvedAnimation(parent: _exitController, curve: Curves.easeIn));
+    _opacityAnim = Tween<double>(
+      begin: 1.0,
+      end: 0.0,
+    ).animate(CurvedAnimation(parent: _exitController, curve: Curves.easeIn));
   }
 
   @override
@@ -104,32 +107,48 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
     final isPurchased = widget.item.isPurchased;
 
     final categories = ref.watch(categoriesProvider).value ?? <CategoryData>[];
-    final categoryMap = <String, CategoryData>{for (final c in categories) c.id: c};
+    final categoryMap = <String, CategoryData>{
+      for (final c in categories) c.id: c,
+    };
     final cat = categoryMap[widget.item.categoryId];
-    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
+    final currencyCode = resolveCurrencyCode(
+      ref.watch(currencySettingProvider),
+      Localizations.localeOf(context),
+    );
 
     final tileContent = Stack(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xxs),
+          padding: const EdgeInsets.symmetric(
+            horizontal: Spacing.sm,
+            vertical: Spacing.xxs,
+          ),
           child: Material(
             elevation: widget.isSelected ? 2 : 0,
             surfaceTintColor: theme.colorScheme.surfaceTint,
-            color: widget.isSelected
-                ? theme.colorScheme.primaryContainer.withAlpha(isDark ? 80 : 180)
-                : (isDark ? theme.colorScheme.surfaceContainerLow : theme.colorScheme.surface),
+            color:
+                widget.isSelected
+                    ? theme.colorScheme.primaryContainer.withAlpha(
+                      isDark ? 80 : 180,
+                    )
+                    : (isDark
+                        ? theme.colorScheme.surfaceContainerLow
+                        : theme.colorScheme.surface),
             borderRadius: BorderRadius.circular(RadiusTokens.lg),
             clipBehavior: Clip.antiAlias,
             child: InkWell(
-              onTap: widget.selectionMode
-                  ? () => widget.onSelectionChanged?.call(!widget.isSelected)
-                  : _handleToggle,
-              onLongPress: widget.selectionMode
-                  ? null
-                  : () {
-                      HapticFeedback.mediumImpact();
-                      widget.onSelectionChanged?.call(true);
-                    },
+              onTap:
+                  widget.selectionMode
+                      ? () =>
+                          widget.onSelectionChanged?.call(!widget.isSelected)
+                      : _handleToggle,
+              onLongPress:
+                  widget.selectionMode
+                      ? null
+                      : () {
+                        HapticFeedback.mediumImpact();
+                        widget.onSelectionChanged?.call(true);
+                      },
               child: Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: Spacing.sm,
@@ -138,14 +157,19 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
                 child: Row(
                   children: [
                     Checkbox(
-                      value: widget.isSelected || (!widget.selectionMode && isPurchased),
-                      onChanged: widget.selectionMode
-                          ? (v) {
-                              HapticFeedback.selectionClick();
-                              widget.onSelectionChanged?.call(v ?? false);
-                            }
-                          : (_) => _handleToggle(),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.xxs)),
+                      value:
+                          widget.isSelected ||
+                          (!widget.selectionMode && isPurchased),
+                      onChanged:
+                          widget.selectionMode
+                              ? (v) {
+                                HapticFeedback.selectionClick();
+                                widget.onSelectionChanged?.call(v ?? false);
+                              }
+                              : (_) => _handleToggle(),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(RadiusTokens.xxs),
+                      ),
                     ),
                     const SizedBox(width: Spacing.xs),
                     Expanded(
@@ -155,47 +179,89 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
                         children: [
                           Text(
                             widget.item.name,
-                            style: (widget.isShoppingMode ? theme.textTheme.titleLarge : theme.textTheme.titleMedium)?.copyWith(
-                              decoration: !widget.selectionMode && isPurchased ? TextDecoration.lineThrough : null,
-                              color: !widget.selectionMode && isPurchased
-                                  ? theme.colorScheme.onSurface.withAlpha((0.38 * 255).toInt())
-                                  : theme.colorScheme.onSurface,
-                              fontWeight: isPurchased ? FontWeight.w500 : FontWeight.w700,
-                              height: 1.1,
-                            ),
+                            style: (widget.isShoppingMode
+                                    ? theme.textTheme.titleLarge
+                                    : theme.textTheme.titleMedium)
+                                ?.copyWith(
+                                  decoration:
+                                      !widget.selectionMode && isPurchased
+                                          ? TextDecoration.lineThrough
+                                          : null,
+                                  color:
+                                      !widget.selectionMode && isPurchased
+                                          ? theme.colorScheme.onSurface
+                                              .withAlpha((0.38 * 255).toInt())
+                                          : theme.colorScheme.onSurface,
+                                  fontWeight:
+                                      isPurchased
+                                          ? FontWeight.w500
+                                          : FontWeight.w700,
+                                  height: 1.1,
+                                ),
                           ),
-                          if (widget.item.estimatedPrice != null || cat != null || (!widget.isShoppingMode && !widget.selectionMode)) ...[
+                          if (widget.item.estimatedPrice != null ||
+                              cat != null ||
+                              (!widget.isShoppingMode &&
+                                  !widget.selectionMode)) ...[
                             const SizedBox(height: Spacing.xxs),
                             Row(
                               children: [
                                 if (cat != null) ...[
                                   Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                                    decoration: BoxDecoration(
-                                      color: (isPurchased ? theme.colorScheme.outlineVariant : theme.colorScheme.secondaryContainer)
-                                          .withAlpha(isDark ? 100 : 150),
-                                      borderRadius: BorderRadius.circular(RadiusTokens.xs),
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 6,
+                                      vertical: 2,
                                     ),
-                                    child: Text(
-                                      cat.name,
-                                      style: theme.textTheme.labelSmall?.copyWith(
-                                        color: isPurchased
-                                            ? theme.colorScheme.onSurfaceVariant
-                                            : theme.colorScheme.onSecondaryContainer,
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 10,
+                                    decoration: BoxDecoration(
+                                      color: (isPurchased
+                                              ? theme.colorScheme.outlineVariant
+                                              : theme
+                                                  .colorScheme
+                                                  .secondaryContainer)
+                                          .withAlpha(isDark ? 100 : 150),
+                                      borderRadius: BorderRadius.circular(
+                                        RadiusTokens.xs,
                                       ),
                                     ),
+                                    child: Text(
+                                      cat.localizedName(l10n),
+                                      style: theme.textTheme.labelSmall
+                                          ?.copyWith(
+                                            color:
+                                                isPurchased
+                                                    ? theme
+                                                        .colorScheme
+                                                        .onSurfaceVariant
+                                                    : theme
+                                                        .colorScheme
+                                                        .onSecondaryContainer,
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 10,
+                                          ),
+                                    ),
                                   ),
-                                  const SizedBox(width: 6), // 6px — unique value
+                                  const SizedBox(
+                                    width: 6,
+                                  ), // 6px — unique value
                                 ],
-                                if (!widget.isShoppingMode && !widget.selectionMode)
-                                  _InlinePriceField(item: widget.item, listId: widget.listId)
+                                if (!widget.isShoppingMode &&
+                                    !widget.selectionMode)
+                                  _InlinePriceField(
+                                    item: widget.item,
+                                    listId: widget.listId,
+                                  )
                                 else if (widget.item.estimatedPrice != null)
                                   Text(
-                                    formatCurrency(widget.item.estimatedPrice! * widget.item.quantity, currencyCode),
+                                    formatCurrency(
+                                      widget.item.estimatedPrice! *
+                                          widget.item.quantity,
+                                      currencyCode,
+                                    ),
                                     style: theme.textTheme.labelSmall?.copyWith(
-                                      color: isPurchased ? theme.colorScheme.outline : theme.colorScheme.primary,
+                                      color:
+                                          isPurchased
+                                              ? theme.colorScheme.outline
+                                              : theme.colorScheme.primary,
                                       fontWeight: FontWeight.w800,
                                     ),
                                   ),
@@ -210,7 +276,8 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
                       Builder(
                         builder: (context) {
                           final screenWidth = MediaQuery.sizeOf(context).width;
-                          final isSmallScreen = screenWidth < _kQuantityControlsBreakpoint;
+                          final isSmallScreen =
+                              screenWidth < _kQuantityControlsBreakpoint;
                           return Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -219,16 +286,31 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
                                   icon: Icons.remove,
                                   onPressed: () {
                                     HapticFeedback.selectionClick();
-                                    ref.read(shoppingListItemsProvider(widget.listId).notifier).decrementQuantity(widget.item.id);
+                                    ref
+                                        .read(
+                                          shoppingListItemsProvider(
+                                            widget.listId,
+                                          ).notifier,
+                                        )
+                                        .decrementQuantity(widget.item.id);
                                   },
                                 ),
-                              _InlineQtyField(item: widget.item, listId: widget.listId),
+                              _InlineQtyField(
+                                item: widget.item,
+                                listId: widget.listId,
+                              ),
                               if (!isSmallScreen)
                                 _SmallIconButton(
                                   icon: Icons.add,
                                   onPressed: () {
                                     HapticFeedback.selectionClick();
-                                    ref.read(shoppingListItemsProvider(widget.listId).notifier).incrementQuantity(widget.item.id);
+                                    ref
+                                        .read(
+                                          shoppingListItemsProvider(
+                                            widget.listId,
+                                          ).notifier,
+                                        )
+                                        .incrementQuantity(widget.item.id);
                                   },
                                 ),
                               const SizedBox(width: Spacing.xxs),
@@ -241,11 +323,14 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
                                 ReorderableDragStartListener(
                                   index: widget.dragHandleIndex!,
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: Spacing.xxs,
+                                    ),
                                     child: Icon(
                                       Icons.drag_handle,
                                       size: 20,
-                                      color: theme.colorScheme.onSurfaceVariant.withAlpha(160),
+                                      color: theme.colorScheme.onSurfaceVariant
+                                          .withAlpha(160),
                                     ),
                                   ),
                                 ),
@@ -258,7 +343,10 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
                         '${widget.item.quantity}${widget.item.unit.label}',
                         style: theme.textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.w700,
-                          color: isPurchased ? theme.colorScheme.outline : theme.colorScheme.onSurface,
+                          color:
+                              isPurchased
+                                  ? theme.colorScheme.outline
+                                  : theme.colorScheme.onSurface,
                         ),
                       ),
                   ],
@@ -284,27 +372,37 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
       ],
     );
 
+    final tactileTile = TactileContainer(passThrough: true, child: tileContent);
+
     Widget child;
     if (widget.selectionMode) {
-      child = tileContent;
+      child = tactileTile;
     } else {
       child = Dismissible(
         key: ValueKey('dismiss_${widget.item.id}'),
         direction: DismissDirection.endToStart,
         background: Container(
-          margin: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: Spacing.xxs),
+          margin: const EdgeInsets.symmetric(
+            horizontal: Spacing.sm,
+            vertical: Spacing.xxs,
+          ),
           decoration: BoxDecoration(
             color: theme.colorScheme.errorContainer,
             borderRadius: BorderRadius.circular(RadiusTokens.lg),
           ),
           alignment: Alignment.centerRight,
           padding: const EdgeInsets.only(right: Spacing.lg),
-          child: Icon(Icons.delete_outline, color: theme.colorScheme.onErrorContainer),
+          child: Icon(
+            Icons.delete_outline,
+            color: theme.colorScheme.onErrorContainer,
+          ),
         ),
         onDismissed: (direction) {
           HapticFeedback.mediumImpact();
           final removedItem = widget.item;
-          final notifier = ref.read(shoppingListItemsProvider(widget.listId).notifier);
+          final notifier = ref.read(
+            shoppingListItemsProvider(widget.listId).notifier,
+          );
           notifier.removeItem(widget.item.id);
           showUniqueSnackBar(
             context,
@@ -315,17 +413,14 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
             ),
           );
         },
-        child: tileContent,
+        child: tactileTile,
       );
     }
 
     return SizeTransition(
       sizeFactor: _sizeAnim,
       alignment: Alignment.topCenter,
-      child: FadeTransition(
-        opacity: _opacityAnim,
-        child: child,
-      ),
+      child: FadeTransition(opacity: _opacityAnim, child: child),
     );
   }
 
@@ -344,14 +439,16 @@ class _ShoppingItemTileState extends ConsumerState<ShoppingItemTile>
         action: SnackBarAction(
           label: l10n.yes,
           onPressed: () {
-            ref.read(pantryItemsProvider.notifier).addItem(
-              name: widget.item.name,
-              idealQuantity: widget.item.quantity,
-              currentQuantity: widget.item.quantity,
-              categoryId: widget.item.categoryId,
-              unit: widget.item.unit,
-              estimatedPrice: widget.item.estimatedPrice,
-            );
+            ref
+                .read(pantryItemsProvider.notifier)
+                .addItem(
+                  name: widget.item.name,
+                  idealQuantity: widget.item.quantity,
+                  currentQuantity: widget.item.quantity,
+                  categoryId: widget.item.categoryId,
+                  unit: widget.item.unit,
+                  estimatedPrice: widget.item.estimatedPrice,
+                );
           },
         ),
       ),
@@ -380,7 +477,11 @@ class _SmallIconButton extends StatelessWidget {
               color: theme.colorScheme.surfaceContainerHighest.withAlpha(100),
               shape: BoxShape.circle,
             ),
-            child: Icon(icon, size: 14, color: theme.colorScheme.onSurfaceVariant),
+            child: Icon(
+              icon,
+              size: 14,
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
           ),
         ),
       ),
@@ -455,7 +556,10 @@ class _InlinePriceFieldState extends ConsumerState<_InlinePriceField> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
+    final currencyCode = resolveCurrencyCode(
+      ref.watch(currencySettingProvider),
+      Localizations.localeOf(context),
+    );
 
     if (_editing) {
       return SizedBox(
@@ -473,7 +577,10 @@ class _InlinePriceFieldState extends ConsumerState<_InlinePriceField> {
           ),
           decoration: const InputDecoration(
             isDense: true,
-            contentPadding: EdgeInsets.symmetric(horizontal: Spacing.xxs, vertical: Spacing.xxs),
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: Spacing.xxs,
+              vertical: Spacing.xxs,
+            ),
             border: OutlineInputBorder(),
           ),
         ),
@@ -488,21 +595,23 @@ class _InlinePriceFieldState extends ConsumerState<_InlinePriceField> {
           (_) => _focusNode.requestFocus(),
         );
       },
-      child: price != null
-          ? Text(
-              formatCurrency(price * widget.item.quantity, currencyCode),
-              style: theme.textTheme.labelSmall?.copyWith(
-                color: widget.item.isPurchased
-                    ? theme.colorScheme.outline
-                    : theme.colorScheme.primary,
-                fontWeight: FontWeight.w800,
+      child:
+          price != null
+              ? Text(
+                formatCurrency(price * widget.item.quantity, currencyCode),
+                style: theme.textTheme.labelSmall?.copyWith(
+                  color:
+                      widget.item.isPurchased
+                          ? theme.colorScheme.outline
+                          : theme.colorScheme.primary,
+                  fontWeight: FontWeight.w800,
+                ),
+              )
+              : Icon(
+                Icons.add_circle_outline,
+                size: 14,
+                color: theme.colorScheme.outlineVariant,
               ),
-            )
-          : Icon(
-              Icons.add_circle_outline,
-              size: 14,
-              color: theme.colorScheme.outlineVariant,
-            ),
     );
   }
 }
@@ -585,10 +694,15 @@ class _InlineQtyFieldState extends ConsumerState<_InlineQtyField> {
           textAlign: TextAlign.center,
           textInputAction: TextInputAction.done,
           onSubmitted: (_) => _save(),
-          style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w800),
+          style: theme.textTheme.bodyMedium?.copyWith(
+            fontWeight: FontWeight.w800,
+          ),
           decoration: const InputDecoration(
             isDense: true,
-            contentPadding: EdgeInsets.symmetric(horizontal: 2, vertical: Spacing.xxs),
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: 2,
+              vertical: Spacing.xxs,
+            ),
             border: OutlineInputBorder(),
           ),
         ),
@@ -610,9 +724,8 @@ class _InlineQtyFieldState extends ConsumerState<_InlineQtyField> {
             '${widget.item.quantity}',
             style: theme.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w800,
-              fontFeatures: isSmallScreen
-                  ? null
-                  : [const FontFeature.tabularFigures()],
+              fontFeatures:
+                  isSmallScreen ? null : [const FontFeature.tabularFigures()],
             ),
           ),
         ),
@@ -661,10 +774,7 @@ class _AnimatedEntryWrapperState extends State<AnimatedEntryWrapper>
     return FadeTransition(
       key: const ValueKey('_animated_entry_fade'),
       opacity: _fade,
-      child: SlideTransition(
-        position: _slide,
-        child: widget.child,
-      ),
+      child: SlideTransition(position: _slide, child: widget.child),
     );
   }
 }

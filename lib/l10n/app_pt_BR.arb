@@ -15,6 +15,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -432,6 +447,9 @@
   "@kipiQuickBarHint": {
     "description": "Hint for quick add bar"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@mealPlannerBudgetMonthCost": {
     "placeholders": {
       "amount": {
@@ -503,6 +521,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1198,6 +1219,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1306,6 +1330,11 @@
   "aiAssistant": "Assistente de IA",
   "aiAssistantDescription": "Obtenha sugestões inteligentes, receitas e dicas personalizadas com nosso assistente de IA.",
   "aiAssistantTitle": "Assistente de IA",
+  "aiCapabilitiesBudget": "Orçamento e preços",
+  "aiCapabilitiesLists": "Listas de compras",
+  "aiCapabilitiesOrganize": "Organização",
+  "aiCapabilitiesRecipes": "Receitas e Menus",
+  "aiCapabilitiesTitle": "O que posso fazer?",
   "aiConnectionError": "Não foi possível conectar-se ao serviço AI. Verifique sua conexão.",
   "aiCreditsRemaining": "{remaining} créditos restantes",
   "aiEmptyResponseError": "O serviço de IA retornou uma resposta vazia.",
@@ -1693,6 +1722,7 @@
   "markAsPurchased": "Marcar como comprado",
   "markItemsToSeeAnalysis": "Marque itens como comprados para ver a análise.",
   "marketMode": "Modo Mercado",
+  "marketModeDescription": "Marque os itens enquanto você compra",
   "marketsToAvoid": "Mercados a evitar",
   "marketsToAvoidHint": "Ex.: Mercado Y, Mercado Z",
   "mealPlannerAddMeal": "Adicionar Refeição",
@@ -1775,6 +1805,7 @@
   "navRecipes": "Receitas",
   "newCategoryDialog": "Nova categoria",
   "newChat": "Novo bate-papo",
+  "newChatStarted": "Novo bate-papo iniciado",
   "newListTitle": "Nova Lista de Compras",
   "newPantryList": "Compras da Dispensa",
   "newRecipe": "Nova Receita",
@@ -2122,6 +2153,7 @@
   "queryingYourLists": "Consultando suas listas...",
   "quickActionAi": "Conversar com Kipi",
   "quickActionPantry": "Ver despensa",
+  "quickAddToList": "Adicionar à lista",
   "quickRecipe": "Receita rápida",
   "quickRecipePrompt": "Sugira receitas com os itens da minha lista.",
   "quickReplies": "Respostas rápidas:",

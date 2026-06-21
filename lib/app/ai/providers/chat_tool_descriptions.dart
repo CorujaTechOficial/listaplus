@@ -126,7 +126,8 @@ String updateActivityForTool(String toolName) {
     'create_shopping_list' => 'Creating new list...',
     'delete_shopping_list' => 'Removing list...',
     'rename_shopping_list' => 'Renaming list...',
-    'get_shopping_list_items' || 'get_all_shopping_lists' => 'Querying your lists...',
+    'get_shopping_list_items' ||
+    'get_all_shopping_lists' => 'Querying your lists...',
     'set_budget' => 'Setting budget...',
     // Pantry
     'get_pantry_items' => 'Checking your pantry...',

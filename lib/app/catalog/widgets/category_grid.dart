@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/app/catalog/models/catalog_category.dart';
+import 'package:shopping_list/theme/colors.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
 class CategoryGrid extends StatelessWidget {
@@ -12,24 +13,21 @@ class CategoryGrid extends StatelessWidget {
   final List<CatalogCategory> categories;
   final void Function(CatalogCategory) onCategoryTap;
 
-  static const _categoryColors = [
-    Color(0xFFFFF3E0),
-    Color(0xFFE8F5E9),
-    Color(0xFFE3F2FD),
-    Color(0xFFFCE4EC),
-    Color(0xFFF3E5F5),
-    Color(0xFFE0F7FA),
-    Color(0xFFFFF8E1),
-    Color(0xFFE8EAF6),
-    Color(0xFFF1F8E9),
-    Color(0xFFEDE7F6),
-    Color(0xFFE0F2F1),
-    Color(0xFFFBE9E7),
-  ];
+  Color _adaptColor(Color base, bool isDark) {
+    if (!isDark) {
+      return base;
+    }
+    final hsl = HSLColor.fromColor(base);
+    return hsl
+        .withLightness(0.18)
+        .withSaturation(hsl.saturation * 0.6)
+        .toColor();
+  }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
 
     return GridView.builder(
       shrinkWrap: true,
@@ -43,17 +41,23 @@ class CategoryGrid extends StatelessWidget {
       itemCount: categories.length,
       itemBuilder: (context, index) {
         final category = categories[index];
-        final bgColor = _categoryColors[index % _categoryColors.length];
+        final bgColor = _adaptColor(
+          AppColors.categoryTints[index % AppColors.categoryTints.length],
+          isDark,
+        );
 
         return InkWell(
           onTap: () => onCategoryTap(category),
           borderRadius: BorderRadius.circular(RadiusTokens.md),
-          child: Container(
+          child: Ink(
             decoration: BoxDecoration(
               color: bgColor,
               borderRadius: BorderRadius.circular(RadiusTokens.md),
             ),
-            padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.sm),
+            padding: const EdgeInsets.symmetric(
+              horizontal: Spacing.md,
+              vertical: Spacing.sm,
+            ),
             child: Row(
               children: [
                 Text(category.emoji, style: const TextStyle(fontSize: 22)),
@@ -61,7 +65,9 @@ class CategoryGrid extends StatelessWidget {
                 Expanded(
                   child: Text(
                     category.name,
-                    style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),

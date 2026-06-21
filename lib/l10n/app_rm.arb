@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -600,6 +615,9 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@mealPlannerBudgetMonthCost": {
     "placeholders": {
       "amount": {
@@ -671,6 +689,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1444,6 +1465,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1606,6 +1630,11 @@
   "aiAssistant": "Assistant AI",
   "aiAssistantDescription": "Survegnir suggeriuns intelligentas, recipes e cussegls persunalisads cun nos assistant AI.",
   "aiAssistantTitle": "AI Assistant",
+  "aiCapabilitiesBudget": "Budget & Prices",
+  "aiCapabilitiesLists": "Shopping Lists",
+  "aiCapabilitiesOrganize": "Organization",
+  "aiCapabilitiesRecipes": "Recipes & Menus",
+  "aiCapabilitiesTitle": "What can I do?",
   "aiConnectionError": "Could not connect to the AI service. Check your connection.",
   "aiCreditsRemaining": "{remaining} credits restants",
   "aiEmptyResponseError": "The AI service returned an empty response.",
@@ -1993,6 +2022,7 @@
   "markAsPurchased": "Marcar sco cumprà",
   "markItemsToSeeAnalysis": "Marcar objects sco cumprà per ver l'analisa.",
   "marketMode": "Market Mode",
+  "marketModeDescription": "Check off items as you shop",
   "marketsToAvoid": "Markets to Avoid",
   "marketsToAvoidHint": "E.g.: Market Y, Market Z",
   "mealPlannerAddMeal": "Add Meal",
@@ -2075,6 +2105,7 @@
   "navRecipes": "Recettas",
   "newCategoryDialog": "New category",
   "newChat": "New Chat",
+  "newChatStarted": "New chat started",
   "newListTitle": "Nova lista da cumpras",
   "newPantryList": "Cumprar da la dispensa",
   "newRecipe": "New Recipe",
@@ -2422,6 +2453,7 @@
   "queryingYourLists": "Querying your lists...",
   "quickActionAi": "Chat with Kipi",
   "quickActionPantry": "View pantry",
+  "quickAddToList": "Add to list",
   "quickRecipe": "Recipe spert",
   "quickRecipePrompt": "Suggerir recipes cun objects da ma lista.",
   "quickReplies": "Quick replies:",

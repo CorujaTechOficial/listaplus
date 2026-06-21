@@ -7,14 +7,15 @@ import '../../models/shopping_item.dart';
 import '../logger_service.dart';
 
 class FirestoreBase {
-  FirestoreBase({
-    FirebaseFirestore? firestore,
-    required String uid,
-  })  : _db = firestore ?? FirebaseFirestore.instance,
-        _uid = uid {
+  FirestoreBase({FirebaseFirestore? firestore, required String uid})
+    : _db = firestore ?? FirebaseFirestore.instance,
+      _uid = uid {
     debugPrint('FirestoreService initialized for UID: $_uid');
     try {
-      _db.settings = const Settings(persistenceEnabled: true, cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED);
+      _db.settings = const Settings(
+        persistenceEnabled: true,
+        cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED,
+      );
     } on Object catch (_) {
       // Ignored — FakeFirebaseFirestore (test) doesn't expose a settings setter.
     }
@@ -26,7 +27,9 @@ class FirestoreBase {
   FirebaseFirestore get db => _db;
   String get uid => _uid;
 
-  Future<DocumentSnapshot<Map<String, dynamic>>> docGetWithCacheFallback(DocumentReference<Map<String, dynamic>> ref) async {
+  Future<DocumentSnapshot<Map<String, dynamic>>> docGetWithCacheFallback(
+    DocumentReference<Map<String, dynamic>> ref,
+  ) async {
     try {
       final doc = await ref.get().timeout(const Duration(seconds: 3));
       return doc;
@@ -36,7 +39,9 @@ class FirestoreBase {
     }
   }
 
-  Future<QuerySnapshot<Map<String, dynamic>>> queryGetWithCacheFallback(Query<Map<String, dynamic>> query) async {
+  Future<QuerySnapshot<Map<String, dynamic>>> queryGetWithCacheFallback(
+    Query<Map<String, dynamic>> query,
+  ) async {
     try {
       final snap = await query.get().timeout(const Duration(seconds: 3));
       return snap;
@@ -59,7 +64,9 @@ class FirestoreBase {
           error.code == 'aborted' ||
           error.code == 'internal';
     }
-    if (error is SocketException || error is HttpException || error is TimeoutException) {
+    if (error is SocketException ||
+        error is HttpException ||
+        error is TimeoutException) {
       return true;
     }
     return false;
@@ -73,10 +80,17 @@ class FirestoreBase {
       } on Object catch (e) {
         attempt++;
         if (attempt >= _maxRetries || !isTransientError(e)) {
-          LoggerService.error(e, message: 'Firestore._retry falhou após $attempt tentativas${label != null ? " [$label]" : ""}');
+          LoggerService.error(
+            e,
+            message:
+                'Firestore._retry falhou após $attempt tentativas${label != null ? " [$label]" : ""}',
+          );
           rethrow;
         }
-        LoggerService.log('Firestore._retry: tentativa $attempt/$_maxRetries falhou - $e${label != null ? " [$label]" : ""}', tag: 'FirestoreService');
+        LoggerService.log(
+          'Firestore._retry: tentativa $attempt/$_maxRetries falhou - $e${label != null ? " [$label]" : ""}',
+          tag: 'FirestoreService',
+        );
         final delay = _baseDelay * pow(2, attempt - 1).toInt();
         final jitter = Random().nextInt(100);
         await Future<void>.delayed(delay + Duration(milliseconds: jitter));
@@ -91,15 +105,24 @@ class FirestoreBase {
 
     final Timer timeoutTimer = Timer(_streamTimeout, () {
       if (!hasEmitted && !controller.isClosed) {
-        LoggerService.log('Firestore Stream Timeout ($label) para UID: $_uid', tag: 'FirestoreService');
+        LoggerService.log(
+          'Firestore Stream Timeout ($label) para UID: $_uid',
+          tag: 'FirestoreService',
+        );
         debugPrint('[FirestoreService] Timeout na stream: $label');
-        controller.addError(TimeoutException('Tempo esgotado ao conectar com o servidor ($label). Verifique sua conexão.'));
+        controller.addError(
+          TimeoutException(
+            'Tempo esgotado ao conectar com o servidor ($label). Verifique sua conexão.',
+          ),
+        );
       }
     });
 
     controller = StreamController<T>(
       onListen: () {
-        debugPrint('[FirestoreService] Iniciando stream: $label para UID: $_uid');
+        debugPrint(
+          '[FirestoreService] Iniciando stream: $label para UID: $_uid',
+        );
         sub = stream.listen(
           (data) {
             if (!hasEmitted) {
@@ -142,7 +165,8 @@ class FirestoreBase {
     List<ShoppingItem> items,
   ) async {
     final newItemIds = items.map((i) => i.id).toSet();
-    final docsToDelete = existingDocs.where((doc) => !newItemIds.contains(doc.id)).toList();
+    final docsToDelete =
+        existingDocs.where((doc) => !newItemIds.contains(doc.id)).toList();
     const limit = 500;
     final totalOps = docsToDelete.length + items.length;
     if (totalOps <= limit) {
@@ -159,7 +183,10 @@ class FirestoreBase {
     final allDeleteRefs = docsToDelete.map((d) => d.reference).toList();
     for (var i = 0; i < allDeleteRefs.length; i += limit) {
       final batch = _db.batch();
-      final chunk = allDeleteRefs.sublist(i, (i + limit) > allDeleteRefs.length ? allDeleteRefs.length : i + limit);
+      final chunk = allDeleteRefs.sublist(
+        i,
+        (i + limit) > allDeleteRefs.length ? allDeleteRefs.length : i + limit,
+      );
       for (final ref in chunk) {
         batch.delete(ref);
       }
@@ -167,7 +194,10 @@ class FirestoreBase {
     }
     for (var i = 0; i < items.length; i += limit) {
       final batch = _db.batch();
-      final chunk = items.sublist(i, (i + limit) > items.length ? items.length : i + limit);
+      final chunk = items.sublist(
+        i,
+        (i + limit) > items.length ? items.length : i + limit,
+      );
       for (final item in chunk) {
         batch.set(itemsRef.doc(item.id), item.toJson());
       }

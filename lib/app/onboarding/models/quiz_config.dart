@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 
 @immutable
 class QuizOption {
-  const QuizOption({required this.id, required this.emoji, required this.label});
+  const QuizOption({
+    required this.id,
+    required this.emoji,
+    required this.label,
+  });
 
   final String id;
   final String emoji;

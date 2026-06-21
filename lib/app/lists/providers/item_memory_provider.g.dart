@@ -48,4 +48,4 @@ final class RecentItemMemoryProvider
   }
 }
 
-String _$recentItemMemoryHash() => r'e16b41c16283c74215e0546751f91a8fbe7bdf82';
+String _$recentItemMemoryHash() => r'3c0299b96779ef992b468dcdd1fe7b443a8e432e';

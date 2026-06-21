@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -604,6 +619,9 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@mealPlannerBudgetMonthCost": {
     "placeholders": {
       "amount": {
@@ -675,6 +693,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1466,6 +1487,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1644,6 +1668,11 @@
   "aiAssistantGeneral": "Asystent Generalny",
   "aiAssistantHistory": "Historia Asystenta",
   "aiAssistantTitle": "Asystent AI",
+  "aiCapabilitiesBudget": "Budżet i ceny",
+  "aiCapabilitiesLists": "Listy zakupów",
+  "aiCapabilitiesOrganize": "Organizacja",
+  "aiCapabilitiesRecipes": "Przepisy i menu",
+  "aiCapabilitiesTitle": "Co mogę zrobić?",
   "aiConnectionError": "Nie można połączyć się z usługą AI. Sprawdź swoje połączenie.",
   "aiConversationHistory": "Historia rozmów",
   "aiCreditsRemaining": "Pozostało {remaining} kredytów",
@@ -2076,6 +2105,7 @@
   "markAsPurchased": "Oznacz jako kupione",
   "markItemsToSeeAnalysis": "Oznacz przedmioty jako kupione, aby zobaczyć analizę.",
   "marketMode": "Tryb rynkowy",
+  "marketModeDescription": "Zaznaczaj produkty podczas zakupów",
   "marketsToAvoid": "Rynki, których należy unikać",
   "marketsToAvoidHint": "Np.: Rynek Y, Rynek Z",
   "mealDragHint": "Przytrzymaj, aby przeciągnąć i przenieść",
@@ -2162,6 +2192,7 @@
   "navRecipes": "Przepisy",
   "newCategoryDialog": "Nowa kategoria",
   "newChat": "Nowy czat",
+  "newChatStarted": "Rozpoczął się nowy czat",
   "newListTitle": "Nowa lista zakupów",
   "newPantryList": "Zakupy ze spiżarni",
   "newRecipe": "Nowy przepis",
@@ -2535,6 +2566,7 @@
   "queryingYourLists": "Wysyłam zapytanie do Twoich list...",
   "quickActionAi": "Porozmawiaj z Kipi",
   "quickActionPantry": "Zobacz spiżarnię",
+  "quickAddToList": "Dodaj do listy",
   "quickRecipe": "Szybki przepis",
   "quickRecipePrompt": "Zaproponuj przepisy z przedmiotów z mojej listy.",
   "quickReplies": "Szybkie odpowiedzi:",

@@ -1,3 +1,7 @@
+// ignore_for_file: avoid_raw_material_colors
+// Full-screen camera overlay: torch-state icons, scan-area mask (dstOut) and
+// the ambient scan shimmer use raw Material colors by design — they are not a
+// themed product surface and must stay stable over the live camera feed.
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -37,7 +41,10 @@ class _PantryScannerScreenState extends State<PantryScannerScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: const BackButton(color: Colors.white),
-        title: Text(sL10n.scanProductTitle, style: const TextStyle(color: Colors.white)),
+        title: Text(
+          sL10n.scanProductTitle,
+          style: const TextStyle(color: Colors.white),
+        ),
         actions: [
           IconButton(
             color: Colors.white,
@@ -73,31 +80,29 @@ class _PantryScannerScreenState extends State<PantryScannerScreen> {
         child: Stack(
           children: [
             MobileScanner(
-            controller: controller,
-            onDetect: (capture) async {
-              if (_isProcessing) {
-                return;
-              }
-              final List<Barcode> barcodes = capture.barcodes;
-              if (barcodes.isNotEmpty) {
-                final String? code = barcodes.first.rawValue;
-                if (code != null) {
-                  setState(() => _isProcessing = true);
-                  await _onCodeDetected(code);
+              controller: controller,
+              onDetect: (capture) async {
+                if (_isProcessing) {
+                  return;
                 }
-              }
-            },
-          ),
-          _buildOverlay(context),
-          if (_isProcessing)
-            Container(
-              color: Colors.black54,
-              child: const Center(
-                child: CircularProgressIndicator(),
-              ),
+                final List<Barcode> barcodes = capture.barcodes;
+                if (barcodes.isNotEmpty) {
+                  final String? code = barcodes.first.rawValue;
+                  if (code != null) {
+                    setState(() => _isProcessing = true);
+                    await _onCodeDetected(code);
+                  }
+                }
+              },
             ),
-        ],
-      ),
+            _buildOverlay(context),
+            if (_isProcessing)
+              Container(
+                color: Colors.black54,
+                child: const Center(child: CircularProgressIndicator()),
+              ),
+          ],
+        ),
       ),
     );
   }
@@ -137,16 +142,18 @@ class _PantryScannerScreenState extends State<PantryScannerScreen> {
         ),
         Center(
           child: Container(
-            height: scanAreaSize,
-            width: scanAreaSize,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.white, width: 2),
-              borderRadius: BorderRadius.circular(RadiusTokens.lg),
-            ),
-          ).animate(onPlay: (c) => c.repeat()).shimmer(
-            duration: 2.seconds,
-            color: Colors.green.withAlpha((0.5 * 255).toInt()),
-          ),
+                height: scanAreaSize,
+                width: scanAreaSize,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white, width: 2),
+                  borderRadius: BorderRadius.circular(RadiusTokens.lg),
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat())
+              .shimmer(
+                duration: 2.seconds,
+                color: Colors.green.withAlpha((0.5 * 255).toInt()),
+              ),
         ),
         Positioned(
           top: (size.height / 2) + (scanAreaSize / 2) + 20,
@@ -154,7 +161,10 @@ class _PantryScannerScreenState extends State<PantryScannerScreen> {
           right: 0,
           child: Text(
             sL10n.positionBarcodeCenter,
-            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
             textAlign: TextAlign.center,
           ),
         ),
@@ -168,7 +178,7 @@ class _PantryScannerScreenState extends State<PantryScannerScreen> {
     }
     final sL10n = AppLocalizations.of(context)!;
     Navigator.of(context).pop();
-    
+
     await PantryAddSheet.show(context, initialName: '${sL10n.product} $code');
   }
 }

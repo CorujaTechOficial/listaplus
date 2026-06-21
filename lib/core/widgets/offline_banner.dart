@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:shopping_list/theme/tokens.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
@@ -57,7 +58,8 @@ class _OfflineBannerState extends State<OfflineBanner> {
           child: AnimatedOpacity(
             duration: const Duration(milliseconds: 300),
             opacity: _isOffline ? 1.0 : 0.0,
-            child: _isOffline ? _buildBanner(context) : const SizedBox(height: 0),
+            child:
+                _isOffline ? _buildBanner(context) : const SizedBox(height: 0),
           ),
         ),
         Expanded(child: widget.child),
@@ -70,10 +72,8 @@ class _OfflineBannerState extends State<OfflineBanner> {
     final l10n = AppLocalizations.of(context)!;
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: BoxDecoration(
-        color: theme.colorScheme.errorContainer,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: Spacing.sm, vertical: 6),
+      decoration: BoxDecoration(color: theme.colorScheme.errorContainer),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -82,7 +82,7 @@ class _OfflineBannerState extends State<OfflineBanner> {
             size: 16,
             color: theme.colorScheme.onErrorContainer,
           ),
-          const SizedBox(width: 8),
+          const SizedBox(width: Spacing.xs),
           Text(
             l10n.offlineBanner,
             style: theme.textTheme.labelSmall?.copyWith(

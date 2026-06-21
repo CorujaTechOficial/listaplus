@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../models/shopping_list.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/share_provider.dart';
-import '../../../theme/tokens.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import 'create_list_dialog.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
@@ -48,7 +48,8 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
                   IconButton(
                     icon: Icon(_showArchived ? Icons.list_alt : Icons.history),
                     tooltip: _showArchived ? l10n.viewActive : l10n.viewHistory,
-                    onPressed: () => setState(() => _showArchived = !_showArchived),
+                    onPressed:
+                        () => setState(() => _showArchived = !_showArchived),
                   ),
                   IconButton(
                     icon: const Icon(Icons.close),
@@ -59,112 +60,140 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
             ),
             const Divider(height: 1),
             if (listsAsync.value case final allLists?)
-              Builder(builder: (context) {
-                final lists = allLists.where((l) => l.isArchived == _showArchived).toList();
-                
-                if (lists.isEmpty) {
-                  return Padding(
-                    padding: const EdgeInsets.all(Spacing.xl),
-                    child: Center(
-                      child: Text(
-                        _showArchived ? l10n.noArchivedLists : l10n.noActiveLists,
-                        style: theme.textTheme.bodyMedium?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
+              Builder(
+                builder: (context) {
+                  final lists =
+                      allLists
+                          .where((l) => l.isArchived == _showArchived)
+                          .toList();
+
+                  if (lists.isEmpty) {
+                    return Padding(
+                      padding: const EdgeInsets.all(Spacing.xl),
+                      child: Center(
+                        child: Text(
+                          _showArchived
+                              ? l10n.noArchivedLists
+                              : l10n.noActiveLists,
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: theme.colorScheme.onSurfaceVariant,
+                          ),
                         ),
                       ),
-                    ),
-                  );
-                }
+                    );
+                  }
 
-                return Flexible(
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: lists.length,
-                    itemBuilder: (context, index) {
-                      final list = lists[index];
-                      final isCurrent = list.id == widget.currentListId;
-                      return ListTile(
-                        leading: Icon(
-                          _showArchived 
-                              ? Icons.archive_outlined
-                              : (list.isShared ? Icons.group : (isCurrent ? Icons.check_circle : Icons.circle_outlined)),
-                          color: _showArchived
-                              ? theme.colorScheme.onSurfaceVariant
-                              : (list.isShared
-                                  ? theme.colorScheme.tertiary
-                                  : (isCurrent
-                                      ? theme.colorScheme.primary
-                                      : theme.colorScheme.onSurfaceVariant)),
-                        ),
-                        title: Hero(
-                          tag: 'list_name_${list.id}',
-                          child: Material(
-                            color: Colors.transparent,
-                            child: Text(
-                              list.name,
-                              style: TextStyle(
-                                fontWeight:
-                                    isCurrent ? FontWeight.w700 : FontWeight.normal,
+                  return Flexible(
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: lists.length,
+                      itemBuilder: (context, index) {
+                        final list = lists[index];
+                        final isCurrent = list.id == widget.currentListId;
+                        return ListTile(
+                          leading: Icon(
+                            _showArchived
+                                ? Icons.archive_outlined
+                                : (list.isShared
+                                    ? Icons.group
+                                    : (isCurrent
+                                        ? Icons.check_circle
+                                        : Icons.circle_outlined)),
+                            color:
+                                _showArchived
+                                    ? theme.colorScheme.onSurfaceVariant
+                                    : (list.isShared
+                                        ? theme.colorScheme.tertiary
+                                        : (isCurrent
+                                            ? theme.colorScheme.primary
+                                            : theme
+                                                .colorScheme
+                                                .onSurfaceVariant)),
+                          ),
+                          title: Hero(
+                            tag: 'list_name_${list.id}',
+                            child: Material(
+                              color: Colors.transparent,
+                              child: Text(
+                                list.name,
+                                style: TextStyle(
+                                  fontWeight:
+                                      isCurrent
+                                          ? FontWeight.w700
+                                          : FontWeight.normal,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        subtitle: _showArchived && list.archivedAt != null
-                            ? Text(
-                                l10n.completedOn('${list.archivedAt!.day}/${list.archivedAt!.month}/${list.archivedAt!.year}'),
-                                style: theme.textTheme.bodySmall,
-                              )
-                            : list.isShared
-                                ? Text(
+                          subtitle:
+                              _showArchived && list.archivedAt != null
+                                  ? Text(
+                                    l10n.completedOn(
+                                      '${list.archivedAt!.day}/${list.archivedAt!.month}/${list.archivedAt!.year}',
+                                    ),
+                                    style: theme.textTheme.bodySmall,
+                                  )
+                                  : list.isShared
+                                  ? Text(
                                     l10n.sharedLabel,
                                     style: theme.textTheme.bodySmall?.copyWith(
                                       color: theme.colorScheme.tertiary,
                                     ),
                                   )
-                                : null,
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            if (_showArchived)
-                              IconButton(
-                                icon: const Icon(Icons.unarchive_outlined, size: 20),
-                                tooltip: l10n.restore,
-                                onPressed: () => _unarchiveList(list),
-                              ),
-                            if (list.isShared)
-                              IconButton(
-                                icon: Icon(
-                                  Icons.remove_circle_outline,
-                                  size: 20,
-                                  color: theme.colorScheme.error,
+                                  : null,
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              if (_showArchived)
+                                IconButton(
+                                  icon: const Icon(
+                                    Icons.unarchive_outlined,
+                                    size: 20,
+                                  ),
+                                  tooltip: l10n.restore,
+                                  onPressed: () => _unarchiveList(list),
                                 ),
-                                tooltip: l10n.removeSharedTooltip,
-                                onPressed: () => _removeSharedList(list),
-                              )
-                            else ...[
-                              IconButton(
-                                icon: const Icon(Icons.edit_outlined, size: 20),
-                                tooltip: l10n.rename,
-                                onPressed: () => _renameList(list),
-                              ),
-                              IconButton(
-                                icon: Icon(
-                                  Icons.delete_outline,
-                                  size: 20,
-                                  color: theme.colorScheme.error,
+                              if (list.isShared)
+                                IconButton(
+                                  icon: Icon(
+                                    Icons.remove_circle_outline,
+                                    size: 20,
+                                    color: theme.colorScheme.error,
+                                  ),
+                                  tooltip: l10n.removeSharedTooltip,
+                                  onPressed: () => _removeSharedList(list),
+                                )
+                              else ...[
+                                IconButton(
+                                  icon: const Icon(
+                                    Icons.edit_outlined,
+                                    size: 20,
+                                  ),
+                                  tooltip: l10n.rename,
+                                  onPressed: () => _renameList(list),
                                 ),
-                                tooltip: l10n.delete,
-                                onPressed: () => _deleteList(list),
-                              ),
+                                IconButton(
+                                  icon: Icon(
+                                    Icons.delete_outline,
+                                    size: 20,
+                                    color: theme.colorScheme.error,
+                                  ),
+                                  tooltip: l10n.delete,
+                                  onPressed: () => _deleteList(list),
+                                ),
+                              ],
                             ],
-                          ],
-                        ),
-                        onTap: (isCurrent || _showArchived) ? null : () => _switchList(list.id),
-                      );
-                    },
-                  ),
-                );
-              })
+                          ),
+                          onTap:
+                              (isCurrent || _showArchived)
+                                  ? null
+                                  : () => _switchList(list.id),
+                        );
+                      },
+                    ),
+                  );
+                },
+              )
             else
               const Padding(
                 padding: EdgeInsets.all(Spacing.xl),
@@ -172,7 +201,10 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
               ),
             const Divider(height: 1),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.sm),
+              padding: const EdgeInsets.symmetric(
+                horizontal: Spacing.md,
+                vertical: Spacing.sm,
+              ),
               child: Row(
                 children: [
                   Expanded(
@@ -212,13 +244,14 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
     var created = false;
     await showDialog<void>(
       context: context,
-      builder: (_) => CreateListDialog(
-        onCreate: (name) async {
-          await ref.read(shoppingListsProvider.notifier).createList(name);
-          ref.invalidate(currentListIdProvider);
-          created = true;
-        },
-      ),
+      builder:
+          (_) => CreateListDialog(
+            onCreate: (name) async {
+              await ref.read(shoppingListsProvider.notifier).createList(name);
+              ref.invalidate(currentListIdProvider);
+              created = true;
+            },
+          ),
     );
     if (mounted && created) {
       Navigator.pop(context);
@@ -236,9 +269,9 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
     if (!mounted) {
       return;
     }
-    await ref.read(shoppingListsProvider.notifier).updateList(
-      list.copyWith(name: name),
-    );
+    await ref
+        .read(shoppingListsProvider.notifier)
+        .updateList(list.copyWith(name: name));
   }
 
   Future<void> _deleteList(ShoppingList list) async {
@@ -319,27 +352,29 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
     try {
       final code = await showDialog<String>(
         context: context,
-        builder: (_) => AlertDialog(
-          title: Text(l10n.importListTitle),
-          content: TextField(
-            controller: codeController,
-            textCapitalization: TextCapitalization.characters,
-            decoration: InputDecoration(
-              hintText: l10n.enterCodeHint,
-              border: const OutlineInputBorder(),
+        builder:
+            (_) => AlertDialog(
+              title: Text(l10n.importListTitle),
+              content: TextField(
+                controller: codeController,
+                textCapitalization: TextCapitalization.characters,
+                decoration: InputDecoration(
+                  hintText: l10n.enterCodeHint,
+                  border: const OutlineInputBorder(),
+                ),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(l10n.cancel),
+                ),
+                FilledButton(
+                  onPressed:
+                      () => Navigator.pop(context, codeController.text.trim()),
+                  child: Text(l10n.import),
+                ),
+              ],
             ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text(l10n.cancel),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.pop(context, codeController.text.trim()),
-              child: Text(l10n.import),
-            ),
-          ],
-        ),
       );
       if (code == null || code.isEmpty) {
         return;
@@ -358,14 +393,16 @@ class _ListSwitcherSheetState extends ConsumerState<ListSwitcherSheet> {
         );
         Navigator.pop(context);
         ref.invalidate(shoppingListsProvider);
-        await ref.read(currentListIdProvider.notifier).setCurrentList(result.listId);
+        await ref
+            .read(currentListIdProvider.notifier)
+            .setCurrentList(result.listId);
       } on Exception catch (e) {
         if (!mounted) {
           return;
         }
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.error(e.toString()))),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(l10n.error(e.toString()))));
       }
     } finally {
       codeController.dispose();

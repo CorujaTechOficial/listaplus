@@ -20,71 +20,96 @@ class ThemeSelectionScreen extends ConsumerWidget {
     final useDynamicColor = ref.watch(useDynamicColorProvider).value ?? false;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.chooseThemeColor),
-      ),
+      appBar: AppBar(title: Text(l10n.chooseThemeColor)),
       body: SafeArea(
         child: GridView.builder(
-        padding: const EdgeInsets.all(Spacing.md),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
-          crossAxisSpacing: Spacing.md,
-          mainAxisSpacing: Spacing.md,
-        ),
-        itemCount: ThemeOption.options.length,
-        itemBuilder: (context, index) {
-          final option = ThemeOption.options[index];
-          final color = option.color;
-          final isSelected = currentColorAsync.value?.toARGB32() == color.toARGB32();
+          padding: const EdgeInsets.all(Spacing.md),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 4,
+            crossAxisSpacing: Spacing.md,
+            mainAxisSpacing: Spacing.md,
+          ),
+          itemCount: ThemeOption.options.length,
+          itemBuilder: (context, index) {
+            final option = ThemeOption.options[index];
+            final color = option.color;
+            final isSelected =
+                currentColorAsync.value?.toARGB32() == color.toARGB32();
 
-          return InkWell(
-            onTap: () {
-              if (option.isPremium && !isPremium) {
-                Navigator.push(context, fadeSlideRoute<void>(const PaywallScreen()));
-                return;
-              }
-              if (useDynamicColor) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(l10n.dynamicColorsEnabledWarning)),
-                );
-              }
-              ref.read(themeColorProvider.notifier).setColor(color);
-            },
-            borderRadius: BorderRadius.circular(RadiusTokens.md),
-            child: Stack(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: color,
-                    borderRadius: BorderRadius.circular(RadiusTokens.md),
-                    border: isSelected
-                        ? Border.all(color: theme.colorScheme.onSurface, width: 3)
-                        : null,
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withAlpha((0.3 * 255).toInt()),
-                        blurRadius: 8,
-                        offset: const Offset(0, 4),
+            return Semantics(
+              label: option.localizedName(l10n),
+              button: true,
+              selected: isSelected,
+              child: InkWell(
+                onTap: () {
+                  if (option.isPremium && !isPremium) {
+                    Navigator.push(
+                      context,
+                      fadeSlideRoute<void>(const PaywallScreen()),
+                    );
+                    return;
+                  }
+                  if (useDynamicColor) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text(l10n.dynamicColorsEnabledWarning)),
+                    );
+                  }
+                  ref.read(themeColorProvider.notifier).setColor(color);
+                },
+                borderRadius: BorderRadius.circular(RadiusTokens.md),
+                child: Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: color,
+                        borderRadius: BorderRadius.circular(RadiusTokens.md),
+                        border:
+                            isSelected
+                                ? Border.all(
+                                  color: theme.colorScheme.onSurface,
+                                  width: 3,
+                                )
+                                : null,
+                        boxShadow: [
+                          BoxShadow(
+                            color: color.withAlpha((0.3 * 255).toInt()),
+                            blurRadius: 8,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  child: Center(
-                    child: isSelected
-                        ? Icon(Icons.check, color: color.computeLuminance() > 0.5 ? Colors.black : Colors.white)
-                        : null,
-                  ),
+                      child: Center(
+                        child:
+                            isSelected
+                                ? Icon(
+                                  Icons.check,
+                                  color:
+                                      color.computeLuminance() > 0.5
+                                          ? Colors.black
+                                          : Colors.white,
+                                )
+                                : null,
+                      ),
+                    ),
+                    if (option.isPremium && !isPremium)
+                      Positioned(
+                        top: 4,
+                        right: 4,
+                        child: Icon(
+                          Icons.lock,
+                          size: 14,
+                          color:
+                              color.computeLuminance() > 0.5
+                                  ? Colors.black54
+                                  : Colors.white70,
+                        ),
+                      ),
+                  ],
                 ),
-                if (option.isPremium && !isPremium)
-                  Positioned(
-                    top: 4,
-                    right: 4,
-                    child: Icon(Icons.lock, size: 14, color: color.computeLuminance() > 0.5 ? Colors.black54 : Colors.white70),
-                  ),
-              ],
-            ),
-          );
-        },
-      ),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

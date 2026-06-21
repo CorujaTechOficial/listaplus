@@ -6,7 +6,7 @@ import 'package:shopping_list/core/providers/auth_provider.dart';
 part 'ai_usage_provider.g.dart';
 
 const int kFreeAiActionsPerMonth = 30;
-const int kAiUsageWarningThreshold = 20;
+const int kAiUsageWarningThreshold = 10;
 
 String _monthKey() {
   final now = DateTime.now();
@@ -20,12 +20,13 @@ Future<int> aiUsageCount(Ref ref) async {
     return 0;
   }
 
-  final doc = await FirebaseFirestore.instance
-      .collection('users')
-      .doc(user.uid)
-      .collection('ai_usage')
-      .doc(_monthKey())
-      .get();
+  final doc =
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user.uid)
+          .collection('ai_usage')
+          .doc(_monthKey())
+          .get();
 
   if (!doc.exists) {
     return 0;
@@ -50,13 +51,10 @@ class AiUsageNotifier extends _$AiUsageNotifier {
         .collection('ai_usage')
         .doc(_monthKey());
 
-    await docRef.set(
-      {
-        'action_count': FieldValue.increment(1),
-        'last_updated': FieldValue.serverTimestamp()
-      },
-      SetOptions(merge: true),
-    );
+    await docRef.set({
+      'action_count': FieldValue.increment(1),
+      'last_updated': FieldValue.serverTimestamp(),
+    }, SetOptions(merge: true));
 
     final newCount = (state.value ?? 0) + 1;
     state = AsyncValue.data(newCount);

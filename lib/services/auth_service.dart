@@ -3,11 +3,9 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class AuthService {
-  AuthService({
-    FirebaseAuth? auth,
-    GoogleSignIn? googleSignIn,
-  })  : _auth = auth ?? FirebaseAuth.instance,
-        _googleSignIn = googleSignIn ?? GoogleSignIn.instance;
+  AuthService({FirebaseAuth? auth, GoogleSignIn? googleSignIn})
+    : _auth = auth ?? FirebaseAuth.instance,
+      _googleSignIn = googleSignIn ?? GoogleSignIn.instance;
 
   final FirebaseAuth _auth;
   final GoogleSignIn _googleSignIn;
@@ -26,9 +24,7 @@ class AuthService {
     if (idToken == null) {
       return null;
     }
-    final credential = GoogleAuthProvider.credential(
-      idToken: idToken,
-    );
+    final credential = GoogleAuthProvider.credential(idToken: idToken);
 
     final user = _auth.currentUser;
     UserCredential result;
@@ -61,10 +57,9 @@ class AuthService {
     if (identityToken == null) {
       return null;
     }
-    final oauthCredential = OAuthProvider('apple.com').credential(
-      idToken: identityToken,
-      accessToken: authorizationCode,
-    );
+    final oauthCredential = OAuthProvider(
+      'apple.com',
+    ).credential(idToken: identityToken, accessToken: authorizationCode);
 
     final user = _auth.currentUser;
     if (user != null && user.isAnonymous) {

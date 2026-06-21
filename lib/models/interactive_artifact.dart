@@ -1,6 +1,5 @@
 import 'package:uuid/uuid.dart';
 
-
 /// Tipo de controle interativo que a IA pode inserir num artefato.
 enum ArtifactControlType {
   /// Slider contínuo (ex: "Pessoas: 15")
@@ -61,9 +60,8 @@ class ArtifactControl {
       min: (json['min'] as num?)?.toDouble(),
       max: (json['max'] as num?)?.toDouble(),
       step: (json['step'] as num?)?.toDouble(),
-      options: (json['options'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+      options:
+          (json['options'] as List<dynamic>?)?.map((e) => e as String).toList(),
       affectsMultiplier: json['affectsMultiplier'] as bool? ?? false,
       filtersItems: json['filtersItems'] as bool? ?? false,
     );
@@ -187,16 +185,18 @@ class ArtifactItem {
       category: json['category'] as String? ?? 'Outros',
       estimatedPrice: (json['estimatedPrice'] as num?)?.toDouble(),
       isAvailable: json['isAvailable'] as bool? ?? false,
-      conditions: json['conditions'] != null
-          ? Map<String, dynamic>.from(json['conditions'] as Map)
-          : null,
-      alternatives: (json['alternatives'] as List<dynamic>?)
-          ?.map(
-            (e) => ArtifactItemAlternative.fromJson(
-              Map<String, dynamic>.from(e as Map),
-            ),
-          )
-          .toList(),
+      conditions:
+          json['conditions'] != null
+              ? Map<String, dynamic>.from(json['conditions'] as Map)
+              : null,
+      alternatives:
+          (json['alternatives'] as List<dynamic>?)
+              ?.map(
+                (e) => ArtifactItemAlternative.fromJson(
+                  Map<String, dynamic>.from(e as Map),
+                ),
+              )
+              .toList(),
       isSwapped: json['isSwapped'] as bool? ?? false,
     );
   }
@@ -326,7 +326,8 @@ class InteractiveArtifact {
       title: json['title'] as String? ?? '',
       icon: json['icon'] as String? ?? '✨',
       description: json['description'] as String?,
-      controls: (json['controls'] as List<dynamic>?)
+      controls:
+          (json['controls'] as List<dynamic>?)
               ?.map(
                 (e) => ArtifactControl.fromJson(
                   Map<String, dynamic>.from(e as Map),
@@ -334,20 +335,18 @@ class InteractiveArtifact {
               )
               .toList() ??
           [],
-      items: (json['items'] as List<dynamic>?)
+      items:
+          (json['items'] as List<dynamic>?)
               ?.map(
-                (e) => ArtifactItem.fromJson(
-                  Map<String, dynamic>.from(e as Map),
-                ),
+                (e) =>
+                    ArtifactItem.fromJson(Map<String, dynamic>.from(e as Map)),
               )
               .toList() ??
           [],
-      baseServings:
-          (json['baseServings'] as num?)?.toDouble() ?? 1.0,
+      baseServings: (json['baseServings'] as num?)?.toDouble() ?? 1.0,
       budget: (json['budget'] as num?)?.toDouble(),
       showBudgetBar: json['showBudgetBar'] as bool? ?? false,
-      commitLabel:
-          json['commitLabel'] as String? ?? 'Adicionar à Lista',
+      commitLabel: json['commitLabel'] as String? ?? 'Adicionar à Lista',
       commitMode: ArtifactCommitMode.fromString(
         json['commitMode'] as String? ?? '',
       ),

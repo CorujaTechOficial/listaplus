@@ -76,9 +76,7 @@ class AgentToolCall {
 
   static Map<String, dynamic> _parseArguments(String args) {
     try {
-      return Map<String, dynamic>.from(
-        jsonDecode(args) as Map,
-      );
+      return Map<String, dynamic>.from(jsonDecode(args) as Map);
     } on FormatException {
       return <String, dynamic>{};
     }

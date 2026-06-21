@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'colors.dart';
 import 'tokens.dart';
 
@@ -123,8 +122,7 @@ class AppSemanticColors extends ThemeExtension<AppSemanticColors> {
       info: Color.lerp(info, other.info, t)!,
       onInfo: Color.lerp(onInfo, other.onInfo, t)!,
       infoContainer: Color.lerp(infoContainer, other.infoContainer, t)!,
-      onInfoContainer:
-          Color.lerp(onInfoContainer, other.onInfoContainer, t)!,
+      onInfoContainer: Color.lerp(onInfoContainer, other.onInfoContainer, t)!,
       premium: Color.lerp(premium, other.premium, t)!,
       onPremium: Color.lerp(onPremium, other.onPremium, t)!,
       premiumContainer:
@@ -196,7 +194,8 @@ TextStyle _plusJakartaSans({
   double? letterSpacing,
   double? height,
 }) {
-  return GoogleFonts.plusJakartaSans(
+  return TextStyle(
+    fontFamily: 'PlusJakartaSans',
     fontSize: fontSize,
     fontWeight: fontWeight,
     color: color,
@@ -236,7 +235,8 @@ class AppTheme {
     final isDark = colorScheme.brightness == Brightness.dark;
 
     // --- Semantic colors ---
-    final semanticColors = isDark ? AppSemanticColors.dark : AppSemanticColors.light;
+    final semanticColors =
+        isDark ? AppSemanticColors.dark : AppSemanticColors.light;
 
     return ThemeData(
       useMaterial3: true,
@@ -244,9 +244,8 @@ class AppTheme {
       extensions: [semanticColors],
 
       // Backgrounds
-      scaffoldBackgroundColor: isDark
-          ? AppColors.scaffoldDark
-          : AppColors.scaffoldLight,
+      scaffoldBackgroundColor:
+          isDark ? AppColors.scaffoldDark : AppColors.scaffoldLight,
 
       // -----------------------------------------------------------------------
       // Card
@@ -254,19 +253,21 @@ class AppTheme {
       cardTheme: CardThemeData(
         elevation: ElevationTokens.none,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(RadiusTokens.lg),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.lg)),
           side: BorderSide(
-            color: isDark
-                ? colorScheme.outlineVariant.withAlpha(26)
-                : colorScheme.outlineVariant.withAlpha(51),
+            color:
+                isDark
+                    ? colorScheme.outlineVariant.withAlpha(26)
+                    : colorScheme.outlineVariant.withAlpha(51),
             width: isDark ? 0.5 : 1,
           ),
         ),
         clipBehavior: Clip.antiAlias,
         surfaceTintColor: colorScheme.surfaceTint,
-        color: isDark ? colorScheme.surfaceContainerLow : colorScheme.surfaceContainerLowest,
+        color:
+            isDark
+                ? colorScheme.surfaceContainerLow
+                : colorScheme.surfaceContainerLowest,
       ),
 
       // -----------------------------------------------------------------------
@@ -275,9 +276,8 @@ class AppTheme {
       appBarTheme: AppBarTheme(
         centerTitle: false,
         scrolledUnderElevation: 3,
-        backgroundColor: isDark
-            ? AppColors.scaffoldDark.withAlpha(217)
-            : AppColors.scaffoldLight.withAlpha(217),
+        backgroundColor:
+            isDark ? AppColors.scaffoldDark : AppColors.scaffoldLight,
         surfaceTintColor: colorScheme.surfaceTint,
         titleTextStyle: _plusJakartaSans(
           fontSize: 20,
@@ -286,10 +286,7 @@ class AppTheme {
           letterSpacing: -0.5,
         ),
         elevation: ElevationTokens.none,
-        iconTheme: IconThemeData(
-          color: colorScheme.onSurface,
-          size: 22,
-        ),
+        iconTheme: IconThemeData(color: colorScheme.onSurface, size: 22),
       ),
 
       // -----------------------------------------------------------------------
@@ -297,37 +294,28 @@ class AppTheme {
       // -----------------------------------------------------------------------
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: isDark
-            ? colorScheme.surfaceContainerHighest.withAlpha(38)
-            : colorScheme.surfaceContainerHighest.withAlpha(77),
+        fillColor:
+            isDark
+                ? colorScheme.surfaceContainerHighest.withAlpha(38)
+                : colorScheme.surfaceContainerHighest.withAlpha(77),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(RadiusTokens.md),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.lg)),
           borderSide: BorderSide.none,
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(RadiusTokens.md),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.lg)),
           borderSide: BorderSide.none,
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(RadiusTokens.md),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.lg)),
           borderSide: BorderSide(color: colorScheme.primary, width: 2),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(RadiusTokens.md),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.lg)),
           borderSide: BorderSide(color: colorScheme.error, width: 1),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(RadiusTokens.md),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.lg)),
           borderSide: BorderSide(color: colorScheme.error, width: 2),
         ),
         contentPadding: const EdgeInsets.symmetric(
@@ -347,9 +335,7 @@ class AppTheme {
         elevation: ElevationTokens.level3,
         highlightElevation: ElevationTokens.level2,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(RadiusTokens.lg),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.lg)),
         ),
         backgroundColor: colorScheme.primaryContainer,
         foregroundColor: colorScheme.onPrimaryContainer,
@@ -361,9 +347,7 @@ class AppTheme {
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: SegmentedButton.styleFrom(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(RadiusTokens.sm),
-            ),
+            borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.lg)),
           ),
           padding: const EdgeInsets.symmetric(horizontal: Spacing.xs),
         ),
@@ -374,9 +358,7 @@ class AppTheme {
       // -----------------------------------------------------------------------
       dialogTheme: DialogThemeData(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(RadiusTokens.xxxl),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.xxxl)),
         ),
         elevation: 3,
         backgroundColor: colorScheme.surfaceContainerHigh,
@@ -405,9 +387,7 @@ class AppTheme {
       snackBarTheme: SnackBarThemeData(
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(RadiusTokens.md),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.md)),
         ),
         elevation: ElevationTokens.level3,
       ),
@@ -417,9 +397,7 @@ class AppTheme {
       // -----------------------------------------------------------------------
       chipTheme: ChipThemeData(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(RadiusTokens.full),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(RadiusTokens.full)),
         ),
         side: BorderSide.none,
       ),

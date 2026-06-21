@@ -15,7 +15,8 @@ class AiConfigState extends _$AiConfigState {
   Future<AiConfig> build() async {
     try {
       final service = ref.watch(firestoreServiceProvider);
-      if (service == null) return const AiConfig(name: 'IA', iconKey: 'smart_toy');
+      if (service == null)
+        return const AiConfig(name: 'IA', iconKey: 'smart_toy');
       final data = await service.getUserData();
       if (data == null) {
         return const AiConfig(name: 'IA', iconKey: 'smart_toy');
@@ -28,16 +29,16 @@ class AiConfigState extends _$AiConfigState {
     }
   }
 
-  Future<void> updateConfig({required String name, required String iconKey}) async {
+  Future<void> updateConfig({
+    required String name,
+    required String iconKey,
+  }) async {
     final service = ref.read(firestoreServiceProvider);
     if (service == null) return;
     final previous = state.value;
     state = AsyncValue.data(AiConfig(name: name, iconKey: iconKey));
     try {
-      await service.updateUserData({
-        'aiName': name,
-        'aiAvatarIcon': iconKey,
-      });
+      await service.updateUserData({'aiName': name, 'aiAvatarIcon': iconKey});
     } on Exception {
       if (previous != null) {
         state = AsyncValue.data(previous);
@@ -52,7 +53,8 @@ class AiUsageState extends _$AiUsageState {
   @override
   Future<AiUsage> build() async {
     final service = ref.watch(firestoreServiceProvider);
-    if (service == null) return AiUsage(dailyCount: 0, totalCount: 0, lastReset: DateTime.now());
+    if (service == null)
+      return AiUsage(dailyCount: 0, totalCount: 0, lastReset: DateTime.now());
     final data = await service.getAiUsage();
     if (data == null) {
       return AiUsage(dailyCount: 0, totalCount: 0, lastReset: DateTime.now());
@@ -61,7 +63,9 @@ class AiUsageState extends _$AiUsageState {
   }
 
   Future<void> recordMessage() async {
-    final current = state.value ?? AiUsage(dailyCount: 0, totalCount: 0, lastReset: DateTime.now());
+    final current =
+        state.value ??
+        AiUsage(dailyCount: 0, totalCount: 0, lastReset: DateTime.now());
     final updated = current.recordMessage();
     state = AsyncValue.data(updated);
     final service = ref.read(firestoreServiceProvider);
@@ -78,7 +82,9 @@ class AiUsageState extends _$AiUsageState {
   }
 
   Future<void> recharge() async {
-    final current = state.value ?? AiUsage(dailyCount: 0, totalCount: 0, lastReset: DateTime.now());
+    final current =
+        state.value ??
+        AiUsage(dailyCount: 0, totalCount: 0, lastReset: DateTime.now());
     // Resets daily count to 0 to provide 10 new energy units
     final updated = current.copyWith(dailyCount: 0);
     state = AsyncValue.data(updated);

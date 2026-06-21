@@ -1,6 +1,27 @@
 import 'package:shopping_list/app/ai/agent/tools/tool_core.dart';
 import '../models/chat_message.dart';
 
+enum AiServiceErrorType {
+  api,
+  timeout,
+  connection,
+  emptyResponse,
+  invalidResponse,
+}
+
+class AiServiceException implements Exception {
+  const AiServiceException(this.type, {this.statusCode, this.cause});
+
+  final AiServiceErrorType type;
+  final int? statusCode;
+  final Object? cause;
+
+  @override
+  String toString() {
+    return 'AiServiceException(type: $type, statusCode: $statusCode, cause: $cause)';
+  }
+}
+
 class AiCancellationToken {
   bool _isCancelled = false;
   bool get isCancelled => _isCancelled;

@@ -13,14 +13,10 @@ class InitErrorScreen extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       home: Builder(
         builder: (context) {
-          final message = AppLocalizations.of(context)?.errorGeneric(error.toString()) ?? 'Erro: $error';
-          return Scaffold(
-            body: SafeArea(
-              child: Center(
-                child: Text(message),
-              ),
-            ),
-          );
+          final message =
+              AppLocalizations.of(context)?.errorGeneric(error.toString()) ??
+              'Erro: $error';
+          return Scaffold(body: SafeArea(child: Center(child: Text(message))));
         },
       ),
     );

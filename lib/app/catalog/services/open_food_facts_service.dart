@@ -10,17 +10,21 @@ class OpenFoodFactsService {
     required String offCategoryTag,
     int pageSize = 50,
   }) async {
-    final uri = Uri.parse('$_baseUrl/cgi/search.pl').replace(queryParameters: {
-      'action': 'process',
-      'tagtype_0': 'categories',
-      'tag_contains_0': 'contains',
-      'tag_0': offCategoryTag,
-      'sort_by': 'unique_scans_n',
-      'json': '1',
-      'page_size': '$pageSize',
-    });
+    final uri = Uri.parse('$_baseUrl/cgi/search.pl').replace(
+      queryParameters: {
+        'action': 'process',
+        'tagtype_0': 'categories',
+        'tag_contains_0': 'contains',
+        'tag_0': offCategoryTag,
+        'sort_by': 'unique_scans_n',
+        'json': '1',
+        'page_size': '$pageSize',
+      },
+    );
 
-    final response = await http.get(uri, headers: {'User-Agent': _userAgent});
+    final response = await http
+        .get(uri, headers: {'User-Agent': _userAgent})
+        .timeout(const Duration(seconds: 15));
     if (response.statusCode != 200) {
       return [];
     }
@@ -32,14 +36,18 @@ class OpenFoodFactsService {
     required String query,
     int pageSize = 30,
   }) async {
-    final uri = Uri.parse('$_baseUrl/cgi/search.pl').replace(queryParameters: {
-      'search_terms': query,
-      'sort_by': 'unique_scans_n',
-      'json': '1',
-      'page_size': '$pageSize',
-    });
+    final uri = Uri.parse('$_baseUrl/cgi/search.pl').replace(
+      queryParameters: {
+        'search_terms': query,
+        'sort_by': 'unique_scans_n',
+        'json': '1',
+        'page_size': '$pageSize',
+      },
+    );
 
-    final response = await http.get(uri, headers: {'User-Agent': _userAgent});
+    final response = await http
+        .get(uri, headers: {'User-Agent': _userAgent})
+        .timeout(const Duration(seconds: 15));
     if (response.statusCode != 200) {
       return [];
     }
@@ -49,7 +57,9 @@ class OpenFoodFactsService {
 
   static Future<CatalogProduct?> lookupBarcode(String barcode) async {
     final uri = Uri.parse('$_baseUrl/api/v0/product/$barcode.json');
-    final response = await http.get(uri, headers: {'User-Agent': _userAgent});
+    final response = await http
+        .get(uri, headers: {'User-Agent': _userAgent})
+        .timeout(const Duration(seconds: 15));
     if (response.statusCode != 200) {
       return null;
     }

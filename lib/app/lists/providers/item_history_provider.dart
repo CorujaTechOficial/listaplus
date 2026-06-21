@@ -18,7 +18,9 @@ class ItemHistory extends _$ItemHistory {
     if (data != null && data['itemHistory'] != null) {
       final history = data['itemHistory'] as Map<String, dynamic>;
       if (ref.mounted) {
-        state = history.map((key, value) => MapEntry(key, (value as num).toInt()));
+        state = history.map(
+          (key, value) => MapEntry(key, (value as num).toInt()),
+        );
       }
     }
   }
@@ -41,8 +43,8 @@ class ItemHistory extends _$ItemHistory {
   }
 
   List<String> getFrequentItems({int limit = 10}) {
-    final sortedEntries = state.entries.toList()
-      ..sort((a, b) => b.value.compareTo(a.value));
+    final sortedEntries =
+        state.entries.toList()..sort((a, b) => b.value.compareTo(a.value));
     return sortedEntries.take(limit).map((e) => e.key).toList();
   }
 }

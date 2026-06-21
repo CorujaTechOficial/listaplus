@@ -17,10 +17,12 @@ class OnboardingSlidePlanLoading extends StatefulWidget {
   final VoidCallback onFinished;
 
   @override
-  State<OnboardingSlidePlanLoading> createState() => _OnboardingSlidePlanLoadingState();
+  State<OnboardingSlidePlanLoading> createState() =>
+      _OnboardingSlidePlanLoadingState();
 }
 
-class _OnboardingSlidePlanLoadingState extends State<OnboardingSlidePlanLoading> {
+class _OnboardingSlidePlanLoadingState
+    extends State<OnboardingSlidePlanLoading> {
   int _completedSteps = 0;
   Timer? _timer;
   static const _stepInterval = Duration(milliseconds: 900);
@@ -99,7 +101,9 @@ class _OnboardingSlidePlanLoadingState extends State<OnboardingSlidePlanLoading>
               child: Text(
                 l10n.obLoadingTitle,
                 textAlign: TextAlign.center,
-                style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                style: theme.textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             const SizedBox(height: Spacing.xl),
@@ -110,20 +114,23 @@ class _OnboardingSlidePlanLoadingState extends State<OnboardingSlidePlanLoading>
                   children: [
                     AnimatedSwitcher(
                       duration: DurationTokens.fast,
-                      child: index < _completedSteps
-                          ? Icon(
-                              Icons.check_circle_rounded,
-                              key: ValueKey('done_$index'),
-                              color: theme.colorScheme.primary,
-                            )
-                          : Icon(
-                              Icons.circle_outlined,
-                              key: ValueKey('pending_$index'),
-                              color: theme.colorScheme.outlineVariant,
-                            ),
+                      child:
+                          index < _completedSteps
+                              ? Icon(
+                                Icons.check_circle_rounded,
+                                key: ValueKey('done_$index'),
+                                color: theme.colorScheme.primary,
+                              )
+                              : Icon(
+                                Icons.circle_outlined,
+                                key: ValueKey('pending_$index'),
+                                color: theme.colorScheme.outlineVariant,
+                              ),
                     ),
                     const SizedBox(width: Spacing.sm),
-                    Expanded(child: Text(step, style: theme.textTheme.bodyLarge)),
+                    Expanded(
+                      child: Text(step, style: theme.textTheme.bodyLarge),
+                    ),
                   ],
                 ),
               ).animate(delay: Duration(milliseconds: 100 * index)).fadeIn(),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../theme/tokens.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import '../../../models/shopping_list.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
@@ -35,8 +35,16 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
+    final theme = Theme.of(context);
+    final currencyCode = resolveCurrencyCode(
+      ref.watch(currencySettingProvider),
+      Localizations.localeOf(context),
+    );
     return AlertDialog(
+      icon: Icon(
+        Icons.account_balance_wallet_outlined,
+        color: theme.colorScheme.secondary,
+      ),
       title: Text(l10n.listBudgetTitle),
       content: Padding(
         padding: const EdgeInsets.only(top: Spacing.xs),
@@ -53,9 +61,14 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
         if (widget.list.budget != null)
           TextButton(
             onPressed: () {
-              ref.read(shoppingListsProvider.notifier).updateList(
-                widget.list.copyWith(budget: null, updatedAt: DateTime.now()),
-              );
+              ref
+                  .read(shoppingListsProvider.notifier)
+                  .updateList(
+                    widget.list.copyWith(
+                      budget: null,
+                      updatedAt: DateTime.now(),
+                    ),
+                  );
               Navigator.pop(context);
             },
             child: Text(
@@ -63,14 +76,22 @@ class _BudgetDialogState extends ConsumerState<BudgetDialog> {
               style: TextStyle(color: Theme.of(context).colorScheme.error),
             ),
           ),
-        TextButton(onPressed: () => Navigator.pop(context), child: Text(l10n.cancel)),
-        ElevatedButton(
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text(l10n.cancel),
+        ),
+        FilledButton(
           onPressed: () {
             final value = double.tryParse(_controller.text);
             if (value != null && value > 0) {
-              ref.read(shoppingListsProvider.notifier).updateList(
-                widget.list.copyWith(budget: value, updatedAt: DateTime.now()),
-              );
+              ref
+                  .read(shoppingListsProvider.notifier)
+                  .updateList(
+                    widget.list.copyWith(
+                      budget: value,
+                      updatedAt: DateTime.now(),
+                    ),
+                  );
               Navigator.pop(context);
             }
           },

@@ -19,7 +19,10 @@ mixin FirestoreSharingMixin on FirestoreBase {
   Future<void> saveSharedListRef(String listId, String ownerUid) async {
     return FirestoreBase.retry(() async {
       await db
-          .collection('users').doc(uid).collection('sharedLists').doc(listId)
+          .collection('users')
+          .doc(uid)
+          .collection('sharedLists')
+          .doc(listId)
           .set({'ownerUid': ownerUid, 'listId': listId});
     });
   }
@@ -27,16 +30,18 @@ mixin FirestoreSharingMixin on FirestoreBase {
   Future<void> removeSharedListRef(String listId) async {
     return FirestoreBase.retry(() async {
       await db
-          .collection('users').doc(uid).collection('sharedLists').doc(listId)
+          .collection('users')
+          .doc(uid)
+          .collection('sharedLists')
+          .doc(listId)
           .delete();
     });
   }
 
   Future<Map<String, String>> loadSharedListRefs() async {
     return FirestoreBase.retry(() async {
-      final snap = await db
-          .collection('users').doc(uid).collection('sharedLists')
-          .get();
+      final snap =
+          await db.collection('users').doc(uid).collection('sharedLists').get();
       final Map<String, String> refs = {};
       for (final d in snap.docs) {
         final data = d.data();
@@ -48,7 +53,9 @@ mixin FirestoreSharingMixin on FirestoreBase {
 
   Stream<Map<String, String>> watchSharedListRefs() {
     final stream = db
-        .collection('users').doc(uid).collection('sharedLists')
+        .collection('users')
+        .doc(uid)
+        .collection('sharedLists')
         .snapshots()
         .map((snap) {
           final Map<String, String> refs = {};
@@ -63,12 +70,16 @@ mixin FirestoreSharingMixin on FirestoreBase {
 
   Future<ShoppingList?> loadListFromUser(String ownerUid, String listId) async {
     return FirestoreBase.retry(() async {
-      final doc = await db
-          .collection('users').doc(ownerUid).collection('lists').doc(listId)
-          .get();
-          if (!doc.exists) {
-            return null;
-          }
+      final doc =
+          await db
+              .collection('users')
+              .doc(ownerUid)
+              .collection('lists')
+              .doc(listId)
+              .get();
+      if (!doc.exists) {
+        return null;
+      }
       final data = doc.data()!;
       data['id'] = doc.id;
       return ShoppingList.fromJson(data);
@@ -77,12 +88,15 @@ mixin FirestoreSharingMixin on FirestoreBase {
 
   Stream<ShoppingList?> watchListFromUser(String ownerUid, String listId) {
     final stream = db
-        .collection('users').doc(ownerUid).collection('lists').doc(listId)
+        .collection('users')
+        .doc(ownerUid)
+        .collection('lists')
+        .doc(listId)
         .snapshots()
         .map((doc) {
-      if (!doc.exists) {
-        return null;
-      }
+          if (!doc.exists) {
+            return null;
+          }
           final data = doc.data()!;
           data['id'] = doc.id;
           return ShoppingList.fromJson(data);
@@ -90,12 +104,18 @@ mixin FirestoreSharingMixin on FirestoreBase {
     return wrapStream(stream, label: 'watchListFromUser');
   }
 
-  Future<List<ShoppingItem>> loadItemsFromUser(String ownerUid, String listId) async {
+  Future<List<ShoppingItem>> loadItemsFromUser(
+    String ownerUid,
+    String listId,
+  ) async {
     return FirestoreBase.retry(() async {
-      final snap = await db
-          .collection('users').doc(ownerUid).collection('items')
-          .where('shoppingListId', isEqualTo: listId)
-          .get();
+      final snap =
+          await db
+              .collection('users')
+              .doc(ownerUid)
+              .collection('items')
+              .where('shoppingListId', isEqualTo: listId)
+              .get();
       return snap.docs.map((d) {
         final data = d.data();
         data['id'] = d.id;
@@ -104,42 +124,65 @@ mixin FirestoreSharingMixin on FirestoreBase {
     });
   }
 
-  Stream<List<ShoppingItem>> watchItemsFromUser(String ownerUid, String listId) {
+  Stream<List<ShoppingItem>> watchItemsFromUser(
+    String ownerUid,
+    String listId,
+  ) {
     final stream = db
-        .collection('users').doc(ownerUid).collection('items')
+        .collection('users')
+        .doc(ownerUid)
+        .collection('items')
         .where('shoppingListId', isEqualTo: listId)
         .snapshots()
-        .map((snap) => snap.docs.map((d) {
-          final data = d.data();
-          data['id'] = d.id;
-          return ShoppingItem.fromJson(data);
-        }).toList());
+        .map(
+          (snap) =>
+              snap.docs.map((d) {
+                final data = d.data();
+                data['id'] = d.id;
+                return ShoppingItem.fromJson(data);
+              }).toList(),
+        );
     return wrapStream(stream, label: 'watchItemsFromUser');
   }
 
   Future<void> saveItemToUser(String ownerUid, ShoppingItem item) async {
     return FirestoreBase.retry(() async {
       await db
-          .collection('users').doc(ownerUid).collection('items').doc(item.id)
+          .collection('users')
+          .doc(ownerUid)
+          .collection('items')
+          .doc(item.id)
           .set(item.toJson());
     });
   }
 
-  Future<void> deleteItemFromUser(String ownerUid, String listId, String itemId) async {
+  Future<void> deleteItemFromUser(
+    String ownerUid,
+    String listId,
+    String itemId,
+  ) async {
     return FirestoreBase.retry(() async {
       await db
-          .collection('users').doc(ownerUid).collection('items').doc(itemId)
+          .collection('users')
+          .doc(ownerUid)
+          .collection('items')
+          .doc(itemId)
           .delete();
     });
   }
 
-  Future<void> saveItemsToUser(String ownerUid, List<ShoppingItem> items) async {
+  Future<void> saveItemsToUser(
+    String ownerUid,
+    List<ShoppingItem> items,
+  ) async {
     return FirestoreBase.retry(() async {
       final itemsRef = db.collection('users').doc(ownerUid).collection('items');
-      final String? listId = items.isNotEmpty ? items.first.shoppingListId : null;
-      
+      final String? listId =
+          items.isNotEmpty ? items.first.shoppingListId : null;
+
       if (listId != null) {
-        final existingSnap = await itemsRef.where('shoppingListId', isEqualTo: listId).get();
+        final existingSnap =
+            await itemsRef.where('shoppingListId', isEqualTo: listId).get();
         await commitBatchInChunks(itemsRef, existingSnap.docs, items);
       } else {
         await commitBatchInChunks(itemsRef, [], items);

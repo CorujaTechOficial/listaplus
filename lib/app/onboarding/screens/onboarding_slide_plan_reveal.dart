@@ -40,7 +40,9 @@ class OnboardingSlidePlanReveal extends ConsumerWidget {
             const SizedBox(height: Spacing.lg),
             Text(
               l10n.obRevealTitle,
-              style: theme.textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
+              style: theme.textTheme.headlineMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
             ).animate().fadeIn().slideY(begin: 0.1),
             const SizedBox(height: Spacing.xs),
             Text(
@@ -57,38 +59,67 @@ class OnboardingSlidePlanReveal extends ConsumerWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(l10n.obRevealSavingsCaption, style: theme.textTheme.labelLarge),
+                    Text(
+                      l10n.obRevealSavingsCaption,
+                      style: theme.textTheme.labelLarge,
+                    ),
                     const SizedBox(height: Spacing.md),
                     SizedBox(
-                      height: 120,
+                      height: 144,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           for (final (index, value) in bars.indexed) ...[
                             Expanded(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Container(
-                                    height: 100 * value,
-                                    decoration: BoxDecoration(
-                                      color: theme.colorScheme.primary,
-                                      borderRadius: const BorderRadius.vertical(
-                                        top: Radius.circular(6),
+                              child: LayoutBuilder(
+                                builder: (context, constraints) {
+                                  const labelHeight = 16.0;
+                                  const gapHeight = 4.0;
+                                  final maxBarHeight =
+                                      constraints.maxHeight -
+                                      labelHeight -
+                                      gapHeight;
+
+                                  return Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Container(
+                                            height: maxBarHeight * value,
+                                            decoration: BoxDecoration(
+                                              color: theme.colorScheme.primary,
+                                              borderRadius:
+                                                  const BorderRadius.vertical(
+                                                    top: Radius.circular(6),
+                                                  ),
+                                            ),
+                                          )
+                                          .animate(
+                                            delay: Duration(
+                                              milliseconds: 150 * index,
+                                            ),
+                                          )
+                                          .scaleY(
+                                            begin: 0,
+                                            alignment: Alignment.bottomCenter,
+                                          ),
+                                      const SizedBox(height: Spacing.xxs),
+                                      SizedBox(
+                                        height: labelHeight,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: Text(
+                                            l10n.obRevealMonth(index + 1),
+                                            style: theme.textTheme.labelSmall,
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  )
-                                      .animate(delay: Duration(milliseconds: 150 * index))
-                                      .scaleY(begin: 0, alignment: Alignment.bottomCenter),
-                                  const SizedBox(height: Spacing.xxs),
-                                  Text(
-                                    l10n.obRevealMonth(index + 1),
-                                    style: theme.textTheme.labelSmall,
-                                  ),
-                                ],
+                                    ],
+                                  );
+                                },
                               ),
                             ),
-                            if (index < bars.length - 1) const SizedBox(width: Spacing.sm),
+                            if (index < bars.length - 1)
+                              const SizedBox(width: Spacing.sm),
                           ],
                         ],
                       ),
@@ -100,15 +131,23 @@ class OnboardingSlidePlanReveal extends ConsumerWidget {
             const SizedBox(height: Spacing.lg),
             for (final (index, feature) in features.indexed)
               Padding(
-                padding: const EdgeInsets.only(bottom: Spacing.sm),
-                child: Row(
-                  children: [
-                    Icon(feature.$1, color: theme.colorScheme.primary),
-                    const SizedBox(width: Spacing.sm),
-                    Expanded(child: Text(feature.$2, style: theme.textTheme.bodyLarge)),
-                  ],
-                ),
-              ).animate(delay: Duration(milliseconds: 100 * index)).fadeIn().slideX(begin: 0.1),
+                    padding: const EdgeInsets.only(bottom: Spacing.sm),
+                    child: Row(
+                      children: [
+                        Icon(feature.$1, color: theme.colorScheme.primary),
+                        const SizedBox(width: Spacing.sm),
+                        Expanded(
+                          child: Text(
+                            feature.$2,
+                            style: theme.textTheme.bodyLarge,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                  .animate(delay: Duration(milliseconds: 100 * index))
+                  .fadeIn()
+                  .slideX(begin: 0.1),
             const Spacer(),
             SizedBox(
               width: double.infinity,
@@ -117,7 +156,9 @@ class OnboardingSlidePlanReveal extends ConsumerWidget {
                 style: FilledButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: Spacing.md),
                 ),
-                child: Text(MaterialLocalizations.of(context).continueButtonLabel),
+                child: Text(
+                  MaterialLocalizations.of(context).continueButtonLabel,
+                ),
               ),
             ),
             const SizedBox(height: Spacing.sm),

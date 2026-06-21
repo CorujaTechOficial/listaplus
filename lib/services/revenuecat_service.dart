@@ -25,6 +25,7 @@ class PaywallPackage {
 }
 
 abstract class RevenueCatService {
+  bool get isAvailable;
   Future<void> init(String apiKey);
   Future<bool> isEntitlementActive(String entitlementId);
   Future<CustomerInfo> getCustomerInfo();

@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -597,6 +612,9 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@mealPlannerBudgetMonthCost": {
     "placeholders": {
       "amount": {
@@ -644,6 +662,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1435,6 +1456,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1613,6 +1637,11 @@
   "aiAssistantGeneral": "Pembantu Am",
   "aiAssistantHistory": "Penolong Sejarah",
   "aiAssistantTitle": "Penolong AI",
+  "aiCapabilitiesBudget": "Bajet & Harga",
+  "aiCapabilitiesLists": "Senarai Beli-belah",
+  "aiCapabilitiesOrganize": "Organisasi",
+  "aiCapabilitiesRecipes": "Resipi & Menu",
+  "aiCapabilitiesTitle": "Apa yang boleh saya buat?",
   "aiConnectionError": "Tidak dapat menyambung ke perkhidmatan AI. Semak sambungan anda.",
   "aiConversationHistory": "Sejarah Perbualan",
   "aiCreditsRemaining": "{remaining} kredit tinggal",
@@ -2045,6 +2074,7 @@
   "markAsPurchased": "Tandakan sebagai dibeli",
   "markItemsToSeeAnalysis": "Tandakan item sebagai dibeli untuk melihat analisis.",
   "marketMode": "Mod Pasaran",
+  "marketModeDescription": "Tandakan item semasa anda membeli-belah",
   "marketsToAvoid": "Pasaran yang Perlu Dielakkan",
   "marketsToAvoidHint": "Cth.: Pasaran Y, Pasaran Z",
   "mealDragHint": "Tahan untuk menyeret and bergerak",
@@ -2131,6 +2161,7 @@
   "navRecipes": "resepi",
   "newCategoryDialog": "Kategori baharu",
   "newChat": "Sembang Baharu",
+  "newChatStarted": "Sembang baharu bermula",
   "newListTitle": "Senarai Beli-belah Baharu",
   "newPantryList": "Beli-belah Pantri",
   "newRecipe": "Resipi Baharu",
@@ -2504,6 +2535,7 @@
   "queryingYourLists": "Menanyakan senarai anda...",
   "quickActionAi": "Berbual dengan Kipi",
   "quickActionPantry": "Lihat pantri",
+  "quickAddToList": "Tambahkan ke senarai",
   "quickRecipe": "Resipi cepat",
   "quickRecipePrompt": "Cadangkan resipi dengan item dari senarai saya.",
   "quickReplies": "Balasan pantas:",

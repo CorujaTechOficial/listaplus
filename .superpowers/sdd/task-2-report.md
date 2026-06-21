@@ -1,94 +1,32 @@
-# Task 2 Report
+# Task 2: L10n keys — Report
 
-## Scope completed
+**Status:** DONE
 
-Implemented the pure meal planner cost helper models and calculator functions in the owned provider files, with focused TDD coverage in the new test file.
+## Changes
 
-## Files changed
+**File:** `lib/l10n/app_en.arb`  
+**Lines:** 1135–1155
 
-- `lib/app/meal_planner/providers/meal_plan_cost_models.dart`
-- `lib/app/meal_planner/providers/meal_plan_cost_calculator.dart`
-- `test/app/meal_planner/providers/meal_plan_cost_calculator_test.dart`
+Added 6 new localization keys for meal planner budget feature:
 
-## TDD record
+- `mealPlannerBudgetMonthCost` (with `@` metadata, placeholder `amount`)
+- `mealPlannerBudgetWeekCost` (with `@` metadata, placeholder `amount`)
+- `mealPlannerBudgetTodayCost` (with `@` metadata, placeholder `amount`)
+- `mealPlannerBudgetRemoveGoal` (no `@` metadata, no placeholders)
+- `mealPlannerBudgetGoalNav` (no `@` metadata, no placeholders)
+- `mealPlannerBudgetGoalSubtitle` (no `@` metadata, no placeholders)
 
-### Red
+All entries inserted after `mealPlannerWeekEmptyHint` and before `mealPlannerPrepTime`, maintaining JSON validity.
 
-Added the focused helper test file first and ran:
+## Verification
 
-```bash
-flutter test test/app/meal_planner/providers/meal_plan_cost_calculator_test.dart
-```
+✓ JSON is valid (proper commas, brackets, nesting)  
+✓ Placeholder metadata present only for keys with `{amount}` placeholders  
+✓ No metadata entries added for simple string keys  
+✓ Insertion point correct (after `mealPlannerWeekEmptyHint`)  
+✓ Values match brief exactly  
 
-Observed the expected failure:
+## Notes
 
-- missing `meal_plan_cost_calculator.dart`
-- missing `calculateRecipeCostDetails`
-- missing `calculatePlannedMealCost`
-
-### Green
-
-Implemented:
-
-- `RecipeCostDetails`
-- `DayMealCostData`
-- `MealPlannerSummaryData`
-- `calculateRecipeCostDetails(Recipe recipe)`
-- `calculatePlannedMealCost({required Recipe recipe, required MealPlan mealPlan})`
-
-Behavior matches the task brief:
-
-- manual recipe cost overrides automatic ingredient sum when present
-- automatic ingredient sum uses only non-null `ShoppingItem.estimatedPrice`
-- invalid `Recipe.yieldServings` normalizes to `1`
-- per-serving cost uses the effective total cost and normalized yield
-- planned meal cost scales recipe cost by `mealPlan.servings / normalizedYieldServings`
-- partial pricing state is exposed through `hasPartialPricing`
-- priced and total ingredient counts are exposed on `RecipeCostDetails`
-
-### Verification of green
-
-Re-ran the focused test:
-
-```bash
-flutter test test/app/meal_planner/providers/meal_plan_cost_calculator_test.dart
-```
-
-Result: PASS (`3` tests passed)
-
-## Additional verification
-
-Formatted touched files:
-
-```bash
-dart format \
-  lib/app/meal_planner/providers/meal_plan_cost_models.dart \
-  lib/app/meal_planner/providers/meal_plan_cost_calculator.dart \
-  test/app/meal_planner/providers/meal_plan_cost_calculator_test.dart
-```
-
-Ran the full suite once, as requested:
-
-```bash
-flutter test
-```
-
-Result: PASS (`178` tests passed)
-
-## Self-review
-
-- Stayed inside the owned implementation files plus the required report file.
-- Did not modify unrelated code or provider structure.
-- Kept the helpers pure and dependency-free.
-- Matched the brief exactly without adding extra behaviors or inferred interfaces.
-- Verified the new helpers do not break the existing suite.
-
-## Commit
-
-Created commit:
-
-- `feat: add meal planner cost calculators`
-
-## Concerns
-
-No functional concerns in scope. `DayMealCostData` and `MealPlannerSummaryData` are intentionally added as immutable models only in this task and are not yet consumed elsewhere.
+- Shell commands (`flutter gen-l10n`, translate scripts) cannot be run in this environment.
+- User will need to run translation steps manually: `flutter gen-l10n`, `python3 scripts/translate_missing.py`, `python3 scripts/review_translations.py`, `flutter gen-l10n`.

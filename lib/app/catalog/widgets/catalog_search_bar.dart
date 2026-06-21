@@ -29,23 +29,28 @@ class CatalogSearchBar extends StatelessWidget {
         prefixIcon: const Icon(Icons.search, size: 20),
         suffixIcon: ListenableBuilder(
           listenable: controller,
-          builder: (_, _) => controller.text.isNotEmpty
-              ? IconButton(
-                  icon: const Icon(Icons.clear, size: 18),
-                  onPressed: () {
-                    controller.clear();
-                    onChanged?.call('');
-                  },
-                )
-              : const SizedBox.shrink(),
+          builder:
+              (_, _) =>
+                  controller.text.isNotEmpty
+                      ? IconButton(
+                        icon: const Icon(Icons.clear, size: 18),
+                        onPressed: () {
+                          controller.clear();
+                          onChanged?.call('');
+                        },
+                      )
+                      : const SizedBox.shrink(),
         ),
         filled: true,
-        fillColor: isDark ? const Color(0xFF232730) : Colors.grey.withAlpha(25),
+        fillColor: theme.colorScheme.surfaceContainerHighest,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(RadiusTokens.full),
           borderSide: BorderSide.none,
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: 10),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: Spacing.md,
+          vertical: Spacing.sm,
+        ),
       ),
     );
   }

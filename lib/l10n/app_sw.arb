@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "Msaidizi wa AI",
   "aiAssistantDescription": "Pata mapendekezo mahiri, mapishi na vidokezo vya kibinafsi kwa msaidizi wetu wa AI.",
   "aiAssistantTitle": "Msaidizi wa AI",
+  "aiCapabilitiesBudget": "Bajeti na Bei",
+  "aiCapabilitiesLists": "Orodha za Ununuzi",
+  "aiCapabilitiesOrganize": "Shirika",
+  "aiCapabilitiesRecipes": "Mapishi & Menyu",
+  "aiCapabilitiesTitle": "Naweza kufanya nini?",
   "aiConnectionError": "Haikuweza kuunganisha kwa huduma ya AI. Angalia muunganisho wako.",
   "aiCreditsRemaining": "Salio la mikopo {remaining}",
   "aiEmptyResponseError": "Huduma ya AI ilirudisha jibu tupu.",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "Weka kama imenunuliwa",
   "markItemsToSeeAnalysis": "Weka alama ya vitu kama vilivyonunuliwa ili kuona uchambuzi.",
   "marketMode": "Hali ya Soko",
+  "marketModeDescription": "Angalia bidhaa unaponunua",
   "marketsToAvoid": "Masoko ya Kuepuka",
   "marketsToAvoidHint": "K.m.: Market Y, Market Z",
   "mealPlannerAddMeal": "Ongeza Mlo",
   "mealPlannerAddType": "Ongeza aina ya chakula",
+  "mealPlannerBudgetGoalNav": "Bajeti ya mpangaji wa chakula",
+  "mealPlannerBudgetGoalSubtitle": "Lengo la matumizi ya kila mwezi kwa ajili ya kupanga chakula",
+  "mealPlannerBudgetMonthCost": "Mwezi: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Ondoa lengo",
+  "mealPlannerBudgetTodayCost": "Leo: {amount}",
+  "mealPlannerBudgetWeekCost": "Wiki: {amount}",
   "mealPlannerCustomTypeLabel": "Aina maalum",
   "mealPlannerDateLabel": "Tarehe",
   "mealPlannerDefaultTypeLabel": "Aina chaguomsingi",
@@ -2004,6 +2061,7 @@
   "navRecipes": "Mapishi",
   "newCategoryDialog": "Kategoria mpya",
   "newChat": "Gumzo Mpya",
+  "newChatStarted": "Gumzo jipya limeanza",
   "newListTitle": "Orodha Mpya ya Ununuzi",
   "newPantryList": "Ununuzi wa Pantri",
   "newRecipe": "Kichocheo Kipya",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "Inauliza orodha zako...",
   "quickActionAi": "Sogoa na Kipi",
   "quickActionPantry": "Angalia pantry",
+  "quickAddToList": "Ongeza kwenye orodha",
   "quickRecipe": "Mapishi ya haraka",
   "quickRecipePrompt": "Pendekeza mapishi na vitu kutoka kwenye orodha yangu.",
   "quickReplies": "Majibu ya haraka:",

@@ -6,7 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import '../../../theme/tokens.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import '../../../models/unit.dart';
 import 'package:shopping_list/app/catalog/providers/catalog_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
@@ -62,7 +62,9 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
       context: context,
       isScrollControlled: true,
       shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(RadiusTokens.xxxl)),
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(RadiusTokens.xxxl),
+        ),
       ),
       builder: (context) => const _BarcodeScannerSheet(),
     );
@@ -125,7 +127,9 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
 
     final meta = _prefilledMeta;
     try {
-      await ref.read(shoppingListItemsProvider(widget.listId).notifier).addItem(
+      await ref
+          .read(shoppingListItemsProvider(widget.listId).notifier)
+          .addItem(
             listId: widget.listId,
             name: name,
             quantity: meta?.quantity ?? 1,
@@ -152,136 +156,206 @@ class _QuickAddBarState extends ConsumerState<QuickAddBar> {
     ref.watch(recentItemMemoryProvider);
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-      decoration: BoxDecoration(
-        color: theme.colorScheme.surface,
-        border: Border(
-          top: BorderSide(
-            color: theme.colorScheme.outlineVariant.withAlpha((0.3 * 255).toInt()),
-            width: 1,
+          padding: const EdgeInsets.symmetric(
+            horizontal: Spacing.xs,
+            vertical: Spacing.xs,
           ),
-        ),
-      ),
-      child: SafeArea(
-        top: false,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (_prefilledMeta != null)
-              _MetaChipRow(
-                meta: _prefilledMeta!,
-                onClear: () => setState(() => _prefilledMeta = null),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.surface,
+            border: Border(
+              top: BorderSide(
+                color: theme.colorScheme.outlineVariant.withAlpha(
+                  (0.3 * 255).toInt(),
+                ),
+                width: 1,
               ),
-            StyledAutocomplete(
-              onSelected: _onSuggestionSelected,
-              optionsBuilder: (textEditingValue) {
-            if (textEditingValue.text.isEmpty) {
-              return const Iterable<String>.empty();
-            }
-            return commonProducts.where((option) {
-              return option.toLowerCase().contains(textEditingValue.text.toLowerCase());
-            });
-          },
-          fieldViewBuilder: (context, textEditingController, focusNode, onFieldSubmitted) {
-            return Row(
+            ),
+          ),
+          child: SafeArea(
+            top: false,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  child: TextField(
-                    controller: textEditingController,
-                    focusNode: focusNode,
-                    decoration: InputDecoration(
-                      hintText: l10n.addItem,
-                      filled: true,
-                      fillColor: isDark
-                          ? theme.colorScheme.surfaceContainerHigh
-                          : theme.colorScheme.surfaceContainerHighest.withAlpha(77),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(24),
-                        borderSide: BorderSide.none,
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                      prefixIcon: Icon(
-                        Icons.add_shopping_cart,
-                        size: 20,
-                        color: focusNode.hasFocus ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant,
-                      ),
-                      suffixIcon: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          if (_isListening)
-                            Container(
-                              height: 24,
-                              width: 60,
-                              margin: const EdgeInsets.only(right: 8),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: List.generate(5, (index) => 
-                                  Container(
-                                    width: 3,
-                                    height: 10,
-                                    decoration: BoxDecoration(
-                                      color: theme.colorScheme.primary,
-                                      borderRadius: BorderRadius.circular(2),
-                                    ),
-                                  ).animate(onPlay: (c) {
-                                    if (!WidgetsBinding.instance.runtimeType.toString().contains('TestWidgetsFlutterBinding')) {
-                                      c.repeat(reverse: true);
-                                    }
-                                  })
-                                   .scaleY(
-                                     // ignore: prefer_int_literals
-                                     begin: 0.5, 
-                                     // ignore: prefer_int_literals
-                                     end: 2.0, 
-                                     duration: Duration(milliseconds: 300 + (index * 100)),
-                                     curve: Curves.easeInOut
-                                   )
+                if (_prefilledMeta != null)
+                  _MetaChipRow(
+                    meta: _prefilledMeta!,
+                    onClear: () => setState(() => _prefilledMeta = null),
+                  ),
+                StyledAutocomplete(
+                  onSelected: _onSuggestionSelected,
+                  optionsBuilder: (textEditingValue) {
+                    if (textEditingValue.text.isEmpty) {
+                      return const Iterable<String>.empty();
+                    }
+                    return commonProducts.where((option) {
+                      return option.toLowerCase().contains(
+                        textEditingValue.text.toLowerCase(),
+                      );
+                    });
+                  },
+                  fieldViewBuilder: (
+                    context,
+                    textEditingController,
+                    focusNode,
+                    onFieldSubmitted,
+                  ) {
+                    return Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            controller: textEditingController,
+                            focusNode: focusNode,
+                            decoration: InputDecoration(
+                              hintText: l10n.addItem,
+                              filled: true,
+                              fillColor:
+                                  isDark
+                                      ? theme.colorScheme.surfaceContainerHigh
+                                      : theme
+                                          .colorScheme
+                                          .surfaceContainerHighest
+                                          .withAlpha(77),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(
+                                  RadiusTokens.xxl,
                                 ),
+                                borderSide: BorderSide.none,
+                              ),
+                              contentPadding: const EdgeInsets.symmetric(
+                                horizontal: Spacing.md,
+                                vertical: 10,
+                              ),
+                              prefixIcon: Icon(
+                                Icons.add_shopping_cart,
+                                size: 20,
+                                color:
+                                    focusNode.hasFocus
+                                        ? theme.colorScheme.primary
+                                        : theme.colorScheme.onSurfaceVariant,
+                              ),
+                              suffixIcon: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  if (_isListening)
+                                    Container(
+                                      height: 24,
+                                      width: 60,
+                                      margin: const EdgeInsets.only(
+                                        right: Spacing.xs,
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: List.generate(
+                                          5,
+                                          (index) => Container(
+                                                width: 3,
+                                                height: 10,
+                                                decoration: BoxDecoration(
+                                                  color:
+                                                      theme.colorScheme.primary,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        RadiusTokens.bar,
+                                                      ),
+                                                ),
+                                              )
+                                              .animate(
+                                                onPlay: (c) {
+                                                  if (!WidgetsBinding
+                                                      .instance
+                                                      .runtimeType
+                                                      .toString()
+                                                      .contains(
+                                                        'TestWidgetsFlutterBinding',
+                                                      )) {
+                                                    c.repeat(reverse: true);
+                                                  }
+                                                },
+                                              )
+                                              .scaleY(
+                                                // ignore: prefer_int_literals
+                                                begin: 0.5,
+                                                // ignore: prefer_int_literals
+                                                end: 2.0,
+                                                duration: Duration(
+                                                  milliseconds:
+                                                      300 + (index * 100),
+                                                ),
+                                                curve: Curves.easeInOut,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  _QuickActionButton(
+                                    icon: Icons.qr_code_scanner,
+                                    color: theme.colorScheme.primary,
+                                    onPressed:
+                                        () =>
+                                            _scanBarcode(textEditingController),
+                                  ),
+                                  _QuickActionButton(
+                                    icon:
+                                        _isListening
+                                            ? Icons.mic
+                                            : Icons.mic_none,
+                                    color:
+                                        _isListening
+                                            ? theme.colorScheme.error
+                                            : theme.colorScheme.primary,
+                                    onPressed:
+                                        () => _listen(textEditingController),
+                                    isPulse: _isListening,
+                                  ),
+                                ],
                               ),
                             ),
-                          _QuickActionButton(
-                            icon: Icons.qr_code_scanner,
-                            color: Colors.blue,
-                            onPressed: () => _scanBarcode(textEditingController),
+                            textInputAction: TextInputAction.send,
+                            onSubmitted: (_) => _submit(textEditingController),
+                            enabled: !_isAdding,
                           ),
-                          _QuickActionButton(
-                            icon: _isListening ? Icons.mic : Icons.mic_none,
-                            color: _isListening ? theme.colorScheme.error : theme.colorScheme.primary,
-                            onPressed: () => _listen(textEditingController),
-                            isPulse: _isListening,
+                        ),
+                        const SizedBox(width: Spacing.xs),
+                        IconButton.filled(
+                          onPressed:
+                              _isAdding
+                                  ? null
+                                  : () => _submit(textEditingController),
+                          icon:
+                              _isAdding
+                                  ? const SizedBox(
+                                    width: 20,
+                                    height: 20,
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 2.5,
+                                      color: Colors.white,
+                                    ),
+                                  )
+                                  : const Icon(
+                                    Icons.arrow_upward,
+                                    size: 22,
+                                    color: Colors.white,
+                                  ),
+                          style: IconButton.styleFrom(
+                            backgroundColor:
+                                _isAdding
+                                    ? theme.colorScheme.surfaceContainerHighest
+                                    : theme.colorScheme.primary,
+                            foregroundColor: Colors.white,
                           ),
-                        ],
-                      ),
-                    ),
-                    textInputAction: TextInputAction.send,
-                    onSubmitted: (_) => _submit(textEditingController),
-                    enabled: !_isAdding,
-                  ),
-                ),
-                const SizedBox(width: 8),
-                IconButton.filled(
-                  onPressed: _isAdding ? null : () => _submit(textEditingController),
-                  icon: _isAdding
-                      ? const SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(strokeWidth: 2.5, color: Colors.white),
-                        )
-                      : const Icon(Icons.arrow_upward, size: 22, color: Colors.white),
-                  style: IconButton.styleFrom(
-                    backgroundColor: _isAdding ? theme.colorScheme.surfaceContainerHighest : theme.colorScheme.primary,
-                    foregroundColor: Colors.white,
-                  ),
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ],
-            );
-          },
             ),
-          ],
-        ),
-      ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2, end: 0, curve: Curves.easeOut);
+          ),
+        )
+        .animate()
+        .fadeIn(duration: 400.ms)
+        .slideY(begin: 0.2, end: 0, curve: Curves.easeOut);
   }
 }
 
@@ -301,16 +375,29 @@ class _QuickActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget iconWidget = Icon(icon, size: 20, color: color);
-    
+
     if (isPulse) {
-      iconWidget = iconWidget.animate(onPlay: (c) {
-            if (!WidgetsBinding.instance.runtimeType.toString().contains('TestWidgetsFlutterBinding')) {
-              c.repeat();
-            }
-          })
-          .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2), duration: 500.ms)
+      iconWidget = iconWidget
+          .animate(
+            onPlay: (c) {
+              if (!WidgetsBinding.instance.runtimeType.toString().contains(
+                'TestWidgetsFlutterBinding',
+              )) {
+                c.repeat();
+              }
+            },
+          )
+          .scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.2, 1.2),
+            duration: 500.ms,
+          )
           .then()
-          .scale(begin: const Offset(1.2, 1.2), end: const Offset(1, 1), duration: 500.ms);
+          .scale(
+            begin: const Offset(1.2, 1.2),
+            end: const Offset(1, 1),
+            duration: 500.ms,
+          );
     }
 
     return IconButton(
@@ -327,7 +414,8 @@ class _BarcodeScannerSheet extends ConsumerStatefulWidget {
   const _BarcodeScannerSheet();
 
   @override
-  ConsumerState<_BarcodeScannerSheet> createState() => _BarcodeScannerSheetState();
+  ConsumerState<_BarcodeScannerSheet> createState() =>
+      _BarcodeScannerSheetState();
 }
 
 class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
@@ -348,7 +436,9 @@ class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
       height: MediaQuery.of(context).size.height * 0.7,
       decoration: const BoxDecoration(
         color: Colors.black,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(RadiusTokens.xxxl)),
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(RadiusTokens.xxxl),
+        ),
       ),
       child: Column(
         children: [
@@ -359,7 +449,11 @@ class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
               children: [
                 Text(
                   l10n.scanBarcodeTitle,
-                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
                 ),
                 IconButton(
                   icon: const Icon(Icons.close, color: Colors.white),
@@ -382,7 +476,9 @@ class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
                     _hasScanned = true;
                     setState(() => _isLooking = true);
 
-                    final product = await ref.read(barcodeProductProvider(rawValue).future);
+                    final product = await ref.read(
+                      barcodeProductProvider(rawValue).future,
+                    );
 
                     if (!mounted) {
                       return;
@@ -392,7 +488,8 @@ class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
                     // ignore: use_build_context_synchronously
                     final messenger = ScaffoldMessenger.of(context);
                     // ignore: use_build_context_synchronously
-                    final notFoundMsg = AppLocalizations.of(context)!.catalogProductNotFound;
+                    final notFoundMsg =
+                        AppLocalizations.of(context)!.catalogProductNotFound;
 
                     if (product != null) {
                       nav.pop(product.displayName);
@@ -410,7 +507,7 @@ class _BarcodeScannerSheetState extends ConsumerState<_BarcodeScannerSheet> {
           ),
           if (_isLooking)
             const Padding(
-              padding: EdgeInsets.all(16),
+              padding: EdgeInsets.all(Spacing.md),
               child: CircularProgressIndicator(),
             ),
           const Padding(
@@ -437,22 +534,33 @@ class _MetaChipRow extends ConsumerWidget {
     final theme = Theme.of(context);
     final categories = ref.watch(categoriesProvider).value ?? <CategoryData>[];
     final cat = categories.where((c) => c.id == meta.categoryId).firstOrNull;
-    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
+    final currencyCode = resolveCurrencyCode(
+      ref.watch(currencySettingProvider),
+      Localizations.localeOf(context),
+    );
 
     return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 12, bottom: 4),
+      padding: const EdgeInsets.only(
+        left: Spacing.md,
+        right: Spacing.sm,
+        bottom: Spacing.xxs,
+      ),
       child: Row(
         children: [
           if (cat != null) ...[
-            Icon(Icons.label_outline, size: 13, color: theme.colorScheme.primary),
-            const SizedBox(width: 4),
+            Icon(
+              Icons.label_outline,
+              size: 13,
+              color: theme.colorScheme.primary,
+            ),
+            const SizedBox(width: Spacing.xxs),
             Text(
-              cat.name,
+              cat.localizedName(AppLocalizations.of(context)!),
               style: theme.textTheme.labelSmall?.copyWith(
                 color: theme.colorScheme.primary,
               ),
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: Spacing.xs),
           ],
           if (meta.estimatedPrice != null) ...[
             Text(
@@ -462,7 +570,7 @@ class _MetaChipRow extends ConsumerWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: Spacing.xs),
           ],
           Text(
             '${meta.quantity} ${meta.unit.label}',

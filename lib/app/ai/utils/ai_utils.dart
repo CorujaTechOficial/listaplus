@@ -14,11 +14,15 @@ class AiUtils {
     try {
       final result = await future.timeout(timeout);
       stopwatch.stop();
-      debugPrint('[AiUtils] [Performance] ${label ?? "future"} concluído em ${stopwatch.elapsedMilliseconds}ms');
+      debugPrint(
+        '[AiUtils] [Performance] ${label ?? "future"} concluído em ${stopwatch.elapsedMilliseconds}ms',
+      );
       return result;
     } on Object catch (e) {
       stopwatch.stop();
-      debugPrint('[AiUtils] [Performance] ${label ?? "future"} falhou/timeout após ${stopwatch.elapsedMilliseconds}ms: $e');
+      debugPrint(
+        '[AiUtils] [Performance] ${label ?? "future"} falhou/timeout após ${stopwatch.elapsedMilliseconds}ms: $e',
+      );
       return defaultValue;
     }
   }

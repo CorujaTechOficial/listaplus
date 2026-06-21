@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../theme/tokens.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class CreateListDialog extends ConsumerStatefulWidget {
-
   const CreateListDialog({super.key, this.initialName, this.onCreate});
   final String? initialName;
   final Future<void> Function(String name)? onCreate;
@@ -32,8 +31,13 @@ class _CreateListDialogState extends ConsumerState<CreateListDialog> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
     final isRename = widget.initialName != null;
     return AlertDialog(
+      icon: Icon(
+        isRename ? Icons.edit_note : Icons.playlist_add,
+        color: theme.colorScheme.secondary,
+      ),
       title: Text(isRename ? l10n.renameListDialog : l10n.createListDialog),
       content: Padding(
         padding: const EdgeInsets.only(top: Spacing.xs),
@@ -50,15 +54,16 @@ class _CreateListDialogState extends ConsumerState<CreateListDialog> {
           onPressed: _isCreating ? null : () => Navigator.pop(context),
           child: Text(l10n.cancel),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: _submit,
-          child: _isCreating
-              ? const SizedBox(
-                  width: 18,
-                  height: 18,
-                  child: CircularProgressIndicator(strokeWidth: 2),
-                )
-              : Text(isRename ? l10n.save : l10n.create),
+          child:
+              _isCreating
+                  ? const SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                  : Text(isRename ? l10n.save : l10n.create),
         ),
       ],
     );

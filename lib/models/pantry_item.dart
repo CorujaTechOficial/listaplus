@@ -14,9 +14,9 @@ class PantryItem {
     this.trackStock = true,
     DateTime? createdAt,
     DateTime? updatedAt,
-  })  : id = id ?? const Uuid().v4(),
-        createdAt = createdAt ?? DateTime.now(),
-        updatedAt = updatedAt ?? DateTime.now();
+  }) : id = id ?? const Uuid().v4(),
+       createdAt = createdAt ?? DateTime.now(),
+       updatedAt = updatedAt ?? DateTime.now();
 
   factory PantryItem.fromJson(Map<String, dynamic> json) {
     final rawCategory = json['category'];
@@ -55,9 +55,13 @@ class PantryItem {
       idealQuantity: (json['idealQuantity'] as num?)?.toInt() ?? 1,
       currentQuantity: (json['currentQuantity'] as num?)?.toInt() ?? 0,
       categoryId: resolvedId,
-      unit: json['unit'] != null
-          ? Unit.values.firstWhere((e) => e.name == json['unit'], orElse: () => Unit.un)
-          : Unit.un,
+      unit:
+          json['unit'] != null
+              ? Unit.values.firstWhere(
+                (e) => e.name == json['unit'],
+                orElse: () => Unit.un,
+              )
+              : Unit.un,
       estimatedPrice: (json['estimatedPrice'] as num?)?.toDouble(),
       trackStock: json['trackStock'] as bool? ?? true,
       createdAt: safeParseDate(json['createdAt']),
@@ -100,7 +104,10 @@ class PantryItem {
       currentQuantity: currentQuantity ?? this.currentQuantity,
       categoryId: categoryId ?? this.categoryId,
       unit: unit ?? this.unit,
-      estimatedPrice: identical(estimatedPrice, _sentinel) ? this.estimatedPrice : estimatedPrice as double?,
+      estimatedPrice:
+          identical(estimatedPrice, _sentinel)
+              ? this.estimatedPrice
+              : estimatedPrice as double?,
       trackStock: trackStock ?? this.trackStock,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,

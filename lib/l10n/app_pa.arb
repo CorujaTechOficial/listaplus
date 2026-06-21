@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -604,6 +619,9 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@mealPlannerBudgetMonthCost": {
     "placeholders": {
       "amount": {
@@ -675,6 +693,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1466,6 +1487,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1644,6 +1668,11 @@
   "aiAssistantGeneral": "ਜਨਰਲ ਸਹਾਇਕ",
   "aiAssistantHistory": "ਸਹਾਇਕ ਇਤਿਹਾਸ",
   "aiAssistantTitle": "AI ਸਹਾਇਕ",
+  "aiCapabilitiesBudget": "ਬਜਟ ਅਤੇ ਕੀਮਤਾਂ",
+  "aiCapabilitiesLists": "ਖਰੀਦਦਾਰੀ ਸੂਚੀਆਂ",
+  "aiCapabilitiesOrganize": "ਸੰਗਠਨ",
+  "aiCapabilitiesRecipes": "ਪਕਵਾਨਾਂ ਅਤੇ ਮੀਨੂ",
+  "aiCapabilitiesTitle": "ਮੈਂ ਕੀ ਕਰ ਸੱਕਦਾਹਾਂ?",
   "aiConnectionError": "AI ਸੇਵਾ ਨਾਲ ਕਨੈਕਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ। ਆਪਣੇ ਕਨੈਕਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ।",
   "aiConversationHistory": "ਗੱਲਬਾਤ ਦਾ ਇਤਿਹਾਸ",
   "aiCreditsRemaining": "{remaining} ਕ੍ਰੈਡਿਟ ਬਾਕੀ",
@@ -2076,6 +2105,7 @@
   "markAsPurchased": "ਖਰੀਦਿਆ ਹੋਇਆ ਦਰਜ ਕਰੋ",
   "markItemsToSeeAnalysis": "ਵਿਸ਼ਲੇਸ਼ਣ ਵੇਖਣ ਲਈ ਚੀਜ਼ਾਂ ਨੂੰ ਖਰੀਦਿਆ ਦਰਜ ਕਰੋ।",
   "marketMode": "ਮਾਰਕੀਟ ਮੋਡ",
+  "marketModeDescription": "ਜਦੋਂ ਤੁਸੀਂ ਖਰੀਦਦਾਰੀ ਕਰਦੇ ਹੋ ਤਾਂ ਚੀਜ਼ਾਂ ਦੀ ਜਾਂਚ ਕਰੋ",
   "marketsToAvoid": "ਬਚਣ ਲਈ ਬਾਜ਼ਾਰ",
   "marketsToAvoidHint": "ਉਦਾਹਰਨ: Market Y, Market Z",
   "mealDragHint": "ਘਸੀਟਣ ਅਤੇ ਮੂਵ ਕਰਨ ਲਈ ਹੋਲਡ ਕਰੋ",
@@ -2162,6 +2192,7 @@
   "navRecipes": "ਪਕਵਾਨਾਂ",
   "newCategoryDialog": "ਨਵੀਂ ਸ਼੍ਰੇਣੀ",
   "newChat": "ਨਵੀਂ ਚੈਟ",
+  "newChatStarted": "ਨਵੀਂ ਗੱਲਬਾਤ ਸ਼ੁਰੂ ਹੋਈ",
   "newListTitle": "ਨਵੀਂ ਸ਼ਾਪਿੰਗ ਲਿਸਟ",
   "newPantryList": "ਪੈਂਟਰੀ ਸ਼ਾਪਿੰਗ",
   "newRecipe": "ਨਵੀਂ ਵਿਅੰਜਨ",
@@ -2535,6 +2566,7 @@
   "queryingYourLists": "ਤੁਹਾਡੀਆਂ ਸੂਚੀਆਂ ਦੀ ਪੁੱਛਗਿੱਛ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
   "quickActionAi": "ਕੀਪੀ ਨਾਲ ਗੱਲਬਾਤ ਕਰੋ",
   "quickActionPantry": "ਪੈਂਟਰੀ ਵੇਖੋ",
+  "quickAddToList": "ਸੂਚੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ",
   "quickRecipe": "ਤੁਰੰਤ ਪਕਵਾਨ",
   "quickRecipePrompt": "ਮੇਰੀ ਲਿਸਟ ਦੀਆਂ ਚੀਜ਼ਾਂ ਨਾਲ ਪਕਵਾਨਾਂ ਸੁਝਾਓ।",
   "quickReplies": "ਤੇਜ਼ ਜਵਾਬ:",

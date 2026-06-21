@@ -47,17 +47,17 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
       if (!mounted) {
         return;
       }
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.profileSaved)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.profileSaved)));
       Navigator.pop(context);
     } on Exception catch (e) {
       if (!mounted) {
         return;
       }
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('${l10n.errorSavingProfile}: $e')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('${l10n.errorSavingProfile}: $e')));
     }
   }
 
@@ -70,12 +70,7 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.userProfile),
-        actions: [
-          TextButton(
-            onPressed: _save,
-            child: Text(l10n.save),
-          ),
-        ],
+        actions: [TextButton(onPressed: _save, child: Text(l10n.save))],
       ),
       body: SafeArea(
         child: profileAsync.when(
@@ -83,7 +78,8 @@ class _UserProfileScreenState extends ConsumerState<UserProfileScreen> {
             _initControllers(profile);
             return _buildForm(theme);
           },
-          loading: () => const Center(child: CircularProgressIndicator.adaptive()),
+          loading:
+              () => const Center(child: CircularProgressIndicator.adaptive()),
           error: (e, _) => Center(child: Text(l10n.error('$e'))),
         ),
       ),

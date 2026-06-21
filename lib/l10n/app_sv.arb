@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "AI-assistent",
   "aiAssistantDescription": "Få smarta förslag, recept och personliga tips med vår AI-assistent.",
   "aiAssistantTitle": "AI-assistent",
+  "aiCapabilitiesBudget": "Budget & priser",
+  "aiCapabilitiesLists": "Inköpslistor",
+  "aiCapabilitiesOrganize": "Organisation",
+  "aiCapabilitiesRecipes": "Recept & Menyer",
+  "aiCapabilitiesTitle": "Vad kan jag göra?",
   "aiConnectionError": "Det gick inte att ansluta till AI-tjänsten. Kontrollera din anslutning.",
   "aiCreditsRemaining": "{remaining} krediter kvar",
   "aiEmptyResponseError": "AI-tjänsten returnerade ett tomt svar.",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "Markera som köpt",
   "markItemsToSeeAnalysis": "Markera varor som köpta för att se analysen.",
   "marketMode": "Marknadsläge",
+  "marketModeDescription": "Bocka av varor när du handlar",
   "marketsToAvoid": "Marknader att undvika",
   "marketsToAvoidHint": "Till exempel: Marknad Y, Marknad Z",
   "mealPlannerAddMeal": "Lägg till måltid",
   "mealPlannerAddType": "Lägg till måltidstyp",
+  "mealPlannerBudgetGoalNav": "Budget för måltidsplanerare",
+  "mealPlannerBudgetGoalSubtitle": "Månatligt utgiftsmål för måltidsplanering",
+  "mealPlannerBudgetMonthCost": "Månad: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Ta bort målet",
+  "mealPlannerBudgetTodayCost": "Idag: {amount}",
+  "mealPlannerBudgetWeekCost": "Vecka: {amount}",
   "mealPlannerCustomTypeLabel": "Anpassad typ",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDefaultTypeLabel": "Standardtyp",
@@ -2004,6 +2061,7 @@
   "navRecipes": "Recept",
   "newCategoryDialog": "Ny kategori",
   "newChat": "Ny chatt",
+  "newChatStarted": "Ny chatt har startat",
   "newListTitle": "Ny Inköpslista",
   "newPantryList": "Skafferihandling",
   "newRecipe": "Nytt recept",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "Frågar efter dina listor...",
   "quickActionAi": "Chatta med Kipi",
   "quickActionPantry": "Visa skafferi",
+  "quickAddToList": "Lägg till i listan",
   "quickRecipe": "Snabbt recept",
   "quickRecipePrompt": "Föreslå recept med varor från min lista.",
   "quickReplies": "Snabba svar:",

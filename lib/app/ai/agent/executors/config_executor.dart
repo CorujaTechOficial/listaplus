@@ -50,40 +50,67 @@ class ConfigExecutor {
       'ThemeMode.light': 'claro',
       'ThemeMode.dark': 'escuro',
     };
-    return ToolResult(toolCallId: '', content: 'Tema atual: ${labels[mode.toString()] ?? mode.name}');
+    return ToolResult(
+      toolCallId: '',
+      content: 'Tema atual: ${labels[mode.toString()] ?? mode.name}',
+    );
   }
 
-  Future<ToolResult> setTheme(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> setTheme(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final mode = args['mode'] as String;
     switch (mode) {
       case 'light':
-        await container.read(darkModeProvider.notifier).setMode(ThemeMode.light);
+        await container
+            .read(darkModeProvider.notifier)
+            .setMode(ThemeMode.light);
       case 'dark':
         await container.read(darkModeProvider.notifier).setMode(ThemeMode.dark);
       default:
-        await container.read(darkModeProvider.notifier).setMode(ThemeMode.system);
+        await container
+            .read(darkModeProvider.notifier)
+            .setMode(ThemeMode.system);
     }
     return ToolResult(toolCallId: '', content: 'Tema alterado para $mode.');
   }
 
   // --- Preferences ---
 
-  Future<ToolResult> saveUserPreference(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> saveUserPreference(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final key = args['key'] as String;
     final value = args['value'] as String;
     final service = container.read(firestoreServiceProvider);
     if (service == null) {
-      return const ToolResult(toolCallId: '', content: 'Usuário não autenticado.', success: false);
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Usuário não autenticado.',
+        success: false,
+      );
     }
     await service.updatePreference(key, value);
-    return ToolResult(toolCallId: '', content: 'Preferência "$key" salva como "$value".');
+    return ToolResult(
+      toolCallId: '',
+      content: 'Preferência "$key" salva como "$value".',
+    );
   }
 
-  Future<ToolResult> deleteUserPreference(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> deleteUserPreference(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final key = args['key'] as String;
     final service = container.read(firestoreServiceProvider);
     if (service == null) {
-      return const ToolResult(toolCallId: '', content: 'Usuário não autenticado.', success: false);
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Usuário não autenticado.',
+        success: false,
+      );
     }
     await service.deletePreference(key);
     return ToolResult(toolCallId: '', content: 'Preferência "$key" removida.');
@@ -98,12 +125,18 @@ class ConfigExecutor {
       label: 'userProfileProvider',
     );
     if (profile.isEmpty) {
-      return const ToolResult(toolCallId: '', content: 'Nenhuma preferência de perfil configurada ainda.');
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Nenhuma preferência de perfil configurada ainda.',
+      );
     }
     return ToolResult(toolCallId: '', content: profile.toString());
   }
 
-  Future<ToolResult> updateUserProfile(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> updateUserProfile(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final current = await AiUtils.awaitFuture(
       container.read(userProfileProvider.future),
       defaultValue: const UserProfile(),
@@ -116,7 +149,10 @@ class ConfigExecutor {
       notes: args['notes'] as String?,
     );
     await container.read(userProfileServiceProvider).updateProfile(updated);
-    return const ToolResult(toolCallId: '', content: 'Perfil atualizado com sucesso.');
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Perfil atualizado com sucesso.',
+    );
   }
 
   // --- Backup ---
@@ -126,7 +162,10 @@ class ConfigExecutor {
     return ToolResult(toolCallId: '', content: json);
   }
 
-  Future<ToolResult> importBackup(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> importBackup(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final json = args['json'] as String;
     final result = await container.read(backupProvider).importFromJson(json);
     return ToolResult(toolCallId: '', content: result);
@@ -134,22 +173,27 @@ class ConfigExecutor {
 
   // --- Artifact ---
 
-  Future<ToolResult> generateArtifact(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> generateArtifact(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final title = args['title'] as String;
     final icon = args['icon'] as String;
     final description = args['description'] as String?;
 
     final controlsJson = args['controls'] as String;
     final List<dynamic> controlsRaw = jsonDecode(controlsJson) as List<dynamic>;
-    final controls = controlsRaw.map((e) {
-      return ArtifactControl.fromJson(Map<String, dynamic>.from(e as Map));
-    }).toList();
+    final controls =
+        controlsRaw.map((e) {
+          return ArtifactControl.fromJson(Map<String, dynamic>.from(e as Map));
+        }).toList();
 
     final itemsJson = args['items'] as String;
     final List<dynamic> itemsRaw = jsonDecode(itemsJson) as List<dynamic>;
-    final items = itemsRaw.map((e) {
-      return ArtifactItem.fromJson(Map<String, dynamic>.from(e as Map));
-    }).toList();
+    final items =
+        itemsRaw.map((e) {
+          return ArtifactItem.fromJson(Map<String, dynamic>.from(e as Map));
+        }).toList();
 
     final baseServings = (args['baseServings'] as num?)?.toDouble() ?? 1.0;
     final budget = (args['budget'] as num?)?.toDouble();
@@ -180,7 +224,10 @@ class ConfigExecutor {
 
   // --- Recipes ---
 
-  Future<ToolResult> getRecipes(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> getRecipes(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final query = args['query'] as String?;
     final recipes = await AiUtils.awaitFuture(
       container.read(recipesProvider.future),
@@ -189,19 +236,30 @@ class ConfigExecutor {
     );
     var filtered = recipes;
     if (query != null && query.isNotEmpty) {
-      filtered = recipes.where((r) => r.name.toLowerCase().contains(query.toLowerCase())).toList();
+      filtered =
+          recipes
+              .where((r) => r.name.toLowerCase().contains(query.toLowerCase()))
+              .toList();
     }
     if (filtered.isEmpty) {
-      return const ToolResult(toolCallId: '', content: 'Nenhuma receita encontrada.');
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Nenhuma receita encontrada.',
+      );
     }
     final result = StringBuffer('Minhas Receitas:\n');
     for (final recipe in filtered) {
-      result.writeln('- ${recipe.name} (ID: ${recipe.id}): ${recipe.description}');
+      result.writeln(
+        '- ${recipe.name} (ID: ${recipe.id}): ${recipe.description}',
+      );
     }
     return ToolResult(toolCallId: '', content: result.toString());
   }
 
-  Future<ToolResult> createRecipe(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> createRecipe(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final name = (args['name'] as String).trim();
     final description = args['description'] as String;
     final ingredientsJson = args['ingredients'] as String;
@@ -220,27 +278,35 @@ class ConfigExecutor {
     if (duplicate != null) {
       return const ToolResult(
         toolCallId: '',
-        content: 'Já existe uma receita com este nome. Use um nome diferente ou edite a receita existente.',
+        content:
+            'Já existe uma receita com este nome. Use um nome diferente ou edite a receita existente.',
         success: false,
       );
     }
 
-    final List<dynamic> ingredientsRaw = jsonDecode(ingredientsJson) as List<dynamic>;
-    final ingredients = ingredientsRaw.map((e) {
-      final data = Map<String, dynamic>.from(e as Map);
-      return ShoppingItem(
-        id: const Uuid().v4(),
-        shoppingListId: '',
-        name: data['name'] as String,
-        quantity: (data['quantity'] as num).toInt(),
-        unit: _unit(data['unit'] as String? ?? 'un'),
-        categoryId: data['category'] as String? ?? 'others',
-        createdAt: DateTime.now(),
-        updatedAt: DateTime.now(),
-      );
-    }).toList();
+    final List<dynamic> ingredientsRaw =
+        jsonDecode(ingredientsJson) as List<dynamic>;
+    final ingredients =
+        ingredientsRaw.map((e) {
+          final data = Map<String, dynamic>.from(e as Map);
+          return ShoppingItem(
+            id: const Uuid().v4(),
+            shoppingListId: '',
+            name: data['name'] as String,
+            quantity: (data['quantity'] as num).toInt(),
+            unit: _unit(data['unit'] as String? ?? 'un'),
+            categoryId: data['category'] as String? ?? 'others',
+            createdAt: DateTime.now(),
+            updatedAt: DateTime.now(),
+          );
+        }).toList();
 
-    final instructions = instructionsStr.split(RegExp(r'[;,]')).map((s) => s.trim()).where((s) => s.isNotEmpty).toList();
+    final instructions =
+        instructionsStr
+            .split(RegExp(r'[;,]'))
+            .map((s) => s.trim())
+            .where((s) => s.isNotEmpty)
+            .toList();
 
     final recipe = Recipe(
       id: const Uuid().v4(),
@@ -260,7 +326,10 @@ class ConfigExecutor {
     );
   }
 
-  Future<ToolResult> deleteRecipe(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> deleteRecipe(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final id = args['recipeId'] as String;
     await container.read(recipesProvider.notifier).deleteRecipe(id);
     return const ToolResult(toolCallId: '', content: 'Receita excluída.');
@@ -268,7 +337,10 @@ class ConfigExecutor {
 
   // --- Meal Planner ---
 
-  Future<ToolResult> getMealPlan(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> getMealPlan(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final startStr = args['startDate'] as String?;
     final endStr = args['endDate'] as String?;
     final start = startStr != null ? DateTime.parse(startStr) : null;
@@ -279,17 +351,25 @@ class ConfigExecutor {
       label: 'mealPlansProvider',
     );
     if (plans.isEmpty) {
-      return const ToolResult(toolCallId: '', content: 'Nenhuma refeição agendada para este período.');
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Nenhuma refeição agendada para este período.',
+      );
     }
     final result = StringBuffer('Planejamento de Refeições:\n');
     for (final plan in plans) {
       final date = '${plan.date.day}/${plan.date.month}/${plan.date.year}';
-      result.writeln('- $date (${plan.mealType.name}): ${plan.recipeName} (${plan.servings} porções)');
+      result.writeln(
+        '- $date (${plan.mealType}): ${plan.recipeName} (${plan.servings} porções)',
+      );
     }
     return ToolResult(toolCallId: '', content: result.toString());
   }
 
-  Future<ToolResult> scheduleMeal(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> scheduleMeal(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final recipeId = args['recipeId'] as String;
     final dateStr = args['date'] as String;
     final mealTypeStr = args['mealType'] as String;
@@ -302,7 +382,11 @@ class ConfigExecutor {
     );
     final recipe = recipes.where((r) => r.id == recipeId).firstOrNull;
     if (recipe == null) {
-      return const ToolResult(toolCallId: '', content: 'Receita não encontrada.', success: false);
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Receita não encontrada.',
+        success: false,
+      );
     }
 
     final mealPlan = MealPlan(
@@ -311,16 +395,27 @@ class ConfigExecutor {
       recipeId: recipeId,
       recipeName: recipe.name,
       servings: servings,
-      mealType: MealType.values.firstWhere((e) => e.name == mealTypeStr, orElse: () => MealType.lunch),
+      mealType: mealTypeStr.toLowerCase().trim().isEmpty
+          ? 'lunch'
+          : mealTypeStr.toLowerCase().trim(),
     );
 
     await container.read(mealPlansProvider().notifier).saveMealPlan(mealPlan);
-    return const ToolResult(toolCallId: '', content: 'Refeição agendada com sucesso!');
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Refeição agendada com sucesso!',
+    );
   }
 
-  Future<ToolResult> removeMealPlanEntry(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> removeMealPlanEntry(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final id = args['mealPlanId'] as String;
     await container.read(mealPlansProvider().notifier).deleteMealPlan(id);
-    return const ToolResult(toolCallId: '', content: 'Entrada do planejamento removida.');
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Entrada do planejamento removida.',
+    );
   }
 }

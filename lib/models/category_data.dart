@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class CategoryData {
   CategoryData({
@@ -19,7 +20,9 @@ class CategoryData {
       icon: codepoint != null ? _iconFromCodepoint(codepoint) : Icons.category,
       sortOrder: (json['sortOrder'] as num?)?.toInt() ?? 999,
       createdAt:
-          json['createdAt'] != null ? DateTime.tryParse(json['createdAt'].toString()) : null,
+          json['createdAt'] != null
+              ? DateTime.tryParse(json['createdAt'].toString())
+              : null,
     );
   }
 
@@ -59,6 +62,32 @@ class CategoryData {
 
   Color get colorValue => Color(color);
 
+  String localizedName(AppLocalizations l10n) {
+    return switch (id) {
+      'fruits' => l10n.categoryFruits,
+      'cleaning' => l10n.categoryCleaning,
+      'beverages' => l10n.categoryBeverages,
+      'bakery' => l10n.categoryBakery,
+      'meat' => l10n.categoryMeat,
+      'dairy' => l10n.categoryDairy,
+      'vegetables' => l10n.categoryVegetables,
+      'grains' => l10n.categoryGrains,
+      'hygiene' => l10n.categoryHygiene,
+      'frozen' => l10n.categoryFrozen,
+      'canned' => l10n.categoryCanned,
+      'seasonings' => l10n.categorySeasonings,
+      'sweets' => l10n.categorySweets,
+      'alcohol' => l10n.categoryAlcohol,
+      'fish' => l10n.categoryFish,
+      'cold_cuts' => l10n.categoryColdCuts,
+      'utilities' => l10n.categoryUtilities,
+      'pet' => l10n.categoryPet,
+      'baby' => l10n.categoryBaby,
+      'others' => l10n.categoryOthers,
+      _ => name,
+    };
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -89,145 +118,145 @@ class CategoryData {
   }
 
   static List<CategoryData> get defaults => [
-        CategoryData(
-          id: 'fruits',
-          name: 'Frutas',
-          color: 0xFF4CAF50,
-          icon: Icons.apple,
-          sortOrder: 0,
-        ),
-        CategoryData(
-          id: 'cleaning',
-          name: 'Limpeza',
-          color: 0xFF2196F3,
-          icon: Icons.cleaning_services,
-          sortOrder: 1,
-        ),
-        CategoryData(
-          id: 'beverages',
-          name: 'Bebidas',
-          color: 0xFF9C27B0,
-          icon: Icons.local_drink,
-          sortOrder: 2,
-        ),
-        CategoryData(
-          id: 'bakery',
-          name: 'Padaria',
-          color: 0xFFFF9800,
-          icon: Icons.bakery_dining,
-          sortOrder: 3,
-        ),
-        CategoryData(
-          id: 'meat',
-          name: 'Carnes',
-          color: 0xFFE53935,
-          icon: Icons.restaurant,
-          sortOrder: 4,
-        ),
-        CategoryData(
-          id: 'dairy',
-          name: 'Laticínios',
-          color: 0xFF42A5F5,
-          icon: Icons.egg,
-          sortOrder: 5,
-        ),
-        CategoryData(
-          id: 'vegetables',
-          name: 'Hortaliças',
-          color: 0xFF66BB6A,
-          icon: Icons.eco,
-          sortOrder: 6,
-        ),
-        CategoryData(
-          id: 'grains',
-          name: 'Grãos/Cereais',
-          color: 0xFF8D6E63,
-          icon: Icons.grass,
-          sortOrder: 7,
-        ),
-        CategoryData(
-          id: 'hygiene',
-          name: 'Higiene Pessoal',
-          color: 0xFF26A69A,
-          icon: Icons.face,
-          sortOrder: 8,
-        ),
-        CategoryData(
-          id: 'frozen',
-          name: 'Congelados',
-          color: 0xFF3F51B5,
-          icon: Icons.ac_unit,
-          sortOrder: 9,
-        ),
-        CategoryData(
-          id: 'canned',
-          name: 'Enlatados',
-          color: 0xFF78909C,
-          icon: Icons.inventory,
-          sortOrder: 10,
-        ),
-        CategoryData(
-          id: 'seasonings',
-          name: 'Temperos',
-          color: 0xFFFFC107,
-          icon: Icons.restaurant_menu,
-          sortOrder: 11,
-        ),
-        CategoryData(
-          id: 'sweets',
-          name: 'Doces/Sobremesas',
-          color: 0xFFEC407A,
-          icon: Icons.cake,
-          sortOrder: 12,
-        ),
-        CategoryData(
-          id: 'alcohol',
-          name: 'Bebidas Alcoólicas',
-          color: 0xFF7E57C2,
-          icon: Icons.liquor,
-          sortOrder: 13,
-        ),
-        CategoryData(
-          id: 'fish',
-          name: 'Peixes',
-          color: 0xFF29B6F6,
-          icon: Icons.set_meal,
-          sortOrder: 14,
-        ),
-        CategoryData(
-          id: 'cold_cuts',
-          name: 'Frios',
-          color: 0xFF00BCD4,
-          icon: Icons.kitchen,
-          sortOrder: 15,
-        ),
-        CategoryData(
-          id: 'utilities',
-          name: 'Utilidades',
-          color: 0xFF607D8B,
-          icon: Icons.handyman,
-          sortOrder: 16,
-        ),
-        CategoryData(
-          id: 'pet',
-          name: 'Pet',
-          color: 0xFFFF7043,
-          icon: Icons.pets,
-          sortOrder: 17,
-        ),
-        CategoryData(
-          id: 'baby',
-          name: 'Bebês',
-          color: 0xFFF06292,
-          icon: Icons.child_care,
-          sortOrder: 18,
-        ),
-        CategoryData(
-          id: 'others',
-          name: 'Outros',
-          color: 0xFF78909C,
-          icon: Icons.category,
-          sortOrder: 99,
-        ),
-      ];
+    CategoryData(
+      id: 'fruits',
+      name: 'Frutas',
+      color: 0xFF4CAF50,
+      icon: Icons.apple,
+      sortOrder: 0,
+    ),
+    CategoryData(
+      id: 'cleaning',
+      name: 'Limpeza',
+      color: 0xFF2196F3,
+      icon: Icons.cleaning_services,
+      sortOrder: 1,
+    ),
+    CategoryData(
+      id: 'beverages',
+      name: 'Bebidas',
+      color: 0xFF9C27B0,
+      icon: Icons.local_drink,
+      sortOrder: 2,
+    ),
+    CategoryData(
+      id: 'bakery',
+      name: 'Padaria',
+      color: 0xFFFF9800,
+      icon: Icons.bakery_dining,
+      sortOrder: 3,
+    ),
+    CategoryData(
+      id: 'meat',
+      name: 'Carnes',
+      color: 0xFFE53935,
+      icon: Icons.restaurant,
+      sortOrder: 4,
+    ),
+    CategoryData(
+      id: 'dairy',
+      name: 'Laticínios',
+      color: 0xFF42A5F5,
+      icon: Icons.egg,
+      sortOrder: 5,
+    ),
+    CategoryData(
+      id: 'vegetables',
+      name: 'Hortaliças',
+      color: 0xFF66BB6A,
+      icon: Icons.eco,
+      sortOrder: 6,
+    ),
+    CategoryData(
+      id: 'grains',
+      name: 'Grãos/Cereais',
+      color: 0xFF8D6E63,
+      icon: Icons.grass,
+      sortOrder: 7,
+    ),
+    CategoryData(
+      id: 'hygiene',
+      name: 'Higiene Pessoal',
+      color: 0xFF26A69A,
+      icon: Icons.face,
+      sortOrder: 8,
+    ),
+    CategoryData(
+      id: 'frozen',
+      name: 'Congelados',
+      color: 0xFF3F51B5,
+      icon: Icons.ac_unit,
+      sortOrder: 9,
+    ),
+    CategoryData(
+      id: 'canned',
+      name: 'Enlatados',
+      color: 0xFF78909C,
+      icon: Icons.inventory,
+      sortOrder: 10,
+    ),
+    CategoryData(
+      id: 'seasonings',
+      name: 'Temperos',
+      color: 0xFFFFC107,
+      icon: Icons.restaurant_menu,
+      sortOrder: 11,
+    ),
+    CategoryData(
+      id: 'sweets',
+      name: 'Doces/Sobremesas',
+      color: 0xFFEC407A,
+      icon: Icons.cake,
+      sortOrder: 12,
+    ),
+    CategoryData(
+      id: 'alcohol',
+      name: 'Bebidas Alcoólicas',
+      color: 0xFF7E57C2,
+      icon: Icons.liquor,
+      sortOrder: 13,
+    ),
+    CategoryData(
+      id: 'fish',
+      name: 'Peixes',
+      color: 0xFF29B6F6,
+      icon: Icons.set_meal,
+      sortOrder: 14,
+    ),
+    CategoryData(
+      id: 'cold_cuts',
+      name: 'Frios',
+      color: 0xFF00BCD4,
+      icon: Icons.kitchen,
+      sortOrder: 15,
+    ),
+    CategoryData(
+      id: 'utilities',
+      name: 'Utilidades',
+      color: 0xFF607D8B,
+      icon: Icons.handyman,
+      sortOrder: 16,
+    ),
+    CategoryData(
+      id: 'pet',
+      name: 'Pet',
+      color: 0xFFFF7043,
+      icon: Icons.pets,
+      sortOrder: 17,
+    ),
+    CategoryData(
+      id: 'baby',
+      name: 'Bebês',
+      color: 0xFFF06292,
+      icon: Icons.child_care,
+      sortOrder: 18,
+    ),
+    CategoryData(
+      id: 'others',
+      name: 'Outros',
+      color: 0xFF78909C,
+      icon: Icons.category,
+      sortOrder: 99,
+    ),
+  ];
 }

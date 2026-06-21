@@ -5,6 +5,7 @@ import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:shopping_list/theme/app_theme.dart';
 import 'package:shopping_list/app/pantry/providers/pantry_providers.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
@@ -13,11 +14,10 @@ import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/models/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
-import 'package:shopping_list/app/pantry/widgets/add_pantry_item_dialog.dart';
+import 'package:shopping_list/app/pantry/widgets/pantry_add_sheet.dart';
 import 'package:shopping_list/app/pantry/widgets/pantry_item_skeleton.dart';
 import 'package:collection/collection.dart';
 import 'package:shopping_list/app/shared/widgets/account_menu_sheet.dart';
-import 'package:shopping_list/app/shared/widgets/kipi_fab.dart';
 
 class PantryScreen extends ConsumerWidget {
   const PantryScreen({super.key});
@@ -73,26 +73,29 @@ class PantryScreen extends ConsumerWidget {
               );
             }
 
-            final deficitItems = items.where((i) => i.trackStock && i.deficit > 0).toList();
-            
+            final deficitItems =
+                items.where((i) => i.trackStock && i.deficit > 0).toList();
+
             // Group items by category
             final categoriesAsync = ref.watch(categoriesProvider);
             final cats = categoriesAsync.value ?? <CategoryData>[];
             final categoriesMap = {for (final cat in cats) cat.id: cat};
-            
+
             final groupedItems = groupBy(items, (PantryItem i) => i.categoryId);
-            final sortedCategoryIds = groupedItems.keys.toList()
-              ..sort((a, b) {
-                final catA = categoriesMap[a];
-                final catB = categoriesMap[b];
-                if (catA == null) {
-                  return 1;
-                }
-                if (catB == null) {
-                  return -1;
-                }
-                return catA.name.compareTo(catB.name);
-              });
+            final sortedCategoryIds =
+                groupedItems.keys.toList()..sort((a, b) {
+                  final catA = categoriesMap[a];
+                  final catB = categoriesMap[b];
+                  if (catA == null) {
+                    return 1;
+                  }
+                  if (catB == null) {
+                    return -1;
+                  }
+                  return catA
+                      .localizedName(l10n)
+                      .compareTo(catB.localizedName(l10n));
+                });
 
             return RefreshIndicator(
               onRefresh: () async {
@@ -104,76 +107,122 @@ class PantryScreen extends ConsumerWidget {
                   if (deficitItems.isNotEmpty)
                     SliverToBoxAdapter(
                       child: Container(
-                        width: double.infinity,
-                        margin: const EdgeInsets.fromLTRB(Spacing.md, Spacing.sm, Spacing.md, Spacing.xs),
-                        padding: const EdgeInsets.all(Spacing.sm),
-                        decoration: BoxDecoration(
-                          color: theme.colorScheme.tertiaryContainer.withAlpha((isDark ? 0.15 : 0.3 * 255).toInt()),
-                          borderRadius: BorderRadius.circular(RadiusTokens.md),
-                          border: Border.all(
-                            color: theme.colorScheme.tertiary.withAlpha((0.2 * 255).toInt()),
-                          ),
-                        ),
-                        child: InkWell(
-                          onTap: () => _generateShoppingList(context, ref),
-                          borderRadius: BorderRadius.circular(RadiusTokens.md),
-                          child: Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(Spacing.xxs),
-                                decoration: BoxDecoration(
-                                  color: theme.colorScheme.tertiary,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(Icons.shopping_cart_outlined, size: 16, color: theme.colorScheme.onTertiary),
+                            width: double.infinity,
+                            margin: const EdgeInsets.fromLTRB(
+                              Spacing.md,
+                              Spacing.sm,
+                              Spacing.md,
+                              Spacing.xs,
+                            ),
+                            padding: const EdgeInsets.all(Spacing.sm),
+                            decoration: BoxDecoration(
+                              color: theme.colorScheme.tertiaryContainer
+                                  .withAlpha(
+                                    (isDark ? 0.15 : 0.3 * 255).toInt(),
+                                  ),
+                              borderRadius: BorderRadius.circular(
+                                RadiusTokens.md,
                               ),
-                              const SizedBox(width: Spacing.sm),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      l10n.itemsNeedPurchase(deficitItems.length),
-                                      style: theme.textTheme.titleSmall?.copyWith(
-                                        fontWeight: FontWeight.bold,
-                                        color: theme.colorScheme.onTertiaryContainer,
-                                      ),
-                                    ),
-                                    Text(
-                                      l10n.generateShoppingList,
-                                      style: theme.textTheme.bodySmall?.copyWith(
-                                        color: theme.colorScheme.onTertiaryContainer.withAlpha((0.8 * 255).toInt()),
-                                      ),
-                                    ),
-                                  ],
+                              border: Border.all(
+                                color: theme.colorScheme.tertiary.withAlpha(
+                                  (0.2 * 255).toInt(),
                                 ),
                               ),
-                              Icon(Icons.chevron_right, color: theme.colorScheme.tertiary),
-                            ],
-                          ),
-                        ),
-                      ).animate().slideY(
-                        begin: -0.2,
-                        end: 0,
-                        duration: DurationTokens.normal,
-                        curve: Curves.easeOutBack,
-                      ).fadeIn(duration: DurationTokens.fast),
+                            ),
+                            child: InkWell(
+                              onTap: () => _generateShoppingList(context, ref),
+                              borderRadius: BorderRadius.circular(
+                                RadiusTokens.md,
+                              ),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(Spacing.xxs),
+                                    decoration: BoxDecoration(
+                                      color: theme.colorScheme.tertiary,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Icon(
+                                      Icons.shopping_cart_outlined,
+                                      size: 16,
+                                      color: theme.colorScheme.onTertiary,
+                                    ),
+                                  ),
+                                  const SizedBox(width: Spacing.sm),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          l10n.itemsNeedPurchase(
+                                            deficitItems.length,
+                                          ),
+                                          style: theme.textTheme.titleSmall
+                                              ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                color:
+                                                    theme
+                                                        .colorScheme
+                                                        .onTertiaryContainer,
+                                              ),
+                                        ),
+                                        Text(
+                                          l10n.generateShoppingList,
+                                          style: theme.textTheme.bodySmall
+                                              ?.copyWith(
+                                                color: theme
+                                                    .colorScheme
+                                                    .onTertiaryContainer
+                                                    .withAlpha(
+                                                      (0.8 * 255).toInt(),
+                                                    ),
+                                              ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Icon(
+                                    Icons.chevron_right,
+                                    color: theme.colorScheme.tertiary,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                          .animate()
+                          .slideY(
+                            begin: -0.2,
+                            end: 0,
+                            duration: DurationTokens.normal,
+                            curve: Curves.easeOutBack,
+                          )
+                          .fadeIn(duration: DurationTokens.fast),
                     ),
-                  
+
                   for (final catId in sortedCategoryIds) ...[
                     SliverToBoxAdapter(
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(Spacing.md, Spacing.md, Spacing.md, Spacing.xs),
+                        padding: const EdgeInsets.fromLTRB(
+                          Spacing.md,
+                          Spacing.md,
+                          Spacing.md,
+                          Spacing.xs,
+                        ),
                         child: Row(
                           children: [
                             Icon(
-                              categoriesMap[catId]?.icon ?? Icons.category_outlined,
+                              categoriesMap[catId]?.icon ??
+                                  Icons.category_outlined,
                               size: 16,
-                              color: categoriesMap[catId]?.colorValue ?? theme.colorScheme.primary,
+                              color:
+                                  categoriesMap[catId]?.colorValue ??
+                                  theme.colorScheme.primary,
                             ),
                             const SizedBox(width: Spacing.xs),
                             Text(
-                              categoriesMap[catId]?.name ?? l10n.catOthers,
+                              categoriesMap[catId]?.localizedName(l10n) ??
+                                  l10n.catOthers,
                               style: theme.textTheme.labelLarge?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 color: theme.colorScheme.onSurfaceVariant,
@@ -181,83 +230,86 @@ class PantryScreen extends ConsumerWidget {
                               ),
                             ),
                             const SizedBox(width: Spacing.xs),
-                            Expanded(child: Divider(color: theme.colorScheme.outlineVariant, thickness: 0.5)),
+                            Expanded(
+                              child: Divider(
+                                color: theme.colorScheme.outlineVariant,
+                                thickness: 0.5,
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     ),
                     SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) {
-                          final categoryItems = groupedItems[catId]!;
-                          return _PantryItemTile(item: categoryItems[index]).animate().fadeIn(
-                            duration: DurationTokens.fast,
-                            delay: Duration(milliseconds: index * 30),
-                          ).slideX(
-                            begin: 0.05,
-                            end: 0,
-                            duration: DurationTokens.fast,
-                            delay: Duration(milliseconds: index * 30),
-                          );
-                        },
-                        childCount: groupedItems[catId]!.length,
-                      ),
+                      delegate: SliverChildBuilderDelegate((context, index) {
+                        final categoryItems = groupedItems[catId]!;
+                        return _PantryItemTile(item: categoryItems[index])
+                            .animate()
+                            .fadeIn(
+                              duration: DurationTokens.fast,
+                              delay: Duration(milliseconds: index * 30),
+                            )
+                            .slideX(
+                              begin: 0.05,
+                              end: 0,
+                              duration: DurationTokens.fast,
+                              delay: Duration(milliseconds: index * 30),
+                            );
+                      }, childCount: groupedItems[catId]!.length),
                     ),
                   ],
-                  const SliverPadding(padding: EdgeInsets.only(bottom: Spacing.xxl + Spacing.md)),
+                  const SliverPadding(
+                    padding: EdgeInsets.only(bottom: Spacing.xxl + Spacing.md),
+                  ),
                 ],
               ),
             );
           },
-          loading: () => ListView.builder(
-            itemCount: 6,
-            itemBuilder: (_, _) => const PantryItemSkeleton(),
-          ),
+          loading:
+              () => ListView.builder(
+                itemCount: 6,
+                itemBuilder: (_, _) => const PantryItemSkeleton(),
+              ),
           error: (e, _) => Center(child: Text(l10n.error(e.toString()))),
         ),
       ),
-      floatingActionButton: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const KipiFab(kipiContext: KipiContext.pantry),
-          const SizedBox(height: 8),
-          FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
             heroTag: 'pantry_fab',
-            onPressed: () => showDialog<void>(
-              context: context,
-              builder: (_) => const AddPantryItemDialog(),
-            ),
+            onPressed: () => PantryAddSheet.show(context),
             child: const Icon(Icons.add),
-          ).animate().fadeIn(
-            duration: DurationTokens.slow,
-            delay: DurationTokens.normal,
-          ).scale(
+          )
+          .animate()
+          .fadeIn(duration: DurationTokens.slow, delay: DurationTokens.normal)
+          .scale(
             begin: const Offset(0, 0),
             end: const Offset(1, 1),
             duration: DurationTokens.normal,
             curve: Curves.easeOutBack,
           ),
-        ],
-      ),
     );
   }
 
   void _shareApp(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    SharePlus.instance.share(ShareParams(
-      text: l10n.shareReferralText('https://kipilist.com/invite'),
-      subject: l10n.shareReferralSubject,
-    ));
+    SharePlus.instance.share(
+      ShareParams(
+        text: l10n.shareReferralText('https://kipilist.com/invite'),
+        subject: l10n.shareReferralSubject,
+      ),
+    );
   }
 
-  Future<void> _generateShoppingList(BuildContext context, WidgetRef ref) async {
+  Future<void> _generateShoppingList(
+    BuildContext context,
+    WidgetRef ref,
+  ) async {
     final l10n = AppLocalizations.of(context)!;
     final suggestions = ref.read(pantrySuggestionsProvider);
     if (suggestions.isEmpty) {
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.noItemsToBuy)),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(l10n.noItemsToBuy)));
       }
       return;
     }
@@ -269,83 +321,111 @@ class PantryScreen extends ConsumerWidget {
       builder: (ctx) {
         var isCreating = false;
         return StatefulBuilder(
-          builder: (context, setDialogState) => AlertDialog(
-            title: Text(l10n.newListTitle),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  l10n.itemsWillBeAdded(suggestions.length),
-                  style: theme.textTheme.bodyMedium,
+          builder:
+              (context, setDialogState) => AlertDialog(
+                title: Text(l10n.newListTitle),
+                content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      l10n.itemsWillBeAdded(suggestions.length),
+                      style: theme.textTheme.bodyMedium,
+                    ),
+                    const SizedBox(height: Spacing.sm),
+                    TextField(
+                      controller: nameController,
+                      enabled: !isCreating,
+                      decoration: InputDecoration(
+                        labelText: l10n.listNameLabel,
+                        border: const OutlineInputBorder(),
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(height: Spacing.sm),
-                TextField(
-                  controller: nameController,
-                  enabled: !isCreating,
-                  decoration: InputDecoration(
-                    labelText: l10n.listNameLabel,
-                    border: const OutlineInputBorder(),
+                actions: [
+                  TextButton(
+                    onPressed: isCreating ? null : () => Navigator.pop(ctx),
+                    child: Text(l10n.cancel),
                   ),
-                ),
-              ],
-            ),
-            actions: [
-              TextButton(
-                onPressed: isCreating ? null : () => Navigator.pop(ctx),
-                child: Text(l10n.cancel),
+                  FilledButton(
+                    onPressed:
+                        isCreating
+                            ? null
+                            : () async {
+                              final name = nameController.text.trim();
+                              if (name.isEmpty) {
+                                return;
+                              }
+                              setDialogState(() => isCreating = true);
+                              try {
+                                final newList = await ref
+                                    .read(shoppingListsProvider.notifier)
+                                    .createList(name);
+                                final itemsNotifier = ref.read(
+                                  shoppingListItemsProvider(
+                                    newList.id,
+                                  ).notifier,
+                                );
+
+                                final newItems =
+                                    suggestions
+                                        .map(
+                                          (suggestion) => ShoppingItem(
+                                            shoppingListId: newList.id,
+                                            name: suggestion.name,
+                                            quantity: suggestion.quantity,
+                                            categoryId: suggestion.categoryId,
+                                            unit: suggestion.unit,
+                                            estimatedPrice:
+                                                suggestion.estimatedPrice,
+                                          ),
+                                        )
+                                        .toList();
+
+                                await itemsNotifier.addItems(newItems);
+
+                                await ref
+                                    .read(currentListIdProvider.notifier)
+                                    .setCurrentList(newList.id);
+                                if (ctx.mounted) {
+                                  ScaffoldMessenger.of(ctx).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        l10n.listCreated(
+                                          newList.name,
+                                          suggestions.length,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                if (ctx.mounted) {
+                                  Navigator.pop(ctx, name);
+                                }
+                              } on Exception catch (e) {
+                                if (ctx.mounted) {
+                                  setDialogState(() => isCreating = false);
+                                  ScaffoldMessenger.of(ctx).showSnackBar(
+                                    SnackBar(
+                                      content: Text(l10n.error(e.toString())),
+                                    ),
+                                  );
+                                }
+                              }
+                            },
+                    child:
+                        isCreating
+                            ? const SizedBox(
+                              width: Spacing.md,
+                              height: Spacing.md,
+                              child: CircularProgressIndicator(
+                                strokeWidth: RadiusTokens.bar,
+                              ),
+                            )
+                            : Text(l10n.create),
+                  ),
+                ],
               ),
-              FilledButton(
-                onPressed: isCreating
-                    ? null
-                    : () async {
-                        final name = nameController.text.trim();
-                        if (name.isEmpty) {
-                          return;
-                        }
-                        setDialogState(() => isCreating = true);
-                        try {
-                          final newList = await ref.read(shoppingListsProvider.notifier).createList(name);
-                          final itemsNotifier = ref.read(shoppingListItemsProvider(newList.id).notifier);
-                          
-                          final newItems = suggestions.map((suggestion) => ShoppingItem(
-                            shoppingListId: newList.id,
-                            name: suggestion.name,
-                            quantity: suggestion.quantity,
-                            categoryId: suggestion.categoryId,
-                            unit: suggestion.unit,
-                            estimatedPrice: suggestion.estimatedPrice,
-                          )).toList();
-                          
-                          await itemsNotifier.addItems(newItems);
-                          
-                          await ref.read(currentListIdProvider.notifier).setCurrentList(newList.id);
-                          if (ctx.mounted) {
-                            ScaffoldMessenger.of(ctx).showSnackBar(
-                              SnackBar(content: Text(l10n.listCreated(newList.name, suggestions.length))),
-                            );
-                          }
-                          if (ctx.mounted) {
-                            Navigator.pop(ctx, name);
-                          }
-                        } on Exception catch (e) {
-                          if (ctx.mounted) {
-                            setDialogState(() => isCreating = false);
-                            ScaffoldMessenger.of(ctx).showSnackBar(
-                              SnackBar(content: Text(l10n.error(e.toString()))),
-                            );
-                          }
-                        }
-                      },
-                child: isCreating
-                    ? const SizedBox(
-                        width: 18,
-                        height: 18,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
-                    : Text(l10n.create),
-              ),
-            ],
-          ),
         );
       },
     );
@@ -362,37 +442,38 @@ class _PantryItemTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final progress = item.idealQuantity > 0
-        ? (item.currentQuantity / item.idealQuantity).clamp(0.0, 1.0)
-        : 0.0;
-    
+    final progress =
+        item.idealQuantity > 0
+            ? (item.currentQuantity / item.idealQuantity).clamp(0.0, 1.0)
+            : 0.0;
+
+    final semanticColors = AppSemanticColors.of(context);
     final Color barColor;
     if (progress >= 0.8) {
-      barColor = Colors.green;
+      barColor = semanticColors.success;
     } else if (progress >= 0.3) {
-      barColor = Colors.orange;
+      barColor = semanticColors.warning;
     } else {
       barColor = theme.colorScheme.error;
     }
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.xxs),
+      padding: const EdgeInsets.symmetric(
+        horizontal: Spacing.md,
+        vertical: Spacing.xxs,
+      ),
       child: Container(
         decoration: BoxDecoration(
           color: theme.colorScheme.surface,
           borderRadius: BorderRadius.circular(RadiusTokens.md),
           border: Border.all(
-            color: item.deficit > 0 
-              ? barColor.withAlpha((0.3 * 255).toInt())
-              : theme.colorScheme.outlineVariant.withAlpha((0.5 * 255).toInt()),
+            color:
+                item.deficit > 0
+                    ? barColor.withAlpha((0.3 * 255).toInt())
+                    : theme.colorScheme.outlineVariant.withAlpha(
+                      (0.5 * 255).toInt(),
+                    ),
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withAlpha((0.03 * 255).toInt()),
-              blurRadius: 4,
-              offset: const Offset(0, 2),
-            ),
-          ],
         ),
         child: InkWell(
           onTap: () => _showEditDialog(context, ref),
@@ -412,9 +493,10 @@ class _PantryItemTile extends ConsumerWidget {
                             item.name,
                             style: theme.textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.bold,
-                              decoration: item.currentQuantity == 0 && item.trackStock 
-                                ? TextDecoration.none 
-                                : null,
+                              decoration:
+                                  item.currentQuantity == 0 && item.trackStock
+                                      ? TextDecoration.none
+                                      : null,
                             ),
                           ),
                           if (!item.trackStock)
@@ -430,13 +512,18 @@ class _PantryItemTile extends ConsumerWidget {
                     ),
                     if (item.trackStock && item.deficit > 0)
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: Spacing.xs, vertical: 2),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: Spacing.xs,
+                          vertical: Spacing.xxs,
+                        ),
                         decoration: BoxDecoration(
                           color: barColor.withAlpha((0.1 * 255).toInt()),
-                          borderRadius: BorderRadius.circular(RadiusTokens.full),
+                          borderRadius: BorderRadius.circular(
+                            RadiusTokens.full,
+                          ),
                         ),
                         child: Text(
-                          'Faltam ${item.deficit}${item.unit.label}',
+                          l10n.pantryDeficitCount(item.deficit, item.unit.label),
                           style: theme.textTheme.labelSmall?.copyWith(
                             color: barColor,
                             fontWeight: FontWeight.bold,
@@ -474,14 +561,19 @@ class _PantryItemTile extends ConsumerWidget {
                                 ),
                               ],
                             ),
-                            const SizedBox(height: 4),
+                            const SizedBox(height: Spacing.xxs),
                             ClipRRect(
-                              borderRadius: BorderRadius.circular(RadiusTokens.full),
+                              borderRadius: BorderRadius.circular(
+                                RadiusTokens.full,
+                              ),
                               child: LinearProgressIndicator(
                                 value: progress,
-                                minHeight: 8,
-                                backgroundColor: theme.colorScheme.surfaceContainerHighest,
-                                valueColor: AlwaysStoppedAnimation<Color>(barColor),
+                                minHeight: Spacing.xs,
+                                backgroundColor:
+                                    theme.colorScheme.surfaceContainerHighest,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  barColor,
+                                ),
                               ),
                             ),
                           ],
@@ -493,12 +585,15 @@ class _PantryItemTile extends ConsumerWidget {
                         children: [
                           _QuantityControl(
                             icon: Icons.remove,
-                            onPressed: item.currentQuantity <= 0
-                                ? null
-                                : () async {
-                                    await HapticFeedback.lightImpact();
-                                    await ref.read(pantryItemsProvider.notifier).decrementCurrent(item.id);
-                                  },
+                            onPressed:
+                                item.currentQuantity <= 0
+                                    ? null
+                                    : () async {
+                                      await HapticFeedback.lightImpact();
+                                      await ref
+                                          .read(pantryItemsProvider.notifier)
+                                          .decrementCurrent(item.id);
+                                    },
                           ),
                           const SizedBox(width: Spacing.sm),
                           _QuantityControl(
@@ -506,7 +601,9 @@ class _PantryItemTile extends ConsumerWidget {
                             isPrimary: true,
                             onPressed: () async {
                               await HapticFeedback.lightImpact();
-                              await ref.read(pantryItemsProvider.notifier).incrementCurrent(item.id);
+                              await ref
+                                  .read(pantryItemsProvider.notifier)
+                                  .incrementCurrent(item.id);
                             },
                           ),
                         ],
@@ -538,43 +635,54 @@ class _ItemMenuButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     return PopupMenuButton<String>(
-      icon: const Icon(Icons.more_vert, size: 20),
+      icon: const Icon(Icons.more_vert),
       padding: EdgeInsets.zero,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusTokens.md)),
-      itemBuilder: (_) => [
-        PopupMenuItem(
-          value: 'edit', 
-          child: Row(
-            children: [
-              const Icon(Icons.edit_outlined, size: 18),
-              const SizedBox(width: Spacing.sm),
-              Text(l10n.edit),
-            ],
-          ),
-        ),
-        if (item.trackStock && item.deficit > 0)
-          PopupMenuItem(
-            value: 'restock', 
-            child: Row(
-              children: [
-                const Icon(Icons.inventory_outlined, size: 18),
-                const SizedBox(width: Spacing.sm),
-                Text(l10n.markAsPurchased),
-              ],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(RadiusTokens.md),
+      ),
+      itemBuilder:
+          (_) => [
+            PopupMenuItem(
+              value: 'edit',
+              child: Row(
+                children: [
+                  const Icon(Icons.edit_outlined),
+                  const SizedBox(width: Spacing.sm),
+                  Text(l10n.edit),
+                ],
+              ),
             ),
-          ),
-        const PopupMenuDivider(),
-        PopupMenuItem(
-          value: 'delete', 
-          child: Row(
-            children: [
-              Icon(Icons.delete_outline, size: 18, color: Theme.of(context).colorScheme.error),
-              const SizedBox(width: Spacing.sm),
-              Text(l10n.remove, style: TextStyle(color: Theme.of(context).colorScheme.error)),
-            ],
-          ),
-        ),
-      ],
+            if (item.trackStock && item.deficit > 0)
+              PopupMenuItem(
+                value: 'restock',
+                child: Row(
+                  children: [
+                    const Icon(Icons.inventory_outlined),
+                    const SizedBox(width: Spacing.sm),
+                    Text(l10n.markAsPurchased),
+                  ],
+                ),
+              ),
+            const PopupMenuDivider(),
+            PopupMenuItem(
+              value: 'delete',
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.delete_outline,
+                    color: Theme.of(context).colorScheme.error,
+                  ),
+                  const SizedBox(width: Spacing.sm),
+                  Text(
+                    l10n.remove,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.error,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
       onSelected: (value) async {
         if (value == 'edit') {
           await showDialog<void>(
@@ -584,31 +692,50 @@ class _ItemMenuButton extends ConsumerWidget {
         } else if (value == 'delete') {
           final confirm = await showDialog<bool>(
             context: context,
-            builder: (_) => AlertDialog(
-              title: Text(l10n.confirm),
-              content: Text(l10n.confirmRemovePantry(item.name)),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(context, false),
-                  child: Text(l10n.cancel),
+            builder:
+                (_) => AlertDialog(
+                  title: Text(l10n.confirm),
+                  content: Text(l10n.confirmRemovePantry(item.name)),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, false),
+                      child: Text(l10n.cancel),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, true),
+                      child: Text(l10n.remove),
+                    ),
+                  ],
                 ),
-                TextButton(
-                  onPressed: () => Navigator.pop(context, true),
-                  child: Text(l10n.remove),
-                ),
-              ],
-            ),
           );
           if (confirm == true) {
             await ref.read(pantryItemsProvider.notifier).removeItem(item.id);
           }
         } else if (value == 'restock') {
-          await ref.read(pantryItemsProvider.notifier).restockItem(item.id, item.deficit);
+          final restockAmount = item.deficit;
+          await ref
+              .read(pantryItemsProvider.notifier)
+              .restockItem(item.id, restockAmount);
           if (context.mounted) {
+            ScaffoldMessenger.of(context).clearSnackBars();
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 behavior: SnackBarBehavior.floating,
-                content: Text(l10n.restocked(item.name, item.idealQuantity, item.unit.label)),
+                content: Text(
+                  l10n.restocked(
+                    item.name,
+                    item.idealQuantity,
+                    item.unit.label,
+                  ),
+                ),
+                action: SnackBarAction(
+                  label: l10n.undo,
+                  onPressed: () async {
+                    await ref
+                        .read(pantryItemsProvider.notifier)
+                        .consumeItemMultiple(item.id, restockAmount);
+                  },
+                ),
               ),
             );
           }
@@ -632,13 +759,18 @@ class _QuantityControl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    
+
     return Material(
-      color: onPressed == null
-          ? theme.colorScheme.surfaceContainerHighest.withAlpha((0.3 * 255).toInt())
-          : isPrimary 
-              ? theme.colorScheme.primaryContainer 
-              : theme.colorScheme.secondaryContainer.withAlpha((0.5 * 255).toInt()),
+      color:
+          onPressed == null
+              ? theme.colorScheme.surfaceContainerHighest.withAlpha(
+                (0.3 * 255).toInt(),
+              )
+              : isPrimary
+              ? theme.colorScheme.primaryContainer
+              : theme.colorScheme.secondaryContainer.withAlpha(
+                (0.5 * 255).toInt(),
+              ),
       borderRadius: BorderRadius.circular(RadiusTokens.sm),
       child: InkWell(
         onTap: onPressed,
@@ -647,10 +779,11 @@ class _QuantityControl extends StatelessWidget {
           padding: const EdgeInsets.all(Spacing.sm),
           child: Icon(
             icon,
-            size: 20,
-            color: onPressed == null
-                ? theme.colorScheme.onSurface.withAlpha((0.3 * 255).toInt())
-                : isPrimary 
+            size: Spacing.lg,
+            color:
+                onPressed == null
+                    ? theme.colorScheme.onSurface.withAlpha((0.3 * 255).toInt())
+                    : isPrimary
                     ? theme.colorScheme.onPrimaryContainer
                     : theme.colorScheme.onSecondaryContainer,
           ),
@@ -675,8 +808,12 @@ class _EditPantryItemDialogState extends State<_EditPantryItemDialog> {
   @override
   void initState() {
     super.initState();
-    _idealController = TextEditingController(text: widget.item.idealQuantity.toString());
-    _currentController = TextEditingController(text: widget.item.currentQuantity.toString());
+    _idealController = TextEditingController(
+      text: widget.item.idealQuantity.toString(),
+    );
+    _currentController = TextEditingController(
+      text: widget.item.currentQuantity.toString(),
+    );
   }
 
   @override
@@ -727,7 +864,9 @@ class _EditPantryItemDialogState extends State<_EditPantryItemDialog> {
                 final ideal = int.tryParse(_idealController.text);
                 final current = int.tryParse(_currentController.text);
                 if (ideal != null && current != null) {
-                  await ref.read(pantryItemsProvider.notifier).updateItem(
+                  await ref
+                      .read(pantryItemsProvider.notifier)
+                      .updateItem(
                         widget.item.copyWith(
                           idealQuantity: ideal.clamp(1, 999),
                           currentQuantity: current.clamp(0, 999),

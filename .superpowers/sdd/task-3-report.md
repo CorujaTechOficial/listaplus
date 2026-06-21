@@ -1,245 +1,45 @@
-# Task 3 Report: Expose Planner Summary Data Through Providers
+# Task 3 Report: BudgetGoalSheet Widget
 
-## Scope
+## Status
 
-- Updated `lib/app/meal_planner/providers/meal_planner_providers.dart`
-- Updated `test/app/meal_planner/providers/meal_planner_providers_test.dart`
-- Regenerated `lib/app/meal_planner/providers/meal_planner_providers.g.dart` and verified it already matched the current generated output, so no additional diff remained
+DONE
 
-## What Changed
+## Files Created
 
-- Added `recipeCostDetailsProvider(String recipeId)` to expose `RecipeCostDetails?` derived from `recipesProvider`
-- Added `mealPlannerDayCostMapProvider({required DateTime start, required DateTime end})` to bucket meal plans by normalized day and aggregate:
-  - `totalCost`
-  - `mealCount`
-  - `hasPartialPricing`
-- Added `mealPlannerSummaryProvider(...)` to expose:
-  - `todayCost`
-  - `weekCost`
-  - `plannedMonthCost`
-  - `projectedMonthCost`
-  - `weekHasPartialPricing`
-  - `monthHasPartialPricing`
-- Reused Task 2 helpers:
-  - `calculateRecipeCostDetails`
-  - `calculatePlannedMealCost`
+- `lib/app/meal_planner/widgets/budget_goal_sheet.dart`
+- `test/app/meal_planner/widgets/budget_goal_sheet_test.dart`
 
-## TDD Record
+## What Was Built
 
-1. Added failing provider tests first for:
-   - recipe cost lookup
-   - day cost aggregation
-   - planner summary aggregation
-2. Ran:
+### `BudgetGoalSheet`
 
-```sh
-flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
-```
+- `ConsumerStatefulWidget` with `static Future<void> show(BuildContext context)` entry point
+- Calls `showModalBottomSheet` with `isScrollControlled: true`, `useSafeArea: true`, `backgroundColor: Colors.transparent`
+- Inherits parent `ProviderScope` — no extra wrapping needed in the builder
+- Reads `monthlyBudgetGoalProvider` via `ref.watch`; pre-populates the `TextField` controller once on first `hasValue` (guarded by `_initialized` flag)
+- Shows `TextButton(mealPlannerBudgetRemoveGoal)` only when `goalAsync.value != null`
+- Save validates `double.tryParse` and `value > 0`; returns early (sheet stays open) on invalid/empty
+- Design tokens: `Spacing.md/lg/xs`, `RadiusTokens.lg`; no raw literals
+- Imports: `package:shopping_list/theme/tokens.dart`, `package:shopping_list/core/providers/preferences_providers.dart`
 
-3. Confirmed RED state with missing provider symbols:
-   - `recipeCostDetailsProvider`
-   - `mealPlannerDayCostMapProvider`
-   - `mealPlannerSummaryProvider`
-4. Implemented the providers
-5. Ran build runner and reran the focused suite to GREEN
+### Tests (5)
 
-## Verification
+1. `shows sheet with empty field when no goal` — finds `BudgetGoalSheet`, checks `controller.text` empty
+2. `pre-populates field with current goal` — sets `monthly_budget_goal: 800.0` via mock prefs, expects `find.text('800.00')`
+3. `shows Remove goal button only when goal exists` — `initialGoal: 500.0`, expects `mealPlannerBudgetRemoveGoal` present
+4. `does not show Remove goal button when no goal` — no initial goal, expects key absent
+5. `Save button does nothing when field is empty` — taps Save with empty field, sheet remains
 
-Focused provider suite:
+## Self-Review Notes
 
-```sh
-flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
-```
-
-Result: passed (`5` tests)
-
-Full suite:
-
-```sh
-flutter test
-```
-
-Result: passed (`181` tests)
-
-Build runner:
-
-```sh
-dart run build_runner build --delete-conflicting-outputs
-```
-
-Result: exit `0` with a warning that `--delete-conflicting-outputs` was ignored by this installed toolchain
-
-## Self-Review
-
-- Provider responsibilities stayed focused on orchestration and aggregation
-- Cost math was not duplicated; all pricing calculations go through Task 2 helpers
-- Day bucketing normalizes timestamps to calendar dates before aggregation
-- Missing recipes are ignored for cost accumulation while preserving the planned meal count for that day
-- No changes were made outside the task-owned files
+- `mocktail` import removed from test — not needed (no mocks, real provider with SharedPreferences mock)
+- `AppTheme.light` import path confirmed as `package:shopping_list/theme/app_theme.dart` (re-exports core)
+- `monthlyBudgetGoalProvider` is a codegen `@riverpod` class; notifier accessed via `.notifier`, `setGoal(double?)` confirmed
+- `_initialized` guard prevents controller text being reset on each rebuild after provider resolves
+- `context.mounted` check before `Navigator.pop` guards async gap
+- No raw numeric literals; all spacing/radius via tokens
+- `test/app/meal_planner/widgets/` directory created implicitly by file creation
 
 ## Concerns
 
-- `meal_planner_providers.dart` and the test file already had unrelated worktree changes before this task. I did not revert them.
-- `meal_planner_providers.g.dart` was regenerated successfully, but the generated content already matched the worktree, so there was no new diff to stage for that file.
-
-## Review Fix Follow-up
-
-### Fix Applied
-
-- Updated `mealPlannerDayCostMap` so an unresolved `recipeId` marks that day as `hasPartialPricing: true`
-- Updated focused provider tests to require partial-estimate behavior for missing recipe data
-- Verified summary providers now propagate the partial state through `weekHasPartialPricing` and `monthHasPartialPricing`
-
-### Commands Run
-
-```sh
-flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
-flutter test
-```
-
-### Relevant Passing Output
-
-Focused provider suite:
-
-```text
-00:00 +5: All tests passed!
-```
-
-Full suite:
-
-```text
-00:14 +181: All tests passed!
-```
-
-### Files Changed
-
-- `lib/app/meal_planner/providers/meal_planner_providers.dart`
-- `test/app/meal_planner/providers/meal_planner_providers_test.dart`
-- `lib/app/meal_planner/providers/meal_planner_providers.g.dart` unchanged
-
-## Coverage Restoration Follow-up
-
-### Fix Applied
-
-- Restored explicit `mealPlannerSummaryProvider` coverage for a fully resolved recipe data set
-- Added assertions for:
-  - `todayCost`
-  - `weekCost`
-  - `plannedMonthCost`
-  - `projectedMonthCost`
-
-### Command Run
-
-```sh
-flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
-```
-
-### Relevant Passing Output
-
-```text
-00:00 +4: Meal planner cost providers mealPlannerSummaryProvider returns exact totals for a fully resolved recipe data set
-00:00 +6: All tests passed!
-```
-
-### Files Changed
-
-- `test/app/meal_planner/providers/meal_planner_providers_test.dart`
-- `lib/app/meal_planner/providers/meal_planner_providers.dart` unchanged
-- `lib/app/meal_planner/providers/meal_planner_providers.g.dart` unchanged
-
-## Scope Cleanup Follow-up
-
-### Cleanup Applied
-
-- Removed the unrelated `MealTypes` and `activeMealTypes` additions from `meal_planner_providers.dart`
-- Kept the Task 3 cost-summary providers intact:
-  - `recipeCostDetailsProvider`
-  - `mealPlannerDayCostMapProvider`
-  - `mealPlannerSummaryProvider`
-- Regenerated Riverpod output; no additional `meal_planner_providers.g.dart` diff remained after regeneration
-
-### Commands Run
-
-```sh
-dart run build_runner build --delete-conflicting-outputs
-flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
-flutter test
-```
-
-### Relevant Passing Output
-
-Focused provider suite:
-
-```text
-00:00 +6: All tests passed!
-```
-
-Full suite:
-
-```text
-00:29 +182: All tests passed!
-```
-
-### Files Changed
-
-- `lib/app/meal_planner/providers/meal_planner_providers.dart`
-- `lib/app/meal_planner/providers/meal_planner_providers.g.dart` unchanged after regeneration
-- `test/app/meal_planner/providers/meal_planner_providers_test.dart` unchanged
-
-## Packaging Fix Follow-up
-
-### Fix Applied
-
-- Added `lib/app/meal_planner/providers/meal_planner_providers.g.dart` to git tracking so the Task 3 package includes the generated Riverpod provider symbols in the reviewed commit range
-
-### Commands Run
-
-```sh
-dart run build_runner build --delete-conflicting-outputs
-flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
-```
-
-### Relevant Successful Output
-
-Build runner:
-
-```text
-Built with build_runner/aot in 1s; wrote 0 outputs.
-```
-
-Focused provider suite:
-
-```text
-00:00 +6: All tests passed!
-```
-
-### Files Changed
-
-- `lib/app/meal_planner/providers/meal_planner_providers.g.dart`
-
-## Fully Resolved Summary Test Fix
-
-### Fix Applied
-
-- Corrected the "fully resolved recipe data set" fixture so every ingredient used in that summary case is priced
-- Updated the expected summary totals and non-partial flags to match the truly fully priced fixture
-- Verified this did not require any provider or generated-code changes
-
-### Command Run
-
-```sh
-flutter test test/app/meal_planner/providers/meal_planner_providers_test.dart
-```
-
-### Relevant Passing Output
-
-```text
-00:00 +4: Meal planner cost providers mealPlannerSummaryProvider returns exact totals for a fully resolved recipe data set
-00:00 +6: All tests passed!
-```
-
-### Files Changed
-
-- `test/app/meal_planner/providers/meal_planner_providers_test.dart`
-- `lib/app/meal_planner/providers/meal_planner_providers.dart` unchanged
-- `lib/app/meal_planner/providers/meal_planner_providers.g.dart` unchanged
+None. The implementation matches the spec exactly and all imports resolve to existing symbols.

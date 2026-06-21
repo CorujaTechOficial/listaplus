@@ -16,9 +16,10 @@ import 'package:dynamic_color/dynamic_color.dart';
 import 'package:quick_actions/quick_actions.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:animations/animations.dart';
-import 'theme/app_theme.dart';
-import 'theme/tokens.dart';
+import 'package:shopping_list/theme/app_theme.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
+import 'package:shopping_list/core/config/app_environment.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
 import 'screens/home_screen.dart';
 import 'package:shopping_list/app/pantry/screens/pantry_screen.dart';
@@ -29,9 +30,14 @@ import 'package:shopping_list/app/onboarding/screens/onboarding_screen.dart';
 import 'package:shopping_list/app/lists/widgets/create_list_dialog.dart';
 import 'package:shopping_list/app/lists/widgets/empty_state.dart';
 import 'package:shopping_list/core/widgets/init_error_screen.dart';
+import 'services/revenuecat_service.dart';
 import 'services/revenuecat_service_impl.dart';
+import 'services/revenuecat_service_noop.dart';
 import 'package:shopping_list/core/providers/monetization_providers.dart';
 import 'package:shopping_list/core/providers/misc_providers.dart';
+import 'package:shopping_list/core/widgets/offline_banner.dart';
+
+Future<void>? _revenueCatInitialization;
 
 /// Observer to catch and report Riverpod errors to Sentry and Crashlytics.
 base class AppProviderObserver extends ProviderObserver {
@@ -41,48 +47,50 @@ base class AppProviderObserver extends ProviderObserver {
     Object error,
     StackTrace stackTrace,
   ) {
-    final providerName = context.provider.name ?? context.provider.runtimeType.toString();
+    final providerName =
+        context.provider.name ?? context.provider.runtimeType.toString();
     debugPrint('Riverpod Error in $providerName: $error');
     Sentry.captureException(error, stackTrace: stackTrace);
-    FirebaseCrashlytics.instance.recordError(error, stackTrace, reason: 'Riverpod Provider Error: $providerName');
+    FirebaseCrashlytics.instance.recordError(
+      error,
+      stackTrace,
+      reason: 'Riverpod Provider Error: $providerName',
+    );
   }
 }
 
 Future<void> main() async {
   SentryWidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  
+
   // Ensure Crashlytics is enabled in release
   await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
 
-  await SentryFlutter.init(
-    (options) {
-      options.dsn = const String.fromEnvironment('SENTRY_DSN', defaultValue: '');
-      options.sendDefaultPii = false;
-      options.enableLogs = true;
-      options.tracesSampleRate = 0.2;
-      options.replay.sessionSampleRate = 0.0;
-      options.replay.onErrorSampleRate = 0.2;
-      options.beforeSend = (event, hint) {
-        final exceptions = event.exceptions;
-        if (exceptions != null && exceptions.isNotEmpty) {
-          final type = exceptions.first.type;
-          // Don't filter out essential errors, only specific expected noisy ones
-          if (type == 'PurchasesError') {
+  await SentryFlutter.init((options) {
+    options.dsn = const String.fromEnvironment('SENTRY_DSN', defaultValue: '');
+    options.sendDefaultPii = false;
+    options.enableLogs = true;
+    options.tracesSampleRate = 0.2;
+    options.replay.sessionSampleRate = 0.0;
+    options.replay.onErrorSampleRate = 0.2;
+    options.beforeSend = (event, hint) {
+      final exceptions = event.exceptions;
+      if (exceptions != null && exceptions.isNotEmpty) {
+        final type = exceptions.first.type;
+        // Don't filter out essential errors, only specific expected noisy ones
+        if (type == 'PurchasesError') {
+          return null;
+        }
+        if (type == '_Exception') {
+          final value = exceptions.first.value;
+          if (value != null && value.contains('Failed to load font')) {
             return null;
           }
-          if (type == '_Exception') {
-            final value = exceptions.first.value;
-            if (value != null && value.contains('Failed to load font')) {
-              return null;
-            }
-          }
         }
-        return event;
-      };
-    },
-    appRunner: () => _runApp(),
-  );
+      }
+      return event;
+    };
+  }, appRunner: () => _runApp());
 }
 
 Future<UserCredential> _signInWithRetry() async {
@@ -121,7 +129,7 @@ Future<void> _runApp() async {
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
   await GoogleSignIn.instance.initialize();
-  
+
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       systemNavigationBarColor: Colors.transparent,
@@ -153,39 +161,51 @@ Future<void> _runApp() async {
     } on Object catch (_) {
       // Ignore secondary errors during error handling
     }
-    return const Center(
+    final l10n = lookupAppLocalizations(PlatformDispatcher.instance.locale);
+    return Center(
       child: Padding(
-        padding: EdgeInsets.all(24),
-        child: Text(
-          'Oops! Something went wrong rendering this screen.',
-          textAlign: TextAlign.center,
-        ),
+        padding: const EdgeInsets.all(Spacing.lg),
+        child: Text(l10n.errorLoadingLists, textAlign: TextAlign.center),
       ),
     );
   };
 
   try {
     if (FirebaseAuth.instance.currentUser == null) {
-      await _signInWithRetry().timeout(const Duration(seconds: 10), onTimeout: () {
-        debugPrint('Auth Sync: Timeout ao tentar login anônimo. Seguindo...');
-        return FirebaseAuth.instance.signInAnonymously(); // One last try
-      });
+      await _signInWithRetry().timeout(
+        const Duration(seconds: 10),
+        onTimeout: () {
+          debugPrint('Auth Sync: Timeout ao tentar login anônimo. Seguindo...');
+          return FirebaseAuth.instance.signInAnonymously(); // One last try
+        },
+      );
     }
 
-    final revenueCat = RevenueCatServiceImpl();
-    await revenueCat.init(
-      const String.fromEnvironment('REVENUECAT_API_KEY'),
-    ).timeout(const Duration(seconds: 5), onTimeout: () {
-      debugPrint('Initialization: Timeout ao iniciar RevenueCat. Seguindo...');
-    });
+    final revenueCatApiKey = AppEnvironment.revenueCatApiKey;
+    debugPrint('Initialization: env=${AppEnvironment.label}');
+    RevenueCatService revenueCat;
+    if (revenueCatApiKey.isNotEmpty) {
+      final impl = RevenueCatServiceImpl();
+      _revenueCatInitialization = impl.init(revenueCatApiKey);
+      await _revenueCatInitialization!.timeout(
+        const Duration(seconds: 5),
+        onTimeout: () {
+          debugPrint(
+            'Initialization: Timeout ao iniciar RevenueCat. Seguindo...',
+          );
+        },
+      );
+      revenueCat = impl;
+    } else {
+      debugPrint('Initialization: REVENUECAT_API_KEY não configurado.');
+      revenueCat = RevenueCatServiceNoop();
+    }
 
     runApp(
       SentryWidget(
         child: ProviderScope(
           observers: [AppProviderObserver()],
-          overrides: [
-            revenueCatServiceProvider.overrideWithValue(revenueCat),
-          ],
+          overrides: [revenueCatServiceProvider.overrideWithValue(revenueCat)],
           child: const MyApp(),
         ),
       ),
@@ -193,7 +213,12 @@ Future<void> _runApp() async {
   } on Object catch (e, stack) {
     debugPrint('Initialization Fatal Error: $e');
     await Sentry.captureException(e, stackTrace: stack);
-    await FirebaseCrashlytics.instance.recordError(e, stack, fatal: true, reason: 'App Initialization Error');
+    await FirebaseCrashlytics.instance.recordError(
+      e,
+      stack,
+      fatal: true,
+      reason: 'App Initialization Error',
+    );
     runApp(InitErrorScreen(e));
   }
 }
@@ -206,24 +231,40 @@ class MyApp extends ConsumerStatefulWidget {
 }
 
 class _MyAppState extends ConsumerState<MyApp> {
+  StreamSubscription<User?>? _authSub;
+
   @override
   void initState() {
     super.initState();
     _setupAuthSync();
   }
 
+  @override
+  void dispose() {
+    _authSub?.cancel();
+    super.dispose();
+  }
+
   void _setupAuthSync() {
-    FirebaseAuth.instance.authStateChanges().listen((user) async {
+    _authSub = FirebaseAuth.instance.authStateChanges().listen((user) async {
       if (user != null) {
-        debugPrint('Auth Sync: Usuário logado (${user.uid}). Sincronizando RevenueCat...');
+        debugPrint(
+          'Auth Sync: Usuário logado (${user.uid}). Sincronizando RevenueCat...',
+        );
         try {
+          if (_revenueCatInitialization == null) {
+            return;
+          }
+          await _revenueCatInitialization;
           await Purchases.logIn(user.uid);
         } on Object catch (e, s) {
           debugPrint('Auth Sync Error: Erro ao sincronizar RevenueCat: $e');
           unawaited(Sentry.captureException(e, stackTrace: s));
         }
       } else {
-        debugPrint('Auth Sync: Usuário deslogado. RevenueCat será sincronizado no próximo login.');
+        debugPrint(
+          'Auth Sync: Usuário deslogado. RevenueCat será sincronizado no próximo login.',
+        );
       }
     });
   }
@@ -246,57 +287,20 @@ class _MyAppState extends ConsumerState<MyApp> {
     final themeColorAsync = ref.watch(themeColorProvider);
     final localeAsync = ref.watch(localeSettingProvider);
     final useDynamicColorAsync = ref.watch(useDynamicColorProvider);
+
     final themeMode = darkModeAsync.value ?? ThemeMode.system;
     final colorSeed = themeColorAsync.value ?? const Color(0xFF4CAF50);
     final useDynamicColor = useDynamicColorAsync.value ?? false;
 
-    return onboardingAsync.when(
-      data: (hasSeen) {
-        if (!hasSeen) {
-          return _buildOnboardingShell(
-            themeMode: themeMode,
-            colorSeed: colorSeed,
-            localeAsync: localeAsync,
-            useDynamicColor: useDynamicColor,
-          );
-        }
-        return _buildMainShell(
-          themeMode: themeMode,
-          colorSeed: colorSeed,
-          localeAsync: localeAsync,
-          useDynamicColor: useDynamicColor,
-        );
-      },
-      loading: () => _buildLoadingShell(
-        themeMode: themeMode,
-        colorSeed: colorSeed,
-        localeAsync: localeAsync,
-        useDynamicColor: useDynamicColor,
-      ),
-      error: (error, stack) {
-        Sentry.captureException(error, stackTrace: stack);
-        FirebaseCrashlytics.instance.recordError(error, stack, reason: 'MyApp.onboarding error');
-        return _buildErrorShell(
-          themeMode: themeMode,
-          colorSeed: colorSeed,
-          localeAsync: localeAsync,
-          useDynamicColor: useDynamicColor,
-          error: error.toString(),
-          onRetry: () => ref.invalidate(onboardingProvider),
-        );
-      },
-    );
-  }
-
-  Widget _buildOnboardingShell({
-    required ThemeMode themeMode,
-    required Color colorSeed,
-    required AsyncValue<String?> localeAsync,
-    required bool useDynamicColor,
-  }) {
     return DynamicColorBuilder(
       builder: (lightDynamic, darkDynamic) {
-        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed, useDynamicColor);
+        final colorSchemes = _buildColorSchemes(
+          lightDynamic,
+          darkDynamic,
+          colorSeed,
+          useDynamicColor,
+        );
+
         return MaterialApp(
           title: 'KipiList',
           theme: AppTheme.fromColorScheme(colorSchemes.$1),
@@ -306,112 +310,78 @@ class _MyAppState extends ConsumerState<MyApp> {
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           localeResolutionCallback: _localeResolver(localeAsync),
-          home: const OnboardingScreen(),
-        );
-      },
-    );
-  }
-
-  Widget _buildMainShell({
-    required ThemeMode themeMode,
-    required Color colorSeed,
-    required AsyncValue<String?> localeAsync,
-    required bool useDynamicColor,
-  }) {
-    return DynamicColorBuilder(
-      builder: (lightDynamic, darkDynamic) {
-        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed, useDynamicColor);
-        return MaterialApp(
-          title: 'KipiList',
-          theme: AppTheme.fromColorScheme(colorSchemes.$1),
-          darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
-          themeMode: themeMode,
-          locale: _getLocale(localeAsync.value),
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
-          localeResolutionCallback: _localeResolver(localeAsync),
-          home: const MainShell(),
-        );
-      },
-    );
-  }
-
-  Widget _buildErrorShell({
-    required ThemeMode themeMode,
-    required Color colorSeed,
-    required AsyncValue<String?> localeAsync,
-    required bool useDynamicColor,
-    required String error,
-    required VoidCallback onRetry,
-  }) {
-    return DynamicColorBuilder(
-      builder: (lightDynamic, darkDynamic) {
-        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed, useDynamicColor);
-        return MaterialApp(
-          title: 'KipiList',
-          theme: AppTheme.fromColorScheme(colorSchemes.$1),
-          darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
-          themeMode: themeMode,
-          locale: _getLocale(localeAsync.value),
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
-          localeResolutionCallback: _localeResolver(localeAsync),
-          home: Scaffold(
-            body: SafeArea(
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Icon(Icons.cloud_off_rounded, size: 64, color: Colors.red),
-                      const SizedBox(height: 16),
-                      Text(
-                        AppLocalizations.of(context)!.connectionError,
-                        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        AppLocalizations.of(context)!.connectionErrorDesc(error),
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(color: Colors.grey),
-                      ),
-                      const SizedBox(height: 24),
-                      FilledButton.icon(
-                        onPressed: onRetry,
-                        icon: const Icon(Icons.refresh_rounded),
-                        label: Text(AppLocalizations.of(context)!.retry),
-                      ),
-                    ],
+          home: onboardingAsync.when(
+            data: (hasSeen) {
+              if (!hasSeen) {
+                return const OnboardingScreen();
+              }
+              return const OfflineBanner(child: MainShell());
+            },
+            loading:
+                () => const Scaffold(
+                  body: SafeArea(
+                    child: Center(child: CircularProgressIndicator()),
                   ),
                 ),
-              ),
-            ),
+            error: (error, stack) {
+              Sentry.captureException(error, stackTrace: stack);
+              FirebaseCrashlytics.instance.recordError(
+                error,
+                stack,
+                reason: 'MyApp.onboarding error',
+              );
+              return Builder(
+                builder: (context) {
+                  final theme = Theme.of(context);
+                  return Scaffold(
+                    body: SafeArea(
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(Spacing.lg),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.cloud_off_rounded,
+                                size: 64,
+                                color: theme.colorScheme.error,
+                              ),
+                              const SizedBox(height: Spacing.md),
+                              Text(
+                                AppLocalizations.of(context)!.connectionError,
+                                style: theme.textTheme.titleLarge?.copyWith(
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              const SizedBox(height: Spacing.xs),
+                              Text(
+                                AppLocalizations.of(
+                                  context,
+                                )!.connectionErrorDesc(error.toString()),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: theme.colorScheme.onSurfaceVariant,
+                                ),
+                              ),
+                              const SizedBox(height: Spacing.lg),
+                              FilledButton.icon(
+                                onPressed:
+                                    () => ref.invalidate(onboardingProvider),
+                                icon: const Icon(Icons.refresh_rounded),
+                                label: Text(
+                                  AppLocalizations.of(context)!.retry,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
           ),
-        );
-      },
-    );
-  }
-
-  Widget _buildLoadingShell({
-    required ThemeMode themeMode,
-    required Color colorSeed,
-    required AsyncValue<String?> localeAsync,
-    required bool useDynamicColor,
-  }) {
-    return DynamicColorBuilder(
-      builder: (lightDynamic, darkDynamic) {
-        final colorSchemes = _buildColorSchemes(lightDynamic, darkDynamic, colorSeed, useDynamicColor);
-        return MaterialApp(
-          title: 'KipiList',
-          theme: AppTheme.fromColorScheme(colorSchemes.$1),
-          darkTheme: AppTheme.fromColorScheme(colorSchemes.$2),
-          themeMode: themeMode,
-          locale: _getLocale(localeAsync.value),
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
-          localeResolutionCallback: _localeResolver(localeAsync),
-          home: const Scaffold(body: SafeArea(child: Center(child: CircularProgressIndicator()))),
         );
       },
     );
@@ -465,14 +435,11 @@ class _MainShellState extends ConsumerState<MainShell> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _currentTab = 0;
   final QuickActions _quickActions = const QuickActions();
+  Locale? _shortcutsLocale;
 
   @override
   void initState() {
     super.initState();
-    _quickActions.setShortcutItems(<ShortcutItem>[
-      const ShortcutItem(type: 'action_pantry', localizedTitle: 'Ver Dispensa', icon: 'icon_pantry'),
-      const ShortcutItem(type: 'action_ai', localizedTitle: 'Conversar com Kipi', icon: 'icon_kipi'),
-    ]);
     _quickActions.initialize((shortcutType) {
       if (shortcutType == 'action_pantry') {
         setState(() => _currentTab = 3); // Despensa is now index 3
@@ -485,6 +452,31 @@ class _MainShellState extends ConsumerState<MainShell> {
         ref.read(updateServiceProvider).checkForUpdates();
       }
     });
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final locale = Localizations.localeOf(context);
+    if (_shortcutsLocale == locale) {
+      return;
+    }
+    _shortcutsLocale = locale;
+    final l10n = AppLocalizations.of(context)!;
+    unawaited(
+      _quickActions.setShortcutItems(<ShortcutItem>[
+        ShortcutItem(
+          type: 'action_pantry',
+          localizedTitle: l10n.quickActionPantry,
+          icon: 'icon_pantry',
+        ),
+        ShortcutItem(
+          type: 'action_ai',
+          localizedTitle: l10n.quickActionAi,
+          icon: 'icon_kipi',
+        ),
+      ]),
+    );
   }
 
   @override
@@ -522,7 +514,12 @@ class _MainShellState extends ConsumerState<MainShell> {
             label: l10n.navMealPlanner,
           ),
         ],
-      ).animate().slideY(begin: 1, end: 0, duration: 600.ms, curve: Curves.easeOutCubic),
+      ).animate().slideY(
+        begin: 1,
+        end: 0,
+        duration: 600.ms,
+        curve: Curves.easeOutCubic,
+      ),
 
       body: PageTransitionSwitcher(
         duration: const Duration(milliseconds: 300),
@@ -536,16 +533,16 @@ class _MainShellState extends ConsumerState<MainShell> {
         },
         child: KeyedSubtree(
           key: ValueKey<int>(_currentTab),
-          child: [
-            const AiHomeScreen(),
-            const RecipesScreen(),
-            const ListLoader(),
-            const PantryScreen(),
-            const MealPlannerScreen(),
-          ][_currentTab],
+          child:
+              [
+                const AiHomeScreen(),
+                const RecipesScreen(),
+                const ListLoader(),
+                const PantryScreen(),
+                const MealPlannerScreen(),
+              ][_currentTab],
         ),
       ),
-
     );
   }
 }
@@ -564,11 +561,18 @@ class ListLoader extends ConsumerWidget {
         }
         return HomeScreen(listId: listId);
       },
-      loading: () => const Scaffold(body: SafeArea(child: Center(child: CircularProgressIndicator()))),
+      loading:
+          () => const Scaffold(
+            body: SafeArea(child: Center(child: CircularProgressIndicator())),
+          ),
       error: (e, stack) {
         debugPrint('[ListLoader] Error loading current list: $e');
         Sentry.captureException(e, stackTrace: stack);
-        FirebaseCrashlytics.instance.recordError(e, stack, reason: 'ListLoader error');
+        FirebaseCrashlytics.instance.recordError(
+          e,
+          stack,
+          reason: 'ListLoader error',
+        );
         final l10n = AppLocalizations.of(context)!;
         return Scaffold(
           body: SafeArea(
@@ -578,7 +582,11 @@ class ListLoader extends ConsumerWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.error_outline, color: Colors.red, size: 48),
+                    Icon(
+                      Icons.error_outline,
+                      color: Theme.of(context).colorScheme.error,
+                      size: 48,
+                    ),
                     const SizedBox(height: Spacing.md),
                     Text(
                       l10n.errorLoadingLists,
@@ -586,7 +594,10 @@ class ListLoader extends ConsumerWidget {
                     ),
                     const SizedBox(height: Spacing.xs),
                     Text(
-                      e.toString().replaceFirst('Exception: ', '').replaceFirst('StateError: ', ''),
+                      e
+                          .toString()
+                          .replaceFirst('Exception: ', '')
+                          .replaceFirst('StateError: ', ''),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: Spacing.lg),
@@ -630,12 +641,14 @@ class NoListsScreen extends ConsumerWidget {
                 onPressed: () {
                   showDialog<void>(
                     context: context,
-                    builder: (_) => CreateListDialog(
-                      onCreate: (name) async {
-                        await ref.read(shoppingListsProvider.notifier).createList(name);
-                        ref.invalidate(currentListIdProvider);
-                      },
-                    ),
+                    builder:
+                        (_) => CreateListDialog(
+                          onCreate: (name) async {
+                            await ref
+                                .read(shoppingListsProvider.notifier)
+                                .createList(name);
+                          },
+                        ),
                   );
                 },
                 icon: const Icon(Icons.add),

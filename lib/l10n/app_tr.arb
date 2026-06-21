@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "AI Asistan",
   "aiAssistantDescription": "AI asistanımızla akıllı öneriler, tarifler ve kişiselleştirilmiş ipuçları alın.",
   "aiAssistantTitle": "Yapay Zeka Asistanı",
+  "aiCapabilitiesBudget": "Bütçe ve Fiyatlar",
+  "aiCapabilitiesLists": "Alışveriş Listeleri",
+  "aiCapabilitiesOrganize": "Organizasyon",
+  "aiCapabilitiesRecipes": "Tarifler ve Menüler",
+  "aiCapabilitiesTitle": "Ne yapabilirim?",
   "aiConnectionError": "AI hizmetine bağlanılamadı. Bağlantınızı kontrol edin.",
   "aiCreditsRemaining": "{remaining} kredi kaldı",
   "aiEmptyResponseError": "AI hizmeti boş bir yanıt döndürdü.",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "Satın alındı olarak işaretle",
   "markItemsToSeeAnalysis": "Analizi görmek için öğeleri satın alındı olarak işaretleyin.",
   "marketMode": "Piyasa Modu",
+  "marketModeDescription": "Alışveriş yaparken öğeleri kontrol edin",
   "marketsToAvoid": "Kaçınılması Gereken Piyasalar",
   "marketsToAvoidHint": "Örn: Y Pazarı, Z Pazarı",
   "mealPlannerAddMeal": "Yemek Ekle",
   "mealPlannerAddType": "Yemek türü ekle",
+  "mealPlannerBudgetGoalNav": "Yemek planlayıcı bütçesi",
+  "mealPlannerBudgetGoalSubtitle": "Yemek planlaması için aylık harcama hedefi",
+  "mealPlannerBudgetMonthCost": "Ay: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Hedefi kaldır",
+  "mealPlannerBudgetTodayCost": "Bugün: {amount}",
+  "mealPlannerBudgetWeekCost": "Hafta: {amount}",
   "mealPlannerCustomTypeLabel": "Özel tür",
   "mealPlannerDateLabel": "Tarih",
   "mealPlannerDefaultTypeLabel": "Varsayılan tür",
@@ -2004,6 +2061,7 @@
   "navRecipes": "Tarifler",
   "newCategoryDialog": "Yeni kategori",
   "newChat": "Yeni Sohbet",
+  "newChatStarted": "Yeni sohbet başlatıldı",
   "newListTitle": "Yeni Alışveriş Listesi",
   "newPantryList": "Kiler Alışverişi",
   "newRecipe": "Yeni Tarif",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "Listeleriniz sorgulanıyor...",
   "quickActionAi": "Kipi ile sohbet et",
   "quickActionPantry": "Kileri görüntüle",
+  "quickAddToList": "Listeye ekle",
   "quickRecipe": "Hızlı tarif",
   "quickRecipePrompt": "Listemdeki öğelerle tarif öner.",
   "quickReplies": "Hızlı yanıtlar:",

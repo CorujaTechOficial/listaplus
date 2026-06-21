@@ -6,6 +6,9 @@ import os
 import re
 import time
 import sys
+import argparse
+import signal
+from contextlib import contextmanager
 
 ARB_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'lib', 'l10n')
 TEMPLATE_FILE = os.path.join(ARB_DIR, 'app_en.arb')
@@ -50,15 +53,49 @@ LANG_MAP = {
     'zu': 'zu',
 }
 
+@contextmanager
+def translation_timeout(seconds=20):
+    """Prevent a stalled translation request from blocking the entire run."""
+    def handle_timeout(signum, frame):
+        raise TimeoutError(f"Translation request exceeded {seconds}s")
+
+    previous_handler = signal.signal(signal.SIGALRM, handle_timeout)
+    signal.alarm(seconds)
+    try:
+        yield
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, previous_handler)
+
 def flatten_icu(text):
     """Replace ICU plural/message syntax markers, return (flattened, replacements)."""
     replacements = {}
-    def replacer(m):
-        key = f"__PH{len(replacements)}__"
-        replacements[key] = m.group(0)
-        return key
-    flat = re.sub(r'\{[^}]+\}', replacer, text)
-    return flat, replacements
+    result = []
+    i = 0
+    n = len(text)
+    while i < n:
+        if text[i] == '{':
+            # Find matching close brace at the same level
+            start = i
+            depth = 1
+            i += 1
+            while i < n and depth > 0:
+                if text[i] == '{':
+                    depth += 1
+                elif text[i] == '}':
+                    depth -= 1
+                i += 1
+            if depth == 0:
+                group = text[start:i]
+                key = f"__PH{len(replacements)}__"
+                replacements[key] = group
+                result.append(key)
+            else:
+                result.append(text[start:i])
+        else:
+            result.append(text[i])
+            i += 1
+    return "".join(result), replacements
 
 def restore_icu(text, replacements):
     """Restore ICU plural/message markers after translation."""
@@ -74,7 +111,8 @@ def translate_text(text, target_lang, source_lang='en', retries=3):
         return text
     for attempt in range(retries):
         try:
-            result = GoogleTranslator(source=source_lang, target=target_lang).translate(flat)
+            with translation_timeout():
+                result = GoogleTranslator(source=source_lang, target=target_lang).translate(flat)
             if result is None:
                 return text
             result = restore_icu(result, phs)
@@ -97,7 +135,8 @@ def translate_batch(texts, target_lang, source_lang='en', retries=2):
         phs_list.append(phs)
     for attempt in range(retries):
         try:
-            results = GoogleTranslator(source=source_lang, target=target_lang).translate_batch(flattened)
+            with translation_timeout():
+                results = GoogleTranslator(source=source_lang, target=target_lang).translate_batch(flattened)
             if results is None:
                 return [translate_text(t, target_lang) for t in texts]
             restored = []
@@ -156,14 +195,43 @@ def get_target_lang(locale_code):
 
 def main():
     from deep_translator import GoogleTranslator
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--keys',
+        nargs='+',
+        help='Translate only the specified ARB keys.',
+    )
+    parser.add_argument(
+        '--locales',
+        nargs='+',
+        help='Translate only the specified locale codes.',
+    )
+    args = parser.parse_args()
     
     print(f"Reading template: {TEMPLATE_FILE}")
     en_data, _ = load_arb(TEMPLATE_FILE)
     en_keys = {k for k in en_data if not is_meta_key(k)}
+    if args.keys:
+        requested_keys = set(args.keys)
+        unknown_keys = requested_keys - en_keys
+        if unknown_keys:
+            parser.error(
+                f"Unknown template keys: {', '.join(sorted(unknown_keys))}"
+            )
+        en_keys = requested_keys
     
     print(f"Template has {len(en_keys)} translation keys")
     
     arb_files = sorted([f for f in os.listdir(ARB_DIR) if f.startswith('app_') and f.endswith('.arb') and f != 'app_en.arb'])
+    if args.locales:
+        requested_locales = set(args.locales)
+        arb_files = [
+            file_name
+            for file_name in arb_files
+            if file_name.replace('app_', '').replace('.arb', '')
+            in requested_locales
+        ]
     
     total_translated = 0
     total_errors = 0
@@ -218,7 +286,8 @@ def main():
         
         # Check if language is supported
         try:
-            test = GoogleTranslator(source='en', target=target_lang).translate("test")
+            with translation_timeout():
+                test = GoogleTranslator(source='en', target=target_lang).translate("test")
         except Exception:
             print(f"  [SKIP] Language '{target_lang}' not supported by Google Translate, using English")
             for key in missing_sorted:

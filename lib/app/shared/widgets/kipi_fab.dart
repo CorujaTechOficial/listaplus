@@ -17,24 +17,25 @@ class KipiFab extends StatelessWidget {
       heroTag: 'kipi_fab_${kipiContext.name}',
       backgroundColor: AppColors.premiumAmber,
       foregroundColor: Colors.black,
-      onPressed: () => showModalBottomSheet<void>(
-        context: context,
-        isScrollControlled: true,
-        useSafeArea: true,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-        ),
-        builder: (_) => SizedBox(
-          height: MediaQuery.of(context).size.height * 0.85,
-          child: const AiChatPanel(
-            listId: null,
-            compact: false,
+      onPressed:
+          () => showModalBottomSheet<void>(
+            context: context,
+            isScrollControlled: true,
+            useSafeArea: true,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            ),
+            builder:
+                (_) => SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.85,
+                  child: const AiChatPanel(listId: null, compact: false),
+                ),
           ),
-        ),
-      ),
       child: const Icon(Icons.auto_awesome, size: 18)
           .animate(
-            onPlay: (controller) => isTestMode ? null : controller.repeat(reverse: true),
+            onPlay:
+                (controller) =>
+                    isTestMode ? null : controller.repeat(reverse: true),
           )
           .scale(
             begin: const Offset(0.9, 0.9),

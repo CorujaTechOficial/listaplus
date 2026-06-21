@@ -390,7 +390,7 @@ void main() {
     final strings = l10n(tester);
 
     expect(find.byType(EmptyState), findsOneWidget);
-    expect(find.text(strings.errorLoadingLists), findsOneWidget);
+    expect(find.text(strings.errorLoadingItems), findsOneWidget);
     expect(find.text('Exception: boom'), findsOneWidget);
   });
 }

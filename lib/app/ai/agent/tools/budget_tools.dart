@@ -9,7 +9,12 @@ const setBudgetTool = AgentTool(
   name: 'set_budget',
   description: 'Define o orçamento mensal de compras',
   parameters: [
-    AgentToolParameter(name: 'budget', type: 'number', description: 'Valor do orçamento mensal em reais', required: true),
+    AgentToolParameter(
+      name: 'budget',
+      type: 'number',
+      description: 'Valor do orçamento mensal em reais',
+      required: true,
+    ),
   ],
 );
 

@@ -18,10 +18,6 @@ class SuggestedReply {
   final String icon;
 
   Map<String, dynamic> toJson() {
-    return {
-      'label': label,
-      'prompt': prompt,
-      'icon': icon,
-    };
+    return {'label': label, 'prompt': prompt, 'icon': icon};
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
+import 'package:shopping_list/theme/colors.dart';
 import 'package:shopping_list/theme/tokens.dart';
 
 class OnboardingSlideHook extends StatelessWidget {
@@ -19,15 +20,20 @@ class OnboardingSlideHook extends StatelessWidget {
           children: [
             const Spacer(),
             Image.asset(
-              'assets/images/kipi/kipi_welcome.png',
-              height: 160,
-              filterQuality: FilterQuality.high,
-            ).animate().fadeIn(duration: DurationTokens.normal).scale(begin: const Offset(0.9, 0.9)),
+                  'assets/images/kipi/kipi_welcome.png',
+                  height: 160,
+                  filterQuality: FilterQuality.high,
+                )
+                .animate()
+                .fadeIn(duration: DurationTokens.normal)
+                .scale(begin: const Offset(0.9, 0.9)),
             const SizedBox(height: Spacing.xl),
             Text(
               l10n.obHookTitle,
               textAlign: TextAlign.center,
-              style: theme.textTheme.displaySmall?.copyWith(fontWeight: FontWeight.bold),
+              style: theme.textTheme.displaySmall?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
             ).animate(delay: 150.ms).fadeIn().slideY(begin: 0.15),
             const SizedBox(height: Spacing.sm),
             Text(
@@ -43,11 +49,18 @@ class OnboardingSlideHook extends StatelessWidget {
               children: [
                 ...List.generate(
                   5,
-                  (_) => const Icon(Icons.star_rounded, color: Colors.amber, size: 20),
+                  (_) => const Icon(
+                    Icons.star_rounded,
+                    color: AppColors.premiumAmber,
+                    size: 20,
+                  ),
                 ),
                 const SizedBox(width: Spacing.xs),
                 Flexible(
-                  child: Text(l10n.obHookSocial, style: theme.textTheme.bodySmall),
+                  child: Text(
+                    l10n.obHookSocial,
+                    style: theme.textTheme.bodySmall,
+                  ),
                 ),
               ],
             ).animate(delay: 450.ms).fadeIn(),

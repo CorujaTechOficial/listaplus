@@ -39,12 +39,28 @@ class CatalogProduct {
 
   bool get hasName => name.isNotEmpty;
 
+  String get key => barcode.isNotEmpty ? barcode : name;
+
   String get displayName {
-    final parts = [name, if (brand != null) brand!, if (quantity != null) quantity!];
+    final parts = [
+      name,
+      if (brand != null) brand!,
+      if (quantity != null) quantity!,
+    ];
     return parts.join(' · ');
   }
 
   bool isRareForCountry(String offCountryTag) {
     return !countriesTags.contains(offCountryTag) || uniqueScansN < 100;
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is CatalogProduct &&
+          barcode == other.barcode &&
+          name == other.name);
+
+  @override
+  int get hashCode => Object.hash(barcode, name);
 }

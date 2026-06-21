@@ -10,7 +10,5 @@ void showUniqueSnackBar(
   }
   final messenger = ScaffoldMessenger.of(context);
   messenger.clearSnackBars();
-  messenger.showSnackBar(
-    SnackBar(content: content, action: action),
-  );
+  messenger.showSnackBar(SnackBar(content: content, action: action));
 }

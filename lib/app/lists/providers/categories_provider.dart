@@ -5,8 +5,8 @@ import 'package:shopping_list/core/providers/firebase_providers.dart';
 
 final categoriesProvider =
     AsyncNotifierProvider<CategoriesNotifier, List<CategoryData>>(
-  CategoriesNotifier.new,
-);
+      CategoriesNotifier.new,
+    );
 
 class CategoriesNotifier extends AsyncNotifier<List<CategoryData>> {
   StreamSubscription<List<CategoryData>>? _sub;
@@ -54,9 +54,10 @@ class CategoriesNotifier extends AsyncNotifier<List<CategoryData>> {
   Future<void> reorderCategories(List<CategoryData> reordered) async {
     final backend = ref.read(firestoreServiceProvider);
     if (backend == null) return;
-    final updated = reordered
-        .map((cat) => cat.copyWith(sortOrder: reordered.indexOf(cat)))
-        .toList();
+    final updated =
+        reordered
+            .map((cat) => cat.copyWith(sortOrder: reordered.indexOf(cat)))
+            .toList();
     await backend.saveCategories(updated);
   }
 }

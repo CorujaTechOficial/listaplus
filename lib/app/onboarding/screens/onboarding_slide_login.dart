@@ -32,10 +32,12 @@ class _OnboardingSlideLoginState extends ConsumerState<OnboardingSlideLogin> {
       final user = await method();
       if (user != null && mounted) {
         unawaited(
-          ref.read(analyticsServiceProvider).logEvent(
-            name: 'onboarding_login_completed',
-            parameters: {'provider': provider},
-          ),
+          ref
+              .read(analyticsServiceProvider)
+              .logEvent(
+                name: 'onboarding_login_completed',
+                parameters: {'provider': provider},
+              ),
         );
         widget.onDone();
         return;
@@ -47,9 +49,7 @@ class _OnboardingSlideLoginState extends ConsumerState<OnboardingSlideLogin> {
       if (mounted) {
         setState(() => _busy = false);
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(AppLocalizations.of(context)!.obLoginError),
-          ),
+          SnackBar(content: Text(AppLocalizations.of(context)!.obLoginError)),
         );
       }
     }
@@ -128,7 +128,9 @@ class _OnboardingSlideLoginState extends ConsumerState<OnboardingSlideLogin> {
                   width: double.infinity,
                   child: OutlinedButton(
                     onPressed:
-                        _busy ? null : () => _signIn(auth.signInWithGoogle, 'google'),
+                        _busy
+                            ? null
+                            : () => _signIn(auth.signInWithGoogle, 'google'),
                     style: OutlinedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: Spacing.sm),
                       backgroundColor: Colors.white,
@@ -146,7 +148,7 @@ class _OnboardingSlideLoginState extends ConsumerState<OnboardingSlideLogin> {
                           width: 24,
                           height: 24,
                         ),
-                        const SizedBox(width: 12),
+                        const SizedBox(width: Spacing.sm),
                         Text(
                           l10n.obLoginGoogle,
                           style: const TextStyle(
@@ -174,7 +176,9 @@ class _OnboardingSlideLoginState extends ConsumerState<OnboardingSlideLogin> {
                       style: FilledButton.styleFrom(
                         backgroundColor: Colors.black,
                         foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: Spacing.sm),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: Spacing.sm,
+                        ),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(RadiusTokens.md),
                         ),

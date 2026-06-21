@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/app/onboarding/models/quiz_config.dart';
 import 'package:shopping_list/app/onboarding/providers/onboarding_data_provider.dart';
+import 'package:shopping_list/app/onboarding/screens/onboarding_slide_create_list.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_hook.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_login.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_paywall.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_plan_loading.dart';
 import 'package:shopping_list/app/onboarding/screens/onboarding_slide_plan_reveal.dart';
-import 'package:shopping_list/app/onboarding/screens/onboarding_slide_social_proof.dart';
 import 'package:shopping_list/app/onboarding/widgets/quiz_slide.dart';
+import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/core/providers/analytics_provider.dart';
 import 'package:shopping_list/core/providers/firebase_providers.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
@@ -31,8 +32,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   bool _hydrated = false;
 
   static const int _slideCount = 11;
-  static const int _paywallIndex = 9;
-  static const int _loginIndex = 10;
+  static const int _paywallIndex = 10;
   static const _stepNames = <String>[
     'hook',
     'quiz_household',
@@ -40,11 +40,11 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     'quiz_pain',
     'quiz_savings',
     'quiz_method',
-    'social_proof',
     'plan_loading',
     'plan_reveal',
-    'paywall',
     'login',
+    'create_first_list',
+    'paywall',
   ];
 
   @override
@@ -153,17 +153,36 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     );
   }
 
-  void _goToLogin() {
-    _pageController.animateToPage(
-      _loginIndex,
-      duration: DurationTokens.fast,
-      curve: Curves.easeOutCubic,
-    );
+  Future<void> _createFirstList(String name) async {
+    final existingListId = ref.read(onboardingDataProvider).createdListId;
+    if (existingListId == null) {
+      final list = await ref
+          .read(shoppingListsProvider.notifier)
+          .createList(name);
+      ref
+          .read(onboardingDataProvider.notifier)
+          .recordCreatedList(
+            listId: list.id,
+            itemCount: 0,
+            source: 'onboarding',
+          );
+      unawaited(
+        ref
+            .read(analyticsServiceProvider)
+            .logEvent(
+              name: 'onboarding_first_list_created',
+              parameters: {'name_length': name.length},
+            ),
+      );
+    }
+    _goToNext();
   }
 
   Future<void> _completeOnboarding() async {
     final data = ref.read(onboardingDataProvider);
     final firestore = ref.read(firestoreServiceProvider);
+    bool syncSuccess = false;
+
     if (firestore != null) {
       try {
         await firestore.updateUserData({
@@ -175,11 +194,17 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
             'listMethod': data.listMethod,
           },
         });
-      } on Exception {
-        // Quiz persistence is best-effort and must not block app entry.
+        syncSuccess = true;
+      } on Exception catch (e) {
+        debugPrint('Onboarding: Failed to sync quiz data: $e');
+        // We continue to allow entry, but don't clear the draft.
       }
     }
-    await ref.read(onboardingDataProvider.notifier).clearDraft();
+
+    if (syncSuccess) {
+      await ref.read(onboardingDataProvider.notifier).clearDraft();
+    }
+
     unawaited(ref.read(analyticsServiceProvider).logOnboardingCompleted());
     await ref.read(onboardingProvider.notifier).markAsSeen();
   }
@@ -195,7 +220,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     final l10n = AppLocalizations.of(context)!;
     final data = ref.watch(onboardingDataProvider);
     final notifier = ref.read(onboardingDataProvider.notifier);
-    final showProgress = _currentSlide >= 1 && _currentSlide <= 8;
+    final showProgress = _currentSlide >= 1 && _currentSlide <= 7;
 
     return PopScope(
       canPop: false,
@@ -364,18 +389,17 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                     ],
                   ),
                 ),
-                OnboardingSlideSocialProof(onNext: _goToNext),
                 OnboardingSlidePlanLoading(
-                  active: _currentSlide == 7,
+                  active: _currentSlide == 6,
                   onFinished: _goToNext,
                 ),
                 OnboardingSlidePlanReveal(onNext: _goToNext),
+                OnboardingSlideLogin(onDone: _goToNext),
+                OnboardingSlideCreateList(onCreate: _createFirstList),
                 OnboardingSlidePaywall(
-                  onPurchased: _goToLogin,
-                  onRestored: _goToLogin,
-                ),
-                OnboardingSlideLogin(
-                  onDone: () => unawaited(_completeOnboarding()),
+                  onPurchased: _completeOnboarding,
+                  onRestored: _completeOnboarding,
+                  onSkip: _completeOnboarding,
                 ),
               ],
             ),
@@ -400,7 +424,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                       const SizedBox(width: Spacing.xs),
                       Expanded(
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(4),
+                          borderRadius: BorderRadius.circular(RadiusTokens.xxs),
                           child: LinearProgressIndicator(
                             value: _currentSlide / (_slideCount - 1),
                             minHeight: 5,

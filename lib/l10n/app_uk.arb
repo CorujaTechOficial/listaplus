@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "AI помічник",
   "aiAssistantDescription": "Отримуйте розумні пропозиції, рецепти та персоналізовані поради з нашим AI помічником.",
   "aiAssistantTitle": "ШІ помічник",
+  "aiCapabilitiesBudget": "Бюджет і ціни",
+  "aiCapabilitiesLists": "Списки покупок",
+  "aiCapabilitiesOrganize": "організація",
+  "aiCapabilitiesRecipes": "Рецепти та меню",
+  "aiCapabilitiesTitle": "що я можу зробити",
   "aiConnectionError": "Не вдалося підключитися до служби AI. Перевірте підключення.",
   "aiCreditsRemaining": "Залишилося {remaining} кредитів",
   "aiEmptyResponseError": "Служба AI повернула порожню відповідь.",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "Позначити як куплене",
   "markItemsToSeeAnalysis": "Позначте елементи як куплені, щоб побачити аналіз.",
   "marketMode": "Ринковий режим",
+  "marketModeDescription": "Відмічайте товари під час покупки",
   "marketsToAvoid": "Ринки, яких слід уникати",
   "marketsToAvoidHint": "Наприклад: Ринок Y, Ринок Z",
   "mealPlannerAddMeal": "Додати їжу",
   "mealPlannerAddType": "Додайте тип їжі",
+  "mealPlannerBudgetGoalNav": "Бюджет планувальника їжі",
+  "mealPlannerBudgetGoalSubtitle": "Цільові місячні витрати на планування харчування",
+  "mealPlannerBudgetMonthCost": "Місяць: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Видалити гол",
+  "mealPlannerBudgetTodayCost": "Сьогодні: {amount}",
+  "mealPlannerBudgetWeekCost": "Тиждень: {amount}",
   "mealPlannerCustomTypeLabel": "Спеціальний тип",
   "mealPlannerDateLabel": "Дата",
   "mealPlannerDefaultTypeLabel": "Тип за замовчуванням",
@@ -2004,6 +2061,7 @@
   "navRecipes": "Рецепти",
   "newCategoryDialog": "Нова категорія",
   "newChat": "Новий чат",
+  "newChatStarted": "Розпочато новий чат",
   "newListTitle": "Новий список покупок",
   "newPantryList": "Покупки з комори",
   "newRecipe": "Новий рецепт",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "Запит ваших списків...",
   "quickActionAi": "Побалакати з Кіпі",
   "quickActionPantry": "Переглянути комору",
+  "quickAddToList": "Додати до списку",
   "quickRecipe": "Швидкий рецепт",
   "quickRecipePrompt": "Запропонуйте рецепти з продуктами з мого списку.",
   "quickReplies": "Швидкі відповіді:",

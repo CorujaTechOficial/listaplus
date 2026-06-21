@@ -7,6 +7,7 @@ import '../../services/revenuecat_service_impl.dart';
 import '../../services/ad_service.dart';
 import '../../services/ad_service_impl.dart';
 import '../../services/logger_service.dart';
+import 'firebase_providers.dart';
 
 part 'monetization_providers.g.dart';
 
@@ -16,7 +17,9 @@ final revenueCatServiceProvider = Provider<RevenueCatService>((ref) {
   return RevenueCatServiceImpl();
 });
 
-final paywallPackagesProvider = FutureProvider<List<PaywallPackage>>((ref) async {
+final paywallPackagesProvider = FutureProvider<List<PaywallPackage>>((
+  ref,
+) async {
   final service = ref.read(revenueCatServiceProvider);
   return service.getPaywallPackages();
 });
@@ -33,6 +36,7 @@ class Premium extends _$Premium {
   @override
   Future<bool> build() async {
     final revenueCat = ref.watch(revenueCatServiceProvider);
+    final storage = ref.watch(firestoreServiceProvider);
 
     final link = ref.keepAlive();
 
@@ -57,10 +61,23 @@ class Premium extends _$Premium {
     ref.onDispose(() => revenueCat.removeCustomerInfoUpdateListener(listener));
 
     try {
-      final active = await revenueCat.isEntitlementActive(kipiListProEntitlement);
-      return active;
+      final active = await revenueCat.isEntitlementActive(
+        kipiListProEntitlement,
+      );
+      if (active) {
+        return true;
+      }
+
+      final userData = await storage?.getUserData();
+      final bonusUntil = DateTime.tryParse(
+        userData?['bonusPremiumUntil'] as String? ?? '',
+      );
+      return bonusUntil?.isAfter(DateTime.now().toUtc()) ?? false;
     } on Object catch (e) {
-      LoggerService.log('PremiumProvider: erro ao verificar entitlement: $e', tag: 'Premium');
+      LoggerService.log(
+        'PremiumProvider: erro ao verificar entitlement: $e',
+        tag: 'Premium',
+      );
       return false;
     }
   }

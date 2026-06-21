@@ -31,7 +31,9 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
   void initState() {
     super.initState();
     _nameController = TextEditingController(text: widget.item.name);
-    _quantityController = TextEditingController(text: widget.item.quantity.toString());
+    _quantityController = TextEditingController(
+      text: widget.item.quantity.toString(),
+    );
     _priceController = TextEditingController(
       text: widget.item.estimatedPrice?.toStringAsFixed(2) ?? '',
     );
@@ -50,7 +52,9 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
     return AlertDialog(
+      icon: Icon(Icons.edit_outlined, color: theme.colorScheme.secondary),
       title: Text(l10n.editItem),
       content: Form(
         key: _formKey,
@@ -69,28 +73,37 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                     return option.toLowerCase().contains(query);
                   });
                 },
-                                onSelected: (String selection) {
+                onSelected: (String selection) {
                   _nameController.text = selection;
                 },
-                                fieldViewBuilder: (context, textEditingController, focusNode, onFieldSubmitted) {
-                                    textEditingController.addListener(() {
+                fieldViewBuilder: (
+                  context,
+                  textEditingController,
+                  focusNode,
+                  onFieldSubmitted,
+                ) {
+                  textEditingController.addListener(() {
                     if (_nameController.text != textEditingController.text) {
                       _nameController.text = textEditingController.text;
                     }
                   });
-                  
+
                   _nameController.addListener(() {
                     if (textEditingController.text != _nameController.text) {
                       textEditingController.text = _nameController.text;
                     }
                   });
-                  
+
                   return TextFormField(
                     controller: textEditingController,
                     focusNode: focusNode,
                     decoration: InputDecoration(labelText: l10n.itemName),
-                    onFieldSubmitted: (String value) => onFieldSubmitted(), // coverage:ignore-line
-                    validator: (v) => v == null || v.isEmpty ? l10n.fieldRequired : null,
+                    onFieldSubmitted:
+                        (String value) =>
+                            onFieldSubmitted(), // coverage:ignore-line
+                    validator:
+                        (v) =>
+                            v == null || v.isEmpty ? l10n.fieldRequired : null,
                   );
                 },
               ),
@@ -102,7 +115,11 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                       controller: _quantityController,
                       decoration: InputDecoration(labelText: l10n.quantityFull),
                       keyboardType: TextInputType.number,
-                      validator: (v) => v == null || v.isEmpty ? l10n.fieldRequired : null,
+                      validator:
+                          (v) =>
+                              v == null || v.isEmpty
+                                  ? l10n.fieldRequired
+                                  : null,
                     ),
                   ),
                   const SizedBox(width: Spacing.sm),
@@ -110,9 +127,13 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
                     child: DropdownButtonFormField<Unit>(
                       initialValue: _selectedUnit,
                       decoration: InputDecoration(labelText: l10n.unit),
-                      items: Unit.values.map((u) {
-                        return DropdownMenuItem(value: u, child: Text(u.label));
-                      }).toList(),
+                      items:
+                          Unit.values.map((u) {
+                            return DropdownMenuItem(
+                              value: u,
+                              child: Text(u.label),
+                            );
+                          }).toList(),
                       onChanged: (v) => setState(() => _selectedUnit = v!),
                     ),
                   ),
@@ -122,24 +143,33 @@ class _EditItemDialogState extends ConsumerState<EditItemDialog> {
               DropdownButtonFormField<String>(
                 initialValue: _selectedCategoryId,
                 decoration: InputDecoration(labelText: l10n.category),
-                items: (ref.watch(categoriesProvider).value ?? []).map((cat) {
-                  return DropdownMenuItem(value: cat.id, child: Text(cat.name));
-                }).toList(),
+                items:
+                    (ref.watch(categoriesProvider).value ?? []).map((cat) {
+                      return DropdownMenuItem(
+                        value: cat.id,
+                        child: Text(cat.localizedName(l10n)),
+                      );
+                    }).toList(),
                 onChanged: (v) => setState(() => _selectedCategoryId = v!),
               ),
               const SizedBox(height: Spacing.sm),
               TextFormField(
                 controller: _priceController,
                 decoration: InputDecoration(labelText: l10n.estimatedPrice),
-                keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true,
+                ),
               ),
             ],
           ),
         ),
       ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(context), child: Text(l10n.cancel)),
-        ElevatedButton(
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text(l10n.cancel),
+        ),
+        FilledButton(
           onPressed: () async {
             if (_formKey.currentState!.validate()) {
               final updated = widget.item.copyWith(

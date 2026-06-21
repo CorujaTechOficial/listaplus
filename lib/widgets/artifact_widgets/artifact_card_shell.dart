@@ -6,7 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../models/interactive_artifact.dart';
 import 'package:shopping_list/app/ai/providers/artifact_state_provider.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
-import '../../theme/tokens.dart';
+import 'package:shopping_list/theme/app_theme.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import '../../utils/test_utils.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/core/providers/preferences_providers.dart';
@@ -34,21 +35,6 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
   @override
   void initState() {
     super.initState();
-  }
-
-  Color _getBudgetColor(double ratio) {
-    if (ratio < 0.7) {
-      return Colors.green;
-    }
-    if (ratio < 0.9) {
-      return Colors.amber;
-    }
-    return Colors.red;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // Safe initialization
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
         ref
@@ -56,17 +42,42 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
             .initialize(widget.artifact);
       }
     });
+  }
 
+  Color _getBudgetColor(double ratio, ColorScheme colorScheme) {
+    const safeColor = Color(0xFF2E7D32);
+    const warningColor = Color(0xFFF9A825);
+    final dangerColor = colorScheme.error;
+
+    if (ratio <= 0.7) {
+      return Color.lerp(safeColor, warningColor, ratio / 0.7)!;
+    }
+    return Color.lerp(
+      warningColor,
+      dangerColor,
+      ((ratio - 0.7) / 0.3).clamp(0.0, 1.0),
+    )!;
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final state = ref.watch(artifactStateProvider(widget.artifact.id));
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
 
     final isCommitted = state?.isCommitted ?? widget.artifact.isCommitted;
     final totalCost = state?.totalCost ?? 0.0;
     final budget = widget.artifact.budget;
-    final showBudgetBar = widget.artifact.showBudgetBar && budget != null && budget > 0;
+    final showBudgetBar =
+        widget.artifact.showBudgetBar && budget != null && budget > 0;
+    final budgetRatio = showBudgetBar ? totalCost / budget : 0.0;
 
-    final currencyCode = ref.watch(currencySettingProvider).value ?? 'BRL';
-    final resolvedListId = widget.listId ?? ref.watch(currentListIdProvider).value;
+    final currencyCode = resolveCurrencyCode(
+      ref.watch(currencySettingProvider),
+      Localizations.localeOf(context),
+    );
+    final resolvedListId =
+        widget.listId ?? ref.watch(currentListIdProvider).value;
 
     final Widget cardContent = Container(
       padding: const EdgeInsets.all(Spacing.md),
@@ -82,10 +93,7 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                widget.artifact.icon,
-                style: const TextStyle(fontSize: 24),
-              ),
+              Text(widget.artifact.icon, style: const TextStyle(fontSize: 24)),
               const SizedBox(width: Spacing.sm),
               Expanded(
                 child: Column(
@@ -134,7 +142,7 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
                       ),
                       const SizedBox(width: Spacing.xxs),
                       Text(
-                        'Sincronizado',
+                        l10n.artifactSynced,
                         style: theme.textTheme.labelSmall?.copyWith(
                           color: theme.colorScheme.onPrimaryContainer,
                           fontWeight: FontWeight.bold,
@@ -160,7 +168,7 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Orçamento:',
+                  l10n.artifactBudgetLabel,
                   style: theme.textTheme.bodySmall?.copyWith(
                     fontWeight: FontWeight.w500,
                   ),
@@ -169,21 +177,19 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
                   '${formatCurrency(totalCost, currencyCode)} / ${formatCurrency(budget, currencyCode)}',
                   style: theme.textTheme.bodySmall?.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: totalCost > budget ? Colors.red : theme.colorScheme.onSurface,
+                    color:
+                        totalCost > budget
+                            ? AppSemanticColors.of(context).warning
+                            : theme.colorScheme.onSurface,
                   ),
                 ),
               ],
             ),
             const SizedBox(height: Spacing.xs),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(RadiusTokens.full),
-              child: LinearProgressIndicator(
-                value: (totalCost / budget).clamp(0.0, 1.0),
-                backgroundColor: theme.colorScheme.surface,
-                valueColor: AlwaysStoppedAnimation<Color>(
-                  _getBudgetColor(totalCost / budget),
-                ),
-              ),
+            _AnimatedBudgetProgress(
+              ratio: budgetRatio,
+              color: _getBudgetColor(budgetRatio, theme.colorScheme),
+              trackColor: theme.colorScheme.surface,
             ),
             const SizedBox(height: Spacing.md),
           ],
@@ -198,7 +204,7 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Total Estimado',
+                    l10n.totalEstimatedLabel,
                     style: theme.textTheme.labelSmall?.copyWith(
                       color: theme.colorScheme.onSurfaceVariant,
                     ),
@@ -214,49 +220,60 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
               ),
               if (!isCommitted)
                 FilledButton.icon(
-                  onPressed: (_isCommitting || resolvedListId == null)
-                      ? null
-                      : () async {
-                          unawaited(HapticFeedback.mediumImpact());
-                          setState(() {
-                            _isCommitting = true;
-                          });
-                          try {
-                            await ref
-                                .read(artifactStateProvider(widget.artifact.id).notifier)
-                                .commitToList(resolvedListId);
-                            if (context.mounted) {
-                              final localizations = AppLocalizations.of(context)!;
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(localizations.itemsAddedSuccess),
-                                  action: SnackBarAction(
-                                    label: localizations.viewList,
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
+                  onPressed:
+                      (_isCommitting || resolvedListId == null)
+                          ? null
+                          : () async {
+                            unawaited(HapticFeedback.mediumImpact());
+                            setState(() {
+                              _isCommitting = true;
+                            });
+                            try {
+                              await ref
+                                  .read(
+                                    artifactStateProvider(
+                                      widget.artifact.id,
+                                    ).notifier,
+                                  )
+                                  .commitToList(resolvedListId);
+                              if (context.mounted) {
+                                final localizations =
+                                    AppLocalizations.of(context)!;
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      localizations.itemsAddedSuccess,
+                                    ),
+                                    action: SnackBarAction(
+                                      label: localizations.viewList,
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
                                   ),
-                                ),
-                              );
+                                );
+                              }
+                            } finally {
+                              if (mounted) {
+                                setState(() {
+                                  _isCommitting = false;
+                                });
+                              }
                             }
-                          } finally {
-                            if (mounted) {
-                              setState(() {
-                                _isCommitting = false;
-                              });
-                            }
-                          }
-                        },
-                  icon: _isCommitting
-                      ? const SizedBox(
-                          width: 16,
-                          height: 16,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                          ),
-                        )
-                      : const Icon(Icons.sync),
+                          },
+                  icon:
+                      _isCommitting
+                          ? const SizedBox(
+                            width: 16,
+                            height: 16,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                Colors.white,
+                              ),
+                            ),
+                          )
+                          : const Icon(Icons.sync),
                   label: Text(widget.artifact.commitLabel),
                 ),
             ],
@@ -287,7 +304,7 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
       return cardWithBorder;
     }
 
-        return cardWithBorder
+    return cardWithBorder
         .animate()
         .fadeIn(duration: DurationTokens.normal)
         .slideY(
@@ -296,5 +313,123 @@ class _ArtifactCardShellState extends ConsumerState<ArtifactCardShell> {
           duration: DurationTokens.normal,
           curve: Curves.easeOutQuad,
         );
+  }
+}
+
+class _AnimatedBudgetProgress extends StatefulWidget {
+  const _AnimatedBudgetProgress({
+    required this.ratio,
+    required this.color,
+    required this.trackColor,
+  });
+
+  final double ratio;
+  final Color color;
+  final Color trackColor;
+
+  @override
+  State<_AnimatedBudgetProgress> createState() =>
+      _AnimatedBudgetProgressState();
+}
+
+class _AnimatedBudgetProgressState extends State<_AnimatedBudgetProgress>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _pulseController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pulseController = AnimationController(
+      vsync: this,
+      duration: DurationTokens.ambient,
+      lowerBound: 0,
+      upperBound: 1,
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _syncPulse();
+  }
+
+  @override
+  void didUpdateWidget(covariant _AnimatedBudgetProgress oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.ratio != widget.ratio) {
+      _syncPulse();
+    }
+  }
+
+  void _syncPulse() {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    if (widget.ratio > 1 && !reduceMotion && !isTestMode) {
+      if (!_pulseController.isAnimating) {
+        _pulseController.repeat(reverse: true);
       }
+    } else {
+      _pulseController
+        ..stop()
+        ..value = 0;
+    }
+  }
+
+  @override
+  void dispose() {
+    _pulseController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    final duration = reduceMotion ? Duration.zero : DurationTokens.normal;
+    final targetProgress = widget.ratio.clamp(0.0, 1.0);
+
+    return AnimatedBuilder(
+      animation: _pulseController,
+      builder: (context, child) {
+        final pulse =
+            widget.ratio > 1 ? 0.78 + (_pulseController.value * 0.22) : 1.0;
+
+        return Opacity(
+          opacity: pulse,
+          child: TweenAnimationBuilder<double>(
+            tween: Tween<double>(end: targetProgress),
+            duration: duration,
+            curve: Curves.easeOutCubic,
+            builder: (context, progress, _) {
+              return Container(
+                key: const ValueKey('artifact_budget_progress'),
+                height: Spacing.xs,
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(
+                  color: widget.trackColor,
+                  borderRadius: BorderRadius.circular(RadiusTokens.full),
+                ),
+                alignment: Alignment.centerLeft,
+                child: FractionallySizedBox(
+                  widthFactor: progress,
+                  heightFactor: 1,
+                  child: AnimatedContainer(
+                    duration: duration,
+                    curve: Curves.easeOutCubic,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          widget.color.withAlpha((0.72 * 255).round()),
+                          widget.color,
+                        ],
+                      ),
+                      borderRadius: BorderRadius.circular(RadiusTokens.full),
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+        );
+      },
+    );
+  }
 }

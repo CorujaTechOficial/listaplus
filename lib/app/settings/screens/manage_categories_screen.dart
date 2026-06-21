@@ -15,9 +15,7 @@ class ManageCategoriesScreen extends ConsumerWidget {
     final categoriesAsync = ref.watch(categoriesProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.manageCategoriesTitle),
-      ),
+      appBar: AppBar(title: Text(l10n.manageCategoriesTitle)),
       body: SafeArea(
         child: categoriesAsync.when(
           data: (categories) => _CategoriesList(categories: categories),
@@ -41,9 +39,9 @@ class ManageCategoriesScreen extends ConsumerWidget {
 
     if (!isPremium && categories.length >= 10) {
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.categoryLimitReached)),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(l10n.categoryLimitReached)));
       }
       return;
     }
@@ -64,6 +62,7 @@ class _CategoriesList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     if (categories.isEmpty) {
       return const Center(child: Text('Nenhuma categoria.'));
     }
@@ -86,14 +85,17 @@ class _CategoriesList extends ConsumerWidget {
             // ignore: non_const_argument_for_const_parameter
             child: Icon(cat.icon, color: color),
           ),
-          title: Text(cat.name),
+          title: Text(cat.localizedName(l10n)),
           subtitle: Text('ID: ${cat.id}'),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               if (cat.id != 'others')
                 IconButton(
-                  icon: Icon(Icons.delete_outline, color: theme.colorScheme.error),
+                  icon: Icon(
+                    Icons.delete_outline,
+                    color: theme.colorScheme.error,
+                  ),
                   onPressed: () => _deleteCategory(context, ref, cat),
                 ),
               IconButton(
@@ -108,7 +110,11 @@ class _CategoriesList extends ConsumerWidget {
     );
   }
 
-  Future<void> _editCategory(BuildContext context, WidgetRef ref, CategoryData cat) async {
+  Future<void> _editCategory(
+    BuildContext context,
+    WidgetRef ref,
+    CategoryData cat,
+  ) async {
     if (context.mounted) {
       await showDialog<void>(
         context: context,
@@ -117,26 +123,34 @@ class _CategoriesList extends ConsumerWidget {
     }
   }
 
-  Future<void> _deleteCategory(BuildContext context, WidgetRef ref, CategoryData cat) async {
+  Future<void> _deleteCategory(
+    BuildContext context,
+    WidgetRef ref,
+    CategoryData cat,
+  ) async {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
     final confirmed = await showDialog<bool>(
       context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(l10n.deleteCategoryTitle),
-        content: Text(l10n.deleteCategoryConfirm(cat.name)),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(l10n.cancel)),
-          FilledButton(
-            onPressed: () => Navigator.pop(ctx, true),
-            style: FilledButton.styleFrom(
-              backgroundColor: theme.colorScheme.error,
-              foregroundColor: theme.colorScheme.onError,
-            ),
-            child: Text(l10n.deleteCategory),
+      builder:
+          (ctx) => AlertDialog(
+            title: Text(l10n.deleteCategoryTitle),
+            content: Text(l10n.deleteCategoryConfirm(cat.localizedName(l10n))),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, false),
+                child: Text(l10n.cancel),
+              ),
+              FilledButton(
+                onPressed: () => Navigator.pop(ctx, true),
+                style: FilledButton.styleFrom(
+                  backgroundColor: theme.colorScheme.error,
+                  foregroundColor: theme.colorScheme.onError,
+                ),
+                child: Text(l10n.deleteCategory),
+              ),
+            ],
           ),
-        ],
-      ),
     );
 
     if (confirmed == true) {

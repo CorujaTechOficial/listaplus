@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "AI అసిస్టెంట్",
   "aiAssistantDescription": "మా AI అసిస్టెంట్‌తో స్మార్ట్ సూచనలు, వంటకాలు మరియు వ్యక్తిగతీకరించిన చిట్కాలను పొందండి.",
   "aiAssistantTitle": "AI అసిస్టెంట్",
+  "aiCapabilitiesBudget": "బడ్జెట్ & ధరలు",
+  "aiCapabilitiesLists": "షాపింగ్ జాబితాలు",
+  "aiCapabilitiesOrganize": "సంస్థ",
+  "aiCapabilitiesRecipes": "వంటకాలు & మెనూలు",
+  "aiCapabilitiesTitle": "నేను ఏమి చేయగలను?",
   "aiConnectionError": "AI సేవకు కనెక్ట్ చేయడం సాధ్యపడలేదు. మీ కనెక్షన్‌ని తనిఖీ చేయండి.",
   "aiCreditsRemaining": "{remaining} క్రెడిట్‌లు మిగిలి ఉన్నాయి",
   "aiEmptyResponseError": "AI సేవ ఖాళీ ప్రతిస్పందనను అందించింది.",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "కొనుగోలు చేసినట్లు గుర్తించు",
   "markItemsToSeeAnalysis": "విశ్లేషణ చూడటానికి అంశాలను కొనుగోలు చేసినట్లు గుర్తించండి.",
   "marketMode": "మార్కెట్ మోడ్",
+  "marketModeDescription": "మీరు షాపింగ్ చేస్తున్నప్పుడు వస్తువులను తనిఖీ చేయండి",
   "marketsToAvoid": "నివారించవలసిన మార్కెట్లు",
   "marketsToAvoidHint": "ఉదా: మార్కెట్ Y, మార్కెట్ Z",
   "mealPlannerAddMeal": "భోజనం జోడించండి",
   "mealPlannerAddType": "భోజన రకాన్ని జోడించండి",
+  "mealPlannerBudgetGoalNav": "మీల్ ప్లానర్ బడ్జెట్",
+  "mealPlannerBudgetGoalSubtitle": "భోజన ప్రణాళిక కోసం నెలవారీ ఖర్చు లక్ష్యం",
+  "mealPlannerBudgetMonthCost": "నెల: {amount}",
+  "mealPlannerBudgetRemoveGoal": "లక్ష్యాన్ని తీసివేయండి",
+  "mealPlannerBudgetTodayCost": "ఈరోజు: {amount}",
+  "mealPlannerBudgetWeekCost": "వారం: {amount}",
   "mealPlannerCustomTypeLabel": "అనుకూల రకం",
   "mealPlannerDateLabel": "తేదీ",
   "mealPlannerDefaultTypeLabel": "డిఫాల్ట్ రకం",
@@ -2004,6 +2061,7 @@
   "navRecipes": "వంటకాలు",
   "newCategoryDialog": "కొత్త వర్గం",
   "newChat": "కొత్త చాట్",
+  "newChatStarted": "కొత్త చాట్ ప్రారంభమైంది",
   "newListTitle": "కొత్త షాపింగ్ జాబితా",
   "newPantryList": "ప్యాంట్రీ షాపింగ్",
   "newRecipe": "కొత్త రెసిపీ",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "మీ జాబితాలను ప్రశ్నిస్తోంది...",
   "quickActionAi": "కిపితో చాట్ చేయండి",
   "quickActionPantry": "చిన్నగదిని వీక్షించండి",
+  "quickAddToList": "జాబితాకు జోడించండి",
   "quickRecipe": "శీఘ్ర వంటకం",
   "quickRecipePrompt": "నా జాబితాలోని అంశాలతో వంటకాలను సూచించండి.",
   "quickReplies": "త్వరిత సమాధానాలు:",

@@ -47,12 +47,32 @@ LANG_MAP = {
 
 def flatten_icu(text):
     replacements = {}
-    def replacer(m):
-        key = f"__PH{len(replacements)}__"
-        replacements[key] = m.group(0)
-        return key
-    flat = re.sub(r'\{[^}]+\}', replacer, text)
-    return flat, replacements
+    result = []
+    i = 0
+    n = len(text)
+    while i < n:
+        if text[i] == '{':
+            # Find matching close brace at the same level
+            start = i
+            depth = 1
+            i += 1
+            while i < n and depth > 0:
+                if text[i] == '{':
+                    depth += 1
+                elif text[i] == '}':
+                    depth -= 1
+                i += 1
+            if depth == 0:
+                group = text[start:i]
+                key = f"__PH{len(replacements)}__"
+                replacements[key] = group
+                result.append(key)
+            else:
+                result.append(text[start:i])
+        else:
+            result.append(text[i])
+            i += 1
+    return "".join(result), replacements
 
 def restore_icu(text, replacements):
     for key, val in replacements.items():

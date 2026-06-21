@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -597,6 +612,9 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@mealPlannerBudgetMonthCost": {
     "placeholders": {
       "amount": {
@@ -637,6 +655,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1428,6 +1449,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1606,6 +1630,11 @@
   "aiAssistantGeneral": "အထွေထွေလက်ထောက်",
   "aiAssistantHistory": "လက်ထောက်မှတ်တမ်း",
   "aiAssistantTitle": "AI လက်ထောက်",
+  "aiCapabilitiesBudget": "ဘတ်ဂျက်နှင့် ဈေးနှုန်းများ",
+  "aiCapabilitiesLists": "စျေးဝယ်စာရင်းများ",
+  "aiCapabilitiesOrganize": "အဖွဲ",
+  "aiCapabilitiesRecipes": "ချက်ပြုတ်နည်းများနှင့် မီနူးများ",
+  "aiCapabilitiesTitle": "ကျွန်တော်ဘာလုပ်ပေးရမလဲ?",
   "aiConnectionError": "AI ဝန်ဆောင်မှုသို့ ချိတ်ဆက်၍မရပါ။ သင်၏ချိတ်ဆက်မှုကိုစစ်ဆေးပါ။",
   "aiConversationHistory": "စကားဝိုင်းမှတ်တမ်း",
   "aiCreditsRemaining": "{remaining} ခရက်ဒစ်ကျန်ပါသည်",
@@ -2038,6 +2067,7 @@
   "markAsPurchased": "ဝယ်ပြီးအဖြစ်မှတ်",
   "markItemsToSeeAnalysis": "ခွဲခြမ်းစိတ်ဖြာမှုကြည့်ရန်ပစ္စည်းများကိုဝယ်ပြီးအဖြစ်မှတ်ပါ။",
   "marketMode": "စျေးကွက်မုဒ်",
+  "marketModeDescription": "သင်စျေးဝယ်နေစဉ်ပစ္စည်းများကိုစစ်ဆေးပါ။",
   "marketsToAvoid": "ရှောင်ရှားရန်စျေးကွက်များ",
   "marketsToAvoidHint": "ဥပမာ- စျေးကွက် Y၊ စျေးကွက် Z",
   "mealDragHint": "ဆွဲယူရွှေ့ရန် ဖိထားပါ။",
@@ -2124,6 +2154,7 @@
   "navRecipes": "ချက်ပြုတ်နည်းများ",
   "newCategoryDialog": "အမျိုးအစားအသစ်",
   "newChat": "Chat အသစ်",
+  "newChatStarted": "ချတ်အသစ် စတင်ပါပြီ။",
   "newListTitle": "စျေးဝယ်စာရင်းအသစ်",
   "newPantryList": "စားသိုက်ခန်းစျေးဝယ်",
   "newRecipe": "ဟင်းချက်နည်းအသစ်",
@@ -2497,6 +2528,7 @@
   "queryingYourLists": "သင့်စာရင်းများကို မေးမြန်းနေသည်...",
   "quickActionAi": "Kipi နှင့် စကားပြောပါ။",
   "quickActionPantry": "ဟင်းချက်ရန်",
+  "quickAddToList": "စာရင်းသို့ထည့်ပါ။",
   "quickRecipe": "အမြန်ချက်ပြုတ်နည်း",
   "quickRecipePrompt": "ကျွန်ုပ်စာရင်းပါပစ္စည်းများဖြင့်ချက်ပြုတ်နည်းများအကြံပြုပါ။",
   "quickReplies": "အမြန်ပြန်ကြားချက်များ-",

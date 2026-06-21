@@ -9,14 +9,8 @@ Route<T> fadeSlideRoute<T>(Widget page) {
         position: Tween<Offset>(
           begin: const Offset(0.1, 0),
           end: Offset.zero,
-        ).animate(CurvedAnimation(
-          parent: animation,
-          curve: Curves.easeOut,
-        )),
-        child: FadeTransition(
-          opacity: animation,
-          child: child,
-        ),
+        ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOut)),
+        child: FadeTransition(opacity: animation, child: child),
       );
     },
     transitionDuration: DurationTokens.normal,

@@ -19,18 +19,24 @@ class QuizSlide extends StatelessWidget {
           children: [
             const Spacer(),
             Text(
-              config.title,
-              style: theme.textTheme.headlineMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-            ).animate().fadeIn(duration: DurationTokens.normal).slideY(begin: 0.1),
+                  config.title,
+                  style: theme.textTheme.headlineMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+                .animate()
+                .fadeIn(duration: DurationTokens.normal)
+                .slideY(begin: 0.1),
             const SizedBox(height: Spacing.xl),
             for (final (index, option) in config.options.indexed) ...[
               _OptionTile(
-                option: option,
-                selected: option.id == config.selectedId,
-                onTap: () => config.onSelected(option.id),
-              ).animate(delay: Duration(milliseconds: 60 * index)).fadeIn().slideY(begin: 0.15),
+                    option: option,
+                    selected: option.id == config.selectedId,
+                    onTap: () => config.onSelected(option.id),
+                  )
+                  .animate(delay: Duration(milliseconds: 60 * index))
+                  .fadeIn()
+                  .slideY(begin: 0.15),
               const SizedBox(height: Spacing.sm),
             ],
             const Spacer(flex: 2),
@@ -56,7 +62,8 @@ class _OptionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return Material(
-      color: selected ? scheme.primaryContainer : scheme.surfaceContainerHighest,
+      color:
+          selected ? scheme.primaryContainer : scheme.surfaceContainerHighest,
       borderRadius: BorderRadius.circular(RadiusTokens.lg),
       child: InkWell(
         borderRadius: BorderRadius.circular(RadiusTokens.lg),
@@ -84,7 +91,8 @@ class _OptionTile extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
-              if (selected) Icon(Icons.check_circle_rounded, color: scheme.primary),
+              if (selected)
+                Icon(Icons.check_circle_rounded, color: scheme.primary),
             ],
           ),
         ),

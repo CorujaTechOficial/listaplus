@@ -33,7 +33,9 @@ class PantryItems extends _$PantryItems {
     final currentItems = state.value ?? [];
 
     if (!isPremium && currentItems.length >= freePantryLimit) {
-      throw Exception('Limite de $freePantryLimit itens na despensa no plano gratuito. Faça upgrade para adicionar mais.');
+      throw Exception(
+        'Limite de $freePantryLimit itens na despensa no plano gratuito. Faça upgrade para adicionar mais.',
+      );
     }
 
     final service = ref.read(firestoreServiceProvider);
@@ -93,16 +95,17 @@ class PantryItems extends _$PantryItems {
     if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
-    final updated = items.map((item) {
-      if (item.id == id) {
-        updatedItem = item.copyWith(
-          currentQuantity: quantity.clamp(0, 9999),
-          updatedAt: DateTime.now(),
-        );
-        return updatedItem!;
-      }
-      return item;
-    }).toList();
+    final updated =
+        items.map((item) {
+          if (item.id == id) {
+            updatedItem = item.copyWith(
+              currentQuantity: quantity.clamp(0, 9999),
+              updatedAt: DateTime.now(),
+            );
+            return updatedItem!;
+          }
+          return item;
+        }).toList();
 
     state = AsyncValue.data(updated);
     try {
@@ -120,16 +123,17 @@ class PantryItems extends _$PantryItems {
     if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
-    final updated = items.map((item) {
-      if (item.id == id) {
-        updatedItem = item.copyWith(
-          currentQuantity: item.currentQuantity + 1,
-          updatedAt: DateTime.now(),
-        );
-        return updatedItem!;
-      }
-      return item;
-    }).toList();
+    final updated =
+        items.map((item) {
+          if (item.id == id) {
+            updatedItem = item.copyWith(
+              currentQuantity: item.currentQuantity + 1,
+              updatedAt: DateTime.now(),
+            );
+            return updatedItem!;
+          }
+          return item;
+        }).toList();
 
     state = AsyncValue.data(updated);
     try {
@@ -147,16 +151,17 @@ class PantryItems extends _$PantryItems {
     if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
-    final updated = items.map((item) {
-      if (item.id == id && item.currentQuantity > 0) {
-        updatedItem = item.copyWith(
-          currentQuantity: item.currentQuantity - 1,
-          updatedAt: DateTime.now(),
-        );
-        return updatedItem!;
-      }
-      return item;
-    }).toList();
+    final updated =
+        items.map((item) {
+          if (item.id == id && item.currentQuantity > 0) {
+            updatedItem = item.copyWith(
+              currentQuantity: item.currentQuantity - 1,
+              updatedAt: DateTime.now(),
+            );
+            return updatedItem!;
+          }
+          return item;
+        }).toList();
 
     state = AsyncValue.data(updated);
     try {
@@ -174,16 +179,17 @@ class PantryItems extends _$PantryItems {
     if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
-    final updated = items.map((item) {
-      if (item.id == id && item.currentQuantity > 0) {
-        updatedItem = item.copyWith(
-          currentQuantity: item.currentQuantity - 1,
-          updatedAt: DateTime.now(),
-        );
-        return updatedItem!;
-      }
-      return item;
-    }).toList();
+    final updated =
+        items.map((item) {
+          if (item.id == id && item.currentQuantity > 0) {
+            updatedItem = item.copyWith(
+              currentQuantity: item.currentQuantity - 1,
+              updatedAt: DateTime.now(),
+            );
+            return updatedItem!;
+          }
+          return item;
+        }).toList();
 
     state = AsyncValue.data(updated);
     try {
@@ -201,19 +207,21 @@ class PantryItems extends _$PantryItems {
     if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
-    final updated = items.map((item) {
-      if (item.id == id && item.currentQuantity > 0) {
-        final decrement = quantity > item.currentQuantity
-            ? item.currentQuantity
-            : quantity;
-        updatedItem = item.copyWith(
-          currentQuantity: item.currentQuantity - decrement,
-          updatedAt: DateTime.now(),
-        );
-        return updatedItem!;
-      }
-      return item;
-    }).toList();
+    final updated =
+        items.map((item) {
+          if (item.id == id && item.currentQuantity > 0) {
+            final decrement =
+                quantity > item.currentQuantity
+                    ? item.currentQuantity
+                    : quantity;
+            updatedItem = item.copyWith(
+              currentQuantity: item.currentQuantity - decrement,
+              updatedAt: DateTime.now(),
+            );
+            return updatedItem!;
+          }
+          return item;
+        }).toList();
 
     state = AsyncValue.data(updated);
     try {
@@ -231,16 +239,17 @@ class PantryItems extends _$PantryItems {
     if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
-    final updated = items.map((item) {
-      if (item.id == id) {
-        updatedItem = item.copyWith(
-          currentQuantity: (item.currentQuantity + amount).clamp(0, 9999),
-          updatedAt: DateTime.now(),
-        );
-        return updatedItem!;
-      }
-      return item;
-    }).toList();
+    final updated =
+        items.map((item) {
+          if (item.id == id) {
+            updatedItem = item.copyWith(
+              currentQuantity: (item.currentQuantity + amount).clamp(0, 9999),
+              updatedAt: DateTime.now(),
+            );
+            return updatedItem!;
+          }
+          return item;
+        }).toList();
 
     state = AsyncValue.data(updated);
     try {
@@ -258,16 +267,17 @@ class PantryItems extends _$PantryItems {
     if (service == null) return;
     final items = state.value ?? [];
     PantryItem? updatedItem;
-    final updated = items.map((item) {
-      if (item.id == id) {
-        updatedItem = item.copyWith(
-          idealQuantity: quantity.clamp(1, 999),
-          updatedAt: DateTime.now(),
-        );
-        return updatedItem!;
-      }
-      return item;
-    }).toList();
+    final updated =
+        items.map((item) {
+          if (item.id == id) {
+            updatedItem = item.copyWith(
+              idealQuantity: quantity.clamp(1, 999),
+              updatedAt: DateTime.now(),
+            );
+            return updatedItem!;
+          }
+          return item;
+        }).toList();
 
     state = AsyncValue.data(updated);
     try {
@@ -301,14 +311,16 @@ class PantrySuggestions extends _$PantrySuggestions {
     final items = ref.watch(pantryItemsProvider).value ?? <PantryItem>[];
     return items
         .where((PantryItem p) => p.trackStock && p.deficit > 0)
-        .map((PantryItem p) => ShoppingItem(
-              shoppingListId: '',
-              name: p.name,
-              quantity: p.deficit,
-              categoryId: p.categoryId,
-              unit: p.unit,
-              estimatedPrice: p.estimatedPrice,
-            ))
+        .map(
+          (PantryItem p) => ShoppingItem(
+            shoppingListId: '',
+            name: p.name,
+            quantity: p.deficit,
+            categoryId: p.categoryId,
+            unit: p.unit,
+            estimatedPrice: p.estimatedPrice,
+          ),
+        )
         .toList();
   }
 }
@@ -317,5 +329,7 @@ class PantrySuggestions extends _$PantrySuggestions {
 PantryItem? findInPantry(Ref ref, String itemName) {
   final items = ref.watch(pantryItemsProvider).value ?? [];
   final normalizedName = itemName.normalize();
-  return items.firstWhereOrNull((PantryItem i) => i.name.normalize() == normalizedName);
+  return items.firstWhereOrNull(
+    (PantryItem i) => i.name.normalize() == normalizedName,
+  );
 }

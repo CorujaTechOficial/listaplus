@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,9 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@mealPlannerBudgetMonthCost": {
     "placeholders": {
       "amount": {
@@ -650,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1403,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1562,6 +1586,11 @@
   "aiAssistant": "Asistent AI",
   "aiAssistantDescription": "Primește sugestii inteligente, rețete și sfaturi personalizate cu asistentul nostru AI.",
   "aiAssistantTitle": "Asistent AI",
+  "aiCapabilitiesBudget": "Buget și prețuri",
+  "aiCapabilitiesLists": "Liste de cumpărături",
+  "aiCapabilitiesOrganize": "Organizare",
+  "aiCapabilitiesRecipes": "Rețete și meniuri",
+  "aiCapabilitiesTitle": "Ce pot face?",
   "aiConnectionError": "Nu s-a putut conecta la serviciul AI. Verificați-vă conexiunea.",
   "aiCreditsRemaining": "{remaining} credite rămase",
   "aiEmptyResponseError": "Serviciul AI a returnat un răspuns gol.",
@@ -1949,6 +1978,7 @@
   "markAsPurchased": "Marchează ca achiziționat",
   "markItemsToSeeAnalysis": "Marchează articolele ca achiziționate pentru a vedea analiza.",
   "marketMode": "Modul Piață",
+  "marketModeDescription": "Bifați articolele în timp ce faceți cumpărături",
   "marketsToAvoid": "Piețe de evitat",
   "marketsToAvoidHint": "De exemplu: Piața Y, Piața Z",
   "mealPlannerAddMeal": "Adăugați masa",
@@ -2031,6 +2061,7 @@
   "navRecipes": "Rețete",
   "newCategoryDialog": "Noua categorie",
   "newChat": "Chat nou",
+  "newChatStarted": "A început un nou chat",
   "newListTitle": "Listă nouă de cumpărături",
   "newPantryList": "Cumpărături din cămară",
   "newRecipe": "Rețetă nouă",
@@ -2378,6 +2409,7 @@
   "queryingYourLists": "Se interoghează listele dvs....",
   "quickActionAi": "Discutați cu Kipi",
   "quickActionPantry": "Vedeți cămară",
+  "quickAddToList": "Adăugați pe listă",
   "quickRecipe": "Rețetă rapidă",
   "quickRecipePrompt": "Sugerează rețete cu articole din lista mea.",
   "quickReplies": "Răspunsuri rapide:",

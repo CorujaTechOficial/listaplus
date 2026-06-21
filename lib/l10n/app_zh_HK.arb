@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -600,6 +615,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -650,6 +689,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1423,6 +1465,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1585,6 +1630,11 @@
   "aiAssistant": "AI 助手",
   "aiAssistantDescription": "通过我们的 AI 助手获取智能建议、食谱和个性化提示。",
   "aiAssistantTitle": "AI Assistant",
+  "aiCapabilitiesBudget": "Budget & Prices",
+  "aiCapabilitiesLists": "Shopping Lists",
+  "aiCapabilitiesOrganize": "Organization",
+  "aiCapabilitiesRecipes": "Recipes & Menus",
+  "aiCapabilitiesTitle": "What can I do?",
   "aiConnectionError": "Could not connect to the AI service. Check your connection.",
   "aiCreditsRemaining": "剩余 {remaining} 个积分",
   "aiEmptyResponseError": "The AI service returned an empty response.",
@@ -1972,10 +2022,17 @@
   "markAsPurchased": "标记为已购买",
   "markItemsToSeeAnalysis": "将项目标记为已购买以查看分析。",
   "marketMode": "Market Mode",
+  "marketModeDescription": "Check off items as you shop",
   "marketsToAvoid": "Markets to Avoid",
   "marketsToAvoidHint": "E.g.: Market Y, Market Z",
   "mealPlannerAddMeal": "Add Meal",
   "mealPlannerAddType": "Add meal type",
+  "mealPlannerBudgetGoalNav": "Meal planner budget",
+  "mealPlannerBudgetGoalSubtitle": "Monthly spending goal for meal planning",
+  "mealPlannerBudgetMonthCost": "Month: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Remove goal",
+  "mealPlannerBudgetTodayCost": "Today: {amount}",
+  "mealPlannerBudgetWeekCost": "Week: {amount}",
   "mealPlannerCustomTypeLabel": "Custom type",
   "mealPlannerDateLabel": "Date",
   "mealPlannerDefaultTypeLabel": "Default type",
@@ -2048,6 +2105,7 @@
   "navRecipes": "食譜",
   "newCategoryDialog": "New category",
   "newChat": "New Chat",
+  "newChatStarted": "New chat started",
   "newListTitle": "新购物清单",
   "newPantryList": "储藏室购物",
   "newRecipe": "New Recipe",
@@ -2395,6 +2453,7 @@
   "queryingYourLists": "Querying your lists...",
   "quickActionAi": "Chat with Kipi",
   "quickActionPantry": "View pantry",
+  "quickAddToList": "Add to list",
   "quickRecipe": "快速食谱",
   "quickRecipePrompt": "使用我清单中的项目推荐食谱。",
   "quickReplies": "Quick replies:",

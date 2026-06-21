@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "AI مددگار",
   "aiAssistantDescription": "ہمارے AI مددگار کے ساتھ ہوشیار تجاویز، ترکیبیں اور ذاتی مشورے حاصل کریں۔",
   "aiAssistantTitle": "اے آئی اسسٹنٹ",
+  "aiCapabilitiesBudget": "بجٹ اور قیمتیں۔",
+  "aiCapabilitiesLists": "خریداری کی فہرستیں۔",
+  "aiCapabilitiesOrganize": "تنظیم",
+  "aiCapabilitiesRecipes": "ترکیبیں اور مینو",
+  "aiCapabilitiesTitle": "میں کیا کر سکتا ہوں؟",
   "aiConnectionError": "AI سروس سے منسلک نہیں ہو سکا۔ اپنا کنکشن چیک کریں۔",
   "aiCreditsRemaining": "{remaining} کریڈٹ باقی",
   "aiEmptyResponseError": "AI سروس نے ایک خالی جواب واپس کیا۔",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "خریدا ہوا نشان زد کریں",
   "markItemsToSeeAnalysis": "تجزیہ دیکھنے کے لیے اشیاء کو خریدا ہوا نشان زد کریں۔",
   "marketMode": "مارکیٹ موڈ",
+  "marketModeDescription": "خریداری کرتے وقت اشیاء کو چیک کریں۔",
   "marketsToAvoid": "بازاروں سے بچنے کے لیے",
   "marketsToAvoidHint": "جیسے: Market Y، Market Z",
   "mealPlannerAddMeal": "کھانا شامل کریں۔",
   "mealPlannerAddType": "کھانے کی قسم شامل کریں۔",
+  "mealPlannerBudgetGoalNav": "کھانے کے منصوبہ ساز بجٹ",
+  "mealPlannerBudgetGoalSubtitle": "کھانے کی منصوبہ بندی کے لیے ماہانہ اخراجات کا ہدف",
+  "mealPlannerBudgetMonthCost": "مہینہ: {amount}",
+  "mealPlannerBudgetRemoveGoal": "مقصد کو ہٹا دیں۔",
+  "mealPlannerBudgetTodayCost": "آج: {amount}",
+  "mealPlannerBudgetWeekCost": "ہفتہ: {amount}",
   "mealPlannerCustomTypeLabel": "حسب ضرورت قسم",
   "mealPlannerDateLabel": "تاریخ",
   "mealPlannerDefaultTypeLabel": "پہلے سے طے شدہ قسم",
@@ -2004,6 +2061,7 @@
   "navRecipes": "ترکیبیں",
   "newCategoryDialog": "نیا زمرہ",
   "newChat": "نئی چیٹ",
+  "newChatStarted": "نئی گپ شپ شروع ہوئی۔",
   "newListTitle": "نئی خریداری کی فہرست",
   "newPantryList": "پینٹری خریداری",
   "newRecipe": "نیا نسخہ",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "آپ کی فہرستوں سے استفسار کیا جا رہا ہے...",
   "quickActionAi": "کیپی کے ساتھ چیٹ کریں۔",
   "quickActionPantry": "پینٹری دیکھیں",
+  "quickAddToList": "فہرست میں شامل کریں۔",
   "quickRecipe": "فوری ترکیب",
   "quickRecipePrompt": "میری فہرست میں موجود اشیاء کے ساتھ ترکیبیں تجویز کریں۔",
   "quickReplies": "فوری جوابات:",

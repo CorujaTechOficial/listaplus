@@ -82,11 +82,36 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
 
   Widget _buildForm(ThemeData theme, AppLocalizations l10n) {
     final typeOptions = [
-      (FeedbackType.bug, Icons.bug_report, l10n.feedbackTypeBug, l10n.feedbackTypeBugHint),
-      (FeedbackType.suggestion, Icons.lightbulb_outline, l10n.feedbackTypeSuggestion, l10n.feedbackTypeSuggestionHint),
-      (FeedbackType.translationIssue, Icons.translate, l10n.feedbackTypeTranslation, l10n.feedbackTypeTranslationHint),
-      (FeedbackType.improvement, Icons.star_outline, l10n.feedbackTypeFeature, l10n.feedbackTypeFeatureHint),
-      (FeedbackType.other, Icons.more_horiz, l10n.feedbackTypeOther, l10n.feedbackTypeOtherHint),
+      (
+        FeedbackType.bug,
+        Icons.bug_report,
+        l10n.feedbackTypeBug,
+        l10n.feedbackTypeBugHint,
+      ),
+      (
+        FeedbackType.suggestion,
+        Icons.lightbulb_outline,
+        l10n.feedbackTypeSuggestion,
+        l10n.feedbackTypeSuggestionHint,
+      ),
+      (
+        FeedbackType.translationIssue,
+        Icons.translate,
+        l10n.feedbackTypeTranslation,
+        l10n.feedbackTypeTranslationHint,
+      ),
+      (
+        FeedbackType.improvement,
+        Icons.star_outline,
+        l10n.feedbackTypeFeature,
+        l10n.feedbackTypeFeatureHint,
+      ),
+      (
+        FeedbackType.other,
+        Icons.more_horiz,
+        l10n.feedbackTypeOther,
+        l10n.feedbackTypeOtherHint,
+      ),
     ];
 
     return SingleChildScrollView(
@@ -96,7 +121,9 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
         children: [
           Text(
             l10n.feedbackPrompt,
-            style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
+            style: theme.textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.w600,
+            ),
           ),
           const SizedBox(height: Spacing.md),
           ...typeOptions.map((opt) {
@@ -108,18 +135,34 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
                 onTap: () => setState(() => _selectedType = opt.$1),
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
-                  padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.sm),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: Spacing.md,
+                    vertical: Spacing.sm,
+                  ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(RadiusTokens.sm),
                     border: Border.all(
-                      color: selected ? theme.colorScheme.primary : theme.colorScheme.outlineVariant,
+                      color:
+                          selected
+                              ? theme.colorScheme.primary
+                              : theme.colorScheme.outlineVariant,
                       width: selected ? 2 : 1,
                     ),
-                    color: selected ? theme.colorScheme.primaryContainer.withAlpha(100) : null,
+                    color:
+                        selected
+                            ? theme.colorScheme.primaryContainer.withAlpha(100)
+                            : null,
                   ),
                   child: Row(
                     children: [
-                      Icon(opt.$2, size: 22, color: selected ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant),
+                      Icon(
+                        opt.$2,
+                        size: 22,
+                        color:
+                            selected
+                                ? theme.colorScheme.primary
+                                : theme.colorScheme.onSurfaceVariant,
+                      ),
                       const SizedBox(width: Spacing.sm),
                       Expanded(
                         child: Column(
@@ -128,18 +171,27 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
                             Text(
                               opt.$3,
                               style: theme.textTheme.bodyMedium?.copyWith(
-                                fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
+                                fontWeight:
+                                    selected
+                                        ? FontWeight.w600
+                                        : FontWeight.normal,
                               ),
                             ),
                             Text(
                               opt.$4,
-                              style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+                              style: theme.textTheme.bodySmall?.copyWith(
+                                color: theme.colorScheme.onSurfaceVariant,
+                              ),
                             ),
                           ],
                         ),
                       ),
                       if (selected)
-                        Icon(Icons.check_circle, color: theme.colorScheme.primary, size: 20),
+                        Icon(
+                          Icons.check_circle,
+                          color: theme.colorScheme.primary,
+                          size: 20,
+                        ),
                     ],
                   ),
                 ),
@@ -165,16 +217,21 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
             width: double.infinity,
             height: 48,
             child: FilledButton.icon(
-              onPressed: _sending || _messageController.text.trim().isEmpty
-                  ? null
-                  : _sendFeedback,
-              icon: _sending
-                  ? const SizedBox(
-                      width: 20,
-                      height: 20,
-                      child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-                    )
-                  : const Icon(Icons.send_rounded),
+              onPressed:
+                  _sending || _messageController.text.trim().isEmpty
+                      ? null
+                      : _sendFeedback,
+              icon:
+                  _sending
+                      ? const SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          color: Colors.white,
+                        ),
+                      )
+                      : const Icon(Icons.send_rounded),
               label: Text(_sending ? l10n.feedbackSending : l10n.feedbackSend),
             ),
           ),
@@ -190,17 +247,25 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.check_circle_outline, size: 80, color: theme.colorScheme.primary),
+            Icon(
+              Icons.check_circle_outline,
+              size: 80,
+              color: theme.colorScheme.primary,
+            ),
             const SizedBox(height: Spacing.lg),
             Text(
               l10n.feedbackThankYou,
-              style: theme.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+              style: theme.textTheme.headlineSmall?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: Spacing.sm),
             Text(
               l10n.feedbackThankYouMessage,
               textAlign: TextAlign.center,
-              style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
             ),
             const SizedBox(height: Spacing.xl),
             FilledButton(
@@ -248,7 +313,10 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(l10n.feedbackError(e.toString())),
-            action: SnackBarAction(label: l10n.feedbackRetry, onPressed: _sendFeedback),
+            action: SnackBarAction(
+              label: l10n.feedbackRetry,
+              onPressed: _sendFeedback,
+            ),
           ),
         );
       }

@@ -2,7 +2,8 @@ import 'tool_core.dart';
 
 const getListsTool = AgentTool(
   name: 'get_lists',
-  description: 'Lista todas as listas de compras do usuário, incluindo arquivadas e compartilhadas',
+  description:
+      'Lista todas as listas de compras do usuário, incluindo arquivadas e compartilhadas',
 );
 
 const getCurrentListTool = AgentTool(
@@ -63,7 +64,8 @@ const renameListTool = AgentTool(
 
 const deleteListTool = AgentTool(
   name: 'delete_list',
-  description: 'Exclui permanentemente uma lista de compras e todos os seus itens',
+  description:
+      'Exclui permanentemente uma lista de compras e todos os seus itens',
   parameters: [
     AgentToolParameter(
       name: 'listId',
@@ -76,7 +78,8 @@ const deleteListTool = AgentTool(
 
 const archiveListTool = AgentTool(
   name: 'archive_list',
-  description: 'Arquiva uma lista de compras (esconde da visualização principal)',
+  description:
+      'Arquiva uma lista de compras (esconde da visualização principal)',
   parameters: [
     AgentToolParameter(
       name: 'listId',
@@ -89,7 +92,8 @@ const archiveListTool = AgentTool(
 
 const unarchiveListTool = AgentTool(
   name: 'unarchive_list',
-  description: 'Desarquiva uma lista de compras (restaura à visualização principal)',
+  description:
+      'Desarquiva uma lista de compras (restaura à visualização principal)',
   parameters: [
     AgentToolParameter(
       name: 'listId',

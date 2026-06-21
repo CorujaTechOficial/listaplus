@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import 'package:shimmer/shimmer.dart';
 
 class PantryItemSkeleton extends StatelessWidget {
@@ -13,19 +14,22 @@ class PantryItemSkeleton extends StatelessWidget {
       baseColor: base,
       highlightColor: highlight,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+        padding: const EdgeInsets.symmetric(
+          horizontal: Spacing.md,
+          vertical: Spacing.xxs,
+        ),
         child: Container(
           height: 80,
           decoration: BoxDecoration(
             color: base,
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(RadiusTokens.lg),
           ),
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(Spacing.sm),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(height: 14, width: 160, color: base),
-              const SizedBox(height: 8),
+              const SizedBox(height: Spacing.xs),
               Container(height: 8, width: double.infinity, color: base),
               const SizedBox(height: 6),
               Container(height: 10, width: 80, color: base),

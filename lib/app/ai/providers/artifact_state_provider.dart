@@ -37,6 +37,24 @@ class ArtifactState {
   }
 }
 
+class ArtifactOptimizationSuggestion {
+  const ArtifactOptimizationSuggestion({
+    required this.itemIndex,
+    required this.originalItem,
+    required this.alternative,
+    required this.currentCost,
+    required this.optimizedCost,
+  });
+
+  final int itemIndex;
+  final ArtifactItem originalItem;
+  final ArtifactItemAlternative alternative;
+  final double currentCost;
+  final double optimizedCost;
+
+  double get savings => currentCost - optimizedCost;
+}
+
 @riverpod
 class ArtifactStateNotifier extends _$ArtifactStateNotifier {
   @override
@@ -72,15 +90,18 @@ class ArtifactStateNotifier extends _$ArtifactStateNotifier {
       return;
     }
 
-    final newControlValues = Map<String, dynamic>.from(currentState.controlValues);
+    final newControlValues = Map<String, dynamic>.from(
+      currentState.controlValues,
+    );
     newControlValues[controlId] = value;
 
-    final updatedControls = currentState.artifact.controls.map((c) {
-      if (c.id == controlId) {
-        return c.copyWith(value: value);
-      }
-      return c;
-    }).toList();
+    final updatedControls =
+        currentState.artifact.controls.map((c) {
+          if (c.id == controlId) {
+            return c.copyWith(value: value);
+          }
+          return c;
+        }).toList();
 
     final updatedArtifact = currentState.artifact.copyWith(
       controls: updatedControls,
@@ -120,52 +141,156 @@ class ArtifactStateNotifier extends _$ArtifactStateNotifier {
     state = _recalculateState(newState);
   }
 
+  List<ArtifactOptimizationSuggestion> optimizationSuggestions() {
+    final currentState = state;
+    if (currentState == null || currentState.isCommitted) {
+      return const [];
+    }
+
+    final multiplier = _calculateMultiplier(
+      currentState.artifact,
+      currentState.controlValues,
+    );
+    final suggestions = <ArtifactOptimizationSuggestion>[];
+
+    for (var index = 0; index < currentState.currentItems.length; index++) {
+      final item = currentState.currentItems[index];
+      if (item.isSwapped ||
+          !_matchesConditions(item, currentState.controlValues) ||
+          item.estimatedPrice == null) {
+        continue;
+      }
+
+      final alternatives = item.alternatives;
+      if (alternatives == null || alternatives.isEmpty) {
+        continue;
+      }
+
+      final currentCost = item.baseQuantity * multiplier * item.estimatedPrice!;
+      ArtifactItemAlternative? bestAlternative;
+      double? bestCost;
+
+      for (final alternative in alternatives) {
+        final estimatedPrice = alternative.estimatedPrice;
+        if (estimatedPrice == null) {
+          continue;
+        }
+
+        final alternativeCost = alternative.quantity * estimatedPrice;
+        if (alternativeCost < currentCost &&
+            (bestCost == null || alternativeCost < bestCost)) {
+          bestAlternative = alternative;
+          bestCost = alternativeCost;
+        }
+      }
+
+      if (bestAlternative != null && bestCost != null) {
+        suggestions.add(
+          ArtifactOptimizationSuggestion(
+            itemIndex: index,
+            originalItem: item,
+            alternative: bestAlternative,
+            currentCost: currentCost,
+            optimizedCost: bestCost,
+          ),
+        );
+      }
+    }
+
+    suggestions.sort((a, b) => b.savings.compareTo(a.savings));
+    return suggestions;
+  }
+
+  void applyOptimizations(List<ArtifactOptimizationSuggestion> suggestions) {
+    final currentState = state;
+    if (currentState == null ||
+        currentState.isCommitted ||
+        suggestions.isEmpty) {
+      return;
+    }
+
+    final items = List<ArtifactItem>.from(currentState.currentItems);
+    for (final suggestion in suggestions) {
+      if (suggestion.itemIndex < 0 ||
+          suggestion.itemIndex >= items.length ||
+          items[suggestion.itemIndex].isSwapped) {
+        continue;
+      }
+
+      final alternative = suggestion.alternative;
+      items[suggestion.itemIndex] = items[suggestion.itemIndex].copyWith(
+        name: alternative.name,
+        baseQuantity: alternative.quantity,
+        unit: alternative.unit,
+        estimatedPrice: alternative.estimatedPrice,
+        isSwapped: true,
+      );
+    }
+
+    state = _recalculateState(currentState.copyWith(currentItems: items));
+  }
+
   Future<void> commitToList(String listId) async {
     final currentState = state;
     if (currentState == null || currentState.isCommitted) {
       return;
     }
 
-    final visibleItems = currentState.currentItems.where((item) {
-      return _matchesConditions(item, currentState.controlValues);
-    }).toList();
+    final visibleItems =
+        currentState.currentItems.where((item) {
+          return _matchesConditions(item, currentState.controlValues);
+        }).toList();
 
-    final itemsToCommit = visibleItems.where((item) {
-      if (currentState.artifact.commitMode == ArtifactCommitMode.addMissing) {
-        return !item.isAvailable;
-      }
-      return true;
-    }).toList();
+    final itemsToCommit =
+        visibleItems.where((item) {
+          if (currentState.artifact.commitMode ==
+              ArtifactCommitMode.addMissing) {
+            return !item.isAvailable;
+          }
+          return true;
+        }).toList();
 
-    final multiplier = _calculateMultiplier(currentState.artifact, currentState.controlValues);
+    final multiplier = _calculateMultiplier(
+      currentState.artifact,
+      currentState.controlValues,
+    );
 
     for (final item in itemsToCommit) {
-      final double quantityFloat = item.isSwapped ? item.baseQuantity : (item.baseQuantity * multiplier);
+      final double quantityFloat =
+          item.isSwapped ? item.baseQuantity : (item.baseQuantity * multiplier);
       final int quantity = quantityFloat.round().clamp(1, 999999);
 
       final categoryId = _parseCategory(item.category);
       final unit = _parseUnit(item.unit);
 
-      await ref.read(shoppingListItemsProvider(listId).notifier).addItem(
-        listId: listId,
-        name: item.name,
-        quantity: quantity,
-        categoryId: categoryId,
-        unit: unit,
-        estimatedPrice: item.estimatedPrice,
-      );
+      await ref
+          .read(shoppingListItemsProvider(listId).notifier)
+          .addItem(
+            listId: listId,
+            name: item.name,
+            quantity: quantity,
+            categoryId: categoryId,
+            unit: unit,
+            estimatedPrice: item.estimatedPrice,
+          );
     }
 
     state = currentState.copyWith(isCommitted: true);
   }
 
   ArtifactState _recalculateState(ArtifactState state) {
-    final multiplier = _calculateMultiplier(state.artifact, state.controlValues);
+    final multiplier = _calculateMultiplier(
+      state.artifact,
+      state.controlValues,
+    );
 
     double totalCost = 0;
     for (final item in state.currentItems) {
       if (_matchesConditions(item, state.controlValues)) {
-        final double quantity = item.isSwapped ? item.baseQuantity : (item.baseQuantity * multiplier);
+        final double quantity =
+            item.isSwapped
+                ? item.baseQuantity
+                : (item.baseQuantity * multiplier);
         totalCost += quantity * (item.estimatedPrice ?? 0.0);
       }
     }
@@ -173,8 +298,13 @@ class ArtifactStateNotifier extends _$ArtifactStateNotifier {
     return state.copyWith(totalCost: totalCost);
   }
 
-  double _calculateMultiplier(InteractiveArtifact artifact, Map<String, dynamic> controlValues) {
-    final multiplierControls = artifact.controls.where((c) => c.affectsMultiplier);
+  double _calculateMultiplier(
+    InteractiveArtifact artifact,
+    Map<String, dynamic> controlValues,
+  ) {
+    final multiplierControls = artifact.controls.where(
+      (c) => c.affectsMultiplier,
+    );
     if (multiplierControls.isEmpty) {
       return 1;
     }
@@ -196,7 +326,10 @@ class ArtifactStateNotifier extends _$ArtifactStateNotifier {
     return sum / artifact.baseServings;
   }
 
-  bool _matchesConditions(ArtifactItem item, Map<String, dynamic> controlValues) {
+  bool _matchesConditions(
+    ArtifactItem item,
+    Map<String, dynamic> controlValues,
+  ) {
     if (item.conditions == null || item.conditions!.isEmpty) {
       return true;
     }
@@ -213,16 +346,27 @@ class ArtifactStateNotifier extends _$ArtifactStateNotifier {
 
   String _parseCategory(String categoryStr) {
     final lower = categoryStr.toLowerCase();
-    if (lower.contains('frut') || lower.contains('veget') || lower.contains('verd')) {
+    if (lower.contains('frut') ||
+        lower.contains('veget') ||
+        lower.contains('verd')) {
       return 'fruits';
     }
-    if (lower.contains('limp') || lower.contains('higi') || lower.contains('deterg')) {
+    if (lower.contains('limp') ||
+        lower.contains('higi') ||
+        lower.contains('deterg')) {
       return 'cleaning';
     }
-    if (lower.contains('beb') || lower.contains('refr') || lower.contains('suco') || lower.contains('cerv')) {
+    if (lower.contains('beb') ||
+        lower.contains('refr') ||
+        lower.contains('suco') ||
+        lower.contains('cerv')) {
       return 'beverages';
     }
-    if (lower.contains('pad') || lower.contains('pao') || lower.contains('pão') || lower.contains('bolo') || lower.contains('doc')) {
+    if (lower.contains('pad') ||
+        lower.contains('pao') ||
+        lower.contains('pão') ||
+        lower.contains('bolo') ||
+        lower.contains('doc')) {
       return 'bakery';
     }
     return 'others';

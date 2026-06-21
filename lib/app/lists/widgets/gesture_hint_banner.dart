@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 
 class GestureHintBanner extends StatelessWidget {
-  const GestureHintBanner({
-    super.key,
-    required this.onDismiss,
-  });
+  const GestureHintBanner({super.key, required this.onDismiss});
 
   final VoidCallback onDismiss;
 
@@ -17,11 +15,18 @@ class GestureHintBanner extends StatelessWidget {
     return GestureDetector(
       onTap: onDismiss,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        margin: const EdgeInsets.symmetric(
+          horizontal: Spacing.sm,
+          vertical: Spacing.xxs,
+        ),
+        padding: const EdgeInsets.symmetric(
+          horizontal: Spacing.sm,
+          vertical: Spacing.xs,
+        ),
         decoration: BoxDecoration(
-          color: theme.colorScheme.surfaceContainerHighest,
-          borderRadius: BorderRadius.circular(999),
+          color: theme.colorScheme.surfaceContainer,
+          borderRadius: BorderRadius.circular(RadiusTokens.full),
+          border: Border.all(color: theme.colorScheme.outlineVariant),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -31,7 +36,7 @@ class GestureHintBanner extends StatelessWidget {
               size: 14,
               color: theme.colorScheme.onSurfaceVariant,
             ),
-            const SizedBox(width: 6),
+            const SizedBox(width: Spacing.xs - 2),
             Text(
               l10n.gestureHint,
               style: theme.textTheme.bodySmall?.copyWith(

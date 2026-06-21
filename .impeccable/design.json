@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-19T00:00:00Z",
+  "title": "Design System: KipiList",
+  "extensions": {
+    "northStar": "The Confident Household Assistant",
+    "colorMeta": {
+      "brand-green": {
+        "role": "primary",
+        "displayName": "Confidence Green",
+        "canonical": "#2E7D32",
+        "tonalRamp": ["#E8F5E9", "#A5D6A7", "#66BB6A", "#2E7D32", "#1B5E20"]
+      },
+      "premium-amber": {
+        "role": "secondary",
+        "displayName": "Premium Amber",
+        "canonical": "#FFA000",
+        "tonalRamp": ["#FFF8E1", "#FFE082", "#FFD54F", "#FFA000", "#FF6F00"]
+      },
+      "scaffold-light": {
+        "role": "neutral",
+        "displayName": "Soft Utility Light",
+        "canonical": "#F8F9FA",
+        "tonalRamp": ["#FFFFFF", "#F8F9FA", "#ECEFF1", "#CFD8DC", "#90A4AE"]
+      },
+      "scaffold-dark": {
+        "role": "neutral",
+        "displayName": "Night Utility Base",
+        "canonical": "#0F1116",
+        "tonalRamp": ["#252A36", "#1E222B", "#161A22", "#0F1116", "#090B0F"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero and onboarding promise statements."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section anchors and high-emphasis product statements."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Cards, sections, and medium-emphasis UI groupings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default reading and explanatory copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, chips, and compact interaction language."
+      }
+    },
+    "elevation": {
+      "defaultStrategy": "light-material",
+      "levels": {
+        "flat-rest": {
+          "value": 0,
+          "purpose": "Default cards and contained surfaces."
+        },
+        "working-lift": {
+          "value": 3,
+          "purpose": "App bars, snackbars, dialogs, and task-critical layer separation."
+        },
+        "action-lift": {
+          "value": 6,
+          "purpose": "Floating actions and stronger interactive emphasis."
+        }
+      }
+    },
+    "motion": {
+      "durations": {
+        "micro": "80ms",
+        "fast": "200ms",
+        "normal": "350ms",
+        "medium": "500ms",
+        "slow": "600ms"
+      },
+      "principle": "Motion should clarify state and conversion emphasis, never decorate task flow."
+    },
+    "rules": {
+      "dos": [
+        "Keep utility surfaces calm and readable with one clear primary action.",
+        "Use premium amber only in monetization, premium, or reward contexts.",
+        "Increase conversion emphasis through hierarchy and proof, not visual noise."
+      ],
+      "donts": [
+        "Do not style the app like a heavy finance dashboard.",
+        "Do not use generic AI hype or futuristic spectacle as the conversion strategy.",
+        "Do not create noisy paywalls with too many competing highlights."
+      ]
+    }
+  }
+}

@@ -2,7 +2,8 @@ import 'tool_core.dart';
 
 const getItemsTool = AgentTool(
   name: 'get_items',
-  description: 'Lista os itens de uma lista de compras. Se nenhum listId for informado, usa a lista atual.',
+  description:
+      'Lista os itens de uma lista de compras. Se nenhum listId for informado, usa a lista atual.',
   parameters: [
     AgentToolParameter(
       name: 'listId',
@@ -15,21 +16,48 @@ const getItemsTool = AgentTool(
 
 const addItemTool = AgentTool(
   name: 'add_item',
-  description: 'Adiciona um item à lista de compras. '
+  description:
+      'Adiciona um item à lista de compras. '
       'Se um item com o mesmo nome já existir na lista, a quantidade será automaticamente incrementada em vez de criar um item duplicado.',
   parameters: [
-    AgentToolParameter(name: 'listId', type: 'string', description: 'ID da lista', required: true),
-    AgentToolParameter(name: 'name', type: 'string', description: 'Nome do item', required: true),
-    AgentToolParameter(name: 'quantity', type: 'number', description: 'Quantidade do item', required: true),
     AgentToolParameter(
-      name: 'unit', type: 'string', description: 'Unidade de medida', required: false,
+      name: 'listId',
+      type: 'string',
+      description: 'ID da lista',
+      required: true,
+    ),
+    AgentToolParameter(
+      name: 'name',
+      type: 'string',
+      description: 'Nome do item',
+      required: true,
+    ),
+    AgentToolParameter(
+      name: 'quantity',
+      type: 'number',
+      description: 'Quantidade do item',
+      required: true,
+    ),
+    AgentToolParameter(
+      name: 'unit',
+      type: 'string',
+      description: 'Unidade de medida',
+      required: false,
       enumValues: ['un', 'kg', 'g', 'L', 'mL', 'pacote'],
     ),
     AgentToolParameter(
-      name: 'category', type: 'string', description: 'Categoria do item', required: false,
+      name: 'category',
+      type: 'string',
+      description: 'Categoria do item',
+      required: false,
       enumValues: ['Frutas', 'Limpeza', 'Bebidas', 'Padaria', 'Outros'],
     ),
-    AgentToolParameter(name: 'estimatedPrice', type: 'number', description: 'Preço estimado unitário do item', required: false),
+    AgentToolParameter(
+      name: 'estimatedPrice',
+      type: 'number',
+      description: 'Preço estimado unitário do item',
+      required: false,
+    ),
   ],
 );
 
@@ -37,18 +65,44 @@ const updateItemTool = AgentTool(
   name: 'update_item',
   description: 'Atualiza os dados de um item existente',
   parameters: [
-    AgentToolParameter(name: 'itemId', type: 'string', description: 'ID do item', required: true),
-    AgentToolParameter(name: 'name', type: 'string', description: 'Novo nome do item', required: false),
-    AgentToolParameter(name: 'quantity', type: 'number', description: 'Nova quantidade', required: false),
     AgentToolParameter(
-      name: 'unit', type: 'string', description: 'Nova unidade de medida', required: false,
+      name: 'itemId',
+      type: 'string',
+      description: 'ID do item',
+      required: true,
+    ),
+    AgentToolParameter(
+      name: 'name',
+      type: 'string',
+      description: 'Novo nome do item',
+      required: false,
+    ),
+    AgentToolParameter(
+      name: 'quantity',
+      type: 'number',
+      description: 'Nova quantidade',
+      required: false,
+    ),
+    AgentToolParameter(
+      name: 'unit',
+      type: 'string',
+      description: 'Nova unidade de medida',
+      required: false,
       enumValues: ['un', 'kg', 'g', 'L', 'mL', 'pacote'],
     ),
     AgentToolParameter(
-      name: 'category', type: 'string', description: 'Nova categoria', required: false,
+      name: 'category',
+      type: 'string',
+      description: 'Nova categoria',
+      required: false,
       enumValues: ['Frutas', 'Limpeza', 'Bebidas', 'Padaria', 'Outros'],
     ),
-    AgentToolParameter(name: 'estimatedPrice', type: 'number', description: 'Novo preço estimado', required: false),
+    AgentToolParameter(
+      name: 'estimatedPrice',
+      type: 'number',
+      description: 'Novo preço estimado',
+      required: false,
+    ),
   ],
 );
 
@@ -56,7 +110,12 @@ const removeItemTool = AgentTool(
   name: 'remove_item',
   description: 'Remove um item da lista de compras',
   parameters: [
-    AgentToolParameter(name: 'itemId', type: 'string', description: 'ID do item a ser removido', required: true),
+    AgentToolParameter(
+      name: 'itemId',
+      type: 'string',
+      description: 'ID do item a ser removido',
+      required: true,
+    ),
   ],
 );
 
@@ -64,7 +123,12 @@ const togglePurchasedTool = AgentTool(
   name: 'toggle_purchased',
   description: 'Alterna o status de comprado/não comprado de um item',
   parameters: [
-    AgentToolParameter(name: 'itemId', type: 'string', description: 'ID do item', required: true),
+    AgentToolParameter(
+      name: 'itemId',
+      type: 'string',
+      description: 'ID do item',
+      required: true,
+    ),
   ],
 );
 
@@ -73,12 +137,16 @@ const togglePurchasedBatchTool = AgentTool(
   description: 'Marca ou desmarca múltiplos itens como comprados de uma vez',
   parameters: [
     AgentToolParameter(
-      name: 'itemIds', type: 'string',
-      description: 'Lista de IDs dos itens separados por vírgula', required: true,
+      name: 'itemIds',
+      type: 'string',
+      description: 'Lista de IDs dos itens separados por vírgula',
+      required: true,
     ),
     AgentToolParameter(
-      name: 'isPurchased', type: 'boolean',
-      description: 'true para marcar como comprado, false para desmarcar', required: true,
+      name: 'isPurchased',
+      type: 'boolean',
+      description: 'true para marcar como comprado, false para desmarcar',
+      required: true,
     ),
   ],
 );
@@ -87,7 +155,12 @@ const incrementQuantityTool = AgentTool(
   name: 'increment_quantity',
   description: 'Aumenta em 1 a quantidade de um item',
   parameters: [
-    AgentToolParameter(name: 'itemId', type: 'string', description: 'ID do item', required: true),
+    AgentToolParameter(
+      name: 'itemId',
+      type: 'string',
+      description: 'ID do item',
+      required: true,
+    ),
   ],
 );
 
@@ -95,7 +168,12 @@ const decrementQuantityTool = AgentTool(
   name: 'decrement_quantity',
   description: 'Diminui em 1 a quantidade de um item (mínimo 1)',
   parameters: [
-    AgentToolParameter(name: 'itemId', type: 'string', description: 'ID do item', required: true),
+    AgentToolParameter(
+      name: 'itemId',
+      type: 'string',
+      description: 'ID do item',
+      required: true,
+    ),
   ],
 );
 
@@ -103,27 +181,54 @@ const clearPurchasedTool = AgentTool(
   name: 'clear_purchased',
   description: 'Remove todos os itens marcados como comprados de uma lista',
   parameters: [
-    AgentToolParameter(name: 'listId', type: 'string', description: 'ID da lista', required: true),
+    AgentToolParameter(
+      name: 'listId',
+      type: 'string',
+      description: 'ID da lista',
+      required: true,
+    ),
   ],
 );
 
 const clearAllItemsTool = AgentTool(
   name: 'clear_all_items',
-  description: '⚠️ PERIGOSO: Remove TODOS os itens de uma lista de compras. '
+  description:
+      '⚠️ PERIGOSO: Remove TODOS os itens de uma lista de compras. '
       'USE APENAS quando o usuário pedir EXPLICITAMENTE para limpar/esvaziar/deletar todos os itens. '
       'NUNCA use esta ferramenta para substituir itens ou reorganizar a lista.',
   parameters: [
-    AgentToolParameter(name: 'listId', type: 'string', description: 'ID da lista', required: true),
+    AgentToolParameter(
+      name: 'listId',
+      type: 'string',
+      description: 'ID da lista',
+      required: true,
+    ),
   ],
 );
 
 const reorderItemsTool = AgentTool(
   name: 'reorder_items',
-  description: 'Reordena um item dentro da lista movendo de uma posição para outra',
+  description:
+      'Reordena um item dentro da lista movendo de uma posição para outra',
   parameters: [
-    AgentToolParameter(name: 'listId', type: 'string', description: 'ID da lista', required: true),
-    AgentToolParameter(name: 'oldIndex', type: 'number', description: 'Índice atual do item (começa em 0)', required: true),
-    AgentToolParameter(name: 'newIndex', type: 'number', description: 'Novo índice do item (começa em 0)', required: true),
+    AgentToolParameter(
+      name: 'listId',
+      type: 'string',
+      description: 'ID da lista',
+      required: true,
+    ),
+    AgentToolParameter(
+      name: 'oldIndex',
+      type: 'number',
+      description: 'Índice atual do item (começa em 0)',
+      required: true,
+    ),
+    AgentToolParameter(
+      name: 'newIndex',
+      type: 'number',
+      description: 'Novo índice do item (começa em 0)',
+      required: true,
+    ),
   ],
 );
 

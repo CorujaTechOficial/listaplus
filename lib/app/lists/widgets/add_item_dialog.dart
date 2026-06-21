@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../theme/tokens.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
 import '../../../models/unit.dart';
 import 'package:shopping_list/app/lists/providers/item_providers.dart';
@@ -38,29 +38,10 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
 
     return AlertDialog(
-      title: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(Spacing.xs),
-            decoration: BoxDecoration(
-              color: isDark
-                  ? theme.colorScheme.primaryContainer.withAlpha((0.15 * 255).toInt())
-                  : theme.colorScheme.primaryContainer.withAlpha((0.3 * 255).toInt()),
-              borderRadius: BorderRadius.circular(RadiusTokens.sm),
-            ),
-            child: Icon(
-              Icons.add_shopping_cart,
-              size: 20,
-              color: theme.colorScheme.primary,
-            ),
-          ),
-          const SizedBox(width: Spacing.sm),
-          Text(l10n.addItem),
-        ],
-      ),
+      icon: Icon(Icons.add_shopping_cart, color: theme.colorScheme.secondary),
+      title: Text(l10n.addItem),
       content: Form(
         key: _formKey,
         child: SingleChildScrollView(
@@ -80,13 +61,18 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                 onSelected: (String selection) {
                   _nameController.text = selection;
                 },
-                fieldViewBuilder: (context, textEditingController, focusNode, onFieldSubmitted) {
+                fieldViewBuilder: (
+                  context,
+                  textEditingController,
+                  focusNode,
+                  onFieldSubmitted,
+                ) {
                   textEditingController.addListener(() {
                     if (_nameController.text != textEditingController.text) {
                       _nameController.text = textEditingController.text;
                     }
                   });
-                  
+
                   _nameController.addListener(() {
                     if (textEditingController.text != _nameController.text) {
                       textEditingController.text = _nameController.text;
@@ -102,7 +88,9 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                     ),
                     autofocus: true,
                     onFieldSubmitted: (String value) => onFieldSubmitted(),
-                    validator: (v) => v == null || v.isEmpty ? l10n.fieldRequired : null,
+                    validator:
+                        (v) =>
+                            v == null || v.isEmpty ? l10n.fieldRequired : null,
                   );
                 },
               ),
@@ -117,7 +105,11 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                         prefixIcon: const Icon(Icons.numbers),
                       ),
                       keyboardType: TextInputType.number,
-                    validator: (v) => v == null || v.isEmpty ? l10n.fieldRequired : null,
+                      validator:
+                          (v) =>
+                              v == null || v.isEmpty
+                                  ? l10n.fieldRequired
+                                  : null,
                     ),
                   ),
                   const SizedBox(width: Spacing.sm),
@@ -128,9 +120,13 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                         labelText: l10n.unit,
                         prefixIcon: const Icon(Icons.straighten),
                       ),
-                      items: Unit.values.map((u) {
-                        return DropdownMenuItem(value: u, child: Text(u.label));
-                      }).toList(),
+                      items:
+                          Unit.values.map((u) {
+                            return DropdownMenuItem(
+                              value: u,
+                              child: Text(u.label),
+                            );
+                          }).toList(),
                       onChanged: (v) => setState(() => _selectedUnit = v!),
                     ),
                   ),
@@ -143,9 +139,13 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                   labelText: l10n.category,
                   prefixIcon: const Icon(Icons.category_outlined),
                 ),
-                items: (ref.watch(categoriesProvider).value ?? []).map((cat) {
-                  return DropdownMenuItem(value: cat.id, child: Text(cat.name));
-                }).toList(),
+                items:
+                    (ref.watch(categoriesProvider).value ?? []).map((cat) {
+                      return DropdownMenuItem(
+                        value: cat.id,
+                        child: Text(cat.localizedName(l10n)),
+                      );
+                    }).toList(),
                 onChanged: (v) => setState(() => _selectedCategoryId = v!),
               ),
               const SizedBox(height: Spacing.sm),
@@ -155,7 +155,9 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
                   labelText: l10n.estimatedPrice,
                   prefixIcon: const Icon(Icons.payments_outlined),
                 ),
-                keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true,
+                ),
               ),
             ],
           ),
@@ -171,7 +173,9 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
             if (_formKey.currentState!.validate()) {
               // ignore: unawaited_futures
               HapticFeedback.lightImpact();
-              await ref.read(shoppingListItemsProvider(widget.listId).notifier).addItem(
+              await ref
+                  .read(shoppingListItemsProvider(widget.listId).notifier)
+                  .addItem(
                     listId: widget.listId,
                     name: _nameController.text,
                     quantity: int.tryParse(_quantityController.text) ?? 1,
@@ -187,7 +191,12 @@ class _AddItemDialogState extends ConsumerState<AddItemDialog> {
           child: Text(l10n.add),
         ),
       ],
-      actionsPadding: const EdgeInsets.fromLTRB(Spacing.md, 0, Spacing.md, Spacing.md),
+      actionsPadding: const EdgeInsets.fromLTRB(
+        Spacing.md,
+        0,
+        Spacing.md,
+        Spacing.md,
+      ),
     );
   }
 }

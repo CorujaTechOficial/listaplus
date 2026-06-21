@@ -20,6 +20,7 @@ This document provides foundational mandates and essential context for the **Kip
     - **RevenueCat:** `purchases_flutter` for subscriptions.
         - Entitlement: `kipilist_pro`.
         - Packages: `$rc_monthly`, `$rc_annual`.
+        - API key via `--dart-define=REVENUECAT_API_KEY=goog_lUoZUpDVyhVroFRzwgArMnFxIQv`. Missing key → `RevenueCatServiceNoop` fallback (no crash, no premium).
 - **AI Assistant (OpenCodeGo / DeepSeek):**
     - **Service:** `OpenCodeGoService` via `package:http`.
     - **Model:** DeepSeek-v4-flash.

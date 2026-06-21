@@ -6,7 +6,9 @@ class SystemExecutor {
   const SystemExecutor();
 
   Future<ToolResult> openPaywall(ProviderContainer container) async {
-    container.read(systemActionProvider.notifier).trigger(SystemActionType.openPaywall);
+    container
+        .read(systemActionProvider.notifier)
+        .trigger(SystemActionType.openPaywall);
     return const ToolResult(
       toolCallId: '',
       content: 'A tela de planos Premium foi aberta para o usuário.',
@@ -14,7 +16,9 @@ class SystemExecutor {
   }
 
   Future<ToolResult> requestAppReview(ProviderContainer container) async {
-    container.read(systemActionProvider.notifier).trigger(SystemActionType.requestReview);
+    container
+        .read(systemActionProvider.notifier)
+        .trigger(SystemActionType.requestReview);
     return const ToolResult(
       toolCallId: '',
       content: 'A solicitação de avaliação do app foi enviada ao sistema.',
@@ -22,7 +26,9 @@ class SystemExecutor {
   }
 
   Future<ToolResult> promptAppUpdate(ProviderContainer container) async {
-    container.read(systemActionProvider.notifier).trigger(SystemActionType.promptUpdate);
+    container
+        .read(systemActionProvider.notifier)
+        .trigger(SystemActionType.promptUpdate);
     return const ToolResult(
       toolCallId: '',
       content: 'A verificação de atualização foi iniciada.',
@@ -30,10 +36,13 @@ class SystemExecutor {
   }
 
   Future<ToolResult> generateReferralLink(ProviderContainer container) async {
-    container.read(systemActionProvider.notifier).trigger(SystemActionType.shareReferral);
+    container
+        .read(systemActionProvider.notifier)
+        .trigger(SystemActionType.shareReferral);
     return const ToolResult(
       toolCallId: '',
-      content: 'O link de indicação foi gerado e as opções de compartilhamento foram abertas.',
+      content:
+          'O link de indicação foi gerado e as opções de compartilhamento foram abertas.',
     );
   }
 }

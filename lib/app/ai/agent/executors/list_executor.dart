@@ -1,3 +1,5 @@
+import 'dart:ui' show PlatformDispatcher;
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../tools/tool_core.dart';
 import 'package:shopping_list/app/lists/providers/list_providers.dart';
@@ -19,37 +21,44 @@ class ListExecutor {
     if (currentId != null) {
       return currentId;
     }
-    final lists = container.read(shoppingListsProvider).hasValue 
-        ? (container.read(shoppingListsProvider).value ?? <ShoppingList>[]) 
-        : await AiUtils.awaitFuture(
-            container.read(shoppingListsProvider.future),
-            defaultValue: <ShoppingList>[],
-            timeout: const Duration(seconds: 5),
-            label: 'shoppingListsProvider',
-          );
+    final lists =
+        container.read(shoppingListsProvider).hasValue
+            ? (container.read(shoppingListsProvider).value ?? <ShoppingList>[])
+            : await AiUtils.awaitFuture(
+              container.read(shoppingListsProvider.future),
+              defaultValue: <ShoppingList>[],
+              timeout: const Duration(seconds: 5),
+              label: 'shoppingListsProvider',
+            );
     return lists.isNotEmpty ? lists.first.id : null;
   }
 
   Future<ToolResult> getLists(ProviderContainer container) async {
-    final lists = container.read(shoppingListsProvider).hasValue 
-        ? (container.read(shoppingListsProvider).value ?? <ShoppingList>[]) 
-        : await AiUtils.awaitFuture(
-            container.read(shoppingListsProvider.future),
-            defaultValue: <ShoppingList>[],
-            timeout: const Duration(seconds: 5),
-            label: 'shoppingListsProvider',
-          );
+    final lists =
+        container.read(shoppingListsProvider).hasValue
+            ? (container.read(shoppingListsProvider).value ?? <ShoppingList>[])
+            : await AiUtils.awaitFuture(
+              container.read(shoppingListsProvider.future),
+              defaultValue: <ShoppingList>[],
+              timeout: const Duration(seconds: 5),
+              label: 'shoppingListsProvider',
+            );
     if (lists.isEmpty) {
       return const ToolResult(
         toolCallId: '',
         content: 'Nenhuma lista de compras encontrada.',
       );
     }
-    final currencyCode = container.read(currencySettingProvider).value ?? 'BRL';
+    final currencyCode =
+        container.read(currencySettingProvider).value ??
+        inferCurrencyFromLocale(PlatformDispatcher.instance.locale);
     final result = StringBuffer('Listas de compras:\n');
     for (final list in lists) {
       final status = list.isArchived ? ' [ARQUIVADA]' : '';
-      final budget = list.budget != null ? ' (${formatCurrency(list.budget!, currencyCode)})' : '';
+      final budget =
+          list.budget != null
+              ? ' (${formatCurrency(list.budget!, currencyCode)})'
+              : '';
       final shared = list.isShared ? ' [COMPARTILHADA]' : '';
       result.writeln('- ${list.name} (ID: ${list.id})$budget$status$shared');
     }
@@ -61,55 +70,79 @@ class ListExecutor {
     if (currentId == null) {
       return const ToolResult(
         toolCallId: '',
-        content: 'Nenhuma lista selecionada. Crie ou selecione uma lista primeiro.',
+        content:
+            'Nenhuma lista selecionada. Crie ou selecione uma lista primeiro.',
       );
     }
-    final lists = container.read(shoppingListsProvider).hasValue 
-        ? (container.read(shoppingListsProvider).value ?? <ShoppingList>[]) 
-        : await AiUtils.awaitFuture(
-            container.read(shoppingListsProvider.future),
-            defaultValue: <ShoppingList>[],
-            timeout: const Duration(seconds: 5),
-            label: 'shoppingListsProvider',
-          );
+    final lists =
+        container.read(shoppingListsProvider).hasValue
+            ? (container.read(shoppingListsProvider).value ?? <ShoppingList>[])
+            : await AiUtils.awaitFuture(
+              container.read(shoppingListsProvider.future),
+              defaultValue: <ShoppingList>[],
+              timeout: const Duration(seconds: 5),
+              label: 'shoppingListsProvider',
+            );
     final list = lists.where((l) => l.id == currentId).firstOrNull;
     if (list == null) {
-      return const ToolResult(toolCallId: '', content: 'Lista atual não encontrada.');
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Lista atual não encontrada.',
+      );
     }
-    final currencyCode = container.read(currencySettingProvider).value ?? 'BRL';
+    final currencyCode =
+        container.read(currencySettingProvider).value ??
+        inferCurrencyFromLocale(PlatformDispatcher.instance.locale);
     return ToolResult(
       toolCallId: '',
-      content: 'Lista atual: ${list.name} (ID: ${list.id})${list.budget != null ? ', Orçamento: ${formatCurrency(list.budget!, currencyCode)}' : ''}',
+      content:
+          'Lista atual: ${list.name} (ID: ${list.id})${list.budget != null ? ', Orçamento: ${formatCurrency(list.budget!, currencyCode)}' : ''}',
     );
   }
 
-  Future<ToolResult> setCurrentList(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> setCurrentList(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final listId = args['listId'] as String;
     await container.read(currentListIdProvider.notifier).setCurrentList(listId);
-    return const ToolResult(toolCallId: '', content: 'Lista atual alterada com sucesso.');
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Lista atual alterada com sucesso.',
+    );
   }
 
-  Future<ToolResult> createList(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> createList(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final name = args['name'] as String;
-    final budget = args['budget'] != null ? (args['budget'] as num).toDouble() : null;
-    final list = await container.read(shoppingListsProvider.notifier).createList(name, budget: budget);
+    final budget =
+        args['budget'] != null ? (args['budget'] as num).toDouble() : null;
+    final list = await container
+        .read(shoppingListsProvider.notifier)
+        .createList(name, budget: budget);
     return ToolResult(
       toolCallId: '',
       content: 'Lista "$name" criada com sucesso! (ID: ${list.id})',
     );
   }
 
-  Future<ToolResult> renameList(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> renameList(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final listId = args['listId'] as String;
     final name = args['name'] as String;
-    final lists = container.read(shoppingListsProvider).hasValue 
-        ? (container.read(shoppingListsProvider).value ?? <ShoppingList>[]) 
-        : await AiUtils.awaitFuture(
-            container.read(shoppingListsProvider.future),
-            defaultValue: <ShoppingList>[],
-            timeout: const Duration(seconds: 5),
-            label: 'shoppingListsProvider',
-          );
+    final lists =
+        container.read(shoppingListsProvider).hasValue
+            ? (container.read(shoppingListsProvider).value ?? <ShoppingList>[])
+            : await AiUtils.awaitFuture(
+              container.read(shoppingListsProvider.future),
+              defaultValue: <ShoppingList>[],
+              timeout: const Duration(seconds: 5),
+              label: 'shoppingListsProvider',
+            );
     final list = lists.where((l) => l.id == listId).firstOrNull;
     if (list == null) {
       return const ToolResult(
@@ -118,25 +151,45 @@ class ListExecutor {
         success: false,
       );
     }
-    await container.read(shoppingListsProvider.notifier).updateList(list.copyWith(name: name));
+    await container
+        .read(shoppingListsProvider.notifier)
+        .updateList(list.copyWith(name: name));
     return ToolResult(toolCallId: '', content: 'Lista renomeada para "$name".');
   }
 
-  Future<ToolResult> deleteList(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> deleteList(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final listId = args['listId'] as String;
     await container.read(shoppingListsProvider.notifier).deleteList(listId);
-    return const ToolResult(toolCallId: '', content: 'Lista excluída permanentemente.');
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Lista excluída permanentemente.',
+    );
   }
 
-  Future<ToolResult> archiveList(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> archiveList(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final listId = args['listId'] as String;
     await container.read(shoppingListsProvider.notifier).archiveList(listId);
-    return const ToolResult(toolCallId: '', content: 'Lista arquivada com sucesso.');
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Lista arquivada com sucesso.',
+    );
   }
 
-  Future<ToolResult> unarchiveList(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> unarchiveList(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final listId = args['listId'] as String;
     await container.read(shoppingListsProvider.notifier).unarchiveList(listId);
-    return const ToolResult(toolCallId: '', content: 'Lista desarquivada com sucesso.');
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Lista desarquivada com sucesso.',
+    );
   }
 }

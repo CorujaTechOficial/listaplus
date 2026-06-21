@@ -15,8 +15,6 @@ class AiUsage {
     );
   }
 
-
-
   final int dailyCount;
   final int totalCount;
   final DateTime lastReset;
@@ -24,20 +22,25 @@ class AiUsage {
   bool get isDailyExhausted {
     return dailyCount >= AiUsageLimits.dailyLimit;
   }
+
   bool get isTotalExhausted {
     return totalCount >= AiUsageLimits.totalLimit;
   }
+
   bool get isExhausted {
     return isDailyExhausted;
   }
-  int get remainingDaily => (AiUsageLimits.dailyLimit - dailyCount).clamp(0, AiUsageLimits.dailyLimit);
-  int get remainingTotal => (AiUsageLimits.totalLimit - totalCount).clamp(0, AiUsageLimits.totalLimit);
 
-  AiUsage copyWith({
-    int? dailyCount,
-    int? totalCount,
-    DateTime? lastReset,
-  }) {
+  int get remainingDaily => (AiUsageLimits.dailyLimit - dailyCount).clamp(
+    0,
+    AiUsageLimits.dailyLimit,
+  );
+  int get remainingTotal => (AiUsageLimits.totalLimit - totalCount).clamp(
+    0,
+    AiUsageLimits.totalLimit,
+  );
+
+  AiUsage copyWith({int? dailyCount, int? totalCount, DateTime? lastReset}) {
     return AiUsage(
       dailyCount: dailyCount ?? this.dailyCount,
       totalCount: totalCount ?? this.totalCount,
@@ -56,7 +59,11 @@ class AiUsage {
   AiUsage recordMessage() {
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
-    final lastResetDay = DateTime(lastReset.year, lastReset.month, lastReset.day);
+    final lastResetDay = DateTime(
+      lastReset.year,
+      lastReset.month,
+      lastReset.day,
+    );
 
     final isNewDay = today.isAfter(lastResetDay);
     final newDaily = isNewDay ? 1 : dailyCount + 1;

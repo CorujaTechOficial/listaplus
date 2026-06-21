@@ -1,4 +1,7 @@
+import 'dart:ui' show Locale;
+
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/category_data.dart';
 
 void main() {
@@ -99,6 +102,26 @@ void main() {
       final result = cat.copyWith(name: 'Novo Nome');
       expect(result.name, 'Novo Nome');
       expect(result.id, cat.id);
+    });
+  });
+
+  group('CategoryData.localizedName', () {
+    final l10n = lookupAppLocalizations(const Locale('en'));
+
+    test('localizes default categories by stable id', () {
+      expect(CategoryData.defaults.first.localizedName(l10n), 'Fruits');
+    });
+
+    test('preserves custom category names', () {
+      final category = CategoryData(
+        id: 'local-market',
+        name: 'Local Market',
+        color: 0xFF4CAF50,
+        icon: CategoryData.defaults.first.icon,
+        sortOrder: 1,
+      );
+
+      expect(category.localizedName(l10n), 'Local Market');
     });
   });
 }

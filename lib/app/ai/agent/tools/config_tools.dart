@@ -10,7 +10,10 @@ const setThemeTool = AgentTool(
   description: 'Altera o tema do aplicativo',
   parameters: [
     AgentToolParameter(
-      name: 'mode', type: 'string', description: 'Modo do tema: light, dark, ou system', required: true,
+      name: 'mode',
+      type: 'string',
+      description: 'Modo do tema: light, dark, ou system',
+      required: true,
       enumValues: ['light', 'dark', 'system'],
     ),
   ],
@@ -18,19 +21,23 @@ const setThemeTool = AgentTool(
 
 const saveUserPreferenceTool = AgentTool(
   name: 'save_user_preference',
-  description: 'Salva uma preferência ou informação pessoal do usuário '
+  description:
+      'Salva uma preferência ou informação pessoal do usuário '
       'aprendida durante a conversa (ex: restrições alimentares, '
       'mercados preferidos, nome, preferências de categorias). '
       'Use sempre que o usuário compartilhar uma preferência pessoal '
       'para que ela não seja esquecida entre as conversas.',
   parameters: [
     AgentToolParameter(
-      name: 'key', type: 'string',
-      description: 'Chave da preferência em snake_case (ex: restricao_alimentar, mercado_evitar, nome)',
+      name: 'key',
+      type: 'string',
+      description:
+          'Chave da preferência em snake_case (ex: restricao_alimentar, mercado_evitar, nome)',
       required: true,
     ),
     AgentToolParameter(
-      name: 'value', type: 'string',
+      name: 'value',
+      type: 'string',
       description: 'Valor da preferência (ex: vegano, Mercado X, João)',
       required: true,
     ),
@@ -41,13 +48,19 @@ const deleteUserPreferenceTool = AgentTool(
   name: 'delete_user_preference',
   description: 'Remove uma preferência do usuário salva anteriormente',
   parameters: [
-    AgentToolParameter(name: 'key', type: 'string', description: 'Chave da preferência a ser removida', required: true),
+    AgentToolParameter(
+      name: 'key',
+      type: 'string',
+      description: 'Chave da preferência a ser removida',
+      required: true,
+    ),
   ],
 );
 
 const getUserProfileTool = AgentTool(
   name: 'get_user_profile',
-  description: 'Obtém o perfil completo do usuário com todas as '
+  description:
+      'Obtém o perfil completo do usuário com todas as '
       'preferências estruturadas (mercado preferido, restrições '
       'alimentares, mercados a evitar, observações). '
       'Use no início da conversa para personalizar as respostas.',
@@ -55,14 +68,35 @@ const getUserProfileTool = AgentTool(
 
 const updateUserProfileTool = AgentTool(
   name: 'update_user_profile',
-  description: 'Atualiza campos estruturados do perfil do usuário. '
+  description:
+      'Atualiza campos estruturados do perfil do usuário. '
       'Use quando o usuário fornecer informações sobre preferências '
       'pessoais que se encaixam nos campos do perfil.',
   parameters: [
-    AgentToolParameter(name: 'preferredStore', type: 'string', description: 'Mercado preferido do usuário', required: false),
-    AgentToolParameter(name: 'dietaryRestrictions', type: 'string', description: 'Restrições alimentares', required: false),
-    AgentToolParameter(name: 'avoidedStores', type: 'string', description: 'Mercados a evitar', required: false),
-    AgentToolParameter(name: 'notes', type: 'string', description: 'Observações ou outras preferências', required: false),
+    AgentToolParameter(
+      name: 'preferredStore',
+      type: 'string',
+      description: 'Mercado preferido do usuário',
+      required: false,
+    ),
+    AgentToolParameter(
+      name: 'dietaryRestrictions',
+      type: 'string',
+      description: 'Restrições alimentares',
+      required: false,
+    ),
+    AgentToolParameter(
+      name: 'avoidedStores',
+      type: 'string',
+      description: 'Mercados a evitar',
+      required: false,
+    ),
+    AgentToolParameter(
+      name: 'notes',
+      type: 'string',
+      description: 'Observações ou outras preferências',
+      required: false,
+    ),
   ],
 );
 
@@ -75,7 +109,12 @@ const importBackupTool = AgentTool(
   name: 'import_backup',
   description: 'Importa dados de um backup JSON',
   parameters: [
-    AgentToolParameter(name: 'json', type: 'string', description: 'JSON completo do backup', required: true),
+    AgentToolParameter(
+      name: 'json',
+      type: 'string',
+      description: 'JSON completo do backup',
+      required: true,
+    ),
   ],
 );
 

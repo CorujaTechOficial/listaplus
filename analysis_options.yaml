@@ -92,8 +92,10 @@ linter:
 custom_lint:
   rules:
     - avoid_raw_firebase_outside_service
+    - avoid_raw_material_colors
     - prefer_abstract_service_type
     - prefer_correct_popup_menu_icon
+    - prefer_design_tokens
 
 analyzer:
   exclude:

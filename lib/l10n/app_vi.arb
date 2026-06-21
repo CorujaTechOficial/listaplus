@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "Trợ lý AI",
   "aiAssistantDescription": "Nhận đề xuất thông minh, công thức nấu ăn và mẹo cá nhân hóa với trợ lý AI của chúng tôi.",
   "aiAssistantTitle": "Trợ lý AI",
+  "aiCapabilitiesBudget": "Ngân sách & Giá cả",
+  "aiCapabilitiesLists": "Danh sách mua sắm",
+  "aiCapabilitiesOrganize": "Tổ chức",
+  "aiCapabilitiesRecipes": "Công thức nấu ăn & Thực đơn",
+  "aiCapabilitiesTitle": "Tôi có thể làm gì?",
   "aiConnectionError": "Không thể kết nối với dịch vụ AI. Kiểm tra kết nối của bạn.",
   "aiCreditsRemaining": "Còn {remaining} tín dụng",
   "aiEmptyResponseError": "Dịch vụ AI trả về một phản hồi trống.",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "Đánh dấu đã mua",
   "markItemsToSeeAnalysis": "Đánh dấu mục đã mua để xem phân tích.",
   "marketMode": "Chế độ thị trường",
+  "marketModeDescription": "Kiểm tra các mặt hàng khi bạn mua sắm",
   "marketsToAvoid": "Thị trường cần tránh",
   "marketsToAvoidHint": "Ví dụ: Thị trường Y, Thị trường Z",
   "mealPlannerAddMeal": "Thêm bữa ăn",
   "mealPlannerAddType": "Thêm loại bữa ăn",
+  "mealPlannerBudgetGoalNav": "Ngân sách lập kế hoạch bữa ăn",
+  "mealPlannerBudgetGoalSubtitle": "Mục tiêu chi tiêu hàng tháng cho việc lập kế hoạch bữa ăn",
+  "mealPlannerBudgetMonthCost": "Tháng: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Xóa mục tiêu",
+  "mealPlannerBudgetTodayCost": "Hôm nay: {amount}",
+  "mealPlannerBudgetWeekCost": "Tuần: {amount}",
   "mealPlannerCustomTypeLabel": "Loại tùy chỉnh",
   "mealPlannerDateLabel": "Ngày",
   "mealPlannerDefaultTypeLabel": "Loại mặc định",
@@ -2004,6 +2061,7 @@
   "navRecipes": "Công thức",
   "newCategoryDialog": "Danh mục mới",
   "newChat": "Trò chuyện mới",
+  "newChatStarted": "Cuộc trò chuyện mới đã bắt đầu",
   "newListTitle": "Danh sách mua sắm mới",
   "newPantryList": "Mua sắm từ phòng đựng thức ăn",
   "newRecipe": "Công thức mới",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "Đang truy vấn danh sách của bạn...",
   "quickActionAi": "Trò chuyện với Kipi",
   "quickActionPantry": "Xem phòng đựng thức ăn",
+  "quickAddToList": "Thêm vào danh sách",
   "quickRecipe": "Công thức nhanh",
   "quickRecipePrompt": "Đề xuất công thức nấu ăn với các mục từ danh sách của tôi.",
   "quickReplies": "Trả lời nhanh:",

@@ -20,8 +20,8 @@ class BackupScreen extends ConsumerWidget {
       return PremiumGate(
         title: l10n.backupTitle,
         description: l10n.backupPremiumDescription,
-        onUpgrade: () =>
-            ref.read(analyticsServiceProvider).logUpgradeTapped('backup'),
+        onUpgrade:
+            () => ref.read(analyticsServiceProvider).logUpgradeTapped('backup'),
       );
     }
 
@@ -31,57 +31,23 @@ class BackupScreen extends ConsumerWidget {
         child: Padding(
           padding: const EdgeInsets.all(Spacing.md),
           child: Column(
-          children: [
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.upload, color: theme.colorScheme.primary),
-                title: Text(l10n.exportData),
-                subtitle: Text(l10n.exportDataSubtitle),
-                trailing: Icon(
-                  Icons.chevron_right,
-                  color: theme.colorScheme.onSurfaceVariant,
-                ),
-                onTap: () async {
-                  final backup = ref.read(backupProvider);
-                  try {
-                    await backup.shareBackup();
-                    if (context.mounted) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text(l10n.backupExported)),
-                      );
-                    }
-                  } on Exception catch (e) {
-                    if (context.mounted) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text(l10n.error(e.toString()))),
-                      );
-                    }
-                  }
-                },
-              ),
-            ),
-            const SizedBox(height: Spacing.xs),
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.download, color: theme.colorScheme.primary),
-                title: Text(l10n.importData),
-                subtitle: Text(l10n.importDataSubtitle),
-                trailing: Icon(
-                  Icons.chevron_right,
-                  color: theme.colorScheme.onSurfaceVariant,
-                ),
-                onTap: () async {
-                  final jsonString = await showDialog<String>(
-                    context: context,
-                    builder: (_) => const _ImportBackupDialog(),
-                  );
-                  if (jsonString != null && jsonString.isNotEmpty && context.mounted) {
+            children: [
+              Card(
+                child: ListTile(
+                  leading: Icon(Icons.upload, color: theme.colorScheme.primary),
+                  title: Text(l10n.exportData),
+                  subtitle: Text(l10n.exportDataSubtitle),
+                  trailing: Icon(
+                    Icons.chevron_right,
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                  onTap: () async {
                     final backup = ref.read(backupProvider);
                     try {
-                      final msg = await backup.importFromJson(jsonString);
+                      await backup.shareBackup();
                       if (context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(msg)),
+                          SnackBar(content: Text(l10n.backupExported)),
                         );
                       }
                     } on Exception catch (e) {
@@ -91,13 +57,52 @@ class BackupScreen extends ConsumerWidget {
                         );
                       }
                     }
-                  }
-                },
+                  },
+                ),
               ),
-            ),
-          ],
+              const SizedBox(height: Spacing.xs),
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.download,
+                    color: theme.colorScheme.primary,
+                  ),
+                  title: Text(l10n.importData),
+                  subtitle: Text(l10n.importDataSubtitle),
+                  trailing: Icon(
+                    Icons.chevron_right,
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                  onTap: () async {
+                    final jsonString = await showDialog<String>(
+                      context: context,
+                      builder: (_) => const _ImportBackupDialog(),
+                    );
+                    if (jsonString != null &&
+                        jsonString.isNotEmpty &&
+                        context.mounted) {
+                      final backup = ref.read(backupProvider);
+                      try {
+                        final msg = await backup.importFromJson(jsonString);
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(
+                            context,
+                          ).showSnackBar(SnackBar(content: Text(msg)));
+                        }
+                      } on Exception catch (e) {
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text(l10n.error(e.toString()))),
+                          );
+                        }
+                      }
+                    }
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
       ),
     );
   }
@@ -127,9 +132,7 @@ class _ImportBackupDialogState extends State<_ImportBackupDialog> {
       content: TextField(
         controller: _controller,
         maxLines: 8,
-        decoration: InputDecoration(
-          hintText: l10n.importJsonHint,
-        ),
+        decoration: InputDecoration(hintText: l10n.importJsonHint),
       ),
       actions: [
         TextButton(

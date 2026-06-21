@@ -445,22 +445,18 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                           );
                         }
                         if (val == 'ai') {
-                          if (isPremium) {
-                            Navigator.push(
-                              context,
-                              fadeSlideRoute<void>(
-                                ChatScreen(
-                                  listId: widget.listId,
-                                  listName: currentList?.name,
-                                ),
+                          // Soft model everywhere: open the assistant for all
+                          // users; the in-chat usage banner + teaser handle the
+                          // upgrade ask once value is visible.
+                          Navigator.push(
+                            context,
+                            fadeSlideRoute<void>(
+                              ChatScreen(
+                                listId: widget.listId,
+                                listName: currentList?.name,
                               ),
-                            );
-                          } else {
-                            Navigator.push(
-                              context,
-                              fadeSlideRoute<void>(const PaywallScreen()),
-                            );
-                          }
+                            ),
+                          );
                         }
                       },
                       itemBuilder:
@@ -683,7 +679,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
           return SafeArea(
             child: EmptyState(
               icon: Icons.error_outline,
-              title: l10n.errorLoadingLists,
+              title: l10n.errorLoadingItems,
               subtitle: e.toString(),
             ),
           );
@@ -1122,50 +1118,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
     }
   }
 
-  void _showInviteSheet(String listId) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    showModalBottomSheet<void>(
-      context: context,
-      useSafeArea: true,
-      isScrollControlled: true,
-      builder:
-          (context) => Padding(
-            padding: const EdgeInsets.all(Spacing.md),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  l10n.shareListTitle,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                const SizedBox(height: Spacing.md),
-                ListTile(
-                  leading: const Icon(Icons.group_add),
-                  title: Text(l10n.inviteToList),
-                  subtitle: Text(l10n.shareRealtime),
-                  onTap: () {
-                    Navigator.pop(context);
-                    unawaited(shareViaCode(context, ref, widget.listId));
-                  },
-                ),
-                ListTile(
-                  leading: const Icon(Icons.share),
-                  title: Text(l10n.shareApp),
-                  subtitle: Text(l10n.shareAppDescription),
-                  onTap: () {
-                    Navigator.pop(context);
-                    shareReferral(context);
-                  },
-                ),
-              ],
-            ),
-          ),
-    );
-  }
+
 }
 
 class _ShoppingExitBar extends StatelessWidget {

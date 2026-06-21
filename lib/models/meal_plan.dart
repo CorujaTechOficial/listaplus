@@ -1,21 +1,7 @@
 import 'package:uuid/uuid.dart';
 import 'package:shopping_list/core/utils/formatters.dart';
 
-enum MealType {
-  breakfast,
-  lunch,
-  dinner,
-  snack;
-
-  String get label {
-    switch (this) {
-      case MealType.breakfast: return 'Café da Manhã';
-      case MealType.lunch: return 'Almoço';
-      case MealType.dinner: return 'Jantar';
-      case MealType.snack: return 'Lanche';
-    }
-  }
-}
+export 'meal_type.dart';
 
 class MealPlan {
   MealPlan({
@@ -24,7 +10,7 @@ class MealPlan {
     required this.recipeId,
     required this.recipeName,
     this.servings = 1,
-    this.mealType = MealType.lunch,
+    this.mealType = 'lunch',
     this.note,
   }) : id = id ?? const Uuid().v4();
 
@@ -35,7 +21,7 @@ class MealPlan {
       recipeId: json['recipeId'] as String? ?? '',
       recipeName: json['recipeName'] as String? ?? '',
       servings: json['servings'] as int? ?? 1,
-      mealType: MealType.values.firstWhere((e) => e.name == json['mealType'], orElse: () => MealType.lunch),
+      mealType: json['mealType'] as String? ?? 'lunch',
       note: json['note'] as String?,
     );
   }
@@ -45,7 +31,7 @@ class MealPlan {
   final String recipeId;
   final String recipeName;
   final int servings;
-  final MealType mealType;
+  final String mealType;
   final String? note;
 
   Map<String, dynamic> toJson() {
@@ -55,7 +41,7 @@ class MealPlan {
       'recipeId': recipeId,
       'recipeName': recipeName,
       'servings': servings,
-      'mealType': mealType.name,
+      'mealType': mealType,
       if (note != null) 'note': note,
     };
   }
@@ -66,7 +52,7 @@ class MealPlan {
     String? recipeId,
     String? recipeName,
     int? servings,
-    MealType? mealType,
+    String? mealType,
     String? note,
   }) {
     return MealPlan(

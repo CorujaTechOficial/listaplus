@@ -198,7 +198,7 @@ String getLocaleDisplayName(String? localeCode, AppLocalizations l10n) {
   if (localeCode == null || localeCode.isEmpty) {
     return l10n.languageSystem;
   }
-  
+
   final normalized = localeCode.replaceAll('-', '_');
   final parts = normalized.split('_');
   final langCode = parts[0];

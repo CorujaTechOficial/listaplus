@@ -84,30 +84,100 @@ enum PremiumFeature {
 
 class ThemeOption {
   const ThemeOption({
-    required this.name,
+    required this.nameKey,
     required this.color,
     required this.isPremium,
   });
 
-  final String name;
+  final ThemeOptionName nameKey;
   final Color color;
   final bool isPremium;
 
   static const List<ThemeOption> options = [
-    ThemeOption(name: 'Fresco', color: Color(0xFF2E7D32), isPremium: false),
-    ThemeOption(name: 'Oceano', color: Color(0xFF0277BD), isPremium: false),
-    ThemeOption(name: 'Cálido', color: Color(0xFFE65100), isPremium: false),
-    ThemeOption(name: 'Verde', color: Colors.green, isPremium: false),
-    ThemeOption(name: 'Azul', color: Colors.blue, isPremium: false),
-    ThemeOption(name: 'Roxo', color: Colors.purple, isPremium: false),
-    ThemeOption(name: 'Vermelho', color: Colors.red, isPremium: true),
-    ThemeOption(name: 'Laranja', color: Colors.orange, isPremium: true),
-    ThemeOption(name: 'Rosa', color: Colors.pink, isPremium: true),
-    ThemeOption(name: 'Índigo', color: Colors.indigo, isPremium: true),
-    ThemeOption(name: 'Âmbar', color: Colors.amber, isPremium: true),
-    ThemeOption(name: 'Teal', color: Colors.teal, isPremium: true),
-    ThemeOption(name: 'Marrom', color: Colors.brown, isPremium: true),
+    ThemeOption(
+      nameKey: ThemeOptionName.fresh,
+      color: Color(0xFF2E7D32),
+      isPremium: false,
+    ),
+    ThemeOption(
+      nameKey: ThemeOptionName.ocean,
+      color: Color(0xFF0277BD),
+      isPremium: false,
+    ),
+    ThemeOption(
+      nameKey: ThemeOptionName.warm,
+      color: Color(0xFFE65100),
+      isPremium: false,
+    ),
+    ThemeOption(
+      nameKey: ThemeOptionName.green,
+      color: Color(0xFF4CAF50),
+      isPremium: false,
+    ),
+    ThemeOption(
+      nameKey: ThemeOptionName.blue,
+      color: Color(0xFF2196F3),
+      isPremium: false,
+    ),
+    ThemeOption(
+      nameKey: ThemeOptionName.purple,
+      color: Color(0xFF9C27B0),
+      isPremium: false,
+    ),
+    ThemeOption(
+      nameKey: ThemeOptionName.red,
+      color: Color(0xFFF44336),
+      isPremium: true,
+    ),
+    ThemeOption(
+      nameKey: ThemeOptionName.orange,
+      color: Color(0xFFFF9800),
+      isPremium: true,
+    ),
+    ThemeOption(
+      nameKey: ThemeOptionName.pink,
+      color: Color(0xFFE91E63),
+      isPremium: true,
+    ),
+    ThemeOption(
+      nameKey: ThemeOptionName.indigo,
+      color: Color(0xFF3F51B5),
+      isPremium: true,
+    ),
+    ThemeOption(
+      nameKey: ThemeOptionName.amber,
+      color: Color(0xFFFFC107),
+      isPremium: true,
+    ),
+    ThemeOption(
+      nameKey: ThemeOptionName.teal,
+      color: Color(0xFF009688),
+      isPremium: true,
+    ),
+    ThemeOption(
+      nameKey: ThemeOptionName.brown,
+      color: Color(0xFF795548),
+      isPremium: true,
+    ),
   ];
+
+  String localizedName(AppLocalizations l10n) {
+    return switch (nameKey) {
+      ThemeOptionName.fresh => l10n.themeGreen,
+      ThemeOptionName.ocean => l10n.themeBlue,
+      ThemeOptionName.warm => l10n.themeOrange,
+      ThemeOptionName.green => l10n.themeGreen,
+      ThemeOptionName.blue => l10n.themeBlue,
+      ThemeOptionName.purple => l10n.themePurple,
+      ThemeOptionName.red => l10n.themeRed,
+      ThemeOptionName.orange => l10n.themeOrange,
+      ThemeOptionName.pink => l10n.themePink,
+      ThemeOptionName.indigo => l10n.themeIndigo,
+      ThemeOptionName.amber => l10n.themeAmber,
+      ThemeOptionName.teal => l10n.themeTeal,
+      ThemeOptionName.brown => l10n.themeBrown,
+    };
+  }
 
   static ThemeOption fromColorValue(int colorValue) {
     return options.firstWhere(
@@ -115,4 +185,20 @@ class ThemeOption {
       orElse: () => options.first,
     );
   }
+}
+
+enum ThemeOptionName {
+  fresh,
+  ocean,
+  warm,
+  green,
+  blue,
+  purple,
+  red,
+  orange,
+  pink,
+  indigo,
+  amber,
+  teal,
+  brown,
 }

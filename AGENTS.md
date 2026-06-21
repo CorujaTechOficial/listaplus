@@ -97,7 +97,7 @@ flutter build appbundle --no-tree-shake-icons   # appbundle (category Icons are 
 
 ## Play Store Deployment
 
-- **Service account**: `/Users/absondutragalvao/play-console-sa.json` (or `Downloads/listaplus-6547b-e019add29823.json`)
+- **Service account**: `play-console-sa.json` (root directory, primary) or `/Users/absondutragalvao/play-console-sa.json` (fallback)
 - **Scripts** in project root:
   - `upload_aab.py` — upload AAB to internal track
   - `update_store_listings.py` — bulk-update store listing translations via API
@@ -139,3 +139,32 @@ Must compile: `cd custom_lints && dart analyze lib/` → "No issues found!"
 - **agent loop cancel**: `_agentLoop` checks `_isCancelled` between rounds and tool executions. Without this, canceled requests could continue phantom rounds.
 - **clearHistory + active task**: `clearHistory()` must call `cancelRequest()` first to abort any in-flight AI request before clearing state.
 - **streaming buffer**: after the SSE stream loop ends, flush remaining tokens to `chatStreamingTextProvider` before setting it to null to avoid visual jumps.
+- **RevenueCat API key missing**: build without `--dart-define=REVENUECAT_API_KEY=xxx` causes `IllegalArgumentException` crash before `runApp`. Fix: `main.dart` checks key emptiness and falls back to `RevenueCatServiceNoop` (returns `false` for entitlements, no SDK calls). Always build with `--dart-define=REVENUECAT_API_KEY=goog_lUoZUpDVyhVroFRzwgArMnFxIQv`.
+
+## Flutter UI & Layout Excellence (Self-Improvement)
+
+To ensure mobile layouts are premium, fluid, and visually stunning, the agent must strictly enforce these standards in all Flutter code:
+
+### 1. Design Tokens & Consistency
+* **No Raw Dimension Numbers**: Never use raw numbers for margins, padding, spacing, sizes, heights, widths, or border radiuses.
+  * Use `Spacing` tokens (`Spacing.xs`, `Spacing.md`, `Spacing.lg`, etc.) for all layout spacing.
+  * Use `RadiusTokens` (`RadiusTokens.md`, `RadiusTokens.lg`, etc.) for all border radiuses.
+  * Use `DurationTokens` (`DurationTokens.fast`, `DurationTokens.normal`, etc.) for all transition durations.
+  * Use `ElevationTokens` for custom card/dialog shadows.
+* **No Raw Colors**: Never use raw hex colors or standard `Colors` constants (like `Colors.green` or `Colors.grey[200]`). Use `Theme.of(context).colorScheme` values (`primary`, `surface`, `onSurface`, `error`, etc.) to maintain robust dark mode compatibility automatically.
+
+### 2. Layout Safety & Responsiveness
+* **RenderFlex Overflow Prevention**: Columns containing text, inputs, or other components that could grow in size must always be wrapped in a scrollable view (e.g. `SingleChildScrollView`, `ListView`) or use `Flexible`/`Expanded` to avoid vertical overflows.
+* **SafeArea Guarding**: Always wrap screen scaffolds or main content roots in `SafeArea` to protect the layout from notches, status bars, and physical phone hardware boundaries.
+* **Viewport Adaptability**: Use `LayoutBuilder` or `MediaQuery` to dynamically size elements on tablet vs. small-screen formats.
+
+### 3. Premium Interactive Materials
+* **Skeletonizer / Shimmer Loading**: Never use a generic circular loader in the center of the screen for network requests. Implement custom shimmers or wrap widgets in a `Skeletonizer` matching the exact screen structure to make the loading state feel premium and polished.
+* **Micro-Animations (package:flutter_animate)**: Use subtle transitions (e.g. fades, slides, scales) from `flutter_animate` to breathe life into UI elements (e.g. `widget.animate().fadeIn(duration: DurationTokens.normal)`). Keep entrance animations restrained and elegant.
+* **Tonal Contained Cards**: Avoid heavy shadows. Separate sections using tonal differences (tinted backgrounds) and clean thin borders.
+
+### 4. Banned Patterns (AI Tells)
+* **Nested Cards**: Banned. Do not place a `Card` inside another `Card`. Use simple `Container` widgets with custom borders/colors.
+* **Side-stripe Border Accents**: Banned. Do not use vertical border lines on one side of cards or items to make them look "designed". Use clean full borders or background fills instead.
+* **Clipping Dropdowns**: Banned. Do not render absolute dropdowns inside nested scrollable containers with overflow. Escape the stacking context.
+

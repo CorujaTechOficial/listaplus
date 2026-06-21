@@ -6,14 +6,15 @@ class AppReviewService {
   AppReviewService({
     required StorageBackend storage,
     AnalyticsService? analytics,
-  })  : _storage = storage,
-        _analytics = analytics;
+  }) : _storage = storage,
+       _analytics = analytics;
 
   final StorageBackend _storage;
   final AnalyticsService? _analytics;
   final InAppReview _inAppReview = InAppReview.instance;
 
-  static const _archiveCountKey = 'archivedListsCount';
+  static const _completionCountKey = 'completedListsCount';
+  static const _firstCompletionAtKey = 'firstCompletionAt';
   static const _reviewRequestedKey = 'reviewRequested';
 
   Future<void> requestReview() async {
@@ -25,21 +26,35 @@ class AppReviewService {
     }
   }
 
-  Future<void> registerArchiveAndRequestReview() async {
+  Future<void> registerCompletionAndRequestReview({
+    required int itemCount,
+  }) async {
+    if (itemCount < 5) {
+      return;
+    }
+
     final userData = await _storage.getUserData() ?? {};
-    
-    // If we already requested, don't do anything
+
     if (userData[_reviewRequestedKey] as bool? ?? false) {
       return;
     }
 
-    final currentCount = userData[_archiveCountKey] as int? ?? 0;
+    final now = DateTime.now().toUtc();
+    final firstCompletionAt = DateTime.tryParse(
+      userData[_firstCompletionAtKey] as String? ?? '',
+    );
+    final effectiveFirstCompletionAt = firstCompletionAt ?? now;
+    final currentCount = userData[_completionCountKey] as int? ?? 0;
     final newCount = currentCount + 1;
-    
-    await _storage.updateUserData({_archiveCountKey: newCount});
+    await _storage.updateUserData({
+      _completionCountKey: newCount,
+      if (firstCompletionAt == null)
+        _firstCompletionAtKey: effectiveFirstCompletionAt.toIso8601String(),
+    });
 
-    // Trigger on the 3rd time
-    if (newCount == 3) {
+    final usedLongEnough =
+        now.difference(effectiveFirstCompletionAt) >= const Duration(hours: 72);
+    if (newCount >= 3 && usedLongEnough) {
       final isAvailable = await _inAppReview.isAvailable();
       if (isAvailable) {
         await _inAppReview.requestReview();

@@ -11,9 +11,9 @@ class ShoppingList {
     this.archivedAt,
     DateTime? createdAt,
     DateTime? updatedAt,
-  })  : id = id ?? const Uuid().v4(),
-        createdAt = createdAt ?? DateTime.now(),
-        updatedAt = updatedAt ?? DateTime.now();
+  }) : id = id ?? const Uuid().v4(),
+       createdAt = createdAt ?? DateTime.now(),
+       updatedAt = updatedAt ?? DateTime.now();
 
   factory ShoppingList.fromJson(Map<String, dynamic> json) {
     return ShoppingList(
@@ -22,9 +22,10 @@ class ShoppingList {
       budget: (json['budget'] as num?)?.toDouble(),
       ownerUid: json['ownerUid'] as String?,
       isArchived: json['isArchived'] as bool? ?? false,
-      archivedAt: json['archivedAt'] != null
-          ? DateTime.tryParse(json['archivedAt'] as String)
-          : null,
+      archivedAt:
+          json['archivedAt'] != null
+              ? DateTime.tryParse(json['archivedAt'] as String)
+              : null,
       createdAt: safeParseDate(json['createdAt']),
       updatedAt: safeParseDate(json['updatedAt']),
     );
@@ -58,9 +59,13 @@ class ShoppingList {
       id: id ?? this.id,
       name: name ?? this.name,
       budget: identical(budget, _sentinel) ? this.budget : budget as double?,
-      ownerUid: identical(ownerUid, _sentinel) ? this.ownerUid : ownerUid as String?,
+      ownerUid:
+          identical(ownerUid, _sentinel) ? this.ownerUid : ownerUid as String?,
       isArchived: isArchived ?? this.isArchived,
-      archivedAt: identical(archivedAt, _sentinel) ? this.archivedAt : archivedAt as DateTime?,
+      archivedAt:
+          identical(archivedAt, _sentinel)
+              ? this.archivedAt
+              : archivedAt as DateTime?,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );

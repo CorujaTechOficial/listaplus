@@ -17,7 +17,8 @@ class StyledAutocomplete<T extends String> extends StatelessWidget {
     TextEditingController textEditingController,
     FocusNode focusNode,
     VoidCallback onFieldSubmitted,
-  ) fieldViewBuilder;
+  )
+  fieldViewBuilder;
   final TextEditingValue? initialValue;
 
   @override
@@ -37,9 +38,11 @@ class StyledAutocomplete<T extends String> extends StatelessWidget {
         // Calculate estimated height to offset upward above the text field
         const double itemHeight = 38;
         const double basePadding = 8;
-        final double optionsHeight = (optionsList.length * itemHeight) + basePadding;
+        final double optionsHeight =
+            (optionsList.length * itemHeight) + basePadding;
         const double maxHeight = 220;
-        final double height = optionsHeight > maxHeight ? maxHeight : optionsHeight;
+        final double height =
+            optionsHeight > maxHeight ? maxHeight : optionsHeight;
         // Offset: -(options list height + text field height + small margin)
         final double yOffset = -(height + 56);
 
@@ -57,68 +60,78 @@ class StyledAutocomplete<T extends String> extends StatelessWidget {
                   maxHeight: 220,
                   minWidth: 200,
                 ),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: theme.colorScheme.surfaceContainerLow,
-                  borderRadius: BorderRadius.circular(RadiusTokens.md),
-                  border: Border.all(
-                    color: theme.colorScheme.outlineVariant.withAlpha((0.3 * 255).toInt()),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: theme.colorScheme.surfaceContainerLow,
+                    borderRadius: BorderRadius.circular(RadiusTokens.md),
+                    border: Border.all(
+                      color: theme.colorScheme.outlineVariant.withAlpha(
+                        (0.3 * 255).toInt(),
+                      ),
+                    ),
                   ),
-                ),
-                child: ListView.separated(
-                  padding: const EdgeInsets.symmetric(vertical: Spacing.xxs),
-                  shrinkWrap: true,
-                  physics: const ClampingScrollPhysics(),
-                  itemCount: optionsList.length,
-                  separatorBuilder: (context, index) => Divider(
-                    height: 1,
-                    thickness: 0.5,
-                    indent: Spacing.md,
-                    endIndent: Spacing.md,
-                    color: theme.colorScheme.outlineVariant.withAlpha((0.2 * 255).toInt()),
-                  ),
-                  itemBuilder: (context, index) {
-                    final option = optionsList[index];
-                    return InkWell(
-                      onTap: () => onSelected(option),
-                      borderRadius: index == 0
-                          ? const BorderRadius.vertical(top: Radius.circular(RadiusTokens.md))
-                          : index == optionsList.length - 1
-                              ? const BorderRadius.vertical(bottom: Radius.circular(RadiusTokens.md))
-                              : null,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: Spacing.md,
-                          vertical: Spacing.sm,
+                  child: ListView.separated(
+                    padding: const EdgeInsets.symmetric(vertical: Spacing.xxs),
+                    shrinkWrap: true,
+                    physics: const ClampingScrollPhysics(),
+                    itemCount: optionsList.length,
+                    separatorBuilder:
+                        (context, index) => Divider(
+                          height: 1,
+                          thickness: 0.5,
+                          indent: Spacing.md,
+                          endIndent: Spacing.md,
+                          color: theme.colorScheme.outlineVariant.withAlpha(
+                            (0.2 * 255).toInt(),
+                          ),
                         ),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.shopping_bag_outlined,
-                              size: 18,
-                              color: theme.colorScheme.primary,
-                            ),
-                            const SizedBox(width: Spacing.sm),
-                            Expanded(
-                              child: Text(
-                                option,
-                                style: theme.textTheme.bodyLarge?.copyWith(
-                                  color: theme.colorScheme.onSurface,
+                    itemBuilder: (context, index) {
+                      final option = optionsList[index];
+                      return InkWell(
+                        onTap: () => onSelected(option),
+                        borderRadius:
+                            index == 0
+                                ? const BorderRadius.vertical(
+                                  top: Radius.circular(RadiusTokens.md),
+                                )
+                                : index == optionsList.length - 1
+                                ? const BorderRadius.vertical(
+                                  bottom: Radius.circular(RadiusTokens.md),
+                                )
+                                : null,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: Spacing.md,
+                            vertical: Spacing.sm,
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.shopping_bag_outlined,
+                                size: 18,
+                                color: theme.colorScheme.primary,
+                              ),
+                              const SizedBox(width: Spacing.sm),
+                              Expanded(
+                                child: Text(
+                                  option,
+                                  style: theme.textTheme.bodyLarge?.copyWith(
+                                    color: theme.colorScheme.onSurface,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-      );
-    },
+        );
+      },
     );
   }
 }

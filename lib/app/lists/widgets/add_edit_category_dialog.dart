@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/category_data.dart';
 import 'package:shopping_list/app/lists/providers/categories_provider.dart';
+import 'package:shopping_list/theme/tokens.dart';
 
 class AddEditCategoryDialog extends ConsumerStatefulWidget {
   const AddEditCategoryDialog({super.key, this.existing});
@@ -11,7 +12,8 @@ class AddEditCategoryDialog extends ConsumerStatefulWidget {
   final CategoryData? existing;
 
   @override
-  ConsumerState<AddEditCategoryDialog> createState() => _AddEditCategoryDialogState();
+  ConsumerState<AddEditCategoryDialog> createState() =>
+      _AddEditCategoryDialogState();
 }
 
 class _AddEditCategoryDialogState extends ConsumerState<AddEditCategoryDialog> {
@@ -60,7 +62,10 @@ class _AddEditCategoryDialogState extends ConsumerState<AddEditCategoryDialog> {
   void initState() {
     super.initState();
     _nameCtrl = TextEditingController(text: widget.existing?.name ?? '');
-    _color = widget.existing != null ? Color(widget.existing!.colorValue.toARGB32()) : _colors[0];
+    _color =
+        widget.existing != null
+            ? Color(widget.existing!.colorValue.toARGB32())
+            : _colors[0];
     _icon = widget.existing != null ? widget.existing!.icon : _icons[0];
   }
 
@@ -73,8 +78,19 @@ class _AddEditCategoryDialogState extends ConsumerState<AddEditCategoryDialog> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
     return AlertDialog(
-      title: Text(widget.existing == null ? l10n.newCategoryDialog : l10n.editCategoryDialog),
+      icon: Icon(
+        widget.existing == null
+            ? Icons.category_outlined
+            : Icons.edit_calendar_outlined,
+        color: theme.colorScheme.secondary,
+      ),
+      title: Text(
+        widget.existing == null
+            ? l10n.newCategoryDialog
+            : l10n.editCategoryDialog,
+      ),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -88,58 +104,96 @@ class _AddEditCategoryDialogState extends ConsumerState<AddEditCategoryDialog> {
               ),
               inputFormatters: [LengthLimitingTextInputFormatter(30)],
             ),
-            const SizedBox(height: 16),
-            Text(l10n.categoryColorLabel, style: const TextStyle(fontWeight: FontWeight.w500)),
-            const SizedBox(height: 8),
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: _colors.map((Color c) {
-                final selected = _color.toARGB32() == c.toARGB32();
-                return GestureDetector(
-                  onTap: () => setState(() => _color = c),
-                  child: Container(
-                    width: 36,
-                    height: 36,
-                    decoration: BoxDecoration(
-                      color: c,
-                      shape: BoxShape.circle,
-                      border: selected
-                          ? Border.all(color: Colors.white, width: 3)
-                          : null,
-                      boxShadow: selected
-                          ? [BoxShadow(color: c.withAlpha((0.5 * 255).toInt()), blurRadius: 8)]
-                          : null,
-                    ),
-                    child: selected
-                        ? const Icon(Icons.check, color: Colors.white, size: 18)
-                        : null,
-                  ),
-                );
-              }).toList(),
+            const SizedBox(height: Spacing.md),
+            Text(
+              l10n.categoryColorLabel,
+              style: const TextStyle(fontWeight: FontWeight.w500),
             ),
-            const SizedBox(height: 16),
-            Text(l10n.categoryIconLabel, style: const TextStyle(fontWeight: FontWeight.w500)),
-            const SizedBox(height: 8),
+            const SizedBox(height: Spacing.xs),
             Wrap(
               spacing: 8,
               runSpacing: 8,
-              children: _icons.map((IconData icn) {
-                final selected = _icon.codePoint == icn.codePoint;
-                return GestureDetector(
-                  onTap: () => setState(() => _icon = icn),
-                  child: Container(
-                    width: 42,
-                    height: 42,
-                    decoration: BoxDecoration(
-                      color: selected ? _color.withAlpha((0.2 * 255).toInt()) : Colors.grey.withAlpha((0.1 * 255).toInt()),
-                      borderRadius: BorderRadius.circular(8),
-                      border: selected ? Border.all(color: _color, width: 2) : null,
-                    ),
-                    child: Icon(icn, color: selected ? _color : Colors.grey, size: 22),
-                  ),
-                );
-              }).toList(),
+              children:
+                  _colors.map((Color c) {
+                    final selected = _color.toARGB32() == c.toARGB32();
+                    return GestureDetector(
+                      onTap: () => setState(() => _color = c),
+                      child: Container(
+                        width: 36,
+                        height: 36,
+                        decoration: BoxDecoration(
+                          color: c,
+                          shape: BoxShape.circle,
+                          border:
+                              selected
+                                  ? Border.all(
+                                    color: theme.colorScheme.surface,
+                                    width: 3,
+                                  )
+                                  : null,
+                          boxShadow:
+                              selected
+                                  ? [
+                                    BoxShadow(
+                                      color: c.withAlpha((0.5 * 255).toInt()),
+                                      blurRadius: 8,
+                                    ),
+                                  ]
+                                  : null,
+                        ),
+                        child:
+                            selected
+                                ? Icon(
+                                  Icons.check,
+                                  color: theme.colorScheme.surface,
+                                  size: 18,
+                                )
+                                : null,
+                      ),
+                    );
+                  }).toList(),
+            ),
+            const SizedBox(height: Spacing.md),
+            Text(
+              l10n.categoryIconLabel,
+              style: const TextStyle(fontWeight: FontWeight.w500),
+            ),
+            const SizedBox(height: Spacing.xs),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children:
+                  _icons.map((IconData icn) {
+                    final selected = _icon.codePoint == icn.codePoint;
+                    return GestureDetector(
+                      onTap: () => setState(() => _icon = icn),
+                      child: Container(
+                        width: 42,
+                        height: 42,
+                        decoration: BoxDecoration(
+                          color:
+                              selected
+                                  ? _color.withAlpha((0.2 * 255).toInt())
+                                  : theme.colorScheme.outlineVariant.withAlpha(
+                                    26,
+                                  ),
+                          borderRadius: BorderRadius.circular(RadiusTokens.sm),
+                          border:
+                              selected
+                                  ? Border.all(color: _color, width: 2)
+                                  : null,
+                        ),
+                        child: Icon(
+                          icn,
+                          color:
+                              selected
+                                  ? _color
+                                  : theme.colorScheme.onSurfaceVariant,
+                          size: 22,
+                        ),
+                      ),
+                    );
+                  }).toList(),
             ),
           ],
         ),
@@ -149,11 +203,16 @@ class _AddEditCategoryDialogState extends ConsumerState<AddEditCategoryDialog> {
           onPressed: _saving ? null : () => Navigator.pop(context),
           child: Text(l10n.cancel),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: _saving ? null : _save,
-          child: _saving
-              ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2))
-              : Text(l10n.save),
+          child:
+              _saving
+                  ? const SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                  : Text(l10n.save),
         ),
       ],
     );
@@ -168,7 +227,9 @@ class _AddEditCategoryDialogState extends ConsumerState<AddEditCategoryDialog> {
     setState(() => _saving = true);
     try {
       final cat = CategoryData(
-        id: widget.existing?.id ?? name.toLowerCase().replaceAll(RegExp(r'\s+'), '_'),
+        id:
+            widget.existing?.id ??
+            name.toLowerCase().replaceAll(RegExp(r'\s+'), '_'),
         name: name,
         color: _color.toARGB32(),
         icon: _icon,

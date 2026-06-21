@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ShoppingItemTileSkeleton extends StatelessWidget {
@@ -13,14 +14,20 @@ class ShoppingItemTileSkeleton extends StatelessWidget {
       baseColor: base,
       highlightColor: highlight,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+        padding: const EdgeInsets.symmetric(
+          horizontal: Spacing.sm,
+          vertical: Spacing.xxs,
+        ),
         child: Container(
           height: 64,
           decoration: BoxDecoration(
             color: base,
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(RadiusTokens.lg),
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+          padding: const EdgeInsets.symmetric(
+            horizontal: Spacing.sm,
+            vertical: Spacing.sm,
+          ),
           child: Row(
             children: [
               Container(
@@ -28,7 +35,7 @@ class ShoppingItemTileSkeleton extends StatelessWidget {
                 height: 26,
                 decoration: BoxDecoration(color: base, shape: BoxShape.circle),
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: Spacing.sm),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,13 +47,13 @@ class ShoppingItemTileSkeleton extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(width: 8),
+              const SizedBox(width: Spacing.xs),
               Container(
                 width: 72,
                 height: 26,
                 decoration: BoxDecoration(
                   color: base,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(RadiusTokens.xl),
                 ),
               ),
             ],

@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "Asistent AI",
   "aiAssistantDescription": "Merr sugjerime të zgjuara, receta dhe këshilla të personalizuara me asistentin tonë AI.",
   "aiAssistantTitle": "Asistent i AI",
+  "aiCapabilitiesBudget": "Buxheti dhe Çmimet",
+  "aiCapabilitiesLists": "Listat e blerjeve",
+  "aiCapabilitiesOrganize": "Organizimi",
+  "aiCapabilitiesRecipes": "Receta & Menu",
+  "aiCapabilitiesTitle": "Çfarë mund të bëj?",
   "aiConnectionError": "Nuk mund të lidhej me shërbimin e AI. Kontrolloni lidhjen tuaj.",
   "aiCreditsRemaining": "{remaining} kredite të mbetura",
   "aiEmptyResponseError": "Shërbimi i AI ktheu një përgjigje boshe.",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "Shëno si të blerë",
   "markItemsToSeeAnalysis": "Shëno artikujt si të blerë për të parë analizën.",
   "marketMode": "Mënyra e tregut",
+  "marketModeDescription": "Kontrolloni artikujt ndërsa blini",
   "marketsToAvoid": "Tregjet që duhen shmangur",
   "marketsToAvoidHint": "P.sh.: Tregu Y, Tregu Z",
   "mealPlannerAddMeal": "Shtoni vaktin",
   "mealPlannerAddType": "Shto llojin e vaktit",
+  "mealPlannerBudgetGoalNav": "Buxheti i planifikuesit të vakteve",
+  "mealPlannerBudgetGoalSubtitle": "Synimi i shpenzimeve mujore për planifikimin e vakteve",
+  "mealPlannerBudgetMonthCost": "muaji: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Hiq objektivin",
+  "mealPlannerBudgetTodayCost": "Sot: {amount}",
+  "mealPlannerBudgetWeekCost": "Java: {amount}",
   "mealPlannerCustomTypeLabel": "Lloji i personalizuar",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Lloji i parazgjedhur",
@@ -2004,6 +2061,7 @@
   "navRecipes": "Receta",
   "newCategoryDialog": "Kategoria e re",
   "newChat": "Bisedë e re",
+  "newChatStarted": "Filloi biseda e re",
   "newListTitle": "Listë e Re Blerjesh",
   "newPantryList": "Blerje nga Qilar",
   "newRecipe": "Recetë e re",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "Po pyet listat tuaja...",
   "quickActionAi": "Bisedoni me Kipin",
   "quickActionPantry": "Shikoni qilarin",
+  "quickAddToList": "Shto në listë",
   "quickRecipe": "Recetë e shpejtë",
   "quickRecipePrompt": "Sugjero receta me artikuj nga lista ime.",
   "quickReplies": "Përgjigje të shpejta:",

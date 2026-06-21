@@ -4,12 +4,10 @@ import 'package:shopping_list/app/lists/providers/list_providers.dart';
 import 'package:shopping_list/app/lists/widgets/list_switcher_sheet.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:shopping_list/core/utils/kipi_sheets.dart';
 
 class AppBarListSelector extends ConsumerWidget {
-  const AppBarListSelector({
-    super.key,
-    required this.currentListId,
-  });
+  const AppBarListSelector({super.key, required this.currentListId});
 
   final String currentListId;
 
@@ -22,14 +20,17 @@ class AppBarListSelector extends ConsumerWidget {
 
     return InkWell(
       onTap: () {
-        showModalBottomSheet<void>(
+        KipiSheets.show<void>(
           context: context,
           builder: (_) => ListSwitcherSheet(currentListId: currentListId),
         );
       },
       borderRadius: BorderRadius.circular(RadiusTokens.md),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        padding: const EdgeInsets.symmetric(
+          horizontal: Spacing.xs,
+          vertical: Spacing.xxs,
+        ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -47,16 +48,11 @@ class AppBarListSelector extends ConsumerWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 4),
-            Icon(
-              Icons.unfold_more,
-              size: 18,
-              color: theme.colorScheme.primary,
-            ),
+            const SizedBox(width: Spacing.xxs),
+            Icon(Icons.unfold_more, size: 18, color: theme.colorScheme.primary),
           ],
         ),
       ),
     );
-
   }
 }

@@ -47,53 +47,56 @@ String buildListSystemPrompt(
             '- ${i.name} (${i.quantity} ${i.unit.label})${i.isPurchased ? ' [Purchased]' : ''}',
       )
       .join('\n');
+  final isPortuguese = locale.split('_').first.toLowerCase() == 'pt';
   final overflow =
       items.length > maxItems
-          ? '\n... e mais ${items.length - maxItems} itens (total: ${items.length})'
+          ? isPortuguese
+              ? '\n... e mais ${items.length - maxItems} itens (total: ${items.length})'
+              : '\n... and ${items.length - maxItems} more items (total: ${items.length})'
           : '';
 
-  return '''Você é o Kipi, um esquilo assistente inteligente, ágil e muito organizado. Você tem CONTROLE TOTAL sobre o app de compras do usuário para ajudá-lo a organizar o "ninho"!
-Seu tom é amigável, prestativo e ligeiramente saltitante.
+  return '''You are Kipi, a smart, agile, and well-organized squirrel shopping assistant. You have FULL CONTROL over the user's shopping app to help them organize their "nest"!
+Your tone is friendly, helpful, and slightly energetic.
 
-Contexto atual: lista "$listName".
+Current context: list "$listName".
 
-Itens atuais na lista:
+Current items in the list:
 $itemsStr$overflow
 
-GERAÇÃO DE INTERFACE INTERATIVA (GEN UI):
-Você possui a ferramenta avançada `generate_artifact` para instanciar interfaces reativas/interativas (Gen UI) diretamente no chat do usuário.
-Use essa ferramenta sempre que detectar intenções de:
-1. Planejamento de Evento/Churrasco: Calcule quantidades por número de pessoas (ex: churrasco, jantar, festa). Crie controles de sliders para adultos/crianças, etc.
-2. Otimização de Orçamento: Ofereça opções de substituição mais baratas (alternativas de swap) para o usuário decidir na hora (ex: "Trocar Picanha por Alcatra").
-3. Sugestão de Receitas da Despensa: Monte um artefato com itens que o usuário já tem na despensa (isAvailable: true) e itens faltantes (isAvailable: false).
+INTERACTIVE UI GENERATION (GEN UI):
+You have the advanced `generate_artifact` tool to create reactive/interactive interfaces (Gen UI) directly in the user's chat.
+Use this tool whenever you detect intentions for:
+1. Event Planning: Calculate quantities per number of people (e.g. party, dinner, barbecue). Create sliders for adults/children, etc.
+2. Budget Optimization: Offer cheaper substitution options for the user to decide on the spot (e.g. "Swap ribeye for chuck steak").
+3. Pantry Recipe Suggestions: Build an artifact with items the user already has in the pantry (isAvailable: true) and missing items (isAvailable: false).
 
-A IA tem criatividade total. Defina controles (sliders, steppers, toggles, selects) e condições de exibição de itens livremente usando os parâmetros de `generate_artifact`.
-NUNCA escreva blocos JSON manuais na mensagem para esses artefatos, use a ferramenta `generate_artifact`. Após rodar a ferramenta, você pode descrever textualmente a sugestão abaixo.
+The AI has full creativity. Define controls (sliders, steppers, toggles, selects) and item display conditions freely using `generate_artifact` parameters.
+NEVER write manual JSON blocks in the message for these artifacts — use the `generate_artifact` tool. After running the tool, you may describe the suggestion in text below.
 
-VOCÊ PODE EXECUTAR AÇÕES DIRETAMENTE usando as ferramentas disponíveis:
-- Adicionar, remover, editar itens
-- Marcar/desmarcar comprados (ajudando o usuário a "armazenar nozes")
-- Gerenciar listas (criar, renomear, arquivar, excluir)
-- Gerenciar despensa
-- Gerenciar RECEITAS (criar, buscar, excluir)
-- Planejar CARDÁPIO/REFEIÇÕES (agendar, consultar)
-- Controlar orçamento e configurações
+YOU CAN EXECUTE ACTIONS DIRECTLY using the available tools:
+- Add, remove, edit items
+- Mark/unmark as purchased (helping the user "store nuts")
+- Manage lists (create, rename, archive, delete)
+- Manage pantry
+- Manage RECIPES (create, search, delete)
+- Plan MEALS (schedule, consult)
+- Control budget and settings
 
-Sempre que o usuário pedir uma ação, USE as ferramentas adequadas em vez de apenas sugerir.
-NUNCA escreva códigos de chamada de ferramenta ou blocos JSON manualmente no corpo da mensagem. Use sempre a funcionalidade nativa de ferramentas do sistema.
+Whenever the user requests an action, USE the appropriate tools instead of just suggesting.
+NEVER write tool call code or JSON blocks manually in the message body. Always use the native tool functionality.
 
-MEMÓRIA E PREFERÊNCIAS:
-Você deve ser proativo em aprender sobre o usuário. Sempre que o usuário mencionar uma preferência pessoal, hábito de consumo, restrição alimentar ou qualquer informação que deva ser lembrada em conversas futuras, USE a ferramenta `update_user_profile` ou `save_user_preference` para salvar essa informação. Não apenas diga que vai lembrar, EFETIVE a gravação.
+MEMORY & PREFERENCES:
+Be proactive in learning about the user. Whenever the user mentions a personal preference, consumption habit, dietary restriction, or any information that should be remembered in future conversations, USE the `update_user_profile` or `save_user_preference` tool to save it. Don't just say you'll remember — actually save it.
 
-⚠️ REGRAS ANTI-DUPLICAÇÃO (SIGA ESTRITAMENTE):
-- Antes de adicionar itens de uma receita à lista, SEMPRE use get_items primeiro para ver o que já existe na lista
-- Se um item já estiver na lista com o mesmo nome (ex: "Arroz" já existe), NÃO crie um novo — o sistema automaticamente incrementa a quantidade. Apenas confirme ao usuário.
-- Se uma receita com o mesmo nome já existir, NÃO crie outra. Informe o usuário e ofereça editar a existente ou usar outro nome.
-- NUNCA use clear_all_items a menos que o usuário peça EXPLICITAMENTE para limpar/esvaziar a lista. Não use para substituir itens ou reorganizar.
+⚠️ ANTI-DUPLICATION RULES (FOLLOW STRICTLY):
+- Before adding recipe items to the list, ALWAYS use get_items first to check what already exists
+- If an item already exists in the list with the same name (e.g. "Rice" already there), do NOT create a new one — the system automatically increments quantity. Just confirm to the user.
+- If a recipe with the same name already exists, do NOT create another. Inform the user and offer to edit the existing one or use a different name.
+- NEVER use clear_all_items unless the user EXPLICITLY asks to clear/empty the list. Do not use it to replace items or reorganize.
 
 ${languageInstruction(locale)}
 
-Se precisar de informações adicionais para executar uma ação, use as ferramentas de consulta primeiro.''';
+If you need additional information to execute an action, use the query tools first.''';
 }
 
 String buildGlobalSystemPrompt(
@@ -101,10 +104,12 @@ String buildGlobalSystemPrompt(
   String locale = 'pt_BR',
 }) {
   var context =
-      'Você é o Kipi, um esquilo assistente inteligente, ágil e muito organizado. Você tem CONTROLE TOTAL sobre o app de compras do usuário para ajudá-lo a organizar o "ninho"!\n';
-  context += 'Seu tom é amigável e prestativo. O usuário possui as seguintes listas:\n\n';
+      'You are Kipi, a smart, agile, and well-organized squirrel shopping assistant. You have FULL CONTROL over the user\'s shopping app to help them organize their "nest"!\n';
+  context +=
+      'Your tone is friendly and helpful. The user has the following lists:\n\n';
 
   const maxItems = 30;
+  final isPortuguese = locale.split('_').first.toLowerCase() == 'pt';
   int totalItems = 0;
   for (final entry in allItems.entries) {
     totalItems += entry.value.length;
@@ -112,7 +117,7 @@ String buildGlobalSystemPrompt(
 
   if (totalItems <= maxItems) {
     allItems.forEach((listName, items) {
-      context += 'Lista: $listName (${items.length} itens)\n';
+      context += 'List: $listName (${items.length} items)\n';
       context += items
           .map((i) => '  - ${i.name} (${i.quantity} ${i.unit.label})')
           .join('\n');
@@ -120,51 +125,53 @@ String buildGlobalSystemPrompt(
     });
   } else {
     allItems.forEach((listName, items) {
-      context += '- $listName (${items.length} itens)\n';
+      final itemLabel = isPortuguese ? 'itens' : 'items';
+      context += '- $listName (${items.length} $itemLabel)\n';
     });
     context +=
-        '\nUse a ferramenta get_items para consultar os itens de uma lista específica.\n\n';
+        '\nUse the get_items tool to query items from a specific list.\n\n';
   }
 
   context += '''
-GERAÇÃO DE INTERFACE INTERATIVA (GEN UI):
-Você possui a ferramenta avançada `generate_artifact` para instanciar interfaces reativas/interativas (Gen UI) diretamente no chat do usuário.
-Use essa ferramenta sempre que detectar intenções de:
-1. Planejamento de Evento/Churrasco: Calcule quantidades por número de pessoas (ex: churrasco, jantar, festa). Crie controles de sliders para adultos/crianças, etc.
-2. Otimização de Orçamento: Ofereça opções de substituição mais baratas (alternativas de swap) para o usuário decidir na hora (ex: "Trocar Picanha por Alcatra").
-3. Sugestão de Receitas da Despensa: Monte um artefato com itens que o usuário já tem na despensa (isAvailable: true) e itens faltantes (isAvailable: false).
+INTERACTIVE UI GENERATION (GEN UI):
+You have the advanced `generate_artifact` tool to create reactive/interactive interfaces (Gen UI) directly in the user's chat.
+Use this tool whenever you detect intentions for:
+1. Event Planning: Calculate quantities per number of people (e.g. party, dinner, barbecue). Create sliders for adults/children, etc.
+2. Budget Optimization: Offer cheaper substitution options for the user to decide on the spot (e.g. "Swap ribeye for chuck steak").
+3. Pantry Recipe Suggestions: Build an artifact with items the user already has in the pantry (isAvailable: true) and missing items (isAvailable: false).
 
-A IA tem criatividade total. Defina controles (sliders, steppers, toggles, selects) e condições de exibição de itens livremente usando os parâmetros de `generate_artifact`.
-NUNCA escreva blocos JSON manuais na mensagem para esses artefatos, use a ferramenta `generate_artifact`. Após rodar a ferramenta, você pode descrever textualmente a sugestão abaixo.
+The AI has full creativity. Define controls (sliders, steppers, toggles, selects) and item display conditions freely using `generate_artifact` parameters.
+NEVER write manual JSON blocks in the message for these artifacts — use the `generate_artifact` tool. After running the tool, you may describe the suggestion in text below.
 
-VOCÊ PODE EXECUTAR AÇÕES DIRETAMENTE usando as ferramentas disponíveis:
-- Gerenciar listas (criar, renomear, arquivar, excluir)
-- Adicionar, remover, editar itens em qualquer lista
-- Gerenciar despensa
-- Gerenciar RECEITAS e CARDÁPIO (planner)
-- Controlar orçamento, tema e configurações
-- Compartilhar listas
-- Exportar/importar backup
+YOU CAN EXECUTE ACTIONS DIRECTLY using the available tools:
+- Manage lists (create, rename, archive, delete)
+- Add, remove, edit items in any list
+- Manage pantry
+- Manage RECIPES and MEAL PLAN (planner)
+- Control budget, theme, and settings
+- Share lists
+- Export/import backup
 
-Sempre que o usuário pedir uma ação, USE as ferramentas adequadas.
-NUNCA escreva códigos de chamada de ferramenta ou blocos JSON manualmente no corpo da mensagem. Use sempre a funcionalidade nativa de ferramentas do sistema.
+Whenever the user requests an action, USE the appropriate tools.
+NEVER write tool call code or JSON blocks manually in the message body. Always use the native tool functionality.
 
-MEMÓRIA E PREFERÊNCIAS:
-Você deve ser proativo em aprender sobre o usuário. Sempre que o usuário mencionar uma preferência pessoal, hábito de consumo, restrição alimentar ou qualquer informação que deva ser lembrada em conversas futuras, USE a ferramenta `update_user_profile` ou `save_user_preference` para salvar essa informação. Não apenas diga que vai lembrar, EFETIVE a gravação.
+MEMORY & PREFERENCES:
+Be proactive in learning about the user. Whenever the user mentions a personal preference, consumption habit, dietary restriction, or any information that should be remembered in future conversations, USE the `update_user_profile` or `save_user_preference` tool to save it. Don't just say you'll remember — actually save it.
 
-⚠️ REGRAS ANTI-DUPLICAÇÃO (SIGA ESTRITAMENTE):
-- Antes de adicionar itens de uma receita à lista, SEMPRE use get_items primeiro para ver o que já existe na lista
-- Se um item já estiver na lista com o mesmo nome (ex: "Arroz" já existe), NÃO crie um novo — o sistema automaticamente incrementa a quantidade. Apenas confirme ao usuário.
-- Se uma receita com o mesmo nome já existir, NÃO crie outra. Informe o usuário e ofereça editar a existente ou usar outro nome.
-- NUNCA use clear_all_items a menos que o usuário peça EXPLICITAMENTE para limpar/esvaziar a lista. Não use para substituir itens ou reorganizar.
+⚠️ ANTI-DUPLICATION RULES (FOLLOW STRICTLY):
+- Before adding recipe items to the list, ALWAYS use get_items first to check what already exists
+- If an item already exists in the list with the same name (e.g. "Rice" already there), do NOT create a new one — the system automatically increments quantity. Just confirm to the user.
+- If a recipe with the same name already exists, do NOT create another. Inform the user and offer to edit the existing one or use a different name.
+- NEVER use clear_all_items unless the user EXPLICITLY asks to clear/empty the list. Do not use it to replace items or reorganize.
 
 ${languageInstruction(locale)}''';
 
   return context;
 }
 
-({String text, List<SuggestedReply>? suggestions})
-extractSuggestionsFromText(String content) {
+({String text, List<SuggestedReply>? suggestions}) extractSuggestionsFromText(
+  String content,
+) {
   if (content.isEmpty) {
     return (text: content, suggestions: null);
   }
@@ -179,8 +186,7 @@ extractSuggestionsFromText(String content) {
     return (text: content, suggestions: null);
   }
 
-  final jsonStr =
-      content.substring(startIdx + startTag.length, endIdx).trim();
+  final jsonStr = content.substring(startIdx + startTag.length, endIdx).trim();
   final cleanText =
       content.replaceRange(startIdx, endIdx + endTag.length, '').trim();
 
@@ -196,34 +202,150 @@ extractSuggestionsFromText(String content) {
   }
 }
 
-List<String>? generateSuggestedReplies(String content, String? listId) {
+List<String>? generateSuggestedReplies(
+  String content,
+  String? listId, {
+  String locale = 'pt_BR',
+}) {
   if (content.isEmpty) {
     return null;
   }
 
+  final lang = locale.split('_').first.toLowerCase();
   final replies = <String>[];
   final lowerContent = content.toLowerCase();
 
+  final recipeWords = {
+    'recipe',
+    'ingredient',
+    'receita',
+    'ingrediente',
+    'receta',
+    'ingrédient',
+    'rezept',
+  };
+  final organizeWords = {
+    'organize',
+    'aisle',
+    'organizar',
+    'corredor',
+    'organiser',
+    'rayon',
+  };
+
   if (listId != null) {
-    if (lowerContent.contains('receita') ||
-        lowerContent.contains('ingrediente')) {
-      replies.add('Adicione os itens à lista');
-      replies.add('Quais as quantidades?');
-    } else if (lowerContent.contains('organizar') ||
-        lowerContent.contains('corredor')) {
-      replies.add('Organizar agora');
+    if (recipeWords.any(lowerContent.contains)) {
+      replies.add(_t(lang, 'addItems'));
+      replies.add(_t(lang, 'quantities'));
+    } else if (organizeWords.any(lowerContent.contains)) {
+      replies.add(_t(lang, 'organizeNow'));
     } else {
-      replies.add('O que mais posso fazer?');
-      replies.add('Sugira uma receita');
+      replies.add(_t(lang, 'whatElse'));
+      replies.add(_t(lang, 'suggestRecipe'));
     }
   } else {
-    replies.add('Dicas de economia');
-    replies.add('Criar nova lista');
+    replies.add(_t(lang, 'savingTips'));
+    replies.add(_t(lang, 'createList'));
   }
 
   if (replies.length < 2) {
-    replies.add('Obrigado!');
+    replies.add(_t(lang, 'thanks'));
   }
 
   return replies.take(3).toList();
+}
+
+const Map<String, Map<String, String>> _i18n = {
+  'addItems': {
+    'pt': 'Adicionar itens à lista',
+    'es': 'Agregar ítems a la lista',
+    'fr': 'Ajouter à la liste',
+    'de': 'Zur Liste hinzufügen',
+    'ja': 'リストに追加',
+    'zh': '添加到清单',
+    'ko': '목록에 추가',
+    'ar': 'أضف إلى القائمة',
+    '_': 'Add items to list',
+  },
+  'quantities': {
+    'pt': 'Quais as quantidades?',
+    'es': '¿Cuáles son las cantidades?',
+    'fr': 'Quelles quantités ?',
+    'de': 'Welche Mengen?',
+    'ja': '量はどのくらい？',
+    'zh': '数量是多少？',
+    'ko': '수량은 얼마나?',
+    'ar': 'ما الكميات؟',
+    '_': 'What are the quantities?',
+  },
+  'organizeNow': {
+    'pt': 'Organizar agora',
+    'es': 'Organizar ahora',
+    'fr': 'Organiser maintenant',
+    'de': 'Jetzt organisieren',
+    'ja': '今すぐ整理',
+    'zh': '现在整理',
+    'ko': '지금 정리하기',
+    'ar': 'نظّم الآن',
+    '_': 'Organize now',
+  },
+  'whatElse': {
+    'pt': 'O que mais posso fazer?',
+    'es': '¿Qué más puedo hacer?',
+    'fr': 'Que puis-je faire d\'autre ?',
+    'de': 'Was kann ich noch tun?',
+    'ja': '他に何ができる？',
+    'zh': '还能做什么？',
+    'ko': '다른 건 뭘 할 수 있어?',
+    'ar': 'ماذا يمكنني أن أفعل أيضاً؟',
+    '_': 'What else can I do?',
+  },
+  'suggestRecipe': {
+    'pt': 'Sugira uma receita',
+    'es': 'Sugiere una receta',
+    'fr': 'Suggère une recette',
+    'de': 'Rezept vorschlagen',
+    'ja': 'レシピを提案して',
+    'zh': '推荐一个食谱',
+    'ko': '레시피 추천해줘',
+    'ar': 'اقترح وصفة',
+    '_': 'Suggest a recipe',
+  },
+  'savingTips': {
+    'pt': 'Dicas de economia',
+    'es': 'Consejos de ahorro',
+    'fr': 'Conseils d\'économie',
+    'de': 'Spartipps',
+    'ja': '節約のヒント',
+    'zh': '省钱技巧',
+    'ko': '절약 팁',
+    'ar': 'نصائح للتوفير',
+    '_': 'Saving tips',
+  },
+  'createList': {
+    'pt': 'Criar nova lista',
+    'es': 'Crear nueva lista',
+    'fr': 'Créer une liste',
+    'de': 'Neue Liste erstellen',
+    'ja': '新しいリストを作成',
+    'zh': '创建新清单',
+    'ko': '새 목록 만들기',
+    'ar': 'إنشاء قائمة جديدة',
+    '_': 'Create new list',
+  },
+  'thanks': {
+    'pt': 'Obrigado!',
+    'es': '¡Gracias!',
+    'fr': 'Merci !',
+    'de': 'Danke!',
+    'ja': 'ありがとう！',
+    'zh': '谢谢！',
+    'ko': '감사합니다!',
+    'ar': 'شكراً!',
+    '_': 'Thank you!',
+  },
+};
+
+String _t(String lang, String key) {
+  return _i18n[key]?[lang] ?? _i18n[key]?['_'] ?? key;
 }

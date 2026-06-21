@@ -19,33 +19,43 @@ class Recipes extends _$Recipes {
 
     final completer = Completer<List<Recipe>>();
 
-    _subscription = service.watchRecipes()
+    _subscription = service
+        .watchRecipes()
         .map((list) => list.map(Recipe.fromJson).toList())
         .listen(
-      (data) {
-        if (!completer.isCompleted) {
-          completer.complete(data);
-        } else {
-          state = AsyncValue.data(data);
-        }
-      },
-      onError: (Object e, StackTrace s) {
-        LoggerService.error(e, stackTrace: s, message: 'RecipesProvider: erro na stream');
-        if (!completer.isCompleted) {
-          completer.completeError(e, s);
-        } else {
-          state = AsyncValue.error(e, s);
-        }
-      },
-    );
+          (data) {
+            if (!completer.isCompleted) {
+              completer.complete(data);
+            } else {
+              state = AsyncValue.data(data);
+            }
+          },
+          onError: (Object e, StackTrace s) {
+            LoggerService.error(
+              e,
+              stackTrace: s,
+              message: 'RecipesProvider: erro na stream',
+            );
+            if (!completer.isCompleted) {
+              completer.completeError(e, s);
+            } else {
+              state = AsyncValue.error(e, s);
+            }
+          },
+        );
 
     ref.onDispose(() => _subscription?.cancel());
 
     return completer.future.timeout(
       const Duration(seconds: 30),
       onTimeout: () {
-        LoggerService.log('RecipesProvider: timeout no carregamento inicial', tag: 'Recipes');
-        throw TimeoutException('O servidor demorou muito para responder. Verifique sua conexão.');
+        LoggerService.log(
+          'RecipesProvider: timeout no carregamento inicial',
+          tag: 'Recipes',
+        );
+        throw TimeoutException(
+          'O servidor demorou muito para responder. Verifique sua conexão.',
+        );
       },
     );
   }

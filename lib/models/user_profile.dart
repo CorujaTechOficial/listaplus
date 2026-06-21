@@ -54,12 +54,17 @@ class UserProfile {
   }) {
     return UserProfile(
       preferredStore:
-          identical(preferredStore, _sentinel) ? this.preferredStore : preferredStore as String?,
-      dietaryRestrictions: identical(dietaryRestrictions, _sentinel)
-          ? this.dietaryRestrictions
-          : dietaryRestrictions as String?,
+          identical(preferredStore, _sentinel)
+              ? this.preferredStore
+              : preferredStore as String?,
+      dietaryRestrictions:
+          identical(dietaryRestrictions, _sentinel)
+              ? this.dietaryRestrictions
+              : dietaryRestrictions as String?,
       avoidedStores:
-          identical(avoidedStores, _sentinel) ? this.avoidedStores : avoidedStores as String?,
+          identical(avoidedStores, _sentinel)
+              ? this.avoidedStores
+              : avoidedStores as String?,
       notes: identical(notes, _sentinel) ? this.notes : notes as String?,
     );
   }

@@ -57,11 +57,11 @@ class PremiumGate extends StatelessWidget {
                       color: AppColors.premiumAmber,
                     ),
                   ).animate().scale(
-                        begin: const Offset(0.7, 0.7),
-                        end: const Offset(1, 1),
-                        duration: DurationTokens.fast,
-                        curve: Curves.easeOutBack,
-                      ),
+                    begin: const Offset(0.7, 0.7),
+                    end: const Offset(1, 1),
+                    duration: DurationTokens.fast,
+                    curve: Curves.easeOutBack,
+                  ),
                   const SizedBox(height: Spacing.md),
                   Container(
                     padding: const EdgeInsets.symmetric(
@@ -82,20 +82,23 @@ class PremiumGate extends StatelessWidget {
                       ),
                     ),
                   ).animate().fadeIn(
-                        duration: DurationTokens.fast,
-                        delay: const Duration(milliseconds: 150),
-                      ),
+                    duration: DurationTokens.fast,
+                    delay: const Duration(milliseconds: 150),
+                  ),
                   const SizedBox(height: Spacing.sm),
                   Text(
-                    description,
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w700,
-                    ),
-                    textAlign: TextAlign.center,
-                  ).animate().fadeIn(
+                        description,
+                        style: theme.textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w700,
+                        ),
+                        textAlign: TextAlign.center,
+                      )
+                      .animate()
+                      .fadeIn(
                         duration: DurationTokens.fast,
                         delay: const Duration(milliseconds: 200),
-                      ).slideY(
+                      )
+                      .slideY(
                         begin: 0.2,
                         end: 0,
                         duration: DurationTokens.fast,
@@ -110,33 +113,38 @@ class PremiumGate extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ).animate().fadeIn(
-                        duration: DurationTokens.fast,
-                        delay: const Duration(milliseconds: 300),
-                      ),
+                    duration: DurationTokens.fast,
+                    delay: const Duration(milliseconds: 300),
+                  ),
                   const SizedBox(height: Spacing.lg),
                   SizedBox(
-                    width: double.infinity,
-                    height: 50,
-                    child: FilledButton(
-                      onPressed: () => _openPaywall(context),
-                      style: FilledButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(RadiusTokens.full),
+                        width: double.infinity,
+                        height: 50,
+                        child: FilledButton(
+                          onPressed: () => _openPaywall(context),
+                          style: FilledButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                RadiusTokens.full,
+                              ),
+                            ),
+                            elevation: 3,
+                          ),
+                          child: Text(
+                            l10n.upgrade,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 16,
+                            ),
+                          ),
                         ),
-                        elevation: 3,
-                      ),
-                      child: Text(
-                        l10n.upgrade,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w900,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  ).animate().fadeIn(
+                      )
+                      .animate()
+                      .fadeIn(
                         duration: DurationTokens.fast,
                         delay: const Duration(milliseconds: 400),
-                      ).scale(
+                      )
+                      .scale(
                         begin: const Offset(0.9, 0.9),
                         end: const Offset(1, 1),
                         duration: DurationTokens.fast,

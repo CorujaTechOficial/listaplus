@@ -22,6 +22,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -571,6 +586,9 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@mealPlannerBudgetMonthCost": {
     "placeholders": {
       "amount": {
@@ -618,6 +636,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1409,6 +1430,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1587,6 +1611,11 @@
   "aiAssistantGeneral": "Algemeen assistent",
   "aiAssistantHistory": "Assistent Geschiedenis",
   "aiAssistantTitle": "AI-assistent",
+  "aiCapabilitiesBudget": "Budget & Prijzen",
+  "aiCapabilitiesLists": "Boodschappenlijstjes",
+  "aiCapabilitiesOrganize": "Organisatie",
+  "aiCapabilitiesRecipes": "Recepten & Menu's",
+  "aiCapabilitiesTitle": "Wat kan ik doen?",
   "aiConnectionError": "Kan geen verbinding maken met de AI-service. Controleer uw verbinding.",
   "aiConversationHistory": "Gespreksgeschiedenis",
   "aiCreditsRemaining": "{remaining} credits over",
@@ -2019,6 +2048,7 @@
   "markAsPurchased": "Markeren als gekocht",
   "markItemsToSeeAnalysis": "Markeer items als gekocht om de analyse te zien.",
   "marketMode": "Marktmodus",
+  "marketModeDescription": "Vink artikelen af ​​terwijl u winkelt",
   "marketsToAvoid": "Markten om te vermijden",
   "marketsToAvoidHint": "Bijv.: Markt Y, Markt Z",
   "mealDragHint": "Houd ingedrukt om te slepen en te verplaatsen",
@@ -2105,6 +2135,7 @@
   "navRecipes": "Recepten",
   "newCategoryDialog": "Nieuwe categorie",
   "newChat": "Nieuwe chat",
+  "newChatStarted": "Nieuwe chat gestart",
   "newListTitle": "Nieuwe boodschappenlijst",
   "newPantryList": "Voorraad boodschappen",
   "newRecipe": "Nieuw recept",
@@ -2478,6 +2509,7 @@
   "queryingYourLists": "Uw lijsten opvragen...",
   "quickActionAi": "Chat met Kipi",
   "quickActionPantry": "Bekijk voorraadkast",
+  "quickAddToList": "Toevoegen aan lijst",
   "quickRecipe": "Snel recept",
   "quickRecipePrompt": "Stel recepten voor met items uit mijn lijst.",
   "quickReplies": "Snelle antwoorden:",

@@ -14,9 +14,9 @@ class ShoppingItem {
     this.isPurchased = false,
     DateTime? createdAt,
     DateTime? updatedAt,
-  })  : id = id ?? const Uuid().v4(),
-        createdAt = createdAt ?? DateTime.now(),
-        updatedAt = updatedAt ?? DateTime.now();
+  }) : id = id ?? const Uuid().v4(),
+       createdAt = createdAt ?? DateTime.now(),
+       updatedAt = updatedAt ?? DateTime.now();
 
   factory ShoppingItem.fromJson(Map<String, dynamic> json) {
     final rawCategory = json['category'];
@@ -55,9 +55,13 @@ class ShoppingItem {
       name: json['name'] as String? ?? '',
       quantity: (json['quantity'] as num?)?.toInt() ?? 1,
       categoryId: resolvedId,
-      unit: json['unit'] != null
-          ? Unit.values.firstWhere((e) => e.name == json['unit'], orElse: () => Unit.un)
-          : Unit.un,
+      unit:
+          json['unit'] != null
+              ? Unit.values.firstWhere(
+                (e) => e.name == json['unit'],
+                orElse: () => Unit.un,
+              )
+              : Unit.un,
       estimatedPrice: (json['estimatedPrice'] as num?)?.toDouble(),
       isPurchased: json['isPurchased'] as bool? ?? false,
       createdAt: safeParseDate(json['createdAt']),
@@ -97,7 +101,10 @@ class ShoppingItem {
       quantity: quantity ?? this.quantity,
       categoryId: categoryId ?? this.categoryId,
       unit: unit ?? this.unit,
-      estimatedPrice: identical(estimatedPrice, _sentinel) ? this.estimatedPrice : estimatedPrice as double?,
+      estimatedPrice:
+          identical(estimatedPrice, _sentinel)
+              ? this.estimatedPrice
+              : estimatedPrice as double?,
       isPurchased: isPurchased ?? this.isPurchased,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,

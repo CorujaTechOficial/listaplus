@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "AI pomočnik",
   "aiAssistantDescription": "Pridobite pametne predloge, recepte in personalizirane nasvete z našim AI pomočnikom.",
   "aiAssistantTitle": "Pomočnik AI",
+  "aiCapabilitiesBudget": "Proračun in cene",
+  "aiCapabilitiesLists": "Nakupovalni seznami",
+  "aiCapabilitiesOrganize": "Organizacija",
+  "aiCapabilitiesRecipes": "Recepti in meniji",
+  "aiCapabilitiesTitle": "Kaj lahko storim?",
   "aiConnectionError": "Ni bilo mogoče vzpostaviti povezave s storitvijo AI. Preverite povezavo.",
   "aiCreditsRemaining": "Preostalo {remaining} kreditov",
   "aiEmptyResponseError": "Storitev AI je vrnila prazen odgovor.",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "Označi kot kupljeno",
   "markItemsToSeeAnalysis": "Označite predmete kot kupljene za ogled analize.",
   "marketMode": "Tržni način",
+  "marketModeDescription": "Med nakupovanjem odkljukajte predmete",
   "marketsToAvoid": "Trgi, ki se jim je treba izogibati",
   "marketsToAvoidHint": "Npr.: trg Y, trg Z",
   "mealPlannerAddMeal": "Dodaj obrok",
   "mealPlannerAddType": "Dodajte vrsto obroka",
+  "mealPlannerBudgetGoalNav": "Proračun načrtovalca obrokov",
+  "mealPlannerBudgetGoalSubtitle": "Ciljna mesečna poraba za načrtovanje obrokov",
+  "mealPlannerBudgetMonthCost": "Mesec: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Odstrani cilj",
+  "mealPlannerBudgetTodayCost": "Danes: {amount}",
+  "mealPlannerBudgetWeekCost": "Teden: {amount}",
   "mealPlannerCustomTypeLabel": "Vrsta po meri",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDefaultTypeLabel": "Privzeta vrsta",
@@ -2004,6 +2061,7 @@
   "navRecipes": "Recepti",
   "newCategoryDialog": "Nova kategorija",
   "newChat": "Nov klepet",
+  "newChatStarted": "Nov klepet se je začel",
   "newListTitle": "Nov nakupovalni seznam",
   "newPantryList": "Nakup iz shrambe",
   "newRecipe": "Nov recept",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "Poizvedovanje po vaših seznamih ...",
   "quickActionAi": "Klepetajte s Kipijem",
   "quickActionPantry": "Ogled shrambe",
+  "quickAddToList": "Dodaj na seznam",
   "quickRecipe": "Hitri recept",
   "quickRecipePrompt": "Predlagaj recepte s predmeti iz mojega seznama.",
   "quickReplies": "Hitri odgovori:",

@@ -2,25 +2,52 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firestore_base.dart';
 
 mixin FirestoreUserMixin on FirestoreBase {
+  Future<void> createReferralRewardRequest({
+    required String referrerUid,
+    required String refereeUid,
+    required int days,
+  }) async {
+    final requestId = '${referrerUid}_$refereeUid';
+    final requestRef = db.collection('referralRewards').doc(requestId);
+    await FirestoreBase.retry(() async {
+      await db.runTransaction((transaction) async {
+        final existing = await transaction.get(requestRef);
+        if (existing.exists) {
+          return;
+        }
+        transaction.set(requestRef, <String, dynamic>{
+          'referrerUid': referrerUid,
+          'refereeUid': refereeUid,
+          'days': days,
+          'status': 'pending',
+          'createdAt': DateTime.now().toUtc().toIso8601String(),
+        });
+      });
+    }, label: 'createReferralRewardRequest');
+  }
+
   Future<String?> getCurrentListId() async {
     return FirestoreBase.retry(() async {
-      final doc = await docGetWithCacheFallback(db.collection('users').doc(uid));
+      final doc = await docGetWithCacheFallback(
+        db.collection('users').doc(uid),
+      );
       return doc.data()?['currentListId'] as String?;
     }, label: 'getCurrentListId');
   }
 
   Future<void> setCurrentListId(String? listId) async {
     return FirestoreBase.retry(() async {
-      await db.collection('users').doc(uid).set(
-        {'currentListId': listId},
-        SetOptions(merge: true),
-      );
+      await db.collection('users').doc(uid).set({
+        'currentListId': listId,
+      }, SetOptions(merge: true));
     }, label: 'setCurrentListId');
   }
 
   Future<Map<String, dynamic>?> getUserData() async {
     return FirestoreBase.retry(() async {
-      final doc = await docGetWithCacheFallback(db.collection('users').doc(uid));
+      final doc = await docGetWithCacheFallback(
+        db.collection('users').doc(uid),
+      );
       return doc.data();
     });
   }
@@ -34,7 +61,7 @@ mixin FirestoreUserMixin on FirestoreBase {
   Future<void> updatePreference(String key, String value) async {
     return FirestoreBase.retry(() async {
       await db.collection('users').doc(uid).set({
-        'preferences': {key: value}
+        'preferences': {key: value},
       }, SetOptions(merge: true));
     });
   }
@@ -67,7 +94,9 @@ mixin FirestoreUserMixin on FirestoreBase {
 
   Future<Map<String, dynamic>?> getAiUsage() async {
     return FirestoreBase.retry(() async {
-      final doc = await docGetWithCacheFallback(db.collection('users').doc(uid));
+      final doc = await docGetWithCacheFallback(
+        db.collection('users').doc(uid),
+      );
       return doc.data()?['aiUsage'] as Map<String, dynamic>?;
     });
   }
@@ -75,7 +104,7 @@ mixin FirestoreUserMixin on FirestoreBase {
   Future<void> saveAiUsage(Map<String, dynamic> data) async {
     return FirestoreBase.retry(() async {
       await db.collection('users').doc(uid).set({
-        'aiUsage': data
+        'aiUsage': data,
       }, SetOptions(merge: true));
     });
   }

@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -604,6 +619,9 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@mealPlannerBudgetMonthCost": {
     "placeholders": {
       "amount": {
@@ -675,6 +693,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1466,6 +1487,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1644,6 +1668,11 @@
   "aiAssistantGeneral": "Generalassistent",
   "aiAssistantHistory": "Assistenthistorie",
   "aiAssistantTitle": "AI-assistent",
+  "aiCapabilitiesBudget": "Budsjett og priser",
+  "aiCapabilitiesLists": "Handlelister",
+  "aiCapabilitiesOrganize": "Organisasjon",
+  "aiCapabilitiesRecipes": "Oppskrifter og menyer",
+  "aiCapabilitiesTitle": "Hva kan jeg gjøre?",
   "aiConnectionError": "Kunne ikke koble til AI-tjenesten. Sjekk tilkoblingen din.",
   "aiConversationHistory": "Samtalehistorie",
   "aiCreditsRemaining": "{remaining} kreditter igjen",
@@ -2076,6 +2105,7 @@
   "markAsPurchased": "Marker som kjøpt",
   "markItemsToSeeAnalysis": "Merk varer som kjøpt for å se analysen.",
   "marketMode": "Markedsmodus",
+  "marketModeDescription": "Kryss av varer mens du handler",
   "marketsToAvoid": "Markeder å unngå",
   "marketsToAvoidHint": "Eks.: Marked Y, Marked Z",
   "mealDragHint": "Hold inne for å dra og flytte",
@@ -2162,6 +2192,7 @@
   "navRecipes": "Oppskrifter",
   "newCategoryDialog": "Ny kategori",
   "newChat": "Ny chat",
+  "newChatStarted": "Ny chat startet",
   "newListTitle": "Ny handleliste",
   "newPantryList": "Spiskammerhandling",
   "newRecipe": "Ny oppskrift",
@@ -2535,6 +2566,7 @@
   "queryingYourLists": "Spør etter listene dine ...",
   "quickActionAi": "Chat med Kipi",
   "quickActionPantry": "Vis pantry",
+  "quickAddToList": "Legg til i listen",
   "quickRecipe": "Rask oppskrift",
   "quickRecipePrompt": "Foreslå oppskrifter med varer fra listen min.",
   "quickReplies": "Raske svar:",

@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "Umsizi we-AI",
   "aiAssistantDescription": "Thola iziphakamiso ezihlakaniphile, izindlela zokupheka namathiphu enzelwe wena ngomsizi wethu we-AI.",
   "aiAssistantTitle": "Umsizi we-AI",
+  "aiCapabilitiesBudget": "Isabelomali Namanani",
+  "aiCapabilitiesLists": "Uhlu Lokuthenga",
+  "aiCapabilitiesOrganize": "Inhlangano",
+  "aiCapabilitiesRecipes": "Amaresiphi namamenyu",
+  "aiCapabilitiesTitle": "Ngenzeni?",
   "aiConnectionError": "Ayikwazanga ukuxhuma kusevisi ye-AI. Hlola uxhumano lwakho.",
   "aiCreditsRemaining": "Kusele amakhredithi angu-{remaining}",
   "aiEmptyResponseError": "Isevisi ye-AI ibuyise impendulo engenalutho.",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "Maka njengokuthengiwe",
   "markItemsToSeeAnalysis": "Maka izinto njengezithengiwe ukuze ubone ukuhlaziywa.",
   "marketMode": "Imodi yeMakethe",
+  "marketModeDescription": "Hlola izinto njengoba uthenga",
   "marketsToAvoid": "Izimakethe Okufanele Uzigweme",
   "marketsToAvoidHint": "Isb.: Imakethe Y, Imakethe Z",
   "mealPlannerAddMeal": "Engeza Ukudla",
   "mealPlannerAddType": "Engeza uhlobo lokudla",
+  "mealPlannerBudgetGoalNav": "Isabelomali sokuhlela ukudla",
+  "mealPlannerBudgetGoalSubtitle": "Umgomo wokusebenzisa imali wanyanga zonke wokuhlela ukudla",
+  "mealPlannerBudgetMonthCost": "Inyanga: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Susa umgomo",
+  "mealPlannerBudgetTodayCost": "Namuhla: {amount}",
+  "mealPlannerBudgetWeekCost": "Iviki: {amount}",
   "mealPlannerCustomTypeLabel": "Uhlobo ngokwezifiso",
   "mealPlannerDateLabel": "Usuku",
   "mealPlannerDefaultTypeLabel": "Uhlobo oluzenzakalelayo",
@@ -2004,6 +2061,7 @@
   "navRecipes": "Izindlela zokupheka",
   "newCategoryDialog": "Isigaba esisha",
   "newChat": "Ingxoxo Entsha",
+  "newChatStarted": "Ingxoxo entsha iqalile",
   "newListTitle": "Uhlu olusha lokuthenga",
   "newPantryList": "Ukuthenga kwephanta",
   "newRecipe": "Iresiphi entsha",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "Ibuza ngohlu lwakho...",
   "quickActionAi": "Xoxa noKipi",
   "quickActionPantry": "Buka i-pantry",
+  "quickAddToList": "Engeza ohlwini",
   "quickRecipe": "Iresiphi esheshayo",
   "quickRecipePrompt": "Phakamisa izindlela zokupheka ngezinto ezisohlwini lwami.",
   "quickReplies": "Izimpendulo ezisheshayo:",

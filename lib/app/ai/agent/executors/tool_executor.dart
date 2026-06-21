@@ -33,7 +33,10 @@ class ToolExecutor {
     'generate_artifact',
   };
 
-  Future<ToolResult> execute(AgentToolCall call, {bool bypassPremium = false}) async {
+  Future<ToolResult> execute(
+    AgentToolCall call, {
+    bool bypassPremium = false,
+  }) async {
     if (!bypassPremium && AgentTools.premiumToolNames.contains(call.name)) {
       final isPremium = _container.read(premiumProvider).value ?? false;
       if (!isPremium) {
@@ -49,11 +52,13 @@ class ToolExecutor {
     if (_advancedToolNames.contains(call.name)) {
       final isPremium = _container.read(premiumProvider).value ?? false;
       if (!isPremium) {
-        final count = await _container.read(aiUsageProvider.notifier).increment();
+        final count =
+            await _container.read(aiUsageProvider.notifier).increment();
         if (count > kFreeAiActionsPerMonth) {
           return ToolResult(
             toolCallId: call.id,
-            content: 'Monthly AI action limit reached. Subscribe to Pro to continue.',
+            content:
+                'Monthly AI action limit reached. Subscribe to Pro to continue.',
             success: false,
             requiresUnlock: true,
           );
@@ -141,7 +146,10 @@ class ToolExecutor {
         case 'save_user_preference':
           return _configExecutor.saveUserPreference(_container, call.arguments);
         case 'delete_user_preference':
-          return _configExecutor.deleteUserPreference(_container, call.arguments);
+          return _configExecutor.deleteUserPreference(
+            _container,
+            call.arguments,
+          );
         case 'get_user_profile':
           return _configExecutor.getUserProfile(_container);
         case 'update_user_profile':
@@ -169,7 +177,10 @@ class ToolExecutor {
         case 'schedule_meal':
           return _configExecutor.scheduleMeal(_container, call.arguments);
         case 'remove_meal_plan_entry':
-          return _configExecutor.removeMealPlanEntry(_container, call.arguments);
+          return _configExecutor.removeMealPlanEntry(
+            _container,
+            call.arguments,
+          );
 
         // --- System tools ---
         case 'open_paywall':
@@ -189,12 +200,17 @@ class ToolExecutor {
           );
       }
     } on Exception catch (e, st) {
-      LoggerService.error(e, stackTrace: st, message: '[ToolExecutor] Error executing ${call.name}', extra: {
-        'operation': 'execute_tool',
-        'toolName': call.name,
-        'toolId': call.id,
-        'arguments': call.arguments,
-      });
+      LoggerService.error(
+        e,
+        stackTrace: st,
+        message: '[ToolExecutor] Error executing ${call.name}',
+        extra: {
+          'operation': 'execute_tool',
+          'toolName': call.name,
+          'toolId': call.id,
+          'arguments': call.arguments,
+        },
+      );
       return ToolResult(
         toolCallId: call.id,
         content: 'Erro ao executar ${call.name}: $e',

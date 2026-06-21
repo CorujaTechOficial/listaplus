@@ -8,9 +8,9 @@ class ChatSessionModel {
     DateTime? createdAt,
     DateTime? updatedAt,
     this.listId,
-  })  : id = id ?? const Uuid().v4(),
-        createdAt = createdAt ?? DateTime.now(),
-        updatedAt = updatedAt ?? DateTime.now();
+  }) : id = id ?? const Uuid().v4(),
+       createdAt = createdAt ?? DateTime.now(),
+       updatedAt = updatedAt ?? DateTime.now();
 
   factory ChatSessionModel.fromJson(Map<String, dynamic> json) {
     return ChatSessionModel(

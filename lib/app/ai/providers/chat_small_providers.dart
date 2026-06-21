@@ -51,7 +51,7 @@ class ChatStreamingText extends _$ChatStreamingText {
   void setState(String? value) => state = value;
 }
 
-@riverpod
+@Riverpod(keepAlive: true)
 class ActiveChatSessionId extends _$ActiveChatSessionId {
   @override
   String? build(String? listId) => null;
@@ -65,14 +65,21 @@ class ChatSessions extends _$ChatSessions {
     final service = ref.watch(firestoreServiceProvider);
     if (service == null) return [];
     final sessions = await service.loadChatSessions(listId);
+    if (!ref.mounted) {
+      return sessions;
+    }
     if (sessions.isNotEmpty) {
       final activeId = ref.read(activeChatSessionIdProvider(listId));
       if (activeId == null) {
-        unawaited(Future.microtask(() {
-          if (ref.mounted) {
-            ref.read(activeChatSessionIdProvider(listId).notifier).set(sessions.first.id);
-          }
-        }));
+        unawaited(
+          Future.microtask(() {
+            if (ref.mounted) {
+              ref
+                  .read(activeChatSessionIdProvider(listId).notifier)
+                  .set(sessions.first.id);
+            }
+          }),
+        );
       }
     }
     return sessions;
@@ -88,7 +95,9 @@ class ChatSessions extends _$ChatSessions {
     if (service == null) return newSession.id;
     unawaited(
       service.saveChatSession(listId, newSession).catchError((Object e) {
-        debugPrint('[ChatSessions] Error saving session to firestore (proceeding anyway): $e');
+        debugPrint(
+          '[ChatSessions] Error saving session to firestore (proceeding anyway): $e',
+        );
         return null;
       }),
     );

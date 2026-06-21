@@ -1,4 +1,5 @@
-import 'package:flutter/foundation.dart' show defaultTargetPlatform, TargetPlatform, kIsWeb;
+import 'package:flutter/foundation.dart'
+    show defaultTargetPlatform, TargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
@@ -21,94 +22,110 @@ class AuthScreen extends ConsumerWidget {
           child: Padding(
             padding: const EdgeInsets.all(Spacing.xl),
             child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(Spacing.md),
-                decoration: BoxDecoration(
-                  color: theme.colorScheme.primaryContainer.withAlpha((0.3 * 255).toInt()),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.shopping_cart,
-                  size: 48,
-                  color: theme.colorScheme.primary,
-                ),
-              ).animate().fadeIn(duration: DurationTokens.normal).scale(
-                begin: const Offset(0, 0),
-                end: const Offset(1, 1),
-                duration: DurationTokens.normal,
-                curve: Curves.easeOutBack,
-              ),
-              const SizedBox(height: Spacing.lg),
-              Text(
-                l10n.loginPrompt,
-                textAlign: TextAlign.center,
-                style: theme.textTheme.titleLarge,
-              ).animate().fadeIn(
-                duration: DurationTokens.fast,
-                delay: const Duration(milliseconds: 200),
-              ).slideY(
-                begin: 0.2,
-                end: 0,
-                duration: DurationTokens.fast,
-                delay: const Duration(milliseconds: 200),
-                curve: Curves.easeOut,
-              ),
-              const SizedBox(height: Spacing.xl),
-              SizedBox(
-                width: double.infinity,
-                child: FilledButton.icon(
-                  icon: SvgPicture.asset(
-                    'assets/images/google_logo.svg',
-                    width: 20,
-                    height: 20,
-                  ),
-                  label: Text(l10n.signInGoogle),
-                  onPressed: () => _signInWithGoogle(context, ref),
-                ),
-              ).animate().fadeIn(
-                duration: DurationTokens.fast,
-                delay: const Duration(milliseconds: 300),
-              ).slideY(
-                begin: 0.2,
-                end: 0,
-                duration: DurationTokens.fast,
-                delay: const Duration(milliseconds: 300),
-                curve: Curves.easeOut,
-              ),
-              const SizedBox(height: Spacing.md),
-              if (!kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.macOS))
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                      padding: const EdgeInsets.all(Spacing.md),
+                      decoration: BoxDecoration(
+                        color: theme.colorScheme.primaryContainer.withAlpha(
+                          (0.3 * 255).toInt(),
+                        ),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(
+                        Icons.shopping_cart,
+                        size: 48,
+                        color: theme.colorScheme.primary,
+                      ),
+                    )
+                    .animate()
+                    .fadeIn(duration: DurationTokens.normal)
+                    .scale(
+                      begin: const Offset(0, 0),
+                      end: const Offset(1, 1),
+                      duration: DurationTokens.normal,
+                      curve: Curves.easeOutBack,
+                    ),
+                const SizedBox(height: Spacing.lg),
+                Text(
+                      l10n.loginPrompt,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.titleLarge,
+                    )
+                    .animate()
+                    .fadeIn(
+                      duration: DurationTokens.fast,
+                      delay: const Duration(milliseconds: 200),
+                    )
+                    .slideY(
+                      begin: 0.2,
+                      end: 0,
+                      duration: DurationTokens.fast,
+                      delay: const Duration(milliseconds: 200),
+                      curve: Curves.easeOut,
+                    ),
+                const SizedBox(height: Spacing.xl),
                 SizedBox(
-                  width: double.infinity,
-                  child: FilledButton.icon(
-                    icon: const Icon(Icons.apple),
-                    label: Text(l10n.signInApple),
-                    onPressed: () => _signInWithApple(context, ref),
-                  ),
+                      width: double.infinity,
+                      child: FilledButton.icon(
+                        icon: SvgPicture.asset(
+                          'assets/images/google_logo.svg',
+                          width: 20,
+                          height: 20,
+                        ),
+                        label: Text(l10n.signInGoogle),
+                        onPressed: () => _signInWithGoogle(context, ref),
+                      ),
+                    )
+                    .animate()
+                    .fadeIn(
+                      duration: DurationTokens.fast,
+                      delay: const Duration(milliseconds: 300),
+                    )
+                    .slideY(
+                      begin: 0.2,
+                      end: 0,
+                      duration: DurationTokens.fast,
+                      delay: const Duration(milliseconds: 300),
+                      curve: Curves.easeOut,
+                    ),
+                const SizedBox(height: Spacing.md),
+                if (!kIsWeb &&
+                    (defaultTargetPlatform == TargetPlatform.iOS ||
+                        defaultTargetPlatform == TargetPlatform.macOS))
+                  SizedBox(
+                        width: double.infinity,
+                        child: FilledButton.icon(
+                          icon: const Icon(Icons.apple),
+                          label: Text(l10n.signInApple),
+                          onPressed: () => _signInWithApple(context, ref),
+                        ),
+                      )
+                      .animate()
+                      .fadeIn(
+                        duration: DurationTokens.fast,
+                        delay: const Duration(milliseconds: 400),
+                      )
+                      .slideY(
+                        begin: 0.2,
+                        end: 0,
+                        duration: DurationTokens.fast,
+                        delay: const Duration(milliseconds: 400),
+                        curve: Curves.easeOut,
+                      ),
+                const SizedBox(height: Spacing.xl),
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(l10n.continueAsGuest),
                 ).animate().fadeIn(
                   duration: DurationTokens.fast,
-                  delay: const Duration(milliseconds: 400),
-                ).slideY(
-                  begin: 0.2,
-                  end: 0,
-                  duration: DurationTokens.fast,
-                  delay: const Duration(milliseconds: 400),
-                  curve: Curves.easeOut,
+                  delay: const Duration(milliseconds: 500),
                 ),
-              const SizedBox(height: Spacing.xl),
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text(l10n.continueAsGuest),
-              ).animate().fadeIn(
-                duration: DurationTokens.fast,
-                delay: const Duration(milliseconds: 500),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
-    ),
     );
   }
 
@@ -122,9 +139,9 @@ class AuthScreen extends ConsumerWidget {
       }
     } on Exception catch (e) {
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.loginError(e.toString()))),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(l10n.loginError(e.toString()))));
       }
     }
   }
@@ -139,9 +156,9 @@ class AuthScreen extends ConsumerWidget {
       }
     } on Exception catch (e) {
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.loginError(e.toString()))),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(l10n.loginError(e.toString()))));
       }
     }
   }

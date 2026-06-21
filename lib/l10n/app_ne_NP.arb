@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -597,6 +612,9 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@mealPlannerBudgetMonthCost": {
     "placeholders": {
       "amount": {
@@ -637,6 +655,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1428,6 +1449,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1606,6 +1630,11 @@
   "aiAssistantGeneral": "सामान्य सहायक",
   "aiAssistantHistory": "सहायक इतिहास",
   "aiAssistantTitle": "एआई सहायक",
+  "aiCapabilitiesBudget": "बजेट र मूल्यहरू",
+  "aiCapabilitiesLists": "किनमेल सूची",
+  "aiCapabilitiesOrganize": "संगठन",
+  "aiCapabilitiesRecipes": "रेसिपी र मेनु",
+  "aiCapabilitiesTitle": "म के गर्न सक्छु?",
   "aiConnectionError": "AI सेवामा जडान गर्न सकिएन। आफ्नो जडान जाँच गर्नुहोस्।",
   "aiConversationHistory": "कुराकानी इतिहास",
   "aiCreditsRemaining": "{remaining} क्रेडिट बाँकी",
@@ -2038,6 +2067,7 @@
   "markAsPurchased": "खरिद गरिएको रूपमा चिन्ह लगाउनुहोस्",
   "markItemsToSeeAnalysis": "विश्लेषण हेर्न वस्तुहरूलाई खरिद गरिएको रूपमा चिन्ह लगाउनुहोस्।",
   "marketMode": "बजार मोड",
+  "marketModeDescription": "तपाईंले किनमेल गर्दा वस्तुहरू जाँच गर्नुहोस्",
   "marketsToAvoid": "बजारहरू जोगिनका लागि",
   "marketsToAvoidHint": "जस्तै: मार्केट Y, मार्केट Z",
   "mealDragHint": "तान्नुहोस् र सार्न होल्ड गर्नुहोस्",
@@ -2124,6 +2154,7 @@
   "navRecipes": "रेसिपीहरू",
   "newCategoryDialog": "नयाँ श्रेणी",
   "newChat": "नयाँ च्याट",
+  "newChatStarted": "नयाँ च्याट सुरु भयो",
   "newListTitle": "नयाँ किनमेल सूची",
   "newPantryList": "भण्डार किनमेल",
   "newRecipe": "नयाँ रेसिपी",
@@ -2497,6 +2528,7 @@
   "queryingYourLists": "तपाईंको सूचीहरू सोध्दै...",
   "quickActionAi": "Kipi सँग कुराकानी गर्नुहोस्",
   "quickActionPantry": "पेन्ट्री हेर्नुहोस्",
+  "quickAddToList": "सूचीमा थप्नुहोस्",
   "quickRecipe": "द्रुत व्यञ्जन",
   "quickRecipePrompt": "मेरो सूचीका वस्तुहरूसँग व्यञ्जनहरू सुझाव दिनुहोस्।",
   "quickReplies": "द्रुत जवाफहरू:",

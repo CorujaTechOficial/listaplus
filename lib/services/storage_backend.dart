@@ -4,6 +4,7 @@ import '../models/chat_message.dart';
 import '../models/chat_session_model.dart';
 import '../models/pantry_item.dart';
 import '../models/category_data.dart';
+import '../models/meal_type.dart';
 
 abstract class StorageBackend {
   Future<List<ShoppingList>> loadLists();
@@ -26,6 +27,11 @@ abstract class StorageBackend {
   Future<void> setLocale(String? locale);
   Future<Map<String, dynamic>?> getUserData();
   Future<void> updateUserData(Map<String, dynamic> data);
+  Future<void> createReferralRewardRequest({
+    required String referrerUid,
+    required String refereeUid,
+    required int days,
+  });
   Future<void> updatePreference(String key, String value);
   Future<void> deletePreference(String key);
   Future<void> saveSharedList(String code, Map<String, dynamic> data);
@@ -40,7 +46,11 @@ abstract class StorageBackend {
   Future<List<ShoppingItem>> loadItemsFromUser(String ownerUid, String listId);
   Stream<List<ShoppingItem>> watchItemsFromUser(String ownerUid, String listId);
   Future<void> saveItemToUser(String ownerUid, ShoppingItem item);
-  Future<void> deleteItemFromUser(String ownerUid, String listId, String itemId);
+  Future<void> deleteItemFromUser(
+    String ownerUid,
+    String listId,
+    String itemId,
+  );
   Future<void> saveItemsToUser(String ownerUid, List<ShoppingItem> items);
 
   Future<List<PantryItem>> loadPantryItems();
@@ -50,11 +60,26 @@ abstract class StorageBackend {
 
   Future<List<ChatSessionModel>> loadChatSessions(String? listId);
   Future<void> saveChatSession(String? listId, ChatSessionModel session);
-  Future<void> updateChatSessionTitle(String? listId, String sessionId, String title);
+  Future<void> updateChatSessionTitle(
+    String? listId,
+    String sessionId,
+    String title,
+  );
   Future<void> deleteChatSession(String? listId, String sessionId);
-  Future<List<ChatMessage>> loadChatMessages(String? listId, {String? sessionId});
-  Future<void> saveChatMessage(String? listId, ChatMessage message, {String? sessionId});
-  Future<void> deleteChatMessage(String? listId, String messageId, {String? sessionId});
+  Future<List<ChatMessage>> loadChatMessages(
+    String? listId, {
+    String? sessionId,
+  });
+  Future<void> saveChatMessage(
+    String? listId,
+    ChatMessage message, {
+    String? sessionId,
+  });
+  Future<void> deleteChatMessage(
+    String? listId,
+    String messageId, {
+    String? sessionId,
+  });
   Future<void> clearChatHistory(String? listId, {String? sessionId});
 
   Future<Map<String, dynamic>?> getAiUsage();
@@ -72,10 +97,22 @@ abstract class StorageBackend {
   Future<void> deleteRecipe(String id);
   Future<String?> uploadRecipeImage(String recipeId, String filePath);
 
-  Future<List<Map<String, dynamic>>> loadMealPlans({DateTime? start, DateTime? end});
-  Stream<List<Map<String, dynamic>>> watchMealPlans({DateTime? start, DateTime? end});
+  Future<List<Map<String, dynamic>>> loadMealPlans({
+    DateTime? start,
+    DateTime? end,
+  });
+  Stream<List<Map<String, dynamic>>> watchMealPlans({
+    DateTime? start,
+    DateTime? end,
+  });
   Future<void> saveMealPlan(Map<String, dynamic> mealPlan);
   Future<void> deleteMealPlan(String id);
+
+  Future<List<MealType>> loadMealTypes();
+  Stream<List<MealType>> watchMealTypes();
+  Future<void> saveMealType(MealType type);
+  Future<void> deleteMealType(String id);
+  Future<void> saveMealTypes(List<MealType> types);
 
   Future<Map<String, List<ShoppingItem>>> loadAllItemsForUser();
 

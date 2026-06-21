@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import '../theme/tokens.dart';
+import 'package:shopping_list/theme/tokens.dart';
 
 class SkeletonLoader extends StatelessWidget {
   const SkeletonLoader({
@@ -20,12 +20,14 @@ class SkeletonLoader extends StatelessWidget {
     final isDark = theme.brightness == Brightness.dark;
 
     return Shimmer.fromColors(
-      baseColor: isDark 
-          ? theme.colorScheme.surfaceContainerHighest.withAlpha(50) 
-          : Colors.grey[300]!,
-      highlightColor: isDark 
-          ? theme.colorScheme.surfaceContainerHighest.withAlpha(100) 
-          : Colors.grey[100]!,
+      baseColor:
+          isDark
+              ? theme.colorScheme.surfaceContainerHighest.withAlpha(50)
+              : theme.colorScheme.surfaceContainerHigh,
+      highlightColor:
+          isDark
+              ? theme.colorScheme.surfaceContainerHighest.withAlpha(100)
+              : theme.colorScheme.surfaceContainerLowest,
       child: Container(
         width: width,
         height: height,
@@ -50,31 +52,36 @@ class ListSkeleton extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: itemCount,
       separatorBuilder: (_, index) => const SizedBox(height: Spacing.md),
-      itemBuilder: (context, index) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: Spacing.md),
-        child: Row(
-          children: [
-            const SkeletonLoader(width: 40, height: 40, borderRadius: RadiusTokens.sm),
-            const SizedBox(width: Spacing.md),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SkeletonLoader(
-                    width: MediaQuery.of(context).size.width * 0.6,
-                    height: 16,
+      itemBuilder:
+          (context, index) => Padding(
+            padding: const EdgeInsets.symmetric(horizontal: Spacing.md),
+            child: Row(
+              children: [
+                const SkeletonLoader(
+                  width: 40,
+                  height: 40,
+                  borderRadius: RadiusTokens.sm,
+                ),
+                const SizedBox(width: Spacing.md),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SkeletonLoader(
+                        width: MediaQuery.of(context).size.width * 0.6,
+                        height: 16,
+                      ),
+                      const SizedBox(height: Spacing.xs),
+                      SkeletonLoader(
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: 12,
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: Spacing.xs),
-                  SkeletonLoader(
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    height: 12,
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
     );
   }
 }

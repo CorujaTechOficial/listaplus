@@ -11,6 +11,7 @@ import 'package:shopping_list/app/lists/providers/item_providers.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/shopping_item.dart';
 import 'package:shopping_list/theme/tokens.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class CatalogCategoryScreen extends ConsumerStatefulWidget {
   const CatalogCategoryScreen({
@@ -25,12 +26,13 @@ class CatalogCategoryScreen extends ConsumerStatefulWidget {
   final String listId;
 
   @override
-  ConsumerState<CatalogCategoryScreen> createState() => _CatalogCategoryScreenState();
+  ConsumerState<CatalogCategoryScreen> createState() =>
+      _CatalogCategoryScreenState();
 }
 
 class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
   final _searchController = TextEditingController();
-  final Map<String, int> _quantities = {};
+  final Map<CatalogProduct, int> _quantities = {};
   CatalogSortMode _sort = CatalogSortMode.popular;
   String? _activeFilter;
   Timer? _debounce;
@@ -55,22 +57,27 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
   int get _totalSelected => _quantities.values.fold(0, (a, b) => a + b);
 
   Future<void> _confirmAdd() async {
-    final items = _quantities.entries
-        .where((e) => e.value > 0)
-        .map((e) => ShoppingItem(
-              shoppingListId: widget.listId,
-              name: e.key,
-              quantity: e.value,
-              categoryId: widget.category.appCategoryId,
-            ))
-        .toList();
+    final items =
+        _quantities.entries
+            .where((e) => e.value > 0)
+            .map(
+              (e) => ShoppingItem(
+                shoppingListId: widget.listId,
+                name: e.key.name,
+                quantity: e.value,
+                categoryId: widget.category.appCategoryId,
+              ),
+            )
+            .toList();
 
     if (items.isEmpty) {
       return;
     }
 
     unawaited(HapticFeedback.lightImpact());
-    await ref.read(shoppingListItemsProvider(widget.listId).notifier).addItems(items);
+    await ref
+        .read(shoppingListItemsProvider(widget.listId).notifier)
+        .addItems(items);
 
     if (mounted) {
       Navigator.pop(context);
@@ -81,17 +88,19 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
     var result = products;
 
     if (_activeFilter != null) {
-      result = result.where((p) {
-        final text = '${p.name} ${p.brand ?? ''}'.toLowerCase();
-        return text.contains(_activeFilter!.toLowerCase());
-      }).toList();
+      result =
+          result.where((p) {
+            final text = '${p.name} ${p.brand ?? ''}'.toLowerCase();
+            return text.contains(_activeFilter!.toLowerCase());
+          }).toList();
     }
 
     if (_searchQuery.isNotEmpty) {
-      result = result.where((p) {
-        final text = '${p.name} ${p.brand ?? ''}'.toLowerCase();
-        return text.contains(_searchQuery.toLowerCase());
-      }).toList();
+      result =
+          result.where((p) {
+            final text = '${p.name} ${p.brand ?? ''}'.toLowerCase();
+            return text.contains(_searchQuery.toLowerCase());
+          }).toList();
     }
 
     if (_sort == CatalogSortMode.az) {
@@ -107,10 +116,12 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
     final theme = Theme.of(context);
     final total = _totalSelected;
 
-    final catalogAsync = ref.watch(catalogProductsProvider(
-      offCategoryTag: widget.category.offTag,
-      offCountryTag: widget.offCountryTag,
-    ));
+    final catalogAsync = ref.watch(
+      catalogProductsProvider(
+        offCategoryTag: widget.category.offTag,
+        offCountryTag: widget.offCountryTag,
+      ),
+    );
 
     return Scaffold(
       appBar: AppBar(
@@ -118,11 +129,19 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
           children: [
             Text(widget.category.emoji),
             const SizedBox(width: Spacing.sm),
-            Text(widget.category.name),
+            Flexible(
+              child: Text(
+                widget.category.name,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
             if (total > 0) ...[
               const SizedBox(width: Spacing.sm),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: Spacing.xs,
+                  vertical: 2,
+                ),
                 decoration: BoxDecoration(
                   color: theme.colorScheme.primaryContainer,
                   borderRadius: BorderRadius.circular(RadiusTokens.full),
@@ -142,7 +161,12 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(Spacing.md, Spacing.sm, Spacing.md, 0),
+            padding: const EdgeInsets.fromLTRB(
+              Spacing.md,
+              Spacing.sm,
+              Spacing.md,
+              0,
+            ),
             child: CatalogSearchBar(
               controller: _searchController,
               hintText: l10n.catalogSearchInCategory(widget.category.name),
@@ -151,13 +175,17 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: Spacing.md, vertical: Spacing.sm),
+            padding: const EdgeInsets.symmetric(
+              horizontal: Spacing.md,
+              vertical: Spacing.sm,
+            ),
             child: Row(
               children: [
                 FilterChip(
                   label: Text(l10n.catalogSortPopular),
                   selected: _sort == CatalogSortMode.popular,
-                  onSelected: (_) => setState(() => _sort = CatalogSortMode.popular),
+                  onSelected:
+                      (_) => setState(() => _sort = CatalogSortMode.popular),
                   avatar: const Icon(Icons.trending_up, size: 14),
                   shape: const StadiumBorder(),
                 ),
@@ -169,25 +197,54 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
                   shape: const StadiumBorder(),
                 ),
                 const SizedBox(width: Spacing.sm),
-                Container(width: 1, height: 20, color: theme.colorScheme.outlineVariant),
+                Container(
+                  width: 1,
+                  height: 20,
+                  color: theme.colorScheme.outlineVariant,
+                ),
                 const SizedBox(width: Spacing.sm),
-                ...widget.category.filters.map((filter) => Padding(
-                  padding: const EdgeInsets.only(right: Spacing.xs),
-                  child: FilterChip(
-                    label: Text(filter),
-                    selected: _activeFilter == filter,
-                    onSelected: (selected) => setState(() {
-                      _activeFilter = selected ? filter : null;
-                    }),
-                    shape: const StadiumBorder(),
+                ...widget.category.filters.map(
+                  (filter) => Padding(
+                    padding: const EdgeInsets.only(right: Spacing.xs),
+                    child: FilterChip(
+                      label: Text(filter),
+                      selected: _activeFilter == filter,
+                      onSelected:
+                          (selected) => setState(() {
+                            _activeFilter = selected ? filter : null;
+                          }),
+                      shape: const StadiumBorder(),
+                    ),
                   ),
-                )),
+                ),
               ],
             ),
           ),
           Expanded(
             child: catalogAsync.when(
-              loading: () => const Center(child: CircularProgressIndicator()),
+              loading: () => Skeletonizer(
+                enabled: true,
+                child: ListView.builder(
+                  padding: const EdgeInsets.fromLTRB(
+                    Spacing.md,
+                    0,
+                    Spacing.md,
+                    Spacing.xxl * 2,
+                  ),
+                  itemCount: 8,
+                  itemBuilder: (context, index) => ProductListTile(
+                    product: CatalogProduct(
+                      barcode: 'fake_$index',
+                      name: 'Loading product placeholder',
+                      brand: 'Brand name placeholder',
+                      quantity: '500g',
+                    ),
+                    quantity: 0,
+                    onIncrement: () {},
+                    onDecrement: () {},
+                  ),
+                ),
+              ),
               error: (e, _) => Center(child: Text(l10n.error('$e'))),
               data: (result) {
                 final commonFiltered = _applyLocalFilters(result.common);
@@ -198,38 +255,52 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Icon(Icons.search_off, size: 48),
+                        const Icon(Icons.search_off, size: Spacing.xxl),
                         const SizedBox(height: Spacing.sm),
-                        Text(l10n.catalogSearchGlobal),
+                        Text(l10n.catalogProductNotFound),
                       ],
                     ),
                   );
                 }
 
                 return ListView(
-                  padding: const EdgeInsets.fromLTRB(Spacing.md, 0, Spacing.md, 100),
+                  padding: const EdgeInsets.fromLTRB(
+                    Spacing.md,
+                    0,
+                    Spacing.md,
+                    Spacing.xxl * 2,
+                  ),
                   children: [
-                    ...commonFiltered.map((product) => ProductListTile(
-                      product: product,
-                      quantity: _quantities[product.name] ?? 0,
-                      onIncrement: () => setState(() {
-                        _quantities[product.name] = (_quantities[product.name] ?? 0) + 1;
-                      }),
-                      onDecrement: () => setState(() {
-                        final current = _quantities[product.name] ?? 0;
-                        if (current > 0) {
-                          _quantities[product.name] = current - 1;
-                        }
-                      }),
-                    )),
+                    ...commonFiltered.map(
+                      (product) => ProductListTile(
+                        product: product,
+                        quantity: _quantities[product] ?? 0,
+                        onIncrement:
+                            () => setState(() {
+                              _quantities[product] =
+                                  (_quantities[product] ?? 0) + 1;
+                            }),
+                        onDecrement:
+                            () => setState(() {
+                              final current = _quantities[product] ?? 0;
+                              if (current > 0) {
+                                _quantities[product] = current - 1;
+                              }
+                            }),
+                      ),
+                    ),
                     if (rareFiltered.isNotEmpty) ...[
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: Spacing.md),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: Spacing.md,
+                        ),
                         child: Row(
                           children: [
                             const Expanded(child: Divider()),
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: Spacing.sm),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: Spacing.sm,
+                              ),
                               child: Text(
                                 l10n.catalogRareSection,
                                 style: theme.textTheme.labelSmall?.copyWith(
@@ -241,20 +312,25 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
                           ],
                         ),
                       ),
-                      ...rareFiltered.map((product) => ProductListTile(
-                        product: product,
-                        quantity: _quantities[product.name] ?? 0,
-                        onIncrement: () => setState(() {
-                          _quantities[product.name] = (_quantities[product.name] ?? 0) + 1;
-                        }),
-                        onDecrement: () => setState(() {
-                          final current = _quantities[product.name] ?? 0;
-                          if (current > 0) {
-                            _quantities[product.name] = current - 1;
-                          }
-                        }),
-                        isRare: true,
-                      )),
+                      ...rareFiltered.map(
+                        (product) => ProductListTile(
+                          product: product,
+                          quantity: _quantities[product] ?? 0,
+                          onIncrement:
+                              () => setState(() {
+                                _quantities[product] =
+                                    (_quantities[product] ?? 0) + 1;
+                              }),
+                          onDecrement:
+                              () => setState(() {
+                                final current = _quantities[product] ?? 0;
+                                if (current > 0) {
+                                  _quantities[product] = current - 1;
+                                }
+                              }),
+                          isRare: true,
+                        ),
+                      ),
                     ],
                   ],
                 );
@@ -263,21 +339,22 @@ class _CatalogCategoryScreenState extends ConsumerState<CatalogCategoryScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: total > 0
-          ? SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.all(Spacing.md),
-                child: FilledButton.icon(
-                  onPressed: _confirmAdd,
-                  icon: const Icon(Icons.check),
-                  label: Text(l10n.catalogAddItems(total)),
-                  style: FilledButton.styleFrom(
-                    minimumSize: const Size.fromHeight(48),
+      bottomNavigationBar:
+          total > 0
+              ? SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.all(Spacing.md),
+                  child: FilledButton.icon(
+                    onPressed: _confirmAdd,
+                    icon: const Icon(Icons.check),
+                    label: Text(l10n.catalogAddItems(total)),
+                    style: FilledButton.styleFrom(
+                      minimumSize: const Size.fromHeight(Spacing.xxl),
+                    ),
                   ),
                 ),
-              ),
-            )
-          : null,
+              )
+              : null,
     );
   }
 }

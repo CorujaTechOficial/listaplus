@@ -8,10 +8,7 @@ part 'catalog_providers.g.dart';
 enum CatalogSortMode { popular, az }
 
 class CatalogProductsResult {
-  const CatalogProductsResult({
-    required this.common,
-    required this.rare,
-  });
+  const CatalogProductsResult({required this.common, required this.rare});
   final List<CatalogProduct> common;
   final List<CatalogProduct> rare;
 }
@@ -40,9 +37,13 @@ Future<List<CatalogProduct>> catalogSearch(
   if (query.trim().length < 2) {
     return [];
   }
-  return OpenFoodFactsService.searchByText(
-    query: query.trim(),
-  );
+  final results = await OpenFoodFactsService.searchByText(query: query.trim());
+  results.sort((a, b) {
+    final aLocal = a.countriesTags.contains(offCountryTag) ? 0 : 1;
+    final bLocal = b.countriesTags.contains(offCountryTag) ? 0 : 1;
+    return aLocal.compareTo(bLocal);
+  });
+  return results;
 }
 
 @riverpod

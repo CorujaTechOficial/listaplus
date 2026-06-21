@@ -17,7 +17,7 @@ class AdServiceImpl implements AdService {
       return;
     }
     _isInitializing = true;
-    
+
     try {
       await MobileAds.instance.initialize();
       await _loadRewardedAd();
@@ -29,10 +29,10 @@ class AdServiceImpl implements AdService {
   }
 
   Future<void> _loadRewardedAd() async {
-    // Test ID for Android Rewarded Ad
-    const adUnitId = kDebugMode 
-        ? 'ca-app-pub-3940256099942544/5224354917' 
-        : 'ca-app-pub-3940256099942544/5224354917'; // TODO: Replace with real ID
+    const adUnitId =
+        kDebugMode
+            ? 'ca-app-pub-3940256099942544/5224354917'
+            : String.fromEnvironment('ADMOB_REWARDED_AD_UNIT_ID');
 
     await RewardedAd.load(
       adUnitId: adUnitId,
@@ -63,7 +63,7 @@ class AdServiceImpl implements AdService {
     }
 
     final completer = Completer<bool>();
-    
+
     _rewardedAd!.fullScreenContentCallback = FullScreenContentCallback(
       onAdDismissedFullScreenContent: (ad) {
         debugPrint('[AdService] Ad dismissed.');
@@ -87,12 +87,16 @@ class AdServiceImpl implements AdService {
       },
     );
 
-    await _rewardedAd!.show(onUserEarnedReward: (ad, reward) {
-      debugPrint('[AdService] User earned reward: ${reward.amount} ${reward.type}');
-      if (!completer.isCompleted) {
-        completer.complete(true);
-      }
-    });
+    await _rewardedAd!.show(
+      onUserEarnedReward: (ad, reward) {
+        debugPrint(
+          '[AdService] User earned reward: ${reward.amount} ${reward.type}',
+        );
+        if (!completer.isCompleted) {
+          completer.complete(true);
+        }
+      },
+    );
 
     return completer.future;
   }

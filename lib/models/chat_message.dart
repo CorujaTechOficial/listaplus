@@ -42,8 +42,8 @@ class ChatMessage {
     this.feedback, // null = none, 1 = like, -1 = dislike
     this.executionSteps,
     this.artifact,
-  })  : id = id ?? const Uuid().v4(),
-        timestamp = timestamp ?? DateTime.now();
+  }) : id = id ?? const Uuid().v4(),
+       timestamp = timestamp ?? DateTime.now();
 
   factory ChatMessage.fromJson(Map<String, dynamic> json) {
     return ChatMessage(
@@ -54,27 +54,30 @@ class ChatMessage {
       senderName: json['senderName'] as String?,
       senderUid: json['senderUid'] as String?,
       actions: json['actions'] as Map<String, dynamic>?,
-      suggestedReplies: (json['suggestedReplies'] as List<dynamic>?)?.map((e) {
-        if (e is String) {
-          return SuggestedReply(label: e, prompt: e, icon: 'chat');
-        }
-        return SuggestedReply.fromJson(Map<String, dynamic>.from(e as Map));
-      }).toList(),
+      suggestedReplies:
+          (json['suggestedReplies'] as List<dynamic>?)?.map((e) {
+            if (e is String) {
+              return SuggestedReply(label: e, prompt: e, icon: 'chat');
+            }
+            return SuggestedReply.fromJson(Map<String, dynamic>.from(e as Map));
+          }).toList(),
       isError: json['isError'] as bool? ?? false,
       isTeaser: json['isTeaser'] as bool? ?? false,
       feedback: json['feedback'] as int?,
-      executionSteps: (json['executionSteps'] as List<dynamic>?)
-          ?.map((e) => AgentStep.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      artifact: json['artifact'] != null
-          ? InteractiveArtifact.fromJson(
-              Map<String, dynamic>.from(json['artifact'] as Map),
-            )
-          : null,
+      executionSteps:
+          (json['executionSteps'] as List<dynamic>?)
+              ?.map(
+                (e) => AgentStep.fromJson(Map<String, dynamic>.from(e as Map)),
+              )
+              .toList(),
+      artifact:
+          json['artifact'] != null
+              ? InteractiveArtifact.fromJson(
+                Map<String, dynamic>.from(json['artifact'] as Map),
+              )
+              : null,
     );
   }
-
-
 
   final String id;
   final String role;
@@ -193,9 +196,14 @@ class AgentStep {
     return AgentStep(
       id: json['id'] as String? ?? '',
       description: json['description'] as String? ?? '',
-      status: AgentStepStatus.fromString(json['status'] as String? ?? 'pending'),
+      status: AgentStepStatus.fromString(
+        json['status'] as String? ?? 'pending',
+      ),
       toolName: json['toolName'] as String?,
-      resultData: json['resultData'] != null ? Map<String, dynamic>.from(json['resultData'] as Map) : null,
+      resultData:
+          json['resultData'] != null
+              ? Map<String, dynamic>.from(json['resultData'] as Map)
+              : null,
     );
   }
 

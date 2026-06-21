@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "ИИ-помощник",
   "aiAssistantDescription": "Получайте умные предложения, рецепты и персонализированные советы с нашим ИИ-помощником.",
   "aiAssistantTitle": "ИИ-помощник",
+  "aiCapabilitiesBudget": "Бюджет и цены",
+  "aiCapabilitiesLists": "Списки покупок",
+  "aiCapabilitiesOrganize": "Организация",
+  "aiCapabilitiesRecipes": "Рецепты и меню",
+  "aiCapabilitiesTitle": "Что я могу сделать?",
   "aiConnectionError": "Не удалось подключиться к службе AI. Проверьте свое соединение.",
   "aiCreditsRemaining": "Осталось {remaining} кредитов",
   "aiEmptyResponseError": "Служба AI вернула пустой ответ.",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "Отметить как купленное",
   "markItemsToSeeAnalysis": "Отметьте товары как купленные, чтобы увидеть анализ.",
   "marketMode": "Рыночный режим",
+  "marketModeDescription": "Отметьте товары во время покупок",
   "marketsToAvoid": "Рынки, которых следует избегать",
   "marketsToAvoidHint": "Например: Рынок Y, Рынок Z.",
   "mealPlannerAddMeal": "Добавить еду",
   "mealPlannerAddType": "Добавить тип питания",
+  "mealPlannerBudgetGoalNav": "Бюджет планировщика питания",
+  "mealPlannerBudgetGoalSubtitle": "Ежемесячная цель расходов на планирование питания",
+  "mealPlannerBudgetMonthCost": "Месяц: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Удалить цель",
+  "mealPlannerBudgetTodayCost": "Сегодня: {amount}",
+  "mealPlannerBudgetWeekCost": "Неделя: {amount}",
   "mealPlannerCustomTypeLabel": "Пользовательский тип",
   "mealPlannerDateLabel": "Дата",
   "mealPlannerDefaultTypeLabel": "Тип по умолчанию",
@@ -2004,6 +2061,7 @@
   "navRecipes": "Рецепты",
   "newCategoryDialog": "Новая категория",
   "newChat": "Новый чат",
+  "newChatStarted": "Начался новый чат",
   "newListTitle": "Новый список покупок",
   "newPantryList": "Покупки из кладовой",
   "newRecipe": "Новый рецепт",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "Запрос ваших списков...",
   "quickActionAi": "Пообщаться с Кипи",
   "quickActionPantry": "Посмотреть кладовую",
+  "quickAddToList": "Добавить в список",
   "quickRecipe": "Быстрый рецепт",
   "quickRecipePrompt": "Предложи рецепты с товарами из моего списка.",
   "quickReplies": "Быстрые ответы:",

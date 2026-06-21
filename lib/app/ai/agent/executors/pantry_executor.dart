@@ -32,25 +32,42 @@ class PantryExecutor {
       label: 'pantryItemsProvider',
     );
     if (items.isEmpty) {
-      return const ToolResult(toolCallId: '', content: 'A despensa está vazia.');
+      return const ToolResult(
+        toolCallId: '',
+        content: 'A despensa está vazia.',
+      );
     }
     final result = StringBuffer('Itens na despensa:\n');
     for (final item in items) {
-      final deficit = item.needsRestock ? ' (precisa repor: ${item.deficit})' : '';
-      result.writeln('- ${item.name}: ${item.currentQuantity}/${item.idealQuantity} ${item.unit.label}$deficit');
+      final deficit =
+          item.needsRestock ? ' (precisa repor: ${item.deficit})' : '';
+      result.writeln(
+        '- ${item.name}: ${item.currentQuantity}/${item.idealQuantity} ${item.unit.label}$deficit',
+      );
     }
     return ToolResult(toolCallId: '', content: result.toString());
   }
 
-  Future<ToolResult> addPantryItem(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> addPantryItem(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final name = args['name'] as String;
     final idealQty = (args['idealQuantity'] as num).toInt();
-    final currentQty = args['currentQuantity'] != null ? (args['currentQuantity'] as num).toInt() : 0;
+    final currentQty =
+        args['currentQuantity'] != null
+            ? (args['currentQuantity'] as num).toInt()
+            : 0;
     final unitLabel = args['unit'] as String?;
     final categoryLabel = args['category'] as String?;
-    final price = args['estimatedPrice'] != null ? (args['estimatedPrice'] as num).toDouble() : null;
+    final price =
+        args['estimatedPrice'] != null
+            ? (args['estimatedPrice'] as num).toDouble()
+            : null;
 
-    await container.read(pantryItemsProvider.notifier).addItem(
+    await container
+        .read(pantryItemsProvider.notifier)
+        .addItem(
           name: name,
           idealQuantity: idealQty,
           currentQuantity: currentQty,
@@ -59,10 +76,16 @@ class PantryExecutor {
           estimatedPrice: price,
         );
 
-    return ToolResult(toolCallId: '', content: 'Item "$name" adicionado à despensa.');
+    return ToolResult(
+      toolCallId: '',
+      content: 'Item "$name" adicionado à despensa.',
+    );
   }
 
-  Future<ToolResult> updatePantryItem(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> updatePantryItem(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final itemId = args['itemId'] as String;
     final items = await AiUtils.awaitFuture(
       container.read(pantryItemsProvider.future),
@@ -71,14 +94,20 @@ class PantryExecutor {
     );
     final item = items.where((i) => i.id == itemId).firstOrNull;
     if (item == null) {
-      return const ToolResult(toolCallId: '', content: 'Item não encontrado na despensa.', success: false);
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Item não encontrado na despensa.',
+        success: false,
+      );
     }
     var updated = item;
     if (args['name'] != null) {
       updated = updated.copyWith(name: args['name'] as String);
     }
     if (args['idealQuantity'] != null) {
-      updated = updated.copyWith(idealQuantity: (args['idealQuantity'] as num).toInt());
+      updated = updated.copyWith(
+        idealQuantity: (args['idealQuantity'] as num).toInt(),
+      );
     }
     if (args['unit'] != null) {
       updated = updated.copyWith(unit: _unit(args['unit'] as String));
@@ -87,27 +116,53 @@ class PantryExecutor {
       updated = updated.copyWith(categoryId: args['category'] as String);
     }
     await container.read(pantryItemsProvider.notifier).updateItem(updated);
-    return const ToolResult(toolCallId: '', content: 'Item da despensa atualizado.');
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Item da despensa atualizado.',
+    );
   }
 
-  Future<ToolResult> removePantryItem(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> removePantryItem(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final itemId = args['itemId'] as String;
     await container.read(pantryItemsProvider.notifier).removeItem(itemId);
-    return const ToolResult(toolCallId: '', content: 'Item removido da despensa.');
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Item removido da despensa.',
+    );
   }
 
-  Future<ToolResult> consumePantryItem(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> consumePantryItem(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final itemId = args['itemId'] as String;
-    final quantity = args['quantity'] != null ? (args['quantity'] as num).toInt() : 1;
-    await container.read(pantryItemsProvider.notifier).consumeItemMultiple(itemId, quantity);
-    return const ToolResult(toolCallId: '', content: 'Item consumido da despensa.');
+    final quantity =
+        args['quantity'] != null ? (args['quantity'] as num).toInt() : 1;
+    await container
+        .read(pantryItemsProvider.notifier)
+        .consumeItemMultiple(itemId, quantity);
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Item consumido da despensa.',
+    );
   }
 
-  Future<ToolResult> restockPantryItem(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> restockPantryItem(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final itemId = args['itemId'] as String;
     final amount = (args['amount'] as num).toInt();
-    await container.read(pantryItemsProvider.notifier).restockItem(itemId, amount);
-    return const ToolResult(toolCallId: '', content: 'Estoque do item reabastecido.');
+    await container
+        .read(pantryItemsProvider.notifier)
+        .restockItem(itemId, amount);
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Estoque do item reabastecido.',
+    );
   }
 
   Future<ToolResult> clearPantry(ProviderContainer container) async {

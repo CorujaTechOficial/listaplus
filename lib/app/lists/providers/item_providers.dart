@@ -31,7 +31,9 @@ class PriceHistory extends _$PriceHistory {
     if (data != null && data['priceHistory'] != null) {
       final history = data['priceHistory'] as Map<String, dynamic>;
       if (ref.mounted) {
-        state = history.map((key, value) => MapEntry(key, (value as num).toDouble()));
+        state = history.map(
+          (key, value) => MapEntry(key, (value as num).toDouble()),
+        );
       }
     }
   }
@@ -73,7 +75,9 @@ class ShoppingListItems extends _$ShoppingListItems {
 
   Future<String?> _ownerUid() async {
     try {
-      final lists = await ref.read(shoppingListsProvider.future);
+      final lists = await ref.read(shoppingListsProvider.future).timeout(
+        const Duration(seconds: 10),
+      );
       return lists.where((l) => l.id == listId).firstOrNull?.ownerUid;
     } on Exception catch (e) {
       debugPrint('Error fetching ownerUid for list $listId: $e');
@@ -111,7 +115,9 @@ class ShoppingListItems extends _$ShoppingListItems {
       }
 
       // ignore: unawaited_futures
-      ref.read(itemHistoryProvider.notifier).trackItem(name).catchError((Object e) {
+      ref.read(itemHistoryProvider.notifier).trackItem(name).catchError((
+        Object e,
+      ) {
         debugPrint('Failed to track item history: $e');
       });
     } on Exception catch (e) {
@@ -136,7 +142,9 @@ class ShoppingListItems extends _$ShoppingListItems {
       // Track history for each item
       for (final item in items) {
         // ignore: unawaited_futures
-        ref.read(itemHistoryProvider.notifier).trackItem(item.name).catchError((Object e) {
+        ref.read(itemHistoryProvider.notifier).trackItem(item.name).catchError((
+          Object e,
+        ) {
           debugPrint('Failed to track item history: $e');
         });
       }
@@ -169,9 +177,12 @@ class ShoppingListItems extends _$ShoppingListItems {
 
       if (toggledItem.isPurchased) {
         // ignore: unawaited_futures
-        ref.read(userStatsProvider.notifier).recordPurchase(itemCount: 1).catchError((Object e) {
-          debugPrint('Failed to record purchase stats: $e');
-        });
+        ref
+            .read(userStatsProvider.notifier)
+            .recordPurchase(itemCount: 1)
+            .catchError((Object e) {
+              debugPrint('Failed to record purchase stats: $e');
+            });
       }
     } on Exception catch (e) {
       throw Exception('Erro ao alternar status do item: $e');
@@ -181,6 +192,12 @@ class ShoppingListItems extends _$ShoppingListItems {
   Future<void> removeItem(String id) async {
     final service = ref.read(firestoreServiceProvider);
     if (service == null) return;
+    final previousItems = state.value;
+    if (previousItems != null) {
+      state = AsyncValue.data(
+        previousItems.where((i) => i.id != id).toList(),
+      );
+    }
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -189,6 +206,9 @@ class ShoppingListItems extends _$ShoppingListItems {
         await service.deleteItem(listId, id);
       }
     } on Exception catch (e) {
+      if (previousItems != null && ref.mounted) {
+        state = AsyncValue.data(previousItems);
+      }
       throw Exception('Erro ao remover item: $e');
     }
   }
@@ -206,9 +226,12 @@ class ShoppingListItems extends _$ShoppingListItems {
 
       if (item.estimatedPrice != null) {
         // ignore: unawaited_futures
-        ref.read(priceHistoryProvider.notifier).updatePrice(item.name, item.estimatedPrice!).catchError((Object e) {
-          debugPrint('Failed to update price history: $e');
-        });
+        ref
+            .read(priceHistoryProvider.notifier)
+            .updatePrice(item.name, item.estimatedPrice!)
+            .catchError((Object e) {
+              debugPrint('Failed to update price history: $e');
+            });
       }
     } on Exception catch (e) {
       throw Exception('Erro ao atualizar item: $e');
@@ -254,7 +277,10 @@ class ShoppingListItems extends _$ShoppingListItems {
       return;
     }
 
-    final updatedItem = item.copyWith(quantity: item.quantity + 1, updatedAt: DateTime.now());
+    final updatedItem = item.copyWith(
+      quantity: item.quantity + 1,
+      updatedAt: DateTime.now(),
+    );
     final previousState = state.value;
     state = AsyncValue.data(
       items.map((i) => i.id == id ? updatedItem : i).toList(),
@@ -284,7 +310,10 @@ class ShoppingListItems extends _$ShoppingListItems {
       return;
     }
 
-    final updatedItem = item.copyWith(quantity: item.quantity - 1, updatedAt: DateTime.now());
+    final updatedItem = item.copyWith(
+      quantity: item.quantity - 1,
+      updatedAt: DateTime.now(),
+    );
     final previousState = state.value;
     state = AsyncValue.data(
       items.map((i) => i.id == id ? updatedItem : i).toList(),
@@ -324,9 +353,17 @@ class ShoppingListItems extends _$ShoppingListItems {
     final service = ref.read(firestoreServiceProvider);
     if (service == null) return;
     final items = state.value ?? [];
-    final removedIds = items.where((item) => item.isPurchased).map((i) => i.id).toSet();
+    final removedIds =
+        items.where((item) => item.isPurchased).map((i) => i.id).toSet();
     if (removedIds.isEmpty) {
       return;
+    }
+
+    final previousItems = state.value;
+    if (previousItems != null) {
+      state = AsyncValue.data(
+        previousItems.where((i) => !i.isPurchased).toList(),
+      );
     }
 
     try {
@@ -341,6 +378,9 @@ class ShoppingListItems extends _$ShoppingListItems {
         }
       }
     } on Exception catch (e) {
+      if (previousItems != null && ref.mounted) {
+        state = AsyncValue.data(previousItems);
+      }
       throw Exception('Erro ao limpar itens comprados: $e');
     }
   }
@@ -348,6 +388,13 @@ class ShoppingListItems extends _$ShoppingListItems {
   Future<void> removeItems(List<String> ids) async {
     final service = ref.read(firestoreServiceProvider);
     if (service == null) return;
+    final idsSet = ids.toSet();
+    final previousItems = state.value;
+    if (previousItems != null) {
+      state = AsyncValue.data(
+        previousItems.where((i) => !idsSet.contains(i.id)).toList(),
+      );
+    }
     try {
       final ownerUid = await _ownerUid();
       if (ownerUid != null) {
@@ -360,6 +407,9 @@ class ShoppingListItems extends _$ShoppingListItems {
         }
       }
     } on Exception catch (e) {
+      if (previousItems != null && ref.mounted) {
+        state = AsyncValue.data(previousItems);
+      }
       throw Exception('Erro ao remover itens: $e');
     }
   }
@@ -370,18 +420,19 @@ class ShoppingListItems extends _$ShoppingListItems {
     final items = state.value ?? [];
     int newlyPurchased = 0;
     final idsSet = ids.toSet();
-    final updated = items.map((item) {
-      if (idsSet.contains(item.id)) {
-        if (!item.isPurchased && isPurchased) {
-          newlyPurchased++;
-        }
-        return item.copyWith(
-          isPurchased: isPurchased,
-          updatedAt: DateTime.now(),
-        );
-      }
-      return item;
-    }).toList();
+    final updated =
+        items.map((item) {
+          if (idsSet.contains(item.id)) {
+            if (!item.isPurchased && isPurchased) {
+              newlyPurchased++;
+            }
+            return item.copyWith(
+              isPurchased: isPurchased,
+              updatedAt: DateTime.now(),
+            );
+          }
+          return item;
+        }).toList();
 
     try {
       final ownerUid = await _ownerUid();
@@ -393,9 +444,12 @@ class ShoppingListItems extends _$ShoppingListItems {
 
       if (newlyPurchased > 0) {
         // ignore: unawaited_futures
-        ref.read(userStatsProvider.notifier).recordPurchase(itemCount: newlyPurchased).catchError((Object e) {
-          debugPrint('Failed to record batch purchase stats: $e');
-        });
+        ref
+            .read(userStatsProvider.notifier)
+            .recordPurchase(itemCount: newlyPurchased)
+            .catchError((Object e) {
+              debugPrint('Failed to record batch purchase stats: $e');
+            });
       }
     } on Exception catch (e) {
       throw Exception('Erro ao alternar itens: $e');

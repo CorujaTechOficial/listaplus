@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "ผู้ช่วย AI",
   "aiAssistantDescription": "รับคำแนะนำอัจฉริยะ สูตรอาหาร และเคล็ดลับส่วนตัวกับผู้ช่วย AI ของเรา",
   "aiAssistantTitle": "ผู้ช่วยเอไอ",
+  "aiCapabilitiesBudget": "งบประมาณและราคา",
+  "aiCapabilitiesLists": "รายการช้อปปิ้ง",
+  "aiCapabilitiesOrganize": "องค์กร",
+  "aiCapabilitiesRecipes": "สูตรอาหารและเมนู",
+  "aiCapabilitiesTitle": "ฉันจะทำอย่างไร?",
   "aiConnectionError": "ไม่สามารถเชื่อมต่อกับบริการ AI ได้ ตรวจสอบการเชื่อมต่อของคุณ",
   "aiCreditsRemaining": "เหลือ {remaining} เครดิต",
   "aiEmptyResponseError": "บริการ AI ส่งคืนการตอบกลับที่ว่างเปล่า",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "ทำเครื่องหมายว่าซื้อแล้ว",
   "markItemsToSeeAnalysis": "ทำเครื่องหมายรายการว่าซื้อแล้วเพื่อดูการวิเคราะห์",
   "marketMode": "โหมดการตลาด",
+  "marketModeDescription": "ทำเครื่องหมายรายการเมื่อคุณซื้อสินค้า",
   "marketsToAvoid": "ตลาดที่ควรหลีกเลี่ยง",
   "marketsToAvoidHint": "เช่น: ตลาด Y, ตลาด Z",
   "mealPlannerAddMeal": "เพิ่มมื้ออาหาร",
   "mealPlannerAddType": "เพิ่มประเภทมื้ออาหาร",
+  "mealPlannerBudgetGoalNav": "งบประมาณวางแผนมื้ออาหาร",
+  "mealPlannerBudgetGoalSubtitle": "เป้าหมายการใช้จ่ายรายเดือนเพื่อการวางแผนมื้ออาหาร",
+  "mealPlannerBudgetMonthCost": "เดือน: {amount}",
+  "mealPlannerBudgetRemoveGoal": "ลบเป้าหมาย",
+  "mealPlannerBudgetTodayCost": "วันนี้: {amount}",
+  "mealPlannerBudgetWeekCost": "สัปดาห์: {amount}",
   "mealPlannerCustomTypeLabel": "ประเภทที่กำหนดเอง",
   "mealPlannerDateLabel": "วันที่",
   "mealPlannerDefaultTypeLabel": "ประเภทเริ่มต้น",
@@ -2004,6 +2061,7 @@
   "navRecipes": "สูตรอาหาร",
   "newCategoryDialog": "หมวดหมู่ใหม่",
   "newChat": "แชทใหม่",
+  "newChatStarted": "แชทใหม่เริ่มต้นขึ้น",
   "newListTitle": "รายการช้อปปิ้งใหม่",
   "newPantryList": "ช้อปปิ้งในตู้กับข้าว",
   "newRecipe": "สูตรใหม่",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "กำลังค้นหารายการของคุณ...",
   "quickActionAi": "คุยกับกีกี้",
   "quickActionPantry": "ดูตู้กับข้าว",
+  "quickAddToList": "เพิ่มลงในรายการ",
   "quickRecipe": "สูตรด่วน",
   "quickRecipePrompt": "แนะนำสูตรอาหารด้วยรายการจากรายการของฉัน",
   "quickReplies": "ตอบกลับด่วน:",

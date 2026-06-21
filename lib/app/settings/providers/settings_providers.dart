@@ -6,7 +6,9 @@ import 'package:shopping_list/models/user_profile.dart';
 
 part 'settings_providers.g.dart';
 
-final userProfileProvider = FutureProvider.autoDispose<UserProfile>((ref) async {
+final userProfileProvider = FutureProvider.autoDispose<UserProfile>((
+  ref,
+) async {
   final backend = ref.watch(firestoreServiceProvider);
   if (backend == null) return UserProfile.fromUserDoc(null);
   final userData = await backend.getUserData();
@@ -73,13 +75,14 @@ class UserStats {
   });
 
   factory UserStats.fromJson(Map<String, dynamic> json) => UserStats(
-        totalItemsBought: (json['totalItemsBought'] as num?)?.toInt() ?? 0,
-        totalSavings: (json['totalSavings'] as num?)?.toDouble() ?? 0.0,
-        currentStreak: (json['currentStreak'] as num?)?.toInt() ?? 0,
-        lastPurchaseDate: json['lastPurchaseDate'] != null
+    totalItemsBought: (json['totalItemsBought'] as num?)?.toInt() ?? 0,
+    totalSavings: (json['totalSavings'] as num?)?.toDouble() ?? 0.0,
+    currentStreak: (json['currentStreak'] as num?)?.toInt() ?? 0,
+    lastPurchaseDate:
+        json['lastPurchaseDate'] != null
             ? DateTime.parse(json['lastPurchaseDate'] as String)
             : null,
-      );
+  );
 
   final int totalItemsBought;
   final double totalSavings;
@@ -101,11 +104,11 @@ class UserStats {
   }
 
   Map<String, dynamic> toJson() => {
-        'totalItemsBought': totalItemsBought,
-        'totalSavings': totalSavings,
-        'currentStreak': currentStreak,
-        'lastPurchaseDate': lastPurchaseDate?.toIso8601String(),
-      };
+    'totalItemsBought': totalItemsBought,
+    'totalSavings': totalSavings,
+    'currentStreak': currentStreak,
+    'lastPurchaseDate': lastPurchaseDate?.toIso8601String(),
+  };
 }
 
 @Riverpod(keepAlive: true)
@@ -125,7 +128,10 @@ class UserStatsNotifier extends _$UserStatsNotifier {
     }
   }
 
-  Future<void> recordPurchase({required int itemCount, double savings = 0}) async {
+  Future<void> recordPurchase({
+    required int itemCount,
+    double savings = 0,
+  }) async {
     final now = DateTime.now();
     int newStreak = state.currentStreak;
 

@@ -31,46 +31,52 @@ class ItemExecutor {
 
   Future<String?> _resolveCurrentListId(ProviderContainer container) async {
     final currentListIdState = container.read(currentListIdProvider);
-    final currentId = currentListIdState.hasValue
-        ? currentListIdState.value
-        : await AiUtils.awaitFuture(
-            container.read(currentListIdProvider.future),
-            defaultValue: null,
-            label: 'currentListIdProvider',
-          );
+    final currentId =
+        currentListIdState.hasValue
+            ? currentListIdState.value
+            : await AiUtils.awaitFuture(
+              container.read(currentListIdProvider.future),
+              defaultValue: null,
+              label: 'currentListIdProvider',
+            );
     if (currentId != null) {
       return currentId;
     }
     final shoppingListsState = container.read(shoppingListsProvider);
-    final lists = shoppingListsState.hasValue
-        ? (shoppingListsState.value ?? const <ShoppingList>[])
-        : await AiUtils.awaitFuture(
-            container.read(shoppingListsProvider.future),
-            defaultValue: <ShoppingList>[],
-            label: 'shoppingListsProvider',
-          );
+    final lists =
+        shoppingListsState.hasValue
+            ? (shoppingListsState.value ?? const <ShoppingList>[])
+            : await AiUtils.awaitFuture(
+              container.read(shoppingListsProvider.future),
+              defaultValue: <ShoppingList>[],
+              label: 'shoppingListsProvider',
+            );
     return lists.isNotEmpty ? lists.first.id : null;
   }
 
-  Future<Map<String, String>> _buildItemIndex(ProviderContainer container) async {
+  Future<Map<String, String>> _buildItemIndex(
+    ProviderContainer container,
+  ) async {
     final shoppingListsState = container.read(shoppingListsProvider);
-    final allLists = shoppingListsState.hasValue
-        ? (shoppingListsState.value ?? const <ShoppingList>[])
-        : await AiUtils.awaitFuture(
-            container.read(shoppingListsProvider.future),
-            defaultValue: <ShoppingList>[],
-            label: 'shoppingListsProvider',
-          );
+    final allLists =
+        shoppingListsState.hasValue
+            ? (shoppingListsState.value ?? const <ShoppingList>[])
+            : await AiUtils.awaitFuture(
+              container.read(shoppingListsProvider.future),
+              defaultValue: <ShoppingList>[],
+              label: 'shoppingListsProvider',
+            );
     final index = <String, String>{};
     for (final list in allLists) {
       final itemsState = container.read(shoppingListItemsProvider(list.id));
-      final items = itemsState.hasValue
-          ? (itemsState.value ?? const <ShoppingItem>[])
-          : await AiUtils.awaitFuture(
-              container.read(shoppingListItemsProvider(list.id).future),
-              defaultValue: <ShoppingItem>[],
-              label: 'shoppingListItemsProvider (${list.id})',
-            );
+      final items =
+          itemsState.hasValue
+              ? (itemsState.value ?? const <ShoppingItem>[])
+              : await AiUtils.awaitFuture(
+                container.read(shoppingListItemsProvider(list.id).future),
+                defaultValue: <ShoppingItem>[],
+                label: 'shoppingListItemsProvider (${list.id})',
+              );
       for (final item in items) {
         index[item.id] = list.id;
       }
@@ -78,13 +84,17 @@ class ItemExecutor {
     return index;
   }
 
-  Future<ToolResult> getItems(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> getItems(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     var listId = args['listId'] as String?;
     listId ??= await _resolveCurrentListId(container);
     if (listId == null) {
       return const ToolResult(
         toolCallId: '',
-        content: 'Nenhuma lista ativa encontrada. Crie ou selecione uma lista primeiro.',
+        content:
+            'Nenhuma lista ativa encontrada. Crie ou selecione uma lista primeiro.',
         success: false,
       );
     }
@@ -103,9 +113,10 @@ class ItemExecutor {
     );
     final list = lists.where((l) => l.id == listId).firstOrNull;
     final ownerUid = list?.ownerUid;
-    final items = ownerUid != null
-        ? await service.loadItemsFromUser(ownerUid, listId)
-        : await service.loadItems(listId);
+    final items =
+        ownerUid != null
+            ? await service.loadItemsFromUser(ownerUid, listId)
+            : await service.loadItems(listId);
     final itemsJson = items.map((i) => i.toJson()).toList();
     return ToolResult(
       toolCallId: '',
@@ -114,13 +125,19 @@ class ItemExecutor {
     );
   }
 
-  Future<ToolResult> addItem(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> addItem(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final listId = args['listId'] as String;
     final name = (args['name'] as String).trim();
     final quantity = (args['quantity'] as num?)?.toInt() ?? 1;
     final unitLabel = args['unit'] as String?;
     final categoryLabel = args['category'] as String?;
-    final price = args['estimatedPrice'] != null ? (args['estimatedPrice'] as num).toDouble() : null;
+    final price =
+        args['estimatedPrice'] != null
+            ? (args['estimatedPrice'] as num).toDouble()
+            : null;
 
     final items = await AiUtils.awaitFuture(
       container.read(shoppingListItemsProvider(listId).future),
@@ -135,24 +152,33 @@ class ItemExecutor {
       final updatedItem = existingItem.copyWith(
         quantity: existingItem.quantity + quantity,
       );
-      await container.read(shoppingListItemsProvider(listId).notifier).updateItem(updatedItem);
+      await container
+          .read(shoppingListItemsProvider(listId).notifier)
+          .updateItem(updatedItem);
       return ToolResult(
         toolCallId: '',
-        content: 'Item "$name" já estava na lista. Quantidade incrementada para ${updatedItem.quantity}.',
-        resultData: {'itemId': existingItem.id, 'listId': listId, 'wasDuplicate': true},
+        content:
+            'Item "$name" já estava na lista. Quantidade incrementada para ${updatedItem.quantity}.',
+        resultData: {
+          'itemId': existingItem.id,
+          'listId': listId,
+          'wasDuplicate': true,
+        },
       );
     }
 
     final itemId = const Uuid().v4();
-    await container.read(shoppingListItemsProvider(listId).notifier).addItem(
-      listId: listId,
-      name: name,
-      quantity: quantity,
-      categoryId: categoryLabel ?? 'others',
-      unit: unitLabel != null ? _unit(unitLabel) : Unit.un,
-      estimatedPrice: price,
-      id: itemId,
-    );
+    await container
+        .read(shoppingListItemsProvider(listId).notifier)
+        .addItem(
+          listId: listId,
+          name: name,
+          quantity: quantity,
+          categoryId: categoryLabel ?? 'others',
+          unit: unitLabel != null ? _unit(unitLabel) : Unit.un,
+          estimatedPrice: price,
+          id: itemId,
+        );
 
     return ToolResult(
       toolCallId: '',
@@ -161,7 +187,10 @@ class ItemExecutor {
     );
   }
 
-  Future<ToolResult> updateItem(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> updateItem(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final itemId = args['itemId'] as String;
     final itemIndex = await _buildItemIndex(container);
     final foundListId = itemIndex[itemId];
@@ -201,10 +230,14 @@ class ItemExecutor {
       updated = updated.copyWith(categoryId: args['category'] as String);
     }
     if (args['estimatedPrice'] != null) {
-      updated = updated.copyWith(estimatedPrice: (args['estimatedPrice'] as num).toDouble());
+      updated = updated.copyWith(
+        estimatedPrice: (args['estimatedPrice'] as num).toDouble(),
+      );
     }
 
-    await container.read(shoppingListItemsProvider(foundListId).notifier).updateItem(updated);
+    await container
+        .read(shoppingListItemsProvider(foundListId).notifier)
+        .updateItem(updated);
     return ToolResult(
       toolCallId: '',
       content: 'Item atualizado com sucesso.',
@@ -212,12 +245,19 @@ class ItemExecutor {
     );
   }
 
-  Future<ToolResult> removeItem(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> removeItem(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final itemId = args['itemId'] as String;
     final itemIndex = await _buildItemIndex(container);
     final listId = itemIndex[itemId];
     if (listId == null) {
-      return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Item não encontrado.',
+        success: false,
+      );
     }
     final items = await AiUtils.awaitFuture(
       container.read(shoppingListItemsProvider(listId).future),
@@ -226,9 +266,15 @@ class ItemExecutor {
     );
     final foundItem = items.where((i) => i.id == itemId).firstOrNull;
     if (foundItem == null) {
-      return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Item não encontrado.',
+        success: false,
+      );
     }
-    await container.read(shoppingListItemsProvider(listId).notifier).removeItem(itemId);
+    await container
+        .read(shoppingListItemsProvider(listId).notifier)
+        .removeItem(itemId);
     return ToolResult(
       toolCallId: '',
       content: 'Item removido com sucesso.',
@@ -236,12 +282,19 @@ class ItemExecutor {
     );
   }
 
-  Future<ToolResult> togglePurchased(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> togglePurchased(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final itemId = args['itemId'] as String;
     final itemIndex = await _buildItemIndex(container);
     final listId = itemIndex[itemId];
     if (listId == null) {
-      return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Item não encontrado.',
+        success: false,
+      );
     }
     final items = await AiUtils.awaitFuture(
       container.read(shoppingListItemsProvider(listId).future),
@@ -250,9 +303,15 @@ class ItemExecutor {
     );
     final foundItem = items.where((i) => i.id == itemId).firstOrNull;
     if (foundItem == null) {
-      return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Item não encontrado.',
+        success: false,
+      );
     }
-    await container.read(shoppingListItemsProvider(listId).notifier).togglePurchased(itemId);
+    await container
+        .read(shoppingListItemsProvider(listId).notifier)
+        .togglePurchased(itemId);
     final updatedItems = await AiUtils.awaitFuture(
       container.read(shoppingListItemsProvider(listId).future),
       defaultValue: <ShoppingItem>[],
@@ -261,15 +320,24 @@ class ItemExecutor {
     final item = updatedItems.where((i) => i.id == itemId).first;
     return ToolResult(
       toolCallId: '',
-      content: 'Item "${item.name}" marcado como ${item.isPurchased ? "comprado" : "não comprado"}.',
+      content:
+          'Item "${item.name}" marcado como ${item.isPurchased ? "comprado" : "não comprado"}.',
       resultData: {'previousState': foundItem.toJson(), 'listId': listId},
     );
   }
 
-  Future<ToolResult> togglePurchasedBatch(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> togglePurchasedBatch(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final idsStr = args['itemIds'] as String;
     final isPurchased = args['isPurchased'] as bool;
-    final ids = idsStr.split(',').map((s) => s.trim()).where((s) => s.isNotEmpty).toList();
+    final ids =
+        idsStr
+            .split(',')
+            .map((s) => s.trim())
+            .where((s) => s.isNotEmpty)
+            .toList();
     final itemIndex = await _buildItemIndex(container);
     final idsByList = <String, List<String>>{};
     for (final id in ids) {
@@ -281,10 +349,10 @@ class ItemExecutor {
     final previousStates = <Map<String, dynamic>>[];
     for (final listId in idsByList.keys) {
       final items = await AiUtils.awaitFuture(
-      container.read(shoppingListItemsProvider(listId).future),
-      defaultValue: <ShoppingItem>[],
-      label: 'shoppingListItemsProvider',
-    );
+        container.read(shoppingListItemsProvider(listId).future),
+        defaultValue: <ShoppingItem>[],
+        label: 'shoppingListItemsProvider',
+      );
       final idSet = idsByList[listId]!.toSet();
       for (final item in items) {
         if (idSet.contains(item.id)) {
@@ -293,7 +361,9 @@ class ItemExecutor {
       }
     }
     for (final entry in idsByList.entries) {
-      await container.read(shoppingListItemsProvider(entry.key).notifier).togglePurchasedBatch(entry.value, isPurchased);
+      await container
+          .read(shoppingListItemsProvider(entry.key).notifier)
+          .togglePurchasedBatch(entry.value, isPurchased);
     }
     final action = isPurchased ? 'comprados' : 'não comprados';
     return ToolResult(
@@ -303,45 +373,85 @@ class ItemExecutor {
     );
   }
 
-  Future<ToolResult> incrementQuantity(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> incrementQuantity(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final itemId = args['itemId'] as String;
     final itemIndex = await _buildItemIndex(container);
     final listId = itemIndex[itemId];
     if (listId == null) {
-      return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Item não encontrado.',
+        success: false,
+      );
     }
-    await container.read(shoppingListItemsProvider(listId).notifier).incrementQuantity(itemId);
+    await container
+        .read(shoppingListItemsProvider(listId).notifier)
+        .incrementQuantity(itemId);
     return const ToolResult(toolCallId: '', content: 'Quantidade aumentada.');
   }
 
-  Future<ToolResult> decrementQuantity(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> decrementQuantity(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final itemId = args['itemId'] as String;
     final itemIndex = await _buildItemIndex(container);
     final listId = itemIndex[itemId];
     if (listId == null) {
-      return const ToolResult(toolCallId: '', content: 'Item não encontrado.', success: false);
+      return const ToolResult(
+        toolCallId: '',
+        content: 'Item não encontrado.',
+        success: false,
+      );
     }
-    await container.read(shoppingListItemsProvider(listId).notifier).decrementQuantity(itemId);
+    await container
+        .read(shoppingListItemsProvider(listId).notifier)
+        .decrementQuantity(itemId);
     return const ToolResult(toolCallId: '', content: 'Quantidade diminuída.');
   }
 
-  Future<ToolResult> clearPurchased(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> clearPurchased(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final listId = args['listId'] as String;
-    await container.read(shoppingListItemsProvider(listId).notifier).clearPurchased();
-    return const ToolResult(toolCallId: '', content: 'Itens comprados removidos da lista.');
+    await container
+        .read(shoppingListItemsProvider(listId).notifier)
+        .clearPurchased();
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Itens comprados removidos da lista.',
+    );
   }
 
-  Future<ToolResult> clearAllItems(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> clearAllItems(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final listId = args['listId'] as String;
     await container.read(shoppingListItemsProvider(listId).notifier).clearAll();
-    return const ToolResult(toolCallId: '', content: 'Todos os itens foram removidos da lista.');
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Todos os itens foram removidos da lista.',
+    );
   }
 
-  Future<ToolResult> reorderItems(ProviderContainer container, Map<String, dynamic> args) async {
+  Future<ToolResult> reorderItems(
+    ProviderContainer container,
+    Map<String, dynamic> args,
+  ) async {
     final listId = args['listId'] as String;
     final oldIndex = (args['oldIndex'] as num).toInt();
     final newIndex = (args['newIndex'] as num).toInt();
-    await container.read(shoppingListItemsProvider(listId).notifier).reorderItem(oldIndex, newIndex);
-    return const ToolResult(toolCallId: '', content: 'Item reordenado com sucesso.');
+    await container
+        .read(shoppingListItemsProvider(listId).notifier)
+        .reorderItem(oldIndex, newIndex);
+    return const ToolResult(
+      toolCallId: '',
+      content: 'Item reordenado com sucesso.',
+    );
   }
 }

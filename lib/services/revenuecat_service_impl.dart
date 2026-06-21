@@ -6,6 +6,9 @@ class RevenueCatServiceImpl implements RevenueCatService {
   final List<void Function(CustomerInfo)> _listeners = [];
 
   @override
+  bool get isAvailable => true;
+
+  @override
   Future<void> init(String apiKey) async {
     await Purchases.setLogLevel(LogLevel.warn);
     await Purchases.configure(PurchasesConfiguration(apiKey));
@@ -59,8 +62,7 @@ class RevenueCatServiceImpl implements RevenueCatService {
     if (currentOffering == null) {
       return [];
     }
-    return currentOffering.availablePackages
-        .map((pkg) {
+    return currentOffering.availablePackages.map((pkg) {
       final intro = pkg.storeProduct.introductoryPrice;
       int? trialDays;
       if (intro != null && intro.price == 0) {

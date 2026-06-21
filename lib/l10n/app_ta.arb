@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -579,6 +594,30 @@
       }
     }
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -629,6 +668,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1382,6 +1424,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1541,6 +1586,11 @@
   "aiAssistant": "AI உதவியாளர்",
   "aiAssistantDescription": "எங்கள் AI உதவியாளருடன் ஸ்மார்ட் பரிந்துரைகள், சமையல் குறிப்புகள் மற்றும் தனிப்பயனாக்கப்பட்ட உதவிக்குறிப்புகளைப் பெறுங்கள்.",
   "aiAssistantTitle": "AI உதவியாளர்",
+  "aiCapabilitiesBudget": "பட்ஜெட் & விலைகள்",
+  "aiCapabilitiesLists": "ஷாப்பிங் பட்டியல்கள்",
+  "aiCapabilitiesOrganize": "அமைப்பு",
+  "aiCapabilitiesRecipes": "சமையல் & மெனுக்கள்",
+  "aiCapabilitiesTitle": "நான் என்ன செய்ய முடியும்?",
   "aiConnectionError": "AI சேவையுடன் இணைக்க முடியவில்லை. உங்கள் இணைப்பைச் சரிபார்க்கவும்.",
   "aiCreditsRemaining": "{remaining} கிரெடிட்கள் மீதம்",
   "aiEmptyResponseError": "AI சேவை வெற்று பதிலை அளித்தது.",
@@ -1928,10 +1978,17 @@
   "markAsPurchased": "வாங்கியதாகக் குறி",
   "markItemsToSeeAnalysis": "பகுப்பாய்வைப் பார்க்க பொருட்களை வாங்கியதாகக் குறிக்கவும்.",
   "marketMode": "சந்தை முறை",
+  "marketModeDescription": "நீங்கள் ஷாப்பிங் செய்யும் போது பொருட்களை சரிபார்க்கவும்",
   "marketsToAvoid": "தவிர்க்க வேண்டிய சந்தைகள்",
   "marketsToAvoidHint": "எ.கா: மார்க்கெட் ஒய், மார்க்கெட் இசட்",
   "mealPlannerAddMeal": "சாப்பாடு சேர்க்கவும்",
   "mealPlannerAddType": "உணவு வகையைச் சேர்க்கவும்",
+  "mealPlannerBudgetGoalNav": "உணவு திட்டமிடுபவர் பட்ஜெட்",
+  "mealPlannerBudgetGoalSubtitle": "உணவு திட்டமிடலுக்கான மாதாந்திர செலவு இலக்கு",
+  "mealPlannerBudgetMonthCost": "மாதம்: {amount}",
+  "mealPlannerBudgetRemoveGoal": "இலக்கை அகற்று",
+  "mealPlannerBudgetTodayCost": "இன்று: {amount}",
+  "mealPlannerBudgetWeekCost": "வாரம்: {amount}",
   "mealPlannerCustomTypeLabel": "விருப்ப வகை",
   "mealPlannerDateLabel": "தேதி",
   "mealPlannerDefaultTypeLabel": "இயல்புநிலை வகை",
@@ -2004,6 +2061,7 @@
   "navRecipes": "சமையல் குறிப்புகள்",
   "newCategoryDialog": "புதிய வகை",
   "newChat": "புதிய அரட்டை",
+  "newChatStarted": "புதிய அரட்டை தொடங்கியது",
   "newListTitle": "புதிய ஷாப்பிங் பட்டியல்",
   "newPantryList": "சரக்கறை ஷாப்பிங்",
   "newRecipe": "புதிய செய்முறை",
@@ -2351,6 +2409,7 @@
   "queryingYourLists": "உங்கள் பட்டியல்களை வினவுகிறது...",
   "quickActionAi": "கிபியுடன் அரட்டையடிக்கவும்",
   "quickActionPantry": "பார் சரக்கறை",
+  "quickAddToList": "பட்டியலில் சேர்க்கவும்",
   "quickRecipe": "விரைவான சமையல்",
   "quickRecipePrompt": "எனது பட்டியலில் உள்ள பொருட்களுடன் சமையல் குறிப்புகளைப் பரிந்துரைக்கவும்.",
   "quickReplies": "விரைவான பதில்கள்:",

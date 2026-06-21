@@ -10,9 +10,6 @@ enum Unit {
   final String label;
 
   static Unit byName(String name) {
-    return Unit.values.firstWhere(
-      (u) => u.name == name,
-      orElse: () => Unit.un,
-    );
+    return Unit.values.firstWhere((u) => u.name == name, orElse: () => Unit.un);
   }
 }

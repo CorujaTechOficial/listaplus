@@ -24,8 +24,5 @@ class FirestoreService extends FirestoreBase
         FirestoreMealPlansMixin,
         FirestoreFeedbackMixin
     implements StorageBackend {
-  FirestoreService({
-    super.firestore,
-    required super.uid,
-  });
+  FirestoreService({super.firestore, required super.uid});
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/theme/tokens.dart';
 import 'package:shimmer/shimmer.dart';
 
 class RecipeCardSkeleton extends StatelessWidget {
@@ -15,7 +16,7 @@ class RecipeCardSkeleton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: base,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(RadiusTokens.lg),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +25,9 @@ class RecipeCardSkeleton extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   color: base,
-                  borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+                  borderRadius: const BorderRadius.vertical(
+                    top: Radius.circular(16),
+                  ),
                 ),
               ),
             ),

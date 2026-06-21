@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AiConfig {
-  const AiConfig({
-    required this.name,
-    required this.iconKey,
-  });
+  const AiConfig({required this.name, required this.iconKey});
 
   final String name;
   final String iconKey;
@@ -24,13 +21,7 @@ class AiConfig {
     }
   }
 
-  AiConfig copyWith({
-    String? name,
-    String? iconKey,
-  }) {
-    return AiConfig(
-      name: name ?? this.name,
-      iconKey: iconKey ?? this.iconKey,
-    );
+  AiConfig copyWith({String? name, String? iconKey}) {
+    return AiConfig(name: name ?? this.name, iconKey: iconKey ?? this.iconKey);
   }
 }
