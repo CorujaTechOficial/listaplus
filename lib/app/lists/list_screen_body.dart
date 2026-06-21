@@ -574,7 +574,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                               value: 'export',
                               child: Row(
                                 children: [
-                                  Icon(PhosphorIconsRegular.shareNetwork, size: 20, color: theme.colorScheme.onSurface),
+                                  Icon(PhosphorIconsRegular.fileArrowDown, size: 20, color: theme.colorScheme.onSurface),
                                   const SizedBox(width: Spacing.sm),
                                   Expanded(
                                     child: Text(
