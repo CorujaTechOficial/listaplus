@@ -47,35 +47,17 @@ class ShoppingCompletionView extends StatelessWidget {
           ),
           if (!isPremium) ...[
             const SizedBox(height: Spacing.lg),
-            Card(
-              margin: const EdgeInsets.symmetric(horizontal: Spacing.lg),
-              child: Padding(
-                padding: const EdgeInsets.all(Spacing.md),
-                child: Column(
-                  children: [
-                    Text(
-                      '${l10n.everythingReady} ${l10n.progressItemsOf(itemCount, itemCount)}',
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    const SizedBox(height: Spacing.xs),
-                    Text(
-                      l10n.unlockPremiumTitle,
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.colorScheme.onSurfaceVariant,
-                      ),
-                    ),
-                    const SizedBox(height: Spacing.sm),
-                    FilledButton.tonal(
-                      onPressed: onUpgrade,
-                      child: Text(l10n.becomePremium),
-                    ),
-                  ],
-                ),
+            Text(
+              l10n.unlockPremiumTitle,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
               ),
+            ),
+            const SizedBox(height: Spacing.sm),
+            TextButton(
+              onPressed: onUpgrade,
+              child: Text(l10n.becomePremium),
             ),
           ],
           const SizedBox(height: Spacing.lg),
