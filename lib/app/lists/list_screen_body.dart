@@ -1264,7 +1264,11 @@ class _CatalogEntryButton extends ConsumerWidget {
           label: Text(l10n.catalogBrowse),
           style: OutlinedButton.styleFrom(
             minimumSize: const Size.fromHeight(40),
-            foregroundColor: theme.colorScheme.primary,
+            foregroundColor: theme.colorScheme.onSurfaceVariant,
+            side: BorderSide(
+              color: theme.colorScheme.outlineVariant,
+            ),
+            visualDensity: VisualDensity.compact,
           ),
         ),
       ),
