@@ -196,6 +196,33 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
         .clearPurchased();
   }
 
+  Future<void> _confirmAndClearPurchased() async {
+    final l10n = AppLocalizations.of(context)!;
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(l10n.clearPurchasedTitle),
+        content: Text(l10n.clearPurchasedConfirmMessage),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(false),
+            child: Text(l10n.cancel),
+          ),
+          TextButton(
+            style: TextButton.styleFrom(
+              foregroundColor: Theme.of(ctx).colorScheme.error,
+            ),
+            onPressed: () => Navigator.of(ctx).pop(true),
+            child: Text(l10n.confirm),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true) {
+      await _clearPurchased();
+    }
+  }
+
   ({int oldIndex, int newIndex})? _mapPendingReorderToFullIndices({
     required List<ShoppingItem> items,
     required List<ShoppingItem> pendingItems,
@@ -441,7 +468,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
                       icon: const Icon(PhosphorIconsRegular.dotsThreeVertical),
                       onSelected: (val) {
                         if (val == 'clear') {
-                          _clearPurchased();
+                          unawaited(_confirmAndClearPurchased());
                         }
                         if (val == 'share') {
                           ShareListSheet.show(
