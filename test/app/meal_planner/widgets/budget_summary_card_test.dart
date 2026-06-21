@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:shopping_list/app/meal_planner/providers/meal_plan_cost_models.dart';
 import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
 import 'package:shopping_list/app/meal_planner/widgets/budget_goal_sheet.dart';
 import 'package:shopping_list/app/meal_planner/widgets/budget_summary_card.dart';
