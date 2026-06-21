@@ -1,45 +1,41 @@
-# Task 3 Report: BudgetGoalSheet Widget
+# Task 3 Report: Guard "clear purchased" with confirmation dialog
 
 ## Status
 
 DONE
 
-## Files Created
+## Commit
 
-- `lib/app/meal_planner/widgets/budget_goal_sheet.dart`
-- `test/app/meal_planner/widgets/budget_goal_sheet_test.dart`
+f88999d
 
-## What Was Built
+## What Was Done
 
-### `BudgetGoalSheet`
+Added `_confirmAndClearPurchased()` async method to `_ListScreenBodyState` in `lib/app/lists/list_screen_body.dart`.
 
-- `ConsumerStatefulWidget` with `static Future<void> show(BuildContext context)` entry point
-- Calls `showModalBottomSheet` with `isScrollControlled: true`, `useSafeArea: true`, `backgroundColor: Colors.transparent`
-- Inherits parent `ProviderScope` — no extra wrapping needed in the builder
-- Reads `monthlyBudgetGoalProvider` via `ref.watch`; pre-populates the `TextField` controller once on first `hasValue` (guarded by `_initialized` flag)
-- Shows `TextButton(mealPlannerBudgetRemoveGoal)` only when `goalAsync.value != null`
-- Save validates `double.tryParse` and `value > 0`; returns early (sheet stays open) on invalid/empty
-- Design tokens: `Spacing.md/lg/xs`, `RadiusTokens.lg`; no raw literals
-- Imports: `package:shopping_list/theme/tokens.dart`, `package:shopping_list/core/providers/preferences_providers.dart`
+The method shows an `AlertDialog` before calling `_clearPurchased()`:
+- Title: `l10n.clearPurchasedTitle` (existing key)
+- Content: `l10n.clearPurchasedConfirmMessage` (existing key)
+- Cancel: pops `false`, no action taken
+- Confirm: pops `true`, destructive style via `colorScheme.error`, then calls `_clearPurchased()`
 
-### Tests (5)
+The `onSelected` handler for `'clear'` now calls `unawaited(_confirmAndClearPurchased())` since `onSelected` is a sync callback.
 
-1. `shows sheet with empty field when no goal` — finds `BudgetGoalSheet`, checks `controller.text` empty
-2. `pre-populates field with current goal` — sets `monthly_budget_goal: 800.0` via mock prefs, expects `find.text('800.00')`
-3. `shows Remove goal button only when goal exists` — `initialGoal: 500.0`, expects `mealPlannerBudgetRemoveGoal` present
-4. `does not show Remove goal button when no goal` — no initial goal, expects key absent
-5. `Save button does nothing when field is empty` — taps Save with empty field, sheet remains
+No new ARB keys were needed — `clearPurchasedTitle` and `clearPurchasedConfirmMessage` already existed in the ARB and generated localizations.
 
 ## Self-Review Notes
 
-- `mocktail` import removed from test — not needed (no mocks, real provider with SharedPreferences mock)
-- `AppTheme.light` import path confirmed as `package:shopping_list/theme/app_theme.dart` (re-exports core)
-- `monthlyBudgetGoalProvider` is a codegen `@riverpod` class; notifier accessed via `.notifier`, `setGoal(double?)` confirmed
-- `_initialized` guard prevents controller text being reset on each rebuild after provider resolves
-- `context.mounted` check before `Navigator.pop` guards async gap
-- No raw numeric literals; all spacing/radius via tokens
-- `test/app/meal_planner/widgets/` directory created implicitly by file creation
+- `flutter gen-l10n` was not needed (no ARB changes)
+- `flutter analyze --fatal-infos` shows zero issues in `list_screen_body.dart`
+- `unawaited()` pattern is consistent with other fire-and-forget async calls in the file
+- `always_put_control_body_on_new_line` lint respected throughout
+- No raw color or numeric literals introduced
+
+## Follow-up Fix (Post-Review)
+
+Fix: added mounted guard after showDialog await — prevents state mutations on unmounted widgets, matching pattern in `_deleteSelected()`.
+
+Commit: edcf51f
 
 ## Concerns
 
-None. The implementation matches the spec exactly and all imports resolve to existing symbols.
+None.
