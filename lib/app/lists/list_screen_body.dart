@@ -218,7 +218,7 @@ class _ListScreenBodyState extends ConsumerState<ListScreenBody>
         ],
       ),
     );
-    if (confirmed == true) {
+    if (confirmed == true && mounted) {
       await _clearPurchased();
     }
   }
