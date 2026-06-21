@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -130,6 +144,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -334,6 +355,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingProducts": {
     "placeholders": {
       "error": {
@@ -481,6 +505,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1105,6 +1136,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1231,6 +1272,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1263,6 +1311,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@progressBudget": {
     "placeholders": {
@@ -1324,7 +1395,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1448,23 +1533,37 @@
   "addingItems": "Listeye öğeler ekleniyor...",
   "addingToPantry": "Kilere ekleniyor...",
   "advancedFeatures": "Gelişmiş özellikler",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "İşlemler çalıştırılamadı",
+  "agentActionsPremium": "Eylemler Premium gerektirir",
+  "agentActionsRunning": "Eylemler çalıştırılıyor...",
+  "aiApiError": "AI hizmeti bir hata döndürdü ({statusCode}).",
   "aiAssistant": "AI Asistan",
   "aiAssistantDescription": "AI asistanımızla akıllı öneriler, tarifler ve kişiselleştirilmiş ipuçları alın.",
   "aiAssistantTitle": "Yapay Zeka Asistanı",
+  "aiConnectionError": "AI hizmetine bağlanılamadı. Bağlantınızı kontrol edin.",
   "aiCreditsRemaining": "{remaining} kredi kaldı",
+  "aiEmptyResponseError": "AI hizmeti boş bir yanıt döndürdü.",
   "aiEnergy": "Yapay Zeka Enerjisi",
   "aiEnergyLow": "Düşük yapay zeka enerjisi",
   "aiError": "Üzgünüz, isteğiniz işlenirken bir hata oluştu. Bağlantınızı kontrol edin veya daha sonra tekrar deneyin.",
+  "aiGeneratingResponse": "Yanıt oluşturuluyor…",
+  "aiInvalidResponseError": "AI hizmeti geçersiz bir yanıt döndürdü.",
   "aiLimitAlmostReached": "AI mesajları neredeyse tükendi",
   "aiPremiumDescription": "Bu etkileşimli arayüz, gelişmiş yapay zekayı kullanır ve Pro üyelere özeldir veya hızlı bir reklam aracılığıyla sunulur.",
+  "aiRateLimitError": "Kısa sürede çok fazla mesaj var. Birkaç saniye bekleyip tekrar deneyin.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} bugün",
+  "aiSection": "Yapay Zeka Asistanı",
   "aiSubscribeUnlimited": "Sınırsız yapay zeka için abone olun",
   "aiTeaserFallback": "Tam yanıtın kilidini açmak ve alışverişiniz için sınırsız AI ipuçları almak için Premium'a abone olun...",
+  "aiTimeoutError": "Talep çok uzun sürdü. Lütfen tekrar deneyin.",
   "aiUnlockUnlimited": "Sınırsız yapay zekanın kilidini açın",
   "aiUsageExhausted": "Aylık AI sınırına ulaşıldı. Sınırsız olarak Pro'ya yükseltin →",
   "aiUsageWarning": "{remaining} Bu ay kalan AI işlemleri — sınırsız yükseltme",
   "aiVoiceCommandTooltip": "AI Ses Komutu (Premium)",
   "aiWelcomeContent": "Merhaba! 👋 Ben **Kipi**, kişisel alışveriş ve yemek tarifi asistanınım!\n\nSize yardım etmek için buradayım:\n🛒 Alışverişinizi otomatik olarak kategorilere göre **düzenleyin**\n💰 **Bütçenizi takip edin** ve paradan tasarruf etmenizi sağlayacak ipuçları verin\n🍲 **Elinizde olanlarla lezzetli tarifler önerin**\n\nBugün sana nasıl yardımcı olabilirim? İlk listenizi oluşturarak başlayabilirsiniz!",
+  "aiWelcomeSuggestBarbecue": "Barbekü planlayın",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, barbekü düzenliyorum - alışveriş listesini oluşturmama yardım et",
   "aiWelcomeSuggestCreateList": "İlk listemi oluştur",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, ilk alışveriş listemi oluşturmama yardım et",
   "aiWelcomeSuggestSave": "Paradan nasıl tasarruf edilir?",
@@ -1474,9 +1573,12 @@
   "appTitle": "Alışveriş Listesi",
   "appearance": "Görünüm",
   "archiveList": "Listeyi arşivle",
+  "artifactBudgetLabel": "Bütçe:",
+  "artifactSynced": "Senkronize edildi",
   "assistantHistory": "Asistan geçmişi",
   "assistantHistorySubtitle": "Konuşma geçmişinizi görüntüleyin",
   "assistantName": "Asistan adı",
+  "assistantRole": "Asistan",
   "backToChat": "Sohbete Geri Dön",
   "backToToday": "Bugüne dön",
   "backupExported": "Yedek dışa aktarıldı!",
@@ -1484,6 +1586,7 @@
   "backupPremiumDescription": "Yedekleme ve dışa aktarma bir premium özelliğidir",
   "backupSubtitle": "Verilerinizi dışa veya içe aktarın",
   "backupTitle": "Yedekleme",
+  "badResponse": "Kötü yanıt",
   "badgeBeginner": "Acemi",
   "badgeOrganized": "Organize",
   "badgeSavingMaster": "Master kaydetme",
@@ -1509,9 +1612,11 @@
   "catOthers": "Diğer",
   "catalogAddItems": "{count} {count, plural, one{item} other{items}} ekle →",
   "catalogBrowse": "Kataloğa Göz Atın",
+  "catalogCategories": "Kategoriler",
   "catalogFilterNational": "Vatandaşlar",
   "catalogMyFrequents": "Sık Kullanılanlarım",
   "catalogProductNotFound": "Ürün bulunamadı, adını yazın",
+  "catalogRareBadge": "Nadir",
   "catalogRareSection": "ülkenizde daha az yaygın",
   "catalogSearchGlobal": "Herhangi bir ürünü arayın...",
   "catalogSearchInCategory": "{category}'da ara...",
@@ -1520,16 +1625,43 @@
   "catalogTitle": "Katalog",
   "categorizingItems": "Öğeler sınıflandırılıyor...",
   "category": "Kategori",
+  "categoryAlcohol": "Alkollü içecekler",
+  "categoryBaby": "Bebek",
+  "categoryBakery": "Fırın",
+  "categoryBeverages": "İçecekler",
+  "categoryCanned": "Konserve ürünler",
+  "categoryCleaning": "Temizlik",
+  "categoryColdCuts": "Soğuk etler",
   "categoryColorLabel": "Renk",
+  "categoryDairy": "Günlük",
+  "categoryFish": "Balık",
+  "categoryFrozen": "Dondurulmuş gıdalar",
+  "categoryFruits": "Meyveler",
+  "categoryGrains": "Tahıllar ve tahıllar",
+  "categoryHygiene": "Kişisel bakım",
   "categoryIconLabel": "Simge",
   "categoryLimitReached": "Ücretsiz sürümde 10 kategori sınırı bulunmaktadır. Pro'ya yükseltin!",
+  "categoryMeat": "Et",
   "categoryName": "Kategori adı",
   "categoryNameHint": "Örn: Etler",
+  "categoryOthers": "Diğer",
+  "categoryPet": "Evcil hayvan malzemeleri",
+  "categorySeasonings": "Baharatlar",
+  "categorySweets": "Tatlılar ve tatlılar",
+  "categoryUtilities": "Ev malzemeleri",
+  "categoryVegetables": "Sebze",
+  "chatEmptyGreeting": "Merhaba {name}, ben Kipi 👋",
+  "chatEmptyGreetingNoName": "Merhaba ben Kipi 👋",
+  "chatEmptyPitch": "Listeler oluşturuyorum, tarifler öneriyorum ve nereye kaydedeceğimi buluyorum. Nereden başlayacağız?",
   "chatEmptySubtitle": "Başlamak için ürün önerileri, tarifler veya tasarruf ipuçları isteyin.",
   "chatEmptyTitle": "Sohbetiniz boş",
   "chatError": "Sohbet yüklenirken hata: {error}",
   "chatHint": "Mesajınızı yazın...",
   "chatHintBlocked": "Sohbet etmek için AI'nın kilidini açın",
+  "chatHistoryErrorBody": "Bizim açımızdan bir şeyler ters gitti. Tekrar denemek için Yeniden dene'ye dokunun.",
+  "chatHistoryErrorTitle": "Bu görüşme yüklenemedi",
+  "chatHistoryOfflineBody": "İnternet bağlantınızı kontrol edip tekrar deneyin.",
+  "chatHistoryOfflineTitle": "Çevrimdışısınız",
   "chatSubtitle": "Öğe önerileri, tarifler veya tasarruf ipuçları isteyin.",
   "chatSubtitleShort": "Fiyatlar, tarifler, organizasyon hakkında bilgi alın...",
   "checkingItem": "Öğe kontrol ediliyor...",
@@ -1540,6 +1672,7 @@
   "chooseImageSource": "Resim kaynağını seçin",
   "chooseLanguage": "Dil Seçiniz",
   "chooseThemeColor": "Tema Rengini Seçin",
+  "chooseThemeMode": "Tema modunu seçin",
   "clear": "Temizle",
   "clearHistory": "Geçmişi Temizle",
   "clearHistoryConfirm": "Bu oturumdaki tüm mesajlar temizlensin mi?",
@@ -1588,6 +1721,10 @@
   "customizeAssistant": "Özelleştirmek",
   "dark": "Karanlık",
   "data": "Veri",
+  "dateGroupOlder": "daha yaşlı",
+  "dateGroupPrevious7Days": "Önceki 7 gün",
+  "dateGroupToday": "Bugün",
+  "dateGroupYesterday": "Dün",
   "dayFri": "Cuma",
   "dayMon": "Pazartesi",
   "daySat": "Doygunluk",
@@ -1611,6 +1748,7 @@
   "deleteRecipeConfirmMsg": "\"{recipeName}\" öğesini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
   "deleteSession": "Sohbeti Sil",
   "deleteSessionConfirm": "Bu sohbeti silmek istediğinizden emin misiniz? Mesajlar kalıcı olarak kaybolacak.",
+  "deletedList": "Silinen liste",
   "deselectAll": "Tümünün seçimini kaldır",
   "dietaryRestrictions": "Diyet Kısıtlamaları",
   "dietaryRestrictionsHint": "Örn: vegan, vejetaryen, glutensiz",
@@ -1623,6 +1761,7 @@
   "editCategoryDialog": "Kategoriyi düzenle",
   "editItem": "Öğeyi Düzenle",
   "editItemPrice": "Tahmini fiyat",
+  "editMessage": "Mesajı düzenle",
   "editPantryItem": "{name} düzenle",
   "editRecipe": "Düzenlemek",
   "editRecipeTitle": "Tarifi Düzenle",
@@ -1648,6 +1787,7 @@
   "errorLoadingChat": "Hata! Sohbet yüklenirken bir şeyler ters gitti.",
   "errorLoadingChatSubtitle": "Bağlantınızı kontrol edin veya daha sonra tekrar deneyin.",
   "errorLoadingHistory": "Geçmiş yüklenirken hata oluştu",
+  "errorLoadingItems": "Öğeler yüklenirken hata oluştu",
   "errorLoadingLists": "Listeler yüklenirken hata oluştu",
   "errorLoadingProducts": "Ürünler yüklenirken hata oluştu: {error}",
   "errorLoadingRecipes": "Tarifler yüklenirken hata oluştu",
@@ -1722,6 +1862,7 @@
   "generatingShareLink": "Paylaşım bağlantısı oluşturuluyor...",
   "gestureHint": "Seçmek için basılı tutun • Kaldırmak için kaydırın",
   "globalAssistant": "Genel asistan",
+  "goodResponse": "İyi yanıt",
   "howCanIHelp": "Nasıl yardımcı olabilirim?",
   "icon": "Simge:",
   "idealQty": "İdeal miktar",
@@ -1740,14 +1881,18 @@
   "inviteToList": "Listeye davet et",
   "itemAdded": "{name} eklendi",
   "itemAddedSnack": "{name} eklendi",
+  "itemAddedToList": "Öğe listeye eklendi.",
   "itemName": "Öğe adı",
   "itemRemoved": "Öğe kaldırıldı",
   "itemsAddedSuccess": "Öğeler listeye başarıyla eklendi!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} öğenin satın alınması gerekiyor",
   "itemsPurchased": "Satın Alınan Öğeler",
   "itemsPurchasedCount": "{purchased} / {total} satın alındı",
   "itemsPurchasedShort": "{purchased}/{total} satın alındı",
   "itemsWillBeAdded": "{count} öğe eklenecek",
+  "keepAdding": "Eklemeye devam et",
+  "keepAddingSubtitle": "Birden fazla öğe eklemek için sayfayı açık tutun",
   "kipiListProActive": "KipiList Pro Aktif",
   "kipiListTitle": "Kipi Listesi",
   "kipiQuickBarHint": "Ne satın almanız gerekiyor?",
@@ -1786,16 +1931,22 @@
   "marketsToAvoid": "Kaçınılması Gereken Piyasalar",
   "marketsToAvoidHint": "Örn: Y Pazarı, Z Pazarı",
   "mealPlannerAddMeal": "Yemek Ekle",
+  "mealPlannerAddType": "Yemek türü ekle",
+  "mealPlannerCustomTypeLabel": "Özel tür",
   "mealPlannerDateLabel": "Tarih",
+  "mealPlannerDefaultTypeLabel": "Varsayılan tür",
   "mealPlannerDeleteMeal": "Yemeği kaldır",
   "mealPlannerEditMeal": "Yemeği Düzenle",
+  "mealPlannerEditType": "Yemek türünü düzenle",
   "mealPlannerError": "Yemek planı yüklenirken hata oluştu",
+  "mealPlannerEstimatePartial": "Kısmi fiyat verileri içeren tariflere dayalı tahmin.",
   "mealPlannerGenerateList": "Alışveriş listesi oluştur",
   "mealPlannerGenerateListConfirm": "Bu hafta planladığınız öğünlerdeki tüm malzemeleri alışveriş listenize eklemek ister misiniz?",
   "mealPlannerGenerateListEmpty": "Eklenecek malzeme yok. Önce tariflerle birlikte bazı yemekler planlayın.",
   "mealPlannerGenerateListNoList": "Öncelikle bir alışveriş listesi oluşturun.",
   "mealPlannerGenerateListSuccess": "{count} içerik(ler) listenize eklendi!",
   "mealPlannerLoading": "Yemek planı yükleniyor...",
+  "mealPlannerManageTypes": "Yemek türlerini yönetin",
   "mealPlannerMealDeleted": "Yemek kaldırıldı",
   "mealPlannerMealTypeBreakfast": "Kahvaltı",
   "mealPlannerMealTypeDinner": "Akşam yemeği",
@@ -1815,6 +1966,12 @@
   "mealPlannerServings": "{count,plural, one{{count} porsiyon} other{{count} porsiyon}}",
   "mealPlannerServingsLabel": "Porsiyon",
   "mealPlannerTitle": "Yemek Planlayıcı",
+  "mealPlannerTypeColor": "Renk",
+  "mealPlannerTypeDeleteConfirm": "Bu yemek türünü silmek istediğinizden emin misiniz? Bu türle planlanan yemekler kalacaktır.",
+  "mealPlannerTypeDeleteError": "Bu yemek türü silinemiyor.",
+  "mealPlannerTypeIcon": "Simge",
+  "mealPlannerTypeName": "İsim",
+  "mealPlannerTypeNameEmpty": "Ad boş olamaz",
   "mealPlannerViewMonthly": "Aylık görünüm",
   "mealPlannerViewWeekly": "Haftalık görünüm",
   "mealPlannerWeekEmpty": "Bu hafta için planlanmış bir şey yok",
@@ -1871,60 +2028,60 @@
   "noRecipesSavedHint": "Aşağıdaki düğmeye dokunarak ilk özel tarifinizi oluşturun.",
   "noTracking": "Takip yok",
   "notInformed": "Ayarlanmadı",
-  "obHookCta": "Get Started",
-  "obHookSocial": "Trusted by thousands of shoppers worldwide",
-  "obHookSubtitle": "AI-powered lists that save you time and money, every single trip.",
-  "obHookTitle": "Smarter shopping starts here",
-  "obLoadingStepHabits": "Tuning to your shopping routine",
-  "obLoadingStepLists": "Preparing your smart lists",
-  "obLoadingStepProfile": "Adjusting for your household",
-  "obLoadingStepSavings": "Optimizing your savings strategy",
-  "obLoadingTitle": "Building your personalized plan...",
-  "obLoginApple": "Continue with Apple",
-  "obLoginError": "Sign-in failed. Try again or skip for now.",
-  "obLoginGoogle": "Continue with Google",
-  "obLoginSkip": "Not now",
-  "obLoginSubtitle": "Sign in so your lists sync across devices",
-  "obLoginTitle": "Save your plan",
-  "obPaywallRetry": "Try again",
-  "obPaywallTitle": "Unlock your plan",
-  "obQuizFrequencyBiweekly": "Every two weeks",
-  "obQuizFrequencyDaily": "Almost every day",
-  "obQuizFrequencyMonthly": "Big monthly haul",
-  "obQuizFrequencyTitle": "How often do you shop for groceries?",
-  "obQuizFrequencyWeekly": "Once a week",
-  "obQuizHouseholdCouple": "Me and my partner",
-  "obQuizHouseholdFamilyLarge": "Family of 5+",
-  "obQuizHouseholdFamilySmall": "Family of 3–4",
-  "obQuizHouseholdSolo": "Just me",
-  "obQuizHouseholdTitle": "Who do you shop for?",
-  "obQuizMethodMemory": "I keep it in my head",
-  "obQuizMethodNone": "I don't make lists",
-  "obQuizMethodNotes": "Notes app",
-  "obQuizMethodPaper": "Pen and paper",
-  "obQuizMethodTitle": "How do you make shopping lists today?",
-  "obQuizPainForget": "I always forget items",
-  "obQuizPainOverspend": "I spend more than planned",
-  "obQuizPainTime": "It takes too much time",
-  "obQuizPainTitle": "What frustrates you most about shopping?",
-  "obQuizPainWaste": "Food goes to waste at home",
-  "obQuizSavingsLarge": "As much as possible",
-  "obQuizSavingsMedium": "Around 10% of my grocery bill",
-  "obQuizSavingsSmall": "A little — every bit counts",
-  "obQuizSavingsTitle": "How much would you like to save monthly?",
-  "obRevealFeatureAi": "AI builds and organizes your lists",
-  "obRevealFeatureBudget": "Spending tracked against your goal",
-  "obRevealFeaturePantry": "Pantry tracking cuts food waste",
-  "obRevealFeatureShare": "Real-time sharing with your household",
-  "obRevealMonth": "Month {n}",
-  "obRevealSavingsCaption": "Projected savings with KipiList",
-  "obRevealSubtitle": "Here's how KipiList will work for you",
-  "obRevealTitle": "Your plan is ready!",
-  "obSocialQuote1": "I never forget anything anymore. The AI builds my list in seconds.",
-  "obSocialQuote2": "We cut our grocery bill noticeably in the first month.",
-  "obSocialQuote3": "Sharing the list with my partner ended our shopping chaos.",
-  "obSocialSubtitle": "Shoppers like you are already saving with KipiList",
-  "obSocialTitle": "You're in good company",
+  "obHookCta": "Başlayın",
+  "obHookSocial": "Dünya çapında binlerce alışverişçinin güvendiği",
+  "obHookSubtitle": "Her yolculukta zamandan ve paradan tasarruf etmenizi sağlayan yapay zeka destekli listeler.",
+  "obHookTitle": "Daha akıllı alışveriş burada başlıyor",
+  "obLoadingStepHabits": "Alışveriş rutininize uyum sağlama",
+  "obLoadingStepLists": "Akıllı listelerinizi hazırlamak",
+  "obLoadingStepProfile": "Evinize göre ayarlama",
+  "obLoadingStepSavings": "Tasarruf stratejinizi optimize etme",
+  "obLoadingTitle": "Kişiselleştirilmiş planınızı oluşturmak...",
+  "obLoginApple": "Apple'la devam et",
+  "obLoginError": "Oturum açma başarısız oldu. Tekrar deneyin veya şimdilik atlayın.",
+  "obLoginGoogle": "Google ile devam et",
+  "obLoginSkip": "Şimdi değil",
+  "obLoginSubtitle": "Listelerinizin cihazlar arasında senkronize edilmesi için oturum açın",
+  "obLoginTitle": "Planınızı kaydedin",
+  "obPaywallRetry": "Tekrar deneyin",
+  "obPaywallTitle": "Planınızın kilidini açın",
+  "obQuizFrequencyBiweekly": "Her iki haftada bir",
+  "obQuizFrequencyDaily": "Neredeyse her gün",
+  "obQuizFrequencyMonthly": "Büyük aylık taşıma",
+  "obQuizFrequencyTitle": "Ne sıklıkla market alışverişi yaparsınız?",
+  "obQuizFrequencyWeekly": "Haftada bir",
+  "obQuizHouseholdCouple": "Ben ve ortağım",
+  "obQuizHouseholdFamilyLarge": "5+ kişilik aile",
+  "obQuizHouseholdFamilySmall": "3-4 kişilik aile",
+  "obQuizHouseholdSolo": "Benim",
+  "obQuizHouseholdTitle": "Kimin için alışveriş yapıyorsun?",
+  "obQuizMethodMemory": "Bunu kafamda tutuyorum",
+  "obQuizMethodNone": "Liste yapmıyorum",
+  "obQuizMethodNotes": "Notlar uygulaması",
+  "obQuizMethodPaper": "Kalem ve kağıt",
+  "obQuizMethodTitle": "Bugün alışveriş listelerini nasıl hazırlıyorsunuz?",
+  "obQuizPainForget": "Eşyaları hep unutuyorum",
+  "obQuizPainOverspend": "Planladığımdan daha fazlasını harcıyorum",
+  "obQuizPainTime": "Çok fazla zaman alıyor",
+  "obQuizPainTitle": "Alışverişte sizi en çok ne sinirlendirir?",
+  "obQuizPainWaste": "Evde yiyecekler çöpe gidiyor",
+  "obQuizSavingsLarge": "Mümkün olduğu kadar",
+  "obQuizSavingsMedium": "Market faturamın yaklaşık %10'u",
+  "obQuizSavingsSmall": "Biraz — her zerre önemlidir",
+  "obQuizSavingsTitle": "Aylık ne kadar tasarruf etmek istersiniz?",
+  "obRevealFeatureAi": "Yapay zeka listelerinizi oluşturur ve düzenler",
+  "obRevealFeatureBudget": "Hedefinize göre takip edilen harcamalar",
+  "obRevealFeaturePantry": "Kiler takibi gıda israfını azaltır",
+  "obRevealFeatureShare": "Evinizle gerçek zamanlı paylaşım",
+  "obRevealMonth": "Ay {n}",
+  "obRevealSavingsCaption": "KipiList ile öngörülen tasarruflar",
+  "obRevealSubtitle": "İşte KipiList'in sizin için nasıl çalışacağı",
+  "obRevealTitle": "Planınız hazır!",
+  "obSocialQuote1": "Artık hiçbir şeyi unutmuyorum. Yapay zeka listemi saniyeler içinde oluşturuyor.",
+  "obSocialQuote2": "İlk ayda market faturamızı gözle görülür şekilde kestik.",
+  "obSocialQuote3": "Listeyi eşimle paylaşmak alışveriş kaosuna son verdi.",
+  "obSocialSubtitle": "Sizin gibi alışveriş yapanlar KipiList ile zaten tasarruf ediyor",
+  "obSocialTitle": "İyi bir arkadaşsın",
   "observations": "Notlar",
   "observationsHint": "Asistan için diğer tercihler",
   "offlineBanner": "Çevrimdışısınız",
@@ -2040,6 +2197,7 @@
   "onboardingViewAllPlans": "Tüm planları görüntüle",
   "onboardingWelcomeDesc": "Alışverişinizi organize etmenin ve paradan tasarruf etmenin en akıllı yolu.",
   "onboardingWelcomeTitle": "KipiList'a hoş geldiniz",
+  "openConversation": "Konuşmayı aç",
   "openMenu": "Menüyü aç",
   "organizeAisles": "Reyonlara göre düzenle",
   "organizeAislesPrompt": "Market reyonlarına göre düzenle.",
@@ -2051,15 +2209,18 @@
   "pantryAppBar": "Kiler",
   "pantryAvailabilityAll": "Her şey hazır!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} kilerde",
+  "pantryDeficitCount": "{count}{unit} eksik",
   "pantryEditTitle": "{name} düzenle",
   "pantryEmpty": "Boş kiler",
   "pantryEmptySubtitle": "Evde bulundurmak istediğiniz ürünleri ekleyin",
+  "pantryItemAdded": "Öğe eklendi",
   "pantryItemRemoved": "Öğe kaldırıldı",
   "pantryLimitReached": "Ücretsiz planda kilerdeki {count} öğe sınırı. Daha fazlasını eklemek için yükseltin.",
   "paywallAfterItem1": "Tahıllar",
   "paywallAfterItem2": "Temizlik",
   "paywallAfterItem3": "Etler",
   "paywallAfterItem4": "Fırın",
+  "paywallBasedOnAnswers": "Yanıtlarınıza göre kişiselleştirildi",
   "paywallBeforeAfterTitle": "Yapay Zekanın Öncesi ve Sonrası:",
   "paywallBeforeItem1": "pirinç",
   "paywallBeforeItem2": "sabun",
@@ -2097,6 +2258,8 @@
   "paywallGoalHeadlinePantry": "{name}, kilerinizi mükemmel bir şekilde takip edin!",
   "paywallGoalHeadlineRecipes": "{name}, yeni tarifler keşfet!",
   "paywallGoalHeadlineSaveMoney": "{name}, her yolculukta tasarruf edin!",
+  "paywallHeroFeatureDesc": "Tüm listeyi söyleyin veya yapıştırın; yapay zeka, listeyi saniyeler içinde sıralar, kategorilere ayırır ve bütçelendirir",
+  "paywallHeroFeatureTitle": "Yapay Zeka Alışveriş Asistanı",
   "paywallHeroHeadline": "Kipi AI her zaman yanınızda",
   "paywallHeroSubtitle": "Cebinizdeki AI ile öğeler ekleyin, listeleri düzenleyin ve zamandan tasarruf edin",
   "paywallHeroSubtitlePersonalized": "Hey {name}, alışverişinizi doğru şekilde düzenleyin.",
@@ -2131,6 +2294,11 @@
   "paywallTestimonial2Text": "Bir liste öğesini bir daha asla unutmadım. AI sohbeti sansasyonel!",
   "paywallTestimonialAuthor": "Anne S.",
   "paywallTestimonialsTitle": "Kullanıcılarımız ne diyor:",
+  "paywallTimelineChargeDesc": "Aboneliğiniz başlıyor; istediğiniz zaman iptal edin",
+  "paywallTimelineDay": "Gün {day}",
+  "paywallTimelineReminderDesc": "Deneme süresi bitmeden size hatırlatırız",
+  "paywallTimelineToday": "Bugün",
+  "paywallTimelineTodayDesc": "Tam erişimin kilidini anında açın",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Ücretsiz Denemeyi Başlat",
   "paywallTrialDays": "{days} GÜN ÜCRETSİZ",
@@ -2153,11 +2321,15 @@
   "prefSharing": "Listeleri paylaş",
   "prefUnlimitedLists": "Sınırsız liste",
   "prefUnlimitedPantry": "Sınırsız kiler",
+  "preferencesSection": "Tercihler",
   "preferredMarket": "Tercih Edilen Pazar",
   "preferredMarketHint": "Örn: Süpermarket X",
+  "premiumActionsPrompt": "Otomatik işlemlerin kilidini açmak için Premium'a abone olun.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Kilidi açmak için yükseltin",
   "prepTime": "Hazırlık zamanı",
   "prepTimeMinutes": "Hazırlık süresi (dakika)",
+  "previousItemState": "Önceki durum: {quantity} {unit} [{category}]{price}",
   "privacy": "Gizlilik",
   "processing": "İşleme...",
   "product": "Ürün",
@@ -2177,21 +2349,34 @@
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "Listeleriniz sorgulanıyor...",
+  "quickActionAi": "Kipi ile sohbet et",
+  "quickActionPantry": "Kileri görüntüle",
   "quickRecipe": "Hızlı tarif",
   "quickRecipePrompt": "Listemdeki öğelerle tarif öner.",
   "quickReplies": "Hızlı yanıtlar:",
   "quickSuggestions": "Hızlı öneriler",
+  "recipeAddError": "Listenize eklenemedi. Lütfen tekrar deneyin.",
   "recipeAddToList": "Alışveriş listesine ekle",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}}, {listName}'e eklendi",
   "recipeCreated": "Tarif oluşturuldu!",
   "recipeDeleted": "Tarif silindi",
+  "recipeEstimatePartial": "Fiyatlı içeriklere dayalı kısmi tahmin.",
+  "recipeEstimatedCostPerServing": "{cost} / porsiyon",
+  "recipeEstimatedTotalCost": "Tahmini toplam maliyet",
   "recipeImage": "Tarif resmi",
+  "recipeIngredientInPantry": "Kilerde",
+  "recipeIngredientLowPantry": "Kilerde düşük",
   "recipeIngredientSingular": "1 bileşen",
   "recipeIngredientsPlural": "{count} malzemeler",
+  "recipeManualTotalCost": "Manuel toplam maliyet",
+  "recipeManualTotalCostHint": "İçerik fiyatlarından tahmin yapmak için boş bırakın.",
   "recipeName": "Tarif adı",
   "recipeSaved": "Tarif kaydedildi!",
+  "recipeServesCount": "{count} hizmet veriyor",
   "recipeSuggestion": "Tarif önerisi",
   "recipeTags": "Tarif etiketleri",
+  "recipeTapToCheck": "Yemek pişirirken kontrol etmek için bir malzemeye dokunun",
+  "recipeYieldServings": "Verim porsiyonları",
   "regenerate": "Yeniden oluştur",
   "remove": "Kaldır",
   "removeBudget": "Kaldır",
@@ -2226,9 +2411,12 @@
   "scanBarcodeTitle": "Barkodu Tara",
   "scanProduct": "Ürünü Tara",
   "scanProductTitle": "Ürünü Tara",
+  "scrollToBottom": "Aşağıya doğru kaydır",
+  "searchConversations": "Konuşmaları arayın",
   "searchCurrency": "Para birimini ara...",
   "searchInConversation": "Görüşmede ara...",
   "searchLanguage": "Dil ara...",
+  "searchMessages": "Mesajları ara...",
   "searchRecipes": "Tarif ara...",
   "searchingCategories": "Kategoriler aranıyor...",
   "searchingProducts": "Ürünler aranıyor...",
@@ -2268,6 +2456,7 @@
   "signInGoogle": "Google ile giriş yap",
   "skip": "Atlamak",
   "smartOrganization": "Akıllı Düzenleme",
+  "somethingWentWrong": "Bir şeyler ters gitti",
   "sortAZ": "A'dan Z'ye",
   "sortCategory": "Kategori",
   "sortDate": "Tarih",
@@ -2299,6 +2488,7 @@
   "themeColor": "Tema rengi",
   "themeGreen": "Yeşil",
   "themeIndigo": "Çivit",
+  "themeMode": "Tema modu",
   "themeOrange": "Turuncu",
   "themePink": "Pembe",
   "themePurple": "Mor",
@@ -2316,6 +2506,7 @@
   "toolSaveRecipe": "Tarifi kaydet",
   "toolShareList": "Listeyi paylaş",
   "totalEstimated": "Toplam tahmini: {amount}",
+  "totalEstimatedLabel": "Tahmini toplam",
   "totalSavings": "Toplam Tasarruf",
   "totalSpending": "Toplam Harcama",
   "trackStock": "Stok takibi",
@@ -2323,6 +2514,7 @@
   "trackStockInactive": "Alışveriş önerisi oluşturmaz",
   "uncheckingItem": "Öğenin işareti kaldırılıyor...",
   "undo": "Geri al",
+  "undoChanges": "Değişiklikleri geri al",
   "unit": "Birim",
   "unitPack": "paket",
   "unlockAi": "Sınırsız yapay zekanın kilidini açın",
@@ -2336,6 +2528,7 @@
   "updatingPantry": "Kiler güncelleniyor...",
   "upgrade": "Yükselt",
   "userProfile": "Kullanıcı Profili",
+  "userRole": "Sen",
   "validForLimitedTime": "Sınırlı süre için geçerlidir",
   "version": "Sürüm",
   "viewActive": "Aktif Olanları Gör",
@@ -2343,6 +2536,7 @@
   "viewHistory": "Geçmişi Gör",
   "viewItems": "Öğeleri görüntüle",
   "viewList": "Listeyi görüntüle",
+  "viewPlans": "Planları görüntüle",
   "viewPro": "Pro'yu Görüntüle",
   "viewRecipe": "Tarifi Görüntüle",
   "voiceCommandContent": "Listenizi yönetmek için doğal bir şekilde konuşun!\n\nÖrnekler:\n• 'Ekmek, peynir ve jambon ekle'\n• 'Çamaşır deterjanını kaldır'\n• 'Temayı mavi yap'\n\nBu, KipiList Premium'un özel bir özelliğidir.",

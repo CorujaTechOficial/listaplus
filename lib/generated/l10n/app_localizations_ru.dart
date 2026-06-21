@@ -246,6 +246,11 @@ class AppLocalizationsRu extends AppLocalizations {
   String get noItemsToBuy => 'Нет товаров для покупки';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Отсутствует $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Покупки из кладовой';
 
   @override
@@ -312,6 +317,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get settingsAppBar => 'Настройки';
 
   @override
+  String get preferencesSection => 'Предпочтения';
+
+  @override
+  String get aiSection => 'ИИ-помощник';
+
+  @override
   String get language => 'Язык';
 
   @override
@@ -340,6 +351,12 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get appearance => 'Внешний вид';
+
+  @override
+  String get themeMode => 'Тематический режим';
+
+  @override
+  String get chooseThemeMode => 'Выберите режим темы';
 
   @override
   String get light => 'Светлая';
@@ -589,6 +606,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get trackStockInactive => 'Не создаёт предложения покупок';
 
   @override
+  String get keepAdding => 'Продолжайте добавлять';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Держите лист открытым, чтобы добавить несколько элементов.';
+
+  @override
   String get createListDialog => 'Создать список';
 
   @override
@@ -693,6 +717,36 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Хороший ответ';
+
+  @override
+  String get badResponse => 'Плохой ответ';
+
+  @override
+  String get scrollToBottom => 'Прокрутить вниз';
+
+  @override
+  String get somethingWentWrong => 'Что-то пошло не так';
+
+  @override
+  String get editMessage => 'Редактировать сообщение';
+
+  @override
+  String get searchConversations => 'Поиск бесед';
+
+  @override
+  String get dateGroupToday => 'Сегодня';
+
+  @override
+  String get dateGroupYesterday => 'Вчера';
+
+  @override
+  String get dateGroupPrevious7Days => 'Предыдущие 7 дней';
+
+  @override
+  String get dateGroupOlder => 'Старше';
+
+  @override
   String get aiAssistantTitle => 'ИИ-помощник';
 
   @override
@@ -733,6 +787,33 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Достигнут месячный лимит AI. Обновите до Pro без ограничений →';
+
+  @override
+  String get undo => 'Отменить';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'КипиЛист';
@@ -943,6 +1024,20 @@ class AppLocalizationsRu extends AppLocalizations {
   String get recipeAddToList => 'Добавить в список покупок';
 
   @override
+  String get recipeAddError =>
+      'Не удалось добавить в ваш список. Пожалуйста, попробуйте еще раз.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Коснитесь ингредиента, чтобы проверять его во время приготовления.';
+
+  @override
+  String get recipeIngredientInPantry => 'В кладовой';
+
+  @override
+  String get recipeIngredientLowPantry => 'Низко в кладовке';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1061,12 +1156,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get paywallSelectPlan => 'Выберите свой план:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'СОХРАНИТЬ $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Всего $price/месяц';
   }
 
@@ -1102,6 +1197,38 @@ class AppLocalizationsRu extends AppLocalizations {
   String get paywallRestore => 'Восстановить';
 
   @override
+  String get paywallTimelineToday => 'Сегодня';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Разблокируйте полный доступ мгновенно';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'День $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Напоминаем вам до окончания пробного периода';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Ваша подписка начинается — отмените ее в любое время';
+
+  @override
+  String get paywallHeroFeatureTitle =>
+      'Помощник по покупкам с искусственным интеллектом';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Произнесите или вставьте целый список — ИИ сортирует, классифицирует и составляет бюджет за считанные секунды.';
+
+  @override
+  String get paywallBasedOnAnswers =>
+      'Персонализировано на основе ваших ответов';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI всегда рядом с вами';
 
   @override
@@ -1134,9 +1261,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Товар удалён';
-
-  @override
-  String get undo => 'Отменить';
 
   @override
   String get emptyListTitle => 'Ваш список пуст';
@@ -1253,6 +1377,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Товар удалён';
+
+  @override
+  String get pantryItemAdded => 'Товар добавлен';
 
   @override
   String deficitItems(int deficit) {
@@ -1659,6 +1786,33 @@ class AppLocalizationsRu extends AppLocalizations {
   String get prepTimeMinutes => 'Время приготовления (минуты)';
 
   @override
+  String get recipeYieldServings => 'Доходность порций';
+
+  @override
+  String get recipeManualTotalCost => 'Общая стоимость вручную';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Оставьте пустым, чтобы оценить цены на ингредиенты.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Ориентировочная общая стоимость';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / порция';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Обслуживает $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Частичная оценка на основе ингредиентов с ценой.';
+
+  @override
   String get instructionsHint => 'Введите один шаг в строке...';
 
   @override
@@ -1787,6 +1941,10 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Оценка на основе рецептов с частичными данными о ценах.';
+
+  @override
   String get mealPlannerGenerateList => 'Создать список покупок';
 
   @override
@@ -1881,6 +2039,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get catalogRareSection => 'менее распространено в вашей стране';
 
   @override
+  String get catalogRareBadge => 'Редкий';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1898,7 +2059,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get catalogBrowse => 'Просмотреть каталог';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Категории';
 
   @override
   String get offlineBanner => 'Вы оффлайн';
@@ -1929,6 +2090,41 @@ class AppLocalizationsRu extends AppLocalizations {
     );
     return '$count $_temp0 отсутствует';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Управление типами еды';
+
+  @override
+  String get mealPlannerAddType => 'Добавить тип питания';
+
+  @override
+  String get mealPlannerEditType => 'Изменить тип питания';
+
+  @override
+  String get mealPlannerTypeName => 'Имя';
+
+  @override
+  String get mealPlannerTypeColor => 'Цвет';
+
+  @override
+  String get mealPlannerTypeIcon => 'Икона';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Вы уверены, что хотите удалить этот тип питания? Плановые приемы пищи при этом типе сохранятся.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Имя не может быть пустым';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Невозможно удалить этот тип питания.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Пользовательский тип';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Тип по умолчанию';
 
   @override
   String get expirationDate => 'Дата окончания срока';
@@ -1989,6 +2185,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Ошибка загрузки списков.';
+
+  @override
+  String get errorLoadingItems => 'Ошибка загрузки элементов';
 
   @override
   String get noListsFound => 'Списки не найдены';
@@ -2672,7 +2871,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get obQuizMethodPaper => 'Ручка и бумага';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'Приложение «Заметки»';
 
   @override
   String get obQuizMethodMemory => 'Я держу это в голове';
@@ -2769,6 +2968,214 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get obLoginError =>
       'Не удалось войти. Повторите попытку или пропустите.';
+
+  @override
+  String get searchMessages => 'Поиск сообщений...';
+
+  @override
+  String get deletedList => 'Удаленный список';
+
+  @override
+  String get openConversation => 'Открытый разговор';
+
+  @override
+  String get userRole => 'Ты';
+
+  @override
+  String get assistantRole => 'Ассистент';
+
+  @override
+  String get agentActionsRunning => 'Выполнение действий...';
+
+  @override
+  String get agentActionsFailed => 'Не удалось выполнить действия.';
+
+  @override
+  String get agentActionsPremium => 'Для действий требуется Премиум';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Отменить изменения';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Премиум)';
+  }
+
+  @override
+  String get itemAddedToList => 'Товар добавлен в список.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Предыдущее состояние: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Подпишитесь на Премиум, чтобы разблокировать автоматические действия.';
+
+  @override
+  String get viewPlans => 'Посмотреть планы';
+
+  @override
+  String get artifactSynced => 'Синхронизировано';
+
+  @override
+  String get artifactBudgetLabel => 'Бюджет:';
+
+  @override
+  String get totalEstimatedLabel => 'Расчетная сумма';
+
+  @override
+  String get quickActionPantry => 'Посмотреть кладовую';
+
+  @override
+  String get quickActionAi => 'Пообщаться с Кипи';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Служба AI вернула ошибку ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Запрос занял слишком много времени. Пожалуйста, попробуйте еще раз.';
+
+  @override
+  String get aiConnectionError =>
+      'Не удалось подключиться к службе AI. Проверьте свое соединение.';
+
+  @override
+  String get aiEmptyResponseError => 'Служба AI вернула пустой ответ.';
+
+  @override
+  String get aiInvalidResponseError => 'Служба AI вернула неверный ответ.';
+
+  @override
+  String get categoryFruits => 'Фрукты';
+
+  @override
+  String get categoryCleaning => 'Очистка';
+
+  @override
+  String get categoryBeverages => 'Напитки';
+
+  @override
+  String get categoryBakery => 'Пекарня';
+
+  @override
+  String get categoryMeat => 'Мясо';
+
+  @override
+  String get categoryDairy => 'Молочный';
+
+  @override
+  String get categoryVegetables => 'Овощи';
+
+  @override
+  String get categoryGrains => 'Зерно и крупы';
+
+  @override
+  String get categoryHygiene => 'Личная гигиена';
+
+  @override
+  String get categoryFrozen => 'Замороженные продукты';
+
+  @override
+  String get categoryCanned => 'Консервы';
+
+  @override
+  String get categorySeasonings => 'Приправы';
+
+  @override
+  String get categorySweets => 'Сладости и десерты';
+
+  @override
+  String get categoryAlcohol => 'Алкогольные напитки';
+
+  @override
+  String get categoryFish => 'Рыба';
+
+  @override
+  String get categoryColdCuts => 'Колбасное ассорти';
+
+  @override
+  String get categoryUtilities => 'Хозяйственные товары';
+
+  @override
+  String get categoryPet => 'Товары для домашних животных';
+
+  @override
+  String get categoryBaby => 'Малыш';
+
+  @override
+  String get categoryOthers => 'Другой';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Привет $name, я Кипи 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Привет, я Кипи 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Я составляю списки, предлагаю рецепты и нахожу, где сохранить. С чего начать?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Спланируйте барбекю';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Кипи, я устраиваю барбекю — помоги мне составить список покупок.';
+
+  @override
+  String get aiRateLimitError =>
+      'Слишком много сообщений за короткое время. Подождите несколько секунд и повторите попытку.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Не удалось загрузить этот разговор.';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Что-то пошло не так с нашей стороны. Нажмите «Повторить», чтобы повторить попытку.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Вы оффлайн';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Проверьте подключение к Интернету и повторите попытку.';
+
+  @override
+  String get aiGeneratingResponse => 'Создание ответа…';
 }
 
 /// The translations for Russian, as used in Russian Federation (`ru_RU`).
@@ -3013,6 +3420,11 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get noItemsToBuy => 'Нет товаров для покупки';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Отсутствует $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Покупки из кладовой';
 
   @override
@@ -3079,6 +3491,12 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get settingsAppBar => 'Настройки';
 
   @override
+  String get preferencesSection => 'Предпочтения';
+
+  @override
+  String get aiSection => 'ИИ-помощник';
+
+  @override
   String get language => 'Язык';
 
   @override
@@ -3107,6 +3525,12 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get appearance => 'Внешний вид';
+
+  @override
+  String get themeMode => 'Тематический режим';
+
+  @override
+  String get chooseThemeMode => 'Выберите режим темы';
 
   @override
   String get light => 'Светлая';
@@ -3356,6 +3780,13 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get trackStockInactive => 'Не создаёт предложения покупок';
 
   @override
+  String get keepAdding => 'Продолжайте добавлять';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Держите лист открытым, чтобы добавить несколько элементов.';
+
+  @override
   String get createListDialog => 'Создать список';
 
   @override
@@ -3460,6 +3891,36 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   }
 
   @override
+  String get goodResponse => 'Хороший ответ';
+
+  @override
+  String get badResponse => 'Плохой ответ';
+
+  @override
+  String get scrollToBottom => 'Прокрутить вниз';
+
+  @override
+  String get somethingWentWrong => 'Что-то пошло не так';
+
+  @override
+  String get editMessage => 'Редактировать сообщение';
+
+  @override
+  String get searchConversations => 'Поиск бесед';
+
+  @override
+  String get dateGroupToday => 'Сегодня';
+
+  @override
+  String get dateGroupYesterday => 'Вчера';
+
+  @override
+  String get dateGroupPrevious7Days => 'Предыдущие 7 дней';
+
+  @override
+  String get dateGroupOlder => 'Старше';
+
+  @override
   String get aiAssistantTitle => 'ИИ-помощник';
 
   @override
@@ -3500,6 +3961,9 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   @override
   String get aiUsageExhausted =>
       'Достигнут месячный лимит AI. Обновите до Pro без ограничений →';
+
+  @override
+  String get undo => 'Отменить';
 
   @override
   String get kipiListTitle => 'КипиЛист';
@@ -3710,6 +4174,20 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get recipeAddToList => 'Добавить в список покупок';
 
   @override
+  String get recipeAddError =>
+      'Не удалось добавить в ваш список. Пожалуйста, попробуйте еще раз.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Коснитесь ингредиента, чтобы проверять его во время приготовления.';
+
+  @override
+  String get recipeIngredientInPantry => 'В кладовой';
+
+  @override
+  String get recipeIngredientLowPantry => 'Низко в кладовке';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -3828,12 +4306,12 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get paywallSelectPlan => 'Выберите свой план:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'СОХРАНИТЬ $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Всего $price/месяц';
   }
 
@@ -3869,6 +4347,38 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get paywallRestore => 'Восстановить';
 
   @override
+  String get paywallTimelineToday => 'Сегодня';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Разблокируйте полный доступ мгновенно';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'День $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Напоминаем вам до окончания пробного периода';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Ваша подписка начинается — отмените ее в любое время';
+
+  @override
+  String get paywallHeroFeatureTitle =>
+      'Помощник по покупкам с искусственным интеллектом';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Произнесите или вставьте целый список — ИИ сортирует, классифицирует и составляет бюджет за считанные секунды.';
+
+  @override
+  String get paywallBasedOnAnswers =>
+      'Персонализировано на основе ваших ответов';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI всегда рядом с вами';
 
   @override
@@ -3901,9 +4411,6 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get itemRemoved => 'Товар удалён';
-
-  @override
-  String get undo => 'Отменить';
 
   @override
   String get emptyListTitle => 'Ваш список пуст';
@@ -4020,6 +4527,9 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get pantryItemRemoved => 'Товар удалён';
+
+  @override
+  String get pantryItemAdded => 'Товар добавлен';
 
   @override
   String deficitItems(int deficit) {
@@ -4426,6 +4936,33 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get prepTimeMinutes => 'Время приготовления (минуты)';
 
   @override
+  String get recipeYieldServings => 'Доходность порций';
+
+  @override
+  String get recipeManualTotalCost => 'Общая стоимость вручную';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Оставьте пустым, чтобы оценить цены на ингредиенты.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Ориентировочная общая стоимость';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / порция';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Обслуживает $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Частичная оценка на основе ингредиентов с ценой.';
+
+  @override
   String get instructionsHint => 'Введите один шаг в строке...';
 
   @override
@@ -4554,6 +5091,10 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Оценка на основе рецептов с частичными данными о ценах.';
+
+  @override
   String get mealPlannerGenerateList => 'Создать список покупок';
 
   @override
@@ -4648,6 +5189,9 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get catalogRareSection => 'менее распространено в вашей стране';
 
   @override
+  String get catalogRareBadge => 'Редкий';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4663,6 +5207,9 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get catalogBrowse => 'Просмотреть каталог';
+
+  @override
+  String get catalogCategories => 'Категории';
 
   @override
   String get offlineBanner => 'Вы оффлайн';
@@ -4693,6 +5240,41 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
     );
     return '$count $_temp0 отсутствует';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Управление типами еды';
+
+  @override
+  String get mealPlannerAddType => 'Добавить тип питания';
+
+  @override
+  String get mealPlannerEditType => 'Изменить тип питания';
+
+  @override
+  String get mealPlannerTypeName => 'Имя';
+
+  @override
+  String get mealPlannerTypeColor => 'Цвет';
+
+  @override
+  String get mealPlannerTypeIcon => 'Икона';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Вы уверены, что хотите удалить этот тип питания? Плановые приемы пищи при этом типе сохранятся.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Имя не может быть пустым';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Невозможно удалить этот тип питания.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Пользовательский тип';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Тип по умолчанию';
 
   @override
   String get expirationDate => 'Дата окончания срока';
@@ -4753,6 +5335,9 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get errorLoadingLists => 'Ошибка загрузки списков.';
+
+  @override
+  String get errorLoadingItems => 'Ошибка загрузки элементов';
 
   @override
   String get noListsFound => 'Списки не найдены';
@@ -5436,7 +6021,7 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get obQuizMethodPaper => 'Ручка и бумага';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'Приложение «Заметки»';
 
   @override
   String get obQuizMethodMemory => 'Я держу это в голове';
@@ -5533,4 +6118,212 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   @override
   String get obLoginError =>
       'Не удалось войти. Повторите попытку или пропустите.';
+
+  @override
+  String get searchMessages => 'Поиск сообщений...';
+
+  @override
+  String get deletedList => 'Удаленный список';
+
+  @override
+  String get openConversation => 'Открытый разговор';
+
+  @override
+  String get userRole => 'Ты';
+
+  @override
+  String get assistantRole => 'Ассистент';
+
+  @override
+  String get agentActionsRunning => 'Выполнение действий...';
+
+  @override
+  String get agentActionsFailed => 'Не удалось выполнить действия.';
+
+  @override
+  String get agentActionsPremium => 'Для действий требуется Премиум';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Отменить изменения';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Премиум)';
+  }
+
+  @override
+  String get itemAddedToList => 'Товар добавлен в список.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Предыдущее состояние: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Подпишитесь на Премиум, чтобы разблокировать автоматические действия.';
+
+  @override
+  String get viewPlans => 'Посмотреть планы';
+
+  @override
+  String get artifactSynced => 'Синхронизировано';
+
+  @override
+  String get artifactBudgetLabel => 'Бюджет:';
+
+  @override
+  String get totalEstimatedLabel => 'Расчетная сумма';
+
+  @override
+  String get quickActionPantry => 'Посмотреть кладовую';
+
+  @override
+  String get quickActionAi => 'Пообщаться с Кипи';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Служба AI вернула ошибку ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Запрос занял слишком много времени. Пожалуйста, попробуйте еще раз.';
+
+  @override
+  String get aiConnectionError =>
+      'Не удалось подключиться к службе AI. Проверьте свое соединение.';
+
+  @override
+  String get aiEmptyResponseError => 'Служба AI вернула пустой ответ.';
+
+  @override
+  String get aiInvalidResponseError => 'Служба AI вернула неверный ответ.';
+
+  @override
+  String get categoryFruits => 'Фрукты';
+
+  @override
+  String get categoryCleaning => 'Очистка';
+
+  @override
+  String get categoryBeverages => 'Напитки';
+
+  @override
+  String get categoryBakery => 'Пекарня';
+
+  @override
+  String get categoryMeat => 'Мясо';
+
+  @override
+  String get categoryDairy => 'Молочный';
+
+  @override
+  String get categoryVegetables => 'Овощи';
+
+  @override
+  String get categoryGrains => 'Зерно и крупы';
+
+  @override
+  String get categoryHygiene => 'Личная гигиена';
+
+  @override
+  String get categoryFrozen => 'Замороженные продукты';
+
+  @override
+  String get categoryCanned => 'Консервы';
+
+  @override
+  String get categorySeasonings => 'Приправы';
+
+  @override
+  String get categorySweets => 'Сладости и десерты';
+
+  @override
+  String get categoryAlcohol => 'Алкогольные напитки';
+
+  @override
+  String get categoryFish => 'Рыба';
+
+  @override
+  String get categoryColdCuts => 'Колбасное ассорти';
+
+  @override
+  String get categoryUtilities => 'Хозяйственные товары';
+
+  @override
+  String get categoryPet => 'Товары для домашних животных';
+
+  @override
+  String get categoryBaby => 'Малыш';
+
+  @override
+  String get categoryOthers => 'Другой';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Привет $name, я Кипи 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Привет, я Кипи 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Я составляю списки, предлагаю рецепты и нахожу, где сохранить. С чего начать?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Спланируйте барбекю';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Кипи, я устраиваю барбекю — помоги мне составить список покупок.';
+
+  @override
+  String get aiRateLimitError =>
+      'Слишком много сообщений за короткое время. Подождите несколько секунд и повторите попытку.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Не удалось загрузить этот разговор.';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Что-то пошло не так с нашей стороны. Нажмите «Повторить», чтобы повторить попытку.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Вы оффлайн';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Проверьте подключение к Интернету и повторите попытку.';
+
+  @override
+  String get aiGeneratingResponse => 'Создание ответа…';
 }

@@ -243,6 +243,11 @@ class AppLocalizationsSq extends AppLocalizations {
   String get noItemsToBuy => 'Asnjë artikull nuk ka nevojë të blihet';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Mungon $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Blerje nga Qilar';
 
   @override
@@ -309,6 +314,12 @@ class AppLocalizationsSq extends AppLocalizations {
   String get settingsAppBar => 'Cilësimet';
 
   @override
+  String get preferencesSection => 'Preferencat';
+
+  @override
+  String get aiSection => 'Asistent i AI';
+
+  @override
   String get language => 'Gjuha';
 
   @override
@@ -337,6 +348,12 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get appearance => 'Pamja';
+
+  @override
+  String get themeMode => 'Modaliteti i temës';
+
+  @override
+  String get chooseThemeMode => 'Zgjidhni modalitetin e temës';
 
   @override
   String get light => 'E çelët';
@@ -586,6 +603,13 @@ class AppLocalizationsSq extends AppLocalizations {
   String get trackStockInactive => 'Nuk gjeneron sugjerim blerjeje';
 
   @override
+  String get keepAdding => 'Vazhdoni të shtoni';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Mbajeni fletën të hapur për të shtuar disa artikuj';
+
+  @override
   String get createListDialog => 'Krijo Listë';
 
   @override
@@ -690,6 +714,36 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Përgjigje e mirë';
+
+  @override
+  String get badResponse => 'Përgjigje e keqe';
+
+  @override
+  String get scrollToBottom => 'Lëvizni në fund';
+
+  @override
+  String get somethingWentWrong => 'Diçka shkoi keq';
+
+  @override
+  String get editMessage => 'Redakto mesazhin';
+
+  @override
+  String get searchConversations => 'Kërko biseda';
+
+  @override
+  String get dateGroupToday => 'Sot';
+
+  @override
+  String get dateGroupYesterday => 'Dje';
+
+  @override
+  String get dateGroupPrevious7Days => '7 ditët e mëparshme';
+
+  @override
+  String get dateGroupOlder => 'Më të vjetër';
+
+  @override
   String get aiAssistantTitle => 'Asistent i AI';
 
   @override
@@ -730,6 +784,33 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'U arrit kufiri mujor i AI. Përmirësojeni në Pro për pakufizuar →';
+
+  @override
+  String get undo => 'Çbëj';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -939,6 +1020,20 @@ class AppLocalizationsSq extends AppLocalizations {
   String get recipeAddToList => 'Shto në listën e blerjeve';
 
   @override
+  String get recipeAddError =>
+      'Nuk mund të shtohej në listën tuaj. Ju lutemi provoni përsëri.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Prekni një përbërës për ta kontrolluar atë ndërsa gatuani';
+
+  @override
+  String get recipeIngredientInPantry => 'Në qilar';
+
+  @override
+  String get recipeIngredientLowPantry => 'I ulët në qilar';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1057,12 +1152,12 @@ class AppLocalizationsSq extends AppLocalizations {
   String get paywallSelectPlan => 'Zgjidhni planin tuaj:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'RUAJ $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Vetëm $price/muaj';
   }
 
@@ -1095,6 +1190,35 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get paywallRestore => 'Rivendos';
+
+  @override
+  String get paywallTimelineToday => 'Sot';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Zhbllokoni aksesin e plotë në çast';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'dita $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Ju kujtojmë para se të përfundojë gjyqi';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Abonimi juaj fillon - anuloni në çdo kohë';
+
+  @override
+  String get paywallHeroFeatureTitle => 'Asistent i blerjeve të AI';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Flisni ose ngjisni një listë të tërë - AI e rendit, e kategorizon dhe e buxheton atë në sekonda';
+
+  @override
+  String get paywallBasedOnAnswers => 'Personalizuar nga përgjigjet tuaja';
 
   @override
   String get paywallHeroHeadline => 'Kipi AI gjithmonë pranë jush';
@@ -1130,9 +1254,6 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Artikulli u hoq';
-
-  @override
-  String get undo => 'Çbëj';
 
   @override
   String get emptyListTitle => 'Lista jote është bosh';
@@ -1249,6 +1370,9 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Artikulli u hoq';
+
+  @override
+  String get pantryItemAdded => 'Artikulli u shtua';
 
   @override
   String deficitItems(int deficit) {
@@ -1654,6 +1778,33 @@ class AppLocalizationsSq extends AppLocalizations {
   String get prepTimeMinutes => 'Koha e përgatitjes (minuta)';
 
   @override
+  String get recipeYieldServings => 'Rendimentet';
+
+  @override
+  String get recipeManualTotalCost => 'Kostoja totale manuale';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Lëreni bosh për të vlerësuar nga çmimet e përbërësve.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Kostoja totale e vlerësuar';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / shërbim';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Shërben $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Vlerësim i pjesshëm bazuar në përbërësit me çmim.';
+
+  @override
   String get instructionsHint => 'Shkruani një hap për rresht...';
 
   @override
@@ -1782,6 +1933,10 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Vlerësimi bazuar në recetat me të dhëna të pjesshme të çmimeve.';
+
+  @override
   String get mealPlannerGenerateList => 'Gjeneroni listën e blerjeve';
 
   @override
@@ -1875,6 +2030,9 @@ class AppLocalizationsSq extends AppLocalizations {
   String get catalogRareSection => 'më pak të zakonshme në vendin tuaj';
 
   @override
+  String get catalogRareBadge => 'E rrallë';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1892,7 +2050,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get catalogBrowse => 'Shfletoni Katalogun';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kategoritë';
 
   @override
   String get offlineBanner => 'Ju jeni jashtë linje';
@@ -1924,6 +2082,40 @@ class AppLocalizationsSq extends AppLocalizations {
     );
     return '$count $_temp0 mungon';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Menaxhoni llojet e vakteve';
+
+  @override
+  String get mealPlannerAddType => 'Shto llojin e vaktit';
+
+  @override
+  String get mealPlannerEditType => 'Ndrysho llojin e vaktit';
+
+  @override
+  String get mealPlannerTypeName => 'Emri';
+
+  @override
+  String get mealPlannerTypeColor => 'Ngjyra';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikona';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Je i sigurt që dëshiron ta fshish këtë lloj vakti? Vaktet e planifikuara me këtë lloj do të mbeten.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Emri nuk mund të jetë bosh';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'Ky lloj vakti nuk mund të fshihet.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Lloji i personalizuar';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Lloji i parazgjedhur';
 
   @override
   String get expirationDate => 'Data e skadencës';
@@ -1984,6 +2176,9 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Gabim gjatë ngarkimit të listave';
+
+  @override
+  String get errorLoadingItems => 'Gabim gjatë ngarkimit të artikujve';
 
   @override
   String get noListsFound => 'Nuk u gjet asnjë listë';
@@ -2588,171 +2783,388 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get obHookTitle => 'Smarter shopping starts here';
+  String get obHookTitle => 'Blerja më e zgjuar fillon këtu';
 
   @override
   String get obHookSubtitle =>
-      'AI-powered lists that save you time and money, every single trip.';
+      'Listat e fuqizuara nga AI që ju kursejnë kohë dhe para, çdo udhëtim të vetëm.';
 
   @override
-  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+  String get obHookSocial => 'I besuar nga mijëra blerës në mbarë botën';
 
   @override
-  String get obHookCta => 'Get Started';
+  String get obHookCta => 'Filloni';
 
   @override
-  String get obQuizHouseholdTitle => 'Who do you shop for?';
+  String get obQuizHouseholdTitle => 'Për kë bëni pazar?';
 
   @override
-  String get obQuizHouseholdSolo => 'Just me';
+  String get obQuizHouseholdSolo => 'Vetëm unë';
 
   @override
-  String get obQuizHouseholdCouple => 'Me and my partner';
+  String get obQuizHouseholdCouple => 'Unë dhe partneri im';
 
   @override
-  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+  String get obQuizHouseholdFamilySmall => 'Familje prej 3-4';
 
   @override
-  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+  String get obQuizHouseholdFamilyLarge => 'Familje prej 5+';
 
   @override
-  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+  String get obQuizFrequencyTitle =>
+      'Sa shpesh bëni blerje për sende ushqimore?';
 
   @override
-  String get obQuizFrequencyDaily => 'Almost every day';
+  String get obQuizFrequencyDaily => 'Pothuajse çdo ditë';
 
   @override
-  String get obQuizFrequencyWeekly => 'Once a week';
+  String get obQuizFrequencyWeekly => 'Një herë në javë';
 
   @override
-  String get obQuizFrequencyBiweekly => 'Every two weeks';
+  String get obQuizFrequencyBiweekly => 'Çdo dy javë';
 
   @override
-  String get obQuizFrequencyMonthly => 'Big monthly haul';
+  String get obQuizFrequencyMonthly => 'Transport i madh mujor';
 
   @override
-  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+  String get obQuizPainTitle => 'Çfarë ju frustron më shumë në blerjet?';
 
   @override
-  String get obQuizPainForget => 'I always forget items';
+  String get obQuizPainForget => 'I harroj gjithmonë sendet';
 
   @override
-  String get obQuizPainOverspend => 'I spend more than planned';
+  String get obQuizPainOverspend =>
+      'Unë shpenzoj më shumë se sa ishte planifikuar';
 
   @override
-  String get obQuizPainWaste => 'Food goes to waste at home';
+  String get obQuizPainWaste => 'Ushqimi shkon dëm në shtëpi';
 
   @override
-  String get obQuizPainTime => 'It takes too much time';
+  String get obQuizPainTime => 'Duhet shumë kohë';
 
   @override
-  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+  String get obQuizSavingsTitle => 'Sa do të dëshironit të kurseni çdo muaj?';
 
   @override
-  String get obQuizSavingsSmall => 'A little — every bit counts';
+  String get obQuizSavingsSmall => 'Pak - çdo grimë ka rëndësi';
 
   @override
-  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+  String get obQuizSavingsMedium => 'Rreth 10% e faturës sime të ushqimeve';
 
   @override
-  String get obQuizSavingsLarge => 'As much as possible';
+  String get obQuizSavingsLarge => 'Sa më shumë që të jetë e mundur';
 
   @override
-  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+  String get obQuizMethodTitle => 'Si i bëni listat e blerjeve sot?';
 
   @override
-  String get obQuizMethodPaper => 'Pen and paper';
+  String get obQuizMethodPaper => 'Stilolaps dhe letër';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'Aplikacioni Shënime';
 
   @override
-  String get obQuizMethodMemory => 'I keep it in my head';
+  String get obQuizMethodMemory => 'E mbaj në kokën time';
 
   @override
-  String get obQuizMethodNone => 'I don\'t make lists';
+  String get obQuizMethodNone => 'Unë nuk bëj lista';
 
   @override
-  String get obSocialTitle => 'You\'re in good company';
+  String get obSocialTitle => 'Ju jeni në shoqëri të mirë';
 
   @override
   String get obSocialSubtitle =>
-      'Shoppers like you are already saving with KipiList';
+      'Blerësit si ju tashmë po kursejnë me KipiList';
 
   @override
   String get obSocialQuote1 =>
-      'I never forget anything anymore. The AI builds my list in seconds.';
+      'Nuk harroj më asgjë. AI ndërton listën time në sekonda.';
 
   @override
   String get obSocialQuote2 =>
-      'We cut our grocery bill noticeably in the first month.';
+      'Ne e shkurtuam dukshëm faturën tonë të ushqimeve në muajin e parë.';
 
   @override
   String get obSocialQuote3 =>
-      'Sharing the list with my partner ended our shopping chaos.';
+      'Ndarja e listës me partnerin tim i dha fund kaosit tonë të blerjeve.';
 
   @override
-  String get obLoadingTitle => 'Building your personalized plan...';
+  String get obLoadingTitle => 'Ndërtimi i planit tuaj të personalizuar...';
 
   @override
-  String get obLoadingStepProfile => 'Adjusting for your household';
+  String get obLoadingStepProfile => 'Përshtatje për shtëpinë tuaj';
 
   @override
-  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+  String get obLoadingStepHabits =>
+      'Duke u përshtatur me rutinën tuaj të blerjeve';
 
   @override
-  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+  String get obLoadingStepSavings =>
+      'Optimizimi i strategjisë suaj të kursimeve';
 
   @override
-  String get obLoadingStepLists => 'Preparing your smart lists';
+  String get obLoadingStepLists => 'Përgatitja e listave tuaja të zgjuara';
 
   @override
-  String get obRevealTitle => 'Your plan is ready!';
+  String get obRevealTitle => 'Plani juaj është gati!';
 
   @override
-  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+  String get obRevealSubtitle => 'Ja se si do të funksionojë KipiList për ju';
 
   @override
-  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+  String get obRevealSavingsCaption => 'Kursime të parashikuara me KipiList';
 
   @override
   String obRevealMonth(int n) {
-    return 'Month $n';
+    return 'muaj $n';
   }
 
   @override
-  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+  String get obRevealFeatureAi => 'AI ndërton dhe organizon listat tuaja';
 
   @override
-  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+  String get obRevealFeatureBudget =>
+      'Shpenzimet e gjurmuara kundrejt qëllimit tuaj';
 
   @override
-  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+  String get obRevealFeaturePantry =>
+      'Gjurmimi i qilarit shkurton mbetjet ushqimore';
 
   @override
-  String get obRevealFeatureShare => 'Real-time sharing with your household';
+  String get obRevealFeatureShare => 'Ndarje në kohë reale me familjen tuaj';
 
   @override
-  String get obPaywallTitle => 'Unlock your plan';
+  String get obPaywallTitle => 'Zhbllokoni planin tuaj';
 
   @override
-  String get obPaywallRetry => 'Try again';
+  String get obPaywallRetry => 'Provo sërish';
 
   @override
-  String get obLoginTitle => 'Save your plan';
+  String get obLoginTitle => 'Ruani planin tuaj';
 
   @override
-  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+  String get obLoginSubtitle =>
+      'Identifikohu që listat e tua të sinkronizohen nëpër pajisje';
 
   @override
-  String get obLoginGoogle => 'Continue with Google';
+  String get obLoginGoogle => 'Vazhdo me Google';
 
   @override
-  String get obLoginApple => 'Continue with Apple';
+  String get obLoginApple => 'Vazhdoni me Apple';
 
   @override
-  String get obLoginSkip => 'Not now';
+  String get obLoginSkip => 'Jo tani';
 
   @override
-  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
+  String get obLoginError =>
+      'Identifikimi dështoi. Provo sërish ose kalo për momentin.';
+
+  @override
+  String get searchMessages => 'Kërko mesazhe...';
+
+  @override
+  String get deletedList => 'Lista e fshirë';
+
+  @override
+  String get openConversation => 'Hap bisedën';
+
+  @override
+  String get userRole => 'Ju';
+
+  @override
+  String get assistantRole => 'Asistent';
+
+  @override
+  String get agentActionsRunning => 'Veprimet e kryera...';
+
+  @override
+  String get agentActionsFailed => 'Ekzekutimi i veprimeve dështoi';
+
+  @override
+  String get agentActionsPremium => 'Veprimet kërkojnë Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Zhbër ndryshimet';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Artikulli u shtua në listë.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Gjendja e mëparshme: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Abonohu ​​në Premium për të zhbllokuar veprimet automatike.';
+
+  @override
+  String get viewPlans => 'Shikoni planet';
+
+  @override
+  String get artifactSynced => 'Sinkronizuar';
+
+  @override
+  String get artifactBudgetLabel => 'Buxheti:';
+
+  @override
+  String get totalEstimatedLabel => 'Totali i vlerësuar';
+
+  @override
+  String get quickActionPantry => 'Shikoni qilarin';
+
+  @override
+  String get quickActionAi => 'Bisedoni me Kipin';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Shërbimi i AI ktheu një gabim ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Kërkesa zgjati shumë. Ju lutemi provoni përsëri.';
+
+  @override
+  String get aiConnectionError =>
+      'Nuk mund të lidhej me shërbimin e AI. Kontrolloni lidhjen tuaj.';
+
+  @override
+  String get aiEmptyResponseError => 'Shërbimi i AI ktheu një përgjigje boshe.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Shërbimi i AI ktheu një përgjigje të pavlefshme.';
+
+  @override
+  String get categoryFruits => 'Frutat';
+
+  @override
+  String get categoryCleaning => 'Pastrimi';
+
+  @override
+  String get categoryBeverages => 'Pijet';
+
+  @override
+  String get categoryBakery => 'Furra buke';
+
+  @override
+  String get categoryMeat => 'Mishi';
+
+  @override
+  String get categoryDairy => 'Qumështore';
+
+  @override
+  String get categoryVegetables => 'Perimet';
+
+  @override
+  String get categoryGrains => 'Drithërat dhe drithërat';
+
+  @override
+  String get categoryHygiene => 'Kujdesi personal';
+
+  @override
+  String get categoryFrozen => 'Ushqimet e ngrira';
+
+  @override
+  String get categoryCanned => 'Mallra të konservuara';
+
+  @override
+  String get categorySeasonings => 'Erëza';
+
+  @override
+  String get categorySweets => 'Ëmbëlsirat dhe ëmbëlsirat';
+
+  @override
+  String get categoryAlcohol => 'Pijet alkoolike';
+
+  @override
+  String get categoryFish => 'Peshku';
+
+  @override
+  String get categoryColdCuts => 'Prerje të ftohtë';
+
+  @override
+  String get categoryUtilities => 'Furnizimet shtëpiake';
+
+  @override
+  String get categoryPet => 'Furnizime për kafshë shtëpiake';
+
+  @override
+  String get categoryBaby => 'bebe';
+
+  @override
+  String get categoryOthers => 'Të tjera';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Përshëndetje $name, unë jam Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Përshëndetje, unë jam Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Unë ndërtoj lista, sugjeroj receta dhe gjej ku të ruaj. Ku të fillojmë?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Planifikoni një Barbecue';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, unë jam duke organizuar një Barbecue - më ndihmo të krijoj listën e blerjeve';
+
+  @override
+  String get aiRateLimitError =>
+      'Shumë mesazhe në një kohë të shkurtër. Prisni disa sekonda dhe provoni përsëri.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Kjo bisedë nuk mund të ngarkohej';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Diçka shkoi keq nga ana jonë. Trokit \"Riprovo\" për të provuar përsëri.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Je jashtë linje';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Kontrollo lidhjen tënde të internetit dhe provo sërish.';
+
+  @override
+  String get aiGeneratingResponse => 'Po gjeneron përgjigje…';
 }

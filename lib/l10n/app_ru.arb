@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -130,6 +144,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -334,6 +355,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingProducts": {
     "placeholders": {
       "error": {
@@ -481,6 +505,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1105,6 +1136,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1231,6 +1272,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1263,6 +1311,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@progressBudget": {
     "placeholders": {
@@ -1324,7 +1395,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1448,23 +1533,37 @@
   "addingItems": "Добавление элементов в список...",
   "addingToPantry": "Добавляем в кладовку...",
   "advancedFeatures": "Расширенные функции",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Не удалось выполнить действия.",
+  "agentActionsPremium": "Для действий требуется Премиум",
+  "agentActionsRunning": "Выполнение действий...",
+  "aiApiError": "Служба AI вернула ошибку ({statusCode}).",
   "aiAssistant": "ИИ-помощник",
   "aiAssistantDescription": "Получайте умные предложения, рецепты и персонализированные советы с нашим ИИ-помощником.",
   "aiAssistantTitle": "ИИ-помощник",
+  "aiConnectionError": "Не удалось подключиться к службе AI. Проверьте свое соединение.",
   "aiCreditsRemaining": "Осталось {remaining} кредитов",
+  "aiEmptyResponseError": "Служба AI вернула пустой ответ.",
   "aiEnergy": "ИИ Энергия",
   "aiEnergyLow": "Низкая энергия ИИ",
   "aiError": "Извините, произошла ошибка при обработке вашего запроса. Проверьте соединение или попробуйте позже.",
+  "aiGeneratingResponse": "Создание ответа…",
+  "aiInvalidResponseError": "Служба AI вернула неверный ответ.",
   "aiLimitAlmostReached": "Почти закончились сообщения ИИ",
   "aiPremiumDescription": "Этот интерактивный интерфейс использует передовой искусственный интеллект и доступен эксклюзивно для участников Pro или через быструю рекламу.",
+  "aiRateLimitError": "Слишком много сообщений за короткое время. Подождите несколько секунд и повторите попытку.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} сегодня",
+  "aiSection": "ИИ-помощник",
   "aiSubscribeUnlimited": "Подпишитесь на неограниченный AI",
   "aiTeaserFallback": "Подпишитесь на Премиум, чтобы получить полный ответ и неограниченное количество советов от искусственного интеллекта по покупкам...",
+  "aiTimeoutError": "Запрос занял слишком много времени. Пожалуйста, попробуйте еще раз.",
   "aiUnlockUnlimited": "Разблокируйте неограниченный ИИ",
   "aiUsageExhausted": "Достигнут месячный лимит AI. Обновите до Pro без ограничений →",
   "aiUsageWarning": "{remaining} Действия ИИ остались в этом месяце — обновление без ограничений",
   "aiVoiceCommandTooltip": "Голосовая команда ИИ (Премиум)",
   "aiWelcomeContent": "Привет! 👋 Я **Кипи**, ваш личный помощник по покупкам и рецептам!\n\nЯ здесь, чтобы помочь вам:\n🛒 **Автоматически организуйте** свои покупки по категориям.\n💰 **Отслеживайте** свой бюджет и давайте советы по экономии денег.\n🍲 **Предлагайте** вкусные рецепты из того, что у вас уже есть.\n\nЧем я могу помочь вам сегодня? Вы можете начать с создания своего первого списка!",
+  "aiWelcomeSuggestBarbecue": "Спланируйте барбекю",
+  "aiWelcomeSuggestBarbecuePrompt": "Кипи, я устраиваю барбекю — помоги мне составить список покупок.",
   "aiWelcomeSuggestCreateList": "Создать мой первый список",
   "aiWelcomeSuggestCreateListPrompt": "Кипи, помоги мне составить мой первый список покупок.",
   "aiWelcomeSuggestSave": "Как сэкономить деньги?",
@@ -1474,9 +1573,12 @@
   "appTitle": "Список покупок",
   "appearance": "Внешний вид",
   "archiveList": "Архивировать список",
+  "artifactBudgetLabel": "Бюджет:",
+  "artifactSynced": "Синхронизировано",
   "assistantHistory": "История помощника",
   "assistantHistorySubtitle": "Просмотр истории разговоров",
   "assistantName": "Имя помощника",
+  "assistantRole": "Ассистент",
   "backToChat": "Вернуться в чат",
   "backToToday": "Вернуться в сегодняшний день",
   "backupExported": "Резервная копия экспортирована!",
@@ -1484,6 +1586,7 @@
   "backupPremiumDescription": "Резервное копирование и экспорт — это премиум-функция",
   "backupSubtitle": "Экспортируйте или импортируйте свои данные",
   "backupTitle": "Резервное копирование",
+  "badResponse": "Плохой ответ",
   "badgeBeginner": "Новичок",
   "badgeOrganized": "Организованный",
   "badgeSavingMaster": "Спасение Мастера",
@@ -1509,9 +1612,11 @@
   "catOthers": "Другое",
   "catalogAddItems": "Добавить {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Просмотреть каталог",
+  "catalogCategories": "Категории",
   "catalogFilterNational": "граждане",
   "catalogMyFrequents": "Мои завсегдатаи",
   "catalogProductNotFound": "Товар не найден, введите название",
+  "catalogRareBadge": "Редкий",
   "catalogRareSection": "менее распространено в вашей стране",
   "catalogSearchGlobal": "Искать любой товар...",
   "catalogSearchInCategory": "Искать в {category}...",
@@ -1520,16 +1625,43 @@
   "catalogTitle": "Каталог",
   "categorizingItems": "Классификация предметов...",
   "category": "Категория",
+  "categoryAlcohol": "Алкогольные напитки",
+  "categoryBaby": "Малыш",
+  "categoryBakery": "Пекарня",
+  "categoryBeverages": "Напитки",
+  "categoryCanned": "Консервы",
+  "categoryCleaning": "Очистка",
+  "categoryColdCuts": "Колбасное ассорти",
   "categoryColorLabel": "Цвет",
+  "categoryDairy": "Молочный",
+  "categoryFish": "Рыба",
+  "categoryFrozen": "Замороженные продукты",
+  "categoryFruits": "Фрукты",
+  "categoryGrains": "Зерно и крупы",
+  "categoryHygiene": "Личная гигиена",
   "categoryIconLabel": "Икона",
   "categoryLimitReached": "Ограничение в 10 категорий в бесплатной версии. Обновитесь до Про!",
+  "categoryMeat": "Мясо",
   "categoryName": "Название категории",
   "categoryNameHint": "Например: Мясо",
+  "categoryOthers": "Другой",
+  "categoryPet": "Товары для домашних животных",
+  "categorySeasonings": "Приправы",
+  "categorySweets": "Сладости и десерты",
+  "categoryUtilities": "Хозяйственные товары",
+  "categoryVegetables": "Овощи",
+  "chatEmptyGreeting": "Привет {name}, я Кипи 👋",
+  "chatEmptyGreetingNoName": "Привет, я Кипи 👋",
+  "chatEmptyPitch": "Я составляю списки, предлагаю рецепты и нахожу, где сохранить. С чего начать?",
   "chatEmptySubtitle": "Чтобы начать, попросите предложения по предметам, рецепты или советы по экономии.",
   "chatEmptyTitle": "Ваш чат пуст",
   "chatError": "Ошибка загрузки чата: {error}",
   "chatHint": "Введите ваше сообщение...",
   "chatHintBlocked": "Разблокируйте AI для общения",
+  "chatHistoryErrorBody": "Что-то пошло не так с нашей стороны. Нажмите «Повторить», чтобы повторить попытку.",
+  "chatHistoryErrorTitle": "Не удалось загрузить этот разговор.",
+  "chatHistoryOfflineBody": "Проверьте подключение к Интернету и повторите попытку.",
+  "chatHistoryOfflineTitle": "Вы оффлайн",
   "chatSubtitle": "Спросите о предложениях товаров, рецептах или советах по экономии.",
   "chatSubtitleShort": "Спрашивайте о ценах, рецептах, организации...",
   "checkingItem": "Проверка товара...",
@@ -1540,6 +1672,7 @@
   "chooseImageSource": "Выберите источник изображения",
   "chooseLanguage": "Выберите язык",
   "chooseThemeColor": "Выберите цвет темы",
+  "chooseThemeMode": "Выберите режим темы",
   "clear": "Очистить",
   "clearHistory": "Очистить историю",
   "clearHistoryConfirm": "Удалить все сообщения в этом сеансе?",
@@ -1588,6 +1721,10 @@
   "customizeAssistant": "Настроить",
   "dark": "Тёмная",
   "data": "Данные",
+  "dateGroupOlder": "Старше",
+  "dateGroupPrevious7Days": "Предыдущие 7 дней",
+  "dateGroupToday": "Сегодня",
+  "dateGroupYesterday": "Вчера",
   "dayFri": "Пт",
   "dayMon": "Пн.",
   "daySat": "Суббота",
@@ -1611,6 +1748,7 @@
   "deleteRecipeConfirmMsg": "Вы уверены, что хотите удалить «{recipeName}»? Это действие невозможно отменить.",
   "deleteSession": "Удалить чат",
   "deleteSessionConfirm": "Вы уверены, что хотите удалить этот чат? Сообщения будут безвозвратно потеряны.",
+  "deletedList": "Удаленный список",
   "deselectAll": "Снять выделение",
   "dietaryRestrictions": "Диетические ограничения",
   "dietaryRestrictionsHint": "Например: веганский, вегетарианский, безглютеновый.",
@@ -1623,6 +1761,7 @@
   "editCategoryDialog": "Изменить категорию",
   "editItem": "Редактировать товар",
   "editItemPrice": "Оценочная цена",
+  "editMessage": "Редактировать сообщение",
   "editPantryItem": "Редактировать {name}",
   "editRecipe": "Редактировать",
   "editRecipeTitle": "Редактировать рецепт",
@@ -1648,6 +1787,7 @@
   "errorLoadingChat": "Упс! Что-то пошло не так при загрузке чата.",
   "errorLoadingChatSubtitle": "Проверьте подключение или повторите попытку позже.",
   "errorLoadingHistory": "Ошибка загрузки истории",
+  "errorLoadingItems": "Ошибка загрузки элементов",
   "errorLoadingLists": "Ошибка загрузки списков.",
   "errorLoadingProducts": "Ошибка загрузки продуктов: {error}.",
   "errorLoadingRecipes": "Ошибка загрузки рецептов.",
@@ -1722,6 +1862,7 @@
   "generatingShareLink": "Создание ссылки для общего доступа...",
   "gestureHint": "Удерживайте, чтобы выбрать • Проведите пальцем, чтобы удалить",
   "globalAssistant": "Глобальный помощник",
+  "goodResponse": "Хороший ответ",
   "howCanIHelp": "Как я могу помочь?",
   "icon": "Икона:",
   "idealQty": "Идеальное кол-во",
@@ -1740,14 +1881,18 @@
   "inviteToList": "Пригласить в список",
   "itemAdded": "{name} добавлено",
   "itemAddedSnack": "{name} добавлено",
+  "itemAddedToList": "Товар добавлен в список.",
   "itemName": "Название товара",
   "itemRemoved": "Товар удалён",
   "itemsAddedSuccess": "Товары успешно добавлены в список!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} товар(ы/ов) нужно купить",
   "itemsPurchased": "Купленные товары",
   "itemsPurchasedCount": "{purchased} из {total} куплено",
   "itemsPurchasedShort": "{purchased}/{total} куплено",
   "itemsWillBeAdded": "{count} товар(ы/ов) будет добавлено",
+  "keepAdding": "Продолжайте добавлять",
+  "keepAddingSubtitle": "Держите лист открытым, чтобы добавить несколько элементов.",
   "kipiListProActive": "КипиЛист Про Актив",
   "kipiListTitle": "КипиЛист",
   "kipiQuickBarHint": "Что вам нужно купить?",
@@ -1786,16 +1931,22 @@
   "marketsToAvoid": "Рынки, которых следует избегать",
   "marketsToAvoidHint": "Например: Рынок Y, Рынок Z.",
   "mealPlannerAddMeal": "Добавить еду",
+  "mealPlannerAddType": "Добавить тип питания",
+  "mealPlannerCustomTypeLabel": "Пользовательский тип",
   "mealPlannerDateLabel": "Дата",
+  "mealPlannerDefaultTypeLabel": "Тип по умолчанию",
   "mealPlannerDeleteMeal": "Удалить еду",
   "mealPlannerEditMeal": "Редактировать еду",
+  "mealPlannerEditType": "Изменить тип питания",
   "mealPlannerError": "Ошибка загрузки плана питания.",
+  "mealPlannerEstimatePartial": "Оценка на основе рецептов с частичными данными о ценах.",
   "mealPlannerGenerateList": "Создать список покупок",
   "mealPlannerGenerateListConfirm": "Добавить в список покупок все ингредиенты из запланированных на эту неделю блюд?",
   "mealPlannerGenerateListEmpty": "Никаких ингредиентов добавлять не нужно. Сначала спланируйте несколько блюд по рецептам.",
   "mealPlannerGenerateListNoList": "Сначала создайте список покупок.",
   "mealPlannerGenerateListSuccess": "В ваш список добавлено {count} ингредиентов!",
   "mealPlannerLoading": "Загрузка плана питания...",
+  "mealPlannerManageTypes": "Управление типами еды",
   "mealPlannerMealDeleted": "Еда удалена",
   "mealPlannerMealTypeBreakfast": "Завтрак",
   "mealPlannerMealTypeDinner": "Ужин",
@@ -1815,6 +1966,12 @@
   "mealPlannerServings": "{count,plural, one{{count} порций} other{{count} порций}}",
   "mealPlannerServingsLabel": "Порции",
   "mealPlannerTitle": "Планировщик еды",
+  "mealPlannerTypeColor": "Цвет",
+  "mealPlannerTypeDeleteConfirm": "Вы уверены, что хотите удалить этот тип питания? Плановые приемы пищи при этом типе сохранятся.",
+  "mealPlannerTypeDeleteError": "Невозможно удалить этот тип питания.",
+  "mealPlannerTypeIcon": "Икона",
+  "mealPlannerTypeName": "Имя",
+  "mealPlannerTypeNameEmpty": "Имя не может быть пустым",
   "mealPlannerViewMonthly": "Просмотр за месяц",
   "mealPlannerViewWeekly": "Еженедельный просмотр",
   "mealPlannerWeekEmpty": "На этой неделе ничего не запланировано",
@@ -1900,7 +2057,7 @@
   "obQuizHouseholdTitle": "Для кого вы делаете покупки?",
   "obQuizMethodMemory": "Я держу это в голове",
   "obQuizMethodNone": "Я не составляю списки",
-  "obQuizMethodNotes": "Notes app",
+  "obQuizMethodNotes": "Приложение «Заметки»",
   "obQuizMethodPaper": "Ручка и бумага",
   "obQuizMethodTitle": "Как вы составляете списки покупок сегодня?",
   "obQuizPainForget": "Я всегда забываю вещи",
@@ -2040,6 +2197,7 @@
   "onboardingViewAllPlans": "Посмотреть все планы",
   "onboardingWelcomeDesc": "Самый разумный способ организовать покупки и сэкономить деньги.",
   "onboardingWelcomeTitle": "Добро пожаловать в KipiList",
+  "openConversation": "Открытый разговор",
   "openMenu": "Открыть меню",
   "organizeAisles": "По отделам",
   "organizeAislesPrompt": "Упорядочить по отделам магазина.",
@@ -2051,15 +2209,18 @@
   "pantryAppBar": "Кладовая",
   "pantryAvailabilityAll": "Все готово!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} в кладовой",
+  "pantryDeficitCount": "Отсутствует {count}{unit}",
   "pantryEditTitle": "Редактировать {name}",
   "pantryEmpty": "Пустая кладовая",
   "pantryEmptySubtitle": "Добавьте продукты, которые хотите иметь дома",
+  "pantryItemAdded": "Товар добавлен",
   "pantryItemRemoved": "Товар удалён",
   "pantryLimitReached": "Ограничение на {count} предметов в кладовой в бесплатном плане. Обновите, чтобы добавить больше.",
   "paywallAfterItem1": "Зерна",
   "paywallAfterItem2": "Очистка",
   "paywallAfterItem3": "Мясо",
   "paywallAfterItem4": "Пекарня",
+  "paywallBasedOnAnswers": "Персонализировано на основе ваших ответов",
   "paywallBeforeAfterTitle": "ИИ до и после:",
   "paywallBeforeItem1": "рис",
   "paywallBeforeItem2": "мыло",
@@ -2097,6 +2258,8 @@
   "paywallGoalHeadlinePantry": "{name}, отслеживай свою кладовую идеально!",
   "paywallGoalHeadlineRecipes": "{name}, открывай для себя новые рецепты!",
   "paywallGoalHeadlineSaveMoney": "{name}, экономь в каждой поездке!",
+  "paywallHeroFeatureDesc": "Произнесите или вставьте целый список — ИИ сортирует, классифицирует и составляет бюджет за считанные секунды.",
+  "paywallHeroFeatureTitle": "Помощник по покупкам с искусственным интеллектом",
   "paywallHeroHeadline": "Kipi AI всегда рядом с вами",
   "paywallHeroSubtitle": "Добавляйте элементы, организуйте списки и экономьте время с искусственным интеллектом в вашем кармане.",
   "paywallHeroSubtitlePersonalized": "Привет, {name}, организуй свои покупки правильно.",
@@ -2131,6 +2294,11 @@
   "paywallTestimonial2Text": "Я больше никогда не забывал ни одного пункта списка. Чат с искусственным интеллектом просто сенсационен!",
   "paywallTestimonialAuthor": "Энн С.",
   "paywallTestimonialsTitle": "Что говорят наши пользователи:",
+  "paywallTimelineChargeDesc": "Ваша подписка начинается — отмените ее в любое время",
+  "paywallTimelineDay": "День {day}",
+  "paywallTimelineReminderDesc": "Напоминаем вам до окончания пробного периода",
+  "paywallTimelineToday": "Сегодня",
+  "paywallTimelineTodayDesc": "Разблокируйте полный доступ мгновенно",
   "paywallTitle": "КипиЛист Премиум",
   "paywallTrialCta": "Начать бесплатную пробную версию",
   "paywallTrialDays": "{days} ДНЕЙ БЕСПЛАТНО",
@@ -2153,11 +2321,15 @@
   "prefSharing": "Делиться списками",
   "prefUnlimitedLists": "Неограниченные списки",
   "prefUnlimitedPantry": "Неограниченная кладовая",
+  "preferencesSection": "Предпочтения",
   "preferredMarket": "Предпочтительный рынок",
   "preferredMarketHint": "Например: Супермаркет X",
+  "premiumActionsPrompt": "Подпишитесь на Премиум, чтобы разблокировать автоматические действия.",
+  "premiumStepDescription": "{description} (Премиум)",
   "premiumUpgrade": "Обновите, чтобы разблокировать",
   "prepTime": "Время подготовки",
   "prepTimeMinutes": "Время приготовления (минуты)",
+  "previousItemState": "Предыдущее состояние: {quantity} {unit} [{category}]{price}",
   "privacy": "Конфиденциальность",
   "processing": "Обработка...",
   "product": "Продукт",
@@ -2177,21 +2349,34 @@
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "Запрос ваших списков...",
+  "quickActionAi": "Пообщаться с Кипи",
+  "quickActionPantry": "Посмотреть кладовую",
   "quickRecipe": "Быстрый рецепт",
   "quickRecipePrompt": "Предложи рецепты с товарами из моего списка.",
   "quickReplies": "Быстрые ответы:",
   "quickSuggestions": "Быстрые предложения",
+  "recipeAddError": "Не удалось добавить в ваш список. Пожалуйста, попробуйте еще раз.",
   "recipeAddToList": "Добавить в список покупок",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Рецепт создан!",
   "recipeDeleted": "Рецепт удален.",
+  "recipeEstimatePartial": "Частичная оценка на основе ингредиентов с ценой.",
+  "recipeEstimatedCostPerServing": "{cost} / порция",
+  "recipeEstimatedTotalCost": "Ориентировочная общая стоимость",
   "recipeImage": "Изображение рецепта",
+  "recipeIngredientInPantry": "В кладовой",
+  "recipeIngredientLowPantry": "Низко в кладовке",
   "recipeIngredientSingular": "1 ингредиент",
   "recipeIngredientsPlural": "{count} ингредиентов",
+  "recipeManualTotalCost": "Общая стоимость вручную",
+  "recipeManualTotalCostHint": "Оставьте пустым, чтобы оценить цены на ингредиенты.",
   "recipeName": "Название рецепта",
   "recipeSaved": "Рецепт сохранен!",
+  "recipeServesCount": "Обслуживает {count}",
   "recipeSuggestion": "Предложение рецепта",
   "recipeTags": "Теги рецептов",
+  "recipeTapToCheck": "Коснитесь ингредиента, чтобы проверять его во время приготовления.",
+  "recipeYieldServings": "Доходность порций",
   "regenerate": "Перегенерировать",
   "remove": "Удалить",
   "removeBudget": "Удалить",
@@ -2226,9 +2411,12 @@
   "scanBarcodeTitle": "Сканировать штрих-код",
   "scanProduct": "Сканировать продукт",
   "scanProductTitle": "Сканировать продукт",
+  "scrollToBottom": "Прокрутить вниз",
+  "searchConversations": "Поиск бесед",
   "searchCurrency": "Поиск валюты...",
   "searchInConversation": "Искать в разговоре...",
   "searchLanguage": "Язык поиска...",
+  "searchMessages": "Поиск сообщений...",
   "searchRecipes": "Поиск рецептов...",
   "searchingCategories": "Поиск категорий...",
   "searchingProducts": "Поиск товаров...",
@@ -2268,6 +2456,7 @@
   "signInGoogle": "Войти через Google",
   "skip": "Пропускать",
   "smartOrganization": "Умная организация",
+  "somethingWentWrong": "Что-то пошло не так",
   "sortAZ": "А-Я",
   "sortCategory": "Категория",
   "sortDate": "Дата",
@@ -2299,6 +2488,7 @@
   "themeColor": "Цвет темы",
   "themeGreen": "Зелёный",
   "themeIndigo": "Индиго",
+  "themeMode": "Тематический режим",
   "themeOrange": "Оранжевый",
   "themePink": "Розовый",
   "themePurple": "Фиолетовый",
@@ -2316,6 +2506,7 @@
   "toolSaveRecipe": "Сохранить рецепт",
   "toolShareList": "Поделиться списком",
   "totalEstimated": "Всего оценено: {amount}",
+  "totalEstimatedLabel": "Расчетная сумма",
   "totalSavings": "Общая экономия",
   "totalSpending": "Всего потрачено",
   "trackStock": "Отслеживать запас",
@@ -2323,6 +2514,7 @@
   "trackStockInactive": "Не создаёт предложения покупок",
   "uncheckingItem": "Снятие отметки с элемента...",
   "undo": "Отменить",
+  "undoChanges": "Отменить изменения",
   "unit": "Единица",
   "unitPack": "упаковка",
   "unlockAi": "Разблокируйте неограниченный ИИ",
@@ -2336,6 +2528,7 @@
   "updatingPantry": "Обновление кладовой...",
   "upgrade": "Обновить",
   "userProfile": "Профиль пользователя",
+  "userRole": "Ты",
   "validForLimitedTime": "Действителен ограниченное время",
   "version": "Версия",
   "viewActive": "Активные",
@@ -2343,6 +2536,7 @@
   "viewHistory": "История",
   "viewItems": "Посмотреть элементы",
   "viewList": "Посмотреть список",
+  "viewPlans": "Посмотреть планы",
   "viewPro": "Посмотреть Про",
   "viewRecipe": "Посмотреть рецепт",
   "voiceCommandContent": "Говорите естественно, чтобы управлять списком!\n\nПримеры:\n• 'Добавь хлеб, сыр и ветчину'\n• 'Удали стиральный порошок'\n• 'Смени тему на синюю'\n\nЭто эксклюзивная функция KipiList Premium.",

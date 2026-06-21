@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -130,6 +144,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -334,6 +355,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingProducts": {
     "placeholders": {
       "error": {
@@ -481,6 +505,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1105,6 +1136,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1231,6 +1272,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1263,6 +1311,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@progressBudget": {
     "placeholders": {
@@ -1324,7 +1395,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1448,23 +1533,37 @@
   "addingItems": "กำลังเพิ่มรายการลงในรายการ...",
   "addingToPantry": "กำลังเพิ่มในตู้กับข้าว...",
   "advancedFeatures": "ฟีเจอร์ขั้นสูง",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "ไม่สามารถดำเนินการได้",
+  "agentActionsPremium": "การดำเนินการต้องใช้ระดับพรีเมียม",
+  "agentActionsRunning": "กำลังดำเนินการ...",
+  "aiApiError": "บริการ AI ส่งคืนข้อผิดพลาด ({statusCode})",
   "aiAssistant": "ผู้ช่วย AI",
   "aiAssistantDescription": "รับคำแนะนำอัจฉริยะ สูตรอาหาร และเคล็ดลับส่วนตัวกับผู้ช่วย AI ของเรา",
   "aiAssistantTitle": "ผู้ช่วยเอไอ",
+  "aiConnectionError": "ไม่สามารถเชื่อมต่อกับบริการ AI ได้ ตรวจสอบการเชื่อมต่อของคุณ",
   "aiCreditsRemaining": "เหลือ {remaining} เครดิต",
+  "aiEmptyResponseError": "บริการ AI ส่งคืนการตอบกลับที่ว่างเปล่า",
   "aiEnergy": "พลังงานเอไอ",
   "aiEnergyLow": "พลังงาน AI ต่ำ",
   "aiError": "ขออภัย เกิดข้อผิดพลาดในการประมวลผลคำขอของคุณ โปรดตรวจสอบการเชื่อมต่อของคุณหรือลองอีกครั้งในภายหลัง",
+  "aiGeneratingResponse": "กำลังสร้างการตอบกลับ...",
+  "aiInvalidResponseError": "บริการ AI ส่งคืนการตอบสนองที่ไม่ถูกต้อง",
   "aiLimitAlmostReached": "ข้อความ AI เกือบหมด",
   "aiPremiumDescription": "อินเทอร์เฟซแบบโต้ตอบนี้ใช้ปัญญาประดิษฐ์ขั้นสูงและเป็นเอกสิทธิ์สำหรับสมาชิก Pro หรือผ่านโฆษณาด่วน",
+  "aiRateLimitError": "มีข้อความมากเกินไปในเวลาอันสั้น รอสักครู่แล้วลองอีกครั้ง",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} วันนี้",
+  "aiSection": "ผู้ช่วยเอไอ",
   "aiSubscribeUnlimited": "สมัครสมาชิก AI ไม่จำกัด",
   "aiTeaserFallback": "สมัครสมาชิก Premium เพื่อปลดล็อกการตอบสนองเต็มรูปแบบและรับเคล็ดลับ AI แบบไม่จำกัดสำหรับการช็อปปิ้งของคุณ...",
+  "aiTimeoutError": "คำขอใช้เวลานานเกินไป โปรดลองอีกครั้ง",
   "aiUnlockUnlimited": "ปลดล็อค AI ไม่จำกัด",
   "aiUsageExhausted": "ถึงขีดจำกัด AI รายเดือนแล้ว อัปเกรดเป็น Pro ไม่จำกัด →",
   "aiUsageWarning": "{remaining} เหลือการดำเนินการของ AI ในเดือนนี้ — อัปเกรดได้ไม่จำกัด",
   "aiVoiceCommandTooltip": "คำสั่งเสียง AI (พรีเมียม)",
   "aiWelcomeContent": "สวัสดี! 😏 ฉันชื่อ **Kipi** ผู้ช่วยชอปปิ้งและสูตรอาหารส่วนตัวของคุณ!\n\nฉันมาที่นี่เพื่อช่วยคุณ:\n🛒 **จัดระเบียบ** การซื้อของคุณตามหมวดหมู่โดยอัตโนมัติ\n💰 **ติดตาม** งบประมาณของคุณและให้คำแนะนำในการประหยัดเงิน\n🍲 **แนะนำ** สูตรอร่อยจากที่มีอยู่แล้ว\n\nวันนี้ฉันจะช่วยคุณได้อย่างไร? คุณสามารถเริ่มต้นด้วยการสร้างรายการแรกของคุณ!",
+  "aiWelcomeSuggestBarbecue": "วางแผนบาร์บีคิว",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi ฉันกำลังจัดบาร์บีคิวอยู่ ช่วยฉันสร้างรายการช็อปปิ้งด้วย",
   "aiWelcomeSuggestCreateList": "สร้างรายการแรกของฉัน",
   "aiWelcomeSuggestCreateListPrompt": "Kipi ช่วยฉันสร้างรายการช็อปปิ้งรายการแรกของฉัน",
   "aiWelcomeSuggestSave": "จะประหยัดเงินได้อย่างไร?",
@@ -1474,9 +1573,12 @@
   "appTitle": "รายการช้อปปิ้ง",
   "appearance": "ลักษณะ",
   "archiveList": "เก็บรายการ",
+  "artifactBudgetLabel": "งบประมาณ:",
+  "artifactSynced": "ซิงค์แล้ว",
   "assistantHistory": "ประวัติผู้ช่วย",
   "assistantHistorySubtitle": "ดูประวัติการสนทนาของคุณ",
   "assistantName": "ชื่อผู้ช่วย",
+  "assistantRole": "ผู้ช่วย",
   "backToChat": "กลับไปที่แชท",
   "backToToday": "ย้อนกลับไปในวันนี้",
   "backupExported": "ส่งออกข้อมูลสำรองแล้ว!",
@@ -1484,6 +1586,7 @@
   "backupPremiumDescription": "การสำรองและส่งออกข้อมูลเป็นฟีเจอร์พรีเมียม",
   "backupSubtitle": "ส่งออกหรือนำเข้าข้อมูลของคุณ",
   "backupTitle": "สำรองข้อมูล",
+  "badResponse": "การตอบสนองที่ไม่ดี",
   "badgeBeginner": "ระดับเริ่มต้น",
   "badgeOrganized": "เป็นระเบียบ",
   "badgeSavingMaster": "ออมทรัพย์อาจารย์",
@@ -1509,9 +1612,11 @@
   "catOthers": "อื่นๆ",
   "catalogAddItems": "เพิ่ม {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "เรียกดูแคตตาล็อก",
+  "catalogCategories": "หมวดหมู่",
   "catalogFilterNational": "คนชาติ",
   "catalogMyFrequents": "ความถี่ของฉัน",
   "catalogProductNotFound": "ไม่พบสินค้า กรุณากรอกชื่อ",
+  "catalogRareBadge": "หายาก",
   "catalogRareSection": "พบได้น้อยในประเทศของคุณ",
   "catalogSearchGlobal": "ค้นหาผลิตภัณฑ์ใดๆ...",
   "catalogSearchInCategory": "ค้นหาใน {category}...",
@@ -1520,16 +1625,43 @@
   "catalogTitle": "แคตตาล็อก",
   "categorizingItems": "กำลังจัดหมวดหมู่รายการ...",
   "category": "หมวดหมู่",
+  "categoryAlcohol": "เครื่องดื่มแอลกอฮอล์",
+  "categoryBaby": "ที่รัก",
+  "categoryBakery": "เบเกอรี่",
+  "categoryBeverages": "เครื่องดื่ม",
+  "categoryCanned": "สินค้ากระป๋อง",
+  "categoryCleaning": "การทำความสะอาด",
+  "categoryColdCuts": "การตัดเย็น",
   "categoryColorLabel": "สี",
+  "categoryDairy": "ผลิตภัณฑ์นม",
+  "categoryFish": "ปลา",
+  "categoryFrozen": "อาหารแช่แข็ง",
+  "categoryFruits": "ผลไม้",
+  "categoryGrains": "ธัญพืชและธัญพืช",
+  "categoryHygiene": "การดูแลส่วนบุคคล",
   "categoryIconLabel": "ไอคอน",
   "categoryLimitReached": "จำกัด 10 หมวดหมู่ในเวอร์ชันฟรี อัปเกรดเป็นโปร!",
+  "categoryMeat": "เนื้อ",
   "categoryName": "ชื่อหมวดหมู่",
   "categoryNameHint": "เช่น: เนื้อสัตว์",
+  "categoryOthers": "อื่น",
+  "categoryPet": "อุปกรณ์สำหรับสัตว์เลี้ยง",
+  "categorySeasonings": "เครื่องปรุงรส",
+  "categorySweets": "ขนมหวานและขนมหวาน",
+  "categoryUtilities": "ของใช้ในครัวเรือน",
+  "categoryVegetables": "ผัก",
+  "chatEmptyGreeting": "สวัสดี {name} ฉันชื่อกีปี 😏",
+  "chatEmptyGreetingNoName": "สวัสดี ฉันชื่อกีปี 😏",
+  "chatEmptyPitch": "ฉันสร้างรายการ แนะนำสูตรอาหาร และค้นหาที่ที่จะบันทึก เราจะเริ่มต้นที่ไหน?",
   "chatEmptySubtitle": "ขอคำแนะนำรายการ สูตรอาหาร หรือเคล็ดลับในการบันทึกเพื่อเริ่มต้น",
   "chatEmptyTitle": "แชทของคุณว่างเปล่า",
   "chatError": "ข้อผิดพลาดในการโหลดแชท: {error}",
   "chatHint": "พิมพ์ข้อความของคุณ...",
   "chatHintBlocked": "ปลดล็อค AI เพื่อแชท",
+  "chatHistoryErrorBody": "มีบางอย่างผิดพลาดทางฝั่งของเรา แตะลองอีกครั้งเพื่อลองอีกครั้ง",
+  "chatHistoryErrorTitle": "ไม่สามารถโหลดการสนทนานี้ได้",
+  "chatHistoryOfflineBody": "ตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณแล้วลองอีกครั้ง",
+  "chatHistoryOfflineTitle": "คุณออฟไลน์อยู่",
   "chatSubtitle": "สอบถามคำแนะนำรายการ สูตรอาหาร หรือเคล็ดลับประหยัดเงิน",
   "chatSubtitleShort": "สอบถามราคา สูตร การจัดเรียง...",
   "checkingItem": "กำลังตรวจสอบรายการ...",
@@ -1540,6 +1672,7 @@
   "chooseImageSource": "เลือกแหล่งที่มาของภาพ",
   "chooseLanguage": "เลือกภาษา",
   "chooseThemeColor": "เลือกสีของธีม",
+  "chooseThemeMode": "เลือกโหมดธีม",
   "clear": "ล้าง",
   "clearHistory": "ล้างประวัติ",
   "clearHistoryConfirm": "ล้างข้อความทั้งหมดในเซสชันนี้?",
@@ -1588,6 +1721,10 @@
   "customizeAssistant": "ปรับแต่ง",
   "dark": "มืด",
   "data": "ข้อมูล",
+  "dateGroupOlder": "แก่กว่า",
+  "dateGroupPrevious7Days": "7 วันที่ผ่านมา",
+  "dateGroupToday": "วันนี้",
+  "dateGroupYesterday": "เมื่อวาน",
   "dayFri": "ศุกร์",
   "dayMon": "จันทร์",
   "daySat": "นั่ง",
@@ -1611,6 +1748,7 @@
   "deleteRecipeConfirmMsg": "คุณแน่ใจหรือไม่ว่าต้องการลบ \"{recipeName}\" การดำเนินการนี้ไม่สามารถยกเลิกได้",
   "deleteSession": "ลบแชท",
   "deleteSessionConfirm": "คุณแน่ใจหรือไม่ว่าต้องการลบการแชทนี้ ข้อความจะหายไปอย่างถาวร",
+  "deletedList": "รายการที่ถูกลบ",
   "deselectAll": "ยกเลิกการเลือกทั้งหมด",
   "dietaryRestrictions": "ข้อจำกัดด้านอาหาร",
   "dietaryRestrictionsHint": "เช่น วีแกน มังสวิรัติ ปลอดกลูเตน",
@@ -1623,6 +1761,7 @@
   "editCategoryDialog": "แก้ไขหมวดหมู่",
   "editItem": "แก้ไขรายการ",
   "editItemPrice": "ราคาประมาณ",
+  "editMessage": "แก้ไขข้อความ",
   "editPantryItem": "แก้ไข {name}",
   "editRecipe": "แก้ไข",
   "editRecipeTitle": "แก้ไขสูตร",
@@ -1648,6 +1787,7 @@
   "errorLoadingChat": "อ๊ะ! เกิดข้อผิดพลาดในการโหลดแชท",
   "errorLoadingChatSubtitle": "ตรวจสอบการเชื่อมต่อของคุณหรือลองอีกครั้งในภายหลัง",
   "errorLoadingHistory": "เกิดข้อผิดพลาดในการโหลดประวัติ",
+  "errorLoadingItems": "เกิดข้อผิดพลาดในการโหลดรายการ",
   "errorLoadingLists": "เกิดข้อผิดพลาดในการโหลดรายการ",
   "errorLoadingProducts": "เกิดข้อผิดพลาดในการโหลดผลิตภัณฑ์: {error}",
   "errorLoadingRecipes": "เกิดข้อผิดพลาดในการโหลดสูตรอาหาร",
@@ -1722,6 +1862,7 @@
   "generatingShareLink": "กำลังสร้างลิงก์แชร์...",
   "gestureHint": "กดค้างเพื่อเลือก • ปัดเพื่อลบ",
   "globalAssistant": "ผู้ช่วยทั่วไป",
+  "goodResponse": "กระแสตอบรับดี",
   "howCanIHelp": "ฉันจะช่วยได้อย่างไร?",
   "icon": "ไอคอน:",
   "idealQty": "ปริมาณที่เหมาะสม",
@@ -1740,14 +1881,18 @@
   "inviteToList": "เชิญลงรายการ",
   "itemAdded": "{name} เพิ่มแล้ว",
   "itemAddedSnack": "{name} เพิ่มแล้ว",
+  "itemAddedToList": "เพิ่มรายการลงในรายการแล้ว",
   "itemName": "ชื่อรายการ",
   "itemRemoved": "ลบรายการแล้ว",
   "itemsAddedSuccess": "เพิ่มรายการในรายการสำเร็จแล้ว!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "ต้องซื้อ {deficit} รายการ",
   "itemsPurchased": "รายการที่ซื้อ",
   "itemsPurchasedCount": "{purchased} จาก {total} ที่ซื้อ",
   "itemsPurchasedShort": "{purchased}/{total} ซื้อแล้ว",
   "itemsWillBeAdded": "จะเพิ่ม {count} รายการ",
+  "keepAdding": "เพิ่มต่อไป",
+  "keepAddingSubtitle": "เปิดแผ่นงานไว้เพื่อเพิ่มหลายรายการ",
   "kipiListProActive": "KipiList Pro ใช้งานอยู่",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "คุณต้องการซื้ออะไร?",
@@ -1786,16 +1931,22 @@
   "marketsToAvoid": "ตลาดที่ควรหลีกเลี่ยง",
   "marketsToAvoidHint": "เช่น: ตลาด Y, ตลาด Z",
   "mealPlannerAddMeal": "เพิ่มมื้ออาหาร",
+  "mealPlannerAddType": "เพิ่มประเภทมื้ออาหาร",
+  "mealPlannerCustomTypeLabel": "ประเภทที่กำหนดเอง",
   "mealPlannerDateLabel": "วันที่",
+  "mealPlannerDefaultTypeLabel": "ประเภทเริ่มต้น",
   "mealPlannerDeleteMeal": "ลบมื้ออาหาร",
   "mealPlannerEditMeal": "แก้ไขมื้ออาหาร",
+  "mealPlannerEditType": "แก้ไขประเภทมื้ออาหาร",
   "mealPlannerError": "เกิดข้อผิดพลาดในการโหลดแผนอาหาร",
+  "mealPlannerEstimatePartial": "ประมาณการตามสูตรอาหารที่มีข้อมูลราคาบางส่วน",
   "mealPlannerGenerateList": "สร้างรายการช้อปปิ้ง",
   "mealPlannerGenerateListConfirm": "เพิ่มส่วนผสมทั้งหมดจากมื้ออาหารที่วางแผนไว้สัปดาห์นี้ลงในรายการช้อปปิ้งของคุณหรือไม่?",
   "mealPlannerGenerateListEmpty": "ไม่มีส่วนผสมที่ต้องเติม วางแผนมื้ออาหารด้วยสูตรอาหารก่อน",
   "mealPlannerGenerateListNoList": "สร้างรายการช็อปปิ้งก่อน",
   "mealPlannerGenerateListSuccess": "{count} เพิ่มส่วนผสมในรายการของคุณแล้ว!",
   "mealPlannerLoading": "กำลังโหลดแผนอาหาร...",
+  "mealPlannerManageTypes": "จัดการประเภทมื้ออาหาร",
   "mealPlannerMealDeleted": "อาหารถูกลบออก",
   "mealPlannerMealTypeBreakfast": "อาหารเช้า",
   "mealPlannerMealTypeDinner": "อาหารเย็น",
@@ -1815,6 +1966,12 @@
   "mealPlannerServings": "{count,plural, one{{count} เสิร์ฟ} other{{count} เสิร์ฟ}}",
   "mealPlannerServingsLabel": "เสิร์ฟ",
   "mealPlannerTitle": "วางแผนมื้ออาหาร",
+  "mealPlannerTypeColor": "สี",
+  "mealPlannerTypeDeleteConfirm": "คุณแน่ใจหรือไม่ว่าต้องการลบอาหารประเภทนี้ มื้ออาหารที่วางแผนไว้ประเภทนี้จะยังคงอยู่",
+  "mealPlannerTypeDeleteError": "ไม่สามารถลบอาหารประเภทนี้ได้",
+  "mealPlannerTypeIcon": "ไอคอน",
+  "mealPlannerTypeName": "ชื่อ",
+  "mealPlannerTypeNameEmpty": "ชื่อไม่สามารถเว้นว่างได้",
   "mealPlannerViewMonthly": "มุมมองรายเดือน",
   "mealPlannerViewWeekly": "มุมมองรายสัปดาห์",
   "mealPlannerWeekEmpty": "ไม่มีการวางแผนสำหรับสัปดาห์นี้",
@@ -1871,60 +2028,60 @@
   "noRecipesSavedHint": "สร้างสูตรอาหารที่คุณกำหนดเองสูตรแรกโดยแตะปุ่มด้านล่าง",
   "noTracking": "ไม่ติดตาม",
   "notInformed": "ไม่ได้ตั้งค่า",
-  "obHookCta": "Get Started",
-  "obHookSocial": "Trusted by thousands of shoppers worldwide",
-  "obHookSubtitle": "AI-powered lists that save you time and money, every single trip.",
-  "obHookTitle": "Smarter shopping starts here",
-  "obLoadingStepHabits": "Tuning to your shopping routine",
-  "obLoadingStepLists": "Preparing your smart lists",
-  "obLoadingStepProfile": "Adjusting for your household",
-  "obLoadingStepSavings": "Optimizing your savings strategy",
-  "obLoadingTitle": "Building your personalized plan...",
-  "obLoginApple": "Continue with Apple",
-  "obLoginError": "Sign-in failed. Try again or skip for now.",
-  "obLoginGoogle": "Continue with Google",
-  "obLoginSkip": "Not now",
-  "obLoginSubtitle": "Sign in so your lists sync across devices",
-  "obLoginTitle": "Save your plan",
-  "obPaywallRetry": "Try again",
-  "obPaywallTitle": "Unlock your plan",
-  "obQuizFrequencyBiweekly": "Every two weeks",
-  "obQuizFrequencyDaily": "Almost every day",
-  "obQuizFrequencyMonthly": "Big monthly haul",
-  "obQuizFrequencyTitle": "How often do you shop for groceries?",
-  "obQuizFrequencyWeekly": "Once a week",
-  "obQuizHouseholdCouple": "Me and my partner",
-  "obQuizHouseholdFamilyLarge": "Family of 5+",
-  "obQuizHouseholdFamilySmall": "Family of 3–4",
-  "obQuizHouseholdSolo": "Just me",
-  "obQuizHouseholdTitle": "Who do you shop for?",
-  "obQuizMethodMemory": "I keep it in my head",
-  "obQuizMethodNone": "I don't make lists",
-  "obQuizMethodNotes": "Notes app",
-  "obQuizMethodPaper": "Pen and paper",
-  "obQuizMethodTitle": "How do you make shopping lists today?",
-  "obQuizPainForget": "I always forget items",
-  "obQuizPainOverspend": "I spend more than planned",
-  "obQuizPainTime": "It takes too much time",
-  "obQuizPainTitle": "What frustrates you most about shopping?",
-  "obQuizPainWaste": "Food goes to waste at home",
-  "obQuizSavingsLarge": "As much as possible",
-  "obQuizSavingsMedium": "Around 10% of my grocery bill",
-  "obQuizSavingsSmall": "A little — every bit counts",
-  "obQuizSavingsTitle": "How much would you like to save monthly?",
-  "obRevealFeatureAi": "AI builds and organizes your lists",
-  "obRevealFeatureBudget": "Spending tracked against your goal",
-  "obRevealFeaturePantry": "Pantry tracking cuts food waste",
-  "obRevealFeatureShare": "Real-time sharing with your household",
-  "obRevealMonth": "Month {n}",
-  "obRevealSavingsCaption": "Projected savings with KipiList",
-  "obRevealSubtitle": "Here's how KipiList will work for you",
-  "obRevealTitle": "Your plan is ready!",
-  "obSocialQuote1": "I never forget anything anymore. The AI builds my list in seconds.",
-  "obSocialQuote2": "We cut our grocery bill noticeably in the first month.",
-  "obSocialQuote3": "Sharing the list with my partner ended our shopping chaos.",
-  "obSocialSubtitle": "Shoppers like you are already saving with KipiList",
-  "obSocialTitle": "You're in good company",
+  "obHookCta": "เริ่มต้นเลย",
+  "obHookSocial": "ได้รับความไว้วางใจจากนักช้อปหลายพันรายทั่วโลก",
+  "obHookSubtitle": "รายการที่ขับเคลื่อนโดย AI ซึ่งช่วยคุณประหยัดเวลาและเงินในทุกการเดินทาง",
+  "obHookTitle": "การช้อปปิ้งอย่างชาญฉลาดเริ่มต้นที่นี่",
+  "obLoadingStepHabits": "ปรับให้เข้ากับกิจวัตรการช็อปปิ้งของคุณ",
+  "obLoadingStepLists": "กำลังเตรียมรายการอัจฉริยะของคุณ",
+  "obLoadingStepProfile": "ปรับตัวให้เข้ากับครัวเรือนของคุณ",
+  "obLoadingStepSavings": "เพิ่มประสิทธิภาพกลยุทธ์การออมของคุณ",
+  "obLoadingTitle": "การสร้างแผนส่วนบุคคลของคุณ...",
+  "obLoginApple": "ต่อด้วยแอปเปิล",
+  "obLoginError": "การลงชื่อเข้าใช้ล้มเหลว ลองอีกครั้งหรือข้ามไปก่อน",
+  "obLoginGoogle": "ดำเนินการต่อด้วย Google",
+  "obLoginSkip": "ไม่ใช่ตอนนี้",
+  "obLoginSubtitle": "ลงชื่อเข้าใช้เพื่อให้รายการของคุณซิงค์ระหว่างอุปกรณ์ต่างๆ",
+  "obLoginTitle": "บันทึกแผนของคุณ",
+  "obPaywallRetry": "ลองอีกครั้ง",
+  "obPaywallTitle": "ปลดล็อคแผนของคุณ",
+  "obQuizFrequencyBiweekly": "ทุกสองสัปดาห์",
+  "obQuizFrequencyDaily": "เกือบทุกวัน",
+  "obQuizFrequencyMonthly": "ลากรายเดือนครั้งใหญ่",
+  "obQuizFrequencyTitle": "คุณซื้อของชำบ่อยแค่ไหน?",
+  "obQuizFrequencyWeekly": "สัปดาห์ละครั้ง",
+  "obQuizHouseholdCouple": "ฉันและคู่ของฉัน",
+  "obQuizHouseholdFamilyLarge": "ครอบครัว 5+",
+  "obQuizHouseholdFamilySmall": "ครอบครัว 3-4 คน",
+  "obQuizHouseholdSolo": "แค่ฉัน",
+  "obQuizHouseholdTitle": "คุณชอปปิ้งให้ใคร?",
+  "obQuizMethodMemory": "ฉันเก็บมันไว้ในหัวของฉัน",
+  "obQuizMethodNone": "ฉันไม่ทำรายการ",
+  "obQuizMethodNotes": "แอพโน้ต",
+  "obQuizMethodPaper": "ปากกาและกระดาษ",
+  "obQuizMethodTitle": "วันนี้คุณทำรายการช้อปปิ้งอย่างไร?",
+  "obQuizPainForget": "ฉันมักจะลืมสิ่งของต่างๆ",
+  "obQuizPainOverspend": "ฉันใช้จ่ายมากกว่าที่วางแผนไว้",
+  "obQuizPainTime": "มันต้องใช้เวลามากเกินไป",
+  "obQuizPainTitle": "อะไรทำให้คุณหงุดหงิดที่สุดเกี่ยวกับการช็อปปิ้ง?",
+  "obQuizPainWaste": "อาหารจะเหลือทิ้งที่บ้าน",
+  "obQuizSavingsLarge": "ให้มากที่สุดเท่าที่เป็นไปได้",
+  "obQuizSavingsMedium": "ประมาณ 10% ของบิลร้านขายของชำของฉัน",
+  "obQuizSavingsSmall": "เพียงเล็กน้อย — ทุกบิตมีค่า",
+  "obQuizSavingsTitle": "คุณต้องการออมเงินเดือนละเท่าไร?",
+  "obRevealFeatureAi": "AI สร้างและจัดระเบียบรายการของคุณ",
+  "obRevealFeatureBudget": "ติดตามการใช้จ่ายตามเป้าหมายของคุณ",
+  "obRevealFeaturePantry": "การติดตามตู้กับข้าวช่วยลดขยะอาหาร",
+  "obRevealFeatureShare": "แบ่งปันแบบเรียลไทม์กับครอบครัวของคุณ",
+  "obRevealMonth": "เดือน {n}",
+  "obRevealSavingsCaption": "คาดการณ์การประหยัดด้วย KipiList",
+  "obRevealSubtitle": "นี่คือวิธีที่ KipiList จะทำงานให้คุณ",
+  "obRevealTitle": "แผนของคุณพร้อมแล้ว!",
+  "obSocialQuote1": "ฉันไม่เคยลืมอะไรอีกต่อไป AI สร้างรายการของฉันในไม่กี่วินาที",
+  "obSocialQuote2": "เราลดค่าของชำลงอย่างเห็นได้ชัดในเดือนแรก",
+  "obSocialQuote3": "การแชร์รายการกับคู่ของฉันช่วยยุติความวุ่นวายในการช็อปปิ้งของเรา",
+  "obSocialSubtitle": "นักช้อปเช่นคุณกำลังประหยัดกับ KipiList อยู่แล้ว",
+  "obSocialTitle": "คุณอยู่ในสังคมที่ดี",
   "observations": "หมายเหตุ",
   "observationsHint": "การตั้งค่าอื่นๆ สำหรับผู้ช่วย",
   "offlineBanner": "คุณออฟไลน์อยู่",
@@ -2040,6 +2197,7 @@
   "onboardingViewAllPlans": "ดูแผนทั้งหมด",
   "onboardingWelcomeDesc": "วิธีที่ชาญฉลาดที่สุดในการจัดระเบียบการซื้อของและประหยัดเงิน",
   "onboardingWelcomeTitle": "ยินดีต้อนรับสู่KipiList",
+  "openConversation": "เปิดการสนทนา",
   "openMenu": "เปิดเมนู",
   "organizeAisles": "จัดเรียงตามโซน",
   "organizeAislesPrompt": "จัดเรียงตามโซนในร้าน",
@@ -2051,15 +2209,18 @@
   "pantryAppBar": "ตู้กับข้าว",
   "pantryAvailabilityAll": "พร้อมแล้ว!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} ในตู้กับข้าว",
+  "pantryDeficitCount": "ขาด {count}{unit}",
   "pantryEditTitle": "แก้ไข {name}",
   "pantryEmpty": "ตู้กับข้าวว่าง",
   "pantryEmptySubtitle": "เพิ่มสินค้าที่คุณต้องการมีไว้ที่บ้าน",
+  "pantryItemAdded": "เพิ่มรายการแล้ว",
   "pantryItemRemoved": "ลบรายการแล้ว",
   "pantryLimitReached": "จำกัด {count} รายการในตู้กับข้าวในแผนฟรี อัปเกรดเพื่อเพิ่มเพิ่มเติม",
   "paywallAfterItem1": "ธัญพืช",
   "paywallAfterItem2": "การทำความสะอาด",
   "paywallAfterItem3": "เนื้อสัตว์",
   "paywallAfterItem4": "เบเกอรี่",
+  "paywallBasedOnAnswers": "ปรับแต่งจากคำตอบของคุณ",
   "paywallBeforeAfterTitle": "AI ก่อนและหลัง:",
   "paywallBeforeItem1": "ข้าว",
   "paywallBeforeItem2": "สบู่",
@@ -2097,6 +2258,8 @@
   "paywallGoalHeadlinePantry": "{name} ติดตามตู้กับข้าวของคุณอย่างสมบูรณ์แบบ!",
   "paywallGoalHeadlineRecipes": "{name} ค้นพบสูตรอาหารใหม่ๆ!",
   "paywallGoalHeadlineSaveMoney": "{name} ประหยัดทุกทริป!",
+  "paywallHeroFeatureDesc": "พูดหรือวางรายการทั้งหมด — AI จัดเรียง จัดหมวดหมู่ และตั้งงบประมาณภายในไม่กี่วินาที",
+  "paywallHeroFeatureTitle": "AI ผู้ช่วยช้อปปิ้ง",
   "paywallHeroHeadline": "Kipi AI อยู่เคียงข้างคุณเสมอ",
   "paywallHeroSubtitle": "เพิ่มรายการ จัดระเบียบรายการ และประหยัดเวลาด้วย AI ในกระเป๋าของคุณ",
   "paywallHeroSubtitlePersonalized": "สวัสดี {name} จัดระเบียบการซื้อของของคุณให้ถูกวิธี",
@@ -2131,6 +2294,11 @@
   "paywallTestimonial2Text": "ฉันไม่เคยลืมรายการอีกเลย แชท AI สุดเร้าใจ!",
   "paywallTestimonialAuthor": "แอน เอส.",
   "paywallTestimonialsTitle": "ผู้ใช้ของเราพูดว่าอย่างไร:",
+  "paywallTimelineChargeDesc": "การสมัครของคุณเริ่มต้น — ยกเลิกได้ตลอดเวลา",
+  "paywallTimelineDay": "วัน {day}",
+  "paywallTimelineReminderDesc": "เราแจ้งเตือนคุณก่อนช่วงทดลองใช้จะสิ้นสุดลง",
+  "paywallTimelineToday": "วันนี้",
+  "paywallTimelineTodayDesc": "ปลดล็อคการเข้าถึงแบบเต็มทันที",
   "paywallTitle": "KipiList พรีเมี่ยม",
   "paywallTrialCta": "เริ่มทดลองใช้ฟรี",
   "paywallTrialDays": "{days} วันฟรี",
@@ -2153,11 +2321,15 @@
   "prefSharing": "แชร์รายการ",
   "prefUnlimitedLists": "รายการไม่จำกัด",
   "prefUnlimitedPantry": "ตู้กับข้าวไม่จำกัด",
+  "preferencesSection": "การตั้งค่า",
   "preferredMarket": "ตลาดที่ต้องการ",
   "preferredMarketHint": "เช่น: ซูเปอร์มาร์เก็ต X",
+  "premiumActionsPrompt": "สมัครสมาชิก Premium เพื่อปลดล็อกการดำเนินการอัตโนมัติ",
+  "premiumStepDescription": "{description} (พรีเมียม)",
   "premiumUpgrade": "อัปเกรดเพื่อปลดล็อก",
   "prepTime": "เวลาเตรียมตัว",
   "prepTimeMinutes": "เวลาเตรียม (นาที)",
+  "previousItemState": "สถานะก่อนหน้า: {quantity} {unit} [{category}]{price}",
   "privacy": "ความเป็นส่วนตัว",
   "processing": "กำลังประมวลผล...",
   "product": "ผลิตภัณฑ์",
@@ -2177,21 +2349,34 @@
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "กำลังค้นหารายการของคุณ...",
+  "quickActionAi": "คุยกับกีกี้",
+  "quickActionPantry": "ดูตู้กับข้าว",
   "quickRecipe": "สูตรด่วน",
   "quickRecipePrompt": "แนะนำสูตรอาหารด้วยรายการจากรายการของฉัน",
   "quickReplies": "ตอบกลับด่วน:",
   "quickSuggestions": "คำแนะนำด่วน",
+  "recipeAddError": "ไม่สามารถเพิ่มลงในรายการของคุณได้ โปรดลองอีกครั้ง",
   "recipeAddToList": "เพิ่มไปยังรายการช้อปปิ้ง",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "สร้างสูตรแล้ว!",
   "recipeDeleted": "ลบสูตรแล้ว",
+  "recipeEstimatePartial": "ประมาณการบางส่วนตามส่วนผสมพร้อมราคา",
+  "recipeEstimatedCostPerServing": "{cost} / หน่วยบริโภค",
+  "recipeEstimatedTotalCost": "ค่าใช้จ่ายทั้งหมดโดยประมาณ",
   "recipeImage": "รูปภาพสูตรอาหาร",
+  "recipeIngredientInPantry": "ในตู้กับข้าว",
+  "recipeIngredientLowPantry": "ต่ำในตู้กับข้าว",
   "recipeIngredientSingular": "1ส่วนผสม",
   "recipeIngredientsPlural": "{count} ส่วนผสม",
+  "recipeManualTotalCost": "ต้นทุนรวมด้วยตนเอง",
+  "recipeManualTotalCostHint": "เว้นว่างไว้เพื่อประเมินจากราคาส่วนผสม",
   "recipeName": "ชื่อสูตร",
   "recipeSaved": "บันทึกสูตรแล้ว!",
+  "recipeServesCount": "เสิร์ฟ {count}",
   "recipeSuggestion": "คำแนะนำสูตรอาหาร",
   "recipeTags": "แท็กสูตร",
+  "recipeTapToCheck": "แตะส่วนผสมเพื่อตรวจสอบขณะทำอาหาร",
+  "recipeYieldServings": "ให้ผลผลิต",
   "regenerate": "สร้างใหม่",
   "remove": "ลบออก",
   "removeBudget": "ลบออก",
@@ -2226,9 +2411,12 @@
   "scanBarcodeTitle": "สแกนบาร์โค้ด",
   "scanProduct": "สแกนผลิตภัณฑ์",
   "scanProductTitle": "สแกนผลิตภัณฑ์",
+  "scrollToBottom": "เลื่อนไปที่ด้านล่าง",
+  "searchConversations": "ค้นหาการสนทนา",
   "searchCurrency": "ค้นหาสกุลเงิน...",
   "searchInConversation": "ค้นหาในการสนทนา...",
   "searchLanguage": "ค้นหาภาษา...",
+  "searchMessages": "ค้นหาข้อความ...",
   "searchRecipes": "ค้นหาสูตรอาหาร...",
   "searchingCategories": "กำลังค้นหาหมวดหมู่...",
   "searchingProducts": "กำลังค้นหาผลิตภัณฑ์...",
@@ -2268,6 +2456,7 @@
   "signInGoogle": "เข้าสู่ระบบด้วย Google",
   "skip": "ข้าม",
   "smartOrganization": "การจัดระเบียบอัจฉริยะ",
+  "somethingWentWrong": "มีบางอย่างผิดพลาด",
   "sortAZ": "ก-ฮ",
   "sortCategory": "หมวดหมู่",
   "sortDate": "วันที่",
@@ -2299,6 +2488,7 @@
   "themeColor": "สีธีม",
   "themeGreen": "เขียว",
   "themeIndigo": "คราม",
+  "themeMode": "โหมดธีม",
   "themeOrange": "ส้ม",
   "themePink": "ชมพู",
   "themePurple": "ม่วง",
@@ -2316,6 +2506,7 @@
   "toolSaveRecipe": "บันทึกสูตร",
   "toolShareList": "รายการแบ่งปัน",
   "totalEstimated": "ประมาณการรวม: {amount}",
+  "totalEstimatedLabel": "รวมประมาณ",
   "totalSavings": "เงินออมทั้งหมด",
   "totalSpending": "ค่าใช้จ่ายทั้งหมด",
   "trackStock": "ติดตามสต็อก",
@@ -2323,6 +2514,7 @@
   "trackStockInactive": "ไม่สร้างคำแนะนำการช้อปปิ้ง",
   "uncheckingItem": "กำลังยกเลิกการเลือกรายการ...",
   "undo": "เลิกทำ",
+  "undoChanges": "เลิกทำการเปลี่ยนแปลง",
   "unit": "หน่วย",
   "unitPack": "แพ็ค",
   "unlockAi": "ปลดล็อค AI ไม่จำกัด",
@@ -2336,6 +2528,7 @@
   "updatingPantry": "กำลังอัพเดตตู้กับข้าว...",
   "upgrade": "อัปเกรด",
   "userProfile": "โปรไฟล์ผู้ใช้",
+  "userRole": "คุณ",
   "validForLimitedTime": "ใช้ได้ภายในเวลาที่กำหนด",
   "version": "เวอร์ชัน",
   "viewActive": "ดูที่ใช้งานอยู่",
@@ -2343,6 +2536,7 @@
   "viewHistory": "ดูประวัติ",
   "viewItems": "ดูรายการ",
   "viewList": "ดูรายการ",
+  "viewPlans": "ดูแผน",
   "viewPro": "ดูโปร",
   "viewRecipe": "ดูสูตร",
   "voiceCommandContent": "พูดอย่างเป็นธรรมชาติเพื่อจัดการรายการของคุณ!\n\nตัวอย่าง:\n• 'เพิ่มขนมปัง ชีส และแฮม'\n• 'ลบน้ำยาซักผ้า'\n• 'เปลี่ยนธีมเป็นสีน้ำเงิน'\n\nนี่คือฟีเจอร์พิเศษของ KipiList Premium",

@@ -34,6 +34,35 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -136,6 +165,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -269,6 +305,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -298,6 +337,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -377,6 +423,9 @@
   "@manageCategoriesTitle": {
     "description": "Title for category management"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
@@ -412,6 +461,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -928,6 +980,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1047,6 +1109,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1085,6 +1154,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1145,6 +1237,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1158,7 +1253,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1289,22 +1398,41 @@
   "addToPantryPrompt": "Voeg \"{name}\" by jou Spens?",
   "addedFeedback": "Bygevoeg!",
   "advancedFeatures": "Gevorderde kenmerke",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Kon nie handelinge uitvoer nie",
+  "agentActionsPremium": "Aksies vereis Premium",
+  "agentActionsRunning": "Loop tans handelinge …",
+  "aiApiError": "Die KI-diens het 'n fout ({statusCode}) teruggestuur.",
   "aiAssistant": "AI Assistent",
   "aiAssistantDescription": "Kry slim voorstelle, resepte en persoonlike wenke met ons AI-assistent.",
   "aiAssistantTitle": "KI assistent",
+  "aiCapabilitiesBudget": "Begroting & Pryse",
+  "aiCapabilitiesLists": "Inkopielyste",
+  "aiCapabilitiesOrganize": "Organisasie",
+  "aiCapabilitiesRecipes": "Resepte & Spyskaarte",
+  "aiCapabilitiesTitle": "Wat kan ek doen?",
+  "aiConnectionError": "Kon nie aan die KI-diens koppel nie. Gaan jou verbinding na.",
   "aiCreditsRemaining": "{remaining} krediete oor",
+  "aiEmptyResponseError": "Die KI-diens het 'n leë antwoord teruggestuur.",
   "aiEnergy": "AI Energie",
   "aiEnergyLow": "Lae KI-energie",
   "aiError": "Jammer, 'n fout het voorgekom met die verwerking van jou versoek. Gaan jou verbinding na of probeer later weer.",
+  "aiGeneratingResponse": "Genereer tans reaksie …",
+  "aiInvalidResponseError": "Die KI-diens het 'n ongeldige antwoord teruggestuur.",
   "aiLimitAlmostReached": "Amper uit KI-boodskappe",
+  "aiRateLimitError": "Te veel boodskappe in 'n kort tyd. Wag 'n paar sekondes en probeer weer.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} vandag",
+  "aiSection": "AI assistent",
   "aiSubscribeUnlimited": "Teken in vir onbeperkte KI",
   "aiTeaserFallback": "Teken in op Premium om die volle reaksie te ontsluit en kry onbeperkte KI-wenke vir jou inkopies...",
+  "aiTimeoutError": "Die versoek het te lank geneem. Probeer asseblief weer.",
   "aiUnlockUnlimited": "Ontsluit onbeperkte AI",
   "aiUsageExhausted": "Maandelikse KI-limiet bereik. Gradeer op na Pro vir onbeperk →",
   "aiUsageWarning": "{remaining} KI-aksies oor hierdie maand — gradeer op vir onbeperk",
   "aiVoiceCommandTooltip": "KI-stemopdrag (Premium)",
   "aiWelcomeContent": "Hallo! 👋 Ek is **Kipi**, jou persoonlike inkopie- en resepassistent!\n\nEk is hier om jou te help:\n🛒 **Organiseer** jou inkopies outomaties volgens kategorieë\n💰 ** Volg** jou begroting en gee jou wenke om geld te bespaar\n🍲 **Stel voor** heerlike resepte met wat jy reeds het\n\nHoe kan ek jou vandag help? Jy kan begin deur jou eerste lys te skep!",
+  "aiWelcomeSuggestBarbecue": "Beplan 'n braai",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, ek bied 'n braai aan — help my om die inkopielys te bou",
   "aiWelcomeSuggestCreateList": "Skep my eerste lys",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, help my om my eerste inkopielys te skep",
   "aiWelcomeSuggestSave": "Hoe om geld te spaar?",
@@ -1314,9 +1442,12 @@
   "appTitle": "Klyslys",
   "appearance": "Voorkoms",
   "archiveList": "Argiveer lys",
+  "artifactBudgetLabel": "Begroting:",
+  "artifactSynced": "Gesinkroniseer",
   "assistantHistory": "Assistent-geskiedenis",
   "assistantHistorySubtitle": "Bekyk jou gesprekgeskiedenis",
   "assistantName": "Assistent-naam",
+  "assistantRole": "Assistent",
   "backToChat": "Terug na Chat",
   "backToToday": "Terug na vandag",
   "backupExported": "Rugsteun uitgevoer!",
@@ -1324,6 +1455,7 @@
   "backupPremiumDescription": "Rugsteun en uitvoer is 'n premium kenmerk",
   "backupSubtitle": "Voer uit of voer jou data in",
   "backupTitle": "Rugsteun",
+  "badResponse": "Slegte reaksie",
   "badgeBeginner": "Beginner",
   "badgeOrganized": "Georganiseer",
   "badgeSavingMaster": "Redende Meester",
@@ -1353,6 +1485,7 @@
   "catalogFilterNational": "Onderdane",
   "catalogMyFrequents": "My gereelde",
   "catalogProductNotFound": "Produk nie gevind nie, tik die naam in",
+  "catalogRareBadge": "Skaars",
   "catalogRareSection": "minder algemeen in jou land",
   "catalogSearchGlobal": "Soek enige produk...",
   "catalogSearchInCategory": "Soek in {category}...",
@@ -1360,16 +1493,43 @@
   "catalogSortPopular": "Gewildste",
   "catalogTitle": "Katalogus",
   "category": "Kategorie",
+  "categoryAlcohol": "Alkoholiese drankies",
+  "categoryBaby": "Baba",
+  "categoryBakery": "Bakkery",
+  "categoryBeverages": "Dranke",
+  "categoryCanned": "Ingemaakte goedere",
+  "categoryCleaning": "Skoonmaak",
+  "categoryColdCuts": "Kouevleis",
   "categoryColorLabel": "Kleur",
+  "categoryDairy": "Suiwel",
+  "categoryFish": "Vis",
+  "categoryFrozen": "Bevrore kosse",
+  "categoryFruits": "Vrugte",
+  "categoryGrains": "Graan en graan",
+  "categoryHygiene": "Persoonlike sorg",
   "categoryIconLabel": "Ikoon",
   "categoryLimitReached": "Kategorielimiet bereik",
+  "categoryMeat": "Vleis",
   "categoryName": "Kategorie naam",
   "categoryNameHint": "Voer kategorienaam in",
+  "categoryOthers": "Ander",
+  "categoryPet": "Troeteldierbenodigdhede",
+  "categorySeasonings": "Geurmiddels",
+  "categorySweets": "Lekkergoed en nageregte",
+  "categoryUtilities": "Huishoudelike voorrade",
+  "categoryVegetables": "Groente",
+  "chatEmptyGreeting": "Hallo {name}, ek is Kipi 👋",
+  "chatEmptyGreetingNoName": "Hallo, ek is Kipi 👋",
+  "chatEmptyPitch": "Ek bou lyste, stel resepte voor en vind waar om te stoor. Waar begin ons?",
   "chatEmptySubtitle": "Vra vir itemvoorstelle, resepte of spaarwenke om te begin.",
   "chatEmptyTitle": "Jou klets is leeg",
   "chatError": "Fout met laai van geselsie: {error}",
   "chatHint": "Tik jou boodskap...",
   "chatHintBlocked": "Ontsluit AI om te gesels",
+  "chatHistoryErrorBody": "Iets het aan ons kant verkeerd geloop. Tik weer probeer om weer te probeer.",
+  "chatHistoryErrorTitle": "Kon nie hierdie gesprek laai nie",
+  "chatHistoryOfflineBody": "Gaan jou internetverbinding na en probeer weer.",
+  "chatHistoryOfflineTitle": "Jy is vanlyn",
   "chatSubtitle": "Vra vir itemvoorstelle, resepte of besparingwenke.",
   "chatSubtitleShort": "Vra oor pryse, resepte, organisasie...",
   "chooseCurrency": "Kies Geldeenheid",
@@ -1377,6 +1537,7 @@
   "chooseImageSource": "Kies beeldbron",
   "chooseLanguage": "Kies taal",
   "chooseThemeColor": "Kies tema kleur",
+  "chooseThemeMode": "Kies temamodus",
   "clear": "Maak skoon",
   "clearHistory": "Maak Geskiedenis Skoon",
   "clearHistoryConfirm": "Maak alle boodskappe in hierdie sessie skoon?",
@@ -1419,6 +1580,10 @@
   "customizeAssistant": "Pasmaak",
   "dark": "Donker",
   "data": "Data",
+  "dateGroupOlder": "Ouer",
+  "dateGroupPrevious7Days": "Vorige 7 dae",
+  "dateGroupToday": "Vandag",
+  "dateGroupYesterday": "Gister",
   "deficitItems": "{deficit,plural, one{{deficit} item moet gekoop word} other{{deficit} items moet gekoop word}}",
   "delete": "Verwyder",
   "deleteCategory": "Vee uit",
@@ -1435,6 +1600,7 @@
   "deleteRecipeConfirmMsg": "Is jy seker jy wil \"{recipeName}\" verwyder? Hierdie aksie kan nie ongedaan gemaak word nie.",
   "deleteSession": "Vee Chat uit",
   "deleteSessionConfirm": "Is jy seker jy wil hierdie klets uitvee? Die boodskappe sal permanent verlore gaan.",
+  "deletedList": "Geskrap lys",
   "deselectAll": "Ontkies alles",
   "dietaryRestrictions": "Dieetbeperkings",
   "dietaryRestrictionsHint": "Enige dieetbeperkings?",
@@ -1447,6 +1613,7 @@
   "editCategoryDialog": "Wysig kategorie",
   "editItem": "Wysig Item",
   "editItemPrice": "Geraamde prys",
+  "editMessage": "Wysig boodskap",
   "editPantryItem": "Wysig {name}",
   "editRecipe": "Wysig",
   "editRecipeTitle": "Wysig resep",
@@ -1460,6 +1627,7 @@
   "errorLoadingChat": "Oeps! Iets het verkeerd geloop om die klets te laai.",
   "errorLoadingChatSubtitle": "Gaan jou verbinding na of probeer later weer.",
   "errorLoadingHistory": "Kon nie geskiedenis laai nie",
+  "errorLoadingItems": "Kon nie items laai nie",
   "errorLoadingLists": "Kon nie lyste laai nie",
   "errorLoadingRecipes": "Fout met laai van resepte",
   "errorLoadingSubscription": "Kon nie intekening laai nie",
@@ -1512,6 +1680,7 @@
   "generateShoppingList": "Genereer klyslys",
   "gestureHint": "Hou om te kies • Swiep om te verwyder",
   "globalAssistant": "Globale assistent",
+  "goodResponse": "Goeie reaksie",
   "howCanIHelp": "Hoe kan ek help?",
   "idealQty": "Ideale hoev",
   "idealQuantity": "Ideale hoeveelheid",
@@ -1528,14 +1697,18 @@
   "instructionsHint": "Tik een stap per reël...",
   "inviteToList": "Nooi na lys",
   "itemAddedSnack": "{name} bygevoeg",
+  "itemAddedToList": "Item is by die lys gevoeg.",
   "itemName": "Itemnaam",
   "itemRemoved": "Item verwyder",
   "itemsAddedSuccess": "Items suksesvol by lys gevoeg!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} item(s) moet gekoop word",
   "itemsPurchased": "Items gekoop",
   "itemsPurchasedCount": "{purchased} van {total} gekoop",
   "itemsPurchasedShort": "{purchased}/{total} gekoop",
   "itemsWillBeAdded": "{count} item(s) sal bygevoeg word",
+  "keepAdding": "Hou aan om by te voeg",
+  "keepAddingSubtitle": "Hou die blad oop om verskeie items by te voeg",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiLys",
   "kipiQuickBarHint": "Wat moet jy koop?",
@@ -1568,19 +1741,26 @@
   "markAsPurchased": "Merk as gekoop",
   "markItemsToSeeAnalysis": "Merk items as gekoop om die analise te sien.",
   "marketMode": "Markmodus",
+  "marketModeDescription": "Merk items af terwyl jy inkopies doen",
   "marketsToAvoid": "Markte om te vermy",
   "marketsToAvoidHint": "Markte by wie jy verkies om nie inkopies te doen nie",
   "mealPlannerAddMeal": "Voeg maaltyd by",
+  "mealPlannerAddType": "Voeg maaltydtipe by",
+  "mealPlannerCustomTypeLabel": "Gepasmaakte tipe",
   "mealPlannerDateLabel": "Datum",
+  "mealPlannerDefaultTypeLabel": "Verstek tipe",
   "mealPlannerDeleteMeal": "Verwyder maaltyd",
   "mealPlannerEditMeal": "Wysig maaltyd",
+  "mealPlannerEditType": "Wysig maaltydtipe",
   "mealPlannerError": "Fout met laai van maaltydplan",
+  "mealPlannerEstimatePartial": "Skat gebaseer op resepte met gedeeltelike prysdata.",
   "mealPlannerGenerateList": "Genereer inkopielys",
   "mealPlannerGenerateListConfirm": "Voeg alle bestanddele van beplande maaltye hierdie week by jou inkopielys?",
   "mealPlannerGenerateListEmpty": "Geen bestanddele om by te voeg nie. Beplan eers 'n paar maaltye met resepte.",
   "mealPlannerGenerateListNoList": "Skep eers 'n inkopielys.",
   "mealPlannerGenerateListSuccess": "{count} bestanddeel(e) by jou lys gevoeg!",
   "mealPlannerLoading": "Laai tans maaltydplan...",
+  "mealPlannerManageTypes": "Bestuur maaltydtipes",
   "mealPlannerMealDeleted": "Maaltyd verwyder",
   "mealPlannerMealTypeBreakfast": "Ontbyt",
   "mealPlannerMealTypeDinner": "Aandete",
@@ -1600,6 +1780,12 @@
   "mealPlannerServings": "{count,plural, one{{count} porsie} other{{count} porsies}}",
   "mealPlannerServingsLabel": "Porsies",
   "mealPlannerTitle": "Maaltydbeplanner",
+  "mealPlannerTypeColor": "Kleur",
+  "mealPlannerTypeDeleteConfirm": "Is jy seker jy wil hierdie maaltydtipe uitvee? Beplande etes met hierdie tipe sal bly.",
+  "mealPlannerTypeDeleteError": "Kan nie hierdie maaltydtipe uitvee nie.",
+  "mealPlannerTypeIcon": "Ikoon",
+  "mealPlannerTypeName": "Naam",
+  "mealPlannerTypeNameEmpty": "Naam kan nie leeg wees nie",
   "mealPlannerViewMonthly": "Maandelikse aansig",
   "mealPlannerViewWeekly": "Weeklikse aansig",
   "mealPlannerWeekEmpty": "Niks beplan vir hierdie week nie",
@@ -1619,6 +1805,7 @@
   "navRecipes": "Resepte",
   "newCategoryDialog": "Nuwe kategorie",
   "newChat": "Nuwe Chat",
+  "newChatStarted": "Nuwe klets het begin",
   "newListTitle": "Nuwe Klyslys",
   "newPantryList": "Spens Inkopies",
   "newRecipe": "Nuwe resep",
@@ -1811,6 +1998,7 @@
   "onboardingViewAllPlans": "Bekyk alle planne",
   "onboardingWelcomeDesc": "Die slimste manier om jou inkopies te organiseer en geld te spaar.",
   "onboardingWelcomeTitle": "Welkom by KipiList",
+  "openConversation": "Oop gesprek",
   "openMenu": "Maak spyskaart oop",
   "organizeAisles": "Organiseer volgens gange",
   "organizeAislesPrompt": "Organiseer volgens winkelgange.",
@@ -1820,14 +2008,17 @@
   "pantryAppBar": "Spens",
   "pantryAvailabilityAll": "Alles gereed!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} in spens",
+  "pantryDeficitCount": "Ontbreek {count}{unit}",
   "pantryEditTitle": "Wysig {name}",
   "pantryEmpty": "Spens is leeg",
   "pantryEmptySubtitle": "Voeg produkte by wat jy tuis wil hou",
+  "pantryItemAdded": "Item bygevoeg",
   "pantryItemRemoved": "Item verwyder",
   "paywallAfterItem1": "Korrels",
   "paywallAfterItem2": "Skoonmaak",
   "paywallAfterItem3": "Vleis",
   "paywallAfterItem4": "Bakkery",
+  "paywallBasedOnAnswers": "Gepersonaliseer vanaf jou antwoorde",
   "paywallBeforeAfterTitle": "KI voor en na:",
   "paywallBeforeItem1": "rys",
   "paywallBeforeItem2": "seep",
@@ -1865,6 +2056,8 @@
   "paywallGoalHeadlinePantry": "{name}, hou jou spens perfek dop!",
   "paywallGoalHeadlineRecipes": "{name}, ontdek nuwe resepte!",
   "paywallGoalHeadlineSaveMoney": "{name}, bespaar op elke reis!",
+  "paywallHeroFeatureDesc": "Praat of plak 'n hele lys - KI sorteer, kategoriseer en begroot dit binne sekondes",
+  "paywallHeroFeatureTitle": "AI Winkelassistent",
   "paywallHeroHeadline": "Kipi AI altyd aan jou sy",
   "paywallHeroSubtitle": "Voeg items by, organiseer lyste en bespaar tyd met KI in jou sak",
   "paywallHeroSubtitlePersonalized": "Haai {name}, organiseer jou inkopies op die regte manier.",
@@ -1899,6 +2092,11 @@
   "paywallTestimonial2Text": "Ek het nooit weer 'n lysitem vergeet nie. Die KI-klets is sensasioneel!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Wat ons gebruikers sê:",
+  "paywallTimelineChargeDesc": "Jou intekening begin — kanselleer enige tyd",
+  "paywallTimelineDay": "Dag {day}",
+  "paywallTimelineReminderDesc": "Ons herinner jou voor die verhoor eindig",
+  "paywallTimelineToday": "Vandag",
+  "paywallTimelineTodayDesc": "Ontsluit volle toegang onmiddellik",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Begin gratis proeflopie",
   "paywallTrialDays": "{days} DAE GRATIS",
@@ -1921,11 +2119,15 @@
   "prefSharing": "Deel lyste",
   "prefUnlimitedLists": "Onbeperkte lyste",
   "prefUnlimitedPantry": "Onbeperkte spens",
+  "preferencesSection": "Voorkeure",
   "preferredMarket": "Voorkeur mark",
   "preferredMarketHint": "Waar koop jy gewoonlik inkopies?",
+  "premiumActionsPrompt": "Teken in op Premium om outomatiese aksies te ontsluit.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Gradeer op om te ontsluit",
   "prepTime": "Voorbereidingstyd",
   "prepTimeMinutes": "Voorbereidingstyd (minute)",
+  "previousItemState": "Vorige toestand: {quantity} {unit} [{category}]{price}",
   "privacy": "Privaatheid",
   "product": "Produk",
   "productName": "Produknaam",
@@ -1942,21 +2144,35 @@
   "quantityShort": "Hoev",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Gesels met Kipi",
+  "quickActionPantry": "Bekyk spens",
+  "quickAddToList": "Voeg by lys",
   "quickRecipe": "Vinnige resep",
   "quickRecipePrompt": "Stel resepte voor met items van my lys.",
   "quickReplies": "Vinnige antwoorde:",
   "quickSuggestions": "Vinnige voorstelle",
+  "recipeAddError": "Kon nie by jou lys voeg nie. Probeer asseblief weer.",
   "recipeAddToList": "Voeg by inkopielys",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Resep geskep!",
   "recipeDeleted": "Resep verwyder",
+  "recipeEstimatePartial": "Gedeeltelike skatting gebaseer op bestanddele met prys.",
+  "recipeEstimatedCostPerServing": "{cost} / porsie",
+  "recipeEstimatedTotalCost": "Geskatte totale koste",
   "recipeImage": "Resepbeeld",
+  "recipeIngredientInPantry": "In spens",
+  "recipeIngredientLowPantry": "Laag in spens",
   "recipeIngredientSingular": "1 bestanddeel",
   "recipeIngredientsPlural": "{count} bestanddele",
+  "recipeManualTotalCost": "Handmatige totale koste",
+  "recipeManualTotalCostHint": "Laat leeg om van bestanddeelpryse te skat.",
   "recipeName": "Resepnaam",
   "recipeSaved": "Resep gestoor!",
+  "recipeServesCount": "Dien {count}",
   "recipeSuggestion": "Resepvoorstel",
   "recipeTags": "Resep-etikette",
+  "recipeTapToCheck": "Tik 'n bestanddeel om dit af te merk terwyl jy kook",
+  "recipeYieldServings": "Lewer porsies",
   "regenerate": "Her genereer",
   "remove": "Verwyder",
   "removeBudget": "Verwyder",
@@ -1980,9 +2196,12 @@
   "savings": "Besparings",
   "scanBarcodeTitle": "Skandeer strepieskode",
   "scanProductTitle": "Skandeer produk",
+  "scrollToBottom": "Blaai na onder",
+  "searchConversations": "Soek gesprekke",
   "searchCurrency": "Soek geldeenheid...",
   "searchInConversation": "Soek in gesprek...",
   "searchLanguage": "Soek taal...",
+  "searchMessages": "Soek boodskappe...",
   "searchRecipes": "Soek resepte...",
   "selectAll": "Kies alles",
   "selectCheaperAlternative": "Kies goedkoper alternatief",
@@ -2016,6 +2235,7 @@
   "signInGoogle": "Teken in met Google",
   "skip": "Slaan oor",
   "smartOrganization": "Slim Organisasie",
+  "somethingWentWrong": "Iets het verkeerd geloop",
   "sortCategory": "Kategorie",
   "sortDate": "Datum",
   "sortManual": "Handmatig",
@@ -2045,18 +2265,21 @@
   "themeColor": "Temakleur",
   "themeGreen": "Groen",
   "themeIndigo": "Indigo",
+  "themeMode": "Tema-modus",
   "themeOrange": "Oranje",
   "themePink": "Pienk",
   "themePurple": "Pers",
   "themeRed": "Rooi",
   "themeTeal": "Groenblou",
   "totalEstimated": "Totaal geraam: {amount}",
+  "totalEstimatedLabel": "Geskatte totaal",
   "totalSavings": "Totale Spaar",
   "totalSpending": "Totale Besteding",
   "trackStock": "Hou voorraad dop",
   "trackStockActive": "Verskyn in inkopie-voorstelle",
   "trackStockInactive": "Genereer geen inkopie-voorstel nie",
   "undo": "Ontdoen",
+  "undoChanges": "Ontdoen veranderinge",
   "unit": "Eenheid",
   "unitPack": "pak",
   "unlockAi": "Ontsluit onbeperkte AI",
@@ -2067,6 +2290,7 @@
   "unmark": "Ontmerk",
   "upgrade": "Gradeer op",
   "userProfile": "Gebruikersprofiel",
+  "userRole": "Jy",
   "validForLimitedTime": "Geldig vir beperkte tyd",
   "version": "Weergawe",
   "viewActive": "Bekyk Aktiewe",
@@ -2074,6 +2298,7 @@
   "viewHistory": "Bekyk Geskiedenis",
   "viewItems": "Bekyk items",
   "viewList": "Bekyk lys",
+  "viewPlans": "Bekyk planne",
   "viewPro": "Bekyk Pro",
   "viewRecipe": "Bekyk resep",
   "voiceCommandContent": "Praat natuurlik om jou lys te bestuur!\n\nVoorbeelde:\n• 'Voeg brood, kaas en ham by'\n• 'Verwyder waspoeier'\n• 'Verother tema na blou'\n\nDit is 'n eksklusiewe kenmerk van KipiList Premium.",

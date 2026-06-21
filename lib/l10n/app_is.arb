@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +161,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -287,6 +308,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -316,6 +340,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -991,6 +1022,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1138,6 +1179,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1176,6 +1224,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1249,7 +1320,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1397,42 +1482,56 @@
   "addToPantryPrompt": "Bæta \"{name}\" við búrku?",
   "addedFeedback": "Bætt við!",
   "advancedFeatures": "Ítarlegir eiginleikar",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Mistókst að keyra aðgerðir",
+  "agentActionsPremium": "Aðgerðir krefjast Premium",
+  "agentActionsRunning": "Keyrir aðgerðir...",
+  "aiApiError": "Gervigreind þjónustan skilaði villu ({statusCode}).",
   "aiAssistant": "AI aðstoð",
   "aiAssistantDescription": "Fáðu snjallar tillögur, uppskriftir og persónulegar ábendingar með AI aðstoðarmanni okkar.",
   "aiAssistantGeneral": "Almennur aðstoðarmaður",
   "aiAssistantHistory": "Saga aðstoðarmanns",
   "aiAssistantTitle": "AI aðstoðarmaður",
+  "aiConnectionError": "Gat ekki tengst gervigreindarþjónustunni. Athugaðu tenginguna þína.",
   "aiConversationHistory": "Saga samtals",
   "aiCreditsRemaining": "{remaining} einingar eftir",
   "aiDeleteConversationConfirm": "Eyða",
   "aiDeleteConversationTitle": "Eyða samtali?",
   "aiDeletedList": "Eydd Listi",
+  "aiEmptyResponseError": "Gervigreindarþjónustan skilaði tómu svari.",
   "aiEnergy": "AI orka",
   "aiEnergyLow": "Lág gervigreind orka",
   "aiError": "Því miður, villa kom upp við að vinna úr beiðninni þinni. Athugaðu tenginguna eða reyndu aftur síðar.",
   "aiFirstOpenHint": "Ég er Kipi, verslunaraðstoðarmaðurinn þinn. Spurðu mig eitthvað um listann þinn!",
+  "aiGeneratingResponse": "Býr til svar...",
   "aiHello": "Halló! Ég er Kipi",
   "aiHowCanIHelp": "Hvernig get ég hjálpað þér í dag?",
+  "aiInvalidResponseError": "Gervigreindarþjónustan skilaði ógildu svari.",
   "aiLimitAlmostReached": "Næstum upp úr gervigreindarskilaboðum",
   "aiNewConversation": "Nýtt samtal",
   "aiNewSession": "Nýtt þing",
   "aiNoConversationFound": "Ekkert samtal fannst",
   "aiNoMessagesFound": "Engin skilaboð fundust",
   "aiPremiumUpsell": "Farðu í Premium",
+  "aiRateLimitError": "Of mörg skilaboð á stuttum tíma. Bíddu í nokkrar sekúndur og reyndu aftur.",
   "aiRecentConversations": "Nýleg samtöl",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} í dag",
   "aiSearchMessages": "Leita að skilaboðum...",
+  "aiSection": "AI aðstoðarmaður",
   "aiStartNewConversation": "Byrjaðu nýtt samtal",
   "aiSubscribeUnlimited": "Gerast áskrifandi að ótakmarkaðri gervigreind",
   "aiSuggestCreateList": "Búðu til fyrsta listann minn",
   "aiSuggestSaveMore": "Hvernig á að spara meira?",
   "aiTeaserFallback": "Gerast áskrifandi að Premium til að opna allt svarið og fá ótakmarkaða gervigreindarráð til að versla...",
+  "aiTimeoutError": "Beiðnin tók of langan tíma. Vinsamlegast reyndu aftur.",
   "aiUnlockUnlimited": "Opnaðu ótakmarkaða gervigreind",
   "aiUnlockWithAd": "Opnaðu með Ad",
   "aiUsageExhausted": "Mánaðarlegu hámarki gervigreindar náð. Uppfærðu í Pro fyrir ótakmarkað →",
   "aiUsageWarning": "{remaining} gervigreindaraðgerðir eftir í þessum mánuði - uppfærsla fyrir ótakmarkað",
   "aiVoiceCommandTooltip": "AI raddskipun (Premium)",
   "aiWelcomeContent": "Halló! 👋 Ég er **Kipi**, persónulega innkaupa- og uppskriftaaðstoðarmaðurinn þinn!\n\nÉg er hér til að hjálpa þér:\n🛒 **Skoðaðu** innkaupin þín sjálfkrafa eftir flokkum\n💰 **Fylgstu með** kostnaðarhámarkinu þínu og gefðu þér ráð til að spara peninga\n🍲 ** Stingdu upp á ljúffengum uppskriftum með því sem þú átt nú þegar\n\nHvernig get ég hjálpað þér í dag? Þú getur byrjað á því að búa til fyrsta listann þinn!",
+  "aiWelcomeSuggestBarbecue": "Skipuleggðu grillið",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, ég er með grillveislu — hjálpaðu mér að búa til innkaupalistann",
   "aiWelcomeSuggestCreateList": "Búðu til fyrsta listann minn",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, hjálpaðu mér að búa til fyrsta innkaupalistann minn",
   "aiWelcomeSuggestSave": "Hvernig á að spara peninga?",
@@ -1443,14 +1542,17 @@
   "appTitle": "Innkaupalisti",
   "appearance": "Útlit",
   "archiveList": "Arkívera lista",
+  "artifactBudgetLabel": "Fjárhagsáætlun:",
   "artifactReplaceBody": "Veldu vöruval til að hámarka kostnað.",
   "artifactReplaceTitle": "Skiptu um {name}",
   "artifactSuggestedItems": "Tillögur að hlutum",
   "artifactSwapButton": "Skipta",
   "artifactSwappedLabel": "Skipt um",
+  "artifactSynced": "Samstillt",
   "assistantHistory": "Saga aðstoðarmanns",
   "assistantHistorySubtitle": "Skoðaðu samtalsferilinn þinn",
   "assistantName": "Nafn aðstoðarmanns",
+  "assistantRole": "Aðstoðarmaður",
   "backToChat": "Aftur í Spjall",
   "backToToday": "Aftur til dagsins í dag",
   "backupExported": "Öryggisafrit flutt út!",
@@ -1458,6 +1560,7 @@
   "backupPremiumDescription": "Öryggisafrit og útflutningur er premium eiginleiki",
   "backupSubtitle": "Flytja út eða inn gögnin þín",
   "backupTitle": "Öryggisafrit",
+  "badResponse": "Slæmt svar",
   "badgeBeginner": "Byrjandi",
   "badgeOrganized": "Skipulagður",
   "badgeSavingMaster": "Saving Master",
@@ -1485,10 +1588,12 @@
   "catOthers": "Annað",
   "catalogAddItems": "Bæta við {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Skoðaðu vörulista",
+  "catalogCategories": "Flokkar",
   "catalogFilterNational": "Landsmenn",
   "catalogItemAdded": "{name} bætt við",
   "catalogMyFrequents": "Mín tíðindi",
   "catalogProductNotFound": "Varan fannst ekki, sláðu inn nafnið",
+  "catalogRareBadge": "Sjaldgæft",
   "catalogRareSection": "sjaldgæfari í þínu landi",
   "catalogRetry": "Reyndu aftur",
   "catalogSearchGlobal": "Leitaðu að hvaða vöru sem er...",
@@ -1497,16 +1602,43 @@
   "catalogSortPopular": "Vinsælast",
   "catalogTitle": "Vörulisti",
   "category": "Flokkur",
+  "categoryAlcohol": "Áfengir drykkir",
+  "categoryBaby": "Elskan",
+  "categoryBakery": "Bakarí",
+  "categoryBeverages": "Drykkir",
+  "categoryCanned": "Niðursoðnar vörur",
+  "categoryCleaning": "Þrif",
+  "categoryColdCuts": "Álegg",
   "categoryColorLabel": "Litur",
+  "categoryDairy": "Mjólkurvörur",
+  "categoryFish": "Fiskur",
+  "categoryFrozen": "Frosinn matur",
+  "categoryFruits": "Ávextir",
+  "categoryGrains": "Korn og korn",
+  "categoryHygiene": "Persónuleg umönnun",
   "categoryIconLabel": "Táknmynd",
   "categoryLimitReached": "Hámarki flokka náð",
+  "categoryMeat": "Kjöt",
   "categoryName": "Nafn flokks",
   "categoryNameHint": "Sláðu inn heiti flokks",
+  "categoryOthers": "Annað",
+  "categoryPet": "Gæludýravörur",
+  "categorySeasonings": "Krydd",
+  "categorySweets": "Sælgæti og eftirréttir",
+  "categoryUtilities": "Heimilisvörur",
+  "categoryVegetables": "Grænmeti",
+  "chatEmptyGreeting": "Hæ {name}, ég heiti Kipi 👋",
+  "chatEmptyGreetingNoName": "Hæ, ég heiti Kipi 👋",
+  "chatEmptyPitch": "Ég smíða lista, legg til uppskriftir og finn hvar á að vista. Hvar byrjum við?",
   "chatEmptySubtitle": "Biðjið um tillögur um atriði, uppskriftir eða sparnaðarráð til að byrja.",
   "chatEmptyTitle": "Spjallið þitt er tómt",
   "chatError": "Villa við að hlaða spjalli: {error}",
   "chatHint": "Skrifaðu skilaboð...",
   "chatHintBlocked": "Opnaðu gervigreind til að spjalla",
+  "chatHistoryErrorBody": "Eitthvað fór úrskeiðis hjá okkur. Ýttu á Reyndu aftur til að reyna aftur.",
+  "chatHistoryErrorTitle": "Ekki tókst að hlaða þessu samtali",
+  "chatHistoryOfflineBody": "Athugaðu nettenginguna þína og reyndu aftur.",
+  "chatHistoryOfflineTitle": "Þú ert ekki tengdur",
   "chatSubtitle": "Spurðu um vörutillögur, uppskriftir eða sparnaðarábendingar.",
   "chatSubtitleShort": "Spyrðu um verð, uppskriftir, skipulag...",
   "chooseCurrency": "Veldu Gjaldmiðill",
@@ -1514,6 +1646,7 @@
   "chooseImageSource": "Veldu mynduppsprettu",
   "chooseLanguage": "Veldu tungumál",
   "chooseThemeColor": "Veldu þemalit",
+  "chooseThemeMode": "Veldu þemaham",
   "clear": "Hreinsa",
   "clearHistory": "Hreinsa sögu",
   "clearHistoryConfirm": "Hreinsa öll skilaboð í þessum samtalsglugga?",
@@ -1556,6 +1689,10 @@
   "customizeAssistant": "Sérsníða",
   "dark": "Dökkt",
   "data": "Gögn",
+  "dateGroupOlder": "Eldri",
+  "dateGroupPrevious7Days": "Síðustu 7 dagar",
+  "dateGroupToday": "Í dag",
+  "dateGroupYesterday": "Í gær",
   "deficitItems": "{deficit,plural, one{{deficit} hlut þarf að kaupa} other{{deficit} hluti þarf að kaupa}}",
   "delete": "Eyða",
   "deleteCategory": "Eyða",
@@ -1572,6 +1709,7 @@
   "deleteRecipeConfirmMsg": "Ertu viss um að þú viljir eyða „{recipeName}“? Ekki er hægt að afturkalla þessa aðgerð.",
   "deleteSession": "Eyða spjalli",
   "deleteSessionConfirm": "Ertu viss um að þú viljir eyða þessu spjalli? Skilaboðin munu glatast varanlega.",
+  "deletedList": "Eyddur lista",
   "deselectAll": "Afvelja allt",
   "dietaryRestrictions": "Takmarkanir á mataræði",
   "dietaryRestrictionsHint": "Einhverjar takmarkanir á mataræði?",
@@ -1584,6 +1722,7 @@
   "editCategoryDialog": "Breyta flokki",
   "editItem": "Breyta hlut",
   "editItemPrice": "Áætlað verð",
+  "editMessage": "Breyta skilaboðum",
   "editPantryItem": "Breyta {name}",
   "editRecipe": "Breyta",
   "editRecipeTitle": "Breyta uppskrift",
@@ -1605,6 +1744,7 @@
   "errorLoadingChat": "Úps! Eitthvað fór úrskeiðis við að hlaða spjallinu.",
   "errorLoadingChatSubtitle": "Athugaðu tenginguna þína eða reyndu aftur síðar.",
   "errorLoadingHistory": "Villa við að hlaða feril",
+  "errorLoadingItems": "Villa við að hlaða atriðum",
   "errorLoadingLists": "Villa við að hlaða lista",
   "errorLoadingRecipes": "Villa við að hlaða uppskriftum",
   "errorLoadingSubscription": "Villa við að hlaða áskrift",
@@ -1657,6 +1797,7 @@
   "generateShoppingList": "Búa til innkaupalista",
   "gestureHint": "Haltu inni til að velja • Strjúktu til að fjarlægja",
   "globalAssistant": "Alheimsaðstoð",
+  "goodResponse": "Góð viðbrögð",
   "howCanIHelp": "Hvernig get ég hjálpað?",
   "idealQty": "Ákjósanlegt magn",
   "idealQuantity": "Ákjósanlegt magn",
@@ -1673,14 +1814,18 @@
   "instructionsHint": "Skrifaðu eitt skref á hverja línu...",
   "inviteToList": "Bjóða á lista",
   "itemAddedSnack": "{name} bætt við",
+  "itemAddedToList": "Atriði bætt við listann.",
   "itemName": "Heiti hlutar",
   "itemRemoved": "Hlut fjarlægður",
   "itemsAddedSuccess": "Hlutum bætt við lista!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} hlut(ir) þarf að kaupa",
   "itemsPurchased": "Hlutir keyptir",
   "itemsPurchasedCount": "{purchased} af {total} keypt",
   "itemsPurchasedShort": "{purchased}/{total} keypt",
   "itemsWillBeAdded": "{count} hlut(ir) verða bætt við",
+  "keepAdding": "Haltu áfram að bæta við",
+  "keepAddingSubtitle": "Haltu blaðinu opnu til að bæta við mörgum hlutum",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Hvað þarftu að kaupa?",
@@ -1727,16 +1872,22 @@
   "mealDragHint": "Haltu inni til að draga og færa",
   "mealNoRecipeFound": "Engin uppskrift fannst",
   "mealPlannerAddMeal": "Bæta við máltíð",
+  "mealPlannerAddType": "Bæta við tegund máltíðar",
+  "mealPlannerCustomTypeLabel": "Sérsniðin gerð",
   "mealPlannerDateLabel": "Dagsetning",
+  "mealPlannerDefaultTypeLabel": "Sjálfgefin gerð",
   "mealPlannerDeleteMeal": "Fjarlægja máltíð",
   "mealPlannerEditMeal": "Breyta máltíð",
+  "mealPlannerEditType": "Breyta tegund máltíðar",
   "mealPlannerError": "Villa við að hlaða matseðli",
+  "mealPlannerEstimatePartial": "Mat byggt á uppskriftum með verðupplýsingum að hluta.",
   "mealPlannerGenerateList": "Gera innkaupalista",
   "mealPlannerGenerateListConfirm": "Bæta öllu hráefni úr fyrirhuguðum máltíðum vikunnar á innkaupalistann þinn?",
   "mealPlannerGenerateListEmpty": "Engu hráefni til að bæta við. Skipuleggðu máltíðir með uppskriftum fyrst.",
   "mealPlannerGenerateListNoList": "Búðu til innkaupalista fyrst.",
   "mealPlannerGenerateListSuccess": "{count} hráefni bætt við listann þinn!",
   "mealPlannerLoading": "Hleður matseðli...",
+  "mealPlannerManageTypes": "Stjórna máltíðartegundum",
   "mealPlannerMealDeleted": "Máltíð fjarlægð",
   "mealPlannerMealTypeBreakfast": "Morgunmatur",
   "mealPlannerMealTypeDinner": "Kvöldmatur",
@@ -1756,6 +1907,12 @@
   "mealPlannerServings": "{count,plural, one{{count} skammtur} other{{count} skammtar}}",
   "mealPlannerServingsLabel": "Skammtar",
   "mealPlannerTitle": "Matseðill",
+  "mealPlannerTypeColor": "Litur",
+  "mealPlannerTypeDeleteConfirm": "Ertu viss um að þú viljir eyða þessari máltíðartegund? Skipulagðar máltíðir með þessari tegund verða áfram.",
+  "mealPlannerTypeDeleteError": "Ekki er hægt að eyða þessari máltíðartegund.",
+  "mealPlannerTypeIcon": "Táknmynd",
+  "mealPlannerTypeName": "Nafn",
+  "mealPlannerTypeNameEmpty": "Nafn má ekki vera autt",
   "mealPlannerViewMonthly": "Mánaðarlegt yfirlit",
   "mealPlannerViewWeekly": "Vikulegt yfirlit",
   "mealPlannerWeekEmpty": "Ekkert áætlað fyrir þessa viku",
@@ -1971,6 +2128,7 @@
   "onboardingViewAllPlans": "Skoða allar áætlanir",
   "onboardingWelcomeDesc": "Snjöllasta leiðin til að skipuleggja innkaupin og spara peninga.",
   "onboardingWelcomeTitle": "Velkomin á KipiList",
+  "openConversation": "Opið samtal",
   "openMenu": "Opna valmynd",
   "organizeAisles": "Raða eftir göngum",
   "organizeAislesPrompt": "Raða eftir göngum markaðarins.",
@@ -1983,6 +2141,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} í búri",
   "pantryCompactView": "Compact View",
   "pantryDeficit": "Vantar {amount}{unit}",
+  "pantryDeficitCount": "Vantar {count}{unit}",
   "pantryDeleteItemsContent": "Viltu eyða {count} völdum hlutum?",
   "pantryDeleteItemsTitle": "Eyða hlutum",
   "pantryDeleteSelected": "Eyða völdum",
@@ -1999,6 +2158,7 @@
   "pantryFilterExpiring": "Rennur út",
   "pantryFilterOutStock": "Uppselt",
   "pantryFirstOpenHint": "Fylgstu með því sem þú átt heima. Bættu við hlutum eða skannaðu strikamerki.",
+  "pantryItemAdded": "Atriði bætt við",
   "pantryItemRemoved": "Hlut fjarlægður",
   "pantryMoreDetails": "Nánari upplýsingar",
   "pantryNoItemsFound": "Engin atriði fundust fyrir \"{query}\"",
@@ -2012,6 +2172,7 @@
   "paywallAfterItem2": "Þrif",
   "paywallAfterItem3": "Kjöt",
   "paywallAfterItem4": "Bakarí",
+  "paywallBasedOnAnswers": "Sérsniðin út frá svörum þínum",
   "paywallBeforeAfterTitle": "AI fyrir og eftir:",
   "paywallBeforeItem1": "hrísgrjón",
   "paywallBeforeItem2": "sápu",
@@ -2049,6 +2210,8 @@
   "paywallGoalHeadlinePantry": "{name}, fylgdu búrinu þínu fullkomlega!",
   "paywallGoalHeadlineRecipes": "{name}, uppgötvaðu nýjar uppskriftir!",
   "paywallGoalHeadlineSaveMoney": "{name}, sparaðu í hverri ferð!",
+  "paywallHeroFeatureDesc": "Talaðu eða límdu heilan lista - gervigreind flokkar, flokkar og fjárveitir hann á nokkrum sekúndum",
+  "paywallHeroFeatureTitle": "AI verslunaraðstoðarmaður",
   "paywallHeroHeadline": "Kipi AI alltaf þér við hlið",
   "paywallHeroSubtitle": "Bættu við hlutum, skipulagðu lista og sparaðu tíma með gervigreind í vasanum",
   "paywallHeroSubtitlePersonalized": "Hæ {name}, skipulagðu innkaupin á réttan hátt.",
@@ -2083,6 +2246,11 @@
   "paywallTestimonial2Text": "Ég gleymdi aldrei aftur listaatriði. AI spjallið er tilkomumikið!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Það sem notendur okkar segja:",
+  "paywallTimelineChargeDesc": "Áskriftin þín hefst - segðu upp hvenær sem er",
+  "paywallTimelineDay": "Dagur {day}",
+  "paywallTimelineReminderDesc": "Við minnum á áður en réttarhöldunum lýkur",
+  "paywallTimelineToday": "Í dag",
+  "paywallTimelineTodayDesc": "Opnaðu fullan aðgang samstundis",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Byrjaðu ókeypis prufuáskrift",
   "paywallTrialDays": "{days} DAGAR ÓKEYPIS",
@@ -2105,11 +2273,15 @@
   "prefSharing": "Deila listum",
   "prefUnlimitedLists": "Ótakmarkaðir listar",
   "prefUnlimitedPantry": "Ótakmörkuð búrka",
+  "preferencesSection": "Óskir",
   "preferredMarket": "Ákjósanlegur markaður",
   "preferredMarketHint": "Hvar verslar þú venjulega?",
+  "premiumActionsPrompt": "Gerast áskrifandi að Premium til að opna sjálfvirkar aðgerðir.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Uppfærðu til að opna",
   "prepTime": "Undirbúningstími",
   "prepTimeMinutes": "Undirbúningstími (mínútur)",
+  "previousItemState": "Fyrra ástand: {quantity} {unit} [{category}]{price}",
   "privacy": "Persónuvernd",
   "product": "Vara",
   "productName": "Heiti vöru",
@@ -2126,21 +2298,34 @@
   "quantityShort": "Magn",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Spjallaðu við Kipi",
+  "quickActionPantry": "Skoða búr",
   "quickRecipe": "Fljótleg uppskrift",
   "quickRecipePrompt": "Leggðu til uppskriftir með hlutum af listanum mínum.",
   "quickReplies": "Fljótleg svör:",
   "quickSuggestions": "Fljótlegar tillögur",
+  "recipeAddError": "Ekki tókst að bæta við listann þinn. Vinsamlegast reyndu aftur.",
   "recipeAddToList": "Bæta við innkaupalista",
   "recipeAddedConfirmation": "{count} hráefni bætt við {listName}",
   "recipeCreated": "Uppskrift búin til!",
   "recipeDeleted": "Uppskrift eytt",
+  "recipeEstimatePartial": "Hlutamat byggt á hráefni með verði.",
+  "recipeEstimatedCostPerServing": "{cost} / skammtur",
+  "recipeEstimatedTotalCost": "Áætlaður heildarkostnaður",
   "recipeImage": "Mynd af uppskrift",
+  "recipeIngredientInPantry": "Í búri",
+  "recipeIngredientLowPantry": "Lágt í búri",
   "recipeIngredientSingular": "1 hráefni",
   "recipeIngredientsPlural": "{count} hráefni",
+  "recipeManualTotalCost": "Handvirkur heildarkostnaður",
+  "recipeManualTotalCostHint": "Látið vera tómt til að áætla út frá hráefnisverði.",
   "recipeName": "Heiti uppskriftar",
   "recipeSaved": "Uppskrift vistuð!",
+  "recipeServesCount": "Þjónar {count}",
   "recipeSuggestion": "Uppskriftartillaga",
   "recipeTags": "Merki uppskriftar",
+  "recipeTapToCheck": "Bankaðu á hráefni til að merkja við það þegar þú eldar",
+  "recipeYieldServings": "Afrakstur skammtar",
   "regenerate": "Endurgera",
   "remove": "Fjarlægja",
   "removeBudget": "Fjarlægja",
@@ -2164,9 +2349,12 @@
   "savings": "Sparnaður",
   "scanBarcodeTitle": "Skannaðu strikamerki",
   "scanProductTitle": "Skanna vöru",
+  "scrollToBottom": "Skrunaðu til botns",
+  "searchConversations": "Leitaðu að samtölum",
   "searchCurrency": "Leita að gjaldmiðli...",
   "searchInConversation": "Leita í samtali...",
   "searchLanguage": "Leita að tungumáli...",
+  "searchMessages": "Leita að skilaboðum...",
   "searchRecipes": "Leita í uppskriftum...",
   "selectAll": "Velja allt",
   "selectCheaperAlternative": "Veldu ódýrari valkost",
@@ -2223,6 +2411,7 @@
   "signInGoogle": "Skráðu þig inn með Google",
   "skip": "Sleppa",
   "smartOrganization": "Snjöll röðun",
+  "somethingWentWrong": "Eitthvað fór úrskeiðis",
   "sortAZ": "A–Ö",
   "sortCategory": "Flokkur",
   "sortDate": "Dagsetning",
@@ -2253,6 +2442,7 @@
   "themeColor": "Þemalitur",
   "themeGreen": "Grænn",
   "themeIndigo": "Indígó",
+  "themeMode": "Þemahamur",
   "themeOrange": "Appelsínugulur",
   "themePink": "Bleikur",
   "themePurple": "Fjólublár",
@@ -2260,12 +2450,14 @@
   "themeSelectionTitle": "Veldu þemalit",
   "themeTeal": "Grænblár",
   "totalEstimated": "Áætluð samtals: {amount}",
+  "totalEstimatedLabel": "Áætlað samtals",
   "totalSavings": "Samtals sparnaður",
   "totalSpending": "Heildarútgjöld",
   "trackStock": "Rekja birgðir",
   "trackStockActive": "Birtist í innkaupatillögum",
   "trackStockInactive": "Myndar ekki innkaupatillögu",
   "undo": "Afturkalla",
+  "undoChanges": "Afturkalla breytingar",
   "unit": "Eining",
   "unitPack": "pakkning",
   "unlockAi": "Opnaðu ótakmarkaða gervigreind",
@@ -2290,6 +2482,7 @@
   "userProfileSaveButton": "Vista prófíl",
   "userProfileSaved": "Prófíll vistað!",
   "userProfileTitle": "Prófíllinn minn",
+  "userRole": "Þú",
   "validForLimitedTime": "Gildir í takmarkaðan tíma",
   "version": "Útgáfa",
   "viewActive": "Skoða virka",
@@ -2297,6 +2490,7 @@
   "viewHistory": "Skoða sögu",
   "viewItems": "Skoða hluti",
   "viewList": "Skoða lista",
+  "viewPlans": "Skoða áætlanir",
   "viewPro": "Skoða Pro",
   "viewRecipe": "Skoða uppskrift",
   "voiceCommandContent": "Talaðu náttúrulega til að stjórna listanum þínum!\n\nDæmi:\n• 'Bæta við brauði, osti og skinku'\n• 'Fjarlægja þvottaefni'\n• 'Breyta þema í blátt'\n\nÞetta er einkaeiginleiki KipiList Premium.",

@@ -8,6 +8,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -121,6 +135,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -254,6 +275,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -283,6 +307,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -934,6 +965,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1081,6 +1122,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1119,6 +1167,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1192,7 +1263,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1340,42 +1425,56 @@
   "addToPantryPrompt": "Lisätäänkö \"{name}\" ruokakomeroosi?",
   "addedFeedback": "Lisätty!",
   "advancedFeatures": "Edistyneet ominaisuudet",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Toimintojen suorittaminen epäonnistui",
+  "agentActionsPremium": "Toiminnot vaativat Premiumin",
+  "agentActionsRunning": "Suoritetaan toimintoja...",
+  "aiApiError": "Tekoälypalvelu palautti virheen ({statusCode}).",
   "aiAssistant": "AI-assistentti",
   "aiAssistantDescription": "Saa älykkäitä ehdotuksia, reseptejä ja henkilökohtaisia vinkkejä AI-assistentiltamme.",
   "aiAssistantGeneral": "Yleisassistentti",
   "aiAssistantHistory": "Assistentin historia",
   "aiAssistantTitle": "AI Assistant",
+  "aiConnectionError": "Ei voitu muodostaa yhteyttä AI-palveluun. Tarkista yhteys.",
   "aiConversationHistory": "Keskusteluhistoria",
   "aiCreditsRemaining": "{remaining} krediittiä jäljellä",
   "aiDeleteConversationConfirm": "Poistaa",
   "aiDeleteConversationTitle": "Poistetaanko keskustelu?",
   "aiDeletedList": "Poistettu lista",
+  "aiEmptyResponseError": "Tekoälypalvelu palautti tyhjän vastauksen.",
   "aiEnergy": "AI energia",
   "aiEnergyLow": "Alhainen AI-energia",
   "aiError": "Anteeksi, pyyntösi käsittelyssä tapahtui virhe. Tarkista yhteys tai yritä myöhemmin uudelleen.",
   "aiFirstOpenHint": "Olen Kipi, ostosavustajasi. Kysy mitä tahansa listastasi!",
+  "aiGeneratingResponse": "Luodaan vastausta…",
   "aiHello": "Hei! Olen Kipi",
   "aiHowCanIHelp": "Kuinka voin auttaa sinua tänään?",
+  "aiInvalidResponseError": "Tekoälypalvelu palautti virheellisen vastauksen.",
   "aiLimitAlmostReached": "Tekoälyviestit ovat melkein lopussa",
   "aiNewConversation": "Uusi keskustelu",
   "aiNewSession": "Uusi istunto",
   "aiNoConversationFound": "Keskustelua ei löytynyt",
   "aiNoMessagesFound": "Viestejä ei löytynyt",
   "aiPremiumUpsell": "Siirry Premiumiin",
+  "aiRateLimitError": "Liian monta viestiä lyhyessä ajassa. Odota muutama sekunti ja yritä uudelleen.",
   "aiRecentConversations": "Viimeaikaiset keskustelut",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} tänään",
   "aiSearchMessages": "Hae viestejä...",
+  "aiSection": "AI Assistant",
   "aiStartNewConversation": "Aloita uusi keskustelu",
   "aiSubscribeUnlimited": "Tilaa rajoittamaton AI",
   "aiSuggestCreateList": "Luo ensimmäinen luetteloni",
   "aiSuggestSaveMore": "Kuinka säästää enemmän?",
   "aiTeaserFallback": "Tilaa Premium, niin saat täyden vastauksen ja rajattomasti tekoälyvinkkejä ostoksille...",
+  "aiTimeoutError": "Pyyntö kesti liian kauan. Yritä uudelleen.",
   "aiUnlockUnlimited": "Avaa rajoittamaton AI",
   "aiUnlockWithAd": "Avaa lukitus mainoksella",
   "aiUsageExhausted": "Tekoälyn kuukausiraja saavutettu. Päivitä Pro-versioon rajattomasti →",
   "aiUsageWarning": "{remaining} AI-toimintoja jäljellä tässä kuussa – päivitys rajoittamaton määrä",
   "aiVoiceCommandTooltip": "AI-äänikomento (Premium)",
   "aiWelcomeContent": "Hei! 👋 Olen **Kipi**, henkilökohtainen osto- ja reseptiavustajasi!\n\nOlen täällä auttaakseni sinua:\n🛒 **Järjestä** ostoksesi automaattisesti luokkien mukaan\n💰 **Seuraa** budjettiasi ja anna rahaa säästäviä vinkkejä\n🍲 **Ehdota** herkullisia reseptejä sen kanssa, mitä sinulla jo on\n\nKuinka voin auttaa sinua tänään? Voit aloittaa luomalla ensimmäisen luettelosi!",
+  "aiWelcomeSuggestBarbecue": "Suunnittele grilli",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, järjestän grillauksen – auta minua tekemään ostoslista",
   "aiWelcomeSuggestCreateList": "Luo ensimmäinen luetteloni",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, auta minua luomaan ensimmäinen ostoslistani",
   "aiWelcomeSuggestSave": "Kuinka säästää rahaa?",
@@ -1386,14 +1485,17 @@
   "appTitle": "Ostoslista",
   "appearance": "Ulkoasu",
   "archiveList": "Arkistoi lista",
+  "artifactBudgetLabel": "Budjetti:",
   "artifactReplaceBody": "Valitse tuotevaihtoehto kustannusten optimoimiseksi.",
   "artifactReplaceTitle": "Korvaa {name}",
   "artifactSuggestedItems": "Ehdotetut kohteet",
   "artifactSwapButton": "Vaihtaa",
   "artifactSwappedLabel": "Vaihdettu",
+  "artifactSynced": "Synkronoitu",
   "assistantHistory": "Assistentin historia",
   "assistantHistorySubtitle": "Tarkastele keskusteluhistoriaasi",
   "assistantName": "Avustajan nimi",
+  "assistantRole": "Assistant",
   "backToChat": "Takaisin Chatiin",
   "backToToday": "Takaisin tähän päivään",
   "backupExported": "Varmuuskopio viety!",
@@ -1401,6 +1503,7 @@
   "backupPremiumDescription": "Varmuuskopiointi ja vienti on Premium-ominaisuus",
   "backupSubtitle": "Vie tai tuo tietosi",
   "backupTitle": "Varmuuskopio",
+  "badResponse": "Huono vastaus",
   "badgeBeginner": "Aloittelija",
   "badgeOrganized": "Järjestetty",
   "badgeSavingMaster": "Pelastus mestari",
@@ -1428,10 +1531,12 @@
   "catOthers": "Muut",
   "catalogAddItems": "Lisää {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Selaa katalogia",
+  "catalogCategories": "Luokat",
   "catalogFilterNational": "Kansalaiset",
   "catalogItemAdded": "{name} lisätty",
   "catalogMyFrequents": "Minun Frequents",
   "catalogProductNotFound": "Tuotetta ei löydy, kirjoita nimi",
+  "catalogRareBadge": "Harvinainen",
   "catalogRareSection": "harvinaisempaa maassasi",
   "catalogRetry": "Yritä uudelleen",
   "catalogSearchGlobal": "Hae mitä tahansa tuotetta...",
@@ -1440,16 +1545,43 @@
   "catalogSortPopular": "Suosituin",
   "catalogTitle": "Luettelo",
   "category": "Kategoria",
+  "categoryAlcohol": "Alkoholijuomat",
+  "categoryBaby": "Vauva",
+  "categoryBakery": "Leipomo",
+  "categoryBeverages": "Juomat",
+  "categoryCanned": "Säilykkeet",
+  "categoryCleaning": "Puhdistus",
+  "categoryColdCuts": "Leikkeleet",
   "categoryColorLabel": "Väri",
+  "categoryDairy": "Meijeri",
+  "categoryFish": "Kalastaa",
+  "categoryFrozen": "Pakastetut elintarvikkeet",
+  "categoryFruits": "Hedelmät",
+  "categoryGrains": "Viljat ja viljat",
+  "categoryHygiene": "Henkilökohtainen hoito",
   "categoryIconLabel": "Kuvake",
   "categoryLimitReached": "Luokkaraja saavutettu",
+  "categoryMeat": "Liha",
   "categoryName": "Luokan nimi",
   "categoryNameHint": "Anna luokan nimi",
+  "categoryOthers": "Muut",
+  "categoryPet": "Lemmikkieläintarvikkeet",
+  "categorySeasonings": "Mausteet",
+  "categorySweets": "Makeiset ja jälkiruoat",
+  "categoryUtilities": "Kotitaloustarvikkeet",
+  "categoryVegetables": "Vihannekset",
+  "chatEmptyGreeting": "Hei {name}, olen Kipi 👋",
+  "chatEmptyGreetingNoName": "Hei, olen Kipi 👋",
+  "chatEmptyPitch": "Teen listoja, ehdotan reseptejä ja löydän tallentamisen. Mistä aloitamme?",
   "chatEmptySubtitle": "Pyydä tuoteehdotuksia, reseptejä tai tallennusvinkkejä aloittaaksesi.",
   "chatEmptyTitle": "Chattisi on tyhjä",
   "chatError": "Virhe ladattaessa chattia: {error}",
   "chatHint": "Kirjoita viestisi...",
   "chatHintBlocked": "Avaa AI keskustellaksesi",
+  "chatHistoryErrorBody": "Jotain meni vikaan meidän päässämme. Yritä uudelleen napauttamalla yritä uudelleen.",
+  "chatHistoryErrorTitle": "Tätä keskustelua ei voitu ladata",
+  "chatHistoryOfflineBody": "Tarkista internetyhteytesi ja yritä uudelleen.",
+  "chatHistoryOfflineTitle": "Olet offline-tilassa",
   "chatSubtitle": "Kysy kohde-ehdotuksia, reseptejä tai säästövinkkejä.",
   "chatSubtitleShort": "Kysy hinnoista, resepteistä, järjestämisestä...",
   "chooseCurrency": "Valitse Valuutta",
@@ -1457,6 +1589,7 @@
   "chooseImageSource": "Valitse kuvan lähde",
   "chooseLanguage": "Valitse kieli",
   "chooseThemeColor": "Valitse teeman väri",
+  "chooseThemeMode": "Valitse teematila",
   "clear": "Tyhjennä",
   "clearHistory": "Tyhjennä historia",
   "clearHistoryConfirm": "Poistetaanko kaikki viestit tästä istunnosta?",
@@ -1499,6 +1632,10 @@
   "customizeAssistant": "Mukauta",
   "dark": "Tumma",
   "data": "Tiedot",
+  "dateGroupOlder": "Vanhempi",
+  "dateGroupPrevious7Days": "Edelliset 7 päivää",
+  "dateGroupToday": "Tänään",
+  "dateGroupYesterday": "Eilen",
   "deficitItems": "{deficit} kohde(tta) on ostettava",
   "delete": "Poista",
   "deleteCategory": "Poistaa",
@@ -1515,6 +1652,7 @@
   "deleteRecipeConfirmMsg": "Haluatko varmasti poistaa reseptin \"{recipeName}\"? Tätä toimintoa ei voi peruuttaa.",
   "deleteSession": "Poista Chat",
   "deleteSessionConfirm": "Haluatko varmasti poistaa tämän keskustelun? Viestit katoavat pysyvästi.",
+  "deletedList": "Poistettu luettelo",
   "deselectAll": "Poista kaikki valinnat",
   "dietaryRestrictions": "Ruokavaliorajoitukset",
   "dietaryRestrictionsHint": "Onko ruokavaliorajoituksia?",
@@ -1527,6 +1665,7 @@
   "editCategoryDialog": "Muokkaa luokkaa",
   "editItem": "Muokkaa kohdetta",
   "editItemPrice": "Arvioitu hinta",
+  "editMessage": "Muokkaa viestiä",
   "editPantryItem": "Muokkaa {name}",
   "editRecipe": "Muokkaa",
   "editRecipeTitle": "Muokkaa reseptiä",
@@ -1548,6 +1687,7 @@
   "errorLoadingChat": "Oho! Jotain meni pieleen chatin lataamisessa.",
   "errorLoadingChatSubtitle": "Tarkista yhteys tai yritä myöhemmin uudelleen.",
   "errorLoadingHistory": "Virhe historian lataamisessa",
+  "errorLoadingItems": "Virhe ladattaessa kohteita",
   "errorLoadingLists": "Virhe ladattaessa luetteloita",
   "errorLoadingRecipes": "Virhe ladattaessa reseptejä",
   "errorLoadingSubscription": "Virhe ladattaessa tilausta",
@@ -1600,6 +1740,7 @@
   "generateShoppingList": "Luo ostoslista",
   "gestureHint": "Valitse pitämällä painettuna • Poista pyyhkäisemällä",
   "globalAssistant": "Yleinen assistentti",
+  "goodResponse": "Hyvä vastaus",
   "howCanIHelp": "Miten voin auttaa?",
   "idealQty": "Ihannemäärä",
   "idealQuantity": "Ihannemäärä",
@@ -1616,14 +1757,18 @@
   "instructionsHint": "Kirjoita yksi vaihe riville...",
   "inviteToList": "Kutsu listalle",
   "itemAddedSnack": "{name} lisätty",
+  "itemAddedToList": "Kohde lisätty luetteloon.",
   "itemName": "Kohteen nimi",
   "itemRemoved": "Kohde poistettu",
   "itemsAddedSuccess": "Kohteet lisätty onnistuneesti listalle!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} kohde(tta) on ostettava",
   "itemsPurchased": "Ostetut tuotteet",
   "itemsPurchasedCount": "{purchased} / {total} ostettu",
   "itemsPurchasedShort": "{purchased}/{total} ostettu",
   "itemsWillBeAdded": "{count} kohde(tta) lisätään",
+  "keepAdding": "Jatka lisäämistä",
+  "keepAddingSubtitle": "Pidä taulukko auki lisätäksesi useita kohteita",
   "kipiListProActive": "KipiList Pro aktiivinen",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Mitä sinun täytyy ostaa?",
@@ -1670,16 +1815,22 @@
   "mealDragHint": "Pidä painettuna vetää ja siirtää",
   "mealNoRecipeFound": "Reseptiä ei löytynyt",
   "mealPlannerAddMeal": "Lisää ateria",
+  "mealPlannerAddType": "Lisää ateriatyyppi",
+  "mealPlannerCustomTypeLabel": "Mukautettu tyyppi",
   "mealPlannerDateLabel": "Päivämäärä",
+  "mealPlannerDefaultTypeLabel": "Oletustyyppi",
   "mealPlannerDeleteMeal": "Poista ateria",
   "mealPlannerEditMeal": "Muokkaa ateriaa",
+  "mealPlannerEditType": "Muokkaa ateriatyyppiä",
   "mealPlannerError": "Virhe ladattaessa ateriasuunnitelmaa",
+  "mealPlannerEstimatePartial": "Arvio perustuu resepteihin, joissa on osittaiset hintatiedot.",
   "mealPlannerGenerateList": "Luo ostoslista",
   "mealPlannerGenerateListConfirm": "Lisätäänkö kaikki tämän viikon aterioiden ainekset ostoslistallesi?",
   "mealPlannerGenerateListEmpty": "Ei lisättäviä aineksia. Suunnittele ensin aterioita resepteillä.",
   "mealPlannerGenerateListNoList": "Luo ensin ostoslista.",
   "mealPlannerGenerateListSuccess": "{count} ainesosaa lisätty listallesi!",
   "mealPlannerLoading": "Ladataan ateriasuunnitelmaa...",
+  "mealPlannerManageTypes": "Hallitse ateriatyyppejä",
   "mealPlannerMealDeleted": "Ateria poistettu",
   "mealPlannerMealTypeBreakfast": "Aamiainen",
   "mealPlannerMealTypeDinner": "Illallinen",
@@ -1699,6 +1850,12 @@
   "mealPlannerServings": "{count,plural, one{{count} annos} other{{count} annosta}}",
   "mealPlannerServingsLabel": "Annokset",
   "mealPlannerTitle": "Ateriasuunnittelija",
+  "mealPlannerTypeColor": "Väri",
+  "mealPlannerTypeDeleteConfirm": "Haluatko varmasti poistaa tämän ateriatyypin? Suunnitellut ateriat tällä tyypillä säilyvät.",
+  "mealPlannerTypeDeleteError": "Tätä ateriatyyppiä ei voi poistaa.",
+  "mealPlannerTypeIcon": "Kuvake",
+  "mealPlannerTypeName": "Nimi",
+  "mealPlannerTypeNameEmpty": "Nimi ei voi olla tyhjä",
   "mealPlannerViewMonthly": "Kuukausinäkymä",
   "mealPlannerViewWeekly": "Viikkonäkymä",
   "mealPlannerWeekEmpty": "Ei mitään suunniteltua tälle viikolle",
@@ -1914,6 +2071,7 @@
   "onboardingViewAllPlans": "Katso kaikki suunnitelmat",
   "onboardingWelcomeDesc": "Älykkäin tapa järjestää ostoksesi ja säästää rahaa.",
   "onboardingWelcomeTitle": "Tervetuloa KipiList -palveluun",
+  "openConversation": "Avaa keskustelu",
   "openMenu": "Avaa valikko",
   "organizeAisles": "Järjestä käytävittäin",
   "organizeAislesPrompt": "Järjestä kaupan käytävien mukaan.",
@@ -1926,6 +2084,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} ruokakomerossa",
   "pantryCompactView": "Kompakti näkymä",
   "pantryDeficit": "Puuttuu {amount}{unit}",
+  "pantryDeficitCount": "Puuttuu {count}{unit}",
   "pantryDeleteItemsContent": "Haluatko poistaa {count} valittua kohdetta?",
   "pantryDeleteItemsTitle": "Poista kohteita",
   "pantryDeleteSelected": "Poista valitut",
@@ -1942,6 +2101,7 @@
   "pantryFilterExpiring": "Vanhenee",
   "pantryFilterOutStock": "Loppunut varastosta",
   "pantryFirstOpenHint": "Pidä kirjaa siitä, mitä sinulla on kotona. Lisää kohteita tai skannaa viivakoodeja.",
+  "pantryItemAdded": "Kohde lisätty",
   "pantryItemRemoved": "Kohde poistettu",
   "pantryMoreDetails": "Lisätietoja",
   "pantryNoItemsFound": "Ei kohteita haulle \"{query}\"",
@@ -1955,6 +2115,7 @@
   "paywallAfterItem2": "Puhdistus",
   "paywallAfterItem3": "Lihat",
   "paywallAfterItem4": "Leipomo",
+  "paywallBasedOnAnswers": "Mukautettu vastauksistasi",
   "paywallBeforeAfterTitle": "AI ennen ja jälkeen:",
   "paywallBeforeItem1": "riisi",
   "paywallBeforeItem2": "saippua",
@@ -1992,6 +2153,8 @@
   "paywallGoalHeadlinePantry": "{name}, seuraa ruokakomeroasi täydellisesti!",
   "paywallGoalHeadlineRecipes": "{name}, löydä uusia reseptejä!",
   "paywallGoalHeadlineSaveMoney": "{name}, säästä jokaisella matkalla!",
+  "paywallHeroFeatureDesc": "Puhu tai liitä koko luettelo – tekoäly lajittelee, luokittelee ja budjetoi sekunneissa",
+  "paywallHeroFeatureTitle": "AI Shopping Assistant",
   "paywallHeroHeadline": "Kipi AI aina vierelläsi",
   "paywallHeroSubtitle": "Lisää kohteita, järjestä luetteloita ja säästä aikaa taskussasi olevan tekoälyn avulla",
   "paywallHeroSubtitlePersonalized": "Hei {name}, järjestä ostoksesi oikein.",
@@ -2026,6 +2189,11 @@
   "paywallTestimonial2Text": "En enää koskaan unohtanut yhtään listakohtaa. AI-chat on sensaatiomainen!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Mitä käyttäjämme sanovat:",
+  "paywallTimelineChargeDesc": "Tilauksesi alkaa – peruuta milloin tahansa",
+  "paywallTimelineDay": "Päivä {day}",
+  "paywallTimelineReminderDesc": "Muistutamme sinua ennen oikeudenkäynnin päättymistä",
+  "paywallTimelineToday": "Tänään",
+  "paywallTimelineTodayDesc": "Avaa täysi käyttöoikeus välittömästi",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Aloita ilmainen kokeilu",
   "paywallTrialDays": "{days} PÄIVÄÄ ILMAISEKSI",
@@ -2048,11 +2216,15 @@
   "prefSharing": "Jaa listat",
   "prefUnlimitedLists": "Rajattomat listat",
   "prefUnlimitedPantry": "Rajaton ruokakomero",
+  "preferencesSection": "Asetukset",
   "preferredMarket": "Suositut markkinat",
   "preferredMarketHint": "Missä yleensä shoppailet?",
+  "premiumActionsPrompt": "Tilaa Premium avataksesi automaattisten toimintojen lukituksen.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Päivitä avataksesi",
   "prepTime": "Valmistusaika",
   "prepTimeMinutes": "Valmistusaika (minuuttia)",
+  "previousItemState": "Edellinen tila: {quantity} {unit} [{category}]{price}",
   "privacy": "Yksityisyys",
   "product": "Tuote",
   "productName": "Tuotteen nimi",
@@ -2069,21 +2241,34 @@
   "quantityShort": "Määrä",
   "quantityUnitWithPrice": "{qty} {unit} - {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Keskustele Kipin kanssa",
+  "quickActionPantry": "Näytä ruokakomero",
   "quickRecipe": "Nopea resepti",
   "quickRecipePrompt": "Ehdota reseptejä listani kohteilla.",
   "quickReplies": "Pikaiset vastaukset:",
   "quickSuggestions": "Pikaisia ​​ehdotuksia",
+  "recipeAddError": "Ei voitu lisätä luetteloosi. Yritä uudelleen.",
   "recipeAddToList": "Lisää ostoslistalle",
   "recipeAddedConfirmation": "{count} ainesosat lisätty {listName}",
   "recipeCreated": "Resepti luotu!",
   "recipeDeleted": "Resepti poistettu",
+  "recipeEstimatePartial": "Osittainen arvio ainesosien ja hinnan perusteella.",
+  "recipeEstimatedCostPerServing": "{cost} / annos",
+  "recipeEstimatedTotalCost": "Arvioidut kokonaiskustannukset",
   "recipeImage": "Reseptin kuva",
+  "recipeIngredientInPantry": "Ruokakomerossa",
+  "recipeIngredientLowPantry": "Alhainen ruokakomero",
   "recipeIngredientSingular": "1 ainesosa",
   "recipeIngredientsPlural": "{count} ainesosia",
+  "recipeManualTotalCost": "Manuaalinen kokonaishinta",
+  "recipeManualTotalCostHint": "Jätä tyhjäksi arvioidaksesi ainesosien hintoja.",
   "recipeName": "Reseptin nimi",
   "recipeSaved": "Resepti tallennettu!",
+  "recipeServesCount": "Palvelee {count}",
   "recipeSuggestion": "Reseptiehdotus",
   "recipeTags": "Reseptin tunnisteet",
+  "recipeTapToCheck": "Napauta ainesosaa tarkistaaksesi sen ruoanlaiton aikana",
+  "recipeYieldServings": "Tuotto annoksia",
   "regenerate": "Luo uudelleen",
   "remove": "Poista",
   "removeBudget": "Poista",
@@ -2107,9 +2292,12 @@
   "savings": "Säästöt",
   "scanBarcodeTitle": "Skannaa viivakoodi",
   "scanProductTitle": "Skannaa tuote",
+  "scrollToBottom": "Vieritä alas",
+  "searchConversations": "Hae keskusteluja",
   "searchCurrency": "Hae valuutta...",
   "searchInConversation": "Hae keskustelusta...",
   "searchLanguage": "Hae kieltä...",
+  "searchMessages": "Hae viestejä...",
   "searchRecipes": "Hae reseptejä...",
   "selectAll": "Valitse kaikki",
   "selectCheaperAlternative": "Valitse halvempi vaihtoehto",
@@ -2166,6 +2354,7 @@
   "signInGoogle": "Kirjaudu Google-tilillä",
   "skip": "Ohita",
   "smartOrganization": "Älykäs järjestys",
+  "somethingWentWrong": "Jotain meni pieleen",
   "sortAZ": "A–Z",
   "sortCategory": "Kategoria",
   "sortDate": "Päivämäärä",
@@ -2196,6 +2385,7 @@
   "themeColor": "Teeman väri",
   "themeGreen": "Vihreä",
   "themeIndigo": "Indigo",
+  "themeMode": "Teematila",
   "themeOrange": "Oranssi",
   "themePink": "Vaaleanpunainen",
   "themePurple": "Violetti",
@@ -2203,12 +2393,14 @@
   "themeSelectionTitle": "Valitse teeman väri",
   "themeTeal": "Tavi",
   "totalEstimated": "Arvioitu yhteensä: {amount}",
+  "totalEstimatedLabel": "Arvioitu kokonaismäärä",
   "totalSavings": "Säästöt yhteensä",
   "totalSpending": "Kulutettu yhteensä",
   "trackStock": "Seuraa varastoa",
   "trackStockActive": "Näkyy ostoehdotuksissa",
   "trackStockInactive": "Ei luo ostoehdotusta",
   "undo": "Kumoa",
+  "undoChanges": "Kumoa muutokset",
   "unit": "Yksikkö",
   "unitPack": "pakkaus",
   "unlockAi": "Avaa rajoittamaton AI",
@@ -2233,6 +2425,7 @@
   "userProfileSaveButton": "Tallenna profiili",
   "userProfileSaved": "Profiili tallennettu onnistuneesti!",
   "userProfileTitle": "Oma profiili",
+  "userRole": "sinä",
   "validForLimitedTime": "Voimassa rajoitetun ajan",
   "version": "Versio",
   "viewActive": "Näytä aktiiviset",
@@ -2240,6 +2433,7 @@
   "viewHistory": "Näytä historia",
   "viewItems": "Näytä kohteet",
   "viewList": "Katso lista",
+  "viewPlans": "Katso suunnitelmat",
   "viewPro": "Näytä Pro",
   "viewRecipe": "Näytä resepti",
   "voiceCommandContent": "Puhu luonnollisesti hallitaksesi listaasi!\n\nEsimerkkejä:\n• 'Lisää leipää, juustoa ja kinkkua'\n• 'Poista pyykinpesuaine'\n• 'Vaihda teema siniseksi'\n\nTämä on KipiList Premiumin eksklusiivinen ominaisuus.",

@@ -240,6 +240,11 @@ class AppLocalizationsTr extends AppLocalizations {
   String get noItemsToBuy => 'Satın alınması gereken öğe yok';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return '$count$unit eksik';
+  }
+
+  @override
   String get newPantryList => 'Kiler Alışverişi';
 
   @override
@@ -306,6 +311,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get settingsAppBar => 'Ayarlar';
 
   @override
+  String get preferencesSection => 'Tercihler';
+
+  @override
+  String get aiSection => 'Yapay Zeka Asistanı';
+
+  @override
   String get language => 'Dil';
 
   @override
@@ -334,6 +345,12 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get appearance => 'Görünüm';
+
+  @override
+  String get themeMode => 'Tema modu';
+
+  @override
+  String get chooseThemeMode => 'Tema modunu seçin';
 
   @override
   String get light => 'Aydınlık';
@@ -583,6 +600,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get trackStockInactive => 'Alışveriş önerisi oluşturmaz';
 
   @override
+  String get keepAdding => 'Eklemeye devam et';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Birden fazla öğe eklemek için sayfayı açık tutun';
+
+  @override
   String get createListDialog => 'Liste Oluştur';
 
   @override
@@ -688,6 +712,36 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'İyi yanıt';
+
+  @override
+  String get badResponse => 'Kötü yanıt';
+
+  @override
+  String get scrollToBottom => 'Aşağıya doğru kaydır';
+
+  @override
+  String get somethingWentWrong => 'Bir şeyler ters gitti';
+
+  @override
+  String get editMessage => 'Mesajı düzenle';
+
+  @override
+  String get searchConversations => 'Konuşmaları arayın';
+
+  @override
+  String get dateGroupToday => 'Bugün';
+
+  @override
+  String get dateGroupYesterday => 'Dün';
+
+  @override
+  String get dateGroupPrevious7Days => 'Önceki 7 gün';
+
+  @override
+  String get dateGroupOlder => 'daha yaşlı';
+
+  @override
   String get aiAssistantTitle => 'Yapay Zeka Asistanı';
 
   @override
@@ -729,6 +783,33 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Aylık AI sınırına ulaşıldı. Sınırsız olarak Pro\'ya yükseltin →';
+
+  @override
+  String get undo => 'Geri al';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'Kipi Listesi';
@@ -941,6 +1022,19 @@ class AppLocalizationsTr extends AppLocalizations {
   String get recipeAddToList => 'Alışveriş listesine ekle';
 
   @override
+  String get recipeAddError => 'Listenize eklenemedi. Lütfen tekrar deneyin.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Yemek pişirirken kontrol etmek için bir malzemeye dokunun';
+
+  @override
+  String get recipeIngredientInPantry => 'Kilerde';
+
+  @override
+  String get recipeIngredientLowPantry => 'Kilerde düşük';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1059,12 +1153,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get paywallSelectPlan => 'Planınızı seçin:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return '%$percent TASARRUF EDİN';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Yalnızca $price/ay';
   }
 
@@ -1100,6 +1194,35 @@ class AppLocalizationsTr extends AppLocalizations {
   String get paywallRestore => 'Eski haline getirmek';
 
   @override
+  String get paywallTimelineToday => 'Bugün';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Tam erişimin kilidini anında açın';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Gün $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Deneme süresi bitmeden size hatırlatırız';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Aboneliğiniz başlıyor; istediğiniz zaman iptal edin';
+
+  @override
+  String get paywallHeroFeatureTitle => 'Yapay Zeka Alışveriş Asistanı';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Tüm listeyi söyleyin veya yapıştırın; yapay zeka, listeyi saniyeler içinde sıralar, kategorilere ayırır ve bütçelendirir';
+
+  @override
+  String get paywallBasedOnAnswers => 'Yanıtlarınıza göre kişiselleştirildi';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI her zaman yanınızda';
 
   @override
@@ -1131,9 +1254,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Öğe kaldırıldı';
-
-  @override
-  String get undo => 'Geri al';
 
   @override
   String get emptyListTitle => 'Listeniz boş';
@@ -1250,6 +1370,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Öğe kaldırıldı';
+
+  @override
+  String get pantryItemAdded => 'Öğe eklendi';
 
   @override
   String deficitItems(int deficit) {
@@ -1647,6 +1770,32 @@ class AppLocalizationsTr extends AppLocalizations {
   String get prepTimeMinutes => 'Hazırlık süresi (dakika)';
 
   @override
+  String get recipeYieldServings => 'Verim porsiyonları';
+
+  @override
+  String get recipeManualTotalCost => 'Manuel toplam maliyet';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'İçerik fiyatlarından tahmin yapmak için boş bırakın.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Tahmini toplam maliyet';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / porsiyon';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return '$count hizmet veriyor';
+  }
+
+  @override
+  String get recipeEstimatePartial => 'Fiyatlı içeriklere dayalı kısmi tahmin.';
+
+  @override
   String get instructionsHint => 'Her satıra bir adım yazın...';
 
   @override
@@ -1775,6 +1924,10 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Kısmi fiyat verileri içeren tariflere dayalı tahmin.';
+
+  @override
   String get mealPlannerGenerateList => 'Alışveriş listesi oluştur';
 
   @override
@@ -1870,6 +2023,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get catalogRareSection => 'ülkenizde daha az yaygın';
 
   @override
+  String get catalogRareBadge => 'Nadir';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1887,7 +2043,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get catalogBrowse => 'Kataloğa Göz Atın';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kategoriler';
 
   @override
   String get offlineBanner => 'Çevrimdışısınız';
@@ -1918,6 +2074,40 @@ class AppLocalizationsTr extends AppLocalizations {
     );
     return '$count $_temp0 eksik';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Yemek türlerini yönetin';
+
+  @override
+  String get mealPlannerAddType => 'Yemek türü ekle';
+
+  @override
+  String get mealPlannerEditType => 'Yemek türünü düzenle';
+
+  @override
+  String get mealPlannerTypeName => 'İsim';
+
+  @override
+  String get mealPlannerTypeColor => 'Renk';
+
+  @override
+  String get mealPlannerTypeIcon => 'Simge';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Bu yemek türünü silmek istediğinizden emin misiniz? Bu türle planlanan yemekler kalacaktır.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Ad boş olamaz';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'Bu yemek türü silinemiyor.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Özel tür';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Varsayılan tür';
 
   @override
   String get expirationDate => 'Son kullanma tarihi';
@@ -1978,6 +2168,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Listeler yüklenirken hata oluştu';
+
+  @override
+  String get errorLoadingItems => 'Öğeler yüklenirken hata oluştu';
 
   @override
   String get noListsFound => 'Liste bulunamadı';
@@ -2580,173 +2773,387 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get obHookTitle => 'Smarter shopping starts here';
+  String get obHookTitle => 'Daha akıllı alışveriş burada başlıyor';
 
   @override
   String get obHookSubtitle =>
-      'AI-powered lists that save you time and money, every single trip.';
+      'Her yolculukta zamandan ve paradan tasarruf etmenizi sağlayan yapay zeka destekli listeler.';
 
   @override
-  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+  String get obHookSocial => 'Dünya çapında binlerce alışverişçinin güvendiği';
 
   @override
-  String get obHookCta => 'Get Started';
+  String get obHookCta => 'Başlayın';
 
   @override
-  String get obQuizHouseholdTitle => 'Who do you shop for?';
+  String get obQuizHouseholdTitle => 'Kimin için alışveriş yapıyorsun?';
 
   @override
-  String get obQuizHouseholdSolo => 'Just me';
+  String get obQuizHouseholdSolo => 'Benim';
 
   @override
-  String get obQuizHouseholdCouple => 'Me and my partner';
+  String get obQuizHouseholdCouple => 'Ben ve ortağım';
 
   @override
-  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+  String get obQuizHouseholdFamilySmall => '3-4 kişilik aile';
 
   @override
-  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+  String get obQuizHouseholdFamilyLarge => '5+ kişilik aile';
 
   @override
-  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+  String get obQuizFrequencyTitle =>
+      'Ne sıklıkla market alışverişi yaparsınız?';
 
   @override
-  String get obQuizFrequencyDaily => 'Almost every day';
+  String get obQuizFrequencyDaily => 'Neredeyse her gün';
 
   @override
-  String get obQuizFrequencyWeekly => 'Once a week';
+  String get obQuizFrequencyWeekly => 'Haftada bir';
 
   @override
-  String get obQuizFrequencyBiweekly => 'Every two weeks';
+  String get obQuizFrequencyBiweekly => 'Her iki haftada bir';
 
   @override
-  String get obQuizFrequencyMonthly => 'Big monthly haul';
+  String get obQuizFrequencyMonthly => 'Büyük aylık taşıma';
 
   @override
-  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+  String get obQuizPainTitle => 'Alışverişte sizi en çok ne sinirlendirir?';
 
   @override
-  String get obQuizPainForget => 'I always forget items';
+  String get obQuizPainForget => 'Eşyaları hep unutuyorum';
 
   @override
-  String get obQuizPainOverspend => 'I spend more than planned';
+  String get obQuizPainOverspend => 'Planladığımdan daha fazlasını harcıyorum';
 
   @override
-  String get obQuizPainWaste => 'Food goes to waste at home';
+  String get obQuizPainWaste => 'Evde yiyecekler çöpe gidiyor';
 
   @override
-  String get obQuizPainTime => 'It takes too much time';
+  String get obQuizPainTime => 'Çok fazla zaman alıyor';
 
   @override
-  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+  String get obQuizSavingsTitle => 'Aylık ne kadar tasarruf etmek istersiniz?';
 
   @override
-  String get obQuizSavingsSmall => 'A little — every bit counts';
+  String get obQuizSavingsSmall => 'Biraz — her zerre önemlidir';
 
   @override
-  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+  String get obQuizSavingsMedium => 'Market faturamın yaklaşık %10\'u';
 
   @override
-  String get obQuizSavingsLarge => 'As much as possible';
+  String get obQuizSavingsLarge => 'Mümkün olduğu kadar';
 
   @override
-  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+  String get obQuizMethodTitle =>
+      'Bugün alışveriş listelerini nasıl hazırlıyorsunuz?';
 
   @override
-  String get obQuizMethodPaper => 'Pen and paper';
+  String get obQuizMethodPaper => 'Kalem ve kağıt';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'Notlar uygulaması';
 
   @override
-  String get obQuizMethodMemory => 'I keep it in my head';
+  String get obQuizMethodMemory => 'Bunu kafamda tutuyorum';
 
   @override
-  String get obQuizMethodNone => 'I don\'t make lists';
+  String get obQuizMethodNone => 'Liste yapmıyorum';
 
   @override
-  String get obSocialTitle => 'You\'re in good company';
+  String get obSocialTitle => 'İyi bir arkadaşsın';
 
   @override
   String get obSocialSubtitle =>
-      'Shoppers like you are already saving with KipiList';
+      'Sizin gibi alışveriş yapanlar KipiList ile zaten tasarruf ediyor';
 
   @override
   String get obSocialQuote1 =>
-      'I never forget anything anymore. The AI builds my list in seconds.';
+      'Artık hiçbir şeyi unutmuyorum. Yapay zeka listemi saniyeler içinde oluşturuyor.';
 
   @override
   String get obSocialQuote2 =>
-      'We cut our grocery bill noticeably in the first month.';
+      'İlk ayda market faturamızı gözle görülür şekilde kestik.';
 
   @override
   String get obSocialQuote3 =>
-      'Sharing the list with my partner ended our shopping chaos.';
+      'Listeyi eşimle paylaşmak alışveriş kaosuna son verdi.';
 
   @override
-  String get obLoadingTitle => 'Building your personalized plan...';
+  String get obLoadingTitle => 'Kişiselleştirilmiş planınızı oluşturmak...';
 
   @override
-  String get obLoadingStepProfile => 'Adjusting for your household';
+  String get obLoadingStepProfile => 'Evinize göre ayarlama';
 
   @override
-  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+  String get obLoadingStepHabits => 'Alışveriş rutininize uyum sağlama';
 
   @override
-  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+  String get obLoadingStepSavings => 'Tasarruf stratejinizi optimize etme';
 
   @override
-  String get obLoadingStepLists => 'Preparing your smart lists';
+  String get obLoadingStepLists => 'Akıllı listelerinizi hazırlamak';
 
   @override
-  String get obRevealTitle => 'Your plan is ready!';
+  String get obRevealTitle => 'Planınız hazır!';
 
   @override
-  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+  String get obRevealSubtitle =>
+      'İşte KipiList\'in sizin için nasıl çalışacağı';
 
   @override
-  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+  String get obRevealSavingsCaption => 'KipiList ile öngörülen tasarruflar';
 
   @override
   String obRevealMonth(int n) {
-    return 'Month $n';
+    return 'Ay $n';
   }
 
   @override
-  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+  String get obRevealFeatureAi =>
+      'Yapay zeka listelerinizi oluşturur ve düzenler';
 
   @override
-  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+  String get obRevealFeatureBudget => 'Hedefinize göre takip edilen harcamalar';
 
   @override
-  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+  String get obRevealFeaturePantry => 'Kiler takibi gıda israfını azaltır';
 
   @override
-  String get obRevealFeatureShare => 'Real-time sharing with your household';
+  String get obRevealFeatureShare => 'Evinizle gerçek zamanlı paylaşım';
 
   @override
-  String get obPaywallTitle => 'Unlock your plan';
+  String get obPaywallTitle => 'Planınızın kilidini açın';
 
   @override
-  String get obPaywallRetry => 'Try again';
+  String get obPaywallRetry => 'Tekrar deneyin';
 
   @override
-  String get obLoginTitle => 'Save your plan';
+  String get obLoginTitle => 'Planınızı kaydedin';
 
   @override
-  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+  String get obLoginSubtitle =>
+      'Listelerinizin cihazlar arasında senkronize edilmesi için oturum açın';
 
   @override
-  String get obLoginGoogle => 'Continue with Google';
+  String get obLoginGoogle => 'Google ile devam et';
 
   @override
-  String get obLoginApple => 'Continue with Apple';
+  String get obLoginApple => 'Apple\'la devam et';
 
   @override
-  String get obLoginSkip => 'Not now';
+  String get obLoginSkip => 'Şimdi değil';
 
   @override
-  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
+  String get obLoginError =>
+      'Oturum açma başarısız oldu. Tekrar deneyin veya şimdilik atlayın.';
+
+  @override
+  String get searchMessages => 'Mesajları ara...';
+
+  @override
+  String get deletedList => 'Silinen liste';
+
+  @override
+  String get openConversation => 'Konuşmayı aç';
+
+  @override
+  String get userRole => 'Sen';
+
+  @override
+  String get assistantRole => 'Asistan';
+
+  @override
+  String get agentActionsRunning => 'Eylemler çalıştırılıyor...';
+
+  @override
+  String get agentActionsFailed => 'İşlemler çalıştırılamadı';
+
+  @override
+  String get agentActionsPremium => 'Eylemler Premium gerektirir';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Değişiklikleri geri al';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Öğe listeye eklendi.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Önceki durum: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Otomatik işlemlerin kilidini açmak için Premium\'a abone olun.';
+
+  @override
+  String get viewPlans => 'Planları görüntüle';
+
+  @override
+  String get artifactSynced => 'Senkronize edildi';
+
+  @override
+  String get artifactBudgetLabel => 'Bütçe:';
+
+  @override
+  String get totalEstimatedLabel => 'Tahmini toplam';
+
+  @override
+  String get quickActionPantry => 'Kileri görüntüle';
+
+  @override
+  String get quickActionAi => 'Kipi ile sohbet et';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI hizmeti bir hata döndürdü ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Talep çok uzun sürdü. Lütfen tekrar deneyin.';
+
+  @override
+  String get aiConnectionError =>
+      'AI hizmetine bağlanılamadı. Bağlantınızı kontrol edin.';
+
+  @override
+  String get aiEmptyResponseError => 'AI hizmeti boş bir yanıt döndürdü.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'AI hizmeti geçersiz bir yanıt döndürdü.';
+
+  @override
+  String get categoryFruits => 'Meyveler';
+
+  @override
+  String get categoryCleaning => 'Temizlik';
+
+  @override
+  String get categoryBeverages => 'İçecekler';
+
+  @override
+  String get categoryBakery => 'Fırın';
+
+  @override
+  String get categoryMeat => 'Et';
+
+  @override
+  String get categoryDairy => 'Günlük';
+
+  @override
+  String get categoryVegetables => 'Sebze';
+
+  @override
+  String get categoryGrains => 'Tahıllar ve tahıllar';
+
+  @override
+  String get categoryHygiene => 'Kişisel bakım';
+
+  @override
+  String get categoryFrozen => 'Dondurulmuş gıdalar';
+
+  @override
+  String get categoryCanned => 'Konserve ürünler';
+
+  @override
+  String get categorySeasonings => 'Baharatlar';
+
+  @override
+  String get categorySweets => 'Tatlılar ve tatlılar';
+
+  @override
+  String get categoryAlcohol => 'Alkollü içecekler';
+
+  @override
+  String get categoryFish => 'Balık';
+
+  @override
+  String get categoryColdCuts => 'Soğuk etler';
+
+  @override
+  String get categoryUtilities => 'Ev malzemeleri';
+
+  @override
+  String get categoryPet => 'Evcil hayvan malzemeleri';
+
+  @override
+  String get categoryBaby => 'Bebek';
+
+  @override
+  String get categoryOthers => 'Diğer';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Merhaba $name, ben Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Merhaba ben Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Listeler oluşturuyorum, tarifler öneriyorum ve nereye kaydedeceğimi buluyorum. Nereden başlayacağız?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Barbekü planlayın';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, barbekü düzenliyorum - alışveriş listesini oluşturmama yardım et';
+
+  @override
+  String get aiRateLimitError =>
+      'Kısa sürede çok fazla mesaj var. Birkaç saniye bekleyip tekrar deneyin.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Bu görüşme yüklenemedi';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Bizim açımızdan bir şeyler ters gitti. Tekrar denemek için Yeniden dene\'ye dokunun.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Çevrimdışısınız';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'İnternet bağlantınızı kontrol edip tekrar deneyin.';
+
+  @override
+  String get aiGeneratingResponse => 'Yanıt oluşturuluyor…';
 }
 
 /// The translations for Turkish, as used in Turkey (`tr_TR`).
@@ -2985,6 +3392,11 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get noItemsToBuy => 'Satın alınması gereken öğe yok';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return '$count$unit eksik';
+  }
+
+  @override
   String get newPantryList => 'Kiler Alışverişi';
 
   @override
@@ -3051,6 +3463,12 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get settingsAppBar => 'Ayarlar';
 
   @override
+  String get preferencesSection => 'Tercihler';
+
+  @override
+  String get aiSection => 'Yapay Zeka Asistanı';
+
+  @override
   String get language => 'Dil';
 
   @override
@@ -3079,6 +3497,12 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get appearance => 'Görünüm';
+
+  @override
+  String get themeMode => 'Tema modu';
+
+  @override
+  String get chooseThemeMode => 'Tema modunu seçin';
 
   @override
   String get light => 'Aydınlık';
@@ -3328,6 +3752,13 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get trackStockInactive => 'Alışveriş önerisi oluşturmaz';
 
   @override
+  String get keepAdding => 'Eklemeye devam et';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Birden fazla öğe eklemek için sayfayı açık tutun';
+
+  @override
   String get createListDialog => 'Liste Oluştur';
 
   @override
@@ -3433,6 +3864,36 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   }
 
   @override
+  String get goodResponse => 'İyi yanıt';
+
+  @override
+  String get badResponse => 'Kötü yanıt';
+
+  @override
+  String get scrollToBottom => 'Aşağıya doğru kaydır';
+
+  @override
+  String get somethingWentWrong => 'Bir şeyler ters gitti';
+
+  @override
+  String get editMessage => 'Mesajı düzenle';
+
+  @override
+  String get searchConversations => 'Konuşmaları arayın';
+
+  @override
+  String get dateGroupToday => 'Bugün';
+
+  @override
+  String get dateGroupYesterday => 'Dün';
+
+  @override
+  String get dateGroupPrevious7Days => 'Önceki 7 gün';
+
+  @override
+  String get dateGroupOlder => 'daha yaşlı';
+
+  @override
   String get aiAssistantTitle => 'Yapay Zeka Asistanı';
 
   @override
@@ -3474,6 +3935,9 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   @override
   String get aiUsageExhausted =>
       'Aylık AI sınırına ulaşıldı. Sınırsız olarak Pro\'ya yükseltin →';
+
+  @override
+  String get undo => 'Geri al';
 
   @override
   String get kipiListTitle => 'Kipi Listesi';
@@ -3686,6 +4150,19 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get recipeAddToList => 'Alışveriş listesine ekle';
 
   @override
+  String get recipeAddError => 'Listenize eklenemedi. Lütfen tekrar deneyin.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Yemek pişirirken kontrol etmek için bir malzemeye dokunun';
+
+  @override
+  String get recipeIngredientInPantry => 'Kilerde';
+
+  @override
+  String get recipeIngredientLowPantry => 'Kilerde düşük';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -3804,12 +4281,12 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get paywallSelectPlan => 'Planınızı seçin:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return '%$percent TASARRUF EDİN';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Yalnızca $price/ay';
   }
 
@@ -3845,6 +4322,35 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get paywallRestore => 'Eski haline getirmek';
 
   @override
+  String get paywallTimelineToday => 'Bugün';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Tam erişimin kilidini anında açın';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Gün $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Deneme süresi bitmeden size hatırlatırız';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Aboneliğiniz başlıyor; istediğiniz zaman iptal edin';
+
+  @override
+  String get paywallHeroFeatureTitle => 'Yapay Zeka Alışveriş Asistanı';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Tüm listeyi söyleyin veya yapıştırın; yapay zeka, listeyi saniyeler içinde sıralar, kategorilere ayırır ve bütçelendirir';
+
+  @override
+  String get paywallBasedOnAnswers => 'Yanıtlarınıza göre kişiselleştirildi';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI her zaman yanınızda';
 
   @override
@@ -3876,9 +4382,6 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get itemRemoved => 'Öğe kaldırıldı';
-
-  @override
-  String get undo => 'Geri al';
 
   @override
   String get emptyListTitle => 'Listeniz boş';
@@ -3995,6 +4498,9 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get pantryItemRemoved => 'Öğe kaldırıldı';
+
+  @override
+  String get pantryItemAdded => 'Öğe eklendi';
 
   @override
   String deficitItems(int deficit) {
@@ -4392,6 +4898,32 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get prepTimeMinutes => 'Hazırlık süresi (dakika)';
 
   @override
+  String get recipeYieldServings => 'Verim porsiyonları';
+
+  @override
+  String get recipeManualTotalCost => 'Manuel toplam maliyet';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'İçerik fiyatlarından tahmin yapmak için boş bırakın.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Tahmini toplam maliyet';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / porsiyon';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return '$count hizmet veriyor';
+  }
+
+  @override
+  String get recipeEstimatePartial => 'Fiyatlı içeriklere dayalı kısmi tahmin.';
+
+  @override
   String get instructionsHint => 'Her satıra bir adım yazın...';
 
   @override
@@ -4520,6 +5052,10 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Kısmi fiyat verileri içeren tariflere dayalı tahmin.';
+
+  @override
   String get mealPlannerGenerateList => 'Alışveriş listesi oluştur';
 
   @override
@@ -4615,6 +5151,9 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get catalogRareSection => 'ülkenizde daha az yaygın';
 
   @override
+  String get catalogRareBadge => 'Nadir';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4630,6 +5169,9 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get catalogBrowse => 'Kataloğa Göz Atın';
+
+  @override
+  String get catalogCategories => 'Kategoriler';
 
   @override
   String get offlineBanner => 'Çevrimdışısınız';
@@ -4660,6 +5202,40 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
     );
     return '$count $_temp0 eksik';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Yemek türlerini yönetin';
+
+  @override
+  String get mealPlannerAddType => 'Yemek türü ekle';
+
+  @override
+  String get mealPlannerEditType => 'Yemek türünü düzenle';
+
+  @override
+  String get mealPlannerTypeName => 'İsim';
+
+  @override
+  String get mealPlannerTypeColor => 'Renk';
+
+  @override
+  String get mealPlannerTypeIcon => 'Simge';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Bu yemek türünü silmek istediğinizden emin misiniz? Bu türle planlanan yemekler kalacaktır.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Ad boş olamaz';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'Bu yemek türü silinemiyor.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Özel tür';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Varsayılan tür';
 
   @override
   String get expirationDate => 'Son kullanma tarihi';
@@ -4720,6 +5296,9 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get errorLoadingLists => 'Listeler yüklenirken hata oluştu';
+
+  @override
+  String get errorLoadingItems => 'Öğeler yüklenirken hata oluştu';
 
   @override
   String get noListsFound => 'Liste bulunamadı';
@@ -5322,171 +5901,385 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   }
 
   @override
-  String get obHookTitle => 'Smarter shopping starts here';
+  String get obHookTitle => 'Daha akıllı alışveriş burada başlıyor';
 
   @override
   String get obHookSubtitle =>
-      'AI-powered lists that save you time and money, every single trip.';
+      'Her yolculukta zamandan ve paradan tasarruf etmenizi sağlayan yapay zeka destekli listeler.';
 
   @override
-  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+  String get obHookSocial => 'Dünya çapında binlerce alışverişçinin güvendiği';
 
   @override
-  String get obHookCta => 'Get Started';
+  String get obHookCta => 'Başlayın';
 
   @override
-  String get obQuizHouseholdTitle => 'Who do you shop for?';
+  String get obQuizHouseholdTitle => 'Kimin için alışveriş yapıyorsun?';
 
   @override
-  String get obQuizHouseholdSolo => 'Just me';
+  String get obQuizHouseholdSolo => 'Benim';
 
   @override
-  String get obQuizHouseholdCouple => 'Me and my partner';
+  String get obQuizHouseholdCouple => 'Ben ve ortağım';
 
   @override
-  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+  String get obQuizHouseholdFamilySmall => '3-4 kişilik aile';
 
   @override
-  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+  String get obQuizHouseholdFamilyLarge => '5+ kişilik aile';
 
   @override
-  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+  String get obQuizFrequencyTitle =>
+      'Ne sıklıkla market alışverişi yaparsınız?';
 
   @override
-  String get obQuizFrequencyDaily => 'Almost every day';
+  String get obQuizFrequencyDaily => 'Neredeyse her gün';
 
   @override
-  String get obQuizFrequencyWeekly => 'Once a week';
+  String get obQuizFrequencyWeekly => 'Haftada bir';
 
   @override
-  String get obQuizFrequencyBiweekly => 'Every two weeks';
+  String get obQuizFrequencyBiweekly => 'Her iki haftada bir';
 
   @override
-  String get obQuizFrequencyMonthly => 'Big monthly haul';
+  String get obQuizFrequencyMonthly => 'Büyük aylık taşıma';
 
   @override
-  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+  String get obQuizPainTitle => 'Alışverişte sizi en çok ne sinirlendirir?';
 
   @override
-  String get obQuizPainForget => 'I always forget items';
+  String get obQuizPainForget => 'Eşyaları hep unutuyorum';
 
   @override
-  String get obQuizPainOverspend => 'I spend more than planned';
+  String get obQuizPainOverspend => 'Planladığımdan daha fazlasını harcıyorum';
 
   @override
-  String get obQuizPainWaste => 'Food goes to waste at home';
+  String get obQuizPainWaste => 'Evde yiyecekler çöpe gidiyor';
 
   @override
-  String get obQuizPainTime => 'It takes too much time';
+  String get obQuizPainTime => 'Çok fazla zaman alıyor';
 
   @override
-  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+  String get obQuizSavingsTitle => 'Aylık ne kadar tasarruf etmek istersiniz?';
 
   @override
-  String get obQuizSavingsSmall => 'A little — every bit counts';
+  String get obQuizSavingsSmall => 'Biraz — her zerre önemlidir';
 
   @override
-  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+  String get obQuizSavingsMedium => 'Market faturamın yaklaşık %10\'u';
 
   @override
-  String get obQuizSavingsLarge => 'As much as possible';
+  String get obQuizSavingsLarge => 'Mümkün olduğu kadar';
 
   @override
-  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+  String get obQuizMethodTitle =>
+      'Bugün alışveriş listelerini nasıl hazırlıyorsunuz?';
 
   @override
-  String get obQuizMethodPaper => 'Pen and paper';
+  String get obQuizMethodPaper => 'Kalem ve kağıt';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'Notlar uygulaması';
 
   @override
-  String get obQuizMethodMemory => 'I keep it in my head';
+  String get obQuizMethodMemory => 'Bunu kafamda tutuyorum';
 
   @override
-  String get obQuizMethodNone => 'I don\'t make lists';
+  String get obQuizMethodNone => 'Liste yapmıyorum';
 
   @override
-  String get obSocialTitle => 'You\'re in good company';
+  String get obSocialTitle => 'İyi bir arkadaşsın';
 
   @override
   String get obSocialSubtitle =>
-      'Shoppers like you are already saving with KipiList';
+      'Sizin gibi alışveriş yapanlar KipiList ile zaten tasarruf ediyor';
 
   @override
   String get obSocialQuote1 =>
-      'I never forget anything anymore. The AI builds my list in seconds.';
+      'Artık hiçbir şeyi unutmuyorum. Yapay zeka listemi saniyeler içinde oluşturuyor.';
 
   @override
   String get obSocialQuote2 =>
-      'We cut our grocery bill noticeably in the first month.';
+      'İlk ayda market faturamızı gözle görülür şekilde kestik.';
 
   @override
   String get obSocialQuote3 =>
-      'Sharing the list with my partner ended our shopping chaos.';
+      'Listeyi eşimle paylaşmak alışveriş kaosuna son verdi.';
 
   @override
-  String get obLoadingTitle => 'Building your personalized plan...';
+  String get obLoadingTitle => 'Kişiselleştirilmiş planınızı oluşturmak...';
 
   @override
-  String get obLoadingStepProfile => 'Adjusting for your household';
+  String get obLoadingStepProfile => 'Evinize göre ayarlama';
 
   @override
-  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+  String get obLoadingStepHabits => 'Alışveriş rutininize uyum sağlama';
 
   @override
-  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+  String get obLoadingStepSavings => 'Tasarruf stratejinizi optimize etme';
 
   @override
-  String get obLoadingStepLists => 'Preparing your smart lists';
+  String get obLoadingStepLists => 'Akıllı listelerinizi hazırlamak';
 
   @override
-  String get obRevealTitle => 'Your plan is ready!';
+  String get obRevealTitle => 'Planınız hazır!';
 
   @override
-  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+  String get obRevealSubtitle =>
+      'İşte KipiList\'in sizin için nasıl çalışacağı';
 
   @override
-  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+  String get obRevealSavingsCaption => 'KipiList ile öngörülen tasarruflar';
 
   @override
   String obRevealMonth(int n) {
-    return 'Month $n';
+    return 'Ay $n';
   }
 
   @override
-  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+  String get obRevealFeatureAi =>
+      'Yapay zeka listelerinizi oluşturur ve düzenler';
 
   @override
-  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+  String get obRevealFeatureBudget => 'Hedefinize göre takip edilen harcamalar';
 
   @override
-  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+  String get obRevealFeaturePantry => 'Kiler takibi gıda israfını azaltır';
 
   @override
-  String get obRevealFeatureShare => 'Real-time sharing with your household';
+  String get obRevealFeatureShare => 'Evinizle gerçek zamanlı paylaşım';
 
   @override
-  String get obPaywallTitle => 'Unlock your plan';
+  String get obPaywallTitle => 'Planınızın kilidini açın';
 
   @override
-  String get obPaywallRetry => 'Try again';
+  String get obPaywallRetry => 'Tekrar deneyin';
 
   @override
-  String get obLoginTitle => 'Save your plan';
+  String get obLoginTitle => 'Planınızı kaydedin';
 
   @override
-  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+  String get obLoginSubtitle =>
+      'Listelerinizin cihazlar arasında senkronize edilmesi için oturum açın';
 
   @override
-  String get obLoginGoogle => 'Continue with Google';
+  String get obLoginGoogle => 'Google ile devam et';
 
   @override
-  String get obLoginApple => 'Continue with Apple';
+  String get obLoginApple => 'Apple\'la devam et';
 
   @override
-  String get obLoginSkip => 'Not now';
+  String get obLoginSkip => 'Şimdi değil';
 
   @override
-  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
+  String get obLoginError =>
+      'Oturum açma başarısız oldu. Tekrar deneyin veya şimdilik atlayın.';
+
+  @override
+  String get searchMessages => 'Mesajları ara...';
+
+  @override
+  String get deletedList => 'Silinen liste';
+
+  @override
+  String get openConversation => 'Konuşmayı aç';
+
+  @override
+  String get userRole => 'Sen';
+
+  @override
+  String get assistantRole => 'Asistan';
+
+  @override
+  String get agentActionsRunning => 'Eylemler çalıştırılıyor...';
+
+  @override
+  String get agentActionsFailed => 'İşlemler çalıştırılamadı';
+
+  @override
+  String get agentActionsPremium => 'Eylemler Premium gerektirir';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Değişiklikleri geri al';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Öğe listeye eklendi.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Önceki durum: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Otomatik işlemlerin kilidini açmak için Premium\'a abone olun.';
+
+  @override
+  String get viewPlans => 'Planları görüntüle';
+
+  @override
+  String get artifactSynced => 'Senkronize edildi';
+
+  @override
+  String get artifactBudgetLabel => 'Bütçe:';
+
+  @override
+  String get totalEstimatedLabel => 'Tahmini toplam';
+
+  @override
+  String get quickActionPantry => 'Kileri görüntüle';
+
+  @override
+  String get quickActionAi => 'Kipi ile sohbet et';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI hizmeti bir hata döndürdü ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Talep çok uzun sürdü. Lütfen tekrar deneyin.';
+
+  @override
+  String get aiConnectionError =>
+      'AI hizmetine bağlanılamadı. Bağlantınızı kontrol edin.';
+
+  @override
+  String get aiEmptyResponseError => 'AI hizmeti boş bir yanıt döndürdü.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'AI hizmeti geçersiz bir yanıt döndürdü.';
+
+  @override
+  String get categoryFruits => 'Meyveler';
+
+  @override
+  String get categoryCleaning => 'Temizlik';
+
+  @override
+  String get categoryBeverages => 'İçecekler';
+
+  @override
+  String get categoryBakery => 'Fırın';
+
+  @override
+  String get categoryMeat => 'Et';
+
+  @override
+  String get categoryDairy => 'Günlük';
+
+  @override
+  String get categoryVegetables => 'Sebze';
+
+  @override
+  String get categoryGrains => 'Tahıllar ve tahıllar';
+
+  @override
+  String get categoryHygiene => 'Kişisel bakım';
+
+  @override
+  String get categoryFrozen => 'Dondurulmuş gıdalar';
+
+  @override
+  String get categoryCanned => 'Konserve ürünler';
+
+  @override
+  String get categorySeasonings => 'Baharatlar';
+
+  @override
+  String get categorySweets => 'Tatlılar ve tatlılar';
+
+  @override
+  String get categoryAlcohol => 'Alkollü içecekler';
+
+  @override
+  String get categoryFish => 'Balık';
+
+  @override
+  String get categoryColdCuts => 'Soğuk etler';
+
+  @override
+  String get categoryUtilities => 'Ev malzemeleri';
+
+  @override
+  String get categoryPet => 'Evcil hayvan malzemeleri';
+
+  @override
+  String get categoryBaby => 'Bebek';
+
+  @override
+  String get categoryOthers => 'Diğer';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Merhaba $name, ben Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Merhaba ben Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Listeler oluşturuyorum, tarifler öneriyorum ve nereye kaydedeceğimi buluyorum. Nereden başlayacağız?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Barbekü planlayın';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, barbekü düzenliyorum - alışveriş listesini oluşturmama yardım et';
+
+  @override
+  String get aiRateLimitError =>
+      'Kısa sürede çok fazla mesaj var. Birkaç saniye bekleyip tekrar deneyin.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Bu görüşme yüklenemedi';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Bizim açımızdan bir şeyler ters gitti. Tekrar denemek için Yeniden dene\'ye dokunun.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Çevrimdışısınız';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'İnternet bağlantınızı kontrol edip tekrar deneyin.';
+
+  @override
+  String get aiGeneratingResponse => 'Yanıt oluşturuluyor…';
 }

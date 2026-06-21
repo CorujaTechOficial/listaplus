@@ -244,6 +244,11 @@ class AppLocalizationsNl extends AppLocalizations {
   String get noItemsToBuy => 'Geen items om te kopen';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Ontbrekende $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Voorraad boodschappen';
 
   @override
@@ -310,6 +315,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get settingsAppBar => 'Instellingen';
 
   @override
+  String get preferencesSection => 'Voorkeuren';
+
+  @override
+  String get aiSection => 'AI-assistent';
+
+  @override
   String get language => 'Taal';
 
   @override
@@ -338,6 +349,12 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get appearance => 'Weergave';
+
+  @override
+  String get themeMode => 'Thema-modus';
+
+  @override
+  String get chooseThemeMode => 'Selecteer de themamodus';
 
   @override
   String get light => 'Licht';
@@ -588,6 +605,13 @@ class AppLocalizationsNl extends AppLocalizations {
   String get trackStockInactive => 'Genereert geen winkel suggestie';
 
   @override
+  String get keepAdding => 'Blijf toevoegen';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Houd het blad open om meerdere items toe te voegen';
+
+  @override
   String get createListDialog => 'Lijst maken';
 
   @override
@@ -692,6 +716,36 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Goede reactie';
+
+  @override
+  String get badResponse => 'Slechte reactie';
+
+  @override
+  String get scrollToBottom => 'Scroll naar beneden';
+
+  @override
+  String get somethingWentWrong => 'Er is iets misgegaan';
+
+  @override
+  String get editMessage => 'Bericht bewerken';
+
+  @override
+  String get searchConversations => 'Zoek gesprekken';
+
+  @override
+  String get dateGroupToday => 'Vandaag';
+
+  @override
+  String get dateGroupYesterday => 'Gisteren';
+
+  @override
+  String get dateGroupPrevious7Days => 'Vorige 7 dagen';
+
+  @override
+  String get dateGroupOlder => 'Ouder';
+
+  @override
   String get aiAssistantTitle => 'AI-assistent';
 
   @override
@@ -732,6 +786,33 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Maandelijkse AI-limiet bereikt. Upgrade naar Pro voor onbeperkt →';
+
+  @override
+  String get undo => 'Ongedaan maken';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiLijst';
@@ -942,6 +1023,20 @@ class AppLocalizationsNl extends AppLocalizations {
   String get recipeAddToList => 'Toevoegen aan boodschappenlijstje';
 
   @override
+  String get recipeAddError =>
+      'Kan niet toevoegen aan je lijst. Probeer het opnieuw.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Tik op een ingrediënt om het aan te vinken terwijl je kookt';
+
+  @override
+  String get recipeIngredientInPantry => 'In voorraadkast';
+
+  @override
+  String get recipeIngredientLowPantry => 'Laag in de voorraadkast';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count ingrediënten toegevoegd aan $listName';
   }
@@ -1053,12 +1148,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get paywallSelectPlan => 'Kies uw abonnement:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'BESPAAR $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Slechts $price/maand';
   }
 
@@ -1094,6 +1189,37 @@ class AppLocalizationsNl extends AppLocalizations {
   String get paywallRestore => 'Herstellen';
 
   @override
+  String get paywallTimelineToday => 'Vandaag';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Ontgrendel onmiddellijk volledige toegang';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Dag $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'We herinneren u eraan voordat de proefperiode afloopt';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Uw abonnement gaat in. U kunt op elk gewenst moment opzeggen';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI-winkelassistent';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Spreek of plak een hele lijst: AI sorteert, categoriseert en budgetteert deze in enkele seconden';
+
+  @override
+  String get paywallBasedOnAnswers =>
+      'Gepersonaliseerd op basis van uw antwoorden';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI staat altijd aan uw zijde';
 
   @override
@@ -1126,9 +1252,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Item verwijderd';
-
-  @override
-  String get undo => 'Ongedaan maken';
 
   @override
   String get emptyListTitle => 'Je lijst is leeg';
@@ -1245,6 +1368,9 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Item verwijderd';
+
+  @override
+  String get pantryItemAdded => 'Artikel toegevoegd';
 
   @override
   String deficitItems(int deficit) {
@@ -1650,6 +1776,33 @@ class AppLocalizationsNl extends AppLocalizations {
   String get prepTimeMinutes => 'Bereidingstijd (minuten)';
 
   @override
+  String get recipeYieldServings => 'Opbrengst porties';
+
+  @override
+  String get recipeManualTotalCost => 'Handmatige totale kosten';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Laat leeg om een ​​schatting te maken op basis van de ingrediëntenprijzen.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Geschatte totale kosten';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / portie';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Serveert $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Gedeeltelijke schatting op basis van ingrediënten met prijs.';
+
+  @override
   String get instructionsHint => 'Typ één stap per regel...';
 
   @override
@@ -1779,6 +1932,10 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Schatting gebaseerd op recepten met gedeeltelijke prijsgegevens.';
+
+  @override
   String get mealPlannerGenerateList => 'Boodschappenlijst genereren';
 
   @override
@@ -1874,6 +2031,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get catalogRareSection => 'minder gebruikelijk in uw land';
 
   @override
+  String get catalogRareBadge => 'Zeldzaam';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1891,7 +2051,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get catalogBrowse => 'Catalogus doorbladeren';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Categorieën';
 
   @override
   String get offlineBanner => 'Je bent offline';
@@ -1922,6 +2082,41 @@ class AppLocalizationsNl extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Beheer maaltijdtypes';
+
+  @override
+  String get mealPlannerAddType => 'Maaltijdsoort toevoegen';
+
+  @override
+  String get mealPlannerEditType => 'Maaltijdtype bewerken';
+
+  @override
+  String get mealPlannerTypeName => 'Naam';
+
+  @override
+  String get mealPlannerTypeColor => 'Kleur';
+
+  @override
+  String get mealPlannerTypeIcon => 'Icon';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Weet u zeker dat u dit maaltijdtype wilt verwijderen? Geplande maaltijden met dit type blijven behouden.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Naam mag niet leeg zijn';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Kan dit maaltijdtype niet verwijderen.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Aangepast type';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Standaardtype';
 
   @override
   String get expirationDate => 'Vervaldatum';
@@ -1982,6 +2177,9 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Fout bij het laden van lijsten';
+
+  @override
+  String get errorLoadingItems => 'Fout bij het laden van items';
 
   @override
   String get noListsFound => 'Geen lijsten gevonden';
@@ -2758,6 +2956,216 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get obLoginError =>
       'Inloggen is mislukt. Probeer het opnieuw of sla het voorlopig over.';
+
+  @override
+  String get searchMessages => 'Berichten zoeken...';
+
+  @override
+  String get deletedList => 'Lijst verwijderd';
+
+  @override
+  String get openConversation => 'Open gesprek';
+
+  @override
+  String get userRole => 'Jij';
+
+  @override
+  String get assistantRole => 'Assistent';
+
+  @override
+  String get agentActionsRunning => 'Acties uitvoeren...';
+
+  @override
+  String get agentActionsFailed => 'Kan acties niet uitvoeren';
+
+  @override
+  String get agentActionsPremium => 'Acties vereisen Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Wijzigingen ongedaan maken';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Artikel toegevoegd aan de lijst.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Vorige status: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Abonneer u op Premium om automatische acties te ontgrendelen.';
+
+  @override
+  String get viewPlans => 'Bekijk plannen';
+
+  @override
+  String get artifactSynced => 'Gesynchroniseerd';
+
+  @override
+  String get artifactBudgetLabel => 'Begroting:';
+
+  @override
+  String get totalEstimatedLabel => 'Geschat totaal';
+
+  @override
+  String get quickActionPantry => 'Bekijk voorraadkast';
+
+  @override
+  String get quickActionAi => 'Chat met Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'De AI-service heeft een fout geretourneerd ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Het verzoek duurde te lang. Probeer het opnieuw.';
+
+  @override
+  String get aiConnectionError =>
+      'Kan geen verbinding maken met de AI-service. Controleer uw verbinding.';
+
+  @override
+  String get aiEmptyResponseError =>
+      'De AI-service heeft een leeg antwoord geretourneerd.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'De AI-service heeft een ongeldig antwoord geretourneerd.';
+
+  @override
+  String get categoryFruits => 'Fruit';
+
+  @override
+  String get categoryCleaning => 'Schoonmaak';
+
+  @override
+  String get categoryBeverages => 'Dranken';
+
+  @override
+  String get categoryBakery => 'Bakkerij';
+
+  @override
+  String get categoryMeat => 'Vlees';
+
+  @override
+  String get categoryDairy => 'Zuivel';
+
+  @override
+  String get categoryVegetables => 'Groenten';
+
+  @override
+  String get categoryGrains => 'Granen en granen';
+
+  @override
+  String get categoryHygiene => 'Persoonlijke verzorging';
+
+  @override
+  String get categoryFrozen => 'Bevroren voedsel';
+
+  @override
+  String get categoryCanned => 'Ingeblikte goederen';
+
+  @override
+  String get categorySeasonings => 'Kruiderijen';
+
+  @override
+  String get categorySweets => 'Snoepjes en desserts';
+
+  @override
+  String get categoryAlcohol => 'Alcoholische dranken';
+
+  @override
+  String get categoryFish => 'Vis';
+
+  @override
+  String get categoryColdCuts => 'Vleeswaren';
+
+  @override
+  String get categoryUtilities => 'Huishoudelijke benodigdheden';
+
+  @override
+  String get categoryPet => 'Benodigdheden voor huisdieren';
+
+  @override
+  String get categoryBaby => 'Baby';
+
+  @override
+  String get categoryOthers => 'Ander';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hallo $name, ik ben Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hallo, ik ben Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Ik maak lijsten, stel recepten voor en zoek waar ik kan opslaan. Waar beginnen we?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Plan een barbecue';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, ik organiseer een barbecue – help me met het samenstellen van het boodschappenlijstje';
+
+  @override
+  String get aiRateLimitError =>
+      'Te veel berichten in korte tijd. Wacht een paar seconden en probeer het opnieuw.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Kan dit gesprek niet laden';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Er is iets misgegaan aan onze kant. Tik op opnieuw proberen om het opnieuw te proberen.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Je bent offline';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Controleer uw internetverbinding en probeer het opnieuw.';
+
+  @override
+  String get aiGeneratingResponse => 'Reactie genereren...';
 }
 
 /// The translations for Dutch Flemish, as used in Netherlands (`nl_NL`).
@@ -3000,6 +3408,11 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   String get noItemsToBuy => 'Geen items om te kopen';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Ontbrekende $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Voorraad boodschappen';
 
   @override
@@ -3066,6 +3479,12 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   String get settingsAppBar => 'Instellingen';
 
   @override
+  String get preferencesSection => 'Voorkeuren';
+
+  @override
+  String get aiSection => 'AI-assistent';
+
+  @override
   String get language => 'Taal';
 
   @override
@@ -3094,6 +3513,12 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
 
   @override
   String get appearance => 'Weergave';
+
+  @override
+  String get themeMode => 'Thema-modus';
+
+  @override
+  String get chooseThemeMode => 'Selecteer de themamodus';
 
   @override
   String get light => 'Licht';
@@ -3344,6 +3769,13 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   String get trackStockInactive => 'Genereert geen winkel suggestie';
 
   @override
+  String get keepAdding => 'Blijf toevoegen';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Houd het blad open om meerdere items toe te voegen';
+
+  @override
   String get createListDialog => 'Lijst maken';
 
   @override
@@ -3448,6 +3880,36 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   }
 
   @override
+  String get goodResponse => 'Goede reactie';
+
+  @override
+  String get badResponse => 'Slechte reactie';
+
+  @override
+  String get scrollToBottom => 'Scroll naar beneden';
+
+  @override
+  String get somethingWentWrong => 'Er is iets misgegaan';
+
+  @override
+  String get editMessage => 'Bericht bewerken';
+
+  @override
+  String get searchConversations => 'Zoek gesprekken';
+
+  @override
+  String get dateGroupToday => 'Vandaag';
+
+  @override
+  String get dateGroupYesterday => 'Gisteren';
+
+  @override
+  String get dateGroupPrevious7Days => 'Vorige 7 dagen';
+
+  @override
+  String get dateGroupOlder => 'Ouder';
+
+  @override
   String get aiAssistantTitle => 'AI-assistent';
 
   @override
@@ -3488,6 +3950,9 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   @override
   String get aiUsageExhausted =>
       'Maandelijkse AI-limiet bereikt. Upgrade naar Pro voor onbeperkt →';
+
+  @override
+  String get undo => 'Ongedaan maken';
 
   @override
   String get kipiListTitle => 'KipiLijst';
@@ -3698,6 +4163,20 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   String get recipeAddToList => 'Toevoegen aan boodschappenlijstje';
 
   @override
+  String get recipeAddError =>
+      'Kan niet toevoegen aan je lijst. Probeer het opnieuw.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Tik op een ingrediënt om het aan te vinken terwijl je kookt';
+
+  @override
+  String get recipeIngredientInPantry => 'In voorraadkast';
+
+  @override
+  String get recipeIngredientLowPantry => 'Laag in de voorraadkast';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count ingrediënten toegevoegd aan $listName';
   }
@@ -3809,12 +4288,12 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   String get paywallSelectPlan => 'Kies uw abonnement:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'BESPAAR $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Slechts $price/maand';
   }
 
@@ -3850,6 +4329,37 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   String get paywallRestore => 'Herstellen';
 
   @override
+  String get paywallTimelineToday => 'Vandaag';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Ontgrendel onmiddellijk volledige toegang';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Dag $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'We herinneren u eraan voordat de proefperiode afloopt';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Uw abonnement gaat in. U kunt op elk gewenst moment opzeggen';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI-winkelassistent';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Spreek of plak een hele lijst: AI sorteert, categoriseert en budgetteert deze in enkele seconden';
+
+  @override
+  String get paywallBasedOnAnswers =>
+      'Gepersonaliseerd op basis van uw antwoorden';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI staat altijd aan uw zijde';
 
   @override
@@ -3882,9 +4392,6 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
 
   @override
   String get itemRemoved => 'Item verwijderd';
-
-  @override
-  String get undo => 'Ongedaan maken';
 
   @override
   String get emptyListTitle => 'Je lijst is leeg';
@@ -4001,6 +4508,9 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
 
   @override
   String get pantryItemRemoved => 'Item verwijderd';
+
+  @override
+  String get pantryItemAdded => 'Artikel toegevoegd';
 
   @override
   String deficitItems(int deficit) {
@@ -4406,6 +4916,33 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   String get prepTimeMinutes => 'Bereidingstijd (minuten)';
 
   @override
+  String get recipeYieldServings => 'Opbrengst porties';
+
+  @override
+  String get recipeManualTotalCost => 'Handmatige totale kosten';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Laat leeg om een ​​schatting te maken op basis van de ingrediëntenprijzen.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Geschatte totale kosten';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / portie';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Serveert $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Gedeeltelijke schatting op basis van ingrediënten met prijs.';
+
+  @override
   String get instructionsHint => 'Typ één stap per regel...';
 
   @override
@@ -4535,6 +5072,10 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Schatting gebaseerd op recepten met gedeeltelijke prijsgegevens.';
+
+  @override
   String get mealPlannerGenerateList => 'Boodschappenlijst genereren';
 
   @override
@@ -4630,6 +5171,9 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   String get catalogRareSection => 'minder gebruikelijk in uw land';
 
   @override
+  String get catalogRareBadge => 'Zeldzaam';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4645,6 +5189,9 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
 
   @override
   String get catalogBrowse => 'Catalogus doorbladeren';
+
+  @override
+  String get catalogCategories => 'Categorieën';
 
   @override
   String get offlineBanner => 'Je bent offline';
@@ -4675,6 +5222,41 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Beheer maaltijdtypes';
+
+  @override
+  String get mealPlannerAddType => 'Maaltijdsoort toevoegen';
+
+  @override
+  String get mealPlannerEditType => 'Maaltijdtype bewerken';
+
+  @override
+  String get mealPlannerTypeName => 'Naam';
+
+  @override
+  String get mealPlannerTypeColor => 'Kleur';
+
+  @override
+  String get mealPlannerTypeIcon => 'Icon';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Weet u zeker dat u dit maaltijdtype wilt verwijderen? Geplande maaltijden met dit type blijven behouden.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Naam mag niet leeg zijn';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Kan dit maaltijdtype niet verwijderen.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Aangepast type';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Standaardtype';
 
   @override
   String get expirationDate => 'Vervaldatum';
@@ -4735,6 +5317,9 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
 
   @override
   String get errorLoadingLists => 'Fout bij het laden van lijsten';
+
+  @override
+  String get errorLoadingItems => 'Fout bij het laden van items';
 
   @override
   String get noListsFound => 'Geen lijsten gevonden';
@@ -5511,4 +6096,214 @@ class AppLocalizationsNlNl extends AppLocalizationsNl {
   @override
   String get obLoginError =>
       'Inloggen is mislukt. Probeer het opnieuw of sla het voorlopig over.';
+
+  @override
+  String get searchMessages => 'Berichten zoeken...';
+
+  @override
+  String get deletedList => 'Lijst verwijderd';
+
+  @override
+  String get openConversation => 'Open gesprek';
+
+  @override
+  String get userRole => 'Jij';
+
+  @override
+  String get assistantRole => 'Assistent';
+
+  @override
+  String get agentActionsRunning => 'Acties uitvoeren...';
+
+  @override
+  String get agentActionsFailed => 'Kan acties niet uitvoeren';
+
+  @override
+  String get agentActionsPremium => 'Acties vereisen Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Wijzigingen ongedaan maken';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Artikel toegevoegd aan de lijst.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Vorige status: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Abonneer u op Premium om automatische acties te ontgrendelen.';
+
+  @override
+  String get viewPlans => 'Bekijk plannen';
+
+  @override
+  String get artifactSynced => 'Gesynchroniseerd';
+
+  @override
+  String get artifactBudgetLabel => 'Begroting:';
+
+  @override
+  String get totalEstimatedLabel => 'Geschat totaal';
+
+  @override
+  String get quickActionPantry => 'Bekijk voorraadkast';
+
+  @override
+  String get quickActionAi => 'Chat met Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'De AI-service heeft een fout geretourneerd ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Het verzoek duurde te lang. Probeer het opnieuw.';
+
+  @override
+  String get aiConnectionError =>
+      'Kan geen verbinding maken met de AI-service. Controleer uw verbinding.';
+
+  @override
+  String get aiEmptyResponseError =>
+      'De AI-service heeft een leeg antwoord geretourneerd.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'De AI-service heeft een ongeldig antwoord geretourneerd.';
+
+  @override
+  String get categoryFruits => 'Fruit';
+
+  @override
+  String get categoryCleaning => 'Schoonmaak';
+
+  @override
+  String get categoryBeverages => 'Dranken';
+
+  @override
+  String get categoryBakery => 'Bakkerij';
+
+  @override
+  String get categoryMeat => 'Vlees';
+
+  @override
+  String get categoryDairy => 'Zuivel';
+
+  @override
+  String get categoryVegetables => 'Groenten';
+
+  @override
+  String get categoryGrains => 'Granen en granen';
+
+  @override
+  String get categoryHygiene => 'Persoonlijke verzorging';
+
+  @override
+  String get categoryFrozen => 'Bevroren voedsel';
+
+  @override
+  String get categoryCanned => 'Ingeblikte goederen';
+
+  @override
+  String get categorySeasonings => 'Kruiderijen';
+
+  @override
+  String get categorySweets => 'Snoepjes en desserts';
+
+  @override
+  String get categoryAlcohol => 'Alcoholische dranken';
+
+  @override
+  String get categoryFish => 'Vis';
+
+  @override
+  String get categoryColdCuts => 'Vleeswaren';
+
+  @override
+  String get categoryUtilities => 'Huishoudelijke benodigdheden';
+
+  @override
+  String get categoryPet => 'Benodigdheden voor huisdieren';
+
+  @override
+  String get categoryBaby => 'Baby';
+
+  @override
+  String get categoryOthers => 'Ander';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hallo $name, ik ben Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hallo, ik ben Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Ik maak lijsten, stel recepten voor en zoek waar ik kan opslaan. Waar beginnen we?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Plan een barbecue';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, ik organiseer een barbecue – help me met het samenstellen van het boodschappenlijstje';
+
+  @override
+  String get aiRateLimitError =>
+      'Te veel berichten in korte tijd. Wacht een paar seconden en probeer het opnieuw.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Kan dit gesprek niet laden';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Er is iets misgegaan aan onze kant. Tik op opnieuw proberen om het opnieuw te proberen.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Je bent offline';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Controleer uw internetverbinding en probeer het opnieuw.';
+
+  @override
+  String get aiGeneratingResponse => 'Reactie genereren...';
 }

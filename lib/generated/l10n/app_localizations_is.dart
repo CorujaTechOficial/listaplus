@@ -243,6 +243,11 @@ class AppLocalizationsIs extends AppLocalizations {
   String get noItemsToBuy => 'Engir hlutir þarf að kaupa';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Vantar $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Búrkukaup';
 
   @override
@@ -309,6 +314,12 @@ class AppLocalizationsIs extends AppLocalizations {
   String get settingsAppBar => 'Stillingar';
 
   @override
+  String get preferencesSection => 'Óskir';
+
+  @override
+  String get aiSection => 'AI aðstoðarmaður';
+
+  @override
   String get language => 'Tungumál';
 
   @override
@@ -337,6 +348,12 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get appearance => 'Útlit';
+
+  @override
+  String get themeMode => 'Þemahamur';
+
+  @override
+  String get chooseThemeMode => 'Veldu þemaham';
 
   @override
   String get light => 'Ljóst';
@@ -587,6 +604,13 @@ class AppLocalizationsIs extends AppLocalizations {
   String get trackStockInactive => 'Myndar ekki innkaupatillögu';
 
   @override
+  String get keepAdding => 'Haltu áfram að bæta við';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Haltu blaðinu opnu til að bæta við mörgum hlutum';
+
+  @override
   String get createListDialog => 'Búa til lista';
 
   @override
@@ -692,6 +716,36 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Góð viðbrögð';
+
+  @override
+  String get badResponse => 'Slæmt svar';
+
+  @override
+  String get scrollToBottom => 'Skrunaðu til botns';
+
+  @override
+  String get somethingWentWrong => 'Eitthvað fór úrskeiðis';
+
+  @override
+  String get editMessage => 'Breyta skilaboðum';
+
+  @override
+  String get searchConversations => 'Leitaðu að samtölum';
+
+  @override
+  String get dateGroupToday => 'Í dag';
+
+  @override
+  String get dateGroupYesterday => 'Í gær';
+
+  @override
+  String get dateGroupPrevious7Days => 'Síðustu 7 dagar';
+
+  @override
+  String get dateGroupOlder => 'Eldri';
+
+  @override
   String get aiAssistantTitle => 'AI aðstoðarmaður';
 
   @override
@@ -732,6 +786,33 @@ class AppLocalizationsIs extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Mánaðarlegu hámarki gervigreindar náð. Uppfærðu í Pro fyrir ótakmarkað →';
+
+  @override
+  String get undo => 'Afturkalla';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -943,6 +1024,20 @@ class AppLocalizationsIs extends AppLocalizations {
   String get recipeAddToList => 'Bæta við innkaupalista';
 
   @override
+  String get recipeAddError =>
+      'Ekki tókst að bæta við listann þinn. Vinsamlegast reyndu aftur.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Bankaðu á hráefni til að merkja við það þegar þú eldar';
+
+  @override
+  String get recipeIngredientInPantry => 'Í búri';
+
+  @override
+  String get recipeIngredientLowPantry => 'Lágt í búri';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count hráefni bætt við $listName';
   }
@@ -1055,12 +1150,12 @@ class AppLocalizationsIs extends AppLocalizations {
   String get paywallSelectPlan => 'Veldu áætlun þína:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'SPARA $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Aðeins $price/mánuði';
   }
 
@@ -1096,6 +1191,35 @@ class AppLocalizationsIs extends AppLocalizations {
   String get paywallRestore => 'Endurheimta';
 
   @override
+  String get paywallTimelineToday => 'Í dag';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Opnaðu fullan aðgang samstundis';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Dagur $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Við minnum á áður en réttarhöldunum lýkur';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Áskriftin þín hefst - segðu upp hvenær sem er';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI verslunaraðstoðarmaður';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Talaðu eða límdu heilan lista - gervigreind flokkar, flokkar og fjárveitir hann á nokkrum sekúndum';
+
+  @override
+  String get paywallBasedOnAnswers => 'Sérsniðin út frá svörum þínum';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI alltaf þér við hlið';
 
   @override
@@ -1128,9 +1252,6 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Hlut fjarlægður';
-
-  @override
-  String get undo => 'Afturkalla';
 
   @override
   String get emptyListTitle => 'Listinn þinn er tómur';
@@ -1247,6 +1368,9 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Hlut fjarlægður';
+
+  @override
+  String get pantryItemAdded => 'Atriði bætt við';
 
   @override
   String deficitItems(int deficit) {
@@ -1650,6 +1774,32 @@ class AppLocalizationsIs extends AppLocalizations {
   String get prepTimeMinutes => 'Undirbúningstími (mínútur)';
 
   @override
+  String get recipeYieldServings => 'Afrakstur skammtar';
+
+  @override
+  String get recipeManualTotalCost => 'Handvirkur heildarkostnaður';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Látið vera tómt til að áætla út frá hráefnisverði.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Áætlaður heildarkostnaður';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / skammtur';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Þjónar $count';
+  }
+
+  @override
+  String get recipeEstimatePartial => 'Hlutamat byggt á hráefni með verði.';
+
+  @override
   String get instructionsHint => 'Skrifaðu eitt skref á hverja línu...';
 
   @override
@@ -1778,6 +1928,10 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Mat byggt á uppskriftum með verðupplýsingum að hluta.';
+
+  @override
   String get mealPlannerGenerateList => 'Gera innkaupalista';
 
   @override
@@ -1871,6 +2025,9 @@ class AppLocalizationsIs extends AppLocalizations {
   String get catalogRareSection => 'sjaldgæfari í þínu landi';
 
   @override
+  String get catalogRareBadge => 'Sjaldgæft';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1888,7 +2045,7 @@ class AppLocalizationsIs extends AppLocalizations {
   String get catalogBrowse => 'Skoðaðu vörulista';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Flokkar';
 
   @override
   String get offlineBanner => 'Þú ert ótengdur';
@@ -1919,6 +2076,41 @@ class AppLocalizationsIs extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Stjórna máltíðartegundum';
+
+  @override
+  String get mealPlannerAddType => 'Bæta við tegund máltíðar';
+
+  @override
+  String get mealPlannerEditType => 'Breyta tegund máltíðar';
+
+  @override
+  String get mealPlannerTypeName => 'Nafn';
+
+  @override
+  String get mealPlannerTypeColor => 'Litur';
+
+  @override
+  String get mealPlannerTypeIcon => 'Táknmynd';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Ertu viss um að þú viljir eyða þessari máltíðartegund? Skipulagðar máltíðir með þessari tegund verða áfram.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Nafn má ekki vera autt';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Ekki er hægt að eyða þessari máltíðartegund.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Sérsniðin gerð';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Sjálfgefin gerð';
 
   @override
   String get expirationDate => 'Gildistími';
@@ -1979,6 +2171,9 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Villa við að hlaða lista';
+
+  @override
+  String get errorLoadingItems => 'Villa við að hlaða atriðum';
 
   @override
   String get noListsFound => 'Engir listar fundust';
@@ -2748,6 +2943,216 @@ class AppLocalizationsIs extends AppLocalizations {
   @override
   String get obLoginError =>
       'Innskráning mistókst. Reyndu aftur eða slepptu í bili.';
+
+  @override
+  String get searchMessages => 'Leita að skilaboðum...';
+
+  @override
+  String get deletedList => 'Eyddur lista';
+
+  @override
+  String get openConversation => 'Opið samtal';
+
+  @override
+  String get userRole => 'Þú';
+
+  @override
+  String get assistantRole => 'Aðstoðarmaður';
+
+  @override
+  String get agentActionsRunning => 'Keyrir aðgerðir...';
+
+  @override
+  String get agentActionsFailed => 'Mistókst að keyra aðgerðir';
+
+  @override
+  String get agentActionsPremium => 'Aðgerðir krefjast Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Afturkalla breytingar';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Atriði bætt við listann.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Fyrra ástand: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Gerast áskrifandi að Premium til að opna sjálfvirkar aðgerðir.';
+
+  @override
+  String get viewPlans => 'Skoða áætlanir';
+
+  @override
+  String get artifactSynced => 'Samstillt';
+
+  @override
+  String get artifactBudgetLabel => 'Fjárhagsáætlun:';
+
+  @override
+  String get totalEstimatedLabel => 'Áætlað samtals';
+
+  @override
+  String get quickActionPantry => 'Skoða búr';
+
+  @override
+  String get quickActionAi => 'Spjallaðu við Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Gervigreind þjónustan skilaði villu ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Beiðnin tók of langan tíma. Vinsamlegast reyndu aftur.';
+
+  @override
+  String get aiConnectionError =>
+      'Gat ekki tengst gervigreindarþjónustunni. Athugaðu tenginguna þína.';
+
+  @override
+  String get aiEmptyResponseError =>
+      'Gervigreindarþjónustan skilaði tómu svari.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Gervigreindarþjónustan skilaði ógildu svari.';
+
+  @override
+  String get categoryFruits => 'Ávextir';
+
+  @override
+  String get categoryCleaning => 'Þrif';
+
+  @override
+  String get categoryBeverages => 'Drykkir';
+
+  @override
+  String get categoryBakery => 'Bakarí';
+
+  @override
+  String get categoryMeat => 'Kjöt';
+
+  @override
+  String get categoryDairy => 'Mjólkurvörur';
+
+  @override
+  String get categoryVegetables => 'Grænmeti';
+
+  @override
+  String get categoryGrains => 'Korn og korn';
+
+  @override
+  String get categoryHygiene => 'Persónuleg umönnun';
+
+  @override
+  String get categoryFrozen => 'Frosinn matur';
+
+  @override
+  String get categoryCanned => 'Niðursoðnar vörur';
+
+  @override
+  String get categorySeasonings => 'Krydd';
+
+  @override
+  String get categorySweets => 'Sælgæti og eftirréttir';
+
+  @override
+  String get categoryAlcohol => 'Áfengir drykkir';
+
+  @override
+  String get categoryFish => 'Fiskur';
+
+  @override
+  String get categoryColdCuts => 'Álegg';
+
+  @override
+  String get categoryUtilities => 'Heimilisvörur';
+
+  @override
+  String get categoryPet => 'Gæludýravörur';
+
+  @override
+  String get categoryBaby => 'Elskan';
+
+  @override
+  String get categoryOthers => 'Annað';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hæ $name, ég heiti Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hæ, ég heiti Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Ég smíða lista, legg til uppskriftir og finn hvar á að vista. Hvar byrjum við?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Skipuleggðu grillið';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, ég er með grillveislu — hjálpaðu mér að búa til innkaupalistann';
+
+  @override
+  String get aiRateLimitError =>
+      'Of mörg skilaboð á stuttum tíma. Bíddu í nokkrar sekúndur og reyndu aftur.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Ekki tókst að hlaða þessu samtali';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Eitthvað fór úrskeiðis hjá okkur. Ýttu á Reyndu aftur til að reyna aftur.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Þú ert ekki tengdur';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Athugaðu nettenginguna þína og reyndu aftur.';
+
+  @override
+  String get aiGeneratingResponse => 'Býr til svar...';
 }
 
 /// The translations for Icelandic, as used in Iceland (`is_IS`).
@@ -2989,6 +3394,11 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get noItemsToBuy => 'Engir hlutir þarf að kaupa';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Vantar $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Búrkukaup';
 
   @override
@@ -3055,6 +3465,12 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get settingsAppBar => 'Stillingar';
 
   @override
+  String get preferencesSection => 'Óskir';
+
+  @override
+  String get aiSection => 'AI aðstoðarmaður';
+
+  @override
   String get language => 'Tungumál';
 
   @override
@@ -3083,6 +3499,12 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get appearance => 'Útlit';
+
+  @override
+  String get themeMode => 'Þemahamur';
+
+  @override
+  String get chooseThemeMode => 'Veldu þemaham';
 
   @override
   String get light => 'Ljóst';
@@ -3333,6 +3755,13 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get trackStockInactive => 'Myndar ekki innkaupatillögu';
 
   @override
+  String get keepAdding => 'Haltu áfram að bæta við';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Haltu blaðinu opnu til að bæta við mörgum hlutum';
+
+  @override
   String get createListDialog => 'Búa til lista';
 
   @override
@@ -3438,6 +3867,36 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   }
 
   @override
+  String get goodResponse => 'Góð viðbrögð';
+
+  @override
+  String get badResponse => 'Slæmt svar';
+
+  @override
+  String get scrollToBottom => 'Skrunaðu til botns';
+
+  @override
+  String get somethingWentWrong => 'Eitthvað fór úrskeiðis';
+
+  @override
+  String get editMessage => 'Breyta skilaboðum';
+
+  @override
+  String get searchConversations => 'Leitaðu að samtölum';
+
+  @override
+  String get dateGroupToday => 'Í dag';
+
+  @override
+  String get dateGroupYesterday => 'Í gær';
+
+  @override
+  String get dateGroupPrevious7Days => 'Síðustu 7 dagar';
+
+  @override
+  String get dateGroupOlder => 'Eldri';
+
+  @override
   String get aiAssistantTitle => 'AI aðstoðarmaður';
 
   @override
@@ -3478,6 +3937,9 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   @override
   String get aiUsageExhausted =>
       'Mánaðarlegu hámarki gervigreindar náð. Uppfærðu í Pro fyrir ótakmarkað →';
+
+  @override
+  String get undo => 'Afturkalla';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -3689,6 +4151,20 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get recipeAddToList => 'Bæta við innkaupalista';
 
   @override
+  String get recipeAddError =>
+      'Ekki tókst að bæta við listann þinn. Vinsamlegast reyndu aftur.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Bankaðu á hráefni til að merkja við það þegar þú eldar';
+
+  @override
+  String get recipeIngredientInPantry => 'Í búri';
+
+  @override
+  String get recipeIngredientLowPantry => 'Lágt í búri';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count hráefni bætt við $listName';
   }
@@ -3801,12 +4277,12 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get paywallSelectPlan => 'Veldu áætlun þína:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'SPARA $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Aðeins $price/mánuði';
   }
 
@@ -3842,6 +4318,35 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get paywallRestore => 'Endurheimta';
 
   @override
+  String get paywallTimelineToday => 'Í dag';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Opnaðu fullan aðgang samstundis';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Dagur $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Við minnum á áður en réttarhöldunum lýkur';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Áskriftin þín hefst - segðu upp hvenær sem er';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI verslunaraðstoðarmaður';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Talaðu eða límdu heilan lista - gervigreind flokkar, flokkar og fjárveitir hann á nokkrum sekúndum';
+
+  @override
+  String get paywallBasedOnAnswers => 'Sérsniðin út frá svörum þínum';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI alltaf þér við hlið';
 
   @override
@@ -3874,9 +4379,6 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get itemRemoved => 'Hlut fjarlægður';
-
-  @override
-  String get undo => 'Afturkalla';
 
   @override
   String get emptyListTitle => 'Listinn þinn er tómur';
@@ -3993,6 +4495,9 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get pantryItemRemoved => 'Hlut fjarlægður';
+
+  @override
+  String get pantryItemAdded => 'Atriði bætt við';
 
   @override
   String deficitItems(int deficit) {
@@ -4396,6 +4901,32 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get prepTimeMinutes => 'Undirbúningstími (mínútur)';
 
   @override
+  String get recipeYieldServings => 'Afrakstur skammtar';
+
+  @override
+  String get recipeManualTotalCost => 'Handvirkur heildarkostnaður';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Látið vera tómt til að áætla út frá hráefnisverði.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Áætlaður heildarkostnaður';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / skammtur';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Þjónar $count';
+  }
+
+  @override
+  String get recipeEstimatePartial => 'Hlutamat byggt á hráefni með verði.';
+
+  @override
   String get instructionsHint => 'Skrifaðu eitt skref á hverja línu...';
 
   @override
@@ -4524,6 +5055,10 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Mat byggt á uppskriftum með verðupplýsingum að hluta.';
+
+  @override
   String get mealPlannerGenerateList => 'Gera innkaupalista';
 
   @override
@@ -4617,6 +5152,9 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get catalogRareSection => 'sjaldgæfari í þínu landi';
 
   @override
+  String get catalogRareBadge => 'Sjaldgæft';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4632,6 +5170,9 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get catalogBrowse => 'Skoðaðu vörulista';
+
+  @override
+  String get catalogCategories => 'Flokkar';
 
   @override
   String get offlineBanner => 'Þú ert ótengdur';
@@ -4662,6 +5203,41 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Stjórna máltíðartegundum';
+
+  @override
+  String get mealPlannerAddType => 'Bæta við tegund máltíðar';
+
+  @override
+  String get mealPlannerEditType => 'Breyta tegund máltíðar';
+
+  @override
+  String get mealPlannerTypeName => 'Nafn';
+
+  @override
+  String get mealPlannerTypeColor => 'Litur';
+
+  @override
+  String get mealPlannerTypeIcon => 'Táknmynd';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Ertu viss um að þú viljir eyða þessari máltíðartegund? Skipulagðar máltíðir með þessari tegund verða áfram.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Nafn má ekki vera autt';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Ekki er hægt að eyða þessari máltíðartegund.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Sérsniðin gerð';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Sjálfgefin gerð';
 
   @override
   String get expirationDate => 'Gildistími';
@@ -4722,6 +5298,9 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
 
   @override
   String get errorLoadingLists => 'Villa við að hlaða lista';
+
+  @override
+  String get errorLoadingItems => 'Villa við að hlaða atriðum';
 
   @override
   String get noListsFound => 'Engir listar fundust';
@@ -5491,4 +6070,214 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   @override
   String get obLoginError =>
       'Innskráning mistókst. Reyndu aftur eða slepptu í bili.';
+
+  @override
+  String get searchMessages => 'Leita að skilaboðum...';
+
+  @override
+  String get deletedList => 'Eyddur lista';
+
+  @override
+  String get openConversation => 'Opið samtal';
+
+  @override
+  String get userRole => 'Þú';
+
+  @override
+  String get assistantRole => 'Aðstoðarmaður';
+
+  @override
+  String get agentActionsRunning => 'Keyrir aðgerðir...';
+
+  @override
+  String get agentActionsFailed => 'Mistókst að keyra aðgerðir';
+
+  @override
+  String get agentActionsPremium => 'Aðgerðir krefjast Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Afturkalla breytingar';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Atriði bætt við listann.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Fyrra ástand: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Gerast áskrifandi að Premium til að opna sjálfvirkar aðgerðir.';
+
+  @override
+  String get viewPlans => 'Skoða áætlanir';
+
+  @override
+  String get artifactSynced => 'Samstillt';
+
+  @override
+  String get artifactBudgetLabel => 'Fjárhagsáætlun:';
+
+  @override
+  String get totalEstimatedLabel => 'Áætlað samtals';
+
+  @override
+  String get quickActionPantry => 'Skoða búr';
+
+  @override
+  String get quickActionAi => 'Spjallaðu við Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Gervigreind þjónustan skilaði villu ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Beiðnin tók of langan tíma. Vinsamlegast reyndu aftur.';
+
+  @override
+  String get aiConnectionError =>
+      'Gat ekki tengst gervigreindarþjónustunni. Athugaðu tenginguna þína.';
+
+  @override
+  String get aiEmptyResponseError =>
+      'Gervigreindarþjónustan skilaði tómu svari.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Gervigreindarþjónustan skilaði ógildu svari.';
+
+  @override
+  String get categoryFruits => 'Ávextir';
+
+  @override
+  String get categoryCleaning => 'Þrif';
+
+  @override
+  String get categoryBeverages => 'Drykkir';
+
+  @override
+  String get categoryBakery => 'Bakarí';
+
+  @override
+  String get categoryMeat => 'Kjöt';
+
+  @override
+  String get categoryDairy => 'Mjólkurvörur';
+
+  @override
+  String get categoryVegetables => 'Grænmeti';
+
+  @override
+  String get categoryGrains => 'Korn og korn';
+
+  @override
+  String get categoryHygiene => 'Persónuleg umönnun';
+
+  @override
+  String get categoryFrozen => 'Frosinn matur';
+
+  @override
+  String get categoryCanned => 'Niðursoðnar vörur';
+
+  @override
+  String get categorySeasonings => 'Krydd';
+
+  @override
+  String get categorySweets => 'Sælgæti og eftirréttir';
+
+  @override
+  String get categoryAlcohol => 'Áfengir drykkir';
+
+  @override
+  String get categoryFish => 'Fiskur';
+
+  @override
+  String get categoryColdCuts => 'Álegg';
+
+  @override
+  String get categoryUtilities => 'Heimilisvörur';
+
+  @override
+  String get categoryPet => 'Gæludýravörur';
+
+  @override
+  String get categoryBaby => 'Elskan';
+
+  @override
+  String get categoryOthers => 'Annað';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hæ $name, ég heiti Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hæ, ég heiti Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Ég smíða lista, legg til uppskriftir og finn hvar á að vista. Hvar byrjum við?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Skipuleggðu grillið';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, ég er með grillveislu — hjálpaðu mér að búa til innkaupalistann';
+
+  @override
+  String get aiRateLimitError =>
+      'Of mörg skilaboð á stuttum tíma. Bíddu í nokkrar sekúndur og reyndu aftur.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Ekki tókst að hlaða þessu samtali';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Eitthvað fór úrskeiðis hjá okkur. Ýttu á Reyndu aftur til að reyna aftur.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Þú ert ekki tengdur';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Athugaðu nettenginguna þína og reyndu aftur.';
+
+  @override
+  String get aiGeneratingResponse => 'Býr til svar...';
 }

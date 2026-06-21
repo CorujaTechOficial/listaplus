@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +161,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -287,6 +308,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -316,6 +340,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -991,6 +1022,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1138,6 +1179,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1176,6 +1224,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1249,7 +1320,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1397,42 +1482,56 @@
   "addToPantryPrompt": "Ավելացնել «{name}»-ը Ձեր մառանում?",
   "addedFeedback": "Ավելացված է!",
   "advancedFeatures": "Ընդլայնված հնարավորություններ",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Չհաջողվեց կատարել գործողությունները",
+  "agentActionsPremium": "Գործողությունները պահանջում են Պրեմիում",
+  "agentActionsRunning": "Գործողություններ...",
+  "aiApiError": "AI ծառայությունը վերադարձրեց սխալ ({statusCode}):",
   "aiAssistant": "AI Օգնական",
   "aiAssistantDescription": "Ստացեք խելացի առաջարկներ, բաղադրատոմսեր և անհատական խորհուրդներ մեր AI օգնականի միջոցով:",
   "aiAssistantGeneral": "Գլխավոր օգնական",
   "aiAssistantHistory": "Օգնականի պատմություն",
   "aiAssistantTitle": "AI օգնական",
+  "aiConnectionError": "Չհաջողվեց միանալ AI ծառայությանը: Ստուգեք ձեր կապը:",
   "aiConversationHistory": "Զրույցի պատմություն",
   "aiCreditsRemaining": "{remaining} մնացած կրեդիտ",
   "aiDeleteConversationConfirm": "Ջնջել",
   "aiDeleteConversationTitle": "Ջնջե՞լ խոսակցությունը",
   "aiDeletedList": "Ջնջված ցուցակ",
+  "aiEmptyResponseError": "AI ծառայությունը վերադարձրեց դատարկ պատասխան:",
   "aiEnergy": "AI էներգիա",
   "aiEnergyLow": "Ցածր AI էներգիա",
   "aiError": "Ներեցեք, ձեր հարցումը մշակելիս սխալ է տեղի ունեցել: Ստուգեք ձեր կապը կամ փորձեք ավելի ուշ:",
   "aiFirstOpenHint": "Ես Կիպին եմ՝ ձեր գնումների օգնականը: Հարցրեք ինձ ձեր ցուցակի մասին որևէ բան:",
+  "aiGeneratingResponse": "Արձագանքում է…",
   "aiHello": "Ողջույն Ես Կիպին եմ",
   "aiHowCanIHelp": "Ինչպե՞ս կարող եմ օգնել ձեզ այսօր:",
+  "aiInvalidResponseError": "AI ծառայությունը վերադարձրել է անվավեր պատասխան:",
   "aiLimitAlmostReached": "AI հաղորդագրությունները գրեթե սպառվել են",
   "aiNewConversation": "Նոր Զրույց",
   "aiNewSession": "Նոր նիստ",
   "aiNoConversationFound": "Խոսակցություն չի գտնվել",
   "aiNoMessagesFound": "Հաղորդագրություններ չեն գտնվել",
   "aiPremiumUpsell": "Գնացեք Պրեմիում",
+  "aiRateLimitError": "Կարճ ժամանակում չափազանց շատ հաղորդագրություններ: Սպասեք մի քանի վայրկյան և նորից փորձեք:",
   "aiRecentConversations": "Վերջին խոսակցությունները",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} այսօր",
   "aiSearchMessages": "Որոնել հաղորդագրություններ...",
+  "aiSection": "AI օգնական",
   "aiStartNewConversation": "Սկսեք նոր խոսակցություն",
   "aiSubscribeUnlimited": "Բաժանորդագրվեք անսահմանափակ AI-ի համար",
   "aiSuggestCreateList": "Ստեղծեք իմ առաջին ցուցակը",
   "aiSuggestSaveMore": "Ինչպե՞ս ավելի շատ խնայել:",
   "aiTeaserFallback": "Բաժանորդագրվեք Պրեմիումին՝ ամբողջական պատասխանը բացելու և անսահմանափակ AI-ի խորհուրդներ ստանալու համար ձեր գնումների համար...",
+  "aiTimeoutError": "Հարցումը չափազանց երկար տևեց: Խնդրում ենք կրկին փորձել:",
   "aiUnlockUnlimited": "Բացեք անսահմանափակ AI",
   "aiUnlockWithAd": "Բացել գովազդի միջոցով",
   "aiUsageExhausted": "AI ամսական սահմանաչափը հասել է: Անցեք Pro-ի անսահմանափակ →",
   "aiUsageWarning": "{remaining} AI-ի գործողությունները մնացել են այս ամիս. թարմացրեք անսահմանափակ",
   "aiVoiceCommandTooltip": "AI Ձայնային Հրաման (Premium)",
   "aiWelcomeContent": "Ողջույն 👋 Ես **Kipi**-ն եմ՝ ձեր անձնական գնումների և բաղադրատոմսերի օգնականը:\n\nԵս այստեղ եմ ձեզ օգնելու համար.\n🛒 **Կազմակերպեք** Ձեր գնումներն ըստ կատեգորիաների ավտոմատ կերպով\n💰 **Հետևեք** ձեր բյուջեին և ձեզ գումար խնայելու խորհուրդներ տվեք\n🍲 **Առաջարկեք** համեղ բաղադրատոմսեր այն ամենով, ինչ արդեն ունեք\n\nԻնչպե՞ս կարող եմ օգնել ձեզ այսօր: Դուք կարող եք սկսել՝ ստեղծելով ձեր առաջին ցուցակը:",
+  "aiWelcomeSuggestBarbecue": "Պլանավորեք խորոված",
+  "aiWelcomeSuggestBarbecuePrompt": "Կիպի, ես խորոված եմ կազմակերպում — օգնիր ինձ կազմել գնումների ցուցակը",
   "aiWelcomeSuggestCreateList": "Ստեղծեք իմ առաջին ցուցակը",
   "aiWelcomeSuggestCreateListPrompt": "Կիպի, օգնիր ինձ ստեղծել իմ առաջին գնումների ցուցակը",
   "aiWelcomeSuggestSave": "Ինչպե՞ս գումար խնայել:",
@@ -1443,14 +1542,17 @@
   "appTitle": "Գնումների ցուցակ",
   "appearance": "Արտաքին տեսք",
   "archiveList": "Արխիվացնել ցուցակը",
+  "artifactBudgetLabel": "Բյուջե:",
   "artifactReplaceBody": "Ընտրեք ապրանքի այլընտրանք՝ ծախսերը օպտիմալացնելու համար:",
   "artifactReplaceTitle": "Փոխարինել {name}",
   "artifactSuggestedItems": "Առաջարկվող իրեր",
   "artifactSwapButton": "Փոխանակում",
   "artifactSwappedLabel": "Փոխանակված",
+  "artifactSynced": "Համաժամեցված է",
   "assistantHistory": "Օգնականի պատմություն",
   "assistantHistorySubtitle": "Դիտեք ձեր խոսակցության պատմությունը",
   "assistantName": "Օգնականի անունը",
+  "assistantRole": "Օգնական",
   "backToChat": "Վերադարձ դեպի Զրուցարան",
   "backToToday": "Վերադարձ դեպի այսօր",
   "backupExported": "Պահուստավորումն արտահանված է!",
@@ -1458,6 +1560,7 @@
   "backupPremiumDescription": "Պահուստավորումը և արտահանումը պրեմիում հնարավորություն է",
   "backupSubtitle": "Արտահանել կամ ներմուծել ձեր տվյալները",
   "backupTitle": "Պահուստավորում",
+  "badResponse": "Վատ արձագանք",
   "badgeBeginner": "Սկսնակ",
   "badgeOrganized": "Կազմակերպված",
   "badgeSavingMaster": "Փրկիչ Վարպետ",
@@ -1485,10 +1588,12 @@
   "catOthers": "Այլ",
   "catalogAddItems": "Ավելացնել {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Թերթիր կատալոգը",
+  "catalogCategories": "Կատեգորիաներ",
   "catalogFilterNational": "Ազգայինները",
   "catalogItemAdded": "{name} ավելացված է",
   "catalogMyFrequents": "Իմ հաճախականությունները",
   "catalogProductNotFound": "Ապրանքը չի գտնվել, մուտքագրեք անունը",
+  "catalogRareBadge": "Հազվադեպ",
   "catalogRareSection": "ավելի քիչ տարածված ձեր երկրում",
   "catalogRetry": "Նորից փորձեք",
   "catalogSearchGlobal": "Որոնել ցանկացած ապրանք...",
@@ -1497,16 +1602,43 @@
   "catalogSortPopular": "Ամենատարածված",
   "catalogTitle": "Կատալոգ",
   "category": "Կատեգորիա",
+  "categoryAlcohol": "Ալկոհոլային խմիչքներ",
+  "categoryBaby": "Երեխա",
+  "categoryBakery": "Հացաբուլկեղեն",
+  "categoryBeverages": "Խմիչքներ",
+  "categoryCanned": "Պահածոյացված ապրանքներ",
+  "categoryCleaning": "Մաքրում",
+  "categoryColdCuts": "Սառը կտրվածքներ",
   "categoryColorLabel": "Գույն",
+  "categoryDairy": "Կաթնամթերք",
+  "categoryFish": "Ձուկ",
+  "categoryFrozen": "Սառեցված մթերքներ",
+  "categoryFruits": "Մրգեր",
+  "categoryGrains": "Հացահատիկային և հացահատիկային ապրանքներ",
+  "categoryHygiene": "Անձնական խնամք",
   "categoryIconLabel": "Սրբապատկեր",
   "categoryLimitReached": "Կատեգորիայի սահմանաչափը հասել է",
+  "categoryMeat": "Միս",
   "categoryName": "Կատեգորիայի անվանումը",
   "categoryNameHint": "Մուտքագրեք կատեգորիայի անունը",
+  "categoryOthers": "Այլ",
+  "categoryPet": "Կենդանիների պարագաներ",
+  "categorySeasonings": "Համեմունքներ",
+  "categorySweets": "Քաղցրավենիք և աղանդեր",
+  "categoryUtilities": "Կենցաղային պարագաներ",
+  "categoryVegetables": "Բանջարեղեն",
+  "chatEmptyGreeting": "Ողջույն {name}, ես Kipi-ն եմ 👋",
+  "chatEmptyGreetingNoName": "Ողջույն, ես Kipi-ն եմ",
+  "chatEmptyPitch": "Ես պատրաստում եմ ցուցակներ, առաջարկում եմ բաղադրատոմսեր և գտնում եմ, թե որտեղ կարող եմ խնայել: Որտեղի՞ց սկսենք:",
   "chatEmptySubtitle": "Սկսելու համար խնդրեք ապրանքների առաջարկներ, բաղադրատոմսեր կամ խնայողության խորհուրդներ:",
   "chatEmptyTitle": "Ձեր զրույցը դատարկ է",
   "chatError": "Զրույցի բեռնման սխալ՝ {error}",
   "chatHint": "Գրեք ձեր հաղորդագրությունը...",
   "chatHintBlocked": "Բացեք AI-ն զրուցելու համար",
+  "chatHistoryErrorBody": "Ինչ-որ սխալ տեղի ունեցավ մեր կողմից: Հպեք «Նորից»՝ նորից փորձելու համար:",
+  "chatHistoryErrorTitle": "Չհաջողվեց բեռնել այս խոսակցությունը",
+  "chatHistoryOfflineBody": "Ստուգեք ձեր ինտերնետային կապը և նորից փորձեք:",
+  "chatHistoryOfflineTitle": "Դուք անցանց եք",
   "chatSubtitle": "Հարցրեք կետերի առաջարկներ, բաղադրատոմսեր կամ խնայողության խորհուրդներ:",
   "chatSubtitleShort": "Հարցրեք գների, բաղադրատոմսերի, կազմակերպման մասին...",
   "chooseCurrency": "Ընտրեք արժույթ",
@@ -1514,6 +1646,7 @@
   "chooseImageSource": "Ընտրել պատկերի աղբյուրը",
   "chooseLanguage": "Ընտրել լեզուն",
   "chooseThemeColor": "Ընտրեք թեմայի գույնը",
+  "chooseThemeMode": "Ընտրեք թեմայի ռեժիմ",
   "clear": "Մաքրել",
   "clearHistory": "Մաքրել Պատմությունը",
   "clearHistoryConfirm": "Մաքրել բոլոր հաղորդագրություններն այս նիստում:",
@@ -1556,6 +1689,10 @@
   "customizeAssistant": "Անհատականացնել",
   "dark": "Մուգ",
   "data": "Տվյալներ",
+  "dateGroupOlder": "Ավելի հին",
+  "dateGroupPrevious7Days": "Նախորդ 7 օր",
+  "dateGroupToday": "Այսօր",
+  "dateGroupYesterday": "Երեկ",
   "deficitItems": "{deficit,plural, one{{deficit} կետ պետք է գնվի} other{{deficit} կետ պետք է գնվեն}}",
   "delete": "Ջնջել",
   "deleteCategory": "Ջնջել",
@@ -1572,6 +1709,7 @@
   "deleteRecipeConfirmMsg": "Համոզվա՞ծ եք, որ ցանկանում եք ջնջել «{recipeName}»-ը: Այս գործողությունը անդառնալի է:",
   "deleteSession": "Ջնջել Chat-ը",
   "deleteSessionConfirm": "Իսկապե՞ս ուզում եք ջնջել այս զրույցը: Հաղորդագրությունները ընդմիշտ կկորչեն:",
+  "deletedList": "Ջնջված ցուցակ",
   "deselectAll": "Ապաընտրել բոլորը",
   "dietaryRestrictions": "Դիետիկ սահմանափակումներ",
   "dietaryRestrictionsHint": "Դիետայի սահմանափակում կա՞:",
@@ -1584,6 +1722,7 @@
   "editCategoryDialog": "Խմբագրել կատեգորիան",
   "editItem": "Խմբագրել Կետը",
   "editItemPrice": "Մոտավոր գին",
+  "editMessage": "Խմբագրել հաղորդագրությունը",
   "editPantryItem": "Խմբագրել {name}",
   "editRecipe": "Խմբագրել",
   "editRecipeTitle": "Խմբագրել բաղադրատոմսը",
@@ -1605,6 +1744,7 @@
   "errorLoadingChat": "Վա՜յ Զրույցը բեռնելիս սխալ առաջացավ:",
   "errorLoadingChatSubtitle": "Ստուգեք ձեր կապը կամ փորձեք ավելի ուշ:",
   "errorLoadingHistory": "Սխալ՝ պատմությունը բեռնելիս",
+  "errorLoadingItems": "Սխալ՝ տարրերը բեռնելիս",
   "errorLoadingLists": "Ցուցակները բեռնելիս սխալ առաջացավ",
   "errorLoadingRecipes": "Սխալ՝ բաղադրատոմսերը բեռնելիս",
   "errorLoadingSubscription": "Բաժանորդագրությունը բեռնելիս սխալ առաջացավ",
@@ -1657,6 +1797,7 @@
   "generateShoppingList": "Ստեղծել գնումների ցուցակ",
   "gestureHint": "Պահեք՝ ընտրելու համար • Սահեցրեք՝ հեռացնելու համար",
   "globalAssistant": "Ընդհանուր օգնական",
+  "goodResponse": "Լավ արձագանք",
   "howCanIHelp": "Ինչպե՞ս կարող եմ օգնել:",
   "idealQty": "Իդեալական քանակ",
   "idealQuantity": "Իդեալական քանակ",
@@ -1673,14 +1814,18 @@
   "instructionsHint": "Մուտքագրեք մեկ քայլ յուրաքանչյուր տողում...",
   "inviteToList": "Հրավիրեք ցուցակին",
   "itemAddedSnack": "{name} ավելացված է",
+  "itemAddedToList": "Նյութը ավելացված է ցանկին:",
   "itemName": "Կետի անուն",
   "itemRemoved": "Կետը հեռացված է",
   "itemsAddedSuccess": "Կետերը հաջողությամբ ավելացվել են ցուցակում!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} կետ(եր) պետք է գնվեն",
   "itemsPurchased": "Գնված ապրանքներ",
   "itemsPurchasedCount": "գնված {purchased}{total}-ից",
   "itemsPurchasedShort": "{purchased}/{total} գնված է",
   "itemsWillBeAdded": "{count} կետ(եր) կավելացվեն",
+  "keepAdding": "Շարունակեք ավելացնել",
+  "keepAddingSubtitle": "Թերթը բաց պահեք՝ մի քանի տարրեր ավելացնելու համար",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Ի՞նչ է անհրաժեշտ գնելու համար:",
@@ -1727,16 +1872,22 @@
   "mealDragHint": "Պահեք՝ քաշելու և տեղափոխելու համար",
   "mealNoRecipeFound": "Ոչ մի բաղադրատոմս չի գտնվել",
   "mealPlannerAddMeal": "Ավելացնել սնունդ",
+  "mealPlannerAddType": "Ավելացնել ճաշի տեսակը",
+  "mealPlannerCustomTypeLabel": "Պատվերով տեսակ",
   "mealPlannerDateLabel": "Ամսաթիվ",
+  "mealPlannerDefaultTypeLabel": "Կանխադրված տեսակը",
   "mealPlannerDeleteMeal": "Հեռացնել սնունդը",
   "mealPlannerEditMeal": "Խմբագրել սնունդը",
+  "mealPlannerEditType": "Խմբագրել ճաշի տեսակը",
   "mealPlannerError": "Սխալ՝ սննդի պլանը բեռնելիս",
+  "mealPlannerEstimatePartial": "Գնահատեք՝ հիմնված բաղադրատոմսերի վրա՝ մասնակի գների տվյալներով:",
   "mealPlannerGenerateList": "Ստեղծել գնումների ցուցակ",
   "mealPlannerGenerateListConfirm": "Ավելացնե՞լ այս շաբաթվա պլանավորված սննդի բոլոր բաղադրիչները ձեր գնումների ցուցակում:",
   "mealPlannerGenerateListEmpty": "Ավելացնելու բաղադրիչներ չկան: Նախ պլանավորեք սնունդ բաղադրատոմսերով:",
   "mealPlannerGenerateListNoList": "Նախ ստեղծեք գնումների ցուցակ:",
   "mealPlannerGenerateListSuccess": "{count} բաղադրիչ ավելացվեց ձեր ցուցակում!",
   "mealPlannerLoading": "Սննդի պլանի բեռնում...",
+  "mealPlannerManageTypes": "Կառավարեք սննդի տեսակները",
   "mealPlannerMealDeleted": "Սնունդը հեռացված է",
   "mealPlannerMealTypeBreakfast": "Նախաճաշ",
   "mealPlannerMealTypeDinner": "Ընթրիք",
@@ -1756,6 +1907,12 @@
   "mealPlannerServings": "{count,plural, one{{count} բաժին} other{{count} բաժին}}",
   "mealPlannerServingsLabel": "Բաժիններ",
   "mealPlannerTitle": "Սննդի պլանավորում",
+  "mealPlannerTypeColor": "Գույն",
+  "mealPlannerTypeDeleteConfirm": "Իսկապե՞ս ուզում եք ջնջել այս կերակուրի տեսակը: Այս տեսակի հետ նախատեսված կերակուրները կմնան:",
+  "mealPlannerTypeDeleteError": "Հնարավոր չէ ջնջել այս տեսակի կերակուրը:",
+  "mealPlannerTypeIcon": "Սրբապատկեր",
+  "mealPlannerTypeName": "Անուն",
+  "mealPlannerTypeNameEmpty": "Անունը չի կարող դատարկ լինել",
   "mealPlannerViewMonthly": "Ամսական տեսք",
   "mealPlannerViewWeekly": "Շաբաթական տեսք",
   "mealPlannerWeekEmpty": "Այս շաբաթվա համար ոչինչ պլանավորված չէ",
@@ -1971,6 +2128,7 @@
   "onboardingViewAllPlans": "Դիտեք բոլոր պլանները",
   "onboardingWelcomeDesc": "Ձեր գնումները կազմակերպելու և գումար խնայելու ամենախելացի միջոցը:",
   "onboardingWelcomeTitle": "Բարի գալուստ KipiList",
+  "openConversation": "Բաց խոսակցություն",
   "openMenu": "Բացել մենյուն",
   "organizeAisles": "Կազմակերպել ըստ միջանցքների",
   "organizeAislesPrompt": "Կազմակերպել ըստ խանութի միջանցքների:",
@@ -1983,6 +2141,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} մառանում",
   "pantryCompactView": "Կոմպակտ տեսք",
   "pantryDeficit": "Բացակայում է {amount}{unit}",
+  "pantryDeficitCount": "Բացակայում է {count}{unit}",
   "pantryDeleteItemsContent": "Ցանկանու՞մ եք ջնջել {count} ընտրված տարրը:",
   "pantryDeleteItemsTitle": "Ջնջել տարրերը",
   "pantryDeleteSelected": "Ջնջել ընտրվածը",
@@ -1999,6 +2158,7 @@
   "pantryFilterExpiring": "Ժամկետը սպառվում է",
   "pantryFilterOutStock": "Պահեստում չկա",
   "pantryFirstOpenHint": "Հետևեք, թե ինչ ունեք տանը: Ավելացրեք իրեր կամ սկանավորեք շտրիխ կոդեր:",
+  "pantryItemAdded": "Նյութը ավելացված է",
   "pantryItemRemoved": "Կետը հեռացված է",
   "pantryMoreDetails": "Ավելի մանրամասն",
   "pantryNoItemsFound": "«{query}»-ի համար ապրանքներ չեն գտնվել",
@@ -2012,6 +2172,7 @@
   "paywallAfterItem2": "Մաքրում",
   "paywallAfterItem3": "Միս",
   "paywallAfterItem4": "Հացաբուլկեղեն",
+  "paywallBasedOnAnswers": "Անհատականացված ձեր պատասխաններից",
   "paywallBeforeAfterTitle": "AI առաջ և հետո.",
   "paywallBeforeItem1": "բրինձ",
   "paywallBeforeItem2": "օճառ",
@@ -2049,6 +2210,8 @@
   "paywallGoalHeadlinePantry": "{name}, կատարյալ հետևեք ձեր մառան:",
   "paywallGoalHeadlineRecipes": "{name}, հայտնաբերեք նոր բաղադրատոմսեր:",
   "paywallGoalHeadlineSaveMoney": "{name}, խնայեք յուրաքանչյուր ճանապարհորդության վրա:",
+  "paywallHeroFeatureDesc": "Խոսեք կամ տեղադրեք մի ամբողջ ցուցակ. AI-ն տեսակավորում, դասակարգում և բյուջետավորում է այն վայրկյանների ընթացքում",
+  "paywallHeroFeatureTitle": "AI գնումների օգնական",
   "paywallHeroHeadline": "Kipi AI-ն միշտ ձեր կողքին է",
   "paywallHeroSubtitle": "Ավելացրեք իրեր, կազմակերպեք ցուցակները և խնայեք ժամանակը ձեր գրպանում AI-ի միջոցով",
   "paywallHeroSubtitlePersonalized": "Ողջույն {name}, կազմակերպեք ձեր գնումները ճիշտ ձևով:",
@@ -2083,6 +2246,11 @@
   "paywallTestimonial2Text": "Ես այլևս երբեք չեմ մոռացել ցուցակի որևէ կետ: AI զրույցը սենսացիոն է:",
   "paywallTestimonialAuthor": "Անն Ս.",
   "paywallTestimonialsTitle": "Ինչ են ասում մեր օգտատերերը.",
+  "paywallTimelineChargeDesc": "Ձեր բաժանորդագրությունը սկսվում է. ցանկացած ժամանակ չեղարկեք",
+  "paywallTimelineDay": "Օր {day}",
+  "paywallTimelineReminderDesc": "Հիշեցնում ենք ձեզ մինչև դատավարության ավարտը",
+  "paywallTimelineToday": "Այսօր",
+  "paywallTimelineTodayDesc": "Անմիջապես բացեք ամբողջական մուտքը",
   "paywallTitle": "KipiList Պրեմիում",
   "paywallTrialCta": "Սկսեք անվճար փորձաշրջան",
   "paywallTrialDays": "{days} ՕՐ ԱՆՎՃԱՐ",
@@ -2105,11 +2273,15 @@
   "prefSharing": "Կիսվել ցուցակներով",
   "prefUnlimitedLists": "Անսահմանափակ ցուցակներ",
   "prefUnlimitedPantry": "Անսահմանափակ մառան",
+  "preferencesSection": "Նախապատվություններ",
   "preferredMarket": "Նախընտրելի շուկա",
   "preferredMarketHint": "Որտեղ եք սովորաբար գնումներ կատարում:",
+  "premiumActionsPrompt": "Բաժանորդագրվեք Premium-ին՝ ավտոմատ գործողություններն ապակողպելու համար:",
+  "premiumStepDescription": "{description} (պրեմիում)",
   "premiumUpgrade": "Թարմացրեք բացելու համար",
   "prepTime": "Պատրաստման ժամանակը",
   "prepTimeMinutes": "Պատրաստման ժամանակը (րոպե)",
+  "previousItemState": "Նախորդ վիճակ՝ {quantity} {unit} [{category}]{price}",
   "privacy": "Գաղտնիություն",
   "product": "Արտադրանք",
   "productName": "Ապրանքի անուն",
@@ -2126,21 +2298,34 @@
   "quantityShort": "Քանակ",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Զրուցեք Kipi-ի հետ",
+  "quickActionPantry": "Դիտել մառան",
   "quickRecipe": "Արագ բաղադրատոմս",
   "quickRecipePrompt": "Առաջարկել բաղադրատոմսեր իմ ցուցակի կետերով:",
   "quickReplies": "Արագ պատասխաններ.",
   "quickSuggestions": "Արագ առաջարկներ",
+  "recipeAddError": "Չհաջողվեց ավելացնել ձեր ցանկին: Խնդրում ենք կրկին փորձել:",
   "recipeAddToList": "Ավելացնել գնումների ցուցակին",
   "recipeAddedConfirmation": "{count} բաղադրիչ ավելացվել է {listName}-ին",
   "recipeCreated": "Բաղադրատոմսը ստեղծված է",
   "recipeDeleted": "Բաղադրատոմսը ջնջված է",
+  "recipeEstimatePartial": "Մասնակի գնահատում` հիմնված բաղադրիչների գնի հետ:",
+  "recipeEstimatedCostPerServing": "{cost} / մատուցում",
+  "recipeEstimatedTotalCost": "Մոտավոր ընդհանուր արժեքը",
   "recipeImage": "Բաղադրատոմսի պատկեր",
+  "recipeIngredientInPantry": "մառանում",
+  "recipeIngredientLowPantry": "Ցածր մառան",
   "recipeIngredientSingular": "1 բաղադրիչ",
   "recipeIngredientsPlural": "{count} բաղադրիչներ",
+  "recipeManualTotalCost": "Ձեռնարկի ընդհանուր արժեքը",
+  "recipeManualTotalCostHint": "Թողեք դատարկ՝ բաղադրիչների գներից գնահատելու համար:",
   "recipeName": "Բաղադրատոմսի անվանում",
   "recipeSaved": "Բաղադրատոմսը պահպանված է",
+  "recipeServesCount": "Ծառայում է {count}",
   "recipeSuggestion": "Բաղադրատոմսի առաջարկ",
   "recipeTags": "Բաղադրատոմսի պիտակներ",
+  "recipeTapToCheck": "Հպեք մի բաղադրիչի վրա, որպեսզի ստուգեք այն, երբ դուք պատրաստում եք",
+  "recipeYieldServings": "Եկամտաբերություն",
   "regenerate": "Վերականգնել",
   "remove": "Հեռացնել",
   "removeBudget": "Հեռացնել",
@@ -2164,9 +2349,12 @@
   "savings": "Խնայողություններ",
   "scanBarcodeTitle": "Սկանավորեք շտրիխ կոդը",
   "scanProductTitle": "Ապրանքի սկանավորում",
+  "scrollToBottom": "Ոլորեք դեպի ներքև",
+  "searchConversations": "Որոնել խոսակցությունները",
   "searchCurrency": "Որոնել արժույթը...",
   "searchInConversation": "Որոնել խոսակցության մեջ...",
   "searchLanguage": "Փնտրել լեզուն...",
+  "searchMessages": "Որոնել հաղորդագրություններ...",
   "searchRecipes": "Փնտրել բաղադրատոմսեր...",
   "selectAll": "Ընտրել բոլորը",
   "selectCheaperAlternative": "Ընտրեք ավելի էժան այլընտրանք",
@@ -2223,6 +2411,7 @@
   "signInGoogle": "Մուտք Google-ով",
   "skip": "Բաց թողնել",
   "smartOrganization": "Խելացի Կազմակերպում",
+  "somethingWentWrong": "Սխալ առաջացավ",
   "sortAZ": "Ա–Զ",
   "sortCategory": "Կատեգորիա",
   "sortDate": "Ամսաթիվ",
@@ -2253,6 +2442,7 @@
   "themeColor": "Թեմայի գույն",
   "themeGreen": "Կանաչ",
   "themeIndigo": "Ինդիգո",
+  "themeMode": "Թեմայի ռեժիմ",
   "themeOrange": "Նարնջագույն",
   "themePink": "Վարդագույն",
   "themePurple": "Մանուշակագույն",
@@ -2260,12 +2450,14 @@
   "themeSelectionTitle": "Ընտրեք թեմայի գույնը",
   "themeTeal": "Ծովակնագույն",
   "totalEstimated": "Ընդհանուր մոտավոր՝ {amount}",
+  "totalEstimatedLabel": "Մոտավոր ընդհանուր",
   "totalSavings": "Ընդհանուր խնայողություններ",
   "totalSpending": "Ընդհանուր Ծախս",
   "trackStock": "Հետևել պաշարին",
   "trackStockActive": "Հայտնվում է գնման առաջարկներում",
   "trackStockInactive": "Գնման առաջարկ չի ստեղծում",
   "undo": "Հետարկել",
+  "undoChanges": "Հետարկել փոփոխությունները",
   "unit": "Միավոր",
   "unitPack": "տուփ",
   "unlockAi": "Բացեք անսահմանափակ AI",
@@ -2290,6 +2482,7 @@
   "userProfileSaveButton": "Պահպանել պրոֆիլը",
   "userProfileSaved": "Պրոֆիլը հաջողությամբ պահպանվեց:",
   "userProfileTitle": "Իմ պրոֆիլը",
+  "userRole": "Դուք",
   "validForLimitedTime": "Վավեր է սահմանափակ ժամանակով",
   "version": "Տարբերակ",
   "viewActive": "Դիտել Ակտիվները",
@@ -2297,6 +2490,7 @@
   "viewHistory": "Դիտել Պատմությունը",
   "viewItems": "Դիտել իրերը",
   "viewList": "Դիտել ցուցակը",
+  "viewPlans": "Դիտեք պլանները",
   "viewPro": "Դիտել Pro",
   "viewRecipe": "Դիտել բաղադրատոմսը",
   "voiceCommandContent": "Խոսեք բնականաբար ձեր ցուցակը կառավարելու համար!\n\nՕրինակներ՝\n• 'Ավելացնել հաց, պանիր և խոզապուխտ'\n• 'Հեռացնել լվացքի փոշին'\n• 'Փոխել թեման կապույտ'\n\nՍա KipiList Premium-ի բացառիկ հնարավորություն է:",

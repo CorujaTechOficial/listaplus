@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -136,6 +150,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -269,6 +290,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -298,6 +322,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -921,6 +952,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1040,6 +1081,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1078,6 +1126,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1151,7 +1222,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1282,22 +1367,36 @@
   "addToPantryPrompt": "\"{name}\" zu deinem Vorrat hinzufügen?",
   "addedFeedback": "Hinzugefügt!",
   "advancedFeatures": "Erweiterte Funktionen",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Aktionen konnten nicht ausgeführt werden",
+  "agentActionsPremium": "Für Aktionen ist Premium erforderlich",
+  "agentActionsRunning": "Aktionen ausführen...",
+  "aiApiError": "Der AI-Dienst hat einen Fehler zurückgegeben ({statusCode}).",
   "aiAssistant": "KI-Assistent",
   "aiAssistantDescription": "Hole dir mit unserem KI-Assistenten intelligente Vorschläge, Rezepte und persönliche Tipps.",
   "aiAssistantTitle": "KI-Assistent",
+  "aiConnectionError": "Es konnte keine Verbindung zum AI-Dienst hergestellt werden. Überprüfen Sie Ihre Verbindung.",
   "aiCreditsRemaining": "{remaining} Credits übrig",
+  "aiEmptyResponseError": "Der AI-Dienst hat eine leere Antwort zurückgegeben.",
   "aiEnergy": "KI-Energie",
   "aiEnergyLow": "Niedrige KI-Energie",
   "aiError": "Entschuldigung, bei der Verarbeitung deiner Anfrage ist ein Fehler aufgetreten. Überprüfe deine Verbindung oder versuche es später erneut.",
+  "aiGeneratingResponse": "Reaktion generieren…",
+  "aiInvalidResponseError": "Der AI-Dienst hat eine ungültige Antwort zurückgegeben.",
   "aiLimitAlmostReached": "Fast keine KI-Nachrichten mehr",
+  "aiRateLimitError": "Zu viele Nachrichten in kurzer Zeit. Warten Sie ein paar Sekunden und versuchen Sie es erneut.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} heute",
+  "aiSection": "KI-Assistent",
   "aiSubscribeUnlimited": "Abonnieren Sie unbegrenzte KI",
   "aiTeaserFallback": "Abonnieren Sie Premium, um die vollständige Antwort freizuschalten und unbegrenzt KI-Tipps für Ihren Einkauf zu erhalten ...",
+  "aiTimeoutError": "Die Anfrage hat zu lange gedauert. Bitte versuchen Sie es erneut.",
   "aiUnlockUnlimited": "Schalte unbegrenzte KI frei",
   "aiUsageExhausted": "Monatliches KI-Limit erreicht. Upgraden Sie unbegrenzt auf Pro →",
   "aiUsageWarning": "{remaining} KI-Aktionen diesen Monat übrig – unbegrenzt upgraden",
   "aiVoiceCommandTooltip": "KI-Sprachbefehl (Premium)",
   "aiWelcomeContent": "Hallo! 👋 Ich bin **Kipi**, dein persönlicher Einkaufs- und Rezeptassistent!\n\nIch bin hier, um Ihnen zu helfen:\n🛒 **Organisieren** Sie Ihren Einkauf automatisch nach Kategorien\n💰 **Verfolgen** Sie Ihr Budget und geben Sie Tipps zum Geldsparen\n🍲 **Schlagen Sie köstliche Rezepte vor** mit dem, was Sie bereits haben\n\nWie kann ich Ihnen heute helfen? Sie können mit der Erstellung Ihrer ersten Liste beginnen!",
+  "aiWelcomeSuggestBarbecue": "Planen Sie einen Grillabend",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, ich veranstalte ein Barbecue – hilf mir beim Erstellen der Einkaufsliste",
   "aiWelcomeSuggestCreateList": "Erstelle meine erste Liste",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, hilf mir, meine erste Einkaufsliste zu erstellen",
   "aiWelcomeSuggestSave": "Wie kann man Geld sparen?",
@@ -1307,9 +1406,12 @@
   "appTitle": "Einkaufsliste",
   "appearance": "Erscheinungsbild",
   "archiveList": "Liste archivieren",
+  "artifactBudgetLabel": "Budget:",
+  "artifactSynced": "Synchronisiert",
   "assistantHistory": "Geschichte des Assistenten",
   "assistantHistorySubtitle": "Sehen Sie sich Ihren Gesprächsverlauf an",
   "assistantName": "Name des Assistenten",
+  "assistantRole": "Assistent",
   "backToChat": "Zurück zum Chat",
   "backToToday": "Zurück zum Heute",
   "backupExported": "Backup exportiert!",
@@ -1317,6 +1419,7 @@
   "backupPremiumDescription": "Backup und Export sind eine Premium-Funktion",
   "backupSubtitle": "Exportiere oder importiere deine Daten",
   "backupTitle": "Sicherung",
+  "badResponse": "Schlechte Reaktion",
   "badgeBeginner": "Anfänger",
   "badgeOrganized": "Organisiert",
   "badgeSavingMaster": "Rettender Meister",
@@ -1342,9 +1445,11 @@
   "catOthers": "Sonstiges",
   "catalogAddItems": "Fügen Sie {count} {count, plural, one{item} other{items}} hinzu →",
   "catalogBrowse": "Katalog durchsuchen",
+  "catalogCategories": "Kategorien",
   "catalogFilterNational": "Staatsangehörige",
   "catalogMyFrequents": "Meine Frequents",
   "catalogProductNotFound": "Produkt nicht gefunden, geben Sie den Namen ein",
+  "catalogRareBadge": "Selten",
   "catalogRareSection": "kommt in Ihrem Land weniger häufig vor",
   "catalogSearchGlobal": "Suchen Sie nach einem beliebigen Produkt...",
   "catalogSearchInCategory": "Suche in {category}...",
@@ -1352,16 +1457,43 @@
   "catalogSortPopular": "Am beliebtesten",
   "catalogTitle": "Katalog",
   "category": "Kategorie",
+  "categoryAlcohol": "Alkoholische Getränke",
+  "categoryBaby": "Baby",
+  "categoryBakery": "Bäckerei",
+  "categoryBeverages": "Getränke",
+  "categoryCanned": "Konserven",
+  "categoryCleaning": "Reinigung",
+  "categoryColdCuts": "Aufschnitt",
   "categoryColorLabel": "Farbe",
+  "categoryDairy": "Molkerei",
+  "categoryFish": "Fisch",
+  "categoryFrozen": "Tiefkühlkost",
+  "categoryFruits": "Früchte",
+  "categoryGrains": "Getreide und Getreide",
+  "categoryHygiene": "Persönliche Betreuung",
   "categoryIconLabel": "Symbol",
   "categoryLimitReached": "Kategorielimit erreicht",
+  "categoryMeat": "Fleisch",
   "categoryName": "Kategoriename",
   "categoryNameHint": "Geben Sie den Kategorienamen ein",
+  "categoryOthers": "Andere",
+  "categoryPet": "Haustierbedarf",
+  "categorySeasonings": "Gewürze",
+  "categorySweets": "Süßigkeiten und Desserts",
+  "categoryUtilities": "Haushaltsbedarf",
+  "categoryVegetables": "Gemüse",
+  "chatEmptyGreeting": "Hallo {name}, ich bin Kipi 👋",
+  "chatEmptyGreetingNoName": "Hallo, ich bin Kipi 👋",
+  "chatEmptyPitch": "Ich erstelle Listen, schlage Rezepte vor und finde heraus, wo ich speichern kann. Wo fangen wir an?",
   "chatEmptySubtitle": "Fragen Sie nach Artikelvorschlägen, Rezepten oder Spartipps, um loszulegen.",
   "chatEmptyTitle": "Ihr Chat ist leer",
   "chatError": "Fehler beim Laden des Chats: {error}",
   "chatHint": "Gib deine Nachricht ein...",
   "chatHintBlocked": "Schalte KI frei, um zu chatten",
+  "chatHistoryErrorBody": "Bei uns ist etwas schief gelaufen. Tippen Sie auf „Wiederholen“, um es noch einmal zu versuchen.",
+  "chatHistoryErrorTitle": "Diese Konversation konnte nicht geladen werden",
+  "chatHistoryOfflineBody": "Überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+  "chatHistoryOfflineTitle": "Du bist offline",
   "chatSubtitle": "Frage nach Artikelvorschlägen, Rezepten oder Spartipps.",
   "chatSubtitleShort": "Fragen Sie nach Preisen, Rezepten, Organisation...",
   "chooseCurrency": "Wählen Sie Währung aus",
@@ -1369,6 +1501,7 @@
   "chooseImageSource": "Bildquelle wählen",
   "chooseLanguage": "Sprache wählen",
   "chooseThemeColor": "Wählen Sie die Themenfarbe",
+  "chooseThemeMode": "Wählen Sie den Themenmodus",
   "clear": "Leeren",
   "clearHistory": "Verlauf löschen",
   "clearHistoryConfirm": "Alle Nachrichten in dieser Sitzung löschen?",
@@ -1411,6 +1544,10 @@
   "customizeAssistant": "Anpassen",
   "dark": "Dunkel",
   "data": "Daten",
+  "dateGroupOlder": "Älter",
+  "dateGroupPrevious7Days": "Vorherige 7 Tage",
+  "dateGroupToday": "Heute",
+  "dateGroupYesterday": "Gestern",
   "deficitItems": "{deficit,plural, one{{deficit} Artikel muss gekauft werden} other{{deficit} Artikel müssen gekauft werden}}",
   "delete": "Löschen",
   "deleteCategory": "Löschen",
@@ -1427,6 +1564,7 @@
   "deleteRecipeConfirmMsg": "Sind Sie sicher, dass Sie \"{recipeName}\" löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
   "deleteSession": "Chat löschen",
   "deleteSessionConfirm": "Sind Sie sicher, dass Sie diesen Chat löschen möchten? Die Nachrichten gehen dauerhaft verloren.",
+  "deletedList": "Gelöschte Liste",
   "deselectAll": "Alle abwählen",
   "dietaryRestrictions": "Ernährungseinschränkungen",
   "dietaryRestrictionsHint": "Irgendwelche diätetischen Einschränkungen?",
@@ -1439,6 +1577,7 @@
   "editCategoryDialog": "Kategorie bearbeiten",
   "editItem": "Artikel bearbeiten",
   "editItemPrice": "Geschätzter Preis",
+  "editMessage": "Nachricht bearbeiten",
   "editPantryItem": "{name} bearbeiten",
   "editRecipe": "Bearbeiten",
   "editRecipeTitle": "Rezept bearbeiten",
@@ -1452,6 +1591,7 @@
   "errorLoadingChat": "Hoppla! Beim Laden des Chats ist ein Fehler aufgetreten.",
   "errorLoadingChatSubtitle": "Überprüfen Sie Ihre Verbindung oder versuchen Sie es später noch einmal.",
   "errorLoadingHistory": "Fehler beim Laden des Verlaufs",
+  "errorLoadingItems": "Fehler beim Laden der Elemente",
   "errorLoadingLists": "Fehler beim Laden der Listen",
   "errorLoadingRecipes": "Fehler beim Laden der Rezepte",
   "errorLoadingSubscription": "Fehler beim Laden des Abonnements",
@@ -1504,6 +1644,7 @@
   "generateShoppingList": "Einkaufsliste erstellen",
   "gestureHint": "Zum Auswählen gedrückt halten. • Zum Entfernen wischen",
   "globalAssistant": "Globaler Assistent",
+  "goodResponse": "Gute Resonanz",
   "howCanIHelp": "Wie kann ich helfen?",
   "idealQty": "Ideale Menge",
   "idealQuantity": "Ideale Menge",
@@ -1520,14 +1661,18 @@
   "instructionsHint": "Geben Sie einen Schritt pro Zeile ein...",
   "inviteToList": "Zur Liste einladen",
   "itemAddedSnack": "{name} hinzugefügt",
+  "itemAddedToList": "Element zur Liste hinzugefügt.",
   "itemName": "Artikelname",
   "itemRemoved": "Artikel entfernt",
   "itemsAddedSuccess": "Artikel erfolgreich zur Liste hinzugefügt!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} Artikel müssen gekauft werden",
   "itemsPurchased": "Gekaufte Artikel",
   "itemsPurchasedCount": "{purchased} von {total} gekauft",
   "itemsPurchasedShort": "{purchased}/{total} gekauft",
   "itemsWillBeAdded": "{count} Artikel werden hinzugefügt",
+  "keepAdding": "Fügen Sie weiter hinzu",
+  "keepAddingSubtitle": "Lassen Sie das Blatt geöffnet, um mehrere Elemente hinzuzufügen",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Was müssen Sie kaufen?",
@@ -1563,16 +1708,22 @@
   "marketsToAvoid": "Märkte, die Sie meiden sollten",
   "marketsToAvoidHint": "Märkte, auf denen Sie lieber nicht einkaufen möchten",
   "mealPlannerAddMeal": "Mahlzeit hinzufügen",
+  "mealPlannerAddType": "Mahlzeittyp hinzufügen",
+  "mealPlannerCustomTypeLabel": "Benutzerdefinierter Typ",
   "mealPlannerDateLabel": "Datum",
+  "mealPlannerDefaultTypeLabel": "Standardtyp",
   "mealPlannerDeleteMeal": "Mahlzeit entfernen",
   "mealPlannerEditMeal": "Mahlzeit bearbeiten",
+  "mealPlannerEditType": "Essensart bearbeiten",
   "mealPlannerError": "Fehler beim Laden des Essensplans",
+  "mealPlannerEstimatePartial": "Schätzung basierend auf Rezepten mit Teilpreisdaten.",
   "mealPlannerGenerateList": "Einkaufsliste erstellen",
   "mealPlannerGenerateListConfirm": "Alle Zutaten der geplanten Mahlzeiten dieser Woche zur Einkaufsliste hinzufügen?",
   "mealPlannerGenerateListEmpty": "Keine Zutaten zum Hinzufügen. Planen Sie zuerst Mahlzeiten mit Rezepten.",
   "mealPlannerGenerateListNoList": "Erstellen Sie zuerst eine Einkaufsliste.",
   "mealPlannerGenerateListSuccess": "{count} Zutat(en) zu Ihrer Liste hinzugefügt!",
   "mealPlannerLoading": "Essensplan wird geladen...",
+  "mealPlannerManageTypes": "Mahlzeitenarten verwalten",
   "mealPlannerMealDeleted": "Mahlzeit entfernt",
   "mealPlannerMealTypeBreakfast": "Frühstück",
   "mealPlannerMealTypeDinner": "Abendessen",
@@ -1592,6 +1743,12 @@
   "mealPlannerServings": "{count,plural, one{{count} Portion} other{{count} Portionen}}",
   "mealPlannerServingsLabel": "Portionen",
   "mealPlannerTitle": "Wochenplaner",
+  "mealPlannerTypeColor": "Farbe",
+  "mealPlannerTypeDeleteConfirm": "Sind Sie sicher, dass Sie diesen Mahlzeitentyp löschen möchten? Geplante Mahlzeiten dieser Art bleiben bestehen.",
+  "mealPlannerTypeDeleteError": "Diese Mahlzeitart kann nicht gelöscht werden.",
+  "mealPlannerTypeIcon": "Symbol",
+  "mealPlannerTypeName": "Name",
+  "mealPlannerTypeNameEmpty": "Der Name darf nicht leer sein",
   "mealPlannerViewMonthly": "Monatsansicht",
   "mealPlannerViewWeekly": "Wochenansicht",
   "mealPlannerWeekEmpty": "Nichts für diese Woche geplant",
@@ -1803,6 +1960,7 @@
   "onboardingViewAllPlans": "Alle Pläne anzeigen",
   "onboardingWelcomeDesc": "Der intelligenteste Weg, Ihren Einkauf zu organisieren und Geld zu sparen.",
   "onboardingWelcomeTitle": "Willkommen bei KipiList",
+  "openConversation": "Offenes Gespräch",
   "openMenu": "Menü öffnen",
   "organizeAisles": "Nach Gängen organisieren",
   "organizeAislesPrompt": "Nach Supermarkt-Gängen organisieren.",
@@ -1812,14 +1970,17 @@
   "pantryAppBar": "Vorrat",
   "pantryAvailabilityAll": "Alles klar!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} in der Speisekammer",
+  "pantryDeficitCount": "Fehlt {count}{unit}",
   "pantryEditTitle": "{name} bearbeiten",
   "pantryEmpty": "Vorrat leer",
   "pantryEmptySubtitle": "Füge Produkte hinzu, die du zu Hause behalten möchtest",
+  "pantryItemAdded": "Artikel hinzugefügt",
   "pantryItemRemoved": "Artikel entfernt",
   "paywallAfterItem1": "Körner",
   "paywallAfterItem2": "Reinigung",
   "paywallAfterItem3": "Fleisch",
   "paywallAfterItem4": "Bäckerei",
+  "paywallBasedOnAnswers": "Personalisiert aus Ihren Antworten",
   "paywallBeforeAfterTitle": "KI vorher und nachher:",
   "paywallBeforeItem1": "Reis",
   "paywallBeforeItem2": "Seife",
@@ -1857,6 +2018,8 @@
   "paywallGoalHeadlinePantry": "{name}, verfolge deine Speisekammer perfekt!",
   "paywallGoalHeadlineRecipes": "{name}, entdecke neue Rezepte!",
   "paywallGoalHeadlineSaveMoney": "{name}, sparen Sie bei jeder Reise!",
+  "paywallHeroFeatureDesc": "Sprechen Sie eine ganze Liste oder fügen Sie sie ein – KI sortiert, kategorisiert und budgetiert sie in Sekundenschnelle",
+  "paywallHeroFeatureTitle": "KI-Einkaufsassistent",
   "paywallHeroHeadline": "Kipi AI immer an Ihrer Seite",
   "paywallHeroSubtitle": "Fügen Sie Elemente hinzu, organisieren Sie Listen und sparen Sie Zeit mit KI in Ihrer Tasche",
   "paywallHeroSubtitlePersonalized": "Hey {name}, organisiere deinen Einkauf richtig.",
@@ -1891,6 +2054,11 @@
   "paywallTestimonial2Text": "Ich habe nie wieder einen Listenpunkt vergessen. Der KI-Chat ist sensationell!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Was unsere Benutzer sagen:",
+  "paywallTimelineChargeDesc": "Ihr Abonnement beginnt – jederzeit kündbar",
+  "paywallTimelineDay": "Tag {day}",
+  "paywallTimelineReminderDesc": "Wir erinnern Sie daran, bevor die Testversion endet",
+  "paywallTimelineToday": "Heute",
+  "paywallTimelineTodayDesc": "Schalten Sie sofort den vollen Zugriff frei",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Kostenlose Testversion starten",
   "paywallTrialDays": "{days} TAGE KOSTENLOS",
@@ -1913,11 +2081,15 @@
   "prefSharing": "Listen teilen",
   "prefUnlimitedLists": "Unbegrenzte Listen",
   "prefUnlimitedPantry": "Unbegrenzter Vorrat",
+  "preferencesSection": "Präferenzen",
   "preferredMarket": "Bevorzugter Markt",
   "preferredMarketHint": "Wo kaufen Sie normalerweise ein?",
+  "premiumActionsPrompt": "Abonnieren Sie Premium, um automatische Aktionen freizuschalten.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Upgrade zum Freischalten",
   "prepTime": "Vorbereitungszeit",
   "prepTimeMinutes": "Vorbereitungszeit (Minuten)",
+  "previousItemState": "Vorheriger Status: {quantity} {unit} [{category}]{price}",
   "privacy": "Datenschutz",
   "product": "Produkt",
   "productName": "Produktname",
@@ -1934,21 +2106,34 @@
   "quantityShort": "Menge",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Chatten Sie mit Kipi",
+  "quickActionPantry": "Speisekammer ansehen",
   "quickRecipe": "Schnelles Rezept",
   "quickRecipePrompt": "Schlage Rezepte mit Artikeln aus meiner Liste vor.",
   "quickReplies": "Schnelle Antworten:",
   "quickSuggestions": "Schnelle Vorschläge",
+  "recipeAddError": "Konnte nicht zu Ihrer Liste hinzugefügt werden. Bitte versuchen Sie es erneut.",
   "recipeAddToList": "Auf die Merkliste",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Rezept erstellt!",
   "recipeDeleted": "Rezept gelöscht",
+  "recipeEstimatePartial": "Teilweise Schätzung basierend auf Zutaten und Preis.",
+  "recipeEstimatedCostPerServing": "{cost} / Portion",
+  "recipeEstimatedTotalCost": "Geschätzte Gesamtkosten",
   "recipeImage": "Rezeptbild",
+  "recipeIngredientInPantry": "In der Speisekammer",
+  "recipeIngredientLowPantry": "Niedrig in der Speisekammer",
   "recipeIngredientSingular": "1 Zutat",
   "recipeIngredientsPlural": "{count} Zutaten",
+  "recipeManualTotalCost": "Manuelle Gesamtkosten",
+  "recipeManualTotalCostHint": "Lassen Sie das Feld leer, um anhand der Zutatenpreise eine Schätzung vorzunehmen.",
   "recipeName": "Rezeptname",
   "recipeSaved": "Rezept gespeichert!",
+  "recipeServesCount": "Bedient {count}",
   "recipeSuggestion": "Rezeptvorschlag",
   "recipeTags": "Rezept-Tags",
+  "recipeTapToCheck": "Tippen Sie beim Kochen auf eine Zutat, um sie abzuhaken",
+  "recipeYieldServings": "Portionen ergeben",
   "regenerate": "Neu generieren",
   "remove": "Entfernen",
   "removeBudget": "Entfernen",
@@ -1972,9 +2157,12 @@
   "savings": "Ersparnis",
   "scanBarcodeTitle": "Barcode scannen",
   "scanProductTitle": "Produkt scannen",
+  "scrollToBottom": "Scrollen Sie nach unten",
+  "searchConversations": "Gespräche suchen",
   "searchCurrency": "Währung suchen...",
   "searchInConversation": "Suche im Gespräch...",
   "searchLanguage": "Sprache suchen...",
+  "searchMessages": "Nachrichten durchsuchen...",
   "searchRecipes": "Rezepte suchen...",
   "selectAll": "Alle auswählen",
   "selectCheaperAlternative": "Wählen Sie eine günstigere Alternative",
@@ -2008,6 +2196,7 @@
   "signInGoogle": "Mit Google anmelden",
   "skip": "Überspringen",
   "smartOrganization": "Intelligente Organisation",
+  "somethingWentWrong": "Etwas ist schief gelaufen",
   "sortCategory": "Kategorie",
   "sortDate": "Datum",
   "sortManual": "Manuell",
@@ -2037,18 +2226,21 @@
   "themeColor": "Designfarbe",
   "themeGreen": "Grün",
   "themeIndigo": "Indigo",
+  "themeMode": "Themenmodus",
   "themeOrange": "Orange",
   "themePink": "Rosa",
   "themePurple": "Lila",
   "themeRed": "Rot",
   "themeTeal": "Blaugrün",
   "totalEstimated": "Gesamt geschätzt: {amount}",
+  "totalEstimatedLabel": "Geschätzte Gesamtsumme",
   "totalSavings": "Gesamteinsparungen",
   "totalSpending": "Gesamtausgaben",
   "trackStock": "Lagerbestand verfolgen",
   "trackStockActive": "Erscheint in Einkaufsvorschlägen",
   "trackStockInactive": "Erzeugt keinen Einkaufsvorschlag",
   "undo": "Rückgängig",
+  "undoChanges": "Änderungen rückgängig machen",
   "unit": "Einheit",
   "unitPack": "Packung",
   "unlockAi": "Schalte unbegrenzte KI frei",
@@ -2059,6 +2251,7 @@
   "unmark": "Markierung aufheben",
   "upgrade": "Upgrade",
   "userProfile": "Benutzerprofil",
+  "userRole": "Du",
   "validForLimitedTime": "Begrenzt gültig",
   "version": "Version",
   "viewActive": "Aktive anzeigen",
@@ -2066,6 +2259,7 @@
   "viewHistory": "Verlauf anzeigen",
   "viewItems": "Artikel ansehen",
   "viewList": "Liste anzeigen",
+  "viewPlans": "Pläne ansehen",
   "viewPro": "Pro ansehen",
   "viewRecipe": "Rezept anzeigen",
   "voiceCommandContent": "Sprich natürlich, um deine Liste zu verwalten!\n\nBeispiele:\n• 'Füge Brot, Käse und Schinken hinzu'\n• 'Entferne Waschmittel'\n• 'Ändere das Design zu Blau'\n\nDies ist eine exklusive Funktion von KipiList Premium.",

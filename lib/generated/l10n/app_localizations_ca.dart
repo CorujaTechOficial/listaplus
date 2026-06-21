@@ -246,6 +246,11 @@ class AppLocalizationsCa extends AppLocalizations {
   String get noItemsToBuy => 'No cal comprar cap article';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Falta $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Compra de rebost';
 
   @override
@@ -312,6 +317,12 @@ class AppLocalizationsCa extends AppLocalizations {
   String get settingsAppBar => 'Configuració';
 
   @override
+  String get preferencesSection => 'Preferències';
+
+  @override
+  String get aiSection => 'Assistent d\'IA';
+
+  @override
   String get language => 'Idioma';
 
   @override
@@ -340,6 +351,12 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get appearance => 'Aparença';
+
+  @override
+  String get themeMode => 'Mode de tema';
+
+  @override
+  String get chooseThemeMode => 'Seleccioneu el mode de tema';
 
   @override
   String get light => 'Clar';
@@ -590,6 +607,13 @@ class AppLocalizationsCa extends AppLocalizations {
   String get trackStockInactive => 'No genera suggeriment de compra';
 
   @override
+  String get keepAdding => 'Segueix afegint';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Manteniu el full obert per afegir diversos elements';
+
+  @override
   String get createListDialog => 'Crear llista';
 
   @override
@@ -695,6 +719,36 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Bona resposta';
+
+  @override
+  String get badResponse => 'Mala resposta';
+
+  @override
+  String get scrollToBottom => 'Desplaceu-vos cap avall';
+
+  @override
+  String get somethingWentWrong => 'Alguna cosa va fallar';
+
+  @override
+  String get editMessage => 'Edita el missatge';
+
+  @override
+  String get searchConversations => 'Cerca converses';
+
+  @override
+  String get dateGroupToday => 'Avui';
+
+  @override
+  String get dateGroupYesterday => 'Ahir';
+
+  @override
+  String get dateGroupPrevious7Days => '7 dies anteriors';
+
+  @override
+  String get dateGroupOlder => 'Més vell';
+
+  @override
   String get aiAssistantTitle => 'Assistent d\'IA';
 
   @override
@@ -735,6 +789,33 @@ class AppLocalizationsCa extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'S\'ha assolit el límit mensual d\'IA. Actualitza a Pro per un nombre il·limitat →';
+
+  @override
+  String get undo => 'Desfer';
+
+  @override
+  String get newChatStarted => 'S\'ha iniciat un nou xat';
+
+  @override
+  String get quickAddToList => 'Afegeix a la llista';
+
+  @override
+  String get aiCapabilitiesTitle => 'Què puc fer?';
+
+  @override
+  String get aiCapabilitiesLists => 'Llistes de la compra';
+
+  @override
+  String get aiCapabilitiesBudget => 'Pressupost i Preus';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Receptes i Menús';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organització';
+
+  @override
+  String get marketModeDescription => 'Marca els articles mentre compres';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -946,6 +1027,20 @@ class AppLocalizationsCa extends AppLocalizations {
   String get recipeAddToList => 'Afegeix a la llista de la compra';
 
   @override
+  String get recipeAddError =>
+      'No s\'ha pogut afegir a la llista. Si us plau, torna-ho a provar.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Toqueu un ingredient per comprovar-ho mentre cuineu';
+
+  @override
+  String get recipeIngredientInPantry => 'En rebost';
+
+  @override
+  String get recipeIngredientLowPantry => 'Baix al rebost';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1065,12 +1160,12 @@ class AppLocalizationsCa extends AppLocalizations {
   String get paywallSelectPlan => 'Tria el teu pla:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'Estalvia un $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Només $price/mes';
   }
 
@@ -1106,6 +1201,37 @@ class AppLocalizationsCa extends AppLocalizations {
   String get paywallRestore => 'Restaurar';
 
   @override
+  String get paywallTimelineToday => 'Avui';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Desbloquegeu l\'accés complet a l\'instant';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Dia $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Us ho recordem abans que finalitzi el judici';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'La teva subscripció comença: cancel·la en qualsevol moment';
+
+  @override
+  String get paywallHeroFeatureTitle => 'Assistent de compres amb IA';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Parleu o enganxeu una llista sencera: l\'AI l\'ordena, la classifica i la pressuposta en segons';
+
+  @override
+  String get paywallBasedOnAnswers =>
+      'Personalitzat a partir de les teves respostes';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI sempre al teu costat';
 
   @override
@@ -1138,9 +1264,6 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Article eliminat';
-
-  @override
-  String get undo => 'Desfer';
 
   @override
   String get emptyListTitle => 'La teva llista està buida';
@@ -1257,6 +1380,9 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Article eliminat';
+
+  @override
+  String get pantryItemAdded => 'Element afegit';
 
   @override
   String deficitItems(int deficit) {
@@ -1664,6 +1790,33 @@ class AppLocalizationsCa extends AppLocalizations {
   String get prepTimeMinutes => 'Temps de preparació (minuts)';
 
   @override
+  String get recipeYieldServings => 'Rendir porcions';
+
+  @override
+  String get recipeManualTotalCost => 'Cost total manual';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Deixeu buit per estimar els preus dels ingredients.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Cost total estimat';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / servei';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Serveix $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Estimació parcial basada en ingredients amb preu.';
+
+  @override
   String get instructionsHint => 'Escriu un pas per línia...';
 
   @override
@@ -1792,6 +1945,10 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Estimació basada en receptes amb dades de preus parcials.';
+
+  @override
   String get mealPlannerGenerateList => 'Generar llista de compra';
 
   @override
@@ -1887,6 +2044,9 @@ class AppLocalizationsCa extends AppLocalizations {
   String get catalogRareSection => 'menys comú al teu país';
 
   @override
+  String get catalogRareBadge => 'Rar';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1937,6 +2097,41 @@ class AppLocalizationsCa extends AppLocalizations {
     );
     return 'Falta $count $_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Gestionar els tipus de menjar';
+
+  @override
+  String get mealPlannerAddType => 'Afegeix el tipus de menjar';
+
+  @override
+  String get mealPlannerEditType => 'Editeu el tipus de menjar';
+
+  @override
+  String get mealPlannerTypeName => 'Nom';
+
+  @override
+  String get mealPlannerTypeColor => 'Color';
+
+  @override
+  String get mealPlannerTypeIcon => 'Icona';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Esteu segur que voleu suprimir aquest tipus de menjar? Es mantindran els àpats planificats amb aquest tipus.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'El nom no pot estar buit';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'No es pot suprimir aquest tipus de menjar.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Tipus personalitzat';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Tipus per defecte';
 
   @override
   String get expirationDate => 'Data de caducitat';
@@ -1998,6 +2193,10 @@ class AppLocalizationsCa extends AppLocalizations {
   @override
   String get errorLoadingLists =>
       'S\'ha produït un error en carregar les llistes';
+
+  @override
+  String get errorLoadingItems =>
+      'S\'ha produït un error en carregar els elements';
 
   @override
   String get noListsFound => 'No s\'han trobat llistes';
@@ -2779,4 +2978,215 @@ class AppLocalizationsCa extends AppLocalizations {
   @override
   String get obLoginError =>
       'No s\'ha pogut iniciar la sessió. Torna-ho a provar o passa per ara.';
+
+  @override
+  String get searchMessages => 'Cerca missatges...';
+
+  @override
+  String get deletedList => 'Llista suprimida';
+
+  @override
+  String get openConversation => 'Conversa oberta';
+
+  @override
+  String get userRole => 'tu';
+
+  @override
+  String get assistantRole => 'Assistent';
+
+  @override
+  String get agentActionsRunning => 'Accions en curs...';
+
+  @override
+  String get agentActionsFailed => 'No s\'han pogut executar les accions';
+
+  @override
+  String get agentActionsPremium => 'Les accions requereixen Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Desfer els canvis';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Element afegit a la llista.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Estat anterior: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Subscriu-te a Premium per desbloquejar accions automàtiques.';
+
+  @override
+  String get viewPlans => 'Veure plànols';
+
+  @override
+  String get artifactSynced => 'Sincronitzat';
+
+  @override
+  String get artifactBudgetLabel => 'Pressupost:';
+
+  @override
+  String get totalEstimatedLabel => 'Total estimat';
+
+  @override
+  String get quickActionPantry => 'Veure rebost';
+
+  @override
+  String get quickActionAi => 'Xateja amb Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'El servei d\'IA ha retornat un error ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'La petició va trigar massa. Si us plau, torna-ho a provar.';
+
+  @override
+  String get aiConnectionError =>
+      'No s\'ha pogut connectar al servei d\'IA. Comproveu la vostra connexió.';
+
+  @override
+  String get aiEmptyResponseError =>
+      'El servei d\'IA ha retornat una resposta buida.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'El servei d\'IA ha retornat una resposta no vàlida.';
+
+  @override
+  String get categoryFruits => 'Fruites';
+
+  @override
+  String get categoryCleaning => 'Neteja';
+
+  @override
+  String get categoryBeverages => 'Begudes';
+
+  @override
+  String get categoryBakery => 'Fleca';
+
+  @override
+  String get categoryMeat => 'Carn';
+
+  @override
+  String get categoryDairy => 'Lactis';
+
+  @override
+  String get categoryVegetables => 'Verdures';
+
+  @override
+  String get categoryGrains => 'Grans i cereals';
+
+  @override
+  String get categoryHygiene => 'Cura personal';
+
+  @override
+  String get categoryFrozen => 'Aliments congelats';
+
+  @override
+  String get categoryCanned => 'Productes en conserva';
+
+  @override
+  String get categorySeasonings => 'Condiments';
+
+  @override
+  String get categorySweets => 'Dolços i postres';
+
+  @override
+  String get categoryAlcohol => 'Begudes alcohòliques';
+
+  @override
+  String get categoryFish => 'Peix';
+
+  @override
+  String get categoryColdCuts => 'embotits';
+
+  @override
+  String get categoryUtilities => 'Subministraments per a la llar';
+
+  @override
+  String get categoryPet => 'Subministraments per a mascotes';
+
+  @override
+  String get categoryBaby => 'Bebè';
+
+  @override
+  String get categoryOthers => 'Altres';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hola $name, sóc Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hola, sóc Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Creo llistes, suggereixo receptes i trobo on guardar. Per on comencem?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Planifica una barbacoa';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, estic organitzant una barbacoa, ajuda\'m a crear la llista de la compra';
+
+  @override
+  String get aiRateLimitError =>
+      'Massa missatges en poc temps. Espereu uns segons i torneu-ho a provar.';
+
+  @override
+  String get chatHistoryErrorTitle =>
+      'No s\'ha pogut carregar aquesta conversa';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Alguna cosa va sortir malament al nostre costat. Toca Torna a provar per tornar-ho a provar.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Estàs fora de línia';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Comprova la teva connexió a Internet i torna-ho a provar.';
+
+  @override
+  String get aiGeneratingResponse => 'S\'està generant resposta...';
 }

@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -130,6 +144,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -346,6 +367,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -499,6 +523,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1129,6 +1160,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1239,6 +1280,20 @@
       }
     }
   },
+  "@paywallPricePerMonth": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@paywallSavePercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallSkipNow": {
     "description": "Skip paywall button"
   },
@@ -1254,6 +1309,13 @@
   },
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
+  },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
   },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
@@ -1287,6 +1349,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileSection": {
     "description": "Profile section header"
@@ -1351,7 +1436,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1478,23 +1577,37 @@
   "addingItems": "Adding items to list...",
   "addingToPantry": "Adding to pantry...",
   "advancedFeatures": "Funcziuns avanzadas",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Failed to run actions",
+  "agentActionsPremium": "Actions require Premium",
+  "agentActionsRunning": "Running actions...",
+  "aiApiError": "The AI service returned an error ({statusCode}).",
   "aiAssistant": "Assistant AI",
   "aiAssistantDescription": "Survegnir suggeriuns intelligentas, recipes e cussegls persunalisads cun nos assistant AI.",
   "aiAssistantTitle": "AI Assistant",
+  "aiConnectionError": "Could not connect to the AI service. Check your connection.",
   "aiCreditsRemaining": "{remaining} credits restants",
+  "aiEmptyResponseError": "The AI service returned an empty response.",
   "aiEnergy": "AI Energy",
   "aiEnergyLow": "Low AI energy",
   "aiError": "Perstgisai, in errur è capità processond Vossa dumonda. Controllai Vossa connexiun u empruvai pli tard.",
+  "aiGeneratingResponse": "Generating response…",
+  "aiInvalidResponseError": "The AI service returned an invalid response.",
   "aiLimitAlmostReached": "Almost out of AI messages",
   "aiPremiumDescription": "This interactive interface uses advanced artificial intelligence and is exclusive to Pro members or via a quick ad.",
+  "aiRateLimitError": "Too many messages in a short time. Wait a few seconds and try again.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} today",
+  "aiSection": "AI Assistant",
   "aiSubscribeUnlimited": "Subscribe for unlimited AI",
   "aiTeaserFallback": "Subscribe to Premium to unlock the full response and get unlimited AI tips for your shopping...",
+  "aiTimeoutError": "The request took too long. Please try again.",
   "aiUnlockUnlimited": "Unlock unlimited AI",
   "aiUsageExhausted": "Monthly AI limit reached. Upgrade to Pro for unlimited →",
   "aiUsageWarning": "{remaining} AI actions left this month — upgrade for unlimited",
   "aiVoiceCommandTooltip": "Cumond vocal AI (Premium)",
   "aiWelcomeContent": "Hello! 👋 I'm **Kipi**, your personal shopping and recipe assistant!\n\nI'm here to help you:\n🛒 **Organize** your shopping by categories automatically\n💰 **Track** your budget and give you money-saving tips\n🍲 **Suggest** delicious recipes with what you already have\n\nHow can I help you today? You can start by creating your first list!",
+  "aiWelcomeSuggestBarbecue": "Plan a barbecue",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, I'm hosting a barbecue — help me build the shopping list",
   "aiWelcomeSuggestCreateList": "Create my first list",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, help me create my first shopping list",
   "aiWelcomeSuggestSave": "How to save money?",
@@ -1504,9 +1617,12 @@
   "appTitle": "Lista da cumpras",
   "appearance": "Aspetg",
   "archiveList": "Archivar la lista",
+  "artifactBudgetLabel": "Budget:",
+  "artifactSynced": "Synced",
   "assistantHistory": "Assistant history",
   "assistantHistorySubtitle": "View your conversation history",
   "assistantName": "Assistant name",
+  "assistantRole": "Assistant",
   "backToChat": "Back to Chat",
   "backToToday": "Back to today",
   "backupExported": "Backup exportà!",
@@ -1514,6 +1630,7 @@
   "backupPremiumDescription": "Backup ed export è ina funcziun Premium",
   "backupSubtitle": "Exportar u importar Vossas datas",
   "backupTitle": "Backup",
+  "badResponse": "Bad response",
   "badgeBeginner": "Beginner",
   "badgeOrganized": "Organized",
   "badgeSavingMaster": "Saving Master",
@@ -1539,9 +1656,11 @@
   "catOthers": "Auters",
   "catalogAddItems": "Add {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Browse Catalog",
+  "catalogCategories": "Categories",
   "catalogFilterNational": "Nationals",
   "catalogMyFrequents": "My Frequents",
   "catalogProductNotFound": "Product not found, type the name",
+  "catalogRareBadge": "Rare",
   "catalogRareSection": "less common in your country",
   "catalogSearchGlobal": "Search any product...",
   "catalogSearchInCategory": "Search in {category}...",
@@ -1550,16 +1669,43 @@
   "catalogTitle": "Catalog",
   "categorizingItems": "Categorizing items...",
   "category": "Categoria",
+  "categoryAlcohol": "Alcoholic beverages",
+  "categoryBaby": "Baby",
+  "categoryBakery": "Bakery",
+  "categoryBeverages": "Beverages",
+  "categoryCanned": "Canned goods",
+  "categoryCleaning": "Cleaning",
+  "categoryColdCuts": "Cold cuts",
   "categoryColorLabel": "Color",
+  "categoryDairy": "Dairy",
+  "categoryFish": "Fish",
+  "categoryFrozen": "Frozen foods",
+  "categoryFruits": "Fruits",
+  "categoryGrains": "Grains and cereals",
+  "categoryHygiene": "Personal care",
   "categoryIconLabel": "Icon",
   "categoryLimitReached": "Limit of 10 categories on the free version. Upgrade to Pro!",
+  "categoryMeat": "Meat",
   "categoryName": "Category name",
   "categoryNameHint": "E.g.: Meats",
+  "categoryOthers": "Other",
+  "categoryPet": "Pet supplies",
+  "categorySeasonings": "Seasonings",
+  "categorySweets": "Sweets and desserts",
+  "categoryUtilities": "Household supplies",
+  "categoryVegetables": "Vegetables",
+  "chatEmptyGreeting": "Hi {name}, I'm Kipi 👋",
+  "chatEmptyGreetingNoName": "Hi, I'm Kipi 👋",
+  "chatEmptyPitch": "I build lists, suggest recipes, and find where to save. Where do we start?",
   "chatEmptySubtitle": "Ask for item suggestions, recipes or saving tips to get started.",
   "chatEmptyTitle": "Your chat is empty",
   "chatError": "Errur chargiand il chat: {error}",
   "chatHint": "Tippar Voss messadi...",
   "chatHintBlocked": "Unlock AI to chat",
+  "chatHistoryErrorBody": "Something went wrong on our end. Tap retry to try again.",
+  "chatHistoryErrorTitle": "Couldn't load this conversation",
+  "chatHistoryOfflineBody": "Check your internet connection and try again.",
+  "chatHistoryOfflineTitle": "You're offline",
   "chatSubtitle": "Dumandar per suggeriuns d'objects, recipes u cussegls da spargn.",
   "chatSubtitleShort": "Ask about prices, recipes, organization...",
   "checkingItem": "Checking item...",
@@ -1570,6 +1716,7 @@
   "chooseImageSource": "Choose image source",
   "chooseLanguage": "Select Language",
   "chooseThemeColor": "Choose Theme Color",
+  "chooseThemeMode": "Select theme mode",
   "clear": "Sgiar",
   "clearHistory": "Sgiar l'istorgia",
   "clearHistoryConfirm": "Sgiar tut ils messadis en questa sesiun?",
@@ -1618,6 +1765,10 @@
   "customizeAssistant": "Customize",
   "dark": "Stgir",
   "data": "Datas",
+  "dateGroupOlder": "Older",
+  "dateGroupPrevious7Days": "Previous 7 days",
+  "dateGroupToday": "Today",
+  "dateGroupYesterday": "Yesterday",
   "dayFri": "Fri",
   "dayMon": "Mon",
   "daySat": "Sat",
@@ -1641,6 +1792,7 @@
   "deleteRecipeConfirmMsg": "Are you sure you want to delete \"{recipeName}\"? This action cannot be undone.",
   "deleteSession": "Delete Chat",
   "deleteSessionConfirm": "Are you sure you want to delete this chat? The messages will be permanently lost.",
+  "deletedList": "Deleted list",
   "deselectAll": "Tut desselegier",
   "dietaryRestrictions": "Dietary Restrictions",
   "dietaryRestrictionsHint": "E.g.: vegan, vegetarian, gluten-free",
@@ -1653,6 +1805,7 @@
   "editCategoryDialog": "Edit category",
   "editItem": "Modifitgar object",
   "editItemPrice": "Pretsch stimà",
+  "editMessage": "Edit message",
   "editPantryItem": "Modifitgar {name}",
   "editRecipe": "Edit",
   "editRecipeTitle": "Edit Recipe",
@@ -1678,6 +1831,7 @@
   "errorLoadingChat": "Oops! Something went wrong loading the chat.",
   "errorLoadingChatSubtitle": "Check your connection or try again later.",
   "errorLoadingHistory": "Error loading history",
+  "errorLoadingItems": "Error loading items",
   "errorLoadingLists": "Error loading lists",
   "errorLoadingProducts": "Error loading products: {error}",
   "errorLoadingRecipes": "Error loading recipes",
@@ -1752,6 +1906,7 @@
   "generatingShareLink": "Generating share link...",
   "gestureHint": "Hold to select • Swipe to remove",
   "globalAssistant": "Assistant global",
+  "goodResponse": "Good response",
   "howCanIHelp": "How can I help?",
   "icon": "Icon:",
   "idealQty": "Quantitad ideal",
@@ -1770,14 +1925,18 @@
   "inviteToList": "Invite to list",
   "itemAdded": "{name} added",
   "itemAddedSnack": "{name} added",
+  "itemAddedToList": "Item added to the list.",
   "itemName": "Num da l'object",
   "itemRemoved": "Object allontanà",
   "itemsAddedSuccess": "Objects agiuntads cun success a la lista!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} object(s) ston vegnir cumprà",
   "itemsPurchased": "Items Purchased",
   "itemsPurchasedCount": "{purchased} of {total} purchased",
   "itemsPurchasedShort": "{purchased}/{total} purchased",
   "itemsWillBeAdded": "{count} object(s) vegnan agiuntads",
+  "keepAdding": "Keep adding",
+  "keepAddingSubtitle": "Keep the sheet open to add multiple items",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "What do you need to buy?",
@@ -1816,16 +1975,22 @@
   "marketsToAvoid": "Markets to Avoid",
   "marketsToAvoidHint": "E.g.: Market Y, Market Z",
   "mealPlannerAddMeal": "Add Meal",
+  "mealPlannerAddType": "Add meal type",
+  "mealPlannerCustomTypeLabel": "Custom type",
   "mealPlannerDateLabel": "Date",
+  "mealPlannerDefaultTypeLabel": "Default type",
   "mealPlannerDeleteMeal": "Remove meal",
   "mealPlannerEditMeal": "Edit Meal",
+  "mealPlannerEditType": "Edit meal type",
   "mealPlannerError": "Error loading meal plan",
+  "mealPlannerEstimatePartial": "Estimate based on recipes with partial price data.",
   "mealPlannerGenerateList": "Generate shopping list",
   "mealPlannerGenerateListConfirm": "Add all ingredients from planned meals this week to your shopping list?",
   "mealPlannerGenerateListEmpty": "No ingredients to add. Plan some meals with recipes first.",
   "mealPlannerGenerateListNoList": "Create a shopping list first.",
   "mealPlannerGenerateListSuccess": "{count} ingredient(s) added to your list!",
   "mealPlannerLoading": "Loading meal plan...",
+  "mealPlannerManageTypes": "Manage meal types",
   "mealPlannerMealDeleted": "Meal removed",
   "mealPlannerMealTypeBreakfast": "Breakfast",
   "mealPlannerMealTypeDinner": "Dinner",
@@ -1845,6 +2010,12 @@
   "mealPlannerServings": "{count,plural, one{{count} serving} other{{count} servings}}",
   "mealPlannerServingsLabel": "Servings",
   "mealPlannerTitle": "Meal Planner",
+  "mealPlannerTypeColor": "Color",
+  "mealPlannerTypeDeleteConfirm": "Are you sure you want to delete this meal type? Planned meals with this type will remain.",
+  "mealPlannerTypeDeleteError": "Cannot delete this meal type.",
+  "mealPlannerTypeIcon": "Icon",
+  "mealPlannerTypeName": "Name",
+  "mealPlannerTypeNameEmpty": "Name cannot be empty",
   "mealPlannerViewMonthly": "Monthly view",
   "mealPlannerViewWeekly": "Weekly view",
   "mealPlannerWeekEmpty": "Nothing planned for this week",
@@ -2070,6 +2241,7 @@
   "onboardingViewAllPlans": "View all plans",
   "onboardingWelcomeDesc": "The smartest way to organize your shopping and save money.",
   "onboardingWelcomeTitle": "Welcome to KipiList",
+  "openConversation": "Open conversation",
   "openMenu": "Open menu",
   "organizeAisles": "Organisar per curridors",
   "organizeAislesPrompt": "Organisar per curridors dal martgà.",
@@ -2081,15 +2253,18 @@
   "pantryAppBar": "Dispensa",
   "pantryAvailabilityAll": "All set!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} in pantry",
+  "pantryDeficitCount": "Missing {count}{unit}",
   "pantryEditTitle": "Modifitgar {name}",
   "pantryEmpty": "Dispensa vita",
   "pantryEmptySubtitle": "Agiuntar products che Vus volais tegnair a chasa",
+  "pantryItemAdded": "Item added",
   "pantryItemRemoved": "Object allontanà",
   "pantryLimitReached": "Limit of {count} items in pantry on the free plan. Upgrade to add more.",
   "paywallAfterItem1": "Grains",
   "paywallAfterItem2": "Cleaning",
   "paywallAfterItem3": "Meats",
   "paywallAfterItem4": "Bakery",
+  "paywallBasedOnAnswers": "Personalized from your answers",
   "paywallBeforeAfterTitle": "AI Before and After:",
   "paywallBeforeItem1": "rice",
   "paywallBeforeItem2": "soap",
@@ -2127,6 +2302,8 @@
   "paywallGoalHeadlinePantry": "{name}, track your pantry perfectly!",
   "paywallGoalHeadlineRecipes": "{name}, discover new recipes!",
   "paywallGoalHeadlineSaveMoney": "{name}, save on every trip!",
+  "paywallHeroFeatureDesc": "Speak or paste a whole list — AI sorts, categorizes and budgets it in seconds",
+  "paywallHeroFeatureTitle": "AI Shopping Assistant",
   "paywallHeroHeadline": "Kipi AI always by your side",
   "paywallHeroSubtitle": "Add items, organize lists and save time with AI in your pocket",
   "paywallHeroSubtitlePersonalized": "Hey {name}, organize your shopping the right way.",
@@ -2161,6 +2338,11 @@
   "paywallTestimonial2Text": "I never forgot a list item again. The AI chat is sensational!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "What our users say:",
+  "paywallTimelineChargeDesc": "Your subscription starts — cancel anytime",
+  "paywallTimelineDay": "Day {day}",
+  "paywallTimelineReminderDesc": "We remind you before the trial ends",
+  "paywallTimelineToday": "Today",
+  "paywallTimelineTodayDesc": "Unlock full access instantly",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Start Free Trial",
   "paywallTrialDays": "{days} DAYS FREE",
@@ -2183,11 +2365,15 @@
   "prefSharing": "Cundivider listas",
   "prefUnlimitedLists": "Listas illimità",
   "prefUnlimitedPantry": "Dispensa illimitada",
+  "preferencesSection": "Preferences",
   "preferredMarket": "Preferred Market",
   "preferredMarketHint": "E.g.: Supermarket X",
+  "premiumActionsPrompt": "Subscribe to Premium to unlock automatic actions.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Actualisar per debloccar",
   "prepTime": "Prep time",
   "prepTimeMinutes": "Prep time (minutes)",
+  "previousItemState": "Previous state: {quantity} {unit} [{category}]{price}",
   "privacy": "Privatesa",
   "processing": "Processing...",
   "product": "Product",
@@ -2207,21 +2393,34 @@
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "Querying your lists...",
+  "quickActionAi": "Chat with Kipi",
+  "quickActionPantry": "View pantry",
   "quickRecipe": "Recipe spert",
   "quickRecipePrompt": "Suggerir recipes cun objects da ma lista.",
   "quickReplies": "Quick replies:",
   "quickSuggestions": "Quick suggestions",
+  "recipeAddError": "Couldn't add to your list. Please try again.",
   "recipeAddToList": "Add to shopping list",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Recipe created!",
   "recipeDeleted": "Recipe deleted",
+  "recipeEstimatePartial": "Partial estimate based on ingredients with price.",
+  "recipeEstimatedCostPerServing": "{cost} / serving",
+  "recipeEstimatedTotalCost": "Estimated total cost",
   "recipeImage": "Recipe image",
+  "recipeIngredientInPantry": "In pantry",
+  "recipeIngredientLowPantry": "Low in pantry",
   "recipeIngredientSingular": "1 ingredient",
   "recipeIngredientsPlural": "{count} ingredients",
+  "recipeManualTotalCost": "Manual total cost",
+  "recipeManualTotalCostHint": "Leave empty to estimate from ingredient prices.",
   "recipeName": "Recipe name",
   "recipeSaved": "Recipe saved!",
+  "recipeServesCount": "Serves {count}",
   "recipeSuggestion": "Suggestiun da recipe",
   "recipeTags": "Recipe tags",
+  "recipeTapToCheck": "Tap an ingredient to check it off as you cook",
+  "recipeYieldServings": "Yield servings",
   "regenerate": "Regenerar",
   "remove": "Allontanar",
   "removeBudget": "Allontanar",
@@ -2256,9 +2455,12 @@
   "scanBarcodeTitle": "Scan Barcode",
   "scanProduct": "Scan Product",
   "scanProductTitle": "Scan Product",
+  "scrollToBottom": "Scroll to bottom",
+  "searchConversations": "Search conversations",
   "searchCurrency": "Search currency...",
   "searchInConversation": "Search in conversation...",
   "searchLanguage": "Search language...",
+  "searchMessages": "Search messages...",
   "searchRecipes": "Search recipes...",
   "searchingCategories": "Searching categories...",
   "searchingProducts": "Searching products...",
@@ -2298,6 +2500,7 @@
   "signInGoogle": "Annunzia cun Google",
   "skip": "Skip",
   "smartOrganization": "Organisaziun intelligenta",
+  "somethingWentWrong": "Something went wrong",
   "sortAZ": "A-Z",
   "sortCategory": "Categoria",
   "sortDate": "Data",
@@ -2329,6 +2532,7 @@
   "themeColor": "Culur dal tema",
   "themeGreen": "Verd",
   "themeIndigo": "Indigo",
+  "themeMode": "Theme mode",
   "themeOrange": "Oransch",
   "themePink": "Rosa",
   "themePurple": "Violet",
@@ -2346,6 +2550,7 @@
   "toolSaveRecipe": "Save recipe",
   "toolShareList": "Share list",
   "totalEstimated": "Total stimà: {amount}",
+  "totalEstimatedLabel": "Estimated total",
   "totalSavings": "Total Savings",
   "totalSpending": "Total spender",
   "trackStock": "Moniturschar il stock",
@@ -2353,6 +2558,7 @@
   "trackStockInactive": "Na genera nagina suggestiun da cumpras",
   "uncheckingItem": "Unchecking item...",
   "undo": "Revocar",
+  "undoChanges": "Undo changes",
   "unit": "Unidad",
   "unitPack": "pachet",
   "unlockAi": "Unlock unlimited AI",
@@ -2366,6 +2572,7 @@
   "updatingPantry": "Updating pantry...",
   "upgrade": "Actualisar",
   "userProfile": "User Profile",
+  "userRole": "You",
   "validForLimitedTime": "Valid per in temp limità",
   "version": "Versiun",
   "viewActive": "Mussar activ",
@@ -2373,6 +2580,7 @@
   "viewHistory": "Mussar istorgia",
   "viewItems": "View items",
   "viewList": "Mussar la lista",
+  "viewPlans": "View plans",
   "viewPro": "View Pro",
   "viewRecipe": "View Recipe",
   "voiceCommandContent": "Discurri natiralmain per administrar Vossa lista!\n\nExempels:\n• 'Agiuntar paun, chaschiel e charmella'\n• 'Allontanar detergent'\n• 'Midar il tema en blau'\n\nQuai è ina funcziun exclusiva da KipiList Premium.",

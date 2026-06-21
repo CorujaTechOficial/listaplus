@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_list/app/meal_planner/providers/meal_plan_cost_models.dart';
+import 'package:shopping_list/app/meal_planner/providers/meal_planner_providers.dart';
+import 'package:shopping_list/core/providers/preferences_providers.dart';
+import 'package:shopping_list/core/utils/formatters.dart';
 import 'package:shopping_list/app/recipes/providers/recipes_providers.dart';
+import 'package:shopping_list/theme/app_theme.dart';
 import 'package:shopping_list/generated/l10n/app_localizations.dart';
 import 'package:shopping_list/models/recipe.dart';
 import 'package:shopping_list/models/shopping_item.dart';
@@ -29,10 +34,16 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final recipesAsync = ref.watch(recipesProvider);
+    final costDetailsAsync = ref.watch(recipeCostDetailsProvider(widget.recipeId));
+    final currencyCode = resolveCurrencyCode(
+      ref.watch(currencySettingProvider),
+      Localizations.localeOf(context),
+    );
 
     return recipesAsync.when(
       data: (recipes) {
-        final recipe = recipes.where((r) => r.id == widget.recipeId).firstOrNull;
+        final recipe =
+            recipes.where((r) => r.id == widget.recipeId).firstOrNull;
         if (recipe == null) {
           return Scaffold(
             appBar: AppBar(),
@@ -44,6 +55,7 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
           body: CustomScrollView(
             slivers: [
               SliverAppBar(
+                backgroundColor: Colors.transparent,
                 expandedHeight: 250,
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
@@ -63,17 +75,15 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
                     fit: StackFit.expand,
                     children: [
                       if (recipe.imageUrl != null)
-                        Image.network(
-                          recipe.imageUrl!,
-                          fit: BoxFit.cover,
-                        )
+                        Image.network(recipe.imageUrl!, fit: BoxFit.cover)
                       else
                         Container(
                           color: theme.colorScheme.primaryContainer,
                           child: Icon(
                             Icons.restaurant,
                             size: 80,
-                            color: theme.colorScheme.onPrimaryContainer.withAlpha((0.2 * 255).toInt()),
+                            color: theme.colorScheme.onPrimaryContainer
+                                .withAlpha((0.2 * 255).toInt()),
                           ),
                         ),
                       const DecoratedBox(
@@ -82,10 +92,11 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: [
+                              Colors.black54,
                               Colors.transparent,
                               Colors.black54,
                             ],
-                            stops: [0.6, 1.0],
+                            stops: [0.0, 0.5, 1.0],
                           ),
                         ),
                       ),
@@ -113,6 +124,8 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
               SliverToBoxAdapter(
                 child: _RecipeDetailBody(
                   recipe: recipe,
+                  costDetails: costDetailsAsync.asData?.value,
+                  currencyCode: currencyCode,
                   preparedIngredients: _preparedIngredients,
                   onToggleIngredient: (id) {
                     setState(() {
@@ -130,65 +143,80 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
           bottomNavigationBar: _buildBottomBar(context, ref, recipe, l10n),
         );
       },
-      loading: () => const Scaffold(body: Center(child: CircularProgressIndicator())),
-      error: (e, _) => Scaffold(
-        appBar: AppBar(),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(Spacing.xl),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.error_outline, size: 48, color: theme.colorScheme.error),
-                const SizedBox(height: Spacing.md),
-                Text(l10n.errorLoadingRecipes),
-                const SizedBox(height: Spacing.md),
-                FilledButton.icon(
-                  onPressed: () => ref.invalidate(recipesProvider),
-                  icon: const Icon(Icons.refresh),
-                  label: Text(l10n.retry),
+      loading:
+          () =>
+              const Scaffold(body: Center(child: CircularProgressIndicator())),
+      error:
+          (e, _) => Scaffold(
+            appBar: AppBar(),
+            body: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(Spacing.xl),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.error_outline,
+                      size: 48,
+                      color: theme.colorScheme.error,
+                    ),
+                    const SizedBox(height: Spacing.md),
+                    Text(l10n.errorLoadingRecipes),
+                    const SizedBox(height: Spacing.md),
+                    FilledButton.icon(
+                      onPressed: () => ref.invalidate(recipesProvider),
+                      icon: const Icon(Icons.refresh),
+                      label: Text(l10n.retry),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
-        ),
-      ),
     );
   }
 
-  void _confirmDelete(BuildContext context, WidgetRef ref, Recipe recipe, AppLocalizations l10n) {
+  void _confirmDelete(
+    BuildContext context,
+    WidgetRef ref,
+    Recipe recipe,
+    AppLocalizations l10n,
+  ) {
     showDialog<void>(
       context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(l10n.deleteRecipeConfirm),
-        content: Text(l10n.deleteRecipeConfirmMsg(recipe.name)),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: Text(l10n.cancel),
-          ),
-          FilledButton(
-            onPressed: () {
-              ref.read(recipesProvider.notifier).deleteRecipe(recipe.id);
-              Navigator.pop(ctx);
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(l10n.recipeDeleted),
-                  action: SnackBarAction(
-                    label: l10n.undo,
-                    onPressed: () {
-                      ref.read(recipesProvider.notifier).saveRecipe(recipe);
-                    },
-                  ),
+      builder:
+          (ctx) => AlertDialog(
+            title: Text(l10n.deleteRecipeConfirm),
+            content: Text(l10n.deleteRecipeConfirmMsg(recipe.name)),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: Text(l10n.cancel),
+              ),
+              FilledButton(
+                onPressed: () {
+                  ref.read(recipesProvider.notifier).deleteRecipe(recipe.id);
+                  Navigator.pop(ctx);
+                  Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(l10n.recipeDeleted),
+                      action: SnackBarAction(
+                        label: l10n.undo,
+                        onPressed: () {
+                          ref.read(recipesProvider.notifier).saveRecipe(recipe);
+                        },
+                      ),
+                    ),
+                  );
+                },
+                style: FilledButton.styleFrom(
+                  backgroundColor: Theme.of(context).colorScheme.error,
                 ),
-              );
-            },
-            style: FilledButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.error),
-            child: Text(l10n.deleteRecipe),
+                child: Text(l10n.deleteRecipe),
+              ),
+            ],
           ),
-        ],
-      ),
     );
   }
 
@@ -221,9 +249,9 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
           final currentListId = await ref.read(currentListIdProvider.future);
           if (currentListId == null) {
             if (context.mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(l10n.noListSelected)),
-              );
+              ScaffoldMessenger.of(
+                context,
+              ).showSnackBar(SnackBar(content: Text(l10n.noListSelected)));
             }
             return;
           }
@@ -260,11 +288,11 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
                 ),
               );
             }
-          } on Exception catch (e) {
+          } on Exception catch (_) {
             if (context.mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(e.toString())),
-              );
+              ScaffoldMessenger.of(
+                context,
+              ).showSnackBar(SnackBar(content: Text(l10n.recipeAddError)));
             }
           }
         },
@@ -284,11 +312,15 @@ class _RecipeDetailScreenState extends ConsumerState<RecipeDetailScreen> {
 class _RecipeDetailBody extends StatelessWidget {
   const _RecipeDetailBody({
     required this.recipe,
+    required this.costDetails,
+    required this.currencyCode,
     required this.preparedIngredients,
     required this.onToggleIngredient,
   });
 
   final Recipe recipe;
+  final RecipeCostDetails? costDetails;
+  final String currencyCode;
   final Set<String> preparedIngredients;
   final ValueChanged<String> onToggleIngredient;
 
@@ -324,34 +356,61 @@ class _RecipeDetailBody extends StatelessWidget {
               ),
             ],
           ),
+          if (costDetails != null) ...[
+            const SizedBox(height: Spacing.md),
+            _RecipeCostSummary(
+              details: costDetails!,
+              currencyCode: currencyCode,
+            ),
+          ],
           if (recipe.tags.isNotEmpty) ...[
             const SizedBox(height: Spacing.md),
             Wrap(
               spacing: 6,
               runSpacing: 6,
-              children: recipe.tags.map(
-                (tag) => Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.secondaryContainer.withAlpha((0.5 * 255).toInt()),
-                    borderRadius: BorderRadius.circular(RadiusTokens.sm),
-                  ),
-                  child: Text(
-                    tag,
-                    style: theme.textTheme.labelSmall?.copyWith(
-                      color: theme.colorScheme.onSecondaryContainer,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ).toList(),
+              children:
+                  recipe.tags
+                      .map(
+                        (tag) => Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: Spacing.xxs,
+                          ),
+                          decoration: BoxDecoration(
+                            color: theme.colorScheme.secondaryContainer
+                                .withAlpha((0.5 * 255).toInt()),
+                            borderRadius: BorderRadius.circular(
+                              RadiusTokens.sm,
+                            ),
+                          ),
+                          child: Text(
+                            tag,
+                            style: theme.textTheme.labelSmall?.copyWith(
+                              color: theme.colorScheme.onSecondaryContainer,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      )
+                      .toList(),
             ),
           ],
           const SizedBox(height: Spacing.xl),
           Text(
             l10n.ingredients,
-            style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+            style: theme.textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          if (recipe.ingredients.isNotEmpty) ...[
+            const SizedBox(height: Spacing.xxs),
+            Text(
+              l10n.recipeTapToCheck,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+          ],
           const SizedBox(height: Spacing.sm),
           ...recipe.ingredients.map(
             (ingredient) => _IngredientTile(
@@ -363,16 +422,89 @@ class _RecipeDetailBody extends StatelessWidget {
           const SizedBox(height: Spacing.xl),
           Text(
             l10n.instructions,
-            style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+            style: theme.textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: Spacing.sm),
           ...recipe.instructions.asMap().entries.map(
-            (entry) => _InstructionStep(
-              number: entry.key + 1,
-              text: entry.value,
-            ),
+            (entry) =>
+                _InstructionStep(number: entry.key + 1, text: entry.value),
           ),
           const SizedBox(height: Spacing.xxl),
+        ],
+      ),
+    );
+  }
+}
+
+class _RecipeCostSummary extends StatelessWidget {
+  const _RecipeCostSummary({
+    required this.details,
+    required this.currencyCode,
+  });
+
+  final RecipeCostDetails details;
+  final String currencyCode;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final totalCost = formatCurrency(details.effectiveTotalCost, currencyCode);
+    final costPerServing = formatCurrency(details.costPerServing, currencyCode);
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(Spacing.md),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(RadiusTokens.lg),
+        border: Border.all(
+          color: theme.colorScheme.outlineVariant.withAlpha(80),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            l10n.recipeServesCount(details.normalizedYieldServings),
+            style: theme.textTheme.labelLarge?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: Spacing.xs),
+          Text(
+            l10n.recipeEstimatedTotalCost,
+            style: theme.textTheme.titleSmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+          const SizedBox(height: Spacing.xxs),
+          Text(
+            totalCost,
+            style: theme.textTheme.headlineSmall?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: theme.colorScheme.onSurface,
+            ),
+          ),
+          const SizedBox(height: Spacing.xs),
+          Text(
+            l10n.recipeEstimatedCostPerServing(costPerServing),
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+          if (details.hasPartialPricing) ...[
+            const SizedBox(height: Spacing.sm),
+            Text(
+              l10n.recipeEstimatePartial,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+          ],
         ],
       ),
     );
@@ -388,16 +520,21 @@ class _InfoChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      padding: const EdgeInsets.symmetric(
+        horizontal: Spacing.sm,
+        vertical: Spacing.xs,
+      ),
       decoration: BoxDecoration(
-        color: theme.colorScheme.surfaceContainerHighest.withAlpha((0.5 * 255).toInt()),
+        color: theme.colorScheme.surfaceContainerHighest.withAlpha(
+          (0.5 * 255).toInt(),
+        ),
         borderRadius: BorderRadius.circular(RadiusTokens.md),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(icon, size: 18, color: theme.colorScheme.primary),
-          const SizedBox(width: 8),
+          const SizedBox(width: Spacing.xs),
           Text(
             label,
             style: theme.textTheme.labelMedium?.copyWith(
@@ -425,6 +562,8 @@ class _IngredientTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
+    final semanticColors = AppSemanticColors.of(context);
     final pantryItem = ref.watch(findInPantryProvider(ingredient.name));
     final hasStock = pantryItem != null && pantryItem.currentQuantity > 0;
     final isLowStock = pantryItem != null && pantryItem.needsRestock;
@@ -439,9 +578,12 @@ class _IngredientTile extends ConsumerWidget {
             Icon(
               isPrepared ? Icons.check_circle : Icons.circle_outlined,
               size: 20,
-              color: isPrepared ? theme.colorScheme.primary : theme.colorScheme.outline,
+              color:
+                  isPrepared
+                      ? theme.colorScheme.primary
+                      : theme.colorScheme.outline,
             ),
-            const SizedBox(width: 12),
+            const SizedBox(width: Spacing.sm),
             Expanded(
               child: Text(
                 ingredient.quantity > 0
@@ -449,21 +591,38 @@ class _IngredientTile extends ConsumerWidget {
                     : ingredient.name,
                 style: TextStyle(
                   decoration: isPrepared ? TextDecoration.lineThrough : null,
-                  color: isPrepared ? theme.colorScheme.onSurfaceVariant.withAlpha((0.5 * 255).toInt()) : null,
+                  color:
+                      isPrepared
+                          ? theme.colorScheme.onSurfaceVariant.withAlpha(
+                            (0.5 * 255).toInt(),
+                          )
+                          : null,
                 ),
               ),
             ),
             if (hasStock)
-              Icon(
-                Icons.inventory_2,
-                size: 14,
-                color: isLowStock ? Colors.orange : Colors.green,
+              Semantics(
+                label:
+                    isLowStock
+                        ? l10n.recipeIngredientLowPantry
+                        : l10n.recipeIngredientInPantry,
+                child: Icon(
+                  Icons.inventory_2,
+                  size: 14,
+                  color:
+                      isLowStock
+                          ? semanticColors.warning
+                          : semanticColors.success,
+                ),
               ),
             if (!hasStock && pantryItem != null)
-              const Icon(
-                Icons.inventory_2_outlined,
-                size: 14,
-                color: Colors.red,
+              Semantics(
+                label: l10n.recipeIngredientLowPantry,
+                child: Icon(
+                  Icons.inventory_2_outlined,
+                  size: 14,
+                  color: semanticColors.warning,
+                ),
               ),
           ],
         ),
@@ -471,7 +630,6 @@ class _IngredientTile extends ConsumerWidget {
     );
   }
 }
-
 
 class _InstructionStep extends StatelessWidget {
   const _InstructionStep({required this.number, required this.text});
@@ -503,7 +661,7 @@ class _InstructionStep extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: Spacing.md),
           Expanded(
             child: Text(
               text,

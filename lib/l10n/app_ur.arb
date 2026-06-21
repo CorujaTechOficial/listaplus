@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -130,6 +144,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -334,6 +355,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingProducts": {
     "placeholders": {
       "error": {
@@ -481,6 +505,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1105,6 +1136,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1231,6 +1272,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1263,6 +1311,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@progressBudget": {
     "placeholders": {
@@ -1324,7 +1395,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1448,23 +1533,37 @@
   "addingItems": "فہرست میں آئٹمز شامل کیے جا رہے ہیں...",
   "addingToPantry": "پینٹری میں شامل کیا جا رہا ہے...",
   "advancedFeatures": "جدید فیچرز",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "کارروائیاں چلانے میں ناکام",
+  "agentActionsPremium": "کارروائیوں کو پریمیم درکار ہے۔",
+  "agentActionsRunning": "کارروائیاں چل رہی ہیں...",
+  "aiApiError": "AI سروس نے ایک غلطی ({statusCode}) لوٹائی۔",
   "aiAssistant": "AI مددگار",
   "aiAssistantDescription": "ہمارے AI مددگار کے ساتھ ہوشیار تجاویز، ترکیبیں اور ذاتی مشورے حاصل کریں۔",
   "aiAssistantTitle": "اے آئی اسسٹنٹ",
+  "aiConnectionError": "AI سروس سے منسلک نہیں ہو سکا۔ اپنا کنکشن چیک کریں۔",
   "aiCreditsRemaining": "{remaining} کریڈٹ باقی",
+  "aiEmptyResponseError": "AI سروس نے ایک خالی جواب واپس کیا۔",
   "aiEnergy": "AI توانائی",
   "aiEnergyLow": "کم AI توانائی",
   "aiError": "معاف کیجیے، آپ کی درخواست پر کارروائی میں خرابی ہوئی۔ اپنا کنکشن چیک کریں یا بعد میں دوبارہ کوشش کریں۔",
+  "aiGeneratingResponse": "جواب تیار کیا جا رہا ہے…",
+  "aiInvalidResponseError": "AI سروس نے غلط جواب دیا۔",
   "aiLimitAlmostReached": "تقریباً AI پیغامات سے باہر",
   "aiPremiumDescription": "یہ انٹرایکٹو انٹرفیس جدید مصنوعی ذہانت کا استعمال کرتا ہے اور یہ صرف پرو ممبران کے لیے یا فوری اشتہار کے ذریعے ہے۔",
+  "aiRateLimitError": "مختصر وقت میں بہت زیادہ پیغامات۔ چند سیکنڈ انتظار کریں اور دوبارہ کوشش کریں۔",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} آج",
+  "aiSection": "اے آئی اسسٹنٹ",
   "aiSubscribeUnlimited": "لامحدود AI کے لیے سبسکرائب کریں۔",
   "aiTeaserFallback": "مکمل جواب کو غیر مقفل کرنے کے لیے پریمیم کو سبسکرائب کریں اور اپنی خریداری کے لیے لامحدود AI ٹپس حاصل کریں...",
+  "aiTimeoutError": "درخواست میں کافی وقت لگا۔ براہ کرم دوبارہ کوشش کریں۔",
   "aiUnlockUnlimited": "لامحدود AI کو غیر مقفل کریں۔",
   "aiUsageExhausted": "ماہانہ AI کی حد پوری ہو گئی۔ لامحدود → کے لیے پرو میں اپ گریڈ کریں۔",
   "aiUsageWarning": "{remaining} AI ایکشنز اس مہینے رہ گئے — لامحدود کے لیے اپ گریڈ کریں۔",
   "aiVoiceCommandTooltip": "AI صوتی کمانڈ (پریمیئم)",
   "aiWelcomeContent": "ہیلو! 👋 میں **Kipi** ہوں، آپ کا ذاتی شاپنگ اور ریسیپی اسسٹنٹ!\n\nمیں آپ کی مدد کے لیے حاضر ہوں:\n🛒 زمرہ جات کے لحاظ سے اپنی خریداری کو **منظم کریں**\n💰 **اپنے بجٹ کو ٹریک کریں** اور آپ کو پیسہ بچانے کی تجاویز دیں۔\n🍲 **تجویز کریں** مزیدار ترکیبیں جو آپ کے پاس پہلے سے موجود ہیں۔\n\nآج میں آپ کی مدد کیسے کر سکتا ہوں؟ آپ اپنی پہلی فہرست بنا کر شروع کر سکتے ہیں!",
+  "aiWelcomeSuggestBarbecue": "باربی کیو کا منصوبہ بنائیں",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi، میں باربی کیو کی میزبانی کر رہا ہوں — خریداری کی فہرست بنانے میں میری مدد کریں۔",
   "aiWelcomeSuggestCreateList": "میری پہلی فہرست بنائیں",
   "aiWelcomeSuggestCreateListPrompt": "Kipi، میری پہلی خریداری کی فہرست بنانے میں میری مدد کریں۔",
   "aiWelcomeSuggestSave": "پیسہ کیسے بچایا جائے؟",
@@ -1474,9 +1573,12 @@
   "appTitle": "خریداری کی فہرست",
   "appearance": "ظاہری شکل",
   "archiveList": "فہرست آرکائیو کریں",
+  "artifactBudgetLabel": "بجٹ:",
+  "artifactSynced": "مطابقت پذیر",
   "assistantHistory": "معاون کی تاریخ",
   "assistantHistorySubtitle": "اپنی گفتگو کی سرگزشت دیکھیں",
   "assistantName": "معاون کا نام",
+  "assistantRole": "اسسٹنٹ",
   "backToChat": "چیٹ پر واپس جائیں۔",
   "backToToday": "آج کی طرف واپس",
   "backupExported": "بیک اپ برآمد ہو گیا!",
@@ -1484,6 +1586,7 @@
   "backupPremiumDescription": "بیک اپ اور برآمد ایک پریمیئم فیچر ہے",
   "backupSubtitle": "اپنے ڈیٹا کو برآمد یا درآمد کریں",
   "backupTitle": "بیک اپ",
+  "badResponse": "برا جواب",
   "badgeBeginner": "مبتدی",
   "badgeOrganized": "منظم",
   "badgeSavingMaster": "سیونگ ماسٹر",
@@ -1509,9 +1612,11 @@
   "catOthers": "دیگر",
   "catalogAddItems": "شامل کریں {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "کیٹلاگ کو براؤز کریں۔",
+  "catalogCategories": "زمرہ جات",
   "catalogFilterNational": "شہری",
   "catalogMyFrequents": "میری بار بار",
   "catalogProductNotFound": "پروڈکٹ نہیں ملا، نام ٹائپ کریں۔",
+  "catalogRareBadge": "نایاب",
   "catalogRareSection": "آپ کے ملک میں کم عام",
   "catalogSearchGlobal": "کوئی بھی پروڈکٹ تلاش کریں...",
   "catalogSearchInCategory": "{category} میں تلاش کریں...",
@@ -1520,16 +1625,43 @@
   "catalogTitle": "کیٹلاگ",
   "categorizingItems": "اشیاء کی درجہ بندی کرنا...",
   "category": "زمرہ",
+  "categoryAlcohol": "الکحل مشروبات",
+  "categoryBaby": "بچہ",
+  "categoryBakery": "بیکری",
+  "categoryBeverages": "مشروبات",
+  "categoryCanned": "ڈبہ بند سامان",
+  "categoryCleaning": "صفائی",
+  "categoryColdCuts": "سردی کی کمی",
   "categoryColorLabel": "رنگ",
+  "categoryDairy": "ڈیری",
+  "categoryFish": "مچھلی",
+  "categoryFrozen": "منجمد کھانے کی اشیاء",
+  "categoryFruits": "پھل",
+  "categoryGrains": "اناج اور اناج",
+  "categoryHygiene": "ذاتی نگہداشت",
   "categoryIconLabel": "آئیکن",
   "categoryLimitReached": "مفت ورژن پر 10 زمروں کی حد۔ پرو میں اپ گریڈ کریں!",
+  "categoryMeat": "گوشت",
   "categoryName": "زمرہ کا نام",
   "categoryNameHint": "مثال کے طور پر: گوشت",
+  "categoryOthers": "دیگر",
+  "categoryPet": "پالتو جانوروں کا سامان",
+  "categorySeasonings": "مصالحے",
+  "categorySweets": "مٹھائیاں اور میٹھے۔",
+  "categoryUtilities": "گھریلو سامان",
+  "categoryVegetables": "سبزیاں",
+  "chatEmptyGreeting": "ہائے {name}، میں Kipi ہوں 👋",
+  "chatEmptyGreetingNoName": "ہیلو، میں کیپی ہوں 👋",
+  "chatEmptyPitch": "میں فہرستیں بناتا ہوں، ترکیبیں تجویز کرتا ہوں، اور تلاش کرتا ہوں کہ کہاں محفوظ کرنا ہے۔ ہم کہاں سے شروع کریں؟",
   "chatEmptySubtitle": "شروع کرنے کے لیے آئٹم کی تجاویز، ترکیبیں یا بچت کی تجاویز طلب کریں۔",
   "chatEmptyTitle": "آپ کی چیٹ خالی ہے۔",
   "chatError": "چیٹ لوڈ کرنے میں خرابی: {error}",
   "chatHint": "اپنا پیغام ٹائپ کریں...",
   "chatHintBlocked": "چیٹ کرنے کے لیے AI کو غیر مقفل کریں۔",
+  "chatHistoryErrorBody": "ہماری طرف سے کچھ غلط ہو گیا۔ دوبارہ کوشش کرنے کے لیے دوبارہ کوشش پر ٹیپ کریں۔",
+  "chatHistoryErrorTitle": "اس گفتگو کو لوڈ نہیں کیا جا سکا",
+  "chatHistoryOfflineBody": "اپنا انٹرنیٹ کنکشن چیک کریں اور دوبارہ کوشش کریں۔",
+  "chatHistoryOfflineTitle": "آپ آف لائن ہیں۔",
   "chatSubtitle": "اشیاء کی تجاویز، ترکیبیں یا بچت کے مشورے طلب کریں۔",
   "chatSubtitleShort": "قیمتوں، ترکیبوں، تنظیم کے بارے میں پوچھیں...",
   "checkingItem": "آئٹم کی جانچ ہو رہی ہے...",
@@ -1540,6 +1672,7 @@
   "chooseImageSource": "تصویر کا ذریعہ منتخب کریں۔",
   "chooseLanguage": "زبان منتخب کریں۔",
   "chooseThemeColor": "تھیم کا رنگ منتخب کریں۔",
+  "chooseThemeMode": "تھیم موڈ منتخب کریں۔",
   "clear": "صاف کریں",
   "clearHistory": "تاریخ صاف کریں",
   "clearHistoryConfirm": "اس سیشن میں تمام پیغامات صاف کریں؟",
@@ -1588,6 +1721,10 @@
   "customizeAssistant": "حسب ضرورت بنائیں",
   "dark": "اندھیرا",
   "data": "ڈیٹا",
+  "dateGroupOlder": "پرانا",
+  "dateGroupPrevious7Days": "پچھلے 7 دن",
+  "dateGroupToday": "آج",
+  "dateGroupYesterday": "کل",
   "dayFri": "جمعہ",
   "dayMon": "پیر",
   "daySat": "سات",
@@ -1611,6 +1748,7 @@
   "deleteRecipeConfirmMsg": "کیا آپ واقعی \"{recipeName}\" کو حذف کرنا چاہتے ہیں؟ اس کارروائی کو کالعدم نہیں کیا جا سکتا۔",
   "deleteSession": "چیٹ کو حذف کریں۔",
   "deleteSessionConfirm": "کیا آپ واقعی اس چیٹ کو حذف کرنا چاہتے ہیں؟ پیغامات مستقل طور پر ضائع ہو جائیں گے۔",
+  "deletedList": "حذف شدہ فہرست",
   "deselectAll": "سبھی کا انتخاب ختم کریں",
   "dietaryRestrictions": "غذائی پابندیاں",
   "dietaryRestrictionsHint": "مثال کے طور پر: ویگن، سبزی خور، گلوٹین فری",
@@ -1623,6 +1761,7 @@
   "editCategoryDialog": "زمرہ میں ترمیم کریں۔",
   "editItem": "شے میں ترمیم کریں",
   "editItemPrice": "متوقع قیمت",
+  "editMessage": "پیغام میں ترمیم کریں۔",
   "editPantryItem": "{name} میں ترمیم کریں",
   "editRecipe": "ترمیم کریں۔",
   "editRecipeTitle": "ترکیب میں ترمیم کریں۔",
@@ -1648,6 +1787,7 @@
   "errorLoadingChat": "افوہ! چیٹ لوڈ کرنے میں کچھ غلط ہو گیا۔",
   "errorLoadingChatSubtitle": "اپنا کنکشن چیک کریں یا بعد میں دوبارہ کوشش کریں۔",
   "errorLoadingHistory": "تاریخ لوڈ کرنے میں خرابی۔",
+  "errorLoadingItems": "آئٹمز لوڈ کرنے میں خرابی۔",
   "errorLoadingLists": "فہرستیں لوڈ کرنے میں خرابی۔",
   "errorLoadingProducts": "مصنوعات لوڈ کرنے میں خرابی: {error}",
   "errorLoadingRecipes": "ترکیبیں لوڈ کرنے میں خرابی۔",
@@ -1722,6 +1862,7 @@
   "generatingShareLink": "اشتراک کا لنک بنایا جا رہا ہے...",
   "gestureHint": "منتخب کرنے کے لیے دبائے رکھیں • ہٹانے کے لیے سوائپ کریں۔",
   "globalAssistant": "عالمی مددگار",
+  "goodResponse": "اچھا ردعمل",
   "howCanIHelp": "میں کس طرح مدد کر سکتا ہوں؟",
   "icon": "آئیکن:",
   "idealQty": "موزوں مقدار",
@@ -1740,14 +1881,18 @@
   "inviteToList": "فہرست میں مدعو کریں۔",
   "itemAdded": "{name} شامل کیا گیا۔",
   "itemAddedSnack": "{name} شامل کیا گیا۔",
+  "itemAddedToList": "فہرست میں شامل کردہ آئٹم۔",
   "itemName": "شے کا نام",
   "itemRemoved": "شے ہٹا دی گئی",
   "itemsAddedSuccess": "اشیاء کامیابی سے فہرست میں شامل ہو گئیں!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} شے(یں) خریدنے کی ضرورت ہے",
   "itemsPurchased": "اشیاء خریدی گئیں۔",
   "itemsPurchasedCount": "{total} میں سے {purchased} خریدی گئی۔",
   "itemsPurchasedShort": "{purchased}/{total} خریدی گئی۔",
   "itemsWillBeAdded": "{count} شے(یں) شامل کی جائیں گی",
+  "keepAdding": "شامل کرتے رہیں",
+  "keepAddingSubtitle": "متعدد اشیاء شامل کرنے کے لیے شیٹ کو کھلا رکھیں",
   "kipiListProActive": "KipiList Pro ایکٹو",
   "kipiListTitle": "کیپی لسٹ",
   "kipiQuickBarHint": "آپ کو خریدنے کی کیا ضرورت ہے؟",
@@ -1786,16 +1931,22 @@
   "marketsToAvoid": "بازاروں سے بچنے کے لیے",
   "marketsToAvoidHint": "جیسے: Market Y، Market Z",
   "mealPlannerAddMeal": "کھانا شامل کریں۔",
+  "mealPlannerAddType": "کھانے کی قسم شامل کریں۔",
+  "mealPlannerCustomTypeLabel": "حسب ضرورت قسم",
   "mealPlannerDateLabel": "تاریخ",
+  "mealPlannerDefaultTypeLabel": "پہلے سے طے شدہ قسم",
   "mealPlannerDeleteMeal": "کھانا ہٹا دیں۔",
   "mealPlannerEditMeal": "کھانے میں ترمیم کریں۔",
+  "mealPlannerEditType": "کھانے کی قسم میں ترمیم کریں۔",
   "mealPlannerError": "کھانے کا منصوبہ لوڈ کرنے میں خرابی۔",
+  "mealPlannerEstimatePartial": "جزوی قیمت کے اعداد و شمار کے ساتھ ترکیبوں کی بنیاد پر تخمینہ لگائیں۔",
   "mealPlannerGenerateList": "خریداری کی فہرست بنائیں",
   "mealPlannerGenerateListConfirm": "اس ہفتے منصوبہ بند کھانوں کے تمام اجزاء کو اپنی خریداری کی فہرست میں شامل کریں؟",
   "mealPlannerGenerateListEmpty": "شامل کرنے کے لیے کوئی اجزاء نہیں۔ پہلے ترکیبوں کے ساتھ کچھ کھانے کا منصوبہ بنائیں۔",
   "mealPlannerGenerateListNoList": "پہلے خریداری کی فہرست بنائیں۔",
   "mealPlannerGenerateListSuccess": "آپ کی فہرست میں {count} اجزاء شامل کیے گئے!",
   "mealPlannerLoading": "کھانے کا منصوبہ لوڈ ہو رہا ہے...",
+  "mealPlannerManageTypes": "کھانے کی اقسام کا انتظام کریں۔",
   "mealPlannerMealDeleted": "کھانا ہٹا دیا گیا۔",
   "mealPlannerMealTypeBreakfast": "ناشتہ",
   "mealPlannerMealTypeDinner": "رات کا کھانا",
@@ -1815,6 +1966,12 @@
   "mealPlannerServings": "{count,plural, one{{count} سرونگ} other{{count} سرونگ}}",
   "mealPlannerServingsLabel": "سرونگز",
   "mealPlannerTitle": "کھانے کا منصوبہ ساز",
+  "mealPlannerTypeColor": "رنگ",
+  "mealPlannerTypeDeleteConfirm": "کیا آپ واقعی کھانے کی اس قسم کو حذف کرنا چاہتے ہیں؟ اس قسم کے ساتھ منصوبہ بند کھانا باقی رہے گا۔",
+  "mealPlannerTypeDeleteError": "کھانے کی اس قسم کو حذف نہیں کیا جا سکتا۔",
+  "mealPlannerTypeIcon": "آئیکن",
+  "mealPlannerTypeName": "نام",
+  "mealPlannerTypeNameEmpty": "نام خالی نہیں ہو سکتا",
   "mealPlannerViewMonthly": "ماہانہ نظارہ",
   "mealPlannerViewWeekly": "ہفتہ وار نظارہ",
   "mealPlannerWeekEmpty": "اس ہفتے کے لیے کوئی منصوبہ بندی نہیں کی گئی۔",
@@ -1871,60 +2028,60 @@
   "noRecipesSavedHint": "نیچے دیئے گئے بٹن کو تھپتھپا کر اپنی پہلی حسب ضرورت ترکیب بنائیں۔",
   "noTracking": "کوئی ٹریکنگ نہیں",
   "notInformed": "سیٹ نہیں ہے۔",
-  "obHookCta": "Get Started",
-  "obHookSocial": "Trusted by thousands of shoppers worldwide",
-  "obHookSubtitle": "AI-powered lists that save you time and money, every single trip.",
-  "obHookTitle": "Smarter shopping starts here",
-  "obLoadingStepHabits": "Tuning to your shopping routine",
-  "obLoadingStepLists": "Preparing your smart lists",
-  "obLoadingStepProfile": "Adjusting for your household",
-  "obLoadingStepSavings": "Optimizing your savings strategy",
-  "obLoadingTitle": "Building your personalized plan...",
-  "obLoginApple": "Continue with Apple",
-  "obLoginError": "Sign-in failed. Try again or skip for now.",
-  "obLoginGoogle": "Continue with Google",
-  "obLoginSkip": "Not now",
-  "obLoginSubtitle": "Sign in so your lists sync across devices",
-  "obLoginTitle": "Save your plan",
-  "obPaywallRetry": "Try again",
-  "obPaywallTitle": "Unlock your plan",
-  "obQuizFrequencyBiweekly": "Every two weeks",
-  "obQuizFrequencyDaily": "Almost every day",
-  "obQuizFrequencyMonthly": "Big monthly haul",
-  "obQuizFrequencyTitle": "How often do you shop for groceries?",
-  "obQuizFrequencyWeekly": "Once a week",
-  "obQuizHouseholdCouple": "Me and my partner",
-  "obQuizHouseholdFamilyLarge": "Family of 5+",
-  "obQuizHouseholdFamilySmall": "Family of 3–4",
-  "obQuizHouseholdSolo": "Just me",
-  "obQuizHouseholdTitle": "Who do you shop for?",
-  "obQuizMethodMemory": "I keep it in my head",
-  "obQuizMethodNone": "I don't make lists",
-  "obQuizMethodNotes": "Notes app",
-  "obQuizMethodPaper": "Pen and paper",
-  "obQuizMethodTitle": "How do you make shopping lists today?",
-  "obQuizPainForget": "I always forget items",
-  "obQuizPainOverspend": "I spend more than planned",
-  "obQuizPainTime": "It takes too much time",
-  "obQuizPainTitle": "What frustrates you most about shopping?",
-  "obQuizPainWaste": "Food goes to waste at home",
-  "obQuizSavingsLarge": "As much as possible",
-  "obQuizSavingsMedium": "Around 10% of my grocery bill",
-  "obQuizSavingsSmall": "A little — every bit counts",
-  "obQuizSavingsTitle": "How much would you like to save monthly?",
-  "obRevealFeatureAi": "AI builds and organizes your lists",
-  "obRevealFeatureBudget": "Spending tracked against your goal",
-  "obRevealFeaturePantry": "Pantry tracking cuts food waste",
-  "obRevealFeatureShare": "Real-time sharing with your household",
-  "obRevealMonth": "Month {n}",
-  "obRevealSavingsCaption": "Projected savings with KipiList",
-  "obRevealSubtitle": "Here's how KipiList will work for you",
-  "obRevealTitle": "Your plan is ready!",
-  "obSocialQuote1": "I never forget anything anymore. The AI builds my list in seconds.",
-  "obSocialQuote2": "We cut our grocery bill noticeably in the first month.",
-  "obSocialQuote3": "Sharing the list with my partner ended our shopping chaos.",
-  "obSocialSubtitle": "Shoppers like you are already saving with KipiList",
-  "obSocialTitle": "You're in good company",
+  "obHookCta": "شروع کریں",
+  "obHookSocial": "دنیا بھر میں ہزاروں خریداروں کی طرف سے قابل اعتماد",
+  "obHookSubtitle": "AI سے چلنے والی فہرستیں جو آپ کا وقت اور پیسہ بچاتی ہیں، ہر ایک سفر۔",
+  "obHookTitle": "ہوشیار خریداری یہاں سے شروع ہوتی ہے۔",
+  "obLoadingStepHabits": "اپنی خریداری کے معمولات کے مطابق",
+  "obLoadingStepLists": "آپ کی سمارٹ فہرستیں تیار کرنا",
+  "obLoadingStepProfile": "اپنے گھر والوں کے لیے ایڈجسٹ کرنا",
+  "obLoadingStepSavings": "اپنی بچت کی حکمت عملی کو بہتر بنانا",
+  "obLoadingTitle": "اپنا ذاتی منصوبہ بنا رہا ہے...",
+  "obLoginApple": "ایپل کے ساتھ جاری رکھیں",
+  "obLoginError": "سائن ان ناکام ہو گیا۔ دوبارہ کوشش کریں یا ابھی کے لیے نظر انداز کریں۔",
+  "obLoginGoogle": "گوگل کے ساتھ جاری رکھیں",
+  "obLoginSkip": "ابھی نہیں۔",
+  "obLoginSubtitle": "سائن ان کریں تاکہ آپ کی فہرستیں تمام آلات پر مطابقت پذیر ہوں۔",
+  "obLoginTitle": "اپنا منصوبہ محفوظ کریں۔",
+  "obPaywallRetry": "دوبارہ کوشش کریں۔",
+  "obPaywallTitle": "اپنے منصوبے کو غیر مقفل کریں۔",
+  "obQuizFrequencyBiweekly": "ہر دو ہفتے بعد",
+  "obQuizFrequencyDaily": "تقریباً ہر روز",
+  "obQuizFrequencyMonthly": "بڑا ماہانہ سفر",
+  "obQuizFrequencyTitle": "آپ کتنی بار گروسری کی خریداری کرتے ہیں؟",
+  "obQuizFrequencyWeekly": "ہفتے میں ایک بار",
+  "obQuizHouseholdCouple": "میں اور میرا ساتھی",
+  "obQuizHouseholdFamilyLarge": "5+ کا خاندان",
+  "obQuizHouseholdFamilySmall": "3-4 کا خاندان",
+  "obQuizHouseholdSolo": "بس مجھے",
+  "obQuizHouseholdTitle": "آپ کس کے لیے خریداری کرتے ہیں؟",
+  "obQuizMethodMemory": "میں اسے اپنے سر میں رکھتا ہوں۔",
+  "obQuizMethodNone": "میں فہرستیں نہیں بناتا",
+  "obQuizMethodNotes": "نوٹس ایپ",
+  "obQuizMethodPaper": "قلم اور کاغذ",
+  "obQuizMethodTitle": "آج آپ خریداری کی فہرستیں کیسے بناتے ہیں؟",
+  "obQuizPainForget": "میں ہمیشہ اشیاء کو بھول جاتا ہوں۔",
+  "obQuizPainOverspend": "میں منصوبہ بندی سے زیادہ خرچ کرتا ہوں۔",
+  "obQuizPainTime": "اس میں بہت زیادہ وقت لگتا ہے۔",
+  "obQuizPainTitle": "خریداری کے بارے میں آپ کو سب سے زیادہ کیا مایوس کرتا ہے؟",
+  "obQuizPainWaste": "گھر کا کھانا ضائع ہو جاتا ہے۔",
+  "obQuizSavingsLarge": "جتنا ممکن ہو۔",
+  "obQuizSavingsMedium": "میرے گروسری بل کا تقریباً 10%",
+  "obQuizSavingsSmall": "تھوڑا سا - ہر تھوڑا سا شمار ہوتا ہے۔",
+  "obQuizSavingsTitle": "آپ ماہانہ کتنی بچت کرنا چاہیں گے؟",
+  "obRevealFeatureAi": "AI آپ کی فہرستیں بناتا اور منظم کرتا ہے۔",
+  "obRevealFeatureBudget": "آپ کے مقصد کے خلاف اخراجات کا پتہ لگایا جاتا ہے۔",
+  "obRevealFeaturePantry": "پینٹری سے باخبر رہنا کھانے کے فضلے کو کم کرتا ہے۔",
+  "obRevealFeatureShare": "اپنے گھر والوں کے ساتھ ریئل ٹائم شیئرنگ",
+  "obRevealMonth": "مہینہ {n}",
+  "obRevealSavingsCaption": "KipiList کے ساتھ متوقع بچت",
+  "obRevealSubtitle": "KipiList آپ کے لیے کیسے کام کرے گی یہ یہاں ہے۔",
+  "obRevealTitle": "آپ کا منصوبہ تیار ہے!",
+  "obSocialQuote1": "میں اب کبھی کچھ نہیں بھولتا۔ AI میری فہرست سیکنڈوں میں بناتا ہے۔",
+  "obSocialQuote2": "ہم نے پہلے مہینے میں اپنے گروسری بل کو نمایاں طور پر کاٹ دیا۔",
+  "obSocialQuote3": "اپنے ساتھی کے ساتھ فہرست کا اشتراک کرنے سے ہماری خریداری کی افراتفری ختم ہوگئی۔",
+  "obSocialSubtitle": "آپ جیسے خریدار پہلے ہی KipiList کے ساتھ بچت کر رہے ہیں۔",
+  "obSocialTitle": "آپ اچھی صحبت میں ہیں۔",
   "observations": "نوٹس",
   "observationsHint": "اسسٹنٹ کے لیے دیگر ترجیحات",
   "offlineBanner": "آپ آف لائن ہیں۔",
@@ -2040,6 +2197,7 @@
   "onboardingViewAllPlans": "تمام منصوبے دیکھیں",
   "onboardingWelcomeDesc": "اپنی خریداری کو منظم کرنے اور پیسے بچانے کا بہترین طریقہ۔",
   "onboardingWelcomeTitle": "KipiList میں خوش آمدید",
+  "openConversation": "کھلی گفتگو",
   "openMenu": "مینو کھولیں۔",
   "organizeAisles": "گلیوں کے مطابق منظم کریں",
   "organizeAislesPrompt": "مارکیٹ کی گلیوں کے مطابق منظم کریں۔",
@@ -2051,15 +2209,18 @@
   "pantryAppBar": "پینٹری",
   "pantryAvailabilityAll": "سب سیٹ!",
   "pantryAvailabilityCount": "پینٹری میں {availableCount}/{totalCount}",
+  "pantryDeficitCount": "غائب ہے {count}PH1__",
   "pantryEditTitle": "{name} میں ترمیم کریں",
   "pantryEmpty": "خالی پینٹری",
   "pantryEmptySubtitle": "وہ مصنوعات شامل کریں جو آپ گھر پر رکھنا چاہتے ہیں",
+  "pantryItemAdded": "آئٹم شامل کیا گیا۔",
   "pantryItemRemoved": "شے ہٹا دی گئی",
   "pantryLimitReached": "مفت پلان پر پینٹری میں {count} اشیاء کی حد۔ مزید شامل کرنے کے لیے اپ گریڈ کریں۔",
   "paywallAfterItem1": "اناج",
   "paywallAfterItem2": "صفائی",
   "paywallAfterItem3": "گوشت",
   "paywallAfterItem4": "بیکری",
+  "paywallBasedOnAnswers": "آپ کے جوابات سے ذاتی نوعیت کا",
   "paywallBeforeAfterTitle": "AI پہلے اور بعد میں:",
   "paywallBeforeItem1": "چاول",
   "paywallBeforeItem2": "صابن",
@@ -2097,6 +2258,8 @@
   "paywallGoalHeadlinePantry": "{name}، اپنی پینٹری کو بالکل ٹریک کریں!",
   "paywallGoalHeadlineRecipes": "{name}، نئی ترکیبیں دریافت کریں!",
   "paywallGoalHeadlineSaveMoney": "{name}، ہر سفر پر بچت کریں!",
+  "paywallHeroFeatureDesc": "ایک پوری فہرست بولیں یا پیسٹ کریں — AI ترتیب دیتا ہے، درجہ بندی کرتا ہے اور اسے سیکنڈوں میں بجٹ دیتا ہے۔",
+  "paywallHeroFeatureTitle": "اے آئی شاپنگ اسسٹنٹ",
   "paywallHeroHeadline": "Kipi AI ہمیشہ آپ کے ساتھ",
   "paywallHeroSubtitle": "آئٹمز شامل کریں، فہرستیں ترتیب دیں اور اپنی جیب میں AI کے ساتھ وقت بچائیں۔",
   "paywallHeroSubtitlePersonalized": "ارے {name}، اپنی خریداری کو صحیح طریقے سے منظم کریں۔",
@@ -2131,6 +2294,11 @@
   "paywallTestimonial2Text": "میں ایک فہرست آئٹم کو دوبارہ کبھی نہیں بھولا۔ AI چیٹ سنسنی خیز ہے!",
   "paywallTestimonialAuthor": "این ایس۔",
   "paywallTestimonialsTitle": "ہمارے صارفین کیا کہتے ہیں:",
+  "paywallTimelineChargeDesc": "آپ کی رکنیت شروع ہوتی ہے — کسی بھی وقت منسوخ کریں۔",
+  "paywallTimelineDay": "دن {day}",
+  "paywallTimelineReminderDesc": "ٹرائل ختم ہونے سے پہلے ہم آپ کو یاد دلاتے ہیں۔",
+  "paywallTimelineToday": "آج",
+  "paywallTimelineTodayDesc": "مکمل رسائی کو فوری طور پر غیر مقفل کریں۔",
   "paywallTitle": "کیپی لسٹ پریمیم",
   "paywallTrialCta": "مفت آزمائش شروع کریں۔",
   "paywallTrialDays": "{days} دن مفت",
@@ -2153,11 +2321,15 @@
   "prefSharing": "فہرستیں شیئر کریں",
   "prefUnlimitedLists": "لا محدود فہرستیں",
   "prefUnlimitedPantry": "لا محدود پینٹری",
+  "preferencesSection": "ترجیحات",
   "preferredMarket": "ترجیحی مارکیٹ",
   "preferredMarketHint": "مثال کے طور پر: سپر مارکیٹ ایکس",
+  "premiumActionsPrompt": "خودکار کارروائیوں کو غیر مقفل کرنے کے لیے پریمیم کو سبسکرائب کریں۔",
+  "premiumStepDescription": "{description} (پریمیم)",
   "premiumUpgrade": "کھولنے کے لیے اپ گریڈ کریں",
   "prepTime": "تیاری کا وقت",
   "prepTimeMinutes": "تیاری کا وقت (منٹ)",
+  "previousItemState": "پچھلی حالت: {quantity} {unit} [{category}]{price}",
   "privacy": "رازداری",
   "processing": "پروسیسنگ...",
   "product": "پروڈکٹ",
@@ -2177,21 +2349,34 @@
   "quantityUnitWithPrice": "{qty} {unit} - {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "آپ کی فہرستوں سے استفسار کیا جا رہا ہے...",
+  "quickActionAi": "کیپی کے ساتھ چیٹ کریں۔",
+  "quickActionPantry": "پینٹری دیکھیں",
   "quickRecipe": "فوری ترکیب",
   "quickRecipePrompt": "میری فہرست میں موجود اشیاء کے ساتھ ترکیبیں تجویز کریں۔",
   "quickReplies": "فوری جوابات:",
   "quickSuggestions": "فوری تجاویز",
+  "recipeAddError": "آپ کی فہرست میں شامل نہیں کیا جا سکا۔ براہ کرم دوبارہ کوشش کریں۔",
   "recipeAddToList": "خریداری کی فہرست میں شامل کریں۔",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName} میں شامل کیا گیا",
   "recipeCreated": "ہدایت بنائی گئی!",
   "recipeDeleted": "نسخہ حذف کر دیا گیا۔",
+  "recipeEstimatePartial": "قیمت کے ساتھ اجزاء کی بنیاد پر جزوی تخمینہ۔",
+  "recipeEstimatedCostPerServing": "{cost} / سرونگ",
+  "recipeEstimatedTotalCost": "تخمینی کل لاگت",
   "recipeImage": "نسخہ کی تصویر",
+  "recipeIngredientInPantry": "پینٹری میں",
+  "recipeIngredientLowPantry": "پینٹری میں کم",
   "recipeIngredientSingular": "1 جزو",
   "recipeIngredientsPlural": "{count} اجزاء",
+  "recipeManualTotalCost": "دستی کل لاگت",
+  "recipeManualTotalCostHint": "اجزاء کی قیمتوں سے اندازہ لگانے کے لیے خالی چھوڑ دیں۔",
   "recipeName": "نسخہ کا نام",
   "recipeSaved": "نسخہ محفوظ ہو گیا!",
+  "recipeServesCount": "پیش کرتا ہے {count}",
   "recipeSuggestion": "ترکیب کی تجویز",
   "recipeTags": "ترکیب کے ٹیگز",
+  "recipeTapToCheck": "جب آپ کھانا پکاتے ہیں تو اسے چیک کرنے کے لیے کسی جزو کو تھپتھپائیں۔",
+  "recipeYieldServings": "پیداوار سرونگ",
   "regenerate": "دوبارہ تخلیق کریں",
   "remove": "ہٹائیں",
   "removeBudget": "ہٹائیں",
@@ -2226,9 +2411,12 @@
   "scanBarcodeTitle": "بارکوڈ اسکین کریں۔",
   "scanProduct": "اسکین پروڈکٹ",
   "scanProductTitle": "اسکین پروڈکٹ",
+  "scrollToBottom": "نیچے تک سکرول کریں۔",
+  "searchConversations": "مکالمات تلاش کریں۔",
   "searchCurrency": "کرنسی تلاش کریں...",
   "searchInConversation": "گفتگو میں تلاش کریں...",
   "searchLanguage": "زبان تلاش کریں...",
+  "searchMessages": "پیغامات تلاش کریں...",
   "searchRecipes": "ترکیبیں تلاش کریں...",
   "searchingCategories": "زمرے تلاش کر رہے ہیں...",
   "searchingProducts": "مصنوعات تلاش کر رہا ہے...",
@@ -2268,6 +2456,7 @@
   "signInGoogle": "Google سے سائن ان کریں",
   "skip": "چھوڑیں۔",
   "smartOrganization": "سمارٹ آرگنائزیشن",
+  "somethingWentWrong": "کچھ غلط ہو گیا۔",
   "sortAZ": "A-Z",
   "sortCategory": "زمرہ",
   "sortDate": "تاریخ",
@@ -2299,6 +2488,7 @@
   "themeColor": "تھیم کا رنگ",
   "themeGreen": "سبز",
   "themeIndigo": "نیلا",
+  "themeMode": "تھیم موڈ",
   "themeOrange": "نارنجی",
   "themePink": "گلابی",
   "themePurple": "جامنی",
@@ -2316,6 +2506,7 @@
   "toolSaveRecipe": "نسخہ محفوظ کریں۔",
   "toolShareList": "فہرست کا اشتراک کریں۔",
   "totalEstimated": "کل متوقع: {amount}",
+  "totalEstimatedLabel": "تخمینی کل",
   "totalSavings": "کل بچت",
   "totalSpending": "کل اخراجات",
   "trackStock": "اسٹاک کا پتہ لگائیں",
@@ -2323,6 +2514,7 @@
   "trackStockInactive": "خریداری کی تجویز پیدا نہیں کرتا",
   "uncheckingItem": "آئٹم کو غیر چیک کیا جا رہا ہے...",
   "undo": "واپس لیں",
+  "undoChanges": "تبدیلیوں کو کالعدم کریں۔",
   "unit": "اکائی",
   "unitPack": "پیک",
   "unlockAi": "لامحدود AI کو غیر مقفل کریں۔",
@@ -2336,6 +2528,7 @@
   "updatingPantry": "پینٹری کو اپ ڈیٹ کیا جا رہا ہے...",
   "upgrade": "اپ گریڈ کریں",
   "userProfile": "صارف پروفائل",
+  "userRole": "آپ",
   "validForLimitedTime": "محدود وقت کے لیے کارآمد",
   "version": "ورژن",
   "viewActive": "فعال دیکھیں",
@@ -2343,6 +2536,7 @@
   "viewHistory": "تاریخ دیکھیں",
   "viewItems": "آئٹمز دیکھیں",
   "viewList": "فہرست دیکھیں",
+  "viewPlans": "منصوبے دیکھیں",
   "viewPro": "پرو دیکھیں",
   "viewRecipe": "نسخہ دیکھیں",
   "voiceCommandContent": "اپنی فہرست کو منظم کرنے کے لیے قدرتی طور پر بولیں!\n\nمثالیں:\n• 'روٹی، پنیر اور ہیم شامل کریں'\n• 'لانڈری ڈٹرجنٹ ہٹائیں'\n• 'تھیم کو نیلا کریں'\n\nیہ KipiList Premium کی ایک خصوصی خصوصیت ہے۔",

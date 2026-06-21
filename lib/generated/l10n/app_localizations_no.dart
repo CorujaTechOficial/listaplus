@@ -242,6 +242,11 @@ class AppLocalizationsNo extends AppLocalizations {
   String get noItemsToBuy => 'Ingen varer må kjøpes';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Mangler $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Spiskammerhandling';
 
   @override
@@ -308,6 +313,12 @@ class AppLocalizationsNo extends AppLocalizations {
   String get settingsAppBar => 'Innstillinger';
 
   @override
+  String get preferencesSection => 'Preferanser';
+
+  @override
+  String get aiSection => 'AI-assistent';
+
+  @override
   String get language => 'Språk';
 
   @override
@@ -336,6 +347,12 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get appearance => 'Utseende';
+
+  @override
+  String get themeMode => 'Temamodus';
+
+  @override
+  String get chooseThemeMode => 'Velg temamodus';
 
   @override
   String get light => 'Lys';
@@ -585,6 +602,13 @@ class AppLocalizationsNo extends AppLocalizations {
   String get trackStockInactive => 'Genererer ikke handleforslag';
 
   @override
+  String get keepAdding => 'Fortsett å legge til';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Hold arket åpent for å legge til flere elementer';
+
+  @override
   String get createListDialog => 'Opprett liste';
 
   @override
@@ -689,6 +713,36 @@ class AppLocalizationsNo extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'God respons';
+
+  @override
+  String get badResponse => 'Dårlig respons';
+
+  @override
+  String get scrollToBottom => 'Rull til bunnen';
+
+  @override
+  String get somethingWentWrong => 'Noe gikk galt';
+
+  @override
+  String get editMessage => 'Rediger melding';
+
+  @override
+  String get searchConversations => 'Søk etter samtaler';
+
+  @override
+  String get dateGroupToday => 'I dag';
+
+  @override
+  String get dateGroupYesterday => 'I går';
+
+  @override
+  String get dateGroupPrevious7Days => 'Forrige 7 dager';
+
+  @override
+  String get dateGroupOlder => 'Eldre';
+
+  @override
   String get aiAssistantTitle => 'AI-assistent';
 
   @override
@@ -729,6 +783,33 @@ class AppLocalizationsNo extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Månedlig AI-grense nådd. Oppgrader til Pro for ubegrenset →';
+
+  @override
+  String get undo => 'Angre';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -937,6 +1018,20 @@ class AppLocalizationsNo extends AppLocalizations {
   String get recipeAddToList => 'Legg til handleliste';
 
   @override
+  String get recipeAddError =>
+      'Kunne ikke legge til listen din. Vennligst prøv igjen.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Trykk på en ingrediens for å merke den av mens du lager mat';
+
+  @override
+  String get recipeIngredientInPantry => 'I pantry';
+
+  @override
+  String get recipeIngredientLowPantry => 'Lavt i pantry';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count ingredienser lagt til $listName';
   }
@@ -1048,12 +1143,12 @@ class AppLocalizationsNo extends AppLocalizations {
   String get paywallSelectPlan => 'Velg din plan:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'SPAR $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Bare $price/måned';
   }
 
@@ -1089,6 +1184,35 @@ class AppLocalizationsNo extends AppLocalizations {
   String get paywallRestore => 'Restaurere';
 
   @override
+  String get paywallTimelineToday => 'I dag';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Lås opp full tilgang umiddelbart';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Dag $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Vi minner deg om før rettssaken avsluttes';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Abonnementet ditt starter – kanseller når som helst';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI Shopping Assistant';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Snakk eller lim inn en hel liste – AI sorterer, kategoriserer og budsjetterer den på sekunder';
+
+  @override
+  String get paywallBasedOnAnswers => 'Personliggjort fra svarene dine';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI alltid ved din side';
 
   @override
@@ -1121,9 +1245,6 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Vare fjernet';
-
-  @override
-  String get undo => 'Angre';
 
   @override
   String get emptyListTitle => 'Listen din er tom';
@@ -1241,6 +1362,9 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Vare fjernet';
+
+  @override
+  String get pantryItemAdded => 'Vare lagt til';
 
   @override
   String deficitItems(int deficit) {
@@ -1644,6 +1768,33 @@ class AppLocalizationsNo extends AppLocalizations {
   String get prepTimeMinutes => 'Forberedelsestid (minutter)';
 
   @override
+  String get recipeYieldServings => 'Gi porsjoner';
+
+  @override
+  String get recipeManualTotalCost => 'Manuell totalkostnad';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'La stå tomt for å anslå fra ingredienspriser.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Estimert totalkostnad';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / porsjon';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Serverer $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Delestimat basert på ingredienser med pris.';
+
+  @override
   String get instructionsHint => 'Skriv ett trinn per linje...';
 
   @override
@@ -1773,6 +1924,10 @@ class AppLocalizationsNo extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Estimat basert på oppskrifter med delvis prisdata.';
+
+  @override
   String get mealPlannerGenerateList => 'Generer handleliste';
 
   @override
@@ -1865,6 +2020,9 @@ class AppLocalizationsNo extends AppLocalizations {
   String get catalogRareSection => 'mindre vanlig i ditt land';
 
   @override
+  String get catalogRareBadge => 'Sjelden';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1883,7 +2041,7 @@ class AppLocalizationsNo extends AppLocalizations {
   String get catalogBrowse => 'Bla gjennom katalogen';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kategorier';
 
   @override
   String get offlineBanner => 'Du er frakoblet';
@@ -1914,6 +2072,41 @@ class AppLocalizationsNo extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Administrer måltidstyper';
+
+  @override
+  String get mealPlannerAddType => 'Legg til type måltid';
+
+  @override
+  String get mealPlannerEditType => 'Rediger måltidstype';
+
+  @override
+  String get mealPlannerTypeName => 'Navn';
+
+  @override
+  String get mealPlannerTypeColor => 'Farge';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikon';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Er du sikker på at du vil slette denne måltidstypen? Planlagte måltider med denne typen vil forbli.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Navn kan ikke være tomt';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Kan ikke slette denne måltidstypen.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Egendefinert type';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Standardtype';
 
   @override
   String get expirationDate => 'Utløpsdato';
@@ -1974,6 +2167,9 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Feil ved innlasting av lister';
+
+  @override
+  String get errorLoadingItems => 'Feil ved innlasting av elementer';
 
   @override
   String get noListsFound => 'Ingen lister funnet';
@@ -2737,6 +2933,215 @@ class AppLocalizationsNo extends AppLocalizations {
   @override
   String get obLoginError =>
       'Pålogging mislyktes. Prøv igjen eller hopp over for nå.';
+
+  @override
+  String get searchMessages => 'Søk etter meldinger...';
+
+  @override
+  String get deletedList => 'Slettet liste';
+
+  @override
+  String get openConversation => 'Åpen samtale';
+
+  @override
+  String get userRole => 'Du';
+
+  @override
+  String get assistantRole => 'Assistent';
+
+  @override
+  String get agentActionsRunning => 'Kjører handlinger...';
+
+  @override
+  String get agentActionsFailed => 'Kunne ikke kjøre handlinger';
+
+  @override
+  String get agentActionsPremium => 'Handlinger krever Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Angre endringer';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Element lagt til listen.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Forrige tilstand: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Abonner på Premium for å låse opp automatiske handlinger.';
+
+  @override
+  String get viewPlans => 'Se planer';
+
+  @override
+  String get artifactSynced => 'Synkronisert';
+
+  @override
+  String get artifactBudgetLabel => 'Budsjett:';
+
+  @override
+  String get totalEstimatedLabel => 'Estimert total';
+
+  @override
+  String get quickActionPantry => 'Vis pantry';
+
+  @override
+  String get quickActionAi => 'Chat med Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI-tjenesten returnerte en feil ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Forespørselen tok for lang tid. Vennligst prøv igjen.';
+
+  @override
+  String get aiConnectionError =>
+      'Kunne ikke koble til AI-tjenesten. Sjekk tilkoblingen din.';
+
+  @override
+  String get aiEmptyResponseError => 'AI-tjenesten returnerte et tomt svar.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'AI-tjenesten returnerte et ugyldig svar.';
+
+  @override
+  String get categoryFruits => 'Frukt';
+
+  @override
+  String get categoryCleaning => 'Rengjøring';
+
+  @override
+  String get categoryBeverages => 'Drikkevarer';
+
+  @override
+  String get categoryBakery => 'Bakeri';
+
+  @override
+  String get categoryMeat => 'Kjøtt';
+
+  @override
+  String get categoryDairy => 'Meieri';
+
+  @override
+  String get categoryVegetables => 'Grønnsaker';
+
+  @override
+  String get categoryGrains => 'Korn og frokostblandinger';
+
+  @override
+  String get categoryHygiene => 'Personlig omsorg';
+
+  @override
+  String get categoryFrozen => 'Frosne matvarer';
+
+  @override
+  String get categoryCanned => 'Hermetikk';
+
+  @override
+  String get categorySeasonings => 'Krydderier';
+
+  @override
+  String get categorySweets => 'Søtsaker og desserter';
+
+  @override
+  String get categoryAlcohol => 'Alkoholholdige drikkevarer';
+
+  @override
+  String get categoryFish => 'Fisk';
+
+  @override
+  String get categoryColdCuts => 'Pålegg';
+
+  @override
+  String get categoryUtilities => 'Husholdningsartikler';
+
+  @override
+  String get categoryPet => 'Dyreutstyr';
+
+  @override
+  String get categoryBaby => 'Baby';
+
+  @override
+  String get categoryOthers => 'Annen';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hei $name, jeg heter Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hei, jeg heter Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Jeg bygger lister, foreslår oppskrifter og finner hvor jeg kan lagre. Hvor skal vi begynne?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Planlegg en grillfest';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, jeg arrangerer en grillfest — hjelp meg å bygge handlelisten';
+
+  @override
+  String get aiRateLimitError =>
+      'For mange meldinger på kort tid. Vent noen sekunder og prøv igjen.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Kunne ikke laste denne samtalen';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Noe gikk galt hos oss. Trykk på prøv på nytt for å prøve igjen.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Du er frakoblet';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Sjekk Internett-tilkoblingen din og prøv igjen.';
+
+  @override
+  String get aiGeneratingResponse => 'Genererer svar …';
 }
 
 /// The translations for Norwegian, as used in Norway (`no_NO`).
@@ -2977,6 +3382,11 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get noItemsToBuy => 'Ingen varer må kjøpes';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Mangler $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Spiskammerhandling';
 
   @override
@@ -3043,6 +3453,12 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get settingsAppBar => 'Innstillinger';
 
   @override
+  String get preferencesSection => 'Preferanser';
+
+  @override
+  String get aiSection => 'AI-assistent';
+
+  @override
   String get language => 'Språk';
 
   @override
@@ -3071,6 +3487,12 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get appearance => 'Utseende';
+
+  @override
+  String get themeMode => 'Temamodus';
+
+  @override
+  String get chooseThemeMode => 'Velg temamodus';
 
   @override
   String get light => 'Lys';
@@ -3320,6 +3742,13 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get trackStockInactive => 'Genererer ikke handleforslag';
 
   @override
+  String get keepAdding => 'Fortsett å legge til';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Hold arket åpent for å legge til flere elementer';
+
+  @override
   String get createListDialog => 'Opprett liste';
 
   @override
@@ -3424,6 +3853,36 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   }
 
   @override
+  String get goodResponse => 'God respons';
+
+  @override
+  String get badResponse => 'Dårlig respons';
+
+  @override
+  String get scrollToBottom => 'Rull til bunnen';
+
+  @override
+  String get somethingWentWrong => 'Noe gikk galt';
+
+  @override
+  String get editMessage => 'Rediger melding';
+
+  @override
+  String get searchConversations => 'Søk etter samtaler';
+
+  @override
+  String get dateGroupToday => 'I dag';
+
+  @override
+  String get dateGroupYesterday => 'I går';
+
+  @override
+  String get dateGroupPrevious7Days => 'Forrige 7 dager';
+
+  @override
+  String get dateGroupOlder => 'Eldre';
+
+  @override
   String get aiAssistantTitle => 'AI-assistent';
 
   @override
@@ -3464,6 +3923,9 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   @override
   String get aiUsageExhausted =>
       'Månedlig AI-grense nådd. Oppgrader til Pro for ubegrenset →';
+
+  @override
+  String get undo => 'Angre';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -3672,6 +4134,20 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get recipeAddToList => 'Legg til handleliste';
 
   @override
+  String get recipeAddError =>
+      'Kunne ikke legge til listen din. Vennligst prøv igjen.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Trykk på en ingrediens for å merke den av mens du lager mat';
+
+  @override
+  String get recipeIngredientInPantry => 'I pantry';
+
+  @override
+  String get recipeIngredientLowPantry => 'Lavt i pantry';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count ingredienser lagt til $listName';
   }
@@ -3783,12 +4259,12 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get paywallSelectPlan => 'Velg din plan:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'SPAR $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Bare $price/måned';
   }
 
@@ -3824,6 +4300,35 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get paywallRestore => 'Restaurere';
 
   @override
+  String get paywallTimelineToday => 'I dag';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Lås opp full tilgang umiddelbart';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Dag $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Vi minner deg om før rettssaken avsluttes';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Abonnementet ditt starter – kanseller når som helst';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI Shopping Assistant';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Snakk eller lim inn en hel liste – AI sorterer, kategoriserer og budsjetterer den på sekunder';
+
+  @override
+  String get paywallBasedOnAnswers => 'Personliggjort fra svarene dine';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI alltid ved din side';
 
   @override
@@ -3856,9 +4361,6 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get itemRemoved => 'Vare fjernet';
-
-  @override
-  String get undo => 'Angre';
 
   @override
   String get emptyListTitle => 'Listen din er tom';
@@ -3976,6 +4478,9 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get pantryItemRemoved => 'Vare fjernet';
+
+  @override
+  String get pantryItemAdded => 'Vare lagt til';
 
   @override
   String deficitItems(int deficit) {
@@ -4379,6 +4884,33 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get prepTimeMinutes => 'Forberedelsestid (minutter)';
 
   @override
+  String get recipeYieldServings => 'Gi porsjoner';
+
+  @override
+  String get recipeManualTotalCost => 'Manuell totalkostnad';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'La stå tomt for å anslå fra ingredienspriser.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Estimert totalkostnad';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / porsjon';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Serverer $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Delestimat basert på ingredienser med pris.';
+
+  @override
   String get instructionsHint => 'Skriv ett trinn per linje...';
 
   @override
@@ -4508,6 +5040,10 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Estimat basert på oppskrifter med delvis prisdata.';
+
+  @override
   String get mealPlannerGenerateList => 'Generer handleliste';
 
   @override
@@ -4600,6 +5136,9 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   String get catalogRareSection => 'mindre vanlig i ditt land';
 
   @override
+  String get catalogRareBadge => 'Sjelden';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4616,6 +5155,9 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get catalogBrowse => 'Bla gjennom katalogen';
+
+  @override
+  String get catalogCategories => 'Kategorier';
 
   @override
   String get offlineBanner => 'Du er frakoblet';
@@ -4646,6 +5188,41 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Administrer måltidstyper';
+
+  @override
+  String get mealPlannerAddType => 'Legg til type måltid';
+
+  @override
+  String get mealPlannerEditType => 'Rediger måltidstype';
+
+  @override
+  String get mealPlannerTypeName => 'Navn';
+
+  @override
+  String get mealPlannerTypeColor => 'Farge';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikon';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Er du sikker på at du vil slette denne måltidstypen? Planlagte måltider med denne typen vil forbli.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Navn kan ikke være tomt';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Kan ikke slette denne måltidstypen.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Egendefinert type';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Standardtype';
 
   @override
   String get expirationDate => 'Utløpsdato';
@@ -4706,6 +5283,9 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
 
   @override
   String get errorLoadingLists => 'Feil ved innlasting av lister';
+
+  @override
+  String get errorLoadingItems => 'Feil ved innlasting av elementer';
 
   @override
   String get noListsFound => 'Ingen lister funnet';
@@ -5469,4 +6049,213 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   @override
   String get obLoginError =>
       'Pålogging mislyktes. Prøv igjen eller hopp over for nå.';
+
+  @override
+  String get searchMessages => 'Søk etter meldinger...';
+
+  @override
+  String get deletedList => 'Slettet liste';
+
+  @override
+  String get openConversation => 'Åpen samtale';
+
+  @override
+  String get userRole => 'Du';
+
+  @override
+  String get assistantRole => 'Assistent';
+
+  @override
+  String get agentActionsRunning => 'Kjører handlinger...';
+
+  @override
+  String get agentActionsFailed => 'Kunne ikke kjøre handlinger';
+
+  @override
+  String get agentActionsPremium => 'Handlinger krever Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Angre endringer';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Element lagt til listen.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Forrige tilstand: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Abonner på Premium for å låse opp automatiske handlinger.';
+
+  @override
+  String get viewPlans => 'Se planer';
+
+  @override
+  String get artifactSynced => 'Synkronisert';
+
+  @override
+  String get artifactBudgetLabel => 'Budsjett:';
+
+  @override
+  String get totalEstimatedLabel => 'Estimert total';
+
+  @override
+  String get quickActionPantry => 'Vis pantry';
+
+  @override
+  String get quickActionAi => 'Chat med Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI-tjenesten returnerte en feil ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Forespørselen tok for lang tid. Vennligst prøv igjen.';
+
+  @override
+  String get aiConnectionError =>
+      'Kunne ikke koble til AI-tjenesten. Sjekk tilkoblingen din.';
+
+  @override
+  String get aiEmptyResponseError => 'AI-tjenesten returnerte et tomt svar.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'AI-tjenesten returnerte et ugyldig svar.';
+
+  @override
+  String get categoryFruits => 'Frukt';
+
+  @override
+  String get categoryCleaning => 'Rengjøring';
+
+  @override
+  String get categoryBeverages => 'Drikkevarer';
+
+  @override
+  String get categoryBakery => 'Bakeri';
+
+  @override
+  String get categoryMeat => 'Kjøtt';
+
+  @override
+  String get categoryDairy => 'Meieri';
+
+  @override
+  String get categoryVegetables => 'Grønnsaker';
+
+  @override
+  String get categoryGrains => 'Korn og frokostblandinger';
+
+  @override
+  String get categoryHygiene => 'Personlig omsorg';
+
+  @override
+  String get categoryFrozen => 'Frosne matvarer';
+
+  @override
+  String get categoryCanned => 'Hermetikk';
+
+  @override
+  String get categorySeasonings => 'Krydderier';
+
+  @override
+  String get categorySweets => 'Søtsaker og desserter';
+
+  @override
+  String get categoryAlcohol => 'Alkoholholdige drikkevarer';
+
+  @override
+  String get categoryFish => 'Fisk';
+
+  @override
+  String get categoryColdCuts => 'Pålegg';
+
+  @override
+  String get categoryUtilities => 'Husholdningsartikler';
+
+  @override
+  String get categoryPet => 'Dyreutstyr';
+
+  @override
+  String get categoryBaby => 'Baby';
+
+  @override
+  String get categoryOthers => 'Annen';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hei $name, jeg heter Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hei, jeg heter Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Jeg bygger lister, foreslår oppskrifter og finner hvor jeg kan lagre. Hvor skal vi begynne?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Planlegg en grillfest';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, jeg arrangerer en grillfest — hjelp meg å bygge handlelisten';
+
+  @override
+  String get aiRateLimitError =>
+      'For mange meldinger på kort tid. Vent noen sekunder og prøv igjen.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Kunne ikke laste denne samtalen';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Noe gikk galt hos oss. Trykk på prøv på nytt for å prøve igjen.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Du er frakoblet';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Sjekk Internett-tilkoblingen din og prøv igjen.';
+
+  @override
+  String get aiGeneratingResponse => 'Genererer svar …';
 }

@@ -236,6 +236,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get noItemsToBuy => '구매할 항목이 없습니다';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return '$count$unit 없음';
+  }
+
+  @override
   String get newPantryList => '저장실 쇼핑';
 
   @override
@@ -302,6 +307,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get settingsAppBar => '설정';
 
   @override
+  String get preferencesSection => '환경설정';
+
+  @override
+  String get aiSection => 'AI 어시스턴트';
+
+  @override
   String get language => '언어';
 
   @override
@@ -330,6 +341,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get appearance => '테마';
+
+  @override
+  String get themeMode => '테마 모드';
+
+  @override
+  String get chooseThemeMode => '테마 모드 선택';
 
   @override
   String get light => '라이트';
@@ -577,6 +594,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get trackStockInactive => '쇼핑 제안을 생성하지 않음';
 
   @override
+  String get keepAdding => '계속 추가하세요';
+
+  @override
+  String get keepAddingSubtitle => '여러 항목을 추가하려면 시트를 열어 두세요.';
+
+  @override
   String get createListDialog => '목록 만들기';
 
   @override
@@ -678,6 +701,36 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => '좋은 반응';
+
+  @override
+  String get badResponse => '나쁜 반응';
+
+  @override
+  String get scrollToBottom => '맨 아래로 스크롤';
+
+  @override
+  String get somethingWentWrong => '문제가 발생했습니다.';
+
+  @override
+  String get editMessage => '메시지 편집';
+
+  @override
+  String get searchConversations => '대화 검색';
+
+  @override
+  String get dateGroupToday => '오늘';
+
+  @override
+  String get dateGroupYesterday => '어제';
+
+  @override
+  String get dateGroupPrevious7Days => '지난 7일';
+
+  @override
+  String get dateGroupOlder => '이전';
+
+  @override
   String get aiAssistantTitle => 'AI 어시스턴트';
 
   @override
@@ -715,6 +768,33 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get aiUsageExhausted => '월별 AI 한도에 도달했습니다. 무제한으로 Pro로 업그레이드 →';
+
+  @override
+  String get undo => '실행 취소';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -911,6 +991,18 @@ class AppLocalizationsKo extends AppLocalizations {
   String get recipeAddToList => '쇼핑 목록에 추가';
 
   @override
+  String get recipeAddError => '목록에 추가할 수 없습니다. 다시 시도해 주세요.';
+
+  @override
+  String get recipeTapToCheck => '요리하는 동안 재료를 탭하여 확인하세요.';
+
+  @override
+  String get recipeIngredientInPantry => '식료품 저장실에';
+
+  @override
+  String get recipeIngredientLowPantry => '식료품 저장실이 적음';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$listName에 $count 재료가 추가되었습니다.';
   }
@@ -1020,12 +1112,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get paywallSelectPlan => '계획을 선택하세요:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return '$percent% 저장';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return '단 $price/월';
   }
 
@@ -1059,6 +1151,33 @@ class AppLocalizationsKo extends AppLocalizations {
   String get paywallRestore => '복원하다';
 
   @override
+  String get paywallTimelineToday => '오늘';
+
+  @override
+  String get paywallTimelineTodayDesc => '즉시 전체 액세스 잠금 해제';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return '일 $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc => '평가판이 종료되기 전에 알려드립니다.';
+
+  @override
+  String get paywallTimelineChargeDesc => '구독이 시작됩니다 - 언제든지 취소하세요';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI 쇼핑 도우미';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      '전체 목록을 말하거나 붙여넣으세요. AI가 몇 초 만에 목록을 정렬, 분류하고 예산을 책정합니다.';
+
+  @override
+  String get paywallBasedOnAnswers => '귀하의 답변을 바탕으로 개인화됨';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI는 항상 당신 곁에 있습니다.';
 
   @override
@@ -1089,9 +1208,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get itemRemoved => '항목이 제거됨';
-
-  @override
-  String get undo => '실행 취소';
 
   @override
   String get emptyListTitle => '목록이 비어 있습니다';
@@ -1208,6 +1324,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => '항목이 제거됨';
+
+  @override
+  String get pantryItemAdded => '항목이 추가됨';
 
   @override
   String deficitItems(int deficit) {
@@ -1594,6 +1713,31 @@ class AppLocalizationsKo extends AppLocalizations {
   String get prepTimeMinutes => '조리 시간 (분)';
 
   @override
+  String get recipeYieldServings => '제공량';
+
+  @override
+  String get recipeManualTotalCost => '수동 총 비용';
+
+  @override
+  String get recipeManualTotalCostHint => '재료 가격을 추정하려면 비워 두세요.';
+
+  @override
+  String get recipeEstimatedTotalCost => '예상 총 비용';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / 제공';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return '$count 제공';
+  }
+
+  @override
+  String get recipeEstimatePartial => '가격이 포함된 재료를 기준으로 한 부분 견적입니다.';
+
+  @override
   String get instructionsHint => '한 줄에 한 단계씩 입력하세요...';
 
   @override
@@ -1721,6 +1865,9 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial => '부분 가격 데이터가 포함된 레시피를 기반으로 추정합니다.';
+
+  @override
   String get mealPlannerGenerateList => '쇼핑 목록 생성';
 
   @override
@@ -1811,6 +1958,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get catalogRareSection => '귀하의 국가에서는 덜 일반적입니다';
 
   @override
+  String get catalogRareBadge => '희귀한';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1828,7 +1978,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get catalogBrowse => '카탈로그 찾아보기';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => '카테고리';
 
   @override
   String get offlineBanner => '귀하는 오프라인 상태입니다';
@@ -1859,6 +2009,40 @@ class AppLocalizationsKo extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => '식사 유형 관리';
+
+  @override
+  String get mealPlannerAddType => '식사 유형 추가';
+
+  @override
+  String get mealPlannerEditType => '식사 유형 수정';
+
+  @override
+  String get mealPlannerTypeName => '이름';
+
+  @override
+  String get mealPlannerTypeColor => '색상';
+
+  @override
+  String get mealPlannerTypeIcon => '상';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      '이 식사 유형을 삭제하시겠습니까? 이 유형의 계획된 식사는 그대로 유지됩니다.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => '이름은 비워둘 수 없습니다.';
+
+  @override
+  String get mealPlannerTypeDeleteError => '이 식사 유형을 삭제할 수 없습니다.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => '맞춤 유형';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => '기본 유형';
 
   @override
   String get expirationDate => '만료일';
@@ -1916,6 +2100,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get errorLoadingLists => '목록을 로드하는 중에 오류가 발생했습니다.';
+
+  @override
+  String get errorLoadingItems => '항목을 로드하는 중에 오류가 발생했습니다.';
 
   @override
   String get noListsFound => '목록을 찾을 수 없습니다';
@@ -2662,6 +2849,208 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get obLoginError => '로그인에 실패했습니다. 다시 시도하거나 지금은 건너뛰세요.';
+
+  @override
+  String get searchMessages => '메시지 검색...';
+
+  @override
+  String get deletedList => '삭제된 목록';
+
+  @override
+  String get openConversation => '대화 열기';
+
+  @override
+  String get userRole => '너';
+
+  @override
+  String get assistantRole => '어시스턴트';
+
+  @override
+  String get agentActionsRunning => '작업 실행 중...';
+
+  @override
+  String get agentActionsFailed => '작업을 실행하지 못했습니다.';
+
+  @override
+  String get agentActionsPremium => '작업에는 프리미엄이 필요합니다';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => '변경사항 취소';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (프리미엄)';
+  }
+
+  @override
+  String get itemAddedToList => '목록에 항목이 추가되었습니다.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return '이전 상태: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt => '자동 작업을 잠금 해제하려면 프리미엄을 구독하세요.';
+
+  @override
+  String get viewPlans => '계획 보기';
+
+  @override
+  String get artifactSynced => '동기화됨';
+
+  @override
+  String get artifactBudgetLabel => '예산:';
+
+  @override
+  String get totalEstimatedLabel => '예상 총액';
+
+  @override
+  String get quickActionPantry => '식료품 저장실 보기';
+
+  @override
+  String get quickActionAi => '키피와 채팅';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI 서비스에서 오류($statusCode)를 반환했습니다.';
+  }
+
+  @override
+  String get aiTimeoutError => '요청이 너무 오래 걸렸습니다. 다시 시도해 주세요.';
+
+  @override
+  String get aiConnectionError => 'AI 서비스에 연결할 수 없습니다. 연결을 확인하세요.';
+
+  @override
+  String get aiEmptyResponseError => 'AI 서비스가 빈 응답을 반환했습니다.';
+
+  @override
+  String get aiInvalidResponseError => 'AI 서비스가 잘못된 응답을 반환했습니다.';
+
+  @override
+  String get categoryFruits => '과일';
+
+  @override
+  String get categoryCleaning => '청소';
+
+  @override
+  String get categoryBeverages => '음료수';
+
+  @override
+  String get categoryBakery => '빵집';
+
+  @override
+  String get categoryMeat => '고기';
+
+  @override
+  String get categoryDairy => '낙농';
+
+  @override
+  String get categoryVegetables => '채소';
+
+  @override
+  String get categoryGrains => '곡물 및 시리얼';
+
+  @override
+  String get categoryHygiene => '개인 관리';
+
+  @override
+  String get categoryFrozen => '냉동식품';
+
+  @override
+  String get categoryCanned => '통조림';
+
+  @override
+  String get categorySeasonings => '조미료';
+
+  @override
+  String get categorySweets => '과자와 디저트';
+
+  @override
+  String get categoryAlcohol => '주류';
+
+  @override
+  String get categoryFish => '물고기';
+
+  @override
+  String get categoryColdCuts => '냉햄';
+
+  @override
+  String get categoryUtilities => '생활용품';
+
+  @override
+  String get categoryPet => '애완동물 용품';
+
+  @override
+  String get categoryBaby => '아기';
+
+  @override
+  String get categoryOthers => '다른';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return '안녕하세요 $name, 저는 키피입니다 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => '안녕하세요 키피입니다👋';
+
+  @override
+  String get chatEmptyPitch =>
+      '목록을 작성하고, 레시피를 제안하고, 저장할 위치를 찾습니다. 어디서부터 시작할까요?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => '바비큐를 계획해보세요';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi님, 저는 바비큐를 주최할 예정입니다. 쇼핑 목록 작성을 도와주세요';
+
+  @override
+  String get aiRateLimitError => '짧은 시간에 메시지가 너무 많습니다. 몇 초간 기다렸다가 다시 시도해 보세요.';
+
+  @override
+  String get chatHistoryErrorTitle => '이 대화를 로드할 수 없습니다.';
+
+  @override
+  String get chatHistoryErrorBody => '문제가 발생했습니다. 다시 시도하려면 재시도를 탭하세요.';
+
+  @override
+  String get chatHistoryOfflineTitle => '오프라인 상태입니다';
+
+  @override
+  String get chatHistoryOfflineBody => '인터넷 연결을 확인하고 다시 시도하세요.';
+
+  @override
+  String get aiGeneratingResponse => '응답 생성 중…';
 }
 
 /// The translations for Korean, as used in Republic of Korea (`ko_KR`).
@@ -2896,6 +3285,11 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get noItemsToBuy => '구매할 항목이 없습니다';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return '$count$unit 없음';
+  }
+
+  @override
   String get newPantryList => '저장실 쇼핑';
 
   @override
@@ -2962,6 +3356,12 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get settingsAppBar => '설정';
 
   @override
+  String get preferencesSection => '환경설정';
+
+  @override
+  String get aiSection => 'AI 어시스턴트';
+
+  @override
   String get language => '언어';
 
   @override
@@ -2990,6 +3390,12 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get appearance => '테마';
+
+  @override
+  String get themeMode => '테마 모드';
+
+  @override
+  String get chooseThemeMode => '테마 모드 선택';
 
   @override
   String get light => '라이트';
@@ -3237,6 +3643,12 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get trackStockInactive => '쇼핑 제안을 생성하지 않음';
 
   @override
+  String get keepAdding => '계속 추가하세요';
+
+  @override
+  String get keepAddingSubtitle => '여러 항목을 추가하려면 시트를 열어 두세요.';
+
+  @override
   String get createListDialog => '목록 만들기';
 
   @override
@@ -3338,6 +3750,36 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   }
 
   @override
+  String get goodResponse => '좋은 반응';
+
+  @override
+  String get badResponse => '나쁜 반응';
+
+  @override
+  String get scrollToBottom => '맨 아래로 스크롤';
+
+  @override
+  String get somethingWentWrong => '문제가 발생했습니다.';
+
+  @override
+  String get editMessage => '메시지 편집';
+
+  @override
+  String get searchConversations => '대화 검색';
+
+  @override
+  String get dateGroupToday => '오늘';
+
+  @override
+  String get dateGroupYesterday => '어제';
+
+  @override
+  String get dateGroupPrevious7Days => '지난 7일';
+
+  @override
+  String get dateGroupOlder => '이전';
+
+  @override
   String get aiAssistantTitle => 'AI 어시스턴트';
 
   @override
@@ -3375,6 +3817,9 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get aiUsageExhausted => '월별 AI 한도에 도달했습니다. 무제한으로 Pro로 업그레이드 →';
+
+  @override
+  String get undo => '실행 취소';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -3571,6 +4016,18 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get recipeAddToList => '쇼핑 목록에 추가';
 
   @override
+  String get recipeAddError => '목록에 추가할 수 없습니다. 다시 시도해 주세요.';
+
+  @override
+  String get recipeTapToCheck => '요리하는 동안 재료를 탭하여 확인하세요.';
+
+  @override
+  String get recipeIngredientInPantry => '식료품 저장실에';
+
+  @override
+  String get recipeIngredientLowPantry => '식료품 저장실이 적음';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$listName에 $count 재료가 추가되었습니다.';
   }
@@ -3680,12 +4137,12 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get paywallSelectPlan => '계획을 선택하세요:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return '$percent% 저장';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return '단 $price/월';
   }
 
@@ -3719,6 +4176,33 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get paywallRestore => '복원하다';
 
   @override
+  String get paywallTimelineToday => '오늘';
+
+  @override
+  String get paywallTimelineTodayDesc => '즉시 전체 액세스 잠금 해제';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return '일 $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc => '평가판이 종료되기 전에 알려드립니다.';
+
+  @override
+  String get paywallTimelineChargeDesc => '구독이 시작됩니다 - 언제든지 취소하세요';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI 쇼핑 도우미';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      '전체 목록을 말하거나 붙여넣으세요. AI가 몇 초 만에 목록을 정렬, 분류하고 예산을 책정합니다.';
+
+  @override
+  String get paywallBasedOnAnswers => '귀하의 답변을 바탕으로 개인화됨';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI는 항상 당신 곁에 있습니다.';
 
   @override
@@ -3749,9 +4233,6 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get itemRemoved => '항목이 제거됨';
-
-  @override
-  String get undo => '실행 취소';
 
   @override
   String get emptyListTitle => '목록이 비어 있습니다';
@@ -3868,6 +4349,9 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get pantryItemRemoved => '항목이 제거됨';
+
+  @override
+  String get pantryItemAdded => '항목이 추가됨';
 
   @override
   String deficitItems(int deficit) {
@@ -4254,6 +4738,31 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get prepTimeMinutes => '조리 시간 (분)';
 
   @override
+  String get recipeYieldServings => '제공량';
+
+  @override
+  String get recipeManualTotalCost => '수동 총 비용';
+
+  @override
+  String get recipeManualTotalCostHint => '재료 가격을 추정하려면 비워 두세요.';
+
+  @override
+  String get recipeEstimatedTotalCost => '예상 총 비용';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / 제공';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return '$count 제공';
+  }
+
+  @override
+  String get recipeEstimatePartial => '가격이 포함된 재료를 기준으로 한 부분 견적입니다.';
+
+  @override
   String get instructionsHint => '한 줄에 한 단계씩 입력하세요...';
 
   @override
@@ -4381,6 +4890,9 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   }
 
   @override
+  String get mealPlannerEstimatePartial => '부분 가격 데이터가 포함된 레시피를 기반으로 추정합니다.';
+
+  @override
   String get mealPlannerGenerateList => '쇼핑 목록 생성';
 
   @override
@@ -4471,6 +4983,9 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get catalogRareSection => '귀하의 국가에서는 덜 일반적입니다';
 
   @override
+  String get catalogRareBadge => '희귀한';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4486,6 +5001,9 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get catalogBrowse => '카탈로그 찾아보기';
+
+  @override
+  String get catalogCategories => '카테고리';
 
   @override
   String get offlineBanner => '귀하는 오프라인 상태입니다';
@@ -4516,6 +5034,40 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => '식사 유형 관리';
+
+  @override
+  String get mealPlannerAddType => '식사 유형 추가';
+
+  @override
+  String get mealPlannerEditType => '식사 유형 수정';
+
+  @override
+  String get mealPlannerTypeName => '이름';
+
+  @override
+  String get mealPlannerTypeColor => '색상';
+
+  @override
+  String get mealPlannerTypeIcon => '상';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      '이 식사 유형을 삭제하시겠습니까? 이 유형의 계획된 식사는 그대로 유지됩니다.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => '이름은 비워둘 수 없습니다.';
+
+  @override
+  String get mealPlannerTypeDeleteError => '이 식사 유형을 삭제할 수 없습니다.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => '맞춤 유형';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => '기본 유형';
 
   @override
   String get expirationDate => '만료일';
@@ -4573,6 +5125,9 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get errorLoadingLists => '목록을 로드하는 중에 오류가 발생했습니다.';
+
+  @override
+  String get errorLoadingItems => '항목을 로드하는 중에 오류가 발생했습니다.';
 
   @override
   String get noListsFound => '목록을 찾을 수 없습니다';
@@ -5319,4 +5874,206 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get obLoginError => '로그인에 실패했습니다. 다시 시도하거나 지금은 건너뛰세요.';
+
+  @override
+  String get searchMessages => '메시지 검색...';
+
+  @override
+  String get deletedList => '삭제된 목록';
+
+  @override
+  String get openConversation => '대화 열기';
+
+  @override
+  String get userRole => '너';
+
+  @override
+  String get assistantRole => '어시스턴트';
+
+  @override
+  String get agentActionsRunning => '작업 실행 중...';
+
+  @override
+  String get agentActionsFailed => '작업을 실행하지 못했습니다.';
+
+  @override
+  String get agentActionsPremium => '작업에는 프리미엄이 필요합니다';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => '변경사항 취소';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (프리미엄)';
+  }
+
+  @override
+  String get itemAddedToList => '목록에 항목이 추가되었습니다.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return '이전 상태: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt => '자동 작업을 잠금 해제하려면 프리미엄을 구독하세요.';
+
+  @override
+  String get viewPlans => '계획 보기';
+
+  @override
+  String get artifactSynced => '동기화됨';
+
+  @override
+  String get artifactBudgetLabel => '예산:';
+
+  @override
+  String get totalEstimatedLabel => '예상 총액';
+
+  @override
+  String get quickActionPantry => '식료품 저장실 보기';
+
+  @override
+  String get quickActionAi => '키피와 채팅';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI 서비스에서 오류($statusCode)를 반환했습니다.';
+  }
+
+  @override
+  String get aiTimeoutError => '요청이 너무 오래 걸렸습니다. 다시 시도해 주세요.';
+
+  @override
+  String get aiConnectionError => 'AI 서비스에 연결할 수 없습니다. 연결을 확인하세요.';
+
+  @override
+  String get aiEmptyResponseError => 'AI 서비스가 빈 응답을 반환했습니다.';
+
+  @override
+  String get aiInvalidResponseError => 'AI 서비스가 잘못된 응답을 반환했습니다.';
+
+  @override
+  String get categoryFruits => '과일';
+
+  @override
+  String get categoryCleaning => '청소';
+
+  @override
+  String get categoryBeverages => '음료수';
+
+  @override
+  String get categoryBakery => '빵집';
+
+  @override
+  String get categoryMeat => '고기';
+
+  @override
+  String get categoryDairy => '낙농';
+
+  @override
+  String get categoryVegetables => '채소';
+
+  @override
+  String get categoryGrains => '곡물 및 시리얼';
+
+  @override
+  String get categoryHygiene => '개인 관리';
+
+  @override
+  String get categoryFrozen => '냉동식품';
+
+  @override
+  String get categoryCanned => '통조림';
+
+  @override
+  String get categorySeasonings => '조미료';
+
+  @override
+  String get categorySweets => '과자와 디저트';
+
+  @override
+  String get categoryAlcohol => '주류';
+
+  @override
+  String get categoryFish => '물고기';
+
+  @override
+  String get categoryColdCuts => '냉햄';
+
+  @override
+  String get categoryUtilities => '생활용품';
+
+  @override
+  String get categoryPet => '애완동물 용품';
+
+  @override
+  String get categoryBaby => '아기';
+
+  @override
+  String get categoryOthers => '다른';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return '안녕하세요 $name, 저는 키피입니다 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => '안녕하세요 키피입니다👋';
+
+  @override
+  String get chatEmptyPitch =>
+      '목록을 작성하고, 레시피를 제안하고, 저장할 위치를 찾습니다. 어디서부터 시작할까요?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => '바비큐를 계획해보세요';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi님, 저는 바비큐를 주최할 예정입니다. 쇼핑 목록 작성을 도와주세요';
+
+  @override
+  String get aiRateLimitError => '짧은 시간에 메시지가 너무 많습니다. 몇 초간 기다렸다가 다시 시도해 보세요.';
+
+  @override
+  String get chatHistoryErrorTitle => '이 대화를 로드할 수 없습니다.';
+
+  @override
+  String get chatHistoryErrorBody => '문제가 발생했습니다. 다시 시도하려면 재시도를 탭하세요.';
+
+  @override
+  String get chatHistoryOfflineTitle => '오프라인 상태입니다';
+
+  @override
+  String get chatHistoryOfflineBody => '인터넷 연결을 확인하고 다시 시도하세요.';
+
+  @override
+  String get aiGeneratingResponse => '응답 생성 중…';
 }

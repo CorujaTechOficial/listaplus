@@ -34,6 +34,35 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +176,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -280,6 +316,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -309,6 +348,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -399,6 +445,9 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
@@ -427,6 +476,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -953,6 +1005,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1100,6 +1162,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1138,6 +1207,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1198,6 +1290,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1211,7 +1306,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1359,42 +1468,61 @@
   "addToPantryPrompt": "\"{name}\" kilerə əlavə edilsin?",
   "addedFeedback": "Əlavə edildi!",
   "advancedFeatures": "Qabaqcıl xüsusiyyətlər",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Əməliyyatları yerinə yetirmək alınmadı",
+  "agentActionsPremium": "Fəaliyyətlər Premium tələb edir",
+  "agentActionsRunning": "Əməliyyatlar icra olunur...",
+  "aiApiError": "AI xidməti xəta qaytardı ({statusCode}).",
   "aiAssistant": "AI Köməkçi",
   "aiAssistantDescription": "AI köməkçimizlə ağıllı təkliflər, reseptlər və fərdi məsləhətlər alın.",
   "aiAssistantGeneral": "Baş köməkçi",
   "aiAssistantHistory": "Köməkçi Tarix",
   "aiAssistantTitle": "AI köməkçisi",
+  "aiCapabilitiesBudget": "Büdcə və Qiymətlər",
+  "aiCapabilitiesLists": "Alış-veriş siyahıları",
+  "aiCapabilitiesOrganize": "Təşkilat",
+  "aiCapabilitiesRecipes": "Reseptlər və Menyular",
+  "aiCapabilitiesTitle": "Mən nə edə bilərəm?",
+  "aiConnectionError": "AI xidmətinə qoşulmaq mümkün olmadı. Bağlantınızı yoxlayın.",
   "aiConversationHistory": "Söhbət Tarixçəsi",
   "aiCreditsRemaining": "{remaining} kredit qalıb",
   "aiDeleteConversationConfirm": "Sil",
   "aiDeleteConversationTitle": "Söhbət silinsin?",
   "aiDeletedList": "Silinmiş Siyahı",
+  "aiEmptyResponseError": "Süni intellekt xidməti boş cavab verdi.",
   "aiEnergy": "AI Enerjisi",
   "aiEnergyLow": "Aşağı AI enerjisi",
   "aiError": "Üzr istəyirik, sorğunuzu emal edərkən xəta baş verdi. Əlaqənizi yoxlayın və ya daha sonra yenidən cəhd edin.",
   "aiFirstOpenHint": "Mən sizin alış-veriş köməkçiniz Kipiyəm. Siyahınız haqqında məndən nə soruşun!",
+  "aiGeneratingResponse": "Cavab yaradılır...",
   "aiHello": "salam! Mən Kipiyəm",
   "aiHowCanIHelp": "Bu gün sizə necə kömək edə bilərəm?",
+  "aiInvalidResponseError": "AI xidməti etibarsız cavab qaytardı.",
   "aiLimitAlmostReached": "Demək olar ki, AI mesajları bitdi",
   "aiNewConversation": "Yeni Söhbət",
   "aiNewSession": "Yeni Sessiya",
   "aiNoConversationFound": "Söhbət tapılmadı",
   "aiNoMessagesFound": "Mesaj tapılmadı",
   "aiPremiumUpsell": "Premium gedin",
+  "aiRateLimitError": "Qısa müddətdə çoxlu mesaj. Bir neçə saniyə gözləyin və yenidən cəhd edin.",
   "aiRecentConversations": "Son Söhbətlər",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} bu gün",
   "aiSearchMessages": "Mesajları axtarın...",
+  "aiSection": "AI köməkçisi",
   "aiStartNewConversation": "Yeni söhbətə başlayın",
   "aiSubscribeUnlimited": "Limitsiz AI üçün abunə olun",
   "aiSuggestCreateList": "İlk siyahımı yaradın",
   "aiSuggestSaveMore": "Daha çox necə qənaət etmək olar?",
   "aiTeaserFallback": "Tam cavabı açmaq və alış-verişiniz üçün limitsiz AI məsləhətləri əldə etmək üçün Premiuma abunə olun...",
+  "aiTimeoutError": "Sorğu çox uzun çəkdi. Yenidən cəhd edin.",
   "aiUnlockUnlimited": "Limitsiz AI kilidini açın",
   "aiUnlockWithAd": "Reklam ilə kilidini açın",
   "aiUsageExhausted": "Aylıq AI limitinə çatıldı. Limitsiz → üçün Pro-ya yüksəldin",
   "aiUsageWarning": "{remaining} AI əməliyyatları bu ay qaldı — limitsiz olaraq təkmilləşdirin",
   "aiVoiceCommandTooltip": "AI Səs Əmri (Premium)",
   "aiWelcomeContent": "salam! 👋 Mən **Kipi**, şəxsi alış-veriş və resept köməkçinizəm!\n\nMən sizə kömək etmək üçün buradayam:\n🛒 **Alış-verişinizi avtomatik olaraq kateqoriyalara görə təşkil edin\n💰 Büdcənizi **izləyin** və sizə pula qənaət edən məsləhətlər verin\n🍲 **Təklif edin** ləzzətli reseptlər artıq əlinizdə olanlarla\n\nBu gün sizə necə kömək edə bilərəm? İlk siyahınızı yaratmaqla başlaya bilərsiniz!",
+  "aiWelcomeSuggestBarbecue": "Bir barbekü planlaşdırın",
+  "aiWelcomeSuggestBarbecuePrompt": "Təəssüf ki, mən barbekü təşkil edirəm — alış-veriş siyahısını yaratmağa kömək edin",
   "aiWelcomeSuggestCreateList": "İlk siyahımı yaradın",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, mənə ilk alış-veriş siyahımı yaratmağa kömək et",
   "aiWelcomeSuggestSave": "Pula necə qənaət etmək olar?",
@@ -1405,14 +1533,17 @@
   "appTitle": "Alış-veriş Siyahısı",
   "appearance": "Görünüş",
   "archiveList": "Siyahını arxivləşdir",
+  "artifactBudgetLabel": "Büdcə:",
   "artifactReplaceBody": "Xərcləri optimallaşdırmaq üçün alternativ məhsul seçin.",
   "artifactReplaceTitle": "{name} dəyişdirin",
   "artifactSuggestedItems": "Təklif olunan maddələr",
   "artifactSwapButton": "Mübadilə",
   "artifactSwappedLabel": "Dəyişdirildi",
+  "artifactSynced": "Sinxronlaşdırıldı",
   "assistantHistory": "Köməkçi tarixi",
   "assistantHistorySubtitle": "Söhbət tarixçənizə baxın",
   "assistantName": "Köməkçi adı",
+  "assistantRole": "köməkçi",
   "backToChat": "Söhbətə qayıt",
   "backToToday": "Bu günə qayıt",
   "backupExported": "Ehtiyat ixrac edildi!",
@@ -1420,6 +1551,7 @@
   "backupPremiumDescription": "Ehtiyat və ixrac premium xüsusiyyətdir",
   "backupSubtitle": "Məlumatlarınızı ixrac və ya idxal edin",
   "backupTitle": "Ehtiyat",
+  "badResponse": "Pis cavab",
   "badgeBeginner": "Başlanğıc",
   "badgeOrganized": "Mütəşəkkil",
   "badgeSavingMaster": "Saving Master",
@@ -1447,10 +1579,12 @@
   "catOthers": "Digər",
   "catalogAddItems": "{count} {count, plural, one{item} other{items}} əlavə edin →",
   "catalogBrowse": "Kataloqu nəzərdən keçirin",
+  "catalogCategories": "Kateqoriyalar",
   "catalogFilterNational": "Millilər",
   "catalogItemAdded": "{name} əlavə edildi",
   "catalogMyFrequents": "Mənim Tez-tez",
   "catalogProductNotFound": "Məhsul tapılmadı, adı yazın",
+  "catalogRareBadge": "Nadir",
   "catalogRareSection": "ölkənizdə daha az yayılmışdır",
   "catalogRetry": "Yenidən cəhd edin",
   "catalogSearchGlobal": "İstənilən məhsulu axtarın...",
@@ -1459,16 +1593,43 @@
   "catalogSortPopular": "Ən populyar",
   "catalogTitle": "Kataloq",
   "category": "Kateqoriya",
+  "categoryAlcohol": "Spirtli içkilər",
+  "categoryBaby": "Körpə",
+  "categoryBakery": "Çörəkxana",
+  "categoryBeverages": "İçkilər",
+  "categoryCanned": "Konservləşdirilmiş məhsullar",
+  "categoryCleaning": "Təmizləmə",
+  "categoryColdCuts": "Soyuq kəsiklər",
   "categoryColorLabel": "Rəng",
+  "categoryDairy": "Süd məhsulları",
+  "categoryFish": "Balıq",
+  "categoryFrozen": "Dondurulmuş qidalar",
+  "categoryFruits": "Meyvələr",
+  "categoryGrains": "Taxıl və dənli bitkilər",
+  "categoryHygiene": "Şəxsi qulluq",
   "categoryIconLabel": "İkon",
   "categoryLimitReached": "Kateqoriya limitinə çatdı",
+  "categoryMeat": "Ət",
   "categoryName": "Kateqoriya adı",
   "categoryNameHint": "Kateqoriya adını daxil edin",
+  "categoryOthers": "Digər",
+  "categoryPet": "Heyvan ləvazimatları",
+  "categorySeasonings": "Ədviyyatlar",
+  "categorySweets": "Şirniyyatlar və desertlər",
+  "categoryUtilities": "Məişət ləvazimatları",
+  "categoryVegetables": "Tərəvəz",
+  "chatEmptyGreeting": "Salam {name}, mən Kipi 👋",
+  "chatEmptyGreetingNoName": "Salam, mən Kipi 👋",
+  "chatEmptyPitch": "Siyahılar tərtib edirəm, reseptlər təklif edirəm və harada saxlayacağımı tapıram. Haradan başlayaq?",
   "chatEmptySubtitle": "Başlamaq üçün element təklifləri, reseptlər və ya qənaət üçün məsləhətlər soruşun.",
   "chatEmptyTitle": "Söhbətiniz boşdur",
   "chatError": "Söhbəti yükləyərkən xəta: {error}",
   "chatHint": "Mesajınızı yazın...",
   "chatHintBlocked": "Söhbət etmək üçün AI kilidini açın",
+  "chatHistoryErrorBody": "Bizim tərəfimizdən nəsə səhv oldu. Yenidən cəhd etmək üçün yenidən cəhd edin.",
+  "chatHistoryErrorTitle": "Bu söhbəti yükləmək mümkün olmadı",
+  "chatHistoryOfflineBody": "İnternet bağlantınızı yoxlayın və yenidən cəhd edin.",
+  "chatHistoryOfflineTitle": "Siz oflaynsınız",
   "chatSubtitle": "Maddə təklifləri, reseptlər və ya qənaət məsləhətləri üçün soruşun.",
   "chatSubtitleShort": "Qiymətlər, reseptlər, təşkilatçılıq haqqında soruşun...",
   "chooseCurrency": "Valyuta seçin",
@@ -1476,6 +1637,7 @@
   "chooseImageSource": "Şəkil mənbəyini seçin",
   "chooseLanguage": "Dil seçin",
   "chooseThemeColor": "Mövzu rəngini seçin",
+  "chooseThemeMode": "Mövzu rejimini seçin",
   "clear": "Təmizlə",
   "clearHistory": "Tarixçəni Təmizlə",
   "clearHistoryConfirm": "Bu sessiyadakı bütün mesajları təmizlə?",
@@ -1518,6 +1680,10 @@
   "customizeAssistant": "Fərdiləşdirin",
   "dark": "Tünd",
   "data": "Məlumat",
+  "dateGroupOlder": "Yaşlı",
+  "dateGroupPrevious7Days": "Əvvəlki 7 gün",
+  "dateGroupToday": "Bu gün",
+  "dateGroupYesterday": "Dünən",
   "deficitItems": "{deficit,plural, one{{deficit} maddə alınmalıdır} other{{deficit} maddə alınmalıdır}}",
   "delete": "Sil",
   "deleteCategory": "Sil",
@@ -1534,6 +1700,7 @@
   "deleteRecipeConfirmMsg": "\"{recipeName}\" reseptini silmək istədiyinizə əminsiniz? Bu əməliyyat geri qaytarıla bilməz.",
   "deleteSession": "Söhbəti silin",
   "deleteSessionConfirm": "Bu söhbəti silmək istədiyinizə əminsiniz? Mesajlar həmişəlik silinəcək.",
+  "deletedList": "Silinmiş siyahı",
   "deselectAll": "Hamısını seçmə",
   "dietaryRestrictions": "Pəhriz məhdudiyyətləri",
   "dietaryRestrictionsHint": "Pəhriz məhdudiyyətləri varmı?",
@@ -1546,6 +1713,7 @@
   "editCategoryDialog": "Kateqoriyaya düzəliş edin",
   "editItem": "Maddəni Redaktə Et",
   "editItemPrice": "Təxmini qiymət",
+  "editMessage": "Mesajı redaktə edin",
   "editPantryItem": "{name} redaktə et",
   "editRecipe": "Redaktə et",
   "editRecipeTitle": "Resepti redaktə et",
@@ -1567,6 +1735,7 @@
   "errorLoadingChat": "Vay! Söhbəti yükləyərkən xəta baş verdi.",
   "errorLoadingChatSubtitle": "Bağlantınızı yoxlayın və ya daha sonra yenidən cəhd edin.",
   "errorLoadingHistory": "Tarixçəni yükləmə xətası",
+  "errorLoadingItems": "Elementləri yükləmə xətası",
   "errorLoadingLists": "Siyahıları yükləmə xətası",
   "errorLoadingRecipes": "Reseptlərin yüklənməsində xəta baş verdi",
   "errorLoadingSubscription": "Abunəlik yüklənərkən xəta baş verdi",
@@ -1619,6 +1788,7 @@
   "generateShoppingList": "Alış-veriş siyahısı yarat",
   "gestureHint": "Seçmək üçün basıb saxlayın • Silmək üçün sürüşdürün",
   "globalAssistant": "Qlobal köməkçi",
+  "goodResponse": "Yaxşı cavab",
   "howCanIHelp": "Mən necə kömək edə bilərəm?",
   "idealQty": "İdeal say",
   "idealQuantity": "İdeal miqdar",
@@ -1635,14 +1805,18 @@
   "instructionsHint": "Hər sətirə bir addım yazın...",
   "inviteToList": "Siyahıya dəvət edin",
   "itemAddedSnack": "{name} əlavə edildi",
+  "itemAddedToList": "Element siyahıya əlavə edildi.",
   "itemName": "Maddə adı",
   "itemRemoved": "Maddə silindi",
   "itemsAddedSuccess": "Maddələr siyahıya uğurla əlavə edildi!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} maddə alınmalıdır",
   "itemsPurchased": "Alınan Əşyalar",
   "itemsPurchasedCount": "{total} ədəddən {purchased} alınıb",
   "itemsPurchasedShort": "{purchased}/{total} alınıb",
   "itemsWillBeAdded": "{count} maddə əlavə olunacaq",
+  "keepAdding": "Əlavə etməyə davam edin",
+  "keepAddingSubtitle": "Birdən çox element əlavə etmək üçün vərəqi açıq saxlayın",
   "kipiListProActive": "KipiList Pro Aktivdir",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Nə almaq lazımdır?",
@@ -1684,21 +1858,28 @@
   "markAsPurchased": "Alınmış kimi işarələ",
   "markItemsToSeeAnalysis": "Təhlili görmək üçün maddələri alınmış kimi işarələyin.",
   "marketMode": "Bazar rejimi",
+  "marketModeDescription": "Alış-veriş edərkən əşyaları yoxlayın",
   "marketsToAvoid": "Qarşısını almaq üçün bazarlar",
   "marketsToAvoidHint": "Alış-veriş etməməyə üstünlük verdiyiniz marketlər",
   "mealDragHint": "Sürükləmək və hərəkət etdirmək üçün basıb saxlayın",
   "mealNoRecipeFound": "Heç bir resept tapılmadı",
   "mealPlannerAddMeal": "Yemək əlavə et",
+  "mealPlannerAddType": "Yemək növünü əlavə edin",
+  "mealPlannerCustomTypeLabel": "Fərdi növ",
   "mealPlannerDateLabel": "Tarix",
+  "mealPlannerDefaultTypeLabel": "Defolt növ",
   "mealPlannerDeleteMeal": "Yeməyi sil",
   "mealPlannerEditMeal": "Yeməyi redaktə et",
+  "mealPlannerEditType": "Yemək növünü redaktə edin",
   "mealPlannerError": "Yemək planının yüklənməsində xəta baş verdi",
+  "mealPlannerEstimatePartial": "Qismən qiymət məlumatları ilə reseptlər əsasında təxmin edin.",
   "mealPlannerGenerateList": "Alış-veriş siyahısı yarat",
   "mealPlannerGenerateListConfirm": "Bu həftəlik planlaşdırılan yeməklərin bütün inqrediyentlərini alış-veriş siyahınıza əlavə edilsin?",
   "mealPlannerGenerateListEmpty": "Əlavə ediləcək inqrediyent yoxdur. Əvvəlcə reseptlərlə bəzi yeməklər planlaşdırın.",
   "mealPlannerGenerateListNoList": "Əvvəlcə bir alış-veriş siyahısı yaradın.",
   "mealPlannerGenerateListSuccess": "Siyahınıza {count} inqrediyent əlavə edildi!",
   "mealPlannerLoading": "Yemək planı yüklənir...",
+  "mealPlannerManageTypes": "Yemək növlərini idarə edin",
   "mealPlannerMealDeleted": "Yemək silindi",
   "mealPlannerMealTypeBreakfast": "Səhər yeməyi",
   "mealPlannerMealTypeDinner": "Şam yeməyi",
@@ -1718,6 +1899,12 @@
   "mealPlannerServings": "{count,plural, one{{count} porsiya} other{{count} porsiya}}",
   "mealPlannerServingsLabel": "Porsiya sayı",
   "mealPlannerTitle": "Yemək Planlayıcısı",
+  "mealPlannerTypeColor": "Rəng",
+  "mealPlannerTypeDeleteConfirm": "Bu yemək növünü silmək istədiyinizə əminsiniz? Bu tipli planlaşdırılmış yeməklər qalacaq.",
+  "mealPlannerTypeDeleteError": "Bu yemək növünü silmək mümkün deyil.",
+  "mealPlannerTypeIcon": "İkon",
+  "mealPlannerTypeName": "ad",
+  "mealPlannerTypeNameEmpty": "Ad boş ola bilməz",
   "mealPlannerViewMonthly": "Aylıq görünüş",
   "mealPlannerViewWeekly": "Həftəlik görünüş",
   "mealPlannerWeekEmpty": "Bu həftə üçün heç nə planlaşdırılmayıb",
@@ -1739,6 +1926,7 @@
   "navRecipes": "Reseptlər",
   "newCategoryDialog": "Yeni kateqoriya",
   "newChat": "Yeni Söhbət",
+  "newChatStarted": "Yeni söhbət başladı",
   "newListTitle": "Yeni Alış-veriş Siyahısı",
   "newPantryList": "Kiler Alış-verişi",
   "newRecipe": "Yeni resept",
@@ -1933,6 +2121,7 @@
   "onboardingViewAllPlans": "Bütün planlara baxın",
   "onboardingWelcomeDesc": "Alış-verişinizi təşkil etməyin və pula qənaət etməyin ən ağıllı yolu.",
   "onboardingWelcomeTitle": "KipiList-a xoş gəlmisiniz",
+  "openConversation": "Açıq söhbət",
   "openMenu": "Menunu aç",
   "organizeAisles": "Rəflərə görə təşkil et",
   "organizeAislesPrompt": "Bazar rəflərinə görə təşkil et.",
@@ -1945,6 +2134,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} kilerdə",
   "pantryCompactView": "Kompakt Görünüş",
   "pantryDeficit": "Çatışmayan {amount}{unit}",
+  "pantryDeficitCount": "Çatışmayan {count}{unit}",
   "pantryDeleteItemsContent": "{count} seçilmiş elementi silmək istəyirsiniz?",
   "pantryDeleteItemsTitle": "Elementləri silin",
   "pantryDeleteSelected": "Seçilmişləri silin",
@@ -1961,6 +2151,7 @@
   "pantryFilterExpiring": "İstifadə müddəti bitir",
   "pantryFilterOutStock": "Stokda bitdi",
   "pantryFirstOpenHint": "Evdə nə olduğunuzu izləyin. Elementlər əlavə edin və ya barkodları skan edin.",
+  "pantryItemAdded": "Element əlavə edildi",
   "pantryItemRemoved": "Maddə silindi",
   "pantryMoreDetails": "Daha ətraflı",
   "pantryNoItemsFound": "\"{query}\" üçün heç bir element tapılmadı",
@@ -1974,6 +2165,7 @@
   "paywallAfterItem2": "Təmizləmə",
   "paywallAfterItem3": "Ətlər",
   "paywallAfterItem4": "Çörəkxana",
+  "paywallBasedOnAnswers": "Cavablarınızdan fərdiləşdirilmişdir",
   "paywallBeforeAfterTitle": "AI əvvəl və sonra:",
   "paywallBeforeItem1": "düyü",
   "paywallBeforeItem2": "sabun",
@@ -2011,6 +2203,8 @@
   "paywallGoalHeadlinePantry": "{name}, anbarınızı mükəmməl izləyin!",
   "paywallGoalHeadlineRecipes": "{name}, yeni reseptlər kəşf edin!",
   "paywallGoalHeadlineSaveMoney": "{name}, hər səfərdə qənaət edin!",
+  "paywallHeroFeatureDesc": "Bütün siyahını danışın və ya yapışdırın — AI onu saniyələr ərzində çeşidləyir, kateqoriyalara ayırır və büdcələşdirir",
+  "paywallHeroFeatureTitle": "AI alış-veriş köməkçisi",
   "paywallHeroHeadline": "Kipi AI həmişə sənin yanındadır",
   "paywallHeroSubtitle": "Cibinizdə AI ilə elementlər əlavə edin, siyahıları təşkil edin və vaxtınıza qənaət edin",
   "paywallHeroSubtitlePersonalized": "Salam {name}, alış-verişinizi düzgün təşkil edin.",
@@ -2045,6 +2239,11 @@
   "paywallTestimonial2Text": "Bir daha siyahıda bir elementi unutmadım. AI söhbəti sensasiyalıdır!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "İstifadəçilərimiz nə deyir:",
+  "paywallTimelineChargeDesc": "Abunəliyiniz başlayır — istənilən vaxt ləğv edin",
+  "paywallTimelineDay": "Gün {day}",
+  "paywallTimelineReminderDesc": "Məhkəmə bitməzdən əvvəl sizə xatırladırıq",
+  "paywallTimelineToday": "Bu gün",
+  "paywallTimelineTodayDesc": "Dərhal tam girişin kilidini açın",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Pulsuz sınağa başlayın",
   "paywallTrialDays": "{days} GÜNLƏR PULSUZ",
@@ -2067,11 +2266,15 @@
   "prefSharing": "Siyahıları paylaş",
   "prefUnlimitedLists": "Limitsiz siyahılar",
   "prefUnlimitedPantry": "Limitsiz kiler",
+  "preferencesSection": "Üstünlüklər",
   "preferredMarket": "Üstün bazar",
   "preferredMarketHint": "Adətən harada alış-veriş edirsiniz?",
+  "premiumActionsPrompt": "Avtomatik əməliyyatları açmaq üçün Premiuma abunə olun.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Açmaq üçün yüksəldin",
   "prepTime": "Hazırlanma vaxtı",
   "prepTimeMinutes": "Hazırlanma vaxtı (dəqiqə)",
+  "previousItemState": "Əvvəlki vəziyyət: {quantity} {unit} [{category}]{price}",
   "privacy": "Məxfilik",
   "product": "Məhsul",
   "productName": "Məhsul adı",
@@ -2088,21 +2291,35 @@
   "quantityShort": "Say",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Kipi ilə söhbət edin",
+  "quickActionPantry": "Anbara baxın",
+  "quickAddToList": "Siyahıya əlavə edin",
   "quickRecipe": "Sürətli resept",
   "quickRecipePrompt": "Siyahımdakı maddələrlə reseptlər təklif et.",
   "quickReplies": "Tez cavablar:",
   "quickSuggestions": "Sürətli təkliflər",
+  "recipeAddError": "Siyahınıza əlavə etmək mümkün olmadı. Yenidən cəhd edin.",
   "recipeAddToList": "Alış-veriş siyahısına əlavə edin",
   "recipeAddedConfirmation": "{count} inqrediyentlər {listName}-a əlavə edildi",
   "recipeCreated": "Resept yaradıldı!",
   "recipeDeleted": "Resept silindi",
+  "recipeEstimatePartial": "Qiyməti olan inqrediyentlərə əsaslanan qismən təxmin.",
+  "recipeEstimatedCostPerServing": "{cost} / xidmət edir",
+  "recipeEstimatedTotalCost": "Təxmini ümumi xərc",
   "recipeImage": "Resept şəkli",
+  "recipeIngredientInPantry": "Kilerdə",
+  "recipeIngredientLowPantry": "Kilerdə aşağı",
   "recipeIngredientSingular": "1 tərkib",
   "recipeIngredientsPlural": "{count} maddələr",
+  "recipeManualTotalCost": "Əl ilə ümumi xərc",
+  "recipeManualTotalCostHint": "Tərkib qiymətlərindən təxmin etmək üçün boş buraxın.",
   "recipeName": "Reseptin adı",
   "recipeSaved": "Resept yadda saxlanıldı!",
+  "recipeServesCount": "{count} xidmət edir",
   "recipeSuggestion": "Resept təklifi",
   "recipeTags": "Resept teqləri",
+  "recipeTapToCheck": "Bişirərkən onu yoxlamaq üçün tərkibə toxunun",
+  "recipeYieldServings": "Verilən porsiya",
   "regenerate": "Yenidən yarat",
   "remove": "Sil",
   "removeBudget": "Sil",
@@ -2126,9 +2343,12 @@
   "savings": "Qənaətlər",
   "scanBarcodeTitle": "Barkodu skan edin",
   "scanProductTitle": "Məhsulu Skanlayın",
+  "scrollToBottom": "Aşağıya sürüşdürün",
+  "searchConversations": "Söhbətləri axtarın",
   "searchCurrency": "Valyuta axtar...",
   "searchInConversation": "Söhbətdə axtar...",
   "searchLanguage": "Dil axtar...",
+  "searchMessages": "Mesajları axtarın...",
   "searchRecipes": "Reseptləri axtar...",
   "selectAll": "Hamısını seç",
   "selectCheaperAlternative": "Daha ucuz alternativ seçin",
@@ -2185,6 +2405,7 @@
   "signInGoogle": "Google ilə daxil ol",
   "skip": "Keç",
   "smartOrganization": "Ağıllı Təşkilat",
+  "somethingWentWrong": "Nəsə xəta baş verdi",
   "sortAZ": "A–Z",
   "sortCategory": "Kateqoriya",
   "sortDate": "Tarix",
@@ -2215,6 +2436,7 @@
   "themeColor": "Tema rəngi",
   "themeGreen": "Yaşıl",
   "themeIndigo": "İndiqo",
+  "themeMode": "Mövzu rejimi",
   "themeOrange": "Narıncı",
   "themePink": "Çəhrayı",
   "themePurple": "Bənövşəyi",
@@ -2222,12 +2444,14 @@
   "themeSelectionTitle": "Mövzu Rəngini seçin",
   "themeTeal": "Mavi",
   "totalEstimated": "Ümumi təxmini: {amount}",
+  "totalEstimatedLabel": "Təxmini cəmi",
   "totalSavings": "Ümumi qənaət",
   "totalSpending": "Ümumi Xərc",
   "trackStock": "Ehtiyatı izlə",
   "trackStockActive": "Alış təkliflərində görünür",
   "trackStockInactive": "Alış təklifi yaratmır",
   "undo": "Geri al",
+  "undoChanges": "Dəyişiklikləri ləğv edin",
   "unit": "Vahid",
   "unitPack": "paket",
   "unlockAi": "Limitsiz AI kilidini açın",
@@ -2252,6 +2476,7 @@
   "userProfileSaveButton": "Profili yadda saxla",
   "userProfileSaved": "Profil uğurla yadda saxlandı!",
   "userProfileTitle": "Profilim",
+  "userRole": "sən",
   "validForLimitedTime": "Məhdud müddət üçün keçərlidir",
   "version": "Versiya",
   "viewActive": "Aktivlərə Bax",
@@ -2259,6 +2484,7 @@
   "viewHistory": "Tarixçəyə Bax",
   "viewItems": "Elementlərə baxın",
   "viewList": "Siyahıya bax",
+  "viewPlans": "Planlara baxın",
   "viewPro": "Pro-ya baxın",
   "viewRecipe": "Reseptə bax",
   "voiceCommandContent": "Siyahınızı idarə etmək üçün təbii danışın!\n\nNümunələr:\n• 'Çörək, pendir və vetçina əlavə et'\n• 'Camaşır yuyucusunu sil'\n• 'Temanı maviyə dəyiş'\n\nBu, KipiList Premium-un eksklüziv xüsusiyyətidir.",

@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -130,6 +144,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -334,6 +355,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingProducts": {
     "placeholders": {
       "error": {
@@ -481,6 +505,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1105,6 +1136,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1231,6 +1272,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1263,6 +1311,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@progressBudget": {
     "placeholders": {
@@ -1324,7 +1395,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1448,23 +1533,37 @@
   "addingItems": "Pridávajú sa položky do zoznamu...",
   "addingToPantry": "Pridáva sa do špajze...",
   "advancedFeatures": "Pokročilé funkcie",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Akcie sa nepodarilo spustiť",
+  "agentActionsPremium": "Akcie vyžadujú Premium",
+  "agentActionsRunning": "Prebiehajúce akcie...",
+  "aiApiError": "Služba AI vrátila chybu ({statusCode}).",
   "aiAssistant": "AI asistent",
   "aiAssistantDescription": "Získajte inteligentné návrhy, recepty a personalizované tipy s naším AI asistentom.",
   "aiAssistantTitle": "Asistent AI",
+  "aiConnectionError": "Nepodarilo sa pripojiť k službe AI. Skontrolujte pripojenie.",
   "aiCreditsRemaining": "Zostáva {remaining} kreditov",
+  "aiEmptyResponseError": "Služba AI vrátila prázdnu odpoveď.",
   "aiEnergy": "Energia AI",
   "aiEnergyLow": "Nízka energia AI",
   "aiError": "Prepáčte, pri spracovaní vašej požiadavky sa vyskytla chyba. Skontrolujte pripojenie alebo skúste znova neskôr.",
+  "aiGeneratingResponse": "Generuje sa odpoveď…",
+  "aiInvalidResponseError": "Služba AI vrátila neplatnú odpoveď.",
   "aiLimitAlmostReached": "Takmer chýbajú správy AI",
   "aiPremiumDescription": "Toto interaktívne rozhranie využíva pokročilú umelú inteligenciu a je exkluzívne pre členov Pro alebo prostredníctvom rýchlej reklamy.",
+  "aiRateLimitError": "Príliš veľa správ v krátkom čase. Počkajte niekoľko sekúnd a skúste to znova.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} dnes",
+  "aiSection": "Asistent AI",
   "aiSubscribeUnlimited": "Predplaťte si neobmedzenú AI",
   "aiTeaserFallback": "Prihláste sa na odber Premium, aby ste odomkli plnú odpoveď a získali neobmedzené tipy na AI pre svoje nákupy...",
+  "aiTimeoutError": "Žiadosť trvala príliš dlho. Skúste to znova.",
   "aiUnlockUnlimited": "Odomknite neobmedzenú AI",
   "aiUsageExhausted": "Bol dosiahnutý mesačný limit AI. Inovujte na Pro neobmedzene →",
   "aiUsageWarning": "Tento mesiac zostáva {remaining} akcií AI – neobmedzená inovácia",
   "aiVoiceCommandTooltip": "AI hlasový príkaz (Premium)",
   "aiWelcomeContent": "Dobrý deň! 👋 Som **Kipi**, váš osobný pomocník pri nakupovaní a receptoch!\n\nSom tu, aby som vám pomohol:\n🛒 **Usporiadajte** svoje nakupovanie podľa kategórií automaticky\n💰 **Sledujte** svoj rozpočet a dajte vám tipy na šetrenie peňazí\n🍲 **Navrhnite** chutné recepty s tým, čo už máte\n\nAko ti dnes môžem pomôcť? Môžete začať vytvorením svojho prvého zoznamu!",
+  "aiWelcomeSuggestBarbecue": "Naplánujte si grilovanie",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, organizujem grilovačku — pomôž mi zostaviť nákupný zoznam",
   "aiWelcomeSuggestCreateList": "Vytvorte môj prvý zoznam",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, pomôž mi vytvoriť môj prvý nákupný zoznam",
   "aiWelcomeSuggestSave": "Ako ušetriť peniaze?",
@@ -1474,9 +1573,12 @@
   "appTitle": "Nákupný zoznam",
   "appearance": "Vzhľad",
   "archiveList": "Archivovať zoznam",
+  "artifactBudgetLabel": "Rozpočet:",
+  "artifactSynced": "Synchronizované",
   "assistantHistory": "História Asistenta",
   "assistantHistorySubtitle": "Pozrite si históriu konverzácií",
   "assistantName": "Meno asistenta",
+  "assistantRole": "asistent",
   "backToChat": "Späť na Chat",
   "backToToday": "Späť k dnešku",
   "backupExported": "Záloha exportovaná!",
@@ -1484,6 +1586,7 @@
   "backupPremiumDescription": "Záloha a export je prémiová funkcia",
   "backupSubtitle": "Exportujte alebo importujte svoje dáta",
   "backupTitle": "Záloha",
+  "badResponse": "Zlá odozva",
   "badgeBeginner": "Začiatočník",
   "badgeOrganized": "Organizované",
   "badgeSavingMaster": "Záchrana Majstra",
@@ -1509,9 +1612,11 @@
   "catOthers": "Ostatné",
   "catalogAddItems": "Pridať {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Prehľadávať katalóg",
+  "catalogCategories": "kategórie",
   "catalogFilterNational": "Štátni príslušníci",
   "catalogMyFrequents": "Moji frekventanti",
   "catalogProductNotFound": "Produkt sa nenašiel, zadajte názov",
+  "catalogRareBadge": "Zriedkavé",
   "catalogRareSection": "menej časté vo vašej krajine",
   "catalogSearchGlobal": "Vyhľadajte akýkoľvek produkt...",
   "catalogSearchInCategory": "Hľadať v {category}...",
@@ -1520,16 +1625,43 @@
   "catalogTitle": "Katalóg",
   "categorizingItems": "Kategorizácia položiek...",
   "category": "Kategória",
+  "categoryAlcohol": "Alkoholické nápoje",
+  "categoryBaby": "Baby",
+  "categoryBakery": "Pekáreň",
+  "categoryBeverages": "Nápoje",
+  "categoryCanned": "Konzervy",
+  "categoryCleaning": "Upratovanie",
+  "categoryColdCuts": "Údeniny",
   "categoryColorLabel": "Farba",
+  "categoryDairy": "Mliekareň",
+  "categoryFish": "Ryby",
+  "categoryFrozen": "Mrazené potraviny",
+  "categoryFruits": "Ovocie",
+  "categoryGrains": "Obilniny a obilniny",
+  "categoryHygiene": "Osobná starostlivosť",
   "categoryIconLabel": "Ikona",
   "categoryLimitReached": "Limit 10 kategórií v bezplatnej verzii. Inovujte na Pro!",
+  "categoryMeat": "Mäso",
   "categoryName": "Názov kategórie",
   "categoryNameHint": "Napr.: Mäso",
+  "categoryOthers": "Iné",
+  "categoryPet": "Chovateľské potreby",
+  "categorySeasonings": "Koreniny",
+  "categorySweets": "Sladkosti a dezerty",
+  "categoryUtilities": "Domáce potreby",
+  "categoryVegetables": "Zelenina",
+  "chatEmptyGreeting": "Ahoj {name}, som Kipi 👋",
+  "chatEmptyGreetingNoName": "Ahoj, som Kipi 👋",
+  "chatEmptyPitch": "Vytváram zoznamy, navrhujem recepty a hľadám, kam uložiť. kde začneme?",
   "chatEmptySubtitle": "Ak chcete začať, požiadajte o návrhy položiek, recepty alebo tipy na uloženie.",
   "chatEmptyTitle": "Váš čet je prázdny",
   "chatError": "Chyba pri načítaní chatu: {error}",
   "chatHint": "Napíšte svoju správu...",
   "chatHintBlocked": "Odomknite AI, aby ste mohli chatovať",
+  "chatHistoryErrorBody": "Na našej strane sa niečo pokazilo. Klepnutím na tlačidlo Opakovať to skúste znova.",
+  "chatHistoryErrorTitle": "Túto konverzáciu sa nepodarilo načítať",
+  "chatHistoryOfflineBody": "Skontrolujte svoje internetové pripojenie a skúste to znova.",
+  "chatHistoryOfflineTitle": "Ste offline",
   "chatSubtitle": "Pýtajte sa na návrhy položiek, recepty alebo tipy na šetrenie.",
   "chatSubtitleShort": "Pýtajte sa na ceny, recepty, organizáciu...",
   "checkingItem": "Kontroluje sa položka...",
@@ -1540,6 +1672,7 @@
   "chooseImageSource": "Vyberte zdroj obrázka",
   "chooseLanguage": "Vyberte Jazyk",
   "chooseThemeColor": "Vyberte Farba motívu",
+  "chooseThemeMode": "Vyberte režim témy",
   "clear": "Vyčistiť",
   "clearHistory": "Vyčistiť históriu",
   "clearHistoryConfirm": "Vymazať všetky správy v tejto relácii?",
@@ -1588,6 +1721,10 @@
   "customizeAssistant": "Prispôsobiť",
   "dark": "Tmavý",
   "data": "Dáta",
+  "dateGroupOlder": "Starší",
+  "dateGroupPrevious7Days": "Predchádzajúcich 7 dní",
+  "dateGroupToday": "Dnes",
+  "dateGroupYesterday": "včera",
   "dayFri": "Pia",
   "dayMon": "Po",
   "daySat": "So",
@@ -1611,6 +1748,7 @@
   "deleteRecipeConfirmMsg": "Naozaj chcete odstrániť „{recipeName}“? Túto akciu nie je možné vrátiť späť.",
   "deleteSession": "Odstrániť rozhovor",
   "deleteSessionConfirm": "Naozaj chcete odstrániť tento rozhovor? Správy sa natrvalo stratia.",
+  "deletedList": "Vymazaný zoznam",
   "deselectAll": "Zrušiť výber",
   "dietaryRestrictions": "Diétne obmedzenia",
   "dietaryRestrictionsHint": "Napr.: vegánske, vegetariánske, bezlepkové",
@@ -1623,6 +1761,7 @@
   "editCategoryDialog": "Upraviť kategóriu",
   "editItem": "Upraviť položku",
   "editItemPrice": "Odhadovaná cena",
+  "editMessage": "Upraviť správu",
   "editPantryItem": "Upraviť {name}",
   "editRecipe": "Upraviť",
   "editRecipeTitle": "Upraviť recept",
@@ -1648,6 +1787,7 @@
   "errorLoadingChat": "Ojoj! Pri načítavaní četu sa vyskytla chyba.",
   "errorLoadingChatSubtitle": "Skontrolujte pripojenie alebo to skúste znova neskôr.",
   "errorLoadingHistory": "Chyba pri načítavaní histórie",
+  "errorLoadingItems": "Chyba pri načítavaní položiek",
   "errorLoadingLists": "Chyba pri načítavaní zoznamov",
   "errorLoadingProducts": "Chyba pri načítavaní produktov: {error}",
   "errorLoadingRecipes": "Chyba pri načítavaní receptov",
@@ -1722,6 +1862,7 @@
   "generatingShareLink": "Generuje sa odkaz na zdieľanie...",
   "gestureHint": "Podržaním vyberte • Potiahnutím odstráňte",
   "globalAssistant": "Globálny asistent",
+  "goodResponse": "Dobrá odozva",
   "howCanIHelp": "Ako môžem pomôcť?",
   "icon": "ikona:",
   "idealQty": "Ideálne množ.",
@@ -1740,14 +1881,18 @@
   "inviteToList": "Pozvať do zoznamu",
   "itemAdded": "{name} pridané",
   "itemAddedSnack": "{name} pridané",
+  "itemAddedToList": "Položka bola pridaná do zoznamu.",
   "itemName": "Názov položky",
   "itemRemoved": "Položka odstránená",
   "itemsAddedSuccess": "Položky úspešne pridané do zoznamu!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} položku(y/iek) treba kúpiť",
   "itemsPurchased": "Položky zakúpené",
   "itemsPurchasedCount": "Zakúpené: {purchased} z {total}",
   "itemsPurchasedShort": "{purchased}/{total} zakúpené",
   "itemsWillBeAdded": "{count} položku(y/iek) bude pridaných",
+  "keepAdding": "Pokračujte v pridávaní",
+  "keepAddingSubtitle": "Ak chcete pridať viacero položiek, nechajte hárok otvorený",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Čo potrebujete kúpiť?",
@@ -1786,16 +1931,22 @@
   "marketsToAvoid": "Trhy, ktorým sa treba vyhnúť",
   "marketsToAvoidHint": "Napr.: Trh Y, Trh Z",
   "mealPlannerAddMeal": "Pridajte jedlo",
+  "mealPlannerAddType": "Pridajte druh jedla",
+  "mealPlannerCustomTypeLabel": "Vlastný typ",
   "mealPlannerDateLabel": "Dátum",
+  "mealPlannerDefaultTypeLabel": "Predvolený typ",
   "mealPlannerDeleteMeal": "Odstráňte jedlo",
   "mealPlannerEditMeal": "Upraviť jedlo",
+  "mealPlannerEditType": "Upraviť typ jedla",
   "mealPlannerError": "Chyba pri načítavaní jedálneho lístka",
+  "mealPlannerEstimatePartial": "Odhad na základe receptúr s čiastočnými údajmi o cene.",
   "mealPlannerGenerateList": "Vytvorte nákupný zoznam",
   "mealPlannerGenerateListConfirm": "Pridať všetky ingrediencie z plánovaných jedál na tento týždeň do nákupného zoznamu?",
   "mealPlannerGenerateListEmpty": "Žiadne prísady na pridávanie. Naplánujte si najskôr nejaké jedlá s receptami.",
   "mealPlannerGenerateListNoList": "Najprv vytvorte nákupný zoznam.",
   "mealPlannerGenerateListSuccess": "{count} prísad pridaných do vášho zoznamu!",
   "mealPlannerLoading": "Načítava sa jedálny lístok...",
+  "mealPlannerManageTypes": "Spravujte typy jedál",
   "mealPlannerMealDeleted": "Jedlo bolo odstránené",
   "mealPlannerMealTypeBreakfast": "Raňajky",
   "mealPlannerMealTypeDinner": "večera",
@@ -1815,6 +1966,12 @@
   "mealPlannerServings": "{count,plural, one{{count} porcia} few{{count} porcie} other{{count} porcií}}",
   "mealPlannerServingsLabel": "Porcie",
   "mealPlannerTitle": "Plánovač jedál",
+  "mealPlannerTypeColor": "Farba",
+  "mealPlannerTypeDeleteConfirm": "Naozaj chcete odstrániť tento typ jedla? Plánované jedlá s týmto typom zostanú.",
+  "mealPlannerTypeDeleteError": "Tento typ jedla nie je možné odstrániť.",
+  "mealPlannerTypeIcon": "Ikona",
+  "mealPlannerTypeName": "Meno",
+  "mealPlannerTypeNameEmpty": "Názov nemôže byť prázdny",
   "mealPlannerViewMonthly": "Mesačný pohľad",
   "mealPlannerViewWeekly": "Týždenný pohľad",
   "mealPlannerWeekEmpty": "Na tento týždeň nie je nič plánované",
@@ -1900,7 +2057,7 @@
   "obQuizHouseholdTitle": "Pre koho nakupujete?",
   "obQuizMethodMemory": "Držím si to v hlave",
   "obQuizMethodNone": "Nerobím si zoznamy",
-  "obQuizMethodNotes": "Notes app",
+  "obQuizMethodNotes": "Aplikácia Poznámky",
   "obQuizMethodPaper": "Pero a papier",
   "obQuizMethodTitle": "Ako si dnes vytvárate nákupné zoznamy?",
   "obQuizPainForget": "Vždy zabúdam položky",
@@ -2040,6 +2197,7 @@
   "onboardingViewAllPlans": "Zobraziť všetky plány",
   "onboardingWelcomeDesc": "Najchytrejší spôsob, ako si zorganizovať nákupy a ušetriť peniaze.",
   "onboardingWelcomeTitle": "Vitajte v KipiList",
+  "openConversation": "Otvorte konverzáciu",
   "openMenu": "Otvoriť menu",
   "organizeAisles": "Usporiadať podľa uličiek",
   "organizeAislesPrompt": "Usporiadať podľa obchodných uličiek.",
@@ -2051,15 +2209,18 @@
   "pantryAppBar": "Spiž",
   "pantryAvailabilityAll": "Všetko pripravené!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} v špajzi",
+  "pantryDeficitCount": "Chýba {count}{unit}",
   "pantryEditTitle": "Upraviť {name}",
   "pantryEmpty": "Prázdna spižiareň",
   "pantryEmptySubtitle": "Pridajte produkty, ktoré chcete mať doma",
+  "pantryItemAdded": "Položka bola pridaná",
   "pantryItemRemoved": "Položka odstránená",
   "pantryLimitReached": "Limit {count} položiek v špajzi v rámci bezplatného plánu. Inovujte a pridajte ďalšie.",
   "paywallAfterItem1": "Zrná",
   "paywallAfterItem2": "Upratovanie",
   "paywallAfterItem3": "Mäso",
   "paywallAfterItem4": "Pekáreň",
+  "paywallBasedOnAnswers": "Prispôsobené z vašich odpovedí",
   "paywallBeforeAfterTitle": "AI pred a po:",
   "paywallBeforeItem1": "ryža",
   "paywallBeforeItem2": "mydlo",
@@ -2097,6 +2258,8 @@
   "paywallGoalHeadlinePantry": "{name}, sledujte svoju špajzu dokonale!",
   "paywallGoalHeadlineRecipes": "{name}, objavte nové recepty!",
   "paywallGoalHeadlineSaveMoney": "{name}, ušetrite na každej ceste!",
+  "paywallHeroFeatureDesc": "Vyslovte alebo prilepte celý zoznam – AI ho roztriedi, kategorizuje a zostaví rozpočet v priebehu niekoľkých sekúnd",
+  "paywallHeroFeatureTitle": "AI nákupný asistent",
   "paywallHeroHeadline": "Kipi AI vždy po vašom boku",
   "paywallHeroSubtitle": "Pridávajte položky, organizujte zoznamy a šetrite čas s AI vo vrecku",
   "paywallHeroSubtitlePersonalized": "Ahoj {name}, zorganizuj si nakupovanie správnym spôsobom.",
@@ -2131,6 +2294,11 @@
   "paywallTestimonial2Text": "Už som nikdy nezabudol na položku zoznamu. AI chat je senzačný!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Čo hovoria naši používatelia:",
+  "paywallTimelineChargeDesc": "Vaše predplatné sa začína – môžete ho kedykoľvek zrušiť",
+  "paywallTimelineDay": "Deň {day}",
+  "paywallTimelineReminderDesc": "Pripomíname vám pred skončením súdneho konania",
+  "paywallTimelineToday": "Dnes",
+  "paywallTimelineTodayDesc": "Okamžite odomknite úplný prístup",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Spustiť bezplatnú skúšobnú verziu",
   "paywallTrialDays": "{days} DNÍ ZADARMO",
@@ -2153,11 +2321,15 @@
   "prefSharing": "Zdieľať zoznamy",
   "prefUnlimitedLists": "Neobmedzené zoznamy",
   "prefUnlimitedPantry": "Neobmedzená spižeň",
+  "preferencesSection": "Predvoľby",
   "preferredMarket": "Preferovaný trh",
   "preferredMarketHint": "Napr.: Supermarket X",
+  "premiumActionsPrompt": "Prihláste sa na odber Premium a odomknite automatické akcie.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Inovujte pre odomknutie",
   "prepTime": "Čas prípravy",
   "prepTimeMinutes": "Čas prípravy (minúty)",
+  "previousItemState": "Predchádzajúci stav: {quantity} {unit} [{category}]{price}",
   "privacy": "Súkromie",
   "processing": "Spracováva sa...",
   "product": "Produkt",
@@ -2177,21 +2349,34 @@
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "Prebieha dopytovanie na vaše zoznamy...",
+  "quickActionAi": "Chatujte s Kipi",
+  "quickActionPantry": "Zobraziť špajzu",
   "quickRecipe": "Rýchly recept",
   "quickRecipePrompt": "Navrhni recepty s položkami z môjho zoznamu.",
   "quickReplies": "Rýchle odpovede:",
   "quickSuggestions": "Rýchle návrhy",
+  "recipeAddError": "Nepodarilo sa pridať do vášho zoznamu. Skúste to znova.",
   "recipeAddToList": "Pridať do nákupného zoznamu",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Recept vytvorený!",
   "recipeDeleted": "Recept bol odstránený",
+  "recipeEstimatePartial": "Čiastočný odhad na základe zložiek s cenou.",
+  "recipeEstimatedCostPerServing": "{cost} / porcia",
+  "recipeEstimatedTotalCost": "Odhadované celkové náklady",
   "recipeImage": "Obrázok receptu",
+  "recipeIngredientInPantry": "V špajzi",
+  "recipeIngredientLowPantry": "Nízka v špajzi",
   "recipeIngredientSingular": "1 prísada",
   "recipeIngredientsPlural": "{count} prísad",
+  "recipeManualTotalCost": "Manuálne celkové náklady",
+  "recipeManualTotalCostHint": "Ak chcete odhadnúť z cien prísad, nechajte prázdne.",
   "recipeName": "Názov receptu",
   "recipeSaved": "Recept uložený!",
+  "recipeServesCount": "Podáva {count}",
   "recipeSuggestion": "Návrh receptu",
   "recipeTags": "Štítky receptov",
+  "recipeTapToCheck": "Klepnutím na ingredienciu ju počas varenia odškrtávate",
+  "recipeYieldServings": "Výťažok porcií",
   "regenerate": "Regenerovať",
   "remove": "Odstrániť",
   "removeBudget": "Odstrániť",
@@ -2226,9 +2411,12 @@
   "scanBarcodeTitle": "Naskenujte čiarový kód",
   "scanProduct": "Skenovať produkt",
   "scanProductTitle": "Skenovať produkt",
+  "scrollToBottom": "Prejdite nadol",
+  "searchConversations": "Vyhľadajte konverzácie",
   "searchCurrency": "Hľadať menu...",
   "searchInConversation": "Hľadať v konverzácii...",
   "searchLanguage": "Jazyk vyhľadávania...",
+  "searchMessages": "Hľadať správy...",
   "searchRecipes": "Hľadať recepty...",
   "searchingCategories": "Prebieha vyhľadávanie kategórií...",
   "searchingProducts": "Hľadajú sa produkty...",
@@ -2268,6 +2456,7 @@
   "signInGoogle": "Prihlásiť sa cez Google",
   "skip": "Preskočiť",
   "smartOrganization": "Inteligentné usporiadanie",
+  "somethingWentWrong": "Niečo sa pokazilo",
   "sortAZ": "A-Z",
   "sortCategory": "Kategória",
   "sortDate": "Dátum",
@@ -2299,6 +2488,7 @@
   "themeColor": "Farba témy",
   "themeGreen": "Zelená",
   "themeIndigo": "Indigová",
+  "themeMode": "Režim témy",
   "themeOrange": "Oranžová",
   "themePink": "Ružová",
   "themePurple": "Fialová",
@@ -2316,6 +2506,7 @@
   "toolSaveRecipe": "Uložiť recept",
   "toolShareList": "Zdieľať zoznam",
   "totalEstimated": "Celkový odhad: {amount}",
+  "totalEstimatedLabel": "Odhadovaný súčet",
   "totalSavings": "Celková úspora",
   "totalSpending": "Celkové výdavky",
   "trackStock": "Sledovať zásoby",
@@ -2323,6 +2514,7 @@
   "trackStockInactive": "Negeneruje nákupný návrh",
   "uncheckingItem": "Ruší sa začiarknutie položky...",
   "undo": "Vrátiť",
+  "undoChanges": "Vrátiť späť zmeny",
   "unit": "Jednotka",
   "unitPack": "balenie",
   "unlockAi": "Odomknite neobmedzenú AI",
@@ -2336,6 +2528,7 @@
   "updatingPantry": "Aktualizuje sa špajza...",
   "upgrade": "Inovovať",
   "userProfile": "Používateľský profil",
+  "userRole": "vy",
   "validForLimitedTime": "Platné na obmedzený čas",
   "version": "Verzia",
   "viewActive": "Zobraziť aktívne",
@@ -2343,6 +2536,7 @@
   "viewHistory": "Zobraziť históriu",
   "viewItems": "Zobraziť položky",
   "viewList": "Zobraziť zoznam",
+  "viewPlans": "Zobraziť plány",
   "viewPro": "Zobraziť Pro",
   "viewRecipe": "Zobraziť Recept",
   "voiceCommandContent": "Hovorte prirodzene pre správu svojho zoznamu!\n\nPríklady:\n• 'Pridaj chlieb, syr a šunku'\n• 'Odstráň prací prášok'\n• 'Zmeň tému na modrú'\n\nToto je exkluzívna funkcia KipiList Premium.",

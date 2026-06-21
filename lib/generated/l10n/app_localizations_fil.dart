@@ -245,6 +245,11 @@ class AppLocalizationsFil extends AppLocalizations {
   String get noItemsToBuy => 'Walang item na kailangang bilhin';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Nawawala ang $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Pamili mula sa Dispatch';
 
   @override
@@ -311,6 +316,12 @@ class AppLocalizationsFil extends AppLocalizations {
   String get settingsAppBar => 'Mga Setting';
 
   @override
+  String get preferencesSection => 'Mga Kagustuhan';
+
+  @override
+  String get aiSection => 'AI Assistant';
+
+  @override
   String get language => 'Wika';
 
   @override
@@ -339,6 +350,12 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get appearance => 'Itsura';
+
+  @override
+  String get themeMode => 'Mode ng tema';
+
+  @override
+  String get chooseThemeMode => 'Piliin ang mode ng tema';
 
   @override
   String get light => 'Maliwanag';
@@ -590,6 +607,13 @@ class AppLocalizationsFil extends AppLocalizations {
   String get trackStockInactive => 'Hindi lumilikha ng mungkahi sa pamimili';
 
   @override
+  String get keepAdding => 'Patuloy na magdagdag';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Panatilihing bukas ang sheet para magdagdag ng maraming item';
+
+  @override
   String get createListDialog => 'Gumawa ng Listahan';
 
   @override
@@ -695,6 +719,36 @@ class AppLocalizationsFil extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Magandang tugon';
+
+  @override
+  String get badResponse => 'Masamang tugon';
+
+  @override
+  String get scrollToBottom => 'Mag-scroll pababa';
+
+  @override
+  String get somethingWentWrong => 'Nagkaproblema';
+
+  @override
+  String get editMessage => 'I-edit ang mensahe';
+
+  @override
+  String get searchConversations => 'Maghanap ng mga pag-uusap';
+
+  @override
+  String get dateGroupToday => 'Ngayong araw';
+
+  @override
+  String get dateGroupYesterday => 'Kahapon';
+
+  @override
+  String get dateGroupPrevious7Days => 'Nakaraang 7 araw';
+
+  @override
+  String get dateGroupOlder => 'Mas matanda';
+
+  @override
   String get aiAssistantTitle => 'AI Assistant';
 
   @override
@@ -735,6 +789,33 @@ class AppLocalizationsFil extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Naabot na ang buwanang limitasyon ng AI. Mag-upgrade sa Pro para sa walang limitasyong →';
+
+  @override
+  String get undo => 'I-undo';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -948,6 +1029,20 @@ class AppLocalizationsFil extends AppLocalizations {
   String get recipeAddToList => 'Idagdag sa listahan ng pamimili';
 
   @override
+  String get recipeAddError =>
+      'Hindi maidagdag sa iyong listahan. Pakisubukang muli.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Mag-tap ng isang sangkap upang suriin ito habang nagluluto ka';
+
+  @override
+  String get recipeIngredientInPantry => 'Sa pantry';
+
+  @override
+  String get recipeIngredientLowPantry => 'Mababa sa pantry';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count na sangkap ang idinagdag sa $listName';
   }
@@ -1062,12 +1157,12 @@ class AppLocalizationsFil extends AppLocalizations {
   String get paywallSelectPlan => 'Piliin ang iyong plano:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'MAGTIPID $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return '$price/buwan lang';
   }
 
@@ -1103,6 +1198,35 @@ class AppLocalizationsFil extends AppLocalizations {
   String get paywallRestore => 'Ibalik';
 
   @override
+  String get paywallTimelineToday => 'Ngayong araw';
+
+  @override
+  String get paywallTimelineTodayDesc => 'I-unlock kaagad ang buong access';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Araw $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Pinapaalalahanan ka namin bago matapos ang pagsubok';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Magsisimula ang iyong subscription — kanselahin anumang oras';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI Shopping Assistant';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Magsalita o mag-paste ng isang buong listahan — pinag-uuri-uriin, ikinategorya, at bina-budget ng AI sa loob ng ilang segundo';
+
+  @override
+  String get paywallBasedOnAnswers => 'Personalized mula sa iyong mga sagot';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI laging nasa tabi mo';
 
   @override
@@ -1136,9 +1260,6 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Naalis ang item';
-
-  @override
-  String get undo => 'I-undo';
 
   @override
   String get emptyListTitle => 'Walang laman ang iyong listahan';
@@ -1256,6 +1377,9 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Naalis ang item';
+
+  @override
+  String get pantryItemAdded => 'Idinagdag ang item';
 
   @override
   String deficitItems(int deficit) {
@@ -1661,6 +1785,33 @@ class AppLocalizationsFil extends AppLocalizations {
   String get prepTimeMinutes => 'Oras ng paghahanda (minuto)';
 
   @override
+  String get recipeYieldServings => 'Magbigay ng mga servings';
+
+  @override
+  String get recipeManualTotalCost => 'Manu-manong kabuuang gastos';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Iwanang walang laman upang matantya mula sa mga presyo ng sangkap.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Tinatayang kabuuang gastos';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / paghahatid';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Nagsisilbi sa $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Bahagyang pagtatantya batay sa mga sangkap na may presyo.';
+
+  @override
   String get instructionsHint => 'Mag-type ng isang hakbang bawat linya...';
 
   @override
@@ -1790,6 +1941,10 @@ class AppLocalizationsFil extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Tantyahin batay sa mga recipe na may bahagyang data ng presyo.';
+
+  @override
   String get mealPlannerGenerateList => 'Gumawa ng listahan ng pamimili';
 
   @override
@@ -1884,6 +2039,9 @@ class AppLocalizationsFil extends AppLocalizations {
   String get catalogRareSection => 'hindi gaanong karaniwan sa iyong bansa';
 
   @override
+  String get catalogRareBadge => 'Bihira';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1902,7 +2060,7 @@ class AppLocalizationsFil extends AppLocalizations {
   String get catalogBrowse => 'Mag-browse ng Catalog';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Mga kategorya';
 
   @override
   String get offlineBanner => 'Offline ka';
@@ -1933,6 +2091,42 @@ class AppLocalizationsFil extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Pamahalaan ang mga uri ng pagkain';
+
+  @override
+  String get mealPlannerAddType => 'Magdagdag ng uri ng pagkain';
+
+  @override
+  String get mealPlannerEditType => 'I-edit ang uri ng pagkain';
+
+  @override
+  String get mealPlannerTypeName => 'Pangalan';
+
+  @override
+  String get mealPlannerTypeColor => 'Kulay';
+
+  @override
+  String get mealPlannerTypeIcon => 'Icon';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Sigurado ka bang gusto mong tanggalin ang uri ng pagkain na ito? Ang mga nakaplanong pagkain na may ganitong uri ay mananatili.';
+
+  @override
+  String get mealPlannerTypeNameEmpty =>
+      'Hindi maaaring walang laman ang pangalan';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Hindi matanggal ang ganitong uri ng pagkain.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Pasadyang uri';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Default na uri';
 
   @override
   String get expirationDate => 'Petsa ng pag-expire';
@@ -1993,6 +2187,9 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Error sa paglo-load ng mga listahan';
+
+  @override
+  String get errorLoadingItems => 'Error sa paglo-load ng mga item';
 
   @override
   String get noListsFound => 'Walang nakitang listahan';
@@ -2783,4 +2980,215 @@ class AppLocalizationsFil extends AppLocalizations {
   @override
   String get obLoginError =>
       'Nabigo ang pag-sign in. Subukang muli o laktawan sa ngayon.';
+
+  @override
+  String get searchMessages => 'Maghanap ng mga mensahe...';
+
+  @override
+  String get deletedList => 'Tinanggal na listahan';
+
+  @override
+  String get openConversation => 'Buksan ang pag-uusap';
+
+  @override
+  String get userRole => 'Ikaw';
+
+  @override
+  String get assistantRole => 'Katulong';
+
+  @override
+  String get agentActionsRunning => 'Nagpapatakbo ng mga aksyon...';
+
+  @override
+  String get agentActionsFailed => 'Nabigong magpatakbo ng mga pagkilos';
+
+  @override
+  String get agentActionsPremium =>
+      'Ang mga aksyon ay nangangailangan ng Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'I-undo ang mga pagbabago';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Idinagdag ang item sa listahan.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Nakaraang estado: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Mag-subscribe sa Premium para i-unlock ang mga awtomatikong pagkilos.';
+
+  @override
+  String get viewPlans => 'Tingnan ang mga plano';
+
+  @override
+  String get artifactSynced => 'Naka-sync';
+
+  @override
+  String get artifactBudgetLabel => 'Badyet:';
+
+  @override
+  String get totalEstimatedLabel => 'Tinatayang kabuuan';
+
+  @override
+  String get quickActionPantry => 'Tingnan ang pantry';
+
+  @override
+  String get quickActionAi => 'Makipag-chat kay Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Nagbalik ng error ang serbisyo ng AI ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Masyadong matagal ang kahilingan. Pakisubukang muli.';
+
+  @override
+  String get aiConnectionError =>
+      'Hindi makakonekta sa serbisyo ng AI. Suriin ang iyong koneksyon.';
+
+  @override
+  String get aiEmptyResponseError =>
+      'Ang serbisyo ng AI ay nagbalik ng walang laman na tugon.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Ang serbisyo ng AI ay nagbalik ng isang di-wastong tugon.';
+
+  @override
+  String get categoryFruits => 'Mga prutas';
+
+  @override
+  String get categoryCleaning => 'Paglilinis';
+
+  @override
+  String get categoryBeverages => 'Mga inumin';
+
+  @override
+  String get categoryBakery => 'Panaderya';
+
+  @override
+  String get categoryMeat => 'karne';
+
+  @override
+  String get categoryDairy => 'Pagawaan ng gatas';
+
+  @override
+  String get categoryVegetables => 'Mga gulay';
+
+  @override
+  String get categoryGrains => 'Mga butil at cereal';
+
+  @override
+  String get categoryHygiene => 'Personal na pangangalaga';
+
+  @override
+  String get categoryFrozen => 'Mga frozen na pagkain';
+
+  @override
+  String get categoryCanned => 'Mga de-latang paninda';
+
+  @override
+  String get categorySeasonings => 'Mga pampalasa';
+
+  @override
+  String get categorySweets => 'Mga matamis at panghimagas';
+
+  @override
+  String get categoryAlcohol => 'Mga inuming may alkohol';
+
+  @override
+  String get categoryFish => 'Isda';
+
+  @override
+  String get categoryColdCuts => 'Malamig na hiwa';
+
+  @override
+  String get categoryUtilities => 'Mga gamit sa bahay';
+
+  @override
+  String get categoryPet => 'Mga gamit ng alagang hayop';
+
+  @override
+  String get categoryBaby => 'Baby';
+
+  @override
+  String get categoryOthers => 'Iba pa';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Kumusta $name, ako si Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hi, ako si Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Gumagawa ako ng mga listahan, nagmumungkahi ng mga recipe, at naghahanap kung saan mag-iipon. Saan tayo magsisimula?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Magplano ng barbecue';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, nagho-host ako ng barbecue — tulungan mo akong bumuo ng listahan ng pamimili';
+
+  @override
+  String get aiRateLimitError =>
+      'Masyadong maraming mensahe sa maikling panahon. Maghintay ng ilang segundo at subukang muli.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Hindi ma-load ang pag-uusap na ito';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'May nangyaring mali sa aming pagtatapos. I-tap ang muling subukan upang subukang muli.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Offline ka';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Suriin ang iyong koneksyon sa internet at subukang muli.';
+
+  @override
+  String get aiGeneratingResponse => 'Bumubuo ng tugon...';
 }

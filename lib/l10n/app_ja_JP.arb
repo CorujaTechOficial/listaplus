@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +161,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -280,6 +301,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -309,6 +333,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -953,6 +984,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1100,6 +1141,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1138,6 +1186,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1211,7 +1282,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1359,42 +1444,56 @@
   "addToPantryPrompt": "「{name}」をパントリーに追加しますか？",
   "addedFeedback": "追加しました！",
   "advancedFeatures": "高度な機能",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "アクションの実行に失敗しました",
+  "agentActionsPremium": "アクションにはプレミアムが必要です",
+  "agentActionsRunning": "アクションを実行中...",
+  "aiApiError": "AI サービスがエラー ({statusCode}) を返しました。",
   "aiAssistant": "AIアシスタント",
   "aiAssistantDescription": "AIアシスタントでスマートな提案、レシピ、パーソナライズされたヒントを入手。",
   "aiAssistantGeneral": "一般アシスタント",
   "aiAssistantHistory": "アシスタントの歴史",
   "aiAssistantTitle": "AIアシスタント",
+  "aiConnectionError": "AIサービスに接続できませんでした。接続を確認してください。",
   "aiConversationHistory": "会話履歴",
   "aiCreditsRemaining": "残り{remaining}クレジット",
   "aiDeleteConversationConfirm": "消去",
   "aiDeleteConversationTitle": "会話を削除しますか?",
   "aiDeletedList": "削除されたリスト",
+  "aiEmptyResponseError": "AI サービスは空の応答を返しました。",
   "aiEnergy": "AIエネルギー",
   "aiEnergyLow": "AI エネルギーが低い",
   "aiError": "申し訳ございません、リクエストの処理中にエラーが発生しました。接続を確認するか、後でもう一度お試しください。",
   "aiFirstOpenHint": "私はショッピングアシスタントのキピです。あなたのリストについて何でも聞いてください！",
+  "aiGeneratingResponse": "応答を生成しています…",
   "aiHello": "こんにちは！私はキピです",
   "aiHowCanIHelp": "今日はどのようにお手伝いできますか?",
+  "aiInvalidResponseError": "AI サービスが無効な応答を返しました。",
   "aiLimitAlmostReached": "AI メッセージがほぼなくなりました",
   "aiNewConversation": "新しい会話",
   "aiNewSession": "新しいセッション",
   "aiNoConversationFound": "会話が見つかりませんでした",
   "aiNoMessagesFound": "メッセージが見つかりませんでした",
   "aiPremiumUpsell": "プレミアムに行く",
+  "aiRateLimitError": "短期間にメッセージが多すぎます。数秒待ってからもう一度試してください。",
   "aiRecentConversations": "最近の会話",
   "aiRemainingFreeToday": "今日は{remaining} {remaining, plural, one{free message} other{free messages}}",
   "aiSearchMessages": "メッセージを検索...",
+  "aiSection": "AIアシスタント",
   "aiStartNewConversation": "新しい会話を開始する",
   "aiSubscribeUnlimited": "無制限の AI を購読する",
   "aiSuggestCreateList": "最初のリストを作成する",
   "aiSuggestSaveMore": "さらに節約するにはどうすればよいですか?",
   "aiTeaserFallback": "プレミアムに登録すると、完全な回答が得られ、ショッピングに関する AI ヒントを無制限に入手できます...",
+  "aiTimeoutError": "リクエストに時間がかかりすぎました。もう一度試してください。",
   "aiUnlockUnlimited": "無制限の AI をアンロックする",
   "aiUnlockWithAd": "広告でロックを解除する",
   "aiUsageExhausted": "毎月の AI 制限に達しました。無制限で Pro にアップグレード →",
   "aiUsageWarning": "{remaining} 今月残っている AI アクション — 無制限にアップグレード",
   "aiVoiceCommandTooltip": "AI音声コマンド（プレミアム）",
   "aiWelcomeContent": "こんにちは！ 👋 私はあなたのパーソナルショッピングとレシピアシスタントの**Kipi**です！\n\n私はあなたを助けるためにここにいます：\n🛒 **ショッピングをカテゴリ別に自動的に整理**\n💰 **予算を追跡**し、節約のヒントを提供します\n🍲 すでにあるものを使ったおいしいレシピを **提案**\n\n今日はどのようにお手伝いできますか?最初のリストを作成することから始めることができます。",
+  "aiWelcomeSuggestBarbecue": "バーベキューを計画する",
+  "aiWelcomeSuggestBarbecuePrompt": "キピ、バーベキューを主催するよ — 買い物リストの作成を手伝って",
   "aiWelcomeSuggestCreateList": "最初のリストを作成する",
   "aiWelcomeSuggestCreateListPrompt": "キピ、初めての買い物リストの作成を手伝って",
   "aiWelcomeSuggestSave": "お金を節約するにはどうすればいいですか？",
@@ -1405,14 +1504,17 @@
   "appTitle": "ショッピングリスト",
   "appearance": "外観",
   "archiveList": "リストをアーカイブ",
+  "artifactBudgetLabel": "予算：",
   "artifactReplaceBody": "コストを最適化するために代替製品を選択してください。",
   "artifactReplaceTitle": "{name} を置き換えます",
   "artifactSuggestedItems": "おすすめアイテム",
   "artifactSwapButton": "スワップ",
   "artifactSwappedLabel": "交換されました",
+  "artifactSynced": "同期済み",
   "assistantHistory": "アシスタントの歴史",
   "assistantHistorySubtitle": "会話履歴を表示する",
   "assistantName": "アシスタント名",
+  "assistantRole": "アシスタント",
   "backToChat": "チャットに戻る",
   "backToToday": "今日に戻る",
   "backupExported": "バックアップをエクスポートしました！",
@@ -1420,6 +1522,7 @@
   "backupPremiumDescription": "バックアップとエクスポートはプレミアム機能です",
   "backupSubtitle": "データのエクスポートまたはインポート",
   "backupTitle": "バックアップ",
+  "badResponse": "レスポンスが悪い",
   "badgeBeginner": "初心者",
   "badgeOrganized": "整頓された",
   "badgeSavingMaster": "保存マスター",
@@ -1447,10 +1550,12 @@
   "catOthers": "その他",
   "catalogAddItems": "{count} {count, plural, one{item} other{items}} を追加 →",
   "catalogBrowse": "カタログを閲覧する",
+  "catalogCategories": "カテゴリー",
   "catalogFilterNational": "ナショナルズ",
   "catalogItemAdded": "{name} が追加されました",
   "catalogMyFrequents": "私のよく行く人",
   "catalogProductNotFound": "製品が見つかりません。名前を入力してください",
+  "catalogRareBadge": "レア",
   "catalogRareSection": "あなたの国ではあまり一般的ではありません",
   "catalogRetry": "もう一度やり直してください",
   "catalogSearchGlobal": "任意の製品を検索...",
@@ -1459,16 +1564,43 @@
   "catalogSortPopular": "最も人気のある",
   "catalogTitle": "カタログ",
   "category": "カテゴリ",
+  "categoryAlcohol": "アルコール飲料",
+  "categoryBaby": "赤ちゃん",
+  "categoryBakery": "ベーカリー",
+  "categoryBeverages": "飲料",
+  "categoryCanned": "缶詰",
+  "categoryCleaning": "クリーニング",
+  "categoryColdCuts": "コールドカット",
   "categoryColorLabel": "色",
+  "categoryDairy": "乳製品",
+  "categoryFish": "魚",
+  "categoryFrozen": "冷凍食品",
+  "categoryFruits": "果物",
+  "categoryGrains": "穀物およびシリアル",
+  "categoryHygiene": "パーソナルケア",
   "categoryIconLabel": "アイコン",
   "categoryLimitReached": "カテゴリ制限に達しました",
+  "categoryMeat": "肉",
   "categoryName": "カテゴリ名",
   "categoryNameHint": "カテゴリ名を入力してください",
+  "categoryOthers": "他の",
+  "categoryPet": "ペット用品",
+  "categorySeasonings": "調味料",
+  "categorySweets": "スイーツとデザート",
+  "categoryUtilities": "家庭用品",
+  "categoryVegetables": "野菜",
+  "chatEmptyGreeting": "こんにちは、{name}、キピです 👋",
+  "chatEmptyGreetingNoName": "こんにちは、キピです👋",
+  "chatEmptyPitch": "リストを作成し、レシピを提案し、保存する場所を見つけます。どこから始めましょうか?",
   "chatEmptySubtitle": "まずは、アイテムの提案、レシピ、節約のヒントを尋ねてください。",
   "chatEmptyTitle": "あなたのチャットは空です",
   "chatError": "チャットの読み込みエラー: {error}",
   "chatHint": "メッセージを入力...",
   "chatHintBlocked": "AI のロックを解除してチャットできるようにする",
+  "chatHistoryErrorBody": "私たちの側で何か問題が発生しました。再試行するには、「再試行」をタップします。",
+  "chatHistoryErrorTitle": "この会話を読み込めませんでした",
+  "chatHistoryOfflineBody": "インターネット接続を確認して、もう一度試してください。",
+  "chatHistoryOfflineTitle": "オフラインです",
   "chatSubtitle": "アイテムの提案、レシピ、節約のコツを尋ねてください。",
   "chatSubtitleShort": "価格、レシピ、構成について質問してください...",
   "chooseCurrency": "通貨の選択",
@@ -1476,6 +1608,7 @@
   "chooseImageSource": "画像ソースを選択",
   "chooseLanguage": "言語を選択",
   "chooseThemeColor": "テーマカラーを選択してください",
+  "chooseThemeMode": "テーマモードを選択",
   "clear": "クリア",
   "clearHistory": "履歴をクリア",
   "clearHistoryConfirm": "このセッションのすべてのメッセージを削除しますか？",
@@ -1518,6 +1651,10 @@
   "customizeAssistant": "カスタマイズ",
   "dark": "ダーク",
   "data": "データ",
+  "dateGroupOlder": "古い",
+  "dateGroupPrevious7Days": "過去7日間",
+  "dateGroupToday": "今日",
+  "dateGroupYesterday": "昨日",
   "deficitItems": "購入が必要なアイテム: {deficit}",
   "delete": "削除",
   "deleteCategory": "消去",
@@ -1534,6 +1671,7 @@
   "deleteRecipeConfirmMsg": "「{recipeName}」を削除してもよろしいですか？この操作は取り消せません。",
   "deleteSession": "チャットの削除",
   "deleteSessionConfirm": "このチャットを削除してもよろしいですか?メッセージは永久に失われます。",
+  "deletedList": "削除されたリスト",
   "deselectAll": "すべて解除",
   "dietaryRestrictions": "食事制限",
   "dietaryRestrictionsHint": "食事制限はありますか？",
@@ -1546,6 +1684,7 @@
   "editCategoryDialog": "カテゴリを編集する",
   "editItem": "アイテムを編集",
   "editItemPrice": "推定価格",
+  "editMessage": "メッセージを編集する",
   "editPantryItem": "{name}を編集",
   "editRecipe": "編集",
   "editRecipeTitle": "レシピを編集",
@@ -1567,6 +1706,7 @@
   "errorLoadingChat": "おっと！チャットの読み込み中に問題が発生しました。",
   "errorLoadingChatSubtitle": "接続を確認するか、後でもう一度試してください。",
   "errorLoadingHistory": "履歴の読み込みエラー",
+  "errorLoadingItems": "アイテムの読み込みエラー",
   "errorLoadingLists": "リストのロード中にエラーが発生しました",
   "errorLoadingRecipes": "レシピの読み込みエラー",
   "errorLoadingSubscription": "サブスクリプションの読み込みエラー",
@@ -1619,6 +1759,7 @@
   "generateShoppingList": "買い物リストを生成",
   "gestureHint": "押し続けて選択 • スワイプして削除",
   "globalAssistant": "グローバルアシスタント",
+  "goodResponse": "良い反応",
   "howCanIHelp": "どうすれば助けられますか?",
   "idealQty": "理想の数",
   "idealQuantity": "理想の数量",
@@ -1635,14 +1776,18 @@
   "instructionsHint": "1行に1ステップずつ入力...",
   "inviteToList": "リストに招待する",
   "itemAddedSnack": "{name} が追加されました",
+  "itemAddedToList": "アイテムがリストに追加されました。",
   "itemName": "アイテム名",
   "itemRemoved": "アイテムを削除しました",
   "itemsAddedSuccess": "アイテムをリストに追加しました！",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "購入が必要なアイテム: {deficit}",
   "itemsPurchased": "購入したアイテム",
   "itemsPurchasedCount": "{total}中{purchased}を購入しました",
   "itemsPurchasedShort": "{purchased}/{total} を購入しました",
   "itemsWillBeAdded": "{count}個のアイテムが追加されます",
+  "keepAdding": "追加し続ける",
+  "keepAddingSubtitle": "複数のアイテムを追加するにはシートを開いたままにしてください",
   "kipiListProActive": "KipiList プロアクティブ",
   "kipiListTitle": "キピリスト",
   "kipiQuickBarHint": "何を買う必要がありますか?",
@@ -1689,16 +1834,22 @@
   "mealDragHint": "押したままドラッグして移動します",
   "mealNoRecipeFound": "レシピが見つかりませんでした",
   "mealPlannerAddMeal": "食事を追加",
+  "mealPlannerAddType": "食事の種類を追加",
+  "mealPlannerCustomTypeLabel": "カスタムタイプ",
   "mealPlannerDateLabel": "日付",
+  "mealPlannerDefaultTypeLabel": "デフォルトのタイプ",
   "mealPlannerDeleteMeal": "食事を削除",
   "mealPlannerEditMeal": "食事を編集",
+  "mealPlannerEditType": "食事の種類を編集する",
   "mealPlannerError": "食事プランの読み込みエラー",
+  "mealPlannerEstimatePartial": "部分的な価格データを含むレシピに基づいて推定します。",
   "mealPlannerGenerateList": "買い物リストを生成",
   "mealPlannerGenerateListConfirm": "今週の予定された食事のすべての材料を買い物リストに追加しますか？",
   "mealPlannerGenerateListEmpty": "追加する材料がありません。まずレシピを含む食事を計画してください。",
   "mealPlannerGenerateListNoList": "買い物リストを先に作成してください。",
   "mealPlannerGenerateListSuccess": "{count}個の材料をリストに追加しました！",
   "mealPlannerLoading": "食事プランを読み込み中...",
+  "mealPlannerManageTypes": "食事の種類を管理する",
   "mealPlannerMealDeleted": "食事を削除しました",
   "mealPlannerMealTypeBreakfast": "朝食",
   "mealPlannerMealTypeDinner": "夕食",
@@ -1718,6 +1869,12 @@
   "mealPlannerServings": "{count,plural, other{{count}人分}}",
   "mealPlannerServingsLabel": "分量（人分）",
   "mealPlannerTitle": "献立プランナー",
+  "mealPlannerTypeColor": "色",
+  "mealPlannerTypeDeleteConfirm": "この食事の種類を削除してもよろしいですか?このタイプの計画された食事は残ります。",
+  "mealPlannerTypeDeleteError": "この食事の種類は削除できません。",
+  "mealPlannerTypeIcon": "アイコン",
+  "mealPlannerTypeName": "名前",
+  "mealPlannerTypeNameEmpty": "名前を空にすることはできません",
   "mealPlannerViewMonthly": "月間表示",
   "mealPlannerViewWeekly": "週間表示",
   "mealPlannerWeekEmpty": "今週の予定はありません",
@@ -1933,6 +2090,7 @@
   "onboardingViewAllPlans": "すべてのプランを見る",
   "onboardingWelcomeDesc": "買い物を整理してお金を節約する最も賢い方法。",
   "onboardingWelcomeTitle": "KipiListへようこそ",
+  "openConversation": "オープンな会話",
   "openMenu": "メニューを開く",
   "organizeAisles": "売り場順に整理",
   "organizeAislesPrompt": "スーパーの売り場順に整理してください。",
@@ -1945,6 +2103,7 @@
   "pantryAvailabilityCount": "パントリーの{availableCount}/{totalCount}",
   "pantryCompactView": "コンパクトビュー",
   "pantryDeficit": "{amount}{unit} がありません",
+  "pantryDeficitCount": "{count}{unit} がありません",
   "pantryDeleteItemsContent": "{count} 個の選択したアイテムを削除しますか?",
   "pantryDeleteItemsTitle": "項目の削除",
   "pantryDeleteSelected": "選択したものを削除",
@@ -1961,6 +2120,7 @@
   "pantryFilterExpiring": "期限切れ",
   "pantryFilterOutStock": "在庫切れ",
   "pantryFirstOpenHint": "家にあるものを記録しておいてください。アイテムを追加するか、バーコードをスキャンします。",
+  "pantryItemAdded": "項目を追加しました",
   "pantryItemRemoved": "アイテムを削除しました",
   "pantryMoreDetails": "さらに詳しく",
   "pantryNoItemsFound": "「{query}」の項目は見つかりませんでした",
@@ -1974,6 +2134,7 @@
   "paywallAfterItem2": "クリーニング",
   "paywallAfterItem3": "肉",
   "paywallAfterItem4": "ベーカリー",
+  "paywallBasedOnAnswers": "あなたの回答に基づいてカスタマイズ",
   "paywallBeforeAfterTitle": "AI の導入前と導入後:",
   "paywallBeforeItem1": "米",
   "paywallBeforeItem2": "石鹸",
@@ -2011,6 +2172,8 @@
   "paywallGoalHeadlinePantry": "{name}、食料庫を完璧に追跡してください!",
   "paywallGoalHeadlineRecipes": "{name}、新しいレシピを発見してください!",
   "paywallGoalHeadlineSaveMoney": "{name}、すべての旅行を節約しましょう!",
+  "paywallHeroFeatureDesc": "リスト全体を話すか貼り付けます - AI が数秒でリストを分類、分類し、予算を立てます",
+  "paywallHeroFeatureTitle": "AIショッピングアシスタント",
   "paywallHeroHeadline": "Kipi AIはいつもあなたのそばに",
   "paywallHeroSubtitle": "AI をポケットに入れて項目を追加し、リストを整理し、時間を節約します",
   "paywallHeroSubtitlePersonalized": "{name} さん、買い物を正しい方法で整理してください。",
@@ -2045,6 +2208,11 @@
   "paywallTestimonial2Text": "もうリスト項目を忘れることはありません。 AIチャットがセンセーショナル！",
   "paywallTestimonialAuthor": "アン S.",
   "paywallTestimonialsTitle": "ユーザーの声:",
+  "paywallTimelineChargeDesc": "サブスクリプションが開始されます - いつでもキャンセルできます",
+  "paywallTimelineDay": "{day}日",
+  "paywallTimelineReminderDesc": "トライアルが終了する前に通知します",
+  "paywallTimelineToday": "今日",
+  "paywallTimelineTodayDesc": "フルアクセスのロックを即座に解除",
   "paywallTitle": "KipiList プレミアム",
   "paywallTrialCta": "無料トライアルを開始する",
   "paywallTrialDays": "{days}日間無料",
@@ -2067,11 +2235,15 @@
   "prefSharing": "リストを共有",
   "prefUnlimitedLists": "無制限のリスト",
   "prefUnlimitedPantry": "無制限のパントリー",
+  "preferencesSection": "設定",
   "preferredMarket": "優先市場",
   "preferredMarketHint": "いつもどこで買い物をしますか？",
+  "premiumActionsPrompt": "自動アクションのロックを解除するには、プレミアムに登録してください。",
+  "premiumStepDescription": "{description} (プレミアム)",
   "premiumUpgrade": "アップグレードして解除",
   "prepTime": "調理時間",
   "prepTimeMinutes": "調理時間（分）",
+  "previousItemState": "以前の状態: {quantity} {unit} [{category}]{price}",
   "privacy": "プライバシー",
   "product": "製品",
   "productName": "商品名",
@@ -2088,21 +2260,34 @@
   "quantityShort": "数量",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "キピとチャット",
+  "quickActionPantry": "パントリーを見る",
   "quickRecipe": "クイックレシピ",
   "quickRecipePrompt": "リストのアイテムを使ったレシピを提案してください。",
   "quickReplies": "クイック返信:",
   "quickSuggestions": "簡単な提案",
+  "recipeAddError": "リストに追加できませんでした。もう一度試してください。",
   "recipeAddToList": "買い物リストに追加する",
   "recipeAddedConfirmation": "{count} 成分が {listName} に追加されました",
   "recipeCreated": "レシピを作成しました！",
   "recipeDeleted": "レシピを削除しました",
+  "recipeEstimatePartial": "価格付きの成分に基づいた部分的な見積もり。",
+  "recipeEstimatedCostPerServing": "{cost} / 一人分",
+  "recipeEstimatedTotalCost": "推定総費用",
   "recipeImage": "レシピ画像",
+  "recipeIngredientInPantry": "パントリー内",
+  "recipeIngredientLowPantry": "パントリーが少ない",
   "recipeIngredientSingular": "材料1個",
   "recipeIngredientsPlural": "{count}の材料",
+  "recipeManualTotalCost": "手動の総コスト",
+  "recipeManualTotalCostHint": "材料の価格から見積もる場合は空のままにします。",
   "recipeName": "レシピ名",
   "recipeSaved": "レシピを保存しました！",
+  "recipeServesCount": "{count} に対応",
   "recipeSuggestion": "レシピ提案",
   "recipeTags": "レシピのタグ",
+  "recipeTapToCheck": "調理中に材料をタップしてチェックを入れます",
+  "recipeYieldServings": "収量",
   "regenerate": "再生成",
   "remove": "削除",
   "removeBudget": "削除",
@@ -2126,9 +2311,12 @@
   "savings": "節約",
   "scanBarcodeTitle": "バーコードをスキャンする",
   "scanProductTitle": "スキャン製品",
+  "scrollToBottom": "一番下までスクロール",
+  "searchConversations": "会話を検索する",
   "searchCurrency": "通貨を検索...",
   "searchInConversation": "会話内で検索...",
   "searchLanguage": "言語を検索...",
+  "searchMessages": "メッセージを検索...",
   "searchRecipes": "レシピを検索...",
   "selectAll": "すべて選択",
   "selectCheaperAlternative": "より安価な代替品を選択する",
@@ -2185,6 +2373,7 @@
   "signInGoogle": "Googleでサインイン",
   "skip": "スキップ",
   "smartOrganization": "スマート整理",
+  "somethingWentWrong": "何か問題が発生しました",
   "sortAZ": "A ～ Z",
   "sortCategory": "カテゴリ",
   "sortDate": "日付",
@@ -2215,6 +2404,7 @@
   "themeColor": "テーマカラー",
   "themeGreen": "緑",
   "themeIndigo": "インジゴ",
+  "themeMode": "テーマモード",
   "themeOrange": "オレンジ",
   "themePink": "ピンク",
   "themePurple": "紫",
@@ -2222,12 +2412,14 @@
   "themeSelectionTitle": "テーマカラーの選択",
   "themeTeal": "ティール",
   "totalEstimated": "推定合計: {amount}",
+  "totalEstimatedLabel": "推定合計額",
   "totalSavings": "総節約額",
   "totalSpending": "総支出",
   "trackStock": "在庫を追跡",
   "trackStockActive": "買い物提案に表示",
   "trackStockInactive": "買い物提案を生成しない",
   "undo": "元に戻す",
+  "undoChanges": "変更を元に戻す",
   "unit": "単位",
   "unitPack": "パック",
   "unlockAi": "無制限の AI をアンロックする",
@@ -2252,6 +2444,7 @@
   "userProfileSaveButton": "プロファイルの保存",
   "userProfileSaved": "プロファイルが正常に保存されました。",
   "userProfileTitle": "私のプロフィール",
+  "userRole": "あなた",
   "validForLimitedTime": "期間限定で有効",
   "version": "バージョン",
   "viewActive": "アクティブを表示",
@@ -2259,6 +2452,7 @@
   "viewHistory": "履歴を表示",
   "viewItems": "アイテムを見る",
   "viewList": "リストを見る",
+  "viewPlans": "プランを見る",
   "viewPro": "プロを見る",
   "viewRecipe": "レシピを見る",
   "voiceCommandContent": "自然に話してリストを管理！\n\n例：\n• 「パン、チーズ、ハムを追加して」\n• 「洗濯洗剤を削除して」\n• 「テーマを青に変更して」\n\nこれはKipiListプレミアムの特別な機能です。",

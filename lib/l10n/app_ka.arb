@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +161,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -280,6 +301,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -309,6 +333,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -953,6 +984,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1100,6 +1141,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1138,6 +1186,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1211,7 +1282,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1359,42 +1444,56 @@
   "addToPantryPrompt": "დავამატოთ \"{name}\" თქვენს საკუჭნაოში?",
   "addedFeedback": "დამატებულია!",
   "advancedFeatures": "მოწინავე ფუნქციები",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "მოქმედებების გაშვება ვერ მოხერხდა",
+  "agentActionsPremium": "ქმედებები მოითხოვს პრემიუმს",
+  "agentActionsRunning": "მიმდინარეობს მოქმედებები...",
+  "aiApiError": "AI სერვისმა დააბრუნა შეცდომა ({statusCode}).",
   "aiAssistant": "AI ასისტენტი",
   "aiAssistantDescription": "მიიღეთ ჭკვიანური წინადადებები, რეცეპტები და პერსონალური რჩევები ჩვენი AI ასისტენტის საშუალებით.",
   "aiAssistantGeneral": "გენერალური ასისტენტი",
   "aiAssistantHistory": "ასისტენტის ისტორია",
   "aiAssistantTitle": "AI ასისტენტი",
+  "aiConnectionError": "AI სერვისთან დაკავშირება ვერ მოხერხდა. შეამოწმეთ თქვენი კავშირი.",
   "aiConversationHistory": "საუბრის ისტორია",
   "aiCreditsRemaining": "დარჩენილია {remaining} კრედიტი",
   "aiDeleteConversationConfirm": "წაშლა",
   "aiDeleteConversationTitle": "წაშალოთ საუბარი?",
   "aiDeletedList": "წაშლილი სია",
+  "aiEmptyResponseError": "AI სერვისმა დააბრუნა ცარიელი პასუხი.",
   "aiEnergy": "AI ენერგია",
   "aiEnergyLow": "დაბალი AI ენერგია",
   "aiError": "ბოდიში, მოხდა შეცდომა თქვენი მოთხოვნის დამუშავებისას. შეამოწმეთ კავშირი ან სცადეთ მოგვიანებით.",
   "aiFirstOpenHint": "მე ვარ კიპი, თქვენი სავაჭრო ასისტენტი. მკითხე რამე შენი სიის შესახებ!",
+  "aiGeneratingResponse": "პასუხის გენერირება…",
   "aiHello": "გამარჯობა! მე კიპი ვარ",
   "aiHowCanIHelp": "როგორ შემიძლია დაგეხმაროთ დღეს?",
+  "aiInvalidResponseError": "AI სერვისმა დააბრუნა არასწორი პასუხი.",
   "aiLimitAlmostReached": "AI შეტყობინებები თითქმის ამოიწურა",
   "aiNewConversation": "ახალი საუბარი",
   "aiNewSession": "ახალი სესია",
   "aiNoConversationFound": "საუბარი ვერ მოიძებნა",
   "aiNoMessagesFound": "შეტყობინებები ვერ მოიძებნა",
   "aiPremiumUpsell": "გადადით პრემიუმზე",
+  "aiRateLimitError": "ძალიან ბევრი შეტყობინება მოკლე დროში. დაელოდეთ რამდენიმე წამს და სცადეთ ხელახლა.",
   "aiRecentConversations": "ბოლო საუბრები",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} დღეს",
   "aiSearchMessages": "შეტყობინებების ძიება...",
+  "aiSection": "AI ასისტენტი",
   "aiStartNewConversation": "დაიწყეთ ახალი საუბარი",
   "aiSubscribeUnlimited": "გამოიწერეთ შეუზღუდავი AI",
   "aiSuggestCreateList": "შექმენით ჩემი პირველი სია",
   "aiSuggestSaveMore": "როგორ დაზოგოთ მეტი?",
   "aiTeaserFallback": "გამოიწერეთ Premium, რათა განბლოკოთ სრული პასუხი და მიიღოთ შეუზღუდავი AI რჩევები თქვენი შოპინგისთვის...",
+  "aiTimeoutError": "მოთხოვნას ძალიან დიდი დრო დასჭირდა. გთხოვთ, სცადოთ ხელახლა.",
   "aiUnlockUnlimited": "განბლოკეთ შეუზღუდავი AI",
   "aiUnlockWithAd": "განბლოკვა რეკლამით",
   "aiUsageExhausted": "მიღწეულია ყოველთვიური AI ლიმიტი. განაახლეთ Pro-ზე შეუზღუდავად →",
   "aiUsageWarning": "{remaining} AI ქმედებები დარჩა ამ თვეში — განახლება შეუზღუდავად",
   "aiVoiceCommandTooltip": "AI ხმოვანი ბრძანება (Premium)",
   "aiWelcomeContent": "გამარჯობა! 👋 მე ვარ **კიპი**, თქვენი პირადი შოპინგისა და რეცეპტების ასისტენტი!\n\nმე აქ ვარ დაგეხმაროთ:\n🛒 **მოაწყე** შენი შოპინგი კატეგორიების მიხედვით ავტომატურად\n💰 ** თვალყური ადევნეთ** თქვენს ბიუჯეტს და მოგცემთ ფულის დაზოგვის რჩევებს\n🍲 **შეთავაზეთ** გემრიელი რეცეპტები, რაც უკვე გაქვთ\n\nროგორ შემიძლია დაგეხმაროთ დღეს? შეგიძლიათ დაიწყოთ თქვენი პირველი სიის შექმნით!",
+  "aiWelcomeSuggestBarbecue": "დაგეგმეთ მწვადი",
+  "aiWelcomeSuggestBarbecuePrompt": "კიფი, მე ვაწყობ მწვადს — დამეხმარეთ საყიდლების სიის შექმნაში",
   "aiWelcomeSuggestCreateList": "შექმენით ჩემი პირველი სია",
   "aiWelcomeSuggestCreateListPrompt": "კიპი, დამეხმარე ჩემი პირველი სავაჭრო სიის შექმნაში",
   "aiWelcomeSuggestSave": "როგორ დაზოგოთ ფული?",
@@ -1405,14 +1504,17 @@
   "appTitle": "სავაჭრო სია",
   "appearance": "გარეგნობა",
   "archiveList": "სიის დაარქივება",
+  "artifactBudgetLabel": "ბიუჯეტი:",
   "artifactReplaceBody": "აირჩიეთ პროდუქტის ალტერნატივა ღირებულების ოპტიმიზაციისთვის.",
   "artifactReplaceTitle": "შეცვალეთ {name}",
   "artifactSuggestedItems": "შემოთავაზებული ნივთები",
   "artifactSwapButton": "გაცვლა",
   "artifactSwappedLabel": "გაცვალეს",
+  "artifactSynced": "სინქრონიზებული",
   "assistantHistory": "ასისტენტის ისტორია",
   "assistantHistorySubtitle": "იხილეთ თქვენი საუბრის ისტორია",
   "assistantName": "ასისტენტის სახელი",
+  "assistantRole": "ასისტენტი",
   "backToChat": "დაბრუნება ჩატში",
   "backToToday": "დაუბრუნდი დღეს",
   "backupExported": "სარეზერვო ასლი ექსპორტირებულია!",
@@ -1420,6 +1522,7 @@
   "backupPremiumDescription": "სარეზერვო ასლი და ექსპორტი პრემიუმ ფუნქციაა",
   "backupSubtitle": "ექსპორტი ან იმპორტი თქვენი მონაცემების",
   "backupTitle": "სარეზერვო ასლი",
+  "badResponse": "ცუდი პასუხი",
   "badgeBeginner": "დამწყები",
   "badgeOrganized": "ორგანიზებული",
   "badgeSavingMaster": "გადარჩენის ოსტატი",
@@ -1447,10 +1550,12 @@
   "catOthers": "სხვა",
   "catalogAddItems": "დაამატეთ {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "კატალოგის დათვალიერება",
+  "catalogCategories": "კატეგორიები",
   "catalogFilterNational": "ნაციონალები",
   "catalogItemAdded": "{name} დამატებულია",
   "catalogMyFrequents": "ჩემი სიხშირე",
   "catalogProductNotFound": "პროდუქტი ვერ მოიძებნა, ჩაწერეთ სახელი",
+  "catalogRareBadge": "იშვიათი",
   "catalogRareSection": "ნაკლებად გავრცელებული თქვენს ქვეყანაში",
   "catalogRetry": "სცადეთ ხელახლა",
   "catalogSearchGlobal": "მოძებნეთ ნებისმიერი პროდუქტი...",
@@ -1459,16 +1564,43 @@
   "catalogSortPopular": "ყველაზე პოპულარული",
   "catalogTitle": "კატალოგი",
   "category": "კატეგორია",
+  "categoryAlcohol": "ალკოჰოლური სასმელები",
+  "categoryBaby": "ბავშვი",
+  "categoryBakery": "საცხობი",
+  "categoryBeverages": "სასმელები",
+  "categoryCanned": "დაკონსერვებული საქონელი",
+  "categoryCleaning": "დასუფთავება",
+  "categoryColdCuts": "გაციება",
   "categoryColorLabel": "ფერი",
+  "categoryDairy": "რძის პროდუქტები",
+  "categoryFish": "თევზი",
+  "categoryFrozen": "გაყინული საკვები",
+  "categoryFruits": "ხილი",
+  "categoryGrains": "მარცვლეული და მარცვლეული",
+  "categoryHygiene": "პირადი მოვლა",
   "categoryIconLabel": "ხატულა",
   "categoryLimitReached": "კატეგორიის ლიმიტი მიღწეულია",
+  "categoryMeat": "ხორცი",
   "categoryName": "კატეგორიის სახელი",
   "categoryNameHint": "შეიყვანეთ კატეგორიის სახელი",
+  "categoryOthers": "სხვა",
+  "categoryPet": "შინაური ცხოველების მარაგი",
+  "categorySeasonings": "სანელებლები",
+  "categorySweets": "ტკბილეული და დესერტები",
+  "categoryUtilities": "საყოფაცხოვრებო ნივთები",
+  "categoryVegetables": "ბოსტნეული",
+  "chatEmptyGreeting": "გამარჯობა {name}, მე ვარ Kipi 👋",
+  "chatEmptyGreetingNoName": "გამარჯობა, მე ვარ Kipi 👋",
+  "chatEmptyPitch": "მე ვაშენებ სიებს, ვთავაზობ რეცეპტებს და ვპოულობ სად შევინახო. საიდან დავიწყოთ?",
   "chatEmptySubtitle": "დასაწყებად ითხოვეთ ნივთების შემოთავაზებები, რეცეპტები ან რჩევები შენახვისთვის.",
   "chatEmptyTitle": "თქვენი ჩატი ცარიელია",
   "chatError": "შეცდომა ჩატის ჩატვირთვისას: {error}",
   "chatHint": "ჩაწერეთ თქვენი მესიჯი...",
   "chatHintBlocked": "განბლოკეთ AI ჩატში",
+  "chatHistoryErrorBody": "რაღაც შეფერხდა ჩვენს მხარეს. შეეხეთ ხელახლა საცდელად.",
+  "chatHistoryErrorTitle": "ეს მიმოწერა ვერ ჩაიტვირთა",
+  "chatHistoryOfflineBody": "შეამოწმეთ თქვენი ინტერნეტ კავშირი და სცადეთ ხელახლა.",
+  "chatHistoryOfflineTitle": "თქვენ ხაზგარეშე ხართ",
   "chatSubtitle": "ითხოვეთ რჩევები ნივთებზე, რეცეპტებზე ან დაზოგვის ხერხებზე.",
   "chatSubtitleShort": "ჰკითხეთ ფასებს, რეცეპტებს, ორგანიზაციას...",
   "chooseCurrency": "აირჩიეთ ვალუტა",
@@ -1476,6 +1608,7 @@
   "chooseImageSource": "სურათის წყაროს არჩევა",
   "chooseLanguage": "ენის არჩევა",
   "chooseThemeColor": "აირჩიეთ თემის ფერი",
+  "chooseThemeMode": "აირჩიეთ თემის რეჟიმი",
   "clear": "გასუფთავება",
   "clearHistory": "ისტორიის გასუფთავება",
   "clearHistoryConfirm": "ყველა მესიჯის გასუფთავება ამ სესიაში?",
@@ -1518,6 +1651,10 @@
   "customizeAssistant": "მორგება",
   "dark": "მუქი",
   "data": "მონაცემები",
+  "dateGroupOlder": "უფრო ძველი",
+  "dateGroupPrevious7Days": "წინა 7 დღე",
+  "dateGroupToday": "დღეს",
+  "dateGroupYesterday": "გუშინ",
   "deficitItems": "{deficit,plural, one{{deficit} ელემენტის ყიდვაა საჭირო} other{{deficit} ელემენტის ყიდვაა საჭირო}}",
   "delete": "წაშლა",
   "deleteCategory": "წაშლა",
@@ -1534,6 +1671,7 @@
   "deleteRecipeConfirmMsg": "დარწმუნებული ხართ, რომ გსურთ „{recipeName}“-ის წაშლა? ეს მოქმედება შეუქცევადია.",
   "deleteSession": "ჩატის წაშლა",
   "deleteSessionConfirm": "დარწმუნებული ხართ, რომ გსურთ ამ ჩატის წაშლა? შეტყობინებები სამუდამოდ დაიკარგება.",
+  "deletedList": "წაშლილი სია",
   "deselectAll": "ყველას მოხსნა",
   "dietaryRestrictions": "დიეტური შეზღუდვები",
   "dietaryRestrictionsHint": "რაიმე დიეტური შეზღუდვა?",
@@ -1546,6 +1684,7 @@
   "editCategoryDialog": "კატეგორიის რედაქტირება",
   "editItem": "ელემენტის რედაქტირება",
   "editItemPrice": "სავარაუდო ფასი",
+  "editMessage": "შეტყობინების რედაქტირება",
   "editPantryItem": "{name}-ის რედაქტირება",
   "editRecipe": "რედაქტირება",
   "editRecipeTitle": "რეცეპტის რედაქტირება",
@@ -1567,6 +1706,7 @@
   "errorLoadingChat": "უი! ჩეთის ჩატვირთვისას მოხდა რაღაც შეცდომა.",
   "errorLoadingChatSubtitle": "შეამოწმეთ თქვენი კავშირი ან სცადეთ მოგვიანებით.",
   "errorLoadingHistory": "ისტორიის ჩატვირთვის შეცდომა",
+  "errorLoadingItems": "შეცდომა ერთეულების ჩატვირთვისას",
   "errorLoadingLists": "შეცდომა სიების ჩატვირთვისას",
   "errorLoadingRecipes": "რეცეპტების ჩატვირთვის შეცდომა",
   "errorLoadingSubscription": "შეცდომა გამოწერის ჩატვირთვისას",
@@ -1619,6 +1759,7 @@
   "generateShoppingList": "სავაჭრო სიის გენერირება",
   "gestureHint": "ხანგრძლივად ასარჩევად • გადაფურცლეთ წასაშლელად",
   "globalAssistant": "გლობალური ასისტენტი",
+  "goodResponse": "კარგი გამოხმაურება",
   "howCanIHelp": "როგორ შემიძლია დახმარება?",
   "idealQty": "იდეალური რაოდ",
   "idealQuantity": "იდეალური რაოდენობა",
@@ -1635,14 +1776,18 @@
   "instructionsHint": "შეიყვანეთ თითო ნაბიჯი თითო ხაზზე...",
   "inviteToList": "მოიწვიე სიაში",
   "itemAddedSnack": "{name} დამატებულია",
+  "itemAddedToList": "ელემენტი დაემატა სიას.",
   "itemName": "ელემენტის სახელი",
   "itemRemoved": "ელემენტი წაიშალა",
   "itemsAddedSuccess": "ელემენტები წარმატებით დაემატა სიაში!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} ელემენტის ყიდვაა საჭირო",
   "itemsPurchased": "შეძენილი ნივთები",
   "itemsPurchasedCount": "შეძენილია {purchased} {total}-დან",
   "itemsPurchasedShort": "{purchased}/{total} შეძენილი",
   "itemsWillBeAdded": "{count} ელემენტი დაემატება",
+  "keepAdding": "განაგრძეთ დამატება",
+  "keepAddingSubtitle": "შეინახეთ ფურცელი ღია, რათა დაამატოთ მრავალი ელემენტი",
   "kipiListProActive": "KipiList Pro აქტიური",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "რისი ყიდვა გჭირდებათ?",
@@ -1689,16 +1834,22 @@
   "mealDragHint": "გააჩერეთ გადასატანად და გადასატანად",
   "mealNoRecipeFound": "რეცეპტი ვერ მოიძებნა",
   "mealPlannerAddMeal": "კერძის დამატება",
+  "mealPlannerAddType": "დაამატეთ კვების ტიპი",
+  "mealPlannerCustomTypeLabel": "მორგებული ტიპი",
   "mealPlannerDateLabel": "თარიღი",
+  "mealPlannerDefaultTypeLabel": "ნაგულისხმევი ტიპი",
   "mealPlannerDeleteMeal": "კერძის ამოშლა",
   "mealPlannerEditMeal": "კერძის რედაქტირება",
+  "mealPlannerEditType": "შეცვალეთ კვების ტიპი",
   "mealPlannerError": "კვების გეგმის ჩატვირთვის შეცდომა",
+  "mealPlannerEstimatePartial": "შეაფასეთ რეცეპტების საფუძველზე ნაწილობრივი ფასის მონაცემებით.",
   "mealPlannerGenerateList": "საყიდლების სიის გენერირება",
   "mealPlannerGenerateListConfirm": "დაემატოს ამ კვირის დაგეგმილი კერძების ყველა ინგრედიენტი საყიდლების სიაში?",
   "mealPlannerGenerateListEmpty": "დასამატებელი ინგრედიენტები არ არის. ჯერ დაგეგმეთ კერძები რეცეპტებით.",
   "mealPlannerGenerateListNoList": "ჯერ შექმენით საყიდლების სია.",
   "mealPlannerGenerateListSuccess": "{count} ინგრედიენტი დაემატა თქვენს სიას!",
   "mealPlannerLoading": "კვების გეგმის ჩატვირთვა...",
+  "mealPlannerManageTypes": "მართეთ კვების ტიპები",
   "mealPlannerMealDeleted": "კერძი ამოშლილია",
   "mealPlannerMealTypeBreakfast": "საუზმე",
   "mealPlannerMealTypeDinner": "ვახშამი",
@@ -1718,6 +1869,12 @@
   "mealPlannerServings": "{count,plural, one{{count} ულუფა} other{{count} ულუფა}}",
   "mealPlannerServingsLabel": "ულუფები",
   "mealPlannerTitle": "კვების დაგეგმვა",
+  "mealPlannerTypeColor": "ფერი",
+  "mealPlannerTypeDeleteConfirm": "დარწმუნებული ხართ, რომ გსურთ ამ ტიპის კვების წაშლა? ამ ტიპის დაგეგმილი კვება დარჩება.",
+  "mealPlannerTypeDeleteError": "ამ ტიპის კვების წაშლა შეუძლებელია.",
+  "mealPlannerTypeIcon": "ხატულა",
+  "mealPlannerTypeName": "სახელი",
+  "mealPlannerTypeNameEmpty": "სახელი არ შეიძლება იყოს ცარიელი",
   "mealPlannerViewMonthly": "ყოველთვიური ხედი",
   "mealPlannerViewWeekly": "ყოველკვირეული ხედი",
   "mealPlannerWeekEmpty": "ამ კვირისთვის არაფერია დაგეგმილი",
@@ -1933,6 +2090,7 @@
   "onboardingViewAllPlans": "იხილეთ ყველა გეგმა",
   "onboardingWelcomeDesc": "თქვენი შოპინგის ორგანიზებისა და ფულის დაზოგვის ყველაზე ჭკვიანი გზა.",
   "onboardingWelcomeTitle": "კეთილი იყოს თქვენი მობრძანება KipiList-ში",
+  "openConversation": "გახსენით საუბარი",
   "openMenu": "მენიუს გახსნა",
   "organizeAisles": "დალაგება თაროების მიხედვით",
   "organizeAislesPrompt": "დაალაგეთ მაღაზიის თაროების მიხედვით.",
@@ -1945,6 +2103,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} საკუჭნაოში",
   "pantryCompactView": "კომპაქტური ხედი",
   "pantryDeficit": "აკლია {amount}{unit}",
+  "pantryDeficitCount": "აკლია {count}{unit}",
   "pantryDeleteItemsContent": "გსურთ წაშალოთ {count} შერჩეული ელემენტი?",
   "pantryDeleteItemsTitle": "ნივთების წაშლა",
   "pantryDeleteSelected": "არჩეული წაშლა",
@@ -1961,6 +2120,7 @@
   "pantryFilterExpiring": "ვადა ეწურება",
   "pantryFilterOutStock": "მარაგში არ არის",
   "pantryFirstOpenHint": "თვალყური ადევნეთ იმას, რაც გაქვთ სახლში. დაამატეთ ნივთები ან დაასკანირეთ შტრიხკოდები.",
+  "pantryItemAdded": "ელემენტი დამატებულია",
   "pantryItemRemoved": "ელემენტი წაიშალა",
   "pantryMoreDetails": "მეტი დეტალი",
   "pantryNoItemsFound": "\"{query}\"-ისთვის ერთეული ვერ მოიძებნა",
@@ -1974,6 +2134,7 @@
   "paywallAfterItem2": "დასუფთავება",
   "paywallAfterItem3": "ხორცი",
   "paywallAfterItem4": "საცხობი",
+  "paywallBasedOnAnswers": "პერსონალიზებულია თქვენი პასუხებიდან",
   "paywallBeforeAfterTitle": "AI ადრე და შემდეგ:",
   "paywallBeforeItem1": "ბრინჯი",
   "paywallBeforeItem2": "საპონი",
@@ -2011,6 +2172,8 @@
   "paywallGoalHeadlinePantry": "{name}, მშვენივრად აკონტროლეთ თქვენი საკუჭნაო!",
   "paywallGoalHeadlineRecipes": "{name}, აღმოაჩინეთ ახალი რეცეპტები!",
   "paywallGoalHeadlineSaveMoney": "{name}, დაზოგე ყოველი მოგზაურობა!",
+  "paywallHeroFeatureDesc": "წარმოთქვით ან ჩასვით მთელი სია — ხელოვნური ინტელექტი ახარისხებს, კატეგორიზებს და ანაწილებს მას წამებში",
+  "paywallHeroFeatureTitle": "AI შოპინგის ასისტენტი",
   "paywallHeroHeadline": "Kipi AI ყოველთვის თქვენს გვერდით",
   "paywallHeroSubtitle": "დაამატეთ ნივთები, მოაწყვეთ სიები და დაზოგეთ დრო ჯიბეში AI-ით",
   "paywallHeroSubtitlePersonalized": "ჰეი {name}, მოაწყეთ თქვენი საყიდლები სწორად.",
@@ -2045,6 +2208,11 @@
   "paywallTestimonial2Text": "სიის პუნქტი აღარ დამავიწყდა. AI ჩატი სენსაციურია!",
   "paywallTestimonialAuthor": "ენ ს.",
   "paywallTestimonialsTitle": "რას ამბობენ ჩვენი მომხმარებლები:",
+  "paywallTimelineChargeDesc": "თქვენი გამოწერა იწყება — გააუქმეთ ნებისმიერ დროს",
+  "paywallTimelineDay": "დღე {day}",
+  "paywallTimelineReminderDesc": "შეგახსენებთ სასამართლო პროცესის დასრულებამდე",
+  "paywallTimelineToday": "დღეს",
+  "paywallTimelineTodayDesc": "მყისიერად განბლოკეთ სრული წვდომა",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "დაიწყეთ უფასო საცდელი ვერსია",
   "paywallTrialDays": "{days} დღე უფასო",
@@ -2067,11 +2235,15 @@
   "prefSharing": "სიების გაზიარება",
   "prefUnlimitedLists": "შეუზღუდავი სიები",
   "prefUnlimitedPantry": "შეუზღუდავი საკუჭნაო",
+  "preferencesSection": "პრეფერენციები",
   "preferredMarket": "სასურველი ბაზარი",
   "preferredMarketHint": "სად ყიდულობთ ჩვეულებრივ?",
+  "premiumActionsPrompt": "გამოიწერეთ Premium ავტომატური მოქმედებების განსაბლოკად.",
+  "premiumStepDescription": "{description} (პრემიუმი)",
   "premiumUpgrade": "განაახლეთ განსაბლოკად",
   "prepTime": "მომზადების დრო",
   "prepTimeMinutes": "მომზადების დრო (წუთებში)",
+  "previousItemState": "წინა მდგომარეობა: {quantity} {unit} [{category}]{price}",
   "privacy": "კონფიდენციალურობა",
   "product": "პროდუქტი",
   "productName": "პროდუქტის სახელი",
@@ -2088,21 +2260,34 @@
   "quantityShort": "რაოდ",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "ესაუბრეთ Kipi-ს",
+  "quickActionPantry": "საკუჭნაოს ნახვა",
   "quickRecipe": "სწრაფი რეცეპტი",
   "quickRecipePrompt": "შემომთავაზეთ რეცეპტები ჩემი სიის ელემენტებით.",
   "quickReplies": "სწრაფი პასუხები:",
   "quickSuggestions": "სწრაფი წინადადებები",
+  "recipeAddError": "თქვენს სიაში დამატება ვერ მოხერხდა. გთხოვთ, სცადოთ ხელახლა.",
   "recipeAddToList": "საყიდლების სიაში დამატება",
   "recipeAddedConfirmation": "{count} ინგრედიენტი დაემატა {listName}-ს",
   "recipeCreated": "რეცეპტი შეიქმნა!",
   "recipeDeleted": "რეცეპტი წაიშალა",
+  "recipeEstimatePartial": "ნაწილობრივი შეფასება ინგრედიენტების მიხედვით ფასით.",
+  "recipeEstimatedCostPerServing": "{cost} / მომსახურება",
+  "recipeEstimatedTotalCost": "სავარაუდო ჯამური ღირებულება",
   "recipeImage": "რეცეპტის სურათი",
+  "recipeIngredientInPantry": "საკუჭნაოში",
+  "recipeIngredientLowPantry": "დაბალი საკუჭნაო",
   "recipeIngredientSingular": "1 ინგრედიენტი",
   "recipeIngredientsPlural": "{count} ინგრედიენტები",
+  "recipeManualTotalCost": "მექანიკური მთლიანი ღირებულება",
+  "recipeManualTotalCostHint": "დატოვეთ ცარიელი ინგრედიენტების ფასების შესაფასებლად.",
   "recipeName": "რეცეპტის სახელი",
   "recipeSaved": "რეცეპტი შენახულია!",
+  "recipeServesCount": "ემსახურება {count}",
   "recipeSuggestion": "რეცეპტის შემოთავაზება",
   "recipeTags": "რეცეპტის ტეგები",
+  "recipeTapToCheck": "შეეხეთ ინგრედიენტს, რათა შეამოწმოთ იგი მომზადებისას",
+  "recipeYieldServings": "მოსავლიანობის პორცია",
   "regenerate": "ხელახლა გენერაცია",
   "remove": "წაშლა",
   "removeBudget": "წაშლა",
@@ -2126,9 +2311,12 @@
   "savings": "დაზოგვა",
   "scanBarcodeTitle": "შტრიხკოდის სკანირება",
   "scanProductTitle": "პროდუქტის სკანირება",
+  "scrollToBottom": "გადაახვიეთ ბოლოში",
+  "searchConversations": "მოძებნეთ საუბრები",
   "searchCurrency": "მოძებნეთ ვალუტა...",
   "searchInConversation": "საუბარში ძიება...",
   "searchLanguage": "ენის ძებნა...",
+  "searchMessages": "შეტყობინებების ძიება...",
   "searchRecipes": "რეცეპტების ძიება...",
   "selectAll": "ყველას მონიშვნა",
   "selectCheaperAlternative": "აირჩიეთ იაფი ალტერნატივა",
@@ -2185,6 +2373,7 @@
   "signInGoogle": "Google-ით შესვლა",
   "skip": "გამოტოვება",
   "smartOrganization": "ჭკვიანი ორგანიზაცია",
+  "somethingWentWrong": "რაღაც შეფერხდა",
   "sortAZ": "A–Z",
   "sortCategory": "კატეგორია",
   "sortDate": "თარიღი",
@@ -2215,6 +2404,7 @@
   "themeColor": "თემის ფერი",
   "themeGreen": "მწვანე",
   "themeIndigo": "ინდიგო",
+  "themeMode": "თემის რეჟიმი",
   "themeOrange": "ნარინჯისფერი",
   "themePink": "ვარდისფერი",
   "themePurple": "იისფერი",
@@ -2222,12 +2412,14 @@
   "themeSelectionTitle": "აირჩიეთ თემის ფერი",
   "themeTeal": "ზღვის მწვანე",
   "totalEstimated": "სავარაუდო ჯამი: {amount}",
+  "totalEstimatedLabel": "სავარაუდო სულ",
   "totalSavings": "მთლიანი დანაზოგი",
   "totalSpending": "მთლიანი ხარჯი",
   "trackStock": "მარაგის თვალყური",
   "trackStockActive": "ჩნდება სავაჭრო შემოთავაზებებში",
   "trackStockInactive": "არ ქმნის სავაჭრო შემოთავაზებას",
   "undo": "უკან დაბრუნება",
+  "undoChanges": "ცვლილებების გაუქმება",
   "unit": "ერთეული",
   "unitPack": "შეკვრა",
   "unlockAi": "განბლოკეთ შეუზღუდავი AI",
@@ -2252,6 +2444,7 @@
   "userProfileSaveButton": "პროფილის შენახვა",
   "userProfileSaved": "პროფილი წარმატებით შენახულია!",
   "userProfileTitle": "ჩემი პროფილი",
+  "userRole": "შენ",
   "validForLimitedTime": "მოქმედებს შეზღუდული დროით",
   "version": "ვერსია",
   "viewActive": "აქტიურების ნახვა",
@@ -2259,6 +2452,7 @@
   "viewHistory": "ისტორიის ნახვა",
   "viewItems": "ნივთების ნახვა",
   "viewList": "სიის ნახვა",
+  "viewPlans": "გეგმების ნახვა",
   "viewPro": "ნახვა Pro",
   "viewRecipe": "რეცეპტის ნახვა",
   "voiceCommandContent": "ილაპარაკეთ ბუნებრივად თქვენი სიის სამართავად!\n\nმაგალითები:\n• 'დაამატე პური, ყველი და ლორი'\n• 'წაშალე სამრეცხაო სარეცხი'\n• 'შეცვალე თემა ლურჯზე'\n\nეს არის KipiList Premium-ის ექსკლუზიური ფუნქცია.",

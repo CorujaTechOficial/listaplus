@@ -8,6 +8,35 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -110,6 +139,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -243,6 +279,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -272,6 +311,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -351,6 +397,9 @@
   "@manageCategoriesTitle": {
     "description": "Title for category management"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
@@ -386,6 +435,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -902,6 +954,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1021,6 +1083,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1059,6 +1128,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1119,6 +1211,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1132,7 +1227,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1263,22 +1372,41 @@
   "addToPantryPrompt": "Afegir \"{name}\" al teu rebost?",
   "addedFeedback": "Afegit!",
   "advancedFeatures": "Funcions avançades",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "No s'han pogut executar les accions",
+  "agentActionsPremium": "Les accions requereixen Premium",
+  "agentActionsRunning": "Accions en curs...",
+  "aiApiError": "El servei d'IA ha retornat un error ({statusCode}).",
   "aiAssistant": "Assistent d'IA",
   "aiAssistantDescription": "Obtén suggeriments intel·ligents, receptes i consells personalitzats amb el nostre assistent d'IA.",
   "aiAssistantTitle": "Assistent d'IA",
+  "aiCapabilitiesBudget": "Pressupost i Preus",
+  "aiCapabilitiesLists": "Llistes de la compra",
+  "aiCapabilitiesOrganize": "Organització",
+  "aiCapabilitiesRecipes": "Receptes i Menús",
+  "aiCapabilitiesTitle": "Què puc fer?",
+  "aiConnectionError": "No s'ha pogut connectar al servei d'IA. Comproveu la vostra connexió.",
   "aiCreditsRemaining": "{remaining} crèdits restants",
+  "aiEmptyResponseError": "El servei d'IA ha retornat una resposta buida.",
   "aiEnergy": "Energia IA",
   "aiEnergyLow": "Baixa energia d'IA",
   "aiError": "Ho sentim, s'ha produït un error en processar la teva sol·licitud. Comprova la teva connexió o torna-ho a provar més tard.",
+  "aiGeneratingResponse": "S'està generant resposta...",
+  "aiInvalidResponseError": "El servei d'IA ha retornat una resposta no vàlida.",
   "aiLimitAlmostReached": "Quasi sense missatges d'IA",
+  "aiRateLimitError": "Massa missatges en poc temps. Espereu uns segons i torneu-ho a provar.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} avui",
+  "aiSection": "Assistent d'IA",
   "aiSubscribeUnlimited": "Subscriu-te a una IA il·limitada",
   "aiTeaserFallback": "Subscriviu-vos a Premium per desbloquejar la resposta completa i obtenir consells d'IA il·limitats per a les vostres compres...",
+  "aiTimeoutError": "La petició va trigar massa. Si us plau, torna-ho a provar.",
   "aiUnlockUnlimited": "Desbloqueja IA il·limitada",
   "aiUsageExhausted": "S'ha assolit el límit mensual d'IA. Actualitza a Pro per un nombre il·limitat →",
   "aiUsageWarning": "{remaining} Accions d'IA que queden aquest mes: actualitzeu-les il·limitades",
   "aiVoiceCommandTooltip": "Comandament de veu IA (Premium)",
   "aiWelcomeContent": "hola! 👋 Sóc **Kipi**, el teu assistent personal de compres i receptes!\n\nEstic aquí per ajudar-te:\n🛒 **Organitza** les teves compres per categories automàticament\n💰 **Fes un seguiment** del teu pressupost i et dóna consells per estalviar diners\n🍲 **Suggereix** receptes delicioses amb el que ja tens\n\nCom et puc ajudar avui? Pots començar creant la teva primera llista!",
+  "aiWelcomeSuggestBarbecue": "Planifica una barbacoa",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, estic organitzant una barbacoa, ajuda'm a crear la llista de la compra",
   "aiWelcomeSuggestCreateList": "Crea la meva primera llista",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, ajuda'm a crear la meva primera llista de la compra",
   "aiWelcomeSuggestSave": "Com estalviar diners?",
@@ -1288,9 +1416,12 @@
   "appTitle": "Llista de la Compra",
   "appearance": "Aparença",
   "archiveList": "Arxivar llista",
+  "artifactBudgetLabel": "Pressupost:",
+  "artifactSynced": "Sincronitzat",
   "assistantHistory": "Història de l'assistent",
   "assistantHistorySubtitle": "Consulta el teu historial de converses",
   "assistantName": "Nom de l'assistent",
+  "assistantRole": "Assistent",
   "backToChat": "Torna al xat",
   "backToToday": "Torna a l'actualitat",
   "backupExported": "Còpia de seguretat exportada!",
@@ -1298,6 +1429,7 @@
   "backupPremiumDescription": "La còpia de seguretat i l'exportació són una funció Premium",
   "backupSubtitle": "Exporta o importa les teves dades",
   "backupTitle": "Còpia de seguretat",
+  "badResponse": "Mala resposta",
   "badgeBeginner": "Principiant",
   "badgeOrganized": "Organitzat",
   "badgeSavingMaster": "Mestre estalviant",
@@ -1323,9 +1455,11 @@
   "catOthers": "Altres",
   "catalogAddItems": "Afegeix {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Navega pel catàleg",
+  "catalogCategories": "Categories",
   "catalogFilterNational": "Nacionals",
   "catalogMyFrequents": "Els meus freqüents",
   "catalogProductNotFound": "No s'ha trobat el producte, escriviu el nom",
+  "catalogRareBadge": "Rar",
   "catalogRareSection": "menys comú al teu país",
   "catalogSearchGlobal": "Cerca qualsevol producte...",
   "catalogSearchInCategory": "Cerca a {category}...",
@@ -1333,16 +1467,43 @@
   "catalogSortPopular": "El més popular",
   "catalogTitle": "Catàleg",
   "category": "Categoria",
+  "categoryAlcohol": "Begudes alcohòliques",
+  "categoryBaby": "Bebè",
+  "categoryBakery": "Fleca",
+  "categoryBeverages": "Begudes",
+  "categoryCanned": "Productes en conserva",
+  "categoryCleaning": "Neteja",
+  "categoryColdCuts": "embotits",
   "categoryColorLabel": "Color",
+  "categoryDairy": "Lactis",
+  "categoryFish": "Peix",
+  "categoryFrozen": "Aliments congelats",
+  "categoryFruits": "Fruites",
+  "categoryGrains": "Grans i cereals",
+  "categoryHygiene": "Cura personal",
   "categoryIconLabel": "Icona",
   "categoryLimitReached": "S'ha arribat al límit de la categoria",
+  "categoryMeat": "Carn",
   "categoryName": "Nom de la categoria",
   "categoryNameHint": "Introduïu el nom de la categoria",
+  "categoryOthers": "Altres",
+  "categoryPet": "Subministraments per a mascotes",
+  "categorySeasonings": "Condiments",
+  "categorySweets": "Dolços i postres",
+  "categoryUtilities": "Subministraments per a la llar",
+  "categoryVegetables": "Verdures",
+  "chatEmptyGreeting": "Hola {name}, sóc Kipi 👋",
+  "chatEmptyGreetingNoName": "Hola, sóc Kipi 👋",
+  "chatEmptyPitch": "Creo llistes, suggereixo receptes i trobo on guardar. Per on comencem?",
   "chatEmptySubtitle": "Demaneu suggeriments d'articles, receptes o consells per desar per començar.",
   "chatEmptyTitle": "El teu xat està buit",
   "chatError": "Error en carregar el xat: {error}",
   "chatHint": "Escriu el teu missatge...",
   "chatHintBlocked": "Desbloqueja la IA per xatejar",
+  "chatHistoryErrorBody": "Alguna cosa va sortir malament al nostre costat. Toca Torna a provar per tornar-ho a provar.",
+  "chatHistoryErrorTitle": "No s'ha pogut carregar aquesta conversa",
+  "chatHistoryOfflineBody": "Comprova la teva connexió a Internet i torna-ho a provar.",
+  "chatHistoryOfflineTitle": "Estàs fora de línia",
   "chatSubtitle": "Demana suggeriments d'articles, receptes o consells d'estalvi.",
   "chatSubtitleShort": "Pregunta per preus, receptes, organització...",
   "chooseCurrency": "Seleccioneu Moneda",
@@ -1350,6 +1511,7 @@
   "chooseImageSource": "Tria la font de la imatge",
   "chooseLanguage": "Selecciona l'idioma",
   "chooseThemeColor": "Trieu el color del tema",
+  "chooseThemeMode": "Seleccioneu el mode de tema",
   "clear": "Netejar",
   "clearHistory": "Netejar historial",
   "clearHistoryConfirm": "Netejar tots els missatges d'aquesta sessió?",
@@ -1392,6 +1554,10 @@
   "customizeAssistant": "Personalitza",
   "dark": "Fosc",
   "data": "Dades",
+  "dateGroupOlder": "Més vell",
+  "dateGroupPrevious7Days": "7 dies anteriors",
+  "dateGroupToday": "Avui",
+  "dateGroupYesterday": "Ahir",
   "deficitItems": "{deficit,plural, one{{deficit} article necessita comprar-se} other{{deficit} articles necessiten comprar-se}}",
   "delete": "Suprimir",
   "deleteCategory": "Suprimeix",
@@ -1408,6 +1574,7 @@
   "deleteRecipeConfirmMsg": "Estàs segur que vols eliminar \"{recipeName}\"? Aquesta acció no es pot desfer.",
   "deleteSession": "Suprimeix el xat",
   "deleteSessionConfirm": "Confirmes que vols suprimir aquest xat? Els missatges es perdran permanentment.",
+  "deletedList": "Llista suprimida",
   "deselectAll": "Desseleccionar tot",
   "dietaryRestrictions": "Restriccions dietètiques",
   "dietaryRestrictionsHint": "Alguna restricció dietètica?",
@@ -1420,6 +1587,7 @@
   "editCategoryDialog": "Edita la categoria",
   "editItem": "Editar article",
   "editItemPrice": "Preu estimat",
+  "editMessage": "Edita el missatge",
   "editPantryItem": "Editar {name}",
   "editRecipe": "Editar",
   "editRecipeTitle": "Editar recepta",
@@ -1433,6 +1601,7 @@
   "errorLoadingChat": "Vaja! S'ha produït un error en carregar el xat.",
   "errorLoadingChatSubtitle": "Comprova la teva connexió o torna-ho a provar més tard.",
   "errorLoadingHistory": "S'ha produït un error en carregar l'historial",
+  "errorLoadingItems": "S'ha produït un error en carregar els elements",
   "errorLoadingLists": "S'ha produït un error en carregar les llistes",
   "errorLoadingRecipes": "Error en carregar les receptes",
   "errorLoadingSubscription": "S'ha produït un error en carregar la subscripció",
@@ -1485,6 +1654,7 @@
   "generateShoppingList": "Generar llista de compra",
   "gestureHint": "Manteniu premut per seleccionar • Feu lliscar el dit per eliminar-lo",
   "globalAssistant": "Assistent global",
+  "goodResponse": "Bona resposta",
   "howCanIHelp": "Com puc ajudar?",
   "idealQty": "Quant ideal",
   "idealQuantity": "Quantitat ideal",
@@ -1501,14 +1671,18 @@
   "instructionsHint": "Escriu un pas per línia...",
   "inviteToList": "Convida a la llista",
   "itemAddedSnack": "{name} afegit",
+  "itemAddedToList": "Element afegit a la llista.",
   "itemName": "Nom de l'article",
   "itemRemoved": "Article eliminat",
   "itemsAddedSuccess": "Articles afegits correctament a la llista!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} article(s) necessiten comprar-se",
   "itemsPurchased": "Articles comprats",
   "itemsPurchasedCount": "{purchased} de {total} comprat",
   "itemsPurchasedShort": "{purchased}/{total} comprat",
   "itemsWillBeAdded": "{count} article(s) s'afegiran",
+  "keepAdding": "Segueix afegint",
+  "keepAddingSubtitle": "Manteniu el full obert per afegir diversos elements",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Què necessites comprar?",
@@ -1541,19 +1715,26 @@
   "markAsPurchased": "Marcar com a comprat",
   "markItemsToSeeAnalysis": "Marca els articles com a comprats per veure l'anàlisi.",
   "marketMode": "Mode de mercat",
+  "marketModeDescription": "Marca els articles mentre compres",
   "marketsToAvoid": "Mercats a evitar",
   "marketsToAvoidHint": "Mercats on prefereixes no comprar",
   "mealPlannerAddMeal": "Afegir àpat",
+  "mealPlannerAddType": "Afegeix el tipus de menjar",
+  "mealPlannerCustomTypeLabel": "Tipus personalitzat",
   "mealPlannerDateLabel": "Data",
+  "mealPlannerDefaultTypeLabel": "Tipus per defecte",
   "mealPlannerDeleteMeal": "Eliminar àpat",
   "mealPlannerEditMeal": "Editar àpat",
+  "mealPlannerEditType": "Editeu el tipus de menjar",
   "mealPlannerError": "Error en carregar el pla d'àpats",
+  "mealPlannerEstimatePartial": "Estimació basada en receptes amb dades de preus parcials.",
   "mealPlannerGenerateList": "Generar llista de compra",
   "mealPlannerGenerateListConfirm": "Vols afegir tots els ingredients dels àpats planificats per a aquesta setmana a la teva llista de compra?",
   "mealPlannerGenerateListEmpty": "No hi ha ingredients per afegir. Planifica primer alguns àpats amb receptes.",
   "mealPlannerGenerateListNoList": "Crea primer una llista de compra.",
   "mealPlannerGenerateListSuccess": "S'han afegit {count} ingredient(s) a la teva llista!",
   "mealPlannerLoading": "Carregant el pla d'àpats...",
+  "mealPlannerManageTypes": "Gestionar els tipus de menjar",
   "mealPlannerMealDeleted": "Àpat eliminat",
   "mealPlannerMealTypeBreakfast": "Esmorzar",
   "mealPlannerMealTypeDinner": "Sopar",
@@ -1573,6 +1754,12 @@
   "mealPlannerServings": "{count,plural, one{{count} ració} other{{count} racions}}",
   "mealPlannerServingsLabel": "Racions",
   "mealPlannerTitle": "Planificador d'àpats",
+  "mealPlannerTypeColor": "Color",
+  "mealPlannerTypeDeleteConfirm": "Esteu segur que voleu suprimir aquest tipus de menjar? Es mantindran els àpats planificats amb aquest tipus.",
+  "mealPlannerTypeDeleteError": "No es pot suprimir aquest tipus de menjar.",
+  "mealPlannerTypeIcon": "Icona",
+  "mealPlannerTypeName": "Nom",
+  "mealPlannerTypeNameEmpty": "El nom no pot estar buit",
   "mealPlannerViewMonthly": "Vista mensual",
   "mealPlannerViewWeekly": "Vista setmanal",
   "mealPlannerWeekEmpty": "No hi ha res planificat per a aquesta setmana",
@@ -1592,6 +1779,7 @@
   "navRecipes": "Receptes",
   "newCategoryDialog": "Nova categoria",
   "newChat": "Xat nou",
+  "newChatStarted": "S'ha iniciat un nou xat",
   "newListTitle": "Nova llista de compra",
   "newPantryList": "Compra de rebost",
   "newRecipe": "Nova recepta",
@@ -1784,6 +1972,7 @@
   "onboardingViewAllPlans": "Veure tots els plans",
   "onboardingWelcomeDesc": "La manera més intel·ligent d'organitzar les teves compres i estalviar diners.",
   "onboardingWelcomeTitle": "Benvingut a KipiList",
+  "openConversation": "Conversa oberta",
   "openMenu": "Obrir el menú",
   "organizeAisles": "Organitzar per passadissos",
   "organizeAislesPrompt": "Organitza per passadissos del mercat.",
@@ -1793,14 +1982,17 @@
   "pantryAppBar": "Rebost",
   "pantryAvailabilityAll": "Tot a punt!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} al rebost",
+  "pantryDeficitCount": "Falta {count}{unit}",
   "pantryEditTitle": "Editar {name}",
   "pantryEmpty": "Rebost buit",
   "pantryEmptySubtitle": "Afegeix productes que vulguis tenir a casa",
+  "pantryItemAdded": "Element afegit",
   "pantryItemRemoved": "Article eliminat",
   "paywallAfterItem1": "Grans",
   "paywallAfterItem2": "Neteja",
   "paywallAfterItem3": "Carns",
   "paywallAfterItem4": "Fleca",
+  "paywallBasedOnAnswers": "Personalitzat a partir de les teves respostes",
   "paywallBeforeAfterTitle": "AI abans i després:",
   "paywallBeforeItem1": "arròs",
   "paywallBeforeItem2": "sabó",
@@ -1838,6 +2030,8 @@
   "paywallGoalHeadlinePantry": "{name}, segueix perfectament el teu rebost!",
   "paywallGoalHeadlineRecipes": "{name}, descobreix noves receptes!",
   "paywallGoalHeadlineSaveMoney": "{name}, estalvia en cada viatge!",
+  "paywallHeroFeatureDesc": "Parleu o enganxeu una llista sencera: l'AI l'ordena, la classifica i la pressuposta en segons",
+  "paywallHeroFeatureTitle": "Assistent de compres amb IA",
   "paywallHeroHeadline": "Kipi AI sempre al teu costat",
   "paywallHeroSubtitle": "Afegiu articles, organitzeu llistes i estalvieu temps amb la IA a la butxaca",
   "paywallHeroSubtitlePersonalized": "Hola {name}, organitza les teves compres de la manera correcta.",
@@ -1872,6 +2066,11 @@
   "paywallTestimonial2Text": "No he tornat a oblidar cap element de la llista. El xat amb IA és sensacional!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Què diuen els nostres usuaris:",
+  "paywallTimelineChargeDesc": "La teva subscripció comença: cancel·la en qualsevol moment",
+  "paywallTimelineDay": "Dia {day}",
+  "paywallTimelineReminderDesc": "Us ho recordem abans que finalitzi el judici",
+  "paywallTimelineToday": "Avui",
+  "paywallTimelineTodayDesc": "Desbloquegeu l'accés complet a l'instant",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Inicieu la prova gratuïta",
   "paywallTrialDays": "{days} DIES GRATIS",
@@ -1894,11 +2093,15 @@
   "prefSharing": "Compartir llistes",
   "prefUnlimitedLists": "Llistes il·limitades",
   "prefUnlimitedPantry": "Rebost il·limitat",
+  "preferencesSection": "Preferències",
   "preferredMarket": "Mercat preferent",
   "preferredMarketHint": "On acostumes a comprar?",
+  "premiumActionsPrompt": "Subscriu-te a Premium per desbloquejar accions automàtiques.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Millora per desbloquejar",
   "prepTime": "Temps de preparació",
   "prepTimeMinutes": "Temps de preparació (minuts)",
+  "previousItemState": "Estat anterior: {quantity} {unit} [{category}]{price}",
   "privacy": "Privacitat",
   "product": "Producte",
   "productName": "Nom del producte",
@@ -1915,21 +2118,35 @@
   "quantityShort": "Quant",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Xateja amb Kipi",
+  "quickActionPantry": "Veure rebost",
+  "quickAddToList": "Afegeix a la llista",
   "quickRecipe": "Recepta ràpida",
   "quickRecipePrompt": "Suggereix receptes amb articles de la meva llista.",
   "quickReplies": "Respostes ràpides:",
   "quickSuggestions": "Suggeriments ràpids",
+  "recipeAddError": "No s'ha pogut afegir a la llista. Si us plau, torna-ho a provar.",
   "recipeAddToList": "Afegeix a la llista de la compra",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Recepta creada!",
   "recipeDeleted": "Recepta eliminada",
+  "recipeEstimatePartial": "Estimació parcial basada en ingredients amb preu.",
+  "recipeEstimatedCostPerServing": "{cost} / servei",
+  "recipeEstimatedTotalCost": "Cost total estimat",
   "recipeImage": "Imatge de la recepta",
+  "recipeIngredientInPantry": "En rebost",
+  "recipeIngredientLowPantry": "Baix al rebost",
   "recipeIngredientSingular": "1 ingredient",
   "recipeIngredientsPlural": "{count} ingredients",
+  "recipeManualTotalCost": "Cost total manual",
+  "recipeManualTotalCostHint": "Deixeu buit per estimar els preus dels ingredients.",
   "recipeName": "Nom de la recepta",
   "recipeSaved": "Recepta guardada!",
+  "recipeServesCount": "Serveix {count}",
   "recipeSuggestion": "Suggeriment de recepta",
   "recipeTags": "Etiquetes de la recepta",
+  "recipeTapToCheck": "Toqueu un ingredient per comprovar-ho mentre cuineu",
+  "recipeYieldServings": "Rendir porcions",
   "regenerate": "Regenerar",
   "remove": "Eliminar",
   "removeBudget": "Eliminar",
@@ -1953,9 +2170,12 @@
   "savings": "Estalvis",
   "scanBarcodeTitle": "Escaneja el codi de barres",
   "scanProductTitle": "Escaneja el producte",
+  "scrollToBottom": "Desplaceu-vos cap avall",
+  "searchConversations": "Cerca converses",
   "searchCurrency": "Cerca moneda...",
   "searchInConversation": "Cerca a la conversa...",
   "searchLanguage": "Cercar idioma...",
+  "searchMessages": "Cerca missatges...",
   "searchRecipes": "Cercar receptes...",
   "selectAll": "Seleccionar tot",
   "selectCheaperAlternative": "Seleccioneu una alternativa més barata",
@@ -1989,6 +2209,7 @@
   "signInGoogle": "Iniciar sessió amb Google",
   "skip": "Saltar",
   "smartOrganization": "Organització intel·ligent",
+  "somethingWentWrong": "Alguna cosa va fallar",
   "sortCategory": "Categoria",
   "sortDate": "Data",
   "sortManual": "Manual",
@@ -2018,18 +2239,21 @@
   "themeColor": "Color del tema",
   "themeGreen": "Verd",
   "themeIndigo": "Índigo",
+  "themeMode": "Mode de tema",
   "themeOrange": "Taronja",
   "themePink": "Rosa",
   "themePurple": "Porpra",
   "themeRed": "Vermell",
   "themeTeal": "Xarxet",
   "totalEstimated": "Total estimat: {amount}",
+  "totalEstimatedLabel": "Total estimat",
   "totalSavings": "Estalvi total",
   "totalSpending": "Despesa total",
   "trackStock": "Seguir estoc",
   "trackStockActive": "Apareix en suggeriments de compra",
   "trackStockInactive": "No genera suggeriment de compra",
   "undo": "Desfer",
+  "undoChanges": "Desfer els canvis",
   "unit": "Unitat",
   "unitPack": "paquet",
   "unlockAi": "Desbloqueja IA il·limitada",
@@ -2040,6 +2264,7 @@
   "unmark": "Desmarcar",
   "upgrade": "Millorar",
   "userProfile": "Perfil d'usuari",
+  "userRole": "tu",
   "validForLimitedTime": "Vàlid per temps limitat",
   "version": "Versió",
   "viewActive": "Veure actives",
@@ -2047,6 +2272,7 @@
   "viewHistory": "Veure historial",
   "viewItems": "Veure elements",
   "viewList": "Veure llista",
+  "viewPlans": "Veure plànols",
   "viewPro": "Veure Pro",
   "viewRecipe": "Veure recepta",
   "voiceCommandContent": "Parla de manera natural per gestionar la teva llista!\n\nExemples:\n• 'Afegeix pa, formatge i pernil'\n• 'Elimina el detergent'\n• 'Canvia el tema a blau'\n\nAquesta és una funció exclusiva de KipiList Premium.",

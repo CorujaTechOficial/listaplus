@@ -8,6 +8,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -110,6 +124,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -243,6 +264,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -272,6 +296,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -902,6 +933,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1021,6 +1062,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1059,6 +1107,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1132,7 +1203,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1263,22 +1348,36 @@
   "addToPantryPrompt": "Kas lisada \"{name}\" sinu sahvrisse?",
   "addedFeedback": "Lisatud!",
   "advancedFeatures": "Täiustatud funktsioonid",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Toimingute käivitamine ebaõnnestus",
+  "agentActionsPremium": "Toiminguteks on vaja Premium",
+  "agentActionsRunning": "Toimingute käivitamine...",
+  "aiApiError": "AI-teenus tagastas vea ({statusCode}).",
   "aiAssistant": "AI abiline",
   "aiAssistantDescription": "Hangi nutikaid soovitusi, retsepte ja isikupärastatud näpunäiteid meie AI abilisega.",
   "aiAssistantTitle": "AI assistent",
+  "aiConnectionError": "AI-teenusega ei saanud ühendust luua. Kontrollige ühendust.",
   "aiCreditsRemaining": "Jäänud {remaining} krediiti",
+  "aiEmptyResponseError": "AI-teenus andis tühja vastuse.",
   "aiEnergy": "AI energia",
   "aiEnergyLow": "Madal AI energia",
   "aiError": "Vabandust, sinu päringu töötlemisel tekkis viga. Kontrolli ühendust või proovi hiljem uuesti.",
+  "aiGeneratingResponse": "Vastuse genereerimine…",
+  "aiInvalidResponseError": "AI-teenus andis kehtetu vastuse.",
   "aiLimitAlmostReached": "AI sõnumid on peaaegu otsas",
+  "aiRateLimitError": "Liiga palju sõnumeid lühikese aja jooksul. Oodake mõni sekund ja proovige uuesti.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} täna",
+  "aiSection": "AI assistent",
   "aiSubscribeUnlimited": "Tellige piiramatu AI jaoks",
   "aiTeaserFallback": "Tellige Premium, et avada täielik vastus ja saada piiramatul hulgal tehisintellekti näpunäiteid oma ostude tegemiseks...",
+  "aiTimeoutError": "Taotluse esitamine võttis liiga kaua aega. Palun proovi uuesti.",
   "aiUnlockUnlimited": "Avage piiramatu AI",
   "aiUsageExhausted": "Igakuine tehisintellekti limiit on täis. Minge üle Pro versioonile piiramatuks →",
   "aiUsageWarning": "{remaining} AI toimingud on sel kuul jäänud – uuendamine piiramatuks",
   "aiVoiceCommandTooltip": "AI häälejuhtimine (Premium)",
   "aiWelcomeContent": "Tere! 👋 Mina olen **Kipi**, Sinu isiklik ostu- ja retseptiassistent!\n\nOlen siin, et teid aidata:\n🛒 **Korraldage** oma oste automaatselt kategooriate kaupa\n💰 **Jälgige** oma eelarvet ja andke raha säästmise näpunäiteid\n🍲 **Soovitage** maitsvaid retsepte juba olemasolevaga\n\nKuidas saan teid täna aidata? Võite alustada oma esimese loendi loomisega!",
+  "aiWelcomeSuggestBarbecue": "Planeerige grill",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, ma korraldan grilli – aita mul ostunimekirja koostada",
   "aiWelcomeSuggestCreateList": "Loo minu esimene nimekiri",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, aita mul koostada esimene ostunimekiri",
   "aiWelcomeSuggestSave": "Kuidas säästa raha?",
@@ -1288,9 +1387,12 @@
   "appTitle": "Ostunimekiri",
   "appearance": "Välimus",
   "archiveList": "Arhiveeri nimekiri",
+  "artifactBudgetLabel": "Eelarve:",
+  "artifactSynced": "Sünkroonitud",
   "assistantHistory": "Assistendi ajalugu",
   "assistantHistorySubtitle": "Vaadake oma vestluste ajalugu",
   "assistantName": "Assistendi nimi",
+  "assistantRole": "Assistent",
   "backToChat": "Tagasi vestlusesse",
   "backToToday": "Tagasi tänasesse",
   "backupExported": "Varukoopia eksporditud!",
@@ -1298,6 +1400,7 @@
   "backupPremiumDescription": "Varundamine ja eksport on Premium funktsioon",
   "backupSubtitle": "Ekspordi või impordi oma andmed",
   "backupTitle": "Varukoopia",
+  "badResponse": "Halb vastus",
   "badgeBeginner": "Algaja",
   "badgeOrganized": "Korraldatud",
   "badgeSavingMaster": "Meister päästmine",
@@ -1323,9 +1426,11 @@
   "catOthers": "Muud",
   "catalogAddItems": "Lisa {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Sirvi kataloogi",
+  "catalogCategories": "Kategooriad",
   "catalogFilterNational": "Rahvuslased",
   "catalogMyFrequents": "Minu Sagedused",
   "catalogProductNotFound": "Toodet ei leitud, sisestage nimi",
+  "catalogRareBadge": "Harv",
   "catalogRareSection": "teie riigis vähem levinud",
   "catalogSearchGlobal": "Otsige mis tahes toodet...",
   "catalogSearchInCategory": "Otsi {category}...",
@@ -1333,16 +1438,43 @@
   "catalogSortPopular": "Kõige populaarsem",
   "catalogTitle": "Kataloog",
   "category": "Kategooria",
+  "categoryAlcohol": "Alkohoolsed joogid",
+  "categoryBaby": "Beebi",
+  "categoryBakery": "Pagariäri",
+  "categoryBeverages": "Joogid",
+  "categoryCanned": "Konservid",
+  "categoryCleaning": "Puhastamine",
+  "categoryColdCuts": "Külmalõiked",
   "categoryColorLabel": "Värv",
+  "categoryDairy": "Piimatooted",
+  "categoryFish": "Kala",
+  "categoryFrozen": "Külmutatud toidud",
+  "categoryFruits": "Puuviljad",
+  "categoryGrains": "Teravili ja teravili",
+  "categoryHygiene": "Isiklik hooldus",
   "categoryIconLabel": "Ikoon",
   "categoryLimitReached": "Kategoorialimiit on täis",
+  "categoryMeat": "Liha",
   "categoryName": "Kategooria nimi",
   "categoryNameHint": "Sisestage kategooria nimi",
+  "categoryOthers": "muud",
+  "categoryPet": "Lemmikloomatarbed",
+  "categorySeasonings": "Maitseained",
+  "categorySweets": "Maiustused ja magustoidud",
+  "categoryUtilities": "Majapidamistarbed",
+  "categoryVegetables": "Köögiviljad",
+  "chatEmptyGreeting": "Tere {name}, mina olen Kipi 👋",
+  "chatEmptyGreetingNoName": "Tere, mina olen Kipi 👋",
+  "chatEmptyPitch": "Koostan loendeid, soovitan retsepte ja leian, kuhu salvestada. Kust me alustame?",
   "chatEmptySubtitle": "Alustamiseks küsige esemete soovitusi, retsepte või salvestamisnõuandeid.",
   "chatEmptyTitle": "Teie vestlus on tühi",
   "chatError": "Viga vestluse laadimisel: {error}",
   "chatHint": "Kirjuta oma sõnum...",
   "chatHintBlocked": "Avage vestluseks tehisintellekt",
+  "chatHistoryErrorBody": "Meie poolel läks midagi valesti. Uuesti proovimiseks puudutage uuesti.",
+  "chatHistoryErrorTitle": "Seda vestlust ei saanud laadida",
+  "chatHistoryOfflineBody": "Kontrollige oma Interneti-ühendust ja proovige uuesti.",
+  "chatHistoryOfflineTitle": "Olete võrguühenduseta",
   "chatSubtitle": "Küsi üksuste soovitusi, retsepte või säästunõuandeid.",
   "chatSubtitleShort": "Küsi hindade, retseptide, korralduse kohta...",
   "chooseCurrency": "Valige Valuuta",
@@ -1350,6 +1482,7 @@
   "chooseImageSource": "Vali pildi allikas",
   "chooseLanguage": "Vali keel",
   "chooseThemeColor": "Valige teema värv",
+  "chooseThemeMode": "Valige teemarežiim",
   "clear": "Tühjenda",
   "clearHistory": "Tühjenda ajalugu",
   "clearHistoryConfirm": "Kas kustutada kõik sõnumid selles sessioonis?",
@@ -1392,6 +1525,10 @@
   "customizeAssistant": "Kohanda",
   "dark": "Tume",
   "data": "Andmed",
+  "dateGroupOlder": "Vanemad",
+  "dateGroupPrevious7Days": "Eelmised 7 päeva",
+  "dateGroupToday": "Täna",
+  "dateGroupYesterday": "eile",
   "deficitItems": "{deficit} üksus(t) vajab ostmist",
   "delete": "Kustuta",
   "deleteCategory": "Kustuta",
@@ -1408,6 +1545,7 @@
   "deleteRecipeConfirmMsg": "Kas olete kindel, et soovite kustutada retsepti \"{recipeName}\"? Seda toimingut ei saa tühistada.",
   "deleteSession": "Kustuta vestlus",
   "deleteSessionConfirm": "Kas olete kindel, et soovite selle vestluse kustutada? Sõnumid lähevad jäädavalt kaotsi.",
+  "deletedList": "Kustutatud loend",
   "deselectAll": "Tühista kõik",
   "dietaryRestrictions": "Toitumispiirangud",
   "dietaryRestrictionsHint": "Kas on mingeid toitumispiiranguid?",
@@ -1420,6 +1558,7 @@
   "editCategoryDialog": "Muuda kategooriat",
   "editItem": "Muuda üksust",
   "editItemPrice": "Hinnanguline hind",
+  "editMessage": "Redigeeri sõnumit",
   "editPantryItem": "Muuda {name}",
   "editRecipe": "Muuda",
   "editRecipeTitle": "Muuda retsepti",
@@ -1433,6 +1572,7 @@
   "errorLoadingChat": "Oih! Midagi läks vestluse laadimisel valesti.",
   "errorLoadingChatSubtitle": "Kontrollige ühendust või proovige hiljem uuesti.",
   "errorLoadingHistory": "Viga ajaloo laadimisel",
+  "errorLoadingItems": "Viga üksuste laadimisel",
   "errorLoadingLists": "Viga loendite laadimisel",
   "errorLoadingRecipes": "Viga retseptide laadimisel",
   "errorLoadingSubscription": "Viga tellimuse laadimisel",
@@ -1485,6 +1625,7 @@
   "generateShoppingList": "Loo ostunimekiri",
   "gestureHint": "Valimiseks hoidke all • Eemaldamiseks pühkige",
   "globalAssistant": "Üldine abiline",
+  "goodResponse": "Hea vastus",
   "howCanIHelp": "Kuidas ma saan aidata?",
   "idealQty": "Ideaalne kogus",
   "idealQuantity": "Ideaalne kogus",
@@ -1501,14 +1642,18 @@
   "instructionsHint": "Kirjuta üks samm reale...",
   "inviteToList": "Kutsu nimekirja",
   "itemAddedSnack": "{name} lisatud",
+  "itemAddedToList": "Üksus lisati loendisse.",
   "itemName": "Üksuse nimi",
   "itemRemoved": "Üksus eemaldatud",
   "itemsAddedSuccess": "Üksused edukalt nimekirja lisatud!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} üksus(t) vajab ostmist",
   "itemsPurchased": "Ostetud esemed",
   "itemsPurchasedCount": "{purchased} {total}-st ostetud",
   "itemsPurchasedShort": "{purchased}/{total} ostetud",
   "itemsWillBeAdded": "Lisatakse {count} üksus(t)",
+  "keepAdding": "Jätkake lisamist",
+  "keepAddingSubtitle": "Mitme üksuse lisamiseks hoidke leht avatuna",
   "kipiListProActive": "KipiList Pro aktiivne",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Mida on vaja osta?",
@@ -1544,16 +1689,22 @@
   "marketsToAvoid": "Turud, mida vältida",
   "marketsToAvoidHint": "Turud, kus te ei eelista sisseoste teha",
   "mealPlannerAddMeal": "Lisa toidukord",
+  "mealPlannerAddType": "Lisage söögi tüüp",
+  "mealPlannerCustomTypeLabel": "Kohandatud tüüp",
   "mealPlannerDateLabel": "Kuupäev",
+  "mealPlannerDefaultTypeLabel": "Vaikimisi tüüp",
   "mealPlannerDeleteMeal": "Eemalda toidukord",
   "mealPlannerEditMeal": "Muuda toidukorda",
+  "mealPlannerEditType": "Muuda söögi tüüpi",
   "mealPlannerError": "Viga toidukava laadimisel",
+  "mealPlannerEstimatePartial": "Hinnang osaliste hinnaandmetega retseptide põhjal.",
   "mealPlannerGenerateList": "Loo ostunimekiri",
   "mealPlannerGenerateListConfirm": "Kas lisada kaikki selle nädala toidukordade koostisosad ostunimekirja?",
   "mealPlannerGenerateListEmpty": "Koostisosi pole lisada. Planeeri esmalt mõned toidukorrad retseptidega.",
   "mealPlannerGenerateListNoList": "Loo esmalt ostunimekiri.",
   "mealPlannerGenerateListSuccess": "{count} koostisosa lisatud nimekirja!",
   "mealPlannerLoading": "Toidukava laadimine...",
+  "mealPlannerManageTypes": "Hallake söögitüüpe",
   "mealPlannerMealDeleted": "Toidukord eemaldatud",
   "mealPlannerMealTypeBreakfast": "Hommikusöök",
   "mealPlannerMealTypeDinner": "Õhtusöök",
@@ -1573,6 +1724,12 @@
   "mealPlannerServings": "{count,plural, one{{count} portsjon} other{{count} portsjonit}}",
   "mealPlannerServingsLabel": "Portsjonid",
   "mealPlannerTitle": "Toidukorra planeerija",
+  "mealPlannerTypeColor": "Värv",
+  "mealPlannerTypeDeleteConfirm": "Kas olete kindel, et soovite selle einetüübi kustutada? Planeeritud toidukorrad selle tüübiga jäävad alles.",
+  "mealPlannerTypeDeleteError": "Seda einetüüpi ei saa kustutada.",
+  "mealPlannerTypeIcon": "Ikoon",
+  "mealPlannerTypeName": "Nimi",
+  "mealPlannerTypeNameEmpty": "Nimi ei tohi olla tühi",
   "mealPlannerViewMonthly": "Kuunäade",
   "mealPlannerViewWeekly": "Nädalanäade",
   "mealPlannerWeekEmpty": "Selleks nädalaks pole midagi planeeritud",
@@ -1784,6 +1941,7 @@
   "onboardingViewAllPlans": "Vaadake kõiki plaane",
   "onboardingWelcomeDesc": "Kõige nutikam viis ostlemise korraldamiseks ja raha säästmiseks.",
   "onboardingWelcomeTitle": "Tere tulemast KipiListi",
+  "openConversation": "Ava vestlus",
   "openMenu": "Ava menüü",
   "organizeAisles": "Korralda vahekäikude kaupa",
   "organizeAislesPrompt": "Korralda poe vahekäikude kaupa.",
@@ -1793,14 +1951,17 @@
   "pantryAppBar": "Sahver",
   "pantryAvailabilityAll": "Kõik valmis!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} sahvris",
+  "pantryDeficitCount": "Puudub {count}{unit}",
   "pantryEditTitle": "Muuda {name}",
   "pantryEmpty": "Tühi sahver",
   "pantryEmptySubtitle": "Lisa tooted, mida soovid kodus hoida",
+  "pantryItemAdded": "Üksus lisatud",
   "pantryItemRemoved": "Üksus eemaldatud",
   "paywallAfterItem1": "Terad",
   "paywallAfterItem2": "Puhastamine",
   "paywallAfterItem3": "Lihad",
   "paywallAfterItem4": "Pagariäri",
+  "paywallBasedOnAnswers": "Isikupärastatud teie vastuste põhjal",
   "paywallBeforeAfterTitle": "AI enne ja pärast:",
   "paywallBeforeItem1": "riis",
   "paywallBeforeItem2": "seep",
@@ -1838,6 +1999,8 @@
   "paywallGoalHeadlinePantry": "{name}, jälgige oma sahvrit suurepäraselt!",
   "paywallGoalHeadlineRecipes": "{name}, avastage uusi retsepte!",
   "paywallGoalHeadlineSaveMoney": "{name}, säästke igal reisil!",
+  "paywallHeroFeatureDesc": "Rääkige või kleepige terve loend – AI sorteerib, kategoriseerib ja eelarvestab selle sekunditega",
+  "paywallHeroFeatureTitle": "AI ostuassistent",
   "paywallHeroHeadline": "Kipi AI alati teie kõrval",
   "paywallHeroSubtitle": "Lisage üksusi, korraldage loendeid ja säästke aega taskus oleva tehisintellektiga",
   "paywallHeroSubtitlePersonalized": "Tere, {name}, korraldage oma ostlemine õigesti.",
@@ -1872,6 +2035,11 @@
   "paywallTestimonial2Text": "Ma ei unustanud enam kunagi ühtegi loendi elementi. AI-vestlus on sensatsiooniline!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Mida meie kasutajad ütlevad:",
+  "paywallTimelineChargeDesc": "Teie tellimus algab – tühistage igal ajal",
+  "paywallTimelineDay": "Päev {day}",
+  "paywallTimelineReminderDesc": "Tuletame teile enne prooviperioodi lõppu meelde",
+  "paywallTimelineToday": "Täna",
+  "paywallTimelineTodayDesc": "Avage koheselt täielik juurdepääs",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Alustage tasuta prooviperioodi",
   "paywallTrialDays": "{days} PÄEVA TASUTA",
@@ -1894,11 +2062,15 @@
   "prefSharing": "Jaga nimekirju",
   "prefUnlimitedLists": "Piiramatud nimekirjad",
   "prefUnlimitedPantry": "Piiramatu sahver",
+  "preferencesSection": "Eelistused",
   "preferredMarket": "Eelistatud turg",
   "preferredMarketHint": "Kus te tavaliselt poes käite?",
+  "premiumActionsPrompt": "Automaatsete toimingute avamiseks tellige Premium.",
+  "premiumStepDescription": "{description} (lisatasu)",
   "premiumUpgrade": "Täienda, et avada",
   "prepTime": "Ettevalmistusaeg",
   "prepTimeMinutes": "Ettevalmistusaeg (minutites)",
+  "previousItemState": "Eelmine olek: {quantity} {unit} [{category}]{price}",
   "privacy": "Privaatsus",
   "product": "Toode",
   "productName": "Toote nimi",
@@ -1915,21 +2087,34 @@
   "quantityShort": "Kogus",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Vestelge Kipiga",
+  "quickActionPantry": "Vaata sahver",
   "quickRecipe": "Kiire retsept",
   "quickRecipePrompt": "Soovita retsepte minu nimekirja üksustega.",
   "quickReplies": "Kiired vastused:",
   "quickSuggestions": "Kiired soovitused",
+  "recipeAddError": "Teie loendisse ei saanud lisada. Palun proovi uuesti.",
   "recipeAddToList": "Lisa ostunimekirja",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Retsept loodud!",
   "recipeDeleted": "Retsept kustutatud",
+  "recipeEstimatePartial": "Osaline hinnang koostisosade ja hinna alusel.",
+  "recipeEstimatedCostPerServing": "{cost} / portsjon",
+  "recipeEstimatedTotalCost": "Hinnanguline kogukulu",
   "recipeImage": "Retsepti pilt",
+  "recipeIngredientInPantry": "Sahvris",
+  "recipeIngredientLowPantry": "Madal sahver",
   "recipeIngredientSingular": "1 koostisosa",
   "recipeIngredientsPlural": "{count} koostisained",
+  "recipeManualTotalCost": "Käsitsi kogukulu",
+  "recipeManualTotalCostHint": "Koostisosade hinna hindamiseks jätke tühjaks.",
   "recipeName": "Retsepti nimi",
   "recipeSaved": "Retsept salvestatud!",
+  "recipeServesCount": "Teenib {count}",
   "recipeSuggestion": "Retsepti soovitus",
   "recipeTags": "Retsepti sildid",
+  "recipeTapToCheck": "Puudutage koostisosa, et seda toiduvalmistamise ajal kontrollida",
+  "recipeYieldServings": "Saagised portsjonid",
   "regenerate": "Loo uuesti",
   "remove": "Eemalda",
   "removeBudget": "Eemalda",
@@ -1953,9 +2138,12 @@
   "savings": "Sääst",
   "scanBarcodeTitle": "Vöötkoodi skannimine",
   "scanProductTitle": "Skanni toode",
+  "scrollToBottom": "Kerige alla",
+  "searchConversations": "Otsige vestlusi",
   "searchCurrency": "Otsi valuutat...",
   "searchInConversation": "Otsi vestlusest...",
   "searchLanguage": "Otsi keelt...",
+  "searchMessages": "Otsi sõnumeid...",
   "searchRecipes": "Otsi retsepte...",
   "selectAll": "Vali kõik",
   "selectCheaperAlternative": "Valige odavam alternatiiv",
@@ -1989,6 +2177,7 @@
   "signInGoogle": "Logi sisse Google'iga",
   "skip": "Jäta vahele",
   "smartOrganization": "Nutikas korraldus",
+  "somethingWentWrong": "Midagi läks valesti",
   "sortCategory": "Kategooria",
   "sortDate": "Kuupäev",
   "sortManual": "Käsitsi",
@@ -2018,18 +2207,21 @@
   "themeColor": "Teema värv",
   "themeGreen": "Roheline",
   "themeIndigo": "Indigo",
+  "themeMode": "Teema režiim",
   "themeOrange": "Oranž",
   "themePink": "Roosa",
   "themePurple": "Lilla",
   "themeRed": "Punane",
   "themeTeal": "Sinakasroheline",
   "totalEstimated": "Hinnanguline kogusumma: {amount}",
+  "totalEstimatedLabel": "Hinnanguline kogusumma",
   "totalSavings": "Kokkuhoid",
   "totalSpending": "Kulutatud kokku",
   "trackStock": "Jälgi varu",
   "trackStockActive": "Kuvatakse ostusoovitustes",
   "trackStockInactive": "Ei genereeri ostusoovitust",
   "undo": "Võta tagasi",
+  "undoChanges": "Võta muudatused tagasi",
   "unit": "Ühik",
   "unitPack": "pakk",
   "unlockAi": "Avage piiramatu AI",
@@ -2040,6 +2232,7 @@
   "unmark": "Eemalda märge",
   "upgrade": "Täienda",
   "userProfile": "Kasutajaprofiil",
+  "userRole": "Sina",
   "validForLimitedTime": "Kehtib piiratud aja",
   "version": "Versioon",
   "viewActive": "Vaata aktiivseid",
@@ -2047,6 +2240,7 @@
   "viewHistory": "Vaata ajalugu",
   "viewItems": "Kuva üksused",
   "viewList": "Vaata nimekirja",
+  "viewPlans": "Vaata plaane",
   "viewPro": "Vaata Pro",
   "viewRecipe": "Vaata retsepti",
   "voiceCommandContent": "Räägi loomulikult, et oma nimekirja hallata!\n\nNäited:\n• 'Lisa leib, juust ja sink'\n• 'Eemalda pesupulber'\n• 'Muuda teema siniseks'\n\nSee on KipiList Premium eksklusiivne funktsioon.",

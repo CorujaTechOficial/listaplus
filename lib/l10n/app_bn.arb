@@ -8,6 +8,35 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -121,6 +150,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -254,6 +290,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -283,6 +322,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -373,6 +419,9 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
@@ -401,6 +450,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -927,6 +979,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1074,6 +1136,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1112,6 +1181,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1172,6 +1264,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1185,7 +1280,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1333,42 +1442,61 @@
   "addToPantryPrompt": "\"{name}\" আপনার প্যান্ট্রিতে যোগ করবেন?",
   "addedFeedback": "যোগ করা হয়েছে!",
   "advancedFeatures": "উন্নত বৈশিষ্ট্য",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "অ্যাকশন চালাতে ব্যর্থ হয়েছে",
+  "agentActionsPremium": "অ্যাকশনের জন্য প্রিমিয়াম প্রয়োজন",
+  "agentActionsRunning": "চলমান অ্যাকশন...",
+  "aiApiError": "AI পরিষেবা একটি ত্রুটি ({statusCode}) ফিরিয়ে দিয়েছে।",
   "aiAssistant": "AI সহায়ক",
   "aiAssistantDescription": "আমাদের AI সহায়কের মাধ্যমে বুদ্ধিদীপ্ত পরামর্শ, রেসিপি এবং ব্যক্তিগত টিপস পান।",
   "aiAssistantGeneral": "সাধারণ সহকারী",
   "aiAssistantHistory": "সহকারী ইতিহাস",
   "aiAssistantTitle": "এআই সহকারী",
+  "aiCapabilitiesBudget": "বাজেট এবং দাম",
+  "aiCapabilitiesLists": "কেনাকাটা তালিকা",
+  "aiCapabilitiesOrganize": "সংগঠন",
+  "aiCapabilitiesRecipes": "রেসিপি এবং মেনু",
+  "aiCapabilitiesTitle": "আমি কি করতে পারি?",
+  "aiConnectionError": "AI পরিষেবার সাথে সংযোগ করা যায়নি৷ আপনার সংযোগ পরীক্ষা করুন.",
   "aiConversationHistory": "কথোপকথনের ইতিহাস",
   "aiCreditsRemaining": "{remaining} ক্রেডিট বাকি",
   "aiDeleteConversationConfirm": "মুছে দিন",
   "aiDeleteConversationTitle": "কথোপকথন মুছবেন?",
   "aiDeletedList": "মুছে ফেলা তালিকা",
+  "aiEmptyResponseError": "এআই পরিষেবা একটি খালি প্রতিক্রিয়া ফিরিয়ে দিয়েছে।",
   "aiEnergy": "এআই এনার্জি",
   "aiEnergyLow": "কম AI শক্তি",
   "aiError": "দুঃখিত, আপনার অনুরোধ প্রক্রিয়াকরণে ত্রুটি হয়েছে। আপনার সংযোগ পরীক্ষা করুন বা পরে আবার চেষ্টা করুন।",
   "aiFirstOpenHint": "আমি কিপি, আপনার শপিং সহকারী। আপনার তালিকা সম্পর্কে আমাকে কিছু জিজ্ঞাসা করুন!",
+  "aiGeneratingResponse": "প্রতিক্রিয়া তৈরি করা হচ্ছে...",
   "aiHello": "নমস্কার! আমি কিপি",
   "aiHowCanIHelp": "আমি আজ কিভাবে আপনাকে সাহায্য করতে পারি?",
+  "aiInvalidResponseError": "AI পরিষেবা একটি অবৈধ প্রতিক্রিয়া ফিরিয়ে দিয়েছে৷",
   "aiLimitAlmostReached": "প্রায় AI বার্তার বাইরে",
   "aiNewConversation": "নতুন কথোপকথন",
   "aiNewSession": "নতুন অধিবেশন",
   "aiNoConversationFound": "কোনো কথোপকথন পাওয়া যায়নি",
   "aiNoMessagesFound": "কোন বার্তা পাওয়া যায়নি",
   "aiPremiumUpsell": "প্রিমিয়াম যান",
+  "aiRateLimitError": "অল্প সময়ে অনেক বার্তা। কয়েক সেকেন্ড অপেক্ষা করুন এবং আবার চেষ্টা করুন।",
   "aiRecentConversations": "সাম্প্রতিক কথোপকথন",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} আজ",
   "aiSearchMessages": "বার্তা অনুসন্ধান করুন...",
+  "aiSection": "এআই সহকারী",
   "aiStartNewConversation": "নতুন কথোপকথন শুরু করুন",
   "aiSubscribeUnlimited": "সীমাহীন AI এর জন্য সদস্যতা নিন",
   "aiSuggestCreateList": "আমার প্রথম তালিকা তৈরি করুন",
   "aiSuggestSaveMore": "কিভাবে আরো সংরক্ষণ করতে?",
   "aiTeaserFallback": "সম্পূর্ণ প্রতিক্রিয়া আনলক করতে প্রিমিয়ামে সদস্যতা নিন এবং আপনার কেনাকাটার জন্য সীমাহীন এআই টিপস পান...",
+  "aiTimeoutError": "অনুরোধটি খুব বেশি সময় নিয়েছে৷ আবার চেষ্টা করুন.",
   "aiUnlockUnlimited": "আনলিমিটেড এআই আনলক করুন",
   "aiUnlockWithAd": "বিজ্ঞাপন দিয়ে আনলক করুন",
   "aiUsageExhausted": "মাসিক AI সীমা পৌঁছে গেছে। সীমাহীন → জন্য Pro-তে আপগ্রেড করুন",
   "aiUsageWarning": "{remaining} এআই অ্যাকশন এই মাসে বাকি আছে — সীমাহীনের জন্য আপগ্রেড করুন",
   "aiVoiceCommandTooltip": "AI ভয়েস কমান্ড (প্রিমিয়াম)",
   "aiWelcomeContent": "নমস্কার! 👋 আমি **কিপি**, আপনার ব্যক্তিগত কেনাকাটা এবং রেসিপি সহকারী!\n\nআমি আপনাকে সাহায্য করতে এখানে আছি:\n🛒 স্বয়ংক্রিয়ভাবে বিভাগ অনুসারে আপনার কেনাকাটা **সংগঠিত করুন\n💰 **আপনার বাজেট ট্র্যাক করুন** এবং আপনাকে অর্থ সাশ্রয়ের টিপস দিন\n🍲 **সাজেস্ট করুন** সুস্বাদু রেসিপি যা আপনার কাছে আগে থেকেই আছে\n\nআমি আজ কিভাবে আপনাকে সাহায্য করতে পারি? আপনি আপনার প্রথম তালিকা তৈরি করে শুরু করতে পারেন!",
+  "aiWelcomeSuggestBarbecue": "একটি বারবিকিউ পরিকল্পনা",
+  "aiWelcomeSuggestBarbecuePrompt": "কিপি, আমি একটি বারবিকিউ হোস্ট করছি — আমাকে কেনাকাটার তালিকা তৈরি করতে সাহায্য করুন",
   "aiWelcomeSuggestCreateList": "আমার প্রথম তালিকা তৈরি করুন",
   "aiWelcomeSuggestCreateListPrompt": "কিপি, আমার প্রথম কেনাকাটার তালিকা তৈরি করতে সাহায্য করুন",
   "aiWelcomeSuggestSave": "কিভাবে টাকা বাঁচাতে?",
@@ -1379,14 +1507,17 @@
   "appTitle": "শপিং লিস্ট",
   "appearance": "চেহারা",
   "archiveList": "তালিকা আর্কাইভ",
+  "artifactBudgetLabel": "বাজেট:",
   "artifactReplaceBody": "খরচ অপ্টিমাইজ করার জন্য একটি পণ্য বিকল্প নির্বাচন করুন.",
   "artifactReplaceTitle": "প্রতিস্থাপন করুন {name}",
   "artifactSuggestedItems": "প্রস্তাবিত আইটেম",
   "artifactSwapButton": "অদলবদল",
   "artifactSwappedLabel": "অদলবদল",
+  "artifactSynced": "সিঙ্ক করা হয়েছে",
   "assistantHistory": "সহকারী ইতিহাস",
   "assistantHistorySubtitle": "আপনার কথোপকথনের ইতিহাস দেখুন",
   "assistantName": "সহকারীর নাম",
+  "assistantRole": "সহকারী",
   "backToChat": "চ্যাটে ফিরে যান",
   "backToToday": "আজ ফিরে যান",
   "backupExported": "ব্যাকআপ এক্সপোর্ট করা হয়েছে!",
@@ -1394,6 +1525,7 @@
   "backupPremiumDescription": "ব্যাকআপ এবং এক্সপোর্ট একটি প্রিমিয়াম বৈশিষ্ট্য",
   "backupSubtitle": "আপনার ডেটা এক্সপোর্ট বা ইম্পোর্ট করুন",
   "backupTitle": "ব্যাকআপ",
+  "badResponse": "খারাপ প্রতিক্রিয়া",
   "badgeBeginner": "শিক্ষানবিস",
   "badgeOrganized": "সংগঠিত",
   "badgeSavingMaster": "সেভিং মাস্টার",
@@ -1421,10 +1553,12 @@
   "catOthers": "অন্যান্য",
   "catalogAddItems": "যোগ করুন {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "ক্যাটালগ ব্রাউজ করুন",
+  "catalogCategories": "ক্যাটাগরি",
   "catalogFilterNational": "জাতীয়",
   "catalogItemAdded": "{name} যোগ করা হয়েছে",
   "catalogMyFrequents": "আমার ঘন ঘন",
   "catalogProductNotFound": "পণ্য পাওয়া যায়নি, নাম টাইপ করুন",
+  "catalogRareBadge": "বিরল",
   "catalogRareSection": "আপনার দেশে কম সাধারণ",
   "catalogRetry": "আবার চেষ্টা করুন",
   "catalogSearchGlobal": "যেকোনো পণ্য অনুসন্ধান করুন...",
@@ -1433,16 +1567,43 @@
   "catalogSortPopular": "সবচেয়ে জনপ্রিয়",
   "catalogTitle": "ক্যাটালগ",
   "category": "বিভাগ",
+  "categoryAlcohol": "অ্যালকোহলযুক্ত পানীয়",
+  "categoryBaby": "বেবি",
+  "categoryBakery": "বেকারি",
+  "categoryBeverages": "পানীয়",
+  "categoryCanned": "টিনজাত পণ্য",
+  "categoryCleaning": "ক্লিনিং",
+  "categoryColdCuts": "ঠান্ডা কাটা",
   "categoryColorLabel": "রঙ",
+  "categoryDairy": "ডেইরি",
+  "categoryFish": "মাছ",
+  "categoryFrozen": "হিমায়িত খাবার",
+  "categoryFruits": "ফল",
+  "categoryGrains": "শস্য এবং সিরিয়াল",
+  "categoryHygiene": "ব্যক্তিগত যত্ন",
   "categoryIconLabel": "আইকন",
   "categoryLimitReached": "বিভাগের সীমা পৌঁছেছে",
+  "categoryMeat": "মাংস",
   "categoryName": "বিভাগের নাম",
   "categoryNameHint": "বিভাগের নাম লিখুন",
+  "categoryOthers": "অন্যান্য",
+  "categoryPet": "পোষা প্রাণী সরবরাহ",
+  "categorySeasonings": "সিজনিং",
+  "categorySweets": "মিষ্টি এবং ডেজার্ট",
+  "categoryUtilities": "গৃহস্থালীর সামগ্রী",
+  "categoryVegetables": "শাকসবজি",
+  "chatEmptyGreeting": "হাই {name}, আমি কিপি 👋",
+  "chatEmptyGreetingNoName": "হাই, আমি কিপি 👋",
+  "chatEmptyPitch": "আমি তালিকা তৈরি করি, রেসিপি প্রস্তাব করি এবং কোথায় সংরক্ষণ করতে হয় তা খুঁজে বের করি। আমরা কোথায় শুরু করব?",
   "chatEmptySubtitle": "শুরু করতে আইটেম পরামর্শ, রেসিপি বা সংরক্ষণ টিপস জন্য জিজ্ঞাসা করুন.",
   "chatEmptyTitle": "আপনার চ্যাট খালি",
   "chatError": "চ্যাট লোড করতে ত্রুটি: {error}",
   "chatHint": "আপনার বার্তা টাইপ করুন...",
   "chatHintBlocked": "চ্যাট করতে AI আনলক করুন",
+  "chatHistoryErrorBody": "আমাদের প্রান্তে কিছু ভুল হয়েছে. আবার চেষ্টা করতে আবার চেষ্টা করুন ট্যাপ করুন।",
+  "chatHistoryErrorTitle": "এই কথোপকথন লোড করা যায়নি",
+  "chatHistoryOfflineBody": "আপনার ইন্টারনেট সংযোগ পরীক্ষা করুন এবং আবার চেষ্টা করুন।",
+  "chatHistoryOfflineTitle": "আপনি অফলাইনে আছেন",
   "chatSubtitle": "আইটেম সুপারিশ, রেসিপি বা সাশ্রয়ের টিপস চান।",
   "chatSubtitleShort": "দাম, রেসিপি, সংগঠন সম্পর্কে জিজ্ঞাসা করুন...",
   "chooseCurrency": "মুদ্রা নির্বাচন করুন",
@@ -1450,6 +1611,7 @@
   "chooseImageSource": "ছবির উৎস নির্বাচন করুন",
   "chooseLanguage": "ভাষা নির্বাচন করুন",
   "chooseThemeColor": "থিম রঙ চয়ন করুন",
+  "chooseThemeMode": "থিম মোড নির্বাচন করুন",
   "clear": "পরিষ্কার",
   "clearHistory": "ইতিহাস পরিষ্কার",
   "clearHistoryConfirm": "এই সেশনের সব বার্তা মুছে ফেলবেন?",
@@ -1492,6 +1654,10 @@
   "customizeAssistant": "কাস্টমাইজ করুন",
   "dark": "গাঢ়",
   "data": "ডেটা",
+  "dateGroupOlder": "বয়স্ক",
+  "dateGroupPrevious7Days": "আগের ৭ দিন",
+  "dateGroupToday": "আজ",
+  "dateGroupYesterday": "গতকাল",
   "deficitItems": "{deficit,plural, one{{deficit}টি আইটেম কিনতে হবে} other{{deficit}টি আইটেম কিনতে হবে}}",
   "delete": "মুছুন",
   "deleteCategory": "মুছে দিন",
@@ -1508,6 +1674,7 @@
   "deleteRecipeConfirmMsg": "আপনি কি নিশ্চিত যে আপনি \"{recipeName}\" মুছতে চান? এই কাজটি আর ফিরে পাওয়া যাবে না।",
   "deleteSession": "চ্যাট মুছুন",
   "deleteSessionConfirm": "আপনি কি এই চ্যাট মুছে ফেলার বিষয়ে নিশ্চিত? বার্তা স্থায়ীভাবে হারিয়ে যাবে.",
+  "deletedList": "মুছে ফেলা তালিকা",
   "deselectAll": "সব নির্বাচনমুক্ত",
   "dietaryRestrictions": "খাদ্যতালিকাগত সীমাবদ্ধতা",
   "dietaryRestrictionsHint": "কোন খাদ্যতালিকাগত সীমাবদ্ধতা?",
@@ -1520,6 +1687,7 @@
   "editCategoryDialog": "বিভাগ সম্পাদনা করুন",
   "editItem": "আইটেম সম্পাদনা",
   "editItemPrice": "আনুমানিক মূল্য",
+  "editMessage": "বার্তা সম্পাদনা করুন",
   "editPantryItem": "{name} সম্পাদনা",
   "editRecipe": "সম্পাদনা",
   "editRecipeTitle": "রেসিপি সম্পাদনা করুন",
@@ -1541,6 +1709,7 @@
   "errorLoadingChat": "উফ! চ্যাট লোড করার সময় কিছু ভুল হয়েছে।",
   "errorLoadingChatSubtitle": "আপনার সংযোগ পরীক্ষা করুন বা পরে আবার চেষ্টা করুন।",
   "errorLoadingHistory": "ইতিহাস লোড করার সময় ত্রুটি৷",
+  "errorLoadingItems": "আইটেম লোড করতে ত্রুটি৷",
   "errorLoadingLists": "তালিকা লোড করার সময় ত্রুটি",
   "errorLoadingRecipes": "রেসিপি লোড করতে ত্রুটি",
   "errorLoadingSubscription": "সদস্যতা লোড করার সময় ত্রুটি৷",
@@ -1593,6 +1762,7 @@
   "generateShoppingList": "শপিং লিস্ট তৈরি",
   "gestureHint": "নির্বাচন করতে ধরে রাখুন • সরাতে সোয়াইপ করুন",
   "globalAssistant": "সার্বিক সহায়ক",
+  "goodResponse": "ভালো সাড়া",
   "howCanIHelp": "আমি কিভাবে সাহায্য করতে পারি?",
   "idealQty": "আদর্শ পরিমাণ",
   "idealQuantity": "আদর্শ পরিমাণ",
@@ -1609,14 +1779,18 @@
   "instructionsHint": "প্রতি লাইনে একটি করে ধাপ লিখুন...",
   "inviteToList": "তালিকায় আমন্ত্রণ জানান",
   "itemAddedSnack": "{name} যোগ করা হয়েছে",
+  "itemAddedToList": "আইটেম তালিকা যোগ করা হয়েছে.",
   "itemName": "আইটেমের নাম",
   "itemRemoved": "আইটেম সরানো হয়েছে",
   "itemsAddedSuccess": "আইটেম সফলভাবে তালিকায় যোগ হয়েছে!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit}টি আইটেম কিনতে হবে",
   "itemsPurchased": "আইটেম ক্রয়",
   "itemsPurchasedCount": "{total} এর মধ্যে {purchased} কেনা হয়েছে",
   "itemsPurchasedShort": "{purchased}/{total} কেনা হয়েছে",
   "itemsWillBeAdded": "{count}টি আইটেম যোগ করা হবে",
+  "keepAdding": "যোগ করতে থাকুন",
+  "keepAddingSubtitle": "একাধিক আইটেম যোগ করতে শীট খোলা রাখুন",
   "kipiListProActive": "কিপিলিস্ট প্রো সক্রিয়",
   "kipiListTitle": "কিপিলিস্ট",
   "kipiQuickBarHint": "আপনি কি কিনতে প্রয়োজন?",
@@ -1658,21 +1832,28 @@
   "markAsPurchased": "কেনা হিসেবে চিহ্নিত",
   "markItemsToSeeAnalysis": "বিশ্লেষণ দেখতে আইটেমগুলো কেনা হিসেবে চিহ্নিত করুন।",
   "marketMode": "বাজার মোড",
+  "marketModeDescription": "আপনি কেনাকাটা করার সময় আইটেম চেক বন্ধ",
   "marketsToAvoid": "বাজার এড়াতে",
   "marketsToAvoidHint": "যে মার্কেটে আপনি কেনাকাটা করতে পছন্দ করেন না",
   "mealDragHint": "টেনে আনতে ও সরাতে ধরে রাখুন",
   "mealNoRecipeFound": "কোন রেসিপি পাওয়া যায়নি",
   "mealPlannerAddMeal": "খাবার যোগ করুন",
+  "mealPlannerAddType": "খাবারের ধরন যোগ করুন",
+  "mealPlannerCustomTypeLabel": "কাস্টম প্রকার",
   "mealPlannerDateLabel": "তারিখ",
+  "mealPlannerDefaultTypeLabel": "ডিফল্ট প্রকার",
   "mealPlannerDeleteMeal": "খাবার সরান",
   "mealPlannerEditMeal": "খাবার সম্পাদনা করুন",
+  "mealPlannerEditType": "খাবারের ধরন সম্পাদনা করুন",
   "mealPlannerError": "খাবারের পরিকল্পনা লোড করতে ত্রুটি",
+  "mealPlannerEstimatePartial": "আংশিক মূল্য ডেটা সহ রেসিপিগুলির উপর ভিত্তি করে অনুমান করুন।",
   "mealPlannerGenerateList": "শপিং লিস্ট তৈরি করুন",
   "mealPlannerGenerateListConfirm": "এই সপ্তাহের পরিকল্পিত খাবারের সব উপাদান আপনার শপিং লিস্টে যোগ করবেন?",
   "mealPlannerGenerateListEmpty": "যোগ করার মতো কোনো উপাদান নেই। প্রথমে রেসিপি সহ কিছু খাবারের পরিকল্পনা করুন।",
   "mealPlannerGenerateListNoList": "প্রথমে একটি শপিং লিস্ট তৈরি করুন।",
   "mealPlannerGenerateListSuccess": "{count}টি উপাদান আপনার তালিকায় যোগ করা হয়েছে!",
   "mealPlannerLoading": "খাবারের পরিকল্পনা লোড হচ্ছে...",
+  "mealPlannerManageTypes": "খাবারের ধরন পরিচালনা করুন",
   "mealPlannerMealDeleted": "খাবার সরানো হয়েছে",
   "mealPlannerMealTypeBreakfast": "সকালের নাস্তা",
   "mealPlannerMealTypeDinner": "রাতের খাবার",
@@ -1692,6 +1873,12 @@
   "mealPlannerServings": "{count,plural, one{{count} জন} other{{count} জন}}",
   "mealPlannerServingsLabel": "পরিবেশন সংখ্যা",
   "mealPlannerTitle": "মিল প্ল্যানার",
+  "mealPlannerTypeColor": "রঙ",
+  "mealPlannerTypeDeleteConfirm": "আপনি কি এই খাবারের ধরন মুছে ফেলার বিষয়ে নিশ্চিত? এই ধরনের সঙ্গে পরিকল্পিত খাবার থাকবে।",
+  "mealPlannerTypeDeleteError": "এই খাবারের ধরন মুছে ফেলা যাবে না।",
+  "mealPlannerTypeIcon": "আইকন",
+  "mealPlannerTypeName": "নাম",
+  "mealPlannerTypeNameEmpty": "নাম খালি রাখা যাবে না",
   "mealPlannerViewMonthly": "মাসিক ভিউ",
   "mealPlannerViewWeekly": "সাপ্তাহিক ভিউ",
   "mealPlannerWeekEmpty": "এই সপ্তাহের জন্য কিছু পরিকল্পিত নেই",
@@ -1713,6 +1900,7 @@
   "navRecipes": "রেসিপি",
   "newCategoryDialog": "নতুন বিভাগ",
   "newChat": "নতুন চ্যাট",
+  "newChatStarted": "শুরু হলো নতুন আড্ডা",
   "newListTitle": "নতুন শপিং লিস্ট",
   "newPantryList": "প্যান্ট্রি শপিং",
   "newRecipe": "নতুন রেসিপি",
@@ -1907,6 +2095,7 @@
   "onboardingViewAllPlans": "সমস্ত পরিকল্পনা দেখুন",
   "onboardingWelcomeDesc": "আপনার কেনাকাটা সংগঠিত করার এবং অর্থ সঞ্চয় করার সবচেয়ে স্মার্ট উপায়।",
   "onboardingWelcomeTitle": "KipiListে স্বাগতম",
+  "openConversation": "খোলা কথোপকথন",
   "openMenu": "মেনু খুলুন",
   "organizeAisles": "আইল অনুযায়ী সংগঠিত",
   "organizeAislesPrompt": "বাজারের আইল অনুযায়ী সংগঠিত।",
@@ -1919,6 +2108,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} প্যান্ট্রিতে",
   "pantryCompactView": "কমপ্যাক্ট ভিউ",
   "pantryDeficit": "অনুপস্থিত {amount}PH1__",
+  "pantryDeficitCount": "অনুপস্থিত {count}PH1__",
   "pantryDeleteItemsContent": "আপনি কি {count} নির্বাচিত আইটেম মুছতে চান?",
   "pantryDeleteItemsTitle": "আইটেম মুছুন",
   "pantryDeleteSelected": "নির্বাচিত মুছুন",
@@ -1935,6 +2125,7 @@
   "pantryFilterExpiring": "মেয়াদ শেষ হচ্ছে",
   "pantryFilterOutStock": "স্টক শেষ",
   "pantryFirstOpenHint": "আপনি বাড়িতে কি আছে ট্র্যাক রাখুন. আইটেম যোগ করুন বা বারকোড স্ক্যান করুন.",
+  "pantryItemAdded": "আইটেম যোগ করা হয়েছে",
   "pantryItemRemoved": "আইটেম সরানো হয়েছে",
   "pantryMoreDetails": "আরো বিস্তারিত",
   "pantryNoItemsFound": "\"{query}\" এর জন্য কোনো আইটেম পাওয়া যায়নি",
@@ -1948,6 +2139,7 @@
   "paywallAfterItem2": "ক্লিনিং",
   "paywallAfterItem3": "মাংস",
   "paywallAfterItem4": "বেকারি",
+  "paywallBasedOnAnswers": "আপনার উত্তর থেকে ব্যক্তিগতকৃত",
   "paywallBeforeAfterTitle": "AI আগে এবং পরে:",
   "paywallBeforeItem1": "চাল",
   "paywallBeforeItem2": "সাবান",
@@ -1985,6 +2177,8 @@
   "paywallGoalHeadlinePantry": "{name}, আপনার প্যান্ট্রি পুরোপুরি ট্র্যাক করুন!",
   "paywallGoalHeadlineRecipes": "{name}, নতুন রেসিপি আবিষ্কার করুন!",
   "paywallGoalHeadlineSaveMoney": "{name}, প্রতিটি ট্রিপে সংরক্ষণ করুন!",
+  "paywallHeroFeatureDesc": "একটি সম্পূর্ণ তালিকা বলুন বা পেস্ট করুন — AI বাছাই করুন, শ্রেণীবদ্ধ করুন এবং সেকেন্ডের মধ্যে বাজেট করুন",
+  "paywallHeroFeatureTitle": "এআই শপিং সহকারী",
   "paywallHeroHeadline": "কিপি এআই সবসময় আপনার পাশে",
   "paywallHeroSubtitle": "আইটেম যোগ করুন, তালিকা সংগঠিত করুন এবং আপনার পকেটে AI দিয়ে সময় বাঁচান",
   "paywallHeroSubtitlePersonalized": "আরে {name}, আপনার কেনাকাটা সঠিক উপায়ে সংগঠিত করুন৷",
@@ -2019,6 +2213,11 @@
   "paywallTestimonial2Text": "আমি আবার একটি তালিকা আইটেম ভুলবেন না. এআই চ্যাট উত্তেজনাপূর্ণ!",
   "paywallTestimonialAuthor": "অ্যান এস.",
   "paywallTestimonialsTitle": "আমাদের ব্যবহারকারীরা যা বলে:",
+  "paywallTimelineChargeDesc": "আপনার সাবস্ক্রিপশন শুরু হয় — যেকোনো সময় বাতিল করুন",
+  "paywallTimelineDay": "দিন {day}",
+  "paywallTimelineReminderDesc": "বিচার শেষ হওয়ার আগে আমরা আপনাকে মনে করিয়ে দিচ্ছি",
+  "paywallTimelineToday": "আজ",
+  "paywallTimelineTodayDesc": "অবিলম্বে সম্পূর্ণ অ্যাক্সেস আনলক করুন",
   "paywallTitle": "KipiList প্রিমিয়াম",
   "paywallTrialCta": "বিনামূল্যে ট্রায়াল শুরু করুন",
   "paywallTrialDays": "{days} দিন বিনামূল্যে",
@@ -2041,11 +2240,15 @@
   "prefSharing": "তালিকা শেয়ার",
   "prefUnlimitedLists": "সীমাহীন তালিকা",
   "prefUnlimitedPantry": "সীমাহীন প্যান্ট্রি",
+  "preferencesSection": "পছন্দসমূহ",
   "preferredMarket": "পছন্দের বাজার",
   "preferredMarketHint": "আপনি সাধারণত কোথায় কেনাকাটা করেন?",
+  "premiumActionsPrompt": "স্বয়ংক্রিয় ক্রিয়াগুলি আনলক করতে প্রিমিয়ামে সদস্যতা নিন।",
+  "premiumStepDescription": "{description} (প্রিমিয়াম)",
   "premiumUpgrade": "আনলক করতে আপগ্রেড",
   "prepTime": "প্রস্তুতির সময়",
   "prepTimeMinutes": "প্রস্তুতির সময় (মিনিট)",
+  "previousItemState": "পূর্ববর্তী অবস্থা: {quantity} {unit} [{category}]{price}",
   "privacy": "গোপনীয়তা",
   "product": "পণ্য",
   "productName": "পণ্যের নাম",
@@ -2062,21 +2265,35 @@
   "quantityShort": "পরিমাণ",
   "quantityUnitWithPrice": "{qty} {unit} - {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "কিপির সাথে চ্যাট করুন",
+  "quickActionPantry": "প্যান্ট্রি দেখুন",
+  "quickAddToList": "তালিকায় যোগ করুন",
   "quickRecipe": "দ্রুত রেসিপি",
   "quickRecipePrompt": "আমার তালিকার আইটেম দিয়ে রেসিপি সুপারিশ।",
   "quickReplies": "দ্রুত উত্তর:",
   "quickSuggestions": "দ্রুত পরামর্শ",
+  "recipeAddError": "আপনার তালিকায় যোগ করা যায়নি. আবার চেষ্টা করুন.",
   "recipeAddToList": "কেনাকাটার তালিকায় যোগ করুন",
   "recipeAddedConfirmation": "{count} উপাদান {listName} এ যোগ করা হয়েছে",
   "recipeCreated": "রেসিপি তৈরি হয়েছে!",
   "recipeDeleted": "রেসিপি মোছা হয়েছে",
+  "recipeEstimatePartial": "দাম সহ উপাদানের উপর ভিত্তি করে আংশিক অনুমান।",
+  "recipeEstimatedCostPerServing": "{cost} / পরিবেশন",
+  "recipeEstimatedTotalCost": "আনুমানিক মোট খরচ",
   "recipeImage": "রেসিপির ছবি",
+  "recipeIngredientInPantry": "প্যান্ট্রিতে",
+  "recipeIngredientLowPantry": "প্যান্ট্রিতে কম",
   "recipeIngredientSingular": "1টি উপাদান",
   "recipeIngredientsPlural": "{count} উপাদান",
+  "recipeManualTotalCost": "ম্যানুয়াল মোট খরচ",
+  "recipeManualTotalCostHint": "উপাদানের দাম থেকে অনুমান করতে খালি ছেড়ে দিন।",
   "recipeName": "রেসিপির নাম",
   "recipeSaved": "রেসিপি সংরক্ষিত হয়েছে!",
+  "recipeServesCount": "পরিবেশন করা হয় {count}",
   "recipeSuggestion": "রেসিপি সুপারিশ",
   "recipeTags": "রেসিপি ট্যাগ",
+  "recipeTapToCheck": "আপনি রান্না করার সময় এটি চেক করতে একটি উপাদান আলতো চাপুন",
+  "recipeYieldServings": "ফলন পরিবেশন",
   "regenerate": "পুনরায় তৈরি",
   "remove": "অপসারণ",
   "removeBudget": "অপসারণ",
@@ -2100,9 +2317,12 @@
   "savings": "সঞ্চয়",
   "scanBarcodeTitle": "বারকোড স্ক্যান করুন",
   "scanProductTitle": "পণ্য স্ক্যান করুন",
+  "scrollToBottom": "নীচে স্ক্রোল করুন",
+  "searchConversations": "কথোপকথন অনুসন্ধান করুন",
   "searchCurrency": "মুদ্রা অনুসন্ধান করুন...",
   "searchInConversation": "কথোপকথনে অনুসন্ধান করুন...",
   "searchLanguage": "ভাষা খুঁজুন...",
+  "searchMessages": "বার্তা অনুসন্ধান করুন...",
   "searchRecipes": "রেসিপি খুঁজুন...",
   "selectAll": "সব নির্বাচন",
   "selectCheaperAlternative": "সস্তা বিকল্প নির্বাচন করুন",
@@ -2159,6 +2379,7 @@
   "signInGoogle": "Google দিয়ে সাইন ইন",
   "skip": "এড়িয়ে যান",
   "smartOrganization": "স্মার্ট সংগঠন",
+  "somethingWentWrong": "কিছু ভুল হয়েছে",
   "sortAZ": "A–Z",
   "sortCategory": "বিভাগ",
   "sortDate": "তারিখ",
@@ -2189,6 +2410,7 @@
   "themeColor": "থিম রং",
   "themeGreen": "সবুজ",
   "themeIndigo": "নীলচে",
+  "themeMode": "থিম মোড",
   "themeOrange": "কমলা",
   "themePink": "গোলাপী",
   "themePurple": "বেগুনি",
@@ -2196,12 +2418,14 @@
   "themeSelectionTitle": "থিম রঙ চয়ন করুন",
   "themeTeal": "টিল",
   "totalEstimated": "মোট আনুমানিক: {amount}",
+  "totalEstimatedLabel": "আনুমানিক মোট",
   "totalSavings": "মোট সঞ্চয়",
   "totalSpending": "মোট খরচ",
   "trackStock": "স্টক ট্র্যাক",
   "trackStockActive": "শপিং Suggestions এ দেখা যায়",
   "trackStockInactive": "শপিং suggestion তৈরি করে না",
   "undo": "পূর্বাবস্থায় ফেরান",
+  "undoChanges": "পরিবর্তনগুলি পূর্বাবস্থায় ফেরান৷",
   "unit": "একক",
   "unitPack": "প্যাক",
   "unlockAi": "আনলিমিটেড এআই আনলক করুন",
@@ -2226,6 +2450,7 @@
   "userProfileSaveButton": "প্রোফাইল সংরক্ষণ করুন",
   "userProfileSaved": "প্রোফাইল সফলভাবে সংরক্ষিত!",
   "userProfileTitle": "আমার প্রোফাইল",
+  "userRole": "আপনি",
   "validForLimitedTime": "সীমিত সময়ের জন্য বৈধ",
   "version": "সংস্করণ",
   "viewActive": "সক্রিয় দেখুন",
@@ -2233,6 +2458,7 @@
   "viewHistory": "ইতিহাস দেখুন",
   "viewItems": "আইটেম দেখুন",
   "viewList": "তালিকা দেখুন",
+  "viewPlans": "পরিকল্পনা দেখুন",
   "viewPro": "প্রো দেখুন",
   "viewRecipe": "রেসিপি দেখুন",
   "voiceCommandContent": "আপনার তালিকা পরিচালনা করতে স্বাভাবিকভাবে কথা বলুন!\n\nউদাহরণ:\n• 'রুটি, পনির এবং হ্যাম যোগ করুন'\n• 'লন্ড্রি ডিটারজেন্ট সরান'\n• 'থিম নীলে পরিবর্তন করুন'\n\nএটি KipiList Premium-এর একচেটিয়া বৈশিষ্ট্য।",

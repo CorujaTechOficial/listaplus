@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -130,6 +144,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -334,6 +355,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingProducts": {
     "placeholders": {
       "error": {
@@ -481,6 +505,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1105,6 +1136,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1231,6 +1272,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1263,6 +1311,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@progressBudget": {
     "placeholders": {
@@ -1324,7 +1395,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1448,23 +1533,37 @@
   "addingItems": "Đang thêm các mục vào danh sách...",
   "addingToPantry": "Thêm vào phòng đựng thức ăn...",
   "advancedFeatures": "Tính năng nâng cao",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Không thể chạy hành động",
+  "agentActionsPremium": "Hành động yêu cầu Premium",
+  "agentActionsRunning": "Hành động đang chạy...",
+  "aiApiError": "Dịch vụ AI trả về lỗi ({statusCode}).",
   "aiAssistant": "Trợ lý AI",
   "aiAssistantDescription": "Nhận đề xuất thông minh, công thức nấu ăn và mẹo cá nhân hóa với trợ lý AI của chúng tôi.",
   "aiAssistantTitle": "Trợ lý AI",
+  "aiConnectionError": "Không thể kết nối với dịch vụ AI. Kiểm tra kết nối của bạn.",
   "aiCreditsRemaining": "Còn {remaining} tín dụng",
+  "aiEmptyResponseError": "Dịch vụ AI trả về một phản hồi trống.",
   "aiEnergy": "Năng lượng AI",
   "aiEnergyLow": "Năng lượng AI thấp",
   "aiError": "Xin lỗi, đã xảy ra lỗi khi xử lý yêu cầu của bạn. Kiểm tra kết nối hoặc thử lại sau.",
+  "aiGeneratingResponse": "Đang tạo phản hồi…",
+  "aiInvalidResponseError": "Dịch vụ AI trả về phản hồi không hợp lệ.",
   "aiLimitAlmostReached": "Gần hết tin nhắn AI",
   "aiPremiumDescription": "Giao diện tương tác này sử dụng trí tuệ nhân tạo tiên tiến và dành riêng cho thành viên Pro hoặc thông qua quảng cáo nhanh.",
+  "aiRateLimitError": "Quá nhiều tin nhắn trong một thời gian ngắn. Đợi vài giây và thử lại.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} hôm nay",
+  "aiSection": "Trợ lý AI",
   "aiSubscribeUnlimited": "Đăng ký AI không giới hạn",
   "aiTeaserFallback": "Đăng ký Premium để nhận được phản hồi đầy đủ và nhận các mẹo AI không giới hạn cho hoạt động mua sắm của bạn...",
+  "aiTimeoutError": "Yêu cầu mất quá nhiều thời gian. Vui lòng thử lại.",
   "aiUnlockUnlimited": "Mở khóa AI không giới hạn",
   "aiUsageExhausted": "Đã đạt đến giới hạn AI hàng tháng. Nâng cấp lên Pro không giới hạn →",
   "aiUsageWarning": "{remaining} Hành động AI còn lại trong tháng này — nâng cấp không giới hạn",
   "aiVoiceCommandTooltip": "Lệnh thoại AI (Cao cấp)",
   "aiWelcomeContent": "Xin chào! 👋 Tôi là **Kipi**, trợ lý công thức nấu ăn và mua sắm cá nhân của bạn!\n\nTôi ở đây để giúp bạn:\n🛒 **Tổ chức** việc mua sắm của bạn theo danh mục một cách tự động\n💰 **Theo dõi** ngân sách của bạn và cung cấp cho bạn các mẹo tiết kiệm tiền\n🍲 **Gợi ý** công thức nấu ăn ngon với những gì bạn đã có\n\nHôm nay tôi có thể giúp gì cho bạn? Bạn có thể bắt đầu bằng cách tạo danh sách đầu tiên của mình!",
+  "aiWelcomeSuggestBarbecue": "Lên kế hoạch tổ chức tiệc nướng",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, tôi đang tổ chức tiệc nướng - hãy giúp tôi lập danh sách mua sắm",
   "aiWelcomeSuggestCreateList": "Tạo danh sách đầu tiên của tôi",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, giúp tôi tạo danh sách mua sắm đầu tiên",
   "aiWelcomeSuggestSave": "Làm thế nào để tiết kiệm tiền?",
@@ -1474,9 +1573,12 @@
   "appTitle": "Danh sách mua sắm",
   "appearance": "Giao diện",
   "archiveList": "Lưu trữ danh sách",
+  "artifactBudgetLabel": "Ngân sách:",
+  "artifactSynced": "Đã đồng bộ hóa",
   "assistantHistory": "Lịch sử trợ lý",
   "assistantHistorySubtitle": "Xem lịch sử cuộc trò chuyện của bạn",
   "assistantName": "Tên trợ lý",
+  "assistantRole": "Trợ lý",
   "backToChat": "Quay lại Trò chuyện",
   "backToToday": "Trở lại hôm nay",
   "backupExported": "Đã xuất bản sao lưu!",
@@ -1484,6 +1586,7 @@
   "backupPremiumDescription": "Sao lưu và xuất dữ liệu là tính năng cao cấp",
   "backupSubtitle": "Xuất hoặc nhập dữ liệu của bạn",
   "backupTitle": "Sao lưu",
+  "badResponse": "Phản hồi xấu",
   "badgeBeginner": "Người mới bắt đầu",
   "badgeOrganized": "Được tổ chức",
   "badgeSavingMaster": "Cứu Thầy",
@@ -1509,9 +1612,11 @@
   "catOthers": "Khác",
   "catalogAddItems": "Thêm {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Duyệt danh mục",
+  "catalogCategories": "Thể loại",
   "catalogFilterNational": "Quốc tịch",
   "catalogMyFrequents": "Người thường xuyên của tôi",
   "catalogProductNotFound": "Không tìm thấy sản phẩm, gõ tên",
+  "catalogRareBadge": "Hiếm",
   "catalogRareSection": "ít phổ biến hơn ở nước bạn",
   "catalogSearchGlobal": "Tìm kiếm bất kỳ sản phẩm...",
   "catalogSearchInCategory": "Tìm kiếm trong {category}...",
@@ -1520,16 +1625,43 @@
   "catalogTitle": "Danh mục",
   "categorizingItems": "Phân loại đồ vật...",
   "category": "Danh mục",
+  "categoryAlcohol": "Đồ uống có cồn",
+  "categoryBaby": "Đứa bé",
+  "categoryBakery": "tiệm bánh",
+  "categoryBeverages": "Đồ uống",
+  "categoryCanned": "Đồ hộp",
+  "categoryCleaning": "Vệ sinh",
+  "categoryColdCuts": "Thịt nguội",
   "categoryColorLabel": "Màu sắc",
+  "categoryDairy": "Sữa",
+  "categoryFish": "Cá",
+  "categoryFrozen": "Thực phẩm đông lạnh",
+  "categoryFruits": "trái cây",
+  "categoryGrains": "Ngũ cốc và ngũ cốc",
+  "categoryHygiene": "Chăm sóc cá nhân",
   "categoryIconLabel": "Biểu tượng",
   "categoryLimitReached": "Giới hạn 10 danh mục trên phiên bản miễn phí. Nâng cấp lên Pro!",
+  "categoryMeat": "Thịt",
   "categoryName": "Tên danh mục",
   "categoryNameHint": "Ví dụ: Thịt",
+  "categoryOthers": "Khác",
+  "categoryPet": "Đồ dùng cho thú cưng",
+  "categorySeasonings": "Gia vị",
+  "categorySweets": "Đồ ngọt và món tráng miệng",
+  "categoryUtilities": "Đồ dùng gia đình",
+  "categoryVegetables": "Rau",
+  "chatEmptyGreeting": "Xin chào {name}, tôi là Kipi 👋",
+  "chatEmptyGreetingNoName": "Xin chào, tôi là Kipi 👋",
+  "chatEmptyPitch": "Tôi lập danh sách, đề xuất công thức nấu ăn và tìm nơi lưu. Chúng ta bắt đầu từ đâu?",
   "chatEmptySubtitle": "Yêu cầu gợi ý món ăn, công thức nấu ăn hoặc mẹo tiết kiệm để bắt đầu.",
   "chatEmptyTitle": "Cuộc trò chuyện của bạn trống",
   "chatError": "Lỗi khi tải trò chuyện: {error}",
   "chatHint": "Nhập tin nhắn của bạn...",
   "chatHintBlocked": "Mở khóa AI để trò chuyện",
+  "chatHistoryErrorBody": "Đã xảy ra lỗi ở phía chúng tôi. Nhấn vào thử lại để thử lại.",
+  "chatHistoryErrorTitle": "Không thể tải cuộc trò chuyện này",
+  "chatHistoryOfflineBody": "Hãy kiểm tra kết nối Internet của bạn và thử lại.",
+  "chatHistoryOfflineTitle": "Bạn đang ngoại tuyến",
   "chatSubtitle": "Yêu cầu đề xuất mục, công thức nấu ăn hoặc mẹo tiết kiệm.",
   "chatSubtitleShort": "Hỏi về giá cả, công thức nấu ăn, cách tổ chức...",
   "checkingItem": "Đang kiểm tra mục...",
@@ -1540,6 +1672,7 @@
   "chooseImageSource": "Chọn nguồn hình ảnh",
   "chooseLanguage": "Chọn ngôn ngữ",
   "chooseThemeColor": "Chọn màu chủ đề",
+  "chooseThemeMode": "Chọn chế độ chủ đề",
   "clear": "Xóa",
   "clearHistory": "Xóa lịch sử",
   "clearHistoryConfirm": "Xóa tất cả tin nhắn trong phiên này?",
@@ -1588,6 +1721,10 @@
   "customizeAssistant": "Tùy chỉnh",
   "dark": "Tối",
   "data": "Dữ liệu",
+  "dateGroupOlder": "Lớn hơn",
+  "dateGroupPrevious7Days": "7 ngày trước",
+  "dateGroupToday": "Hôm nay",
+  "dateGroupYesterday": "Hôm qua",
   "dayFri": "Thứ sáu",
   "dayMon": "Thứ hai",
   "daySat": "Đã ngồi",
@@ -1611,6 +1748,7 @@
   "deleteRecipeConfirmMsg": "Bạn có chắc chắn muốn xóa \"{recipeName}\" không? Không thể hoàn tác hành động này.",
   "deleteSession": "Xóa cuộc trò chuyện",
   "deleteSessionConfirm": "Bạn có chắc chắn muốn xóa cuộc trò chuyện này không? Các tin nhắn sẽ bị mất vĩnh viễn.",
+  "deletedList": "Danh sách đã xóa",
   "deselectAll": "Bỏ chọn tất cả",
   "dietaryRestrictions": "Hạn chế về chế độ ăn uống",
   "dietaryRestrictionsHint": "Ví dụ: thuần chay, ăn chay, không chứa gluten",
@@ -1623,6 +1761,7 @@
   "editCategoryDialog": "Chỉnh sửa danh mục",
   "editItem": "Sửa mục",
   "editItemPrice": "Giá ước tính",
+  "editMessage": "Chỉnh sửa tin nhắn",
   "editPantryItem": "Sửa {name}",
   "editRecipe": "Biên tập",
   "editRecipeTitle": "Chỉnh sửa công thức",
@@ -1648,6 +1787,7 @@
   "errorLoadingChat": "Ối! Đã xảy ra lỗi khi tải cuộc trò chuyện.",
   "errorLoadingChatSubtitle": "Hãy kiểm tra kết nối của bạn hoặc thử lại sau.",
   "errorLoadingHistory": "Lỗi tải lịch sử",
+  "errorLoadingItems": "Lỗi tải mục",
   "errorLoadingLists": "Lỗi tải danh sách",
   "errorLoadingProducts": "Lỗi tải sản phẩm: {error}",
   "errorLoadingRecipes": "Lỗi tải công thức nấu ăn",
@@ -1722,6 +1862,7 @@
   "generatingShareLink": "Đang tạo liên kết chia sẻ...",
   "gestureHint": "Giữ để chọn • Vuốt để xóa",
   "globalAssistant": "Trợ lý chung",
+  "goodResponse": "phản hồi tốt",
   "howCanIHelp": "Tôi có thể giúp gì?",
   "icon": "Biểu tượng:",
   "idealQty": "SL lý tưởng",
@@ -1740,14 +1881,18 @@
   "inviteToList": "Mời liệt kê",
   "itemAdded": "{name} đã thêm",
   "itemAddedSnack": "{name} đã thêm",
+  "itemAddedToList": "Mục được thêm vào danh sách.",
   "itemName": "Tên mục",
   "itemRemoved": "Đã xóa mục",
   "itemsAddedSuccess": "Đã thêm mục vào danh sách thành công!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "Cần mua {deficit} mục",
   "itemsPurchased": "Các mặt hàng đã mua",
   "itemsPurchasedCount": "{purchased} trong tổng số {total} đã mua",
   "itemsPurchasedShort": "{purchased}/{total} đã mua",
   "itemsWillBeAdded": "Sẽ thêm {count} mục",
+  "keepAdding": "Tiếp tục thêm",
+  "keepAddingSubtitle": "Giữ trang tính mở để thêm nhiều mục",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiDanh sách",
   "kipiQuickBarHint": "Bạn cần mua gì?",
@@ -1786,16 +1931,22 @@
   "marketsToAvoid": "Thị trường cần tránh",
   "marketsToAvoidHint": "Ví dụ: Thị trường Y, Thị trường Z",
   "mealPlannerAddMeal": "Thêm bữa ăn",
+  "mealPlannerAddType": "Thêm loại bữa ăn",
+  "mealPlannerCustomTypeLabel": "Loại tùy chỉnh",
   "mealPlannerDateLabel": "Ngày",
+  "mealPlannerDefaultTypeLabel": "Loại mặc định",
   "mealPlannerDeleteMeal": "Bỏ bữa ăn",
   "mealPlannerEditMeal": "Chỉnh sửa bữa ăn",
+  "mealPlannerEditType": "Chỉnh sửa loại bữa ăn",
   "mealPlannerError": "Lỗi tải kế hoạch bữa ăn",
+  "mealPlannerEstimatePartial": "Ước tính dựa trên công thức nấu ăn với dữ liệu giá một phần.",
   "mealPlannerGenerateList": "Tạo danh sách mua sắm",
   "mealPlannerGenerateListConfirm": "Thêm tất cả nguyên liệu từ các bữa ăn đã lên kế hoạch trong tuần này vào danh sách mua sắm của bạn?",
   "mealPlannerGenerateListEmpty": "Không có thành phần để thêm vào. Lên kế hoạch cho một số bữa ăn với công thức nấu ăn trước tiên.",
   "mealPlannerGenerateListNoList": "Tạo một danh sách mua sắm đầu tiên.",
   "mealPlannerGenerateListSuccess": "{count} thành phần đã được thêm vào danh sách của bạn!",
   "mealPlannerLoading": "Đang tải kế hoạch bữa ăn...",
+  "mealPlannerManageTypes": "Quản lý loại bữa ăn",
   "mealPlannerMealDeleted": "Đã bỏ bữa ăn",
   "mealPlannerMealTypeBreakfast": "Bữa sáng",
   "mealPlannerMealTypeDinner": "Bữa tối",
@@ -1815,6 +1966,12 @@
   "mealPlannerServings": "{count,plural, one{{count} khẩu phần} other{{count} khẩu phần}}",
   "mealPlannerServingsLabel": "Khẩu phần",
   "mealPlannerTitle": "Kế hoạch bữa ăn",
+  "mealPlannerTypeColor": "Màu sắc",
+  "mealPlannerTypeDeleteConfirm": "Bạn có chắc chắn muốn xóa loại bữa ăn này không? Các bữa ăn theo kế hoạch với loại hình này sẽ vẫn còn.",
+  "mealPlannerTypeDeleteError": "Không thể xóa loại bữa ăn này.",
+  "mealPlannerTypeIcon": "Biểu tượng",
+  "mealPlannerTypeName": "Tên",
+  "mealPlannerTypeNameEmpty": "Tên không thể trống",
   "mealPlannerViewMonthly": "Lượt xem hàng tháng",
   "mealPlannerViewWeekly": "Xem hàng tuần",
   "mealPlannerWeekEmpty": "Không có kế hoạch gì cho tuần này",
@@ -1871,60 +2028,60 @@
   "noRecipesSavedHint": "Tạo công thức tùy chỉnh đầu tiên của bạn bằng cách nhấn vào nút bên dưới.",
   "noTracking": "Không theo dõi",
   "notInformed": "Chưa đặt",
-  "obHookCta": "Get Started",
-  "obHookSocial": "Trusted by thousands of shoppers worldwide",
-  "obHookSubtitle": "AI-powered lists that save you time and money, every single trip.",
-  "obHookTitle": "Smarter shopping starts here",
-  "obLoadingStepHabits": "Tuning to your shopping routine",
-  "obLoadingStepLists": "Preparing your smart lists",
-  "obLoadingStepProfile": "Adjusting for your household",
-  "obLoadingStepSavings": "Optimizing your savings strategy",
-  "obLoadingTitle": "Building your personalized plan...",
-  "obLoginApple": "Continue with Apple",
-  "obLoginError": "Sign-in failed. Try again or skip for now.",
-  "obLoginGoogle": "Continue with Google",
-  "obLoginSkip": "Not now",
-  "obLoginSubtitle": "Sign in so your lists sync across devices",
-  "obLoginTitle": "Save your plan",
-  "obPaywallRetry": "Try again",
-  "obPaywallTitle": "Unlock your plan",
-  "obQuizFrequencyBiweekly": "Every two weeks",
-  "obQuizFrequencyDaily": "Almost every day",
-  "obQuizFrequencyMonthly": "Big monthly haul",
-  "obQuizFrequencyTitle": "How often do you shop for groceries?",
-  "obQuizFrequencyWeekly": "Once a week",
-  "obQuizHouseholdCouple": "Me and my partner",
-  "obQuizHouseholdFamilyLarge": "Family of 5+",
-  "obQuizHouseholdFamilySmall": "Family of 3–4",
-  "obQuizHouseholdSolo": "Just me",
-  "obQuizHouseholdTitle": "Who do you shop for?",
-  "obQuizMethodMemory": "I keep it in my head",
-  "obQuizMethodNone": "I don't make lists",
-  "obQuizMethodNotes": "Notes app",
-  "obQuizMethodPaper": "Pen and paper",
-  "obQuizMethodTitle": "How do you make shopping lists today?",
-  "obQuizPainForget": "I always forget items",
-  "obQuizPainOverspend": "I spend more than planned",
-  "obQuizPainTime": "It takes too much time",
-  "obQuizPainTitle": "What frustrates you most about shopping?",
-  "obQuizPainWaste": "Food goes to waste at home",
-  "obQuizSavingsLarge": "As much as possible",
-  "obQuizSavingsMedium": "Around 10% of my grocery bill",
-  "obQuizSavingsSmall": "A little — every bit counts",
-  "obQuizSavingsTitle": "How much would you like to save monthly?",
-  "obRevealFeatureAi": "AI builds and organizes your lists",
-  "obRevealFeatureBudget": "Spending tracked against your goal",
-  "obRevealFeaturePantry": "Pantry tracking cuts food waste",
-  "obRevealFeatureShare": "Real-time sharing with your household",
-  "obRevealMonth": "Month {n}",
-  "obRevealSavingsCaption": "Projected savings with KipiList",
-  "obRevealSubtitle": "Here's how KipiList will work for you",
-  "obRevealTitle": "Your plan is ready!",
-  "obSocialQuote1": "I never forget anything anymore. The AI builds my list in seconds.",
-  "obSocialQuote2": "We cut our grocery bill noticeably in the first month.",
-  "obSocialQuote3": "Sharing the list with my partner ended our shopping chaos.",
-  "obSocialSubtitle": "Shoppers like you are already saving with KipiList",
-  "obSocialTitle": "You're in good company",
+  "obHookCta": "Bắt đầu",
+  "obHookSocial": "Được hàng ngàn người mua hàng trên toàn thế giới tin cậy",
+  "obHookSubtitle": "Danh sách được hỗ trợ bởi AI giúp bạn tiết kiệm thời gian và tiền bạc trong mỗi chuyến đi.",
+  "obHookTitle": "Mua sắm thông minh hơn bắt đầu từ đây",
+  "obLoadingStepHabits": "Điều chỉnh thói quen mua sắm của bạn",
+  "obLoadingStepLists": "Chuẩn bị danh sách thông minh của bạn",
+  "obLoadingStepProfile": "Điều chỉnh cho hộ gia đình của bạn",
+  "obLoadingStepSavings": "Tối ưu hóa chiến lược tiết kiệm của bạn",
+  "obLoadingTitle": "Xây dựng kế hoạch cá nhân của bạn...",
+  "obLoginApple": "Tiếp tục với Apple",
+  "obLoginError": "Đăng nhập không thành công. Hãy thử lại hoặc bỏ qua bây giờ.",
+  "obLoginGoogle": "Tiếp tục với Google",
+  "obLoginSkip": "Không phải bây giờ",
+  "obLoginSubtitle": "Đăng nhập để danh sách của bạn đồng bộ hóa trên các thiết bị",
+  "obLoginTitle": "Lưu kế hoạch của bạn",
+  "obPaywallRetry": "Thử lại",
+  "obPaywallTitle": "Mở khóa kế hoạch của bạn",
+  "obQuizFrequencyBiweekly": "Hai tuần một lần",
+  "obQuizFrequencyDaily": "Hầu như mỗi ngày",
+  "obQuizFrequencyMonthly": "Lô hàng lớn hàng tháng",
+  "obQuizFrequencyTitle": "Bạn có thường xuyên mua sắm đồ tạp hóa không?",
+  "obQuizFrequencyWeekly": "Mỗi tuần một lần",
+  "obQuizHouseholdCouple": "Tôi và đối tác của tôi",
+  "obQuizHouseholdFamilyLarge": "Gia đình trên 5 người",
+  "obQuizHouseholdFamilySmall": "Gia đình 3-4 người",
+  "obQuizHouseholdSolo": "Chỉ có tôi",
+  "obQuizHouseholdTitle": "Bạn mua sắm cho ai?",
+  "obQuizMethodMemory": "Tôi giữ nó trong đầu",
+  "obQuizMethodNone": "Tôi không lập danh sách",
+  "obQuizMethodNotes": "ứng dụng ghi chú",
+  "obQuizMethodPaper": "Bút và giấy",
+  "obQuizMethodTitle": "Làm thế nào để bạn lập danh sách mua sắm ngày hôm nay?",
+  "obQuizPainForget": "Tôi luôn quên đồ",
+  "obQuizPainOverspend": "Tôi chi tiêu nhiều hơn dự định",
+  "obQuizPainTime": "Phải mất quá nhiều thời gian",
+  "obQuizPainTitle": "Điều gì làm bạn thất vọng nhất khi mua sắm?",
+  "obQuizPainWaste": "Thức ăn bị lãng phí ở nhà",
+  "obQuizSavingsLarge": "Nhiều nhất có thể",
+  "obQuizSavingsMedium": "Khoảng 10% hóa đơn hàng tạp hóa của tôi",
+  "obQuizSavingsSmall": "Một chút - mỗi chút đều có giá trị",
+  "obQuizSavingsTitle": "Bạn muốn tiết kiệm bao nhiêu hàng tháng?",
+  "obRevealFeatureAi": "AI xây dựng và sắp xếp danh sách của bạn",
+  "obRevealFeatureBudget": "Chi tiêu được theo dõi theo mục tiêu của bạn",
+  "obRevealFeaturePantry": "Theo dõi phòng đựng thức ăn giúp giảm lãng phí thực phẩm",
+  "obRevealFeatureShare": "Chia sẻ thời gian thực với gia đình bạn",
+  "obRevealMonth": "Tháng {n}",
+  "obRevealSavingsCaption": "Tiết kiệm dự kiến ​​với KipiList",
+  "obRevealSubtitle": "Đây là cách KipiList sẽ giúp ích cho bạn",
+  "obRevealTitle": "Kế hoạch của bạn đã sẵn sàng!",
+  "obSocialQuote1": "Tôi không bao giờ quên bất cứ điều gì nữa. AI xây dựng danh sách của tôi trong vài giây.",
+  "obSocialQuote2": "Chúng tôi đã cắt giảm đáng kể hóa đơn hàng tạp hóa trong tháng đầu tiên.",
+  "obSocialQuote3": "Chia sẻ danh sách với đối tác của tôi đã chấm dứt sự hỗn loạn mua sắm của chúng tôi.",
+  "obSocialSubtitle": "Những người mua sắm như bạn đã tiết kiệm được với KipiList",
+  "obSocialTitle": "Bạn đang ở trong một công ty tốt",
   "observations": "Ghi chú",
   "observationsHint": "Các ưu tiên khác dành cho trợ lý",
   "offlineBanner": "Bạn đang ngoại tuyến",
@@ -2040,6 +2197,7 @@
   "onboardingViewAllPlans": "Xem tất cả các kế hoạch",
   "onboardingWelcomeDesc": "Cách thông minh nhất để tổ chức mua sắm của bạn và tiết kiệm tiền.",
   "onboardingWelcomeTitle": "Chào mừng đến với KipiList",
+  "openConversation": "Cuộc trò chuyện mở",
   "openMenu": "Mở trình đơn",
   "organizeAisles": "Sắp xếp theo lối đi",
   "organizeAislesPrompt": "Sắp xếp theo lối đi trong siêu thị.",
@@ -2051,15 +2209,18 @@
   "pantryAppBar": "Phòng đựng thức ăn",
   "pantryAvailabilityAll": "Đã hoàn tất!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} trong phòng đựng thức ăn",
+  "pantryDeficitCount": "Thiếu {count}{unit}",
   "pantryEditTitle": "Sửa {name}",
   "pantryEmpty": "Phòng đựng thức ăn trống",
   "pantryEmptySubtitle": "Thêm sản phẩm bạn muốn có ở nhà",
+  "pantryItemAdded": "Đã thêm mục",
   "pantryItemRemoved": "Đã xóa mục",
   "pantryLimitReached": "Giới hạn {count} món đồ trong tủ đựng thức ăn theo gói miễn phí. Nâng cấp để thêm nhiều hơn nữa.",
   "paywallAfterItem1": "Ngũ cốc",
   "paywallAfterItem2": "Vệ sinh",
   "paywallAfterItem3": "Thịt",
   "paywallAfterItem4": "tiệm bánh",
+  "paywallBasedOnAnswers": "Được cá nhân hóa từ câu trả lời của bạn",
   "paywallBeforeAfterTitle": "AI trước và sau:",
   "paywallBeforeItem1": "cơm",
   "paywallBeforeItem2": "xà phòng",
@@ -2097,6 +2258,8 @@
   "paywallGoalHeadlinePantry": "{name}, hãy theo dõi tủ đựng thức ăn của bạn một cách hoàn hảo!",
   "paywallGoalHeadlineRecipes": "{name}, khám phá công thức nấu ăn mới!",
   "paywallGoalHeadlineSaveMoney": "{name}, tiết kiệm cho mỗi chuyến đi!",
+  "paywallHeroFeatureDesc": "Nói hoặc dán toàn bộ danh sách - AI sắp xếp, phân loại và lập ngân sách trong vài giây",
+  "paywallHeroFeatureTitle": "Trợ lý mua sắm AI",
   "paywallHeroHeadline": "Kipi AI luôn bên cạnh bạn",
   "paywallHeroSubtitle": "Thêm mục, sắp xếp danh sách và tiết kiệm thời gian với AI trong túi của bạn",
   "paywallHeroSubtitlePersonalized": "Này {name}, hãy sắp xếp việc mua sắm của bạn đúng cách nhé.",
@@ -2131,6 +2294,11 @@
   "paywallTestimonial2Text": "Tôi không bao giờ quên một mục danh sách nữa. Trò chuyện AI thật giật gân!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Người dùng của chúng tôi nói gì:",
+  "paywallTimelineChargeDesc": "Đăng ký của bạn bắt đầu — hủy bất cứ lúc nào",
+  "paywallTimelineDay": "Ngày {day}",
+  "paywallTimelineReminderDesc": "Chúng tôi nhắc nhở bạn trước khi thời gian dùng thử kết thúc",
+  "paywallTimelineToday": "Hôm nay",
+  "paywallTimelineTodayDesc": "Mở khóa toàn quyền truy cập ngay lập tức",
   "paywallTitle": "KipiList cao cấp",
   "paywallTrialCta": "Bắt đầu dùng thử miễn phí",
   "paywallTrialDays": "{days} NGÀY MIỄN PHÍ",
@@ -2153,11 +2321,15 @@
   "prefSharing": "Chia sẻ danh sách",
   "prefUnlimitedLists": "Danh sách không giới hạn",
   "prefUnlimitedPantry": "Phòng đựng thức ăn không giới hạn",
+  "preferencesSection": "Tùy chọn",
   "preferredMarket": "Thị trường ưa thích",
   "preferredMarketHint": "Ví dụ: Siêu thị X",
+  "premiumActionsPrompt": "Đăng ký Premium để mở khóa các hành động tự động.",
+  "premiumStepDescription": "{description} (Cao cấp)",
   "premiumUpgrade": "Nâng cấp để mở khóa",
   "prepTime": "thời gian chuẩn bị",
   "prepTimeMinutes": "Thời gian chuẩn bị (phút)",
+  "previousItemState": "Trạng thái trước đó: {quantity} {unit} [{category}]{price}",
   "privacy": "Quyền riêng tư",
   "processing": "Xử lý...",
   "product": "Sản phẩm",
@@ -2177,21 +2349,34 @@
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "Đang truy vấn danh sách của bạn...",
+  "quickActionAi": "Trò chuyện với Kipi",
+  "quickActionPantry": "Xem phòng đựng thức ăn",
   "quickRecipe": "Công thức nhanh",
   "quickRecipePrompt": "Đề xuất công thức nấu ăn với các mục từ danh sách của tôi.",
   "quickReplies": "Trả lời nhanh:",
   "quickSuggestions": "Gợi ý nhanh",
+  "recipeAddError": "Không thể thêm vào danh sách của bạn. Vui lòng thử lại.",
   "recipeAddToList": "Thêm vào danh sách mua sắm",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Công thức đã được tạo!",
   "recipeDeleted": "Đã xóa công thức",
+  "recipeEstimatePartial": "Ước tính một phần dựa trên các thành phần với giá cả.",
+  "recipeEstimatedCostPerServing": "{cost}/khẩu phần",
+  "recipeEstimatedTotalCost": "Tổng chi phí ước tính",
   "recipeImage": "Hình ảnh công thức",
+  "recipeIngredientInPantry": "Trong phòng đựng thức ăn",
+  "recipeIngredientLowPantry": "Thấp trong phòng đựng thức ăn",
   "recipeIngredientSingular": "1 thành phần",
   "recipeIngredientsPlural": "{count} thành phần",
+  "recipeManualTotalCost": "Tổng chi phí thủ công",
+  "recipeManualTotalCostHint": "Để trống để ước tính giá nguyên liệu.",
   "recipeName": "Tên công thức",
   "recipeSaved": "Đã lưu công thức!",
+  "recipeServesCount": "Phục vụ {count}",
   "recipeSuggestion": "Gợi ý công thức",
   "recipeTags": "Thẻ công thức",
+  "recipeTapToCheck": "Nhấn vào một thành phần để kiểm tra khi bạn nấu",
+  "recipeYieldServings": "suất ăn",
   "regenerate": "Tạo lại",
   "remove": "Xóa",
   "removeBudget": "Xóa",
@@ -2226,9 +2411,12 @@
   "scanBarcodeTitle": "Quét mã vạch",
   "scanProduct": "Quét sản phẩm",
   "scanProductTitle": "Quét sản phẩm",
+  "scrollToBottom": "Cuộn xuống dưới cùng",
+  "searchConversations": "Tìm kiếm cuộc trò chuyện",
   "searchCurrency": "Tìm kiếm tiền tệ...",
   "searchInConversation": "Tìm kiếm trong cuộc trò chuyện...",
   "searchLanguage": "Tìm kiếm ngôn ngữ...",
+  "searchMessages": "Tìm kiếm tin nhắn...",
   "searchRecipes": "Tìm kiếm công thức nấu ăn...",
   "searchingCategories": "Đang tìm kiếm danh mục...",
   "searchingProducts": "Đang tìm kiếm sản phẩm...",
@@ -2268,6 +2456,7 @@
   "signInGoogle": "Đăng nhập bằng Google",
   "skip": "Nhảy",
   "smartOrganization": "Sắp xếp thông minh",
+  "somethingWentWrong": "Đã xảy ra lỗi",
   "sortAZ": "A-Z",
   "sortCategory": "Danh mục",
   "sortDate": "Ngày",
@@ -2299,6 +2488,7 @@
   "themeColor": "Màu chủ đề",
   "themeGreen": "Xanh lá",
   "themeIndigo": "Chàm",
+  "themeMode": "Chế độ chủ đề",
   "themeOrange": "Cam",
   "themePink": "Hồng",
   "themePurple": "Tím",
@@ -2316,6 +2506,7 @@
   "toolSaveRecipe": "Lưu công thức",
   "toolShareList": "Chia sẻ danh sách",
   "totalEstimated": "Tổng ước tính: {amount}",
+  "totalEstimatedLabel": "Tổng số ước tính",
   "totalSavings": "Tổng số tiền tiết kiệm",
   "totalSpending": "Tổng chi tiêu",
   "trackStock": "Theo dõi tồn kho",
@@ -2323,6 +2514,7 @@
   "trackStockInactive": "Không tạo gợi ý mua sắm",
   "uncheckingItem": "Đang bỏ chọn mục...",
   "undo": "Hoàn tác",
+  "undoChanges": "Hoàn tác các thay đổi",
   "unit": "Đơn vị",
   "unitPack": "gói",
   "unlockAi": "Mở khóa AI không giới hạn",
@@ -2336,6 +2528,7 @@
   "updatingPantry": "Đang cập nhật kho thực phẩm...",
   "upgrade": "Nâng cấp",
   "userProfile": "Hồ sơ người dùng",
+  "userRole": "Bạn",
   "validForLimitedTime": "Có hiệu lực trong thời gian giới hạn",
   "version": "Phiên bản",
   "viewActive": "Xem đang hoạt động",
@@ -2343,6 +2536,7 @@
   "viewHistory": "Xem lịch sử",
   "viewItems": "Xem các mục",
   "viewList": "Xem danh sách",
+  "viewPlans": "Xem kế hoạch",
   "viewPro": "Xem chuyên nghiệp",
   "viewRecipe": "Xem công thức",
   "voiceCommandContent": "Nói tự nhiên để quản lý danh sách của bạn!\n\nVí dụ:\n• 'Thêm bánh mì, phô mai và giăm bông'\n• 'Xóa bột giặt'\n• 'Đổi chủ đề thành xanh dương'\n\nĐây là tính năng độc quyền của KipiList Premium.",

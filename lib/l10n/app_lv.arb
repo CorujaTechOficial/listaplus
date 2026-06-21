@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +161,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -280,6 +301,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -309,6 +333,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -960,6 +991,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1107,6 +1148,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1145,6 +1193,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1218,7 +1289,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1366,42 +1451,56 @@
   "addToPantryPrompt": "Pievienot \"{name}\" jūsu pieliekamajam?",
   "addedFeedback": "Pievienots!",
   "advancedFeatures": "Papildu funkcijas",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Neizdevās izpildīt darbības",
+  "agentActionsPremium": "Darbībām ir nepieciešama Premium",
+  "agentActionsRunning": "Notiek darbības...",
+  "aiApiError": "AI pakalpojums atgrieza kļūdu ({statusCode}).",
   "aiAssistant": "AI palīgs",
   "aiAssistantDescription": "Saņemiet gudrus ieteikumus, receptes un personalizētus padomus ar mūsu AI palīgu.",
   "aiAssistantGeneral": "Ģenerālsasistents",
   "aiAssistantHistory": "Asistenta vēsture",
   "aiAssistantTitle": "AI palīgs",
+  "aiConnectionError": "Nevarēja izveidot savienojumu ar AI pakalpojumu. Pārbaudiet savienojumu.",
   "aiConversationHistory": "Sarunu vēsture",
   "aiCreditsRemaining": "Atlikuši {remaining} kredīti",
   "aiDeleteConversationConfirm": "Dzēst",
   "aiDeleteConversationTitle": "Vai dzēst sarunu?",
   "aiDeletedList": "Dzēsts saraksts",
+  "aiEmptyResponseError": "AI pakalpojums sniedza tukšu atbildi.",
   "aiEnergy": "AI enerģija",
   "aiEnergyLow": "Zema AI enerģija",
   "aiError": "Atvainojiet, radās kļūda, apstrādājot jūsu pieprasījumu. Pārbaudiet savienojumu vai mēģiniet vēlreiz vēlāk.",
   "aiFirstOpenHint": "Es esmu Kipi, jūsu iepirkšanās asistente. Jautājiet man kaut ko par savu sarakstu!",
+  "aiGeneratingResponse": "Notiek atbildes ģenerēšana…",
   "aiHello": "Sveiki! Es esmu Kipi",
   "aiHowCanIHelp": "Kā es varu jums palīdzēt šodien?",
+  "aiInvalidResponseError": "AI pakalpojums sniedza nederīgu atbildi.",
   "aiLimitAlmostReached": "Gandrīz beigušies AI ziņojumi",
   "aiNewConversation": "Jauna saruna",
   "aiNewSession": "Jauna sesija",
   "aiNoConversationFound": "Netika atrasta neviena saruna",
   "aiNoMessagesFound": "Nav atrasts neviens ziņojums",
   "aiPremiumUpsell": "Dodieties uz Premium",
+  "aiRateLimitError": "Pārāk daudz ziņojumu īsā laikā. Pagaidiet dažas sekundes un mēģiniet vēlreiz.",
   "aiRecentConversations": "Pēdējās sarunas",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} šodien",
   "aiSearchMessages": "Meklēt ziņas...",
+  "aiSection": "AI palīgs",
   "aiStartNewConversation": "Sāciet jaunu sarunu",
   "aiSubscribeUnlimited": "Abonējiet neierobežotu AI",
   "aiSuggestCreateList": "Izveidojiet manu pirmo sarakstu",
   "aiSuggestSaveMore": "Kā ietaupīt vairāk?",
   "aiTeaserFallback": "Abonējiet Premium, lai atvērtu pilnu atbildi un saņemtu neierobežotus AI padomus par iepirkšanos...",
+  "aiTimeoutError": "Pieprasījums aizņēma pārāk ilgu laiku. Lūdzu, mēģiniet vēlreiz.",
   "aiUnlockUnlimited": "Atbloķējiet neierobežotu AI",
   "aiUnlockWithAd": "Atbloķēt ar reklāmu",
   "aiUsageExhausted": "Sasniegts mēneša AI ierobežojums. Jauniniet uz Pro, lai iegūtu neierobežotu →",
   "aiUsageWarning": "{remaining} AI darbības atlikušas šomēnes — jauninājums uz neierobežotu skaitu",
   "aiVoiceCommandTooltip": "AI balss komanda (Premium)",
   "aiWelcomeContent": "Sveiki! 👋 Esmu **Kipi**, jūsu personīgā iepirkšanās un recepšu asistente!\n\nEs esmu šeit, lai jums palīdzētu:\n🛒 **Automātiski kārtojiet** iepirkšanos pēc kategorijām\n💰 **Izsekojiet** savam budžetam un sniedziet naudas taupīšanas padomus\n🍲 **Iesakiet** garšīgas receptes ar to, kas jums jau ir\n\nKā es varu jums palīdzēt šodien? Varat sākt, izveidojot savu pirmo sarakstu!",
+  "aiWelcomeSuggestBarbecue": "Plānojiet bārbekjū",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, es rīkoju bārbekjū — palīdzi man izveidot iepirkumu sarakstu",
   "aiWelcomeSuggestCreateList": "Izveidojiet manu pirmo sarakstu",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, palīdzi man izveidot manu pirmo iepirkumu sarakstu",
   "aiWelcomeSuggestSave": "Kā ietaupīt naudu?",
@@ -1412,14 +1511,17 @@
   "appTitle": "Iepirkumu saraksts",
   "appearance": "Izskats",
   "archiveList": "Arhivēt sarakstu",
+  "artifactBudgetLabel": "Budžets:",
   "artifactReplaceBody": "Izvēlieties produkta alternatīvu, lai optimizētu izmaksas.",
   "artifactReplaceTitle": "Aizstāt {name}",
   "artifactSuggestedItems": "Ieteiktās preces",
   "artifactSwapButton": "Apmainīt",
   "artifactSwappedLabel": "Samainīts",
+  "artifactSynced": "Sinhronizēts",
   "assistantHistory": "Asistenta vēsture",
   "assistantHistorySubtitle": "Skatiet savu sarunu vēsturi",
   "assistantName": "Asistenta vārds",
+  "assistantRole": "Asistents",
   "backToChat": "Atpakaļ uz tērzēšanu",
   "backToToday": "Atpakaļ uz šodienu",
   "backupExported": "Rezerves kopija eksportēta!",
@@ -1427,6 +1529,7 @@
   "backupPremiumDescription": "Rezerves kopēšana un eksportēšana ir premium funkcija",
   "backupSubtitle": "Eksportējiet vai importējiet savus datus",
   "backupTitle": "Rezerves kopija",
+  "badResponse": "Slikta atbilde",
   "badgeBeginner": "Iesācējs",
   "badgeOrganized": "Organizēts",
   "badgeSavingMaster": "Glābšanas meistars",
@@ -1454,10 +1557,12 @@
   "catOthers": "Citi",
   "catalogAddItems": "Pievienot {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Pārlūkot katalogu",
+  "catalogCategories": "Kategorijas",
   "catalogFilterNational": "Nacionāļi",
   "catalogItemAdded": "{name} pievienots",
   "catalogMyFrequents": "Mani Frekvences",
   "catalogProductNotFound": "Produkts nav atrasts, ierakstiet nosaukumu",
+  "catalogRareBadge": "Reti",
   "catalogRareSection": "retāk jūsu valstī",
   "catalogRetry": "Mēģiniet vēlreiz",
   "catalogSearchGlobal": "Meklēt jebkuru produktu...",
@@ -1466,16 +1571,43 @@
   "catalogSortPopular": "Populārākais",
   "catalogTitle": "Katalogs",
   "category": "Kategorija",
+  "categoryAlcohol": "Alkoholiskie dzērieni",
+  "categoryBaby": "Mazulis",
+  "categoryBakery": "Maiznīca",
+  "categoryBeverages": "Dzērieni",
+  "categoryCanned": "Konservētas preces",
+  "categoryCleaning": "Tīrīšana",
+  "categoryColdCuts": "Aukstā griešana",
   "categoryColorLabel": "Krāsa",
+  "categoryDairy": "Piena produkti",
+  "categoryFish": "Zivis",
+  "categoryFrozen": "Saldēti pārtikas produkti",
+  "categoryFruits": "Augļi",
+  "categoryGrains": "Graudi un graudaugi",
+  "categoryHygiene": "Personīgā aprūpe",
   "categoryIconLabel": "Ikona",
   "categoryLimitReached": "Sasniegts kategoriju ierobežojums",
+  "categoryMeat": "Gaļa",
   "categoryName": "Kategorijas nosaukums",
   "categoryNameHint": "Ievadiet kategorijas nosaukumu",
+  "categoryOthers": "Cits",
+  "categoryPet": "Mājdzīvnieku piederumi",
+  "categorySeasonings": "Garšvielas",
+  "categorySweets": "Saldumi un deserti",
+  "categoryUtilities": "Mājsaimniecības preces",
+  "categoryVegetables": "Dārzeņi",
+  "chatEmptyGreeting": "Sveiki, {name}, es esmu Kipi 👋",
+  "chatEmptyGreetingNoName": "Sveiki, es esmu Kipi 👋",
+  "chatEmptyPitch": "Es veidoju sarakstus, iesaku receptes un atrodu, kur saglabāt. Kur mēs sākam?",
   "chatEmptySubtitle": "Lai sāktu, lūdziet priekšmetu ieteikumus, receptes vai saglabāšanas padomus.",
   "chatEmptyTitle": "Jūsu tērzēšana ir tukša",
   "chatError": "Kļūda, ielādējot tērzēšanu: {error}",
   "chatHint": "Ierakstiet savu ziņojumu...",
   "chatHintBlocked": "Atbloķējiet AI, lai tērzētu",
+  "chatHistoryErrorBody": "Mūsu pusē kaut kas nogāja greizi. Pieskarieties vēlreiz, lai mēģinātu vēlreiz.",
+  "chatHistoryErrorTitle": "Nevarēja ielādēt šo sarunu",
+  "chatHistoryOfflineBody": "Pārbaudiet interneta savienojumu un mēģiniet vēlreiz.",
+  "chatHistoryOfflineTitle": "Jūs esat bezsaistē",
   "chatSubtitle": "Jautājiet par vienumu ieteikumiem, receptēm vai taupīšanas padomiem.",
   "chatSubtitleShort": "Jautājiet par cenām, receptēm, organizāciju...",
   "chooseCurrency": "Atlasiet Valūta",
@@ -1483,6 +1615,7 @@
   "chooseImageSource": "Izvēlēties attēla avotu",
   "chooseLanguage": "Izvēlēties valodu",
   "chooseThemeColor": "Izvēlieties motīva krāsu",
+  "chooseThemeMode": "Izvēlieties motīva režīmu",
   "clear": "Notīrīt",
   "clearHistory": "Notīrīt vēsturi",
   "clearHistoryConfirm": "Notīrīt visus ziņojumus šajā sesijā?",
@@ -1525,6 +1658,10 @@
   "customizeAssistant": "Pielāgot",
   "dark": "Tumšs",
   "data": "Dati",
+  "dateGroupOlder": "Vecāks",
+  "dateGroupPrevious7Days": "Iepriekšējās 7 dienas",
+  "dateGroupToday": "Šodien",
+  "dateGroupYesterday": "vakar",
   "deficitItems": "{deficit,plural, zero{0 vienumi jāiegādājas} one{{deficit} vienums jāiegādājas} other{{deficit} vienumi jāiegādājas}}",
   "delete": "Dzēst",
   "deleteCategory": "Dzēst",
@@ -1541,6 +1678,7 @@
   "deleteRecipeConfirmMsg": "Vai tiešām vēlaties dzēst \"{recipeName}\"? Šo darbību nevar atsaukt.",
   "deleteSession": "Dzēst tērzēšanu",
   "deleteSessionConfirm": "Vai tiešām vēlaties dzēst šo tērzēšanu? Ziņojumi tiks neatgriezeniski zaudēti.",
+  "deletedList": "Izdzēsts saraksts",
   "deselectAll": "Noņemt izvēli",
   "dietaryRestrictions": "Uztura ierobežojumi",
   "dietaryRestrictionsHint": "Vai ir kādi uztura ierobežojumi?",
@@ -1553,6 +1691,7 @@
   "editCategoryDialog": "Rediģēt kategoriju",
   "editItem": "Rediģēt vienumu",
   "editItemPrice": "Aptuvenā cena",
+  "editMessage": "Rediģēt ziņojumu",
   "editPantryItem": "Rediģēt {name}",
   "editRecipe": "Rediģēt",
   "editRecipeTitle": "Rediģēt recepti",
@@ -1574,6 +1713,7 @@
   "errorLoadingChat": "Ak! Ielādējot tērzēšanu, radās kļūda.",
   "errorLoadingChatSubtitle": "Pārbaudiet savienojumu vai vēlāk mēģiniet vēlreiz.",
   "errorLoadingHistory": "Ielādējot vēsturi, radās kļūda",
+  "errorLoadingItems": "Ielādējot vienumus, radās kļūda",
   "errorLoadingLists": "Ielādējot sarakstus, radās kļūda",
   "errorLoadingRecipes": "Kļūda, ielādējot receptes",
   "errorLoadingSubscription": "Ielādējot abonementu, radās kļūda",
@@ -1626,6 +1766,7 @@
   "generateShoppingList": "Ģenerēt iepirkumu sarakstu",
   "gestureHint": "Turiet, lai atlasītu • Velciet, lai noņemtu",
   "globalAssistant": "Globālais palīgs",
+  "goodResponse": "Laba atbilde",
   "howCanIHelp": "Kā es varu palīdzēt?",
   "idealQty": "Ideālais daudz.",
   "idealQuantity": "Ideālais daudzums",
@@ -1642,14 +1783,18 @@
   "instructionsHint": "Ierakstiet vienu soli rindā...",
   "inviteToList": "Uzaicināt uz sarakstu",
   "itemAddedSnack": "{name} pievienots",
+  "itemAddedToList": "Vienums pievienots sarakstam.",
   "itemName": "Vienuma nosaukums",
   "itemRemoved": "Vienums noņemts",
   "itemsAddedSuccess": "Vienumi veiksmīgi pievienoti sarakstam!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} vienums(-i) jāiegādājas",
   "itemsPurchased": "Iegādātās preces",
   "itemsPurchasedCount": "{purchased} no {total} iegādāts",
   "itemsPurchasedShort": "{purchased}/{total} iegādāts",
   "itemsWillBeAdded": "Tiks pievienots {count} vienums(-i)",
+  "keepAdding": "Turpiniet pievienot",
+  "keepAddingSubtitle": "Turiet lapu atvērtu, lai pievienotu vairākus vienumus",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Kas jums jāiegādājas?",
@@ -1696,16 +1841,22 @@
   "mealDragHint": "Turiet, lai vilktu un pārvietotu",
   "mealNoRecipeFound": "Recepte nav atrasta",
   "mealPlannerAddMeal": "Pievienot maltīti",
+  "mealPlannerAddType": "Pievienojiet ēdienreizes veidu",
+  "mealPlannerCustomTypeLabel": "Pielāgots veids",
   "mealPlannerDateLabel": "Datums",
+  "mealPlannerDefaultTypeLabel": "Noklusējuma veids",
   "mealPlannerDeleteMeal": "Noņemt maltīti",
   "mealPlannerEditMeal": "Rediģēt maltīti",
+  "mealPlannerEditType": "Rediģēt ēdienreizes veidu",
   "mealPlannerError": "Kļūda, ielādējot maltīšu plānu",
+  "mealPlannerEstimatePartial": "Aprēķins, pamatojoties uz receptēm ar daļējiem cenu datiem.",
   "mealPlannerGenerateList": "Ģenerēt iepirkumu sarakstu",
   "mealPlannerGenerateListConfirm": "Pievienot visas sastāvdaļas no plānotajām šīs nedēļas maltītēm iepirkumu sarakstam?",
   "mealPlannerGenerateListEmpty": "Nav sastāvdaļu, ko pievienot. Vispirms plānojiet maltītes ar receptēm.",
   "mealPlannerGenerateListNoList": "Vispirms izveidojiet iepirkumu sarakstu.",
   "mealPlannerGenerateListSuccess": "{count} sastāvdaļa(-as) pievienota jūsu sarakstam!",
   "mealPlannerLoading": "Ielādē maltīšu plānu...",
+  "mealPlannerManageTypes": "Pārvaldiet ēdienreižu veidus",
   "mealPlannerMealDeleted": "Maltīte noņemta",
   "mealPlannerMealTypeBreakfast": "Brokastis",
   "mealPlannerMealTypeDinner": "Vakariņas",
@@ -1725,6 +1876,12 @@
   "mealPlannerServings": "{count,plural, zero{{count} porcijas} one{{count} porcija} other{{count} porcijas}}",
   "mealPlannerServingsLabel": "Porcijas",
   "mealPlannerTitle": "Maltīšu plānotājs",
+  "mealPlannerTypeColor": "Krāsa",
+  "mealPlannerTypeDeleteConfirm": "Vai tiešām vēlaties dzēst šo maltītes veidu? Plānotās ēdienreizes ar šo veidu paliks.",
+  "mealPlannerTypeDeleteError": "Šo ēdienreizes veidu nevar izdzēst.",
+  "mealPlannerTypeIcon": "Ikona",
+  "mealPlannerTypeName": "Vārds",
+  "mealPlannerTypeNameEmpty": "Vārda lauks nedrīkst būt tukšs",
   "mealPlannerViewMonthly": "Mēneša skats",
   "mealPlannerViewWeekly": "Nedēļas skats",
   "mealPlannerWeekEmpty": "Šai nedēļai nekas nav plānots",
@@ -1940,6 +2097,7 @@
   "onboardingViewAllPlans": "Skatīt visus plānus",
   "onboardingWelcomeDesc": "Gudrākais veids, kā organizēt iepirkšanos un ietaupīt naudu.",
   "onboardingWelcomeTitle": "Laipni lūdzam KipiList",
+  "openConversation": "Atvērt sarunu",
   "openMenu": "Atvērt izvēlni",
   "organizeAisles": "Sakārtot pa ejām",
   "organizeAislesPrompt": "Sakārtot pa tirgus ejām.",
@@ -1952,6 +2110,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} pieliekamajā",
   "pantryCompactView": "Kompakts skats",
   "pantryDeficit": "Trūkst {amount}{unit}",
+  "pantryDeficitCount": "Trūkst {count}{unit}",
   "pantryDeleteItemsContent": "Vai vēlaties dzēst {count} atlasītos vienumus?",
   "pantryDeleteItemsTitle": "Dzēst vienumus",
   "pantryDeleteSelected": "Dzēst atlasīto",
@@ -1968,6 +2127,7 @@
   "pantryFilterExpiring": "Beidzas",
   "pantryFilterOutStock": "Nav noliktavā",
   "pantryFirstOpenHint": "Sekojiet līdzi tam, kas jums ir mājās. Pievienojiet vienumus vai skenējiet svītrkodus.",
+  "pantryItemAdded": "Vienums pievienots",
   "pantryItemRemoved": "Vienums noņemts",
   "pantryMoreDetails": "Sīkāka informācija",
   "pantryNoItemsFound": "Vaicājumam \"{query}\" nav atrasts neviens vienums",
@@ -1981,6 +2141,7 @@
   "paywallAfterItem2": "Tīrīšana",
   "paywallAfterItem3": "Gaļa",
   "paywallAfterItem4": "Maiznīca",
+  "paywallBasedOnAnswers": "Personalizēta no jūsu atbildēm",
   "paywallBeforeAfterTitle": "AI pirms un pēc:",
   "paywallBeforeItem1": "rīsi",
   "paywallBeforeItem2": "ziepes",
@@ -2018,6 +2179,8 @@
   "paywallGoalHeadlinePantry": "{name}, lieliski izsekojiet savam pieliekamajam!",
   "paywallGoalHeadlineRecipes": "{name}, atklāj jaunas receptes!",
   "paywallGoalHeadlineSaveMoney": "{name}, ietaupiet katrā ceļojumā!",
+  "paywallHeroFeatureDesc": "Izrunājiet vai ielīmējiet visu sarakstu — mākslīgais intelekts to sakārto, kategorizē un veido budžetu dažu sekunžu laikā",
+  "paywallHeroFeatureTitle": "AI iepirkšanās palīgs",
   "paywallHeroHeadline": "Kipi AI vienmēr ir jūsu pusē",
   "paywallHeroSubtitle": "Pievienojiet vienumus, kārtojiet sarakstus un ietaupiet laiku, izmantojot AI savā kabatā",
   "paywallHeroSubtitlePersonalized": "Sveiki, {name}, organizējiet iepirkšanos pareizi.",
@@ -2052,6 +2215,11 @@
   "paywallTestimonial2Text": "Es nekad vairs neaizmirsu nevienu saraksta vienumu. AI tērzēšana ir sensacionāla!",
   "paywallTestimonialAuthor": "Anna S.",
   "paywallTestimonialsTitle": "Ko saka mūsu lietotāji:",
+  "paywallTimelineChargeDesc": "Jūsu abonements sākas — jebkurā laikā varat to atcelt",
+  "paywallTimelineDay": "{day} diena",
+  "paywallTimelineReminderDesc": "Atgādinām pirms izmēģinājuma beigām",
+  "paywallTimelineToday": "Šodien",
+  "paywallTimelineTodayDesc": "Nekavējoties atbloķējiet pilnu piekļuvi",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Sāciet bezmaksas izmēģinājuma versiju",
   "paywallTrialDays": "{days} DIENAS BEZMAKSAS",
@@ -2074,11 +2242,15 @@
   "prefSharing": "Kopīgot sarakstus",
   "prefUnlimitedLists": "Neierobežoti saraksti",
   "prefUnlimitedPantry": "Neierobežots pieliekamais",
+  "preferencesSection": "Preferences",
   "preferredMarket": "Vēlamais tirgus",
   "preferredMarketHint": "Kur jūs parasti iepērkaties?",
+  "premiumActionsPrompt": "Abonējiet Premium, lai atbloķētu automātiskās darbības.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Jauniniet, lai atbloķētu",
   "prepTime": "Gatavošanas laiks",
   "prepTimeMinutes": "Gatavošanas laiks (minūtes)",
+  "previousItemState": "Iepriekšējais stāvoklis: {quantity} {unit} [{category}]{price}",
   "privacy": "Privātums",
   "product": "Produkts",
   "productName": "Produkta nosaukums",
@@ -2095,21 +2267,34 @@
   "quantityShort": "Daudz.",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Tērzējiet ar Kipi",
+  "quickActionPantry": "Skatīt pieliekamo",
   "quickRecipe": "Ātrā recepte",
   "quickRecipePrompt": "Iesakiet receptes ar maniem saraksta vienumiem.",
   "quickReplies": "Ātrās atbildes:",
   "quickSuggestions": "Ātri ieteikumi",
+  "recipeAddError": "Nevarēja pievienot jūsu sarakstam. Lūdzu, mēģiniet vēlreiz.",
   "recipeAddToList": "Pievienot iepirkumu sarakstam",
   "recipeAddedConfirmation": "{count} sastāvdaļas pievienotas {listName}",
   "recipeCreated": "Recepte izveidota!",
   "recipeDeleted": "Recepte dzēsta",
+  "recipeEstimatePartial": "Daļēja aplēse, pamatojoties uz sastāvdaļām un cenu.",
+  "recipeEstimatedCostPerServing": "{cost} / porcija",
+  "recipeEstimatedTotalCost": "Paredzamās kopējās izmaksas",
   "recipeImage": "Receptes attēls",
+  "recipeIngredientInPantry": "Pieliekamajā",
+  "recipeIngredientLowPantry": "Zems pieliekamais",
   "recipeIngredientSingular": "1 sastāvdaļa",
   "recipeIngredientsPlural": "{count} sastāvdaļas",
+  "recipeManualTotalCost": "Manuālās kopējās izmaksas",
+  "recipeManualTotalCostHint": "Atstājiet tukšu, lai novērtētu sastāvdaļu cenas.",
   "recipeName": "Receptes nosaukums",
   "recipeSaved": "Recepte saglabāta!",
+  "recipeServesCount": "Apkalpo {count}",
   "recipeSuggestion": "Receptes ieteikums",
   "recipeTags": "Receptes birkas",
+  "recipeTapToCheck": "Pieskarieties kādai sastāvdaļai, lai ēdiena gatavošanas laikā to pārbaudītu",
+  "recipeYieldServings": "Ražas porcijas",
   "regenerate": "Atjaunot",
   "remove": "Noņemt",
   "removeBudget": "Noņemt",
@@ -2133,9 +2318,12 @@
   "savings": "Ietaupījums",
   "scanBarcodeTitle": "Skenējiet svītrkodu",
   "scanProductTitle": "Skenēt produktu",
+  "scrollToBottom": "Ritiniet līdz apakšai",
+  "searchConversations": "Meklēt sarunas",
   "searchCurrency": "Meklēt valūtu...",
   "searchInConversation": "Meklēt sarunā...",
   "searchLanguage": "Meklēt valodu...",
+  "searchMessages": "Meklēt ziņas...",
   "searchRecipes": "Meklēt receptes...",
   "selectAll": "Izvēlēties visu",
   "selectCheaperAlternative": "Izvēlieties lētāku alternatīvu",
@@ -2192,6 +2380,7 @@
   "signInGoogle": "Pierakstīties ar Google",
   "skip": "Izlaist",
   "smartOrganization": "Viedā organizācija",
+  "somethingWentWrong": "Kaut kas nogāja greizi",
   "sortAZ": "A–Z",
   "sortCategory": "Kategorija",
   "sortDate": "Datums",
@@ -2222,6 +2411,7 @@
   "themeColor": "Tēmas krāsa",
   "themeGreen": "Zaļš",
   "themeIndigo": "Indigo",
+  "themeMode": "Motīvu režīms",
   "themeOrange": "Oranžs",
   "themePink": "Rozā",
   "themePurple": "Violets",
@@ -2229,12 +2419,14 @@
   "themeSelectionTitle": "Izvēlieties motīva krāsu",
   "themeTeal": "Tirkīzzils",
   "totalEstimated": "Aptuvenā kopsumma: {amount}",
+  "totalEstimatedLabel": "Paredzamā kopsumma",
   "totalSavings": "Kopējie ietaupījumi",
   "totalSpending": "Kopējie izdevumi",
   "trackStock": "Sekot krājumam",
   "trackStockActive": "Parādās iepirkumu ieteikumos",
   "trackStockInactive": "Neģenerē iepirkumu ieteikumus",
   "undo": "Atsaukt",
+  "undoChanges": "Atsaukt izmaiņas",
   "unit": "Vienība",
   "unitPack": "iepakojums",
   "unlockAi": "Atbloķējiet neierobežotu AI",
@@ -2259,6 +2451,7 @@
   "userProfileSaveButton": "Saglabāt profilu",
   "userProfileSaved": "Profils veiksmīgi saglabāts!",
   "userProfileTitle": "Mans profils",
+  "userRole": "Tu",
   "validForLimitedTime": "Derīgs ierobežotu laiku",
   "version": "Versija",
   "viewActive": "Skatīt aktīvos",
@@ -2266,6 +2459,7 @@
   "viewHistory": "Skatīt vēsturi",
   "viewItems": "Skatīt vienumus",
   "viewList": "Skatīt sarakstu",
+  "viewPlans": "Skatīt plānus",
   "viewPro": "Skatīt Pro",
   "viewRecipe": "Skatīt recepti",
   "voiceCommandContent": "Runājiet dabiski, lai pārvaldītu savu sarakstu!\n\nPiemēri:\n• 'Pievienot maizi, sieru un šķiņķi'\n• 'Noņemt veļas mazgāšanas līdzekli'\n• 'Mainīt tēmu uz zilu'\n\nŠī ir KipiList Premium ekskluzīva funkcija.",

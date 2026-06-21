@@ -238,6 +238,11 @@ class AppLocalizationsFi extends AppLocalizations {
   String get noItemsToBuy => 'Ei ostettavia kohteita';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Puuttuu $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Ruokakomero-ostokset';
 
   @override
@@ -304,6 +309,12 @@ class AppLocalizationsFi extends AppLocalizations {
   String get settingsAppBar => 'Asetukset';
 
   @override
+  String get preferencesSection => 'Asetukset';
+
+  @override
+  String get aiSection => 'AI Assistant';
+
+  @override
   String get language => 'Kieli';
 
   @override
@@ -332,6 +343,12 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get appearance => 'Ulkoasu';
+
+  @override
+  String get themeMode => 'Teematila';
+
+  @override
+  String get chooseThemeMode => 'Valitse teematila';
 
   @override
   String get light => 'Vaalea';
@@ -581,6 +598,13 @@ class AppLocalizationsFi extends AppLocalizations {
   String get trackStockInactive => 'Ei luo ostoehdotusta';
 
   @override
+  String get keepAdding => 'Jatka lisäämistä';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Pidä taulukko auki lisätäksesi useita kohteita';
+
+  @override
   String get createListDialog => 'Luo lista';
 
   @override
@@ -686,6 +710,36 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Hyvä vastaus';
+
+  @override
+  String get badResponse => 'Huono vastaus';
+
+  @override
+  String get scrollToBottom => 'Vieritä alas';
+
+  @override
+  String get somethingWentWrong => 'Jotain meni pieleen';
+
+  @override
+  String get editMessage => 'Muokkaa viestiä';
+
+  @override
+  String get searchConversations => 'Hae keskusteluja';
+
+  @override
+  String get dateGroupToday => 'Tänään';
+
+  @override
+  String get dateGroupYesterday => 'Eilen';
+
+  @override
+  String get dateGroupPrevious7Days => 'Edelliset 7 päivää';
+
+  @override
+  String get dateGroupOlder => 'Vanhempi';
+
+  @override
   String get aiAssistantTitle => 'AI Assistant';
 
   @override
@@ -726,6 +780,33 @@ class AppLocalizationsFi extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Tekoälyn kuukausiraja saavutettu. Päivitä Pro-versioon rajattomasti →';
+
+  @override
+  String get undo => 'Kumoa';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -934,6 +1015,19 @@ class AppLocalizationsFi extends AppLocalizations {
   String get recipeAddToList => 'Lisää ostoslistalle';
 
   @override
+  String get recipeAddError => 'Ei voitu lisätä luetteloosi. Yritä uudelleen.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Napauta ainesosaa tarkistaaksesi sen ruoanlaiton aikana';
+
+  @override
+  String get recipeIngredientInPantry => 'Ruokakomerossa';
+
+  @override
+  String get recipeIngredientLowPantry => 'Alhainen ruokakomero';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count ainesosat lisätty $listName';
   }
@@ -1045,12 +1139,12 @@ class AppLocalizationsFi extends AppLocalizations {
   String get paywallSelectPlan => 'Valitse suunnitelmasi:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'SÄÄSTÄ $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Vain $price/kk';
   }
 
@@ -1085,6 +1179,35 @@ class AppLocalizationsFi extends AppLocalizations {
   String get paywallRestore => 'Palauttaa';
 
   @override
+  String get paywallTimelineToday => 'Tänään';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Avaa täysi käyttöoikeus välittömästi';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Päivä $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Muistutamme sinua ennen oikeudenkäynnin päättymistä';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Tilauksesi alkaa – peruuta milloin tahansa';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI Shopping Assistant';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Puhu tai liitä koko luettelo – tekoäly lajittelee, luokittelee ja budjetoi sekunneissa';
+
+  @override
+  String get paywallBasedOnAnswers => 'Mukautettu vastauksistasi';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI aina vierelläsi';
 
   @override
@@ -1117,9 +1240,6 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Kohde poistettu';
-
-  @override
-  String get undo => 'Kumoa';
 
   @override
   String get emptyListTitle => 'Listasi on tyhjä';
@@ -1236,6 +1356,9 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Kohde poistettu';
+
+  @override
+  String get pantryItemAdded => 'Kohde lisätty';
 
   @override
   String deficitItems(int deficit) {
@@ -1634,6 +1757,33 @@ class AppLocalizationsFi extends AppLocalizations {
   String get prepTimeMinutes => 'Valmistusaika (minuuttia)';
 
   @override
+  String get recipeYieldServings => 'Tuotto annoksia';
+
+  @override
+  String get recipeManualTotalCost => 'Manuaalinen kokonaishinta';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Jätä tyhjäksi arvioidaksesi ainesosien hintoja.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Arvioidut kokonaiskustannukset';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / annos';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Palvelee $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Osittainen arvio ainesosien ja hinnan perusteella.';
+
+  @override
   String get instructionsHint => 'Kirjoita yksi vaihe riville...';
 
   @override
@@ -1762,6 +1912,10 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Arvio perustuu resepteihin, joissa on osittaiset hintatiedot.';
+
+  @override
   String get mealPlannerGenerateList => 'Luo ostoslista';
 
   @override
@@ -1855,6 +2009,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get catalogRareSection => 'harvinaisempaa maassasi';
 
   @override
+  String get catalogRareBadge => 'Harvinainen';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1872,7 +2029,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get catalogBrowse => 'Selaa katalogia';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Luokat';
 
   @override
   String get offlineBanner => 'Olet offline-tilassa';
@@ -1903,6 +2060,40 @@ class AppLocalizationsFi extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Hallitse ateriatyyppejä';
+
+  @override
+  String get mealPlannerAddType => 'Lisää ateriatyyppi';
+
+  @override
+  String get mealPlannerEditType => 'Muokkaa ateriatyyppiä';
+
+  @override
+  String get mealPlannerTypeName => 'Nimi';
+
+  @override
+  String get mealPlannerTypeColor => 'Väri';
+
+  @override
+  String get mealPlannerTypeIcon => 'Kuvake';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Haluatko varmasti poistaa tämän ateriatyypin? Suunnitellut ateriat tällä tyypillä säilyvät.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Nimi ei voi olla tyhjä';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'Tätä ateriatyyppiä ei voi poistaa.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Mukautettu tyyppi';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Oletustyyppi';
 
   @override
   String get expirationDate => 'Viimeinen voimassaolopäivä';
@@ -1963,6 +2154,9 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Virhe ladattaessa luetteloita';
+
+  @override
+  String get errorLoadingItems => 'Virhe ladattaessa kohteita';
 
   @override
   String get noListsFound => 'Listoja ei löytynyt';
@@ -2732,6 +2926,215 @@ class AppLocalizationsFi extends AppLocalizations {
   @override
   String get obLoginError =>
       'Kirjautuminen epäonnistui. Yritä uudelleen tai ohita toistaiseksi.';
+
+  @override
+  String get searchMessages => 'Hae viestejä...';
+
+  @override
+  String get deletedList => 'Poistettu luettelo';
+
+  @override
+  String get openConversation => 'Avaa keskustelu';
+
+  @override
+  String get userRole => 'sinä';
+
+  @override
+  String get assistantRole => 'Assistant';
+
+  @override
+  String get agentActionsRunning => 'Suoritetaan toimintoja...';
+
+  @override
+  String get agentActionsFailed => 'Toimintojen suorittaminen epäonnistui';
+
+  @override
+  String get agentActionsPremium => 'Toiminnot vaativat Premiumin';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Kumoa muutokset';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Kohde lisätty luetteloon.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Edellinen tila: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Tilaa Premium avataksesi automaattisten toimintojen lukituksen.';
+
+  @override
+  String get viewPlans => 'Katso suunnitelmat';
+
+  @override
+  String get artifactSynced => 'Synkronoitu';
+
+  @override
+  String get artifactBudgetLabel => 'Budjetti:';
+
+  @override
+  String get totalEstimatedLabel => 'Arvioitu kokonaismäärä';
+
+  @override
+  String get quickActionPantry => 'Näytä ruokakomero';
+
+  @override
+  String get quickActionAi => 'Keskustele Kipin kanssa';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Tekoälypalvelu palautti virheen ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Pyyntö kesti liian kauan. Yritä uudelleen.';
+
+  @override
+  String get aiConnectionError =>
+      'Ei voitu muodostaa yhteyttä AI-palveluun. Tarkista yhteys.';
+
+  @override
+  String get aiEmptyResponseError =>
+      'Tekoälypalvelu palautti tyhjän vastauksen.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Tekoälypalvelu palautti virheellisen vastauksen.';
+
+  @override
+  String get categoryFruits => 'Hedelmät';
+
+  @override
+  String get categoryCleaning => 'Puhdistus';
+
+  @override
+  String get categoryBeverages => 'Juomat';
+
+  @override
+  String get categoryBakery => 'Leipomo';
+
+  @override
+  String get categoryMeat => 'Liha';
+
+  @override
+  String get categoryDairy => 'Meijeri';
+
+  @override
+  String get categoryVegetables => 'Vihannekset';
+
+  @override
+  String get categoryGrains => 'Viljat ja viljat';
+
+  @override
+  String get categoryHygiene => 'Henkilökohtainen hoito';
+
+  @override
+  String get categoryFrozen => 'Pakastetut elintarvikkeet';
+
+  @override
+  String get categoryCanned => 'Säilykkeet';
+
+  @override
+  String get categorySeasonings => 'Mausteet';
+
+  @override
+  String get categorySweets => 'Makeiset ja jälkiruoat';
+
+  @override
+  String get categoryAlcohol => 'Alkoholijuomat';
+
+  @override
+  String get categoryFish => 'Kalastaa';
+
+  @override
+  String get categoryColdCuts => 'Leikkeleet';
+
+  @override
+  String get categoryUtilities => 'Kotitaloustarvikkeet';
+
+  @override
+  String get categoryPet => 'Lemmikkieläintarvikkeet';
+
+  @override
+  String get categoryBaby => 'Vauva';
+
+  @override
+  String get categoryOthers => 'Muut';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hei $name, olen Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hei, olen Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Teen listoja, ehdotan reseptejä ja löydän tallentamisen. Mistä aloitamme?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Suunnittele grilli';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, järjestän grillauksen – auta minua tekemään ostoslista';
+
+  @override
+  String get aiRateLimitError =>
+      'Liian monta viestiä lyhyessä ajassa. Odota muutama sekunti ja yritä uudelleen.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Tätä keskustelua ei voitu ladata';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Jotain meni vikaan meidän päässämme. Yritä uudelleen napauttamalla yritä uudelleen.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Olet offline-tilassa';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Tarkista internetyhteytesi ja yritä uudelleen.';
+
+  @override
+  String get aiGeneratingResponse => 'Luodaan vastausta…';
 }
 
 /// The translations for Finnish, as used in Finland (`fi_FI`).
@@ -2968,6 +3371,11 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get noItemsToBuy => 'Ei ostettavia kohteita';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Puuttuu $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Ruokakomero-ostokset';
 
   @override
@@ -3034,6 +3442,12 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get settingsAppBar => 'Asetukset';
 
   @override
+  String get preferencesSection => 'Asetukset';
+
+  @override
+  String get aiSection => 'AI Assistant';
+
+  @override
   String get language => 'Kieli';
 
   @override
@@ -3062,6 +3476,12 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get appearance => 'Ulkoasu';
+
+  @override
+  String get themeMode => 'Teematila';
+
+  @override
+  String get chooseThemeMode => 'Valitse teematila';
 
   @override
   String get light => 'Vaalea';
@@ -3311,6 +3731,13 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get trackStockInactive => 'Ei luo ostoehdotusta';
 
   @override
+  String get keepAdding => 'Jatka lisäämistä';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Pidä taulukko auki lisätäksesi useita kohteita';
+
+  @override
   String get createListDialog => 'Luo lista';
 
   @override
@@ -3416,6 +3843,36 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   }
 
   @override
+  String get goodResponse => 'Hyvä vastaus';
+
+  @override
+  String get badResponse => 'Huono vastaus';
+
+  @override
+  String get scrollToBottom => 'Vieritä alas';
+
+  @override
+  String get somethingWentWrong => 'Jotain meni pieleen';
+
+  @override
+  String get editMessage => 'Muokkaa viestiä';
+
+  @override
+  String get searchConversations => 'Hae keskusteluja';
+
+  @override
+  String get dateGroupToday => 'Tänään';
+
+  @override
+  String get dateGroupYesterday => 'Eilen';
+
+  @override
+  String get dateGroupPrevious7Days => 'Edelliset 7 päivää';
+
+  @override
+  String get dateGroupOlder => 'Vanhempi';
+
+  @override
   String get aiAssistantTitle => 'AI Assistant';
 
   @override
@@ -3456,6 +3913,9 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   @override
   String get aiUsageExhausted =>
       'Tekoälyn kuukausiraja saavutettu. Päivitä Pro-versioon rajattomasti →';
+
+  @override
+  String get undo => 'Kumoa';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -3664,6 +4124,19 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get recipeAddToList => 'Lisää ostoslistalle';
 
   @override
+  String get recipeAddError => 'Ei voitu lisätä luetteloosi. Yritä uudelleen.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Napauta ainesosaa tarkistaaksesi sen ruoanlaiton aikana';
+
+  @override
+  String get recipeIngredientInPantry => 'Ruokakomerossa';
+
+  @override
+  String get recipeIngredientLowPantry => 'Alhainen ruokakomero';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count ainesosat lisätty $listName';
   }
@@ -3775,12 +4248,12 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get paywallSelectPlan => 'Valitse suunnitelmasi:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'SÄÄSTÄ $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Vain $price/kk';
   }
 
@@ -3815,6 +4288,35 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get paywallRestore => 'Palauttaa';
 
   @override
+  String get paywallTimelineToday => 'Tänään';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Avaa täysi käyttöoikeus välittömästi';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Päivä $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Muistutamme sinua ennen oikeudenkäynnin päättymistä';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Tilauksesi alkaa – peruuta milloin tahansa';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI Shopping Assistant';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Puhu tai liitä koko luettelo – tekoäly lajittelee, luokittelee ja budjetoi sekunneissa';
+
+  @override
+  String get paywallBasedOnAnswers => 'Mukautettu vastauksistasi';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI aina vierelläsi';
 
   @override
@@ -3847,9 +4349,6 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get itemRemoved => 'Kohde poistettu';
-
-  @override
-  String get undo => 'Kumoa';
 
   @override
   String get emptyListTitle => 'Listasi on tyhjä';
@@ -3966,6 +4465,9 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get pantryItemRemoved => 'Kohde poistettu';
+
+  @override
+  String get pantryItemAdded => 'Kohde lisätty';
 
   @override
   String deficitItems(int deficit) {
@@ -4363,6 +4865,33 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get prepTimeMinutes => 'Valmistusaika (minuuttia)';
 
   @override
+  String get recipeYieldServings => 'Tuotto annoksia';
+
+  @override
+  String get recipeManualTotalCost => 'Manuaalinen kokonaishinta';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Jätä tyhjäksi arvioidaksesi ainesosien hintoja.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Arvioidut kokonaiskustannukset';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / annos';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Palvelee $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Osittainen arvio ainesosien ja hinnan perusteella.';
+
+  @override
   String get instructionsHint => 'Kirjoita yksi vaihe riville...';
 
   @override
@@ -4491,6 +5020,10 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Arvio perustuu resepteihin, joissa on osittaiset hintatiedot.';
+
+  @override
   String get mealPlannerGenerateList => 'Luo ostoslista';
 
   @override
@@ -4584,6 +5117,9 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get catalogRareSection => 'harvinaisempaa maassasi';
 
   @override
+  String get catalogRareBadge => 'Harvinainen';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4599,6 +5135,9 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get catalogBrowse => 'Selaa katalogia';
+
+  @override
+  String get catalogCategories => 'Luokat';
 
   @override
   String get offlineBanner => 'Olet offline-tilassa';
@@ -4629,6 +5168,40 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Hallitse ateriatyyppejä';
+
+  @override
+  String get mealPlannerAddType => 'Lisää ateriatyyppi';
+
+  @override
+  String get mealPlannerEditType => 'Muokkaa ateriatyyppiä';
+
+  @override
+  String get mealPlannerTypeName => 'Nimi';
+
+  @override
+  String get mealPlannerTypeColor => 'Väri';
+
+  @override
+  String get mealPlannerTypeIcon => 'Kuvake';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Haluatko varmasti poistaa tämän ateriatyypin? Suunnitellut ateriat tällä tyypillä säilyvät.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Nimi ei voi olla tyhjä';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'Tätä ateriatyyppiä ei voi poistaa.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Mukautettu tyyppi';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Oletustyyppi';
 
   @override
   String get expirationDate => 'Viimeinen voimassaolopäivä';
@@ -4689,6 +5262,9 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
 
   @override
   String get errorLoadingLists => 'Virhe ladattaessa luetteloita';
+
+  @override
+  String get errorLoadingItems => 'Virhe ladattaessa kohteita';
 
   @override
   String get noListsFound => 'Listoja ei löytynyt';
@@ -5458,4 +6034,213 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   @override
   String get obLoginError =>
       'Kirjautuminen epäonnistui. Yritä uudelleen tai ohita toistaiseksi.';
+
+  @override
+  String get searchMessages => 'Hae viestejä...';
+
+  @override
+  String get deletedList => 'Poistettu luettelo';
+
+  @override
+  String get openConversation => 'Avaa keskustelu';
+
+  @override
+  String get userRole => 'sinä';
+
+  @override
+  String get assistantRole => 'Assistant';
+
+  @override
+  String get agentActionsRunning => 'Suoritetaan toimintoja...';
+
+  @override
+  String get agentActionsFailed => 'Toimintojen suorittaminen epäonnistui';
+
+  @override
+  String get agentActionsPremium => 'Toiminnot vaativat Premiumin';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Kumoa muutokset';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Kohde lisätty luetteloon.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Edellinen tila: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Tilaa Premium avataksesi automaattisten toimintojen lukituksen.';
+
+  @override
+  String get viewPlans => 'Katso suunnitelmat';
+
+  @override
+  String get artifactSynced => 'Synkronoitu';
+
+  @override
+  String get artifactBudgetLabel => 'Budjetti:';
+
+  @override
+  String get totalEstimatedLabel => 'Arvioitu kokonaismäärä';
+
+  @override
+  String get quickActionPantry => 'Näytä ruokakomero';
+
+  @override
+  String get quickActionAi => 'Keskustele Kipin kanssa';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Tekoälypalvelu palautti virheen ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Pyyntö kesti liian kauan. Yritä uudelleen.';
+
+  @override
+  String get aiConnectionError =>
+      'Ei voitu muodostaa yhteyttä AI-palveluun. Tarkista yhteys.';
+
+  @override
+  String get aiEmptyResponseError =>
+      'Tekoälypalvelu palautti tyhjän vastauksen.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Tekoälypalvelu palautti virheellisen vastauksen.';
+
+  @override
+  String get categoryFruits => 'Hedelmät';
+
+  @override
+  String get categoryCleaning => 'Puhdistus';
+
+  @override
+  String get categoryBeverages => 'Juomat';
+
+  @override
+  String get categoryBakery => 'Leipomo';
+
+  @override
+  String get categoryMeat => 'Liha';
+
+  @override
+  String get categoryDairy => 'Meijeri';
+
+  @override
+  String get categoryVegetables => 'Vihannekset';
+
+  @override
+  String get categoryGrains => 'Viljat ja viljat';
+
+  @override
+  String get categoryHygiene => 'Henkilökohtainen hoito';
+
+  @override
+  String get categoryFrozen => 'Pakastetut elintarvikkeet';
+
+  @override
+  String get categoryCanned => 'Säilykkeet';
+
+  @override
+  String get categorySeasonings => 'Mausteet';
+
+  @override
+  String get categorySweets => 'Makeiset ja jälkiruoat';
+
+  @override
+  String get categoryAlcohol => 'Alkoholijuomat';
+
+  @override
+  String get categoryFish => 'Kalastaa';
+
+  @override
+  String get categoryColdCuts => 'Leikkeleet';
+
+  @override
+  String get categoryUtilities => 'Kotitaloustarvikkeet';
+
+  @override
+  String get categoryPet => 'Lemmikkieläintarvikkeet';
+
+  @override
+  String get categoryBaby => 'Vauva';
+
+  @override
+  String get categoryOthers => 'Muut';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hei $name, olen Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hei, olen Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Teen listoja, ehdotan reseptejä ja löydän tallentamisen. Mistä aloitamme?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Suunnittele grilli';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, järjestän grillauksen – auta minua tekemään ostoslista';
+
+  @override
+  String get aiRateLimitError =>
+      'Liian monta viestiä lyhyessä ajassa. Odota muutama sekunti ja yritä uudelleen.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Tätä keskustelua ei voitu ladata';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Jotain meni vikaan meidän päässämme. Yritä uudelleen napauttamalla yritä uudelleen.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Olet offline-tilassa';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Tarkista internetyhteytesi ja yritä uudelleen.';
+
+  @override
+  String get aiGeneratingResponse => 'Luodaan vastausta…';
 }

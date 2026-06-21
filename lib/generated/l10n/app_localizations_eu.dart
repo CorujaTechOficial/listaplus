@@ -245,6 +245,11 @@ class AppLocalizationsEu extends AppLocalizations {
   String get noItemsToBuy => 'Ez dago erosi beharreko elementurik';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return '$count$unit falta da';
+  }
+
+  @override
   String get newPantryList => 'Jakitegiko Erosketa';
 
   @override
@@ -311,6 +316,12 @@ class AppLocalizationsEu extends AppLocalizations {
   String get settingsAppBar => 'Ezarpenak';
 
   @override
+  String get preferencesSection => 'Hobespenak';
+
+  @override
+  String get aiSection => 'AI Laguntzailea';
+
+  @override
   String get language => 'Hizkuntza';
 
   @override
@@ -339,6 +350,12 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get appearance => 'Itxura';
+
+  @override
+  String get themeMode => 'Gaiaren modua';
+
+  @override
+  String get chooseThemeMode => 'Hautatu gaiaren modua';
 
   @override
   String get light => 'Argia';
@@ -589,6 +606,13 @@ class AppLocalizationsEu extends AppLocalizations {
   String get trackStockInactive => 'Ez du erosketa iradokizunik sortzen';
 
   @override
+  String get keepAdding => 'Jarraitu gehitzen';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Mantendu orria irekita hainbat elementu gehitzeko';
+
+  @override
   String get createListDialog => 'Sortu Zerrenda';
 
   @override
@@ -693,6 +717,36 @@ class AppLocalizationsEu extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Erantzun ona';
+
+  @override
+  String get badResponse => 'Erantzun txarra';
+
+  @override
+  String get scrollToBottom => 'Joan behealdera';
+
+  @override
+  String get somethingWentWrong => 'Zerbait gaizki joan da';
+
+  @override
+  String get editMessage => 'Editatu mezua';
+
+  @override
+  String get searchConversations => 'Bilatu elkarrizketak';
+
+  @override
+  String get dateGroupToday => 'Gaur';
+
+  @override
+  String get dateGroupYesterday => 'Atzo';
+
+  @override
+  String get dateGroupPrevious7Days => 'Aurreko 7 egunak';
+
+  @override
+  String get dateGroupOlder => 'Zaharragoa';
+
+  @override
   String get aiAssistantTitle => 'AI Laguntzailea';
 
   @override
@@ -733,6 +787,33 @@ class AppLocalizationsEu extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Hileko AI mugara iritsi da. Berritu Pro-ra mugarik gabe →';
+
+  @override
+  String get undo => 'Desegin';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -942,6 +1023,20 @@ class AppLocalizationsEu extends AppLocalizations {
   String get recipeAddToList => 'Gehitu erosketa zerrendara';
 
   @override
+  String get recipeAddError =>
+      'Ezin izan da zure zerrendan gehitu. Mesedez, saiatu berriro.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Sakatu osagai bat prestatzen ari zaren bitartean egiaztatzeko';
+
+  @override
+  String get recipeIngredientInPantry => 'Jakitegian';
+
+  @override
+  String get recipeIngredientLowPantry => 'Despentsa gutxi';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count osagaiak gehitu dira $listName';
   }
@@ -1053,12 +1148,12 @@ class AppLocalizationsEu extends AppLocalizations {
   String get paywallSelectPlan => 'Aukeratu zure plana:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'GORDE % $percent';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return '$price/hilabete baino ez';
   }
 
@@ -1090,6 +1185,35 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get paywallRestore => 'Berreskuratu';
+
+  @override
+  String get paywallTimelineToday => 'Gaur';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Desblokeatu sarbide osoa berehala';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return '$day eguna';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Gogorarazten dizugu epaiketa amaitu baino lehen';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Zure harpidetza hasten da — bertan behera utzi edonoiz';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI Erosketa Laguntzailea';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Esan edo itsatsi zerrenda oso bat — AI-ak segundotan ordenatzen, sailkatu eta aurrekontuetan jartzen du';
+
+  @override
+  String get paywallBasedOnAnswers => 'Zure erantzunetatik pertsonalizatua';
 
   @override
   String get paywallHeroHeadline => 'Kipi AI beti zure ondoan';
@@ -1124,9 +1248,6 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Elementua kenduta';
-
-  @override
-  String get undo => 'Desegin';
 
   @override
   String get emptyListTitle => 'Zure zerrenda hutsik dago';
@@ -1243,6 +1364,9 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Elementua kenduta';
+
+  @override
+  String get pantryItemAdded => 'Elementua gehitu da';
 
   @override
   String deficitItems(int deficit) {
@@ -1648,6 +1772,33 @@ class AppLocalizationsEu extends AppLocalizations {
   String get prepTimeMinutes => 'Prestatze denbora (minutuak)';
 
   @override
+  String get recipeYieldServings => 'Eman anoak';
+
+  @override
+  String get recipeManualTotalCost => 'Eskuzko kostu osoa';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Utzi hutsik osagaien prezioen arabera kalkulatzeko.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Zenbatetsitako kostu osoa';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / zerbitzatu';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return '$count zerbitzatzen du';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Prezioa duten osagaietan oinarritutako estimazio partziala.';
+
+  @override
   String get instructionsHint => 'Idatzi urrats bat lerroko...';
 
   @override
@@ -1776,6 +1927,10 @@ class AppLocalizationsEu extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Prezio partzialak dituzten errezetetan oinarritutako estimazioa.';
+
+  @override
   String get mealPlannerGenerateList => 'Sortu erosketa zerrenda';
 
   @override
@@ -1870,6 +2025,9 @@ class AppLocalizationsEu extends AppLocalizations {
   String get catalogRareSection => 'ez da hain ohikoa zure herrialdean';
 
   @override
+  String get catalogRareBadge => 'Arraroa';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1887,7 +2045,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get catalogBrowse => 'Arakatu Katalogoa';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kategoriak';
 
   @override
   String get offlineBanner => 'Lineaz kanpo zaude';
@@ -1918,6 +2076,40 @@ class AppLocalizationsEu extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Kudeatu otordu motak';
+
+  @override
+  String get mealPlannerAddType => 'Gehitu otordu mota';
+
+  @override
+  String get mealPlannerEditType => 'Editatu otordu mota';
+
+  @override
+  String get mealPlannerTypeName => 'Izena';
+
+  @override
+  String get mealPlannerTypeColor => 'Kolorea';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikonoa';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Ziur otordu mota hau ezabatu nahi duzula? Mota honekin aurreikusitako otorduak mantenduko dira.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Izena ezin da hutsik egon';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'Ezin da ezabatu otordu mota hau.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Mota pertsonalizatua';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Mota lehenetsia';
 
   @override
   String get expirationDate => 'Iraungitze data';
@@ -1978,6 +2170,9 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Errore bat gertatu da zerrendak kargatzean';
+
+  @override
+  String get errorLoadingItems => 'Errore bat gertatu da elementuak kargatzean';
 
   @override
   String get noListsFound => 'Ez da zerrendarik aurkitu';
@@ -2753,4 +2948,214 @@ class AppLocalizationsEu extends AppLocalizations {
   @override
   String get obLoginError =>
       'Ezin izan da saioa hasi. Saiatu berriro edo saltatu oraingoz.';
+
+  @override
+  String get searchMessages => 'Bilatu mezuak...';
+
+  @override
+  String get deletedList => 'Ezabatutako zerrenda';
+
+  @override
+  String get openConversation => 'Elkarrizketa irekia';
+
+  @override
+  String get userRole => 'Zuk';
+
+  @override
+  String get assistantRole => 'Laguntzailea';
+
+  @override
+  String get agentActionsRunning => 'Ekintzak martxan...';
+
+  @override
+  String get agentActionsFailed => 'Ezin izan dira ekintzak exekutatu';
+
+  @override
+  String get agentActionsPremium => 'Ekintzek Premium behar dute';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Desegin aldaketak';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Elementua zerrendara gehitu da.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Aurreko egoera: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Harpidetu Premium-era ekintza automatikoak desblokeatzeko.';
+
+  @override
+  String get viewPlans => 'Ikusi planoak';
+
+  @override
+  String get artifactSynced => 'Sinkronizatuta';
+
+  @override
+  String get artifactBudgetLabel => 'Aurrekontua:';
+
+  @override
+  String get totalEstimatedLabel => 'Guztira zenbatetsia';
+
+  @override
+  String get quickActionPantry => 'Ikusi despentsa';
+
+  @override
+  String get quickActionAi => 'Txateatu Kipi-rekin';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI zerbitzuak errore bat itzuli du ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Eskaerak luzeegia hartu zuen. Mesedez, saiatu berriro.';
+
+  @override
+  String get aiConnectionError =>
+      'Ezin izan da AI zerbitzura konektatu. Egiaztatu zure konexioa.';
+
+  @override
+  String get aiEmptyResponseError =>
+      'AI zerbitzuak erantzun huts bat itzuli du.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'AI zerbitzuak erantzun baliogabe bat itzuli du.';
+
+  @override
+  String get categoryFruits => 'Frutak';
+
+  @override
+  String get categoryCleaning => 'Garbiketa';
+
+  @override
+  String get categoryBeverages => 'Edariak';
+
+  @override
+  String get categoryBakery => 'Okindegia';
+
+  @override
+  String get categoryMeat => 'Haragia';
+
+  @override
+  String get categoryDairy => 'Esnekiak';
+
+  @override
+  String get categoryVegetables => 'Barazkiak';
+
+  @override
+  String get categoryGrains => 'Zerealak eta zerealak';
+
+  @override
+  String get categoryHygiene => 'Zainketa pertsonala';
+
+  @override
+  String get categoryFrozen => 'Elikagai izoztuak';
+
+  @override
+  String get categoryCanned => 'Kontserbak';
+
+  @override
+  String get categorySeasonings => 'Ongailuak';
+
+  @override
+  String get categorySweets => 'Gozokiak eta postreak';
+
+  @override
+  String get categoryAlcohol => 'Edari alkoholdunak';
+
+  @override
+  String get categoryFish => 'Arraina';
+
+  @override
+  String get categoryColdCuts => 'Hotzak';
+
+  @override
+  String get categoryUtilities => 'Etxeko hornigaiak';
+
+  @override
+  String get categoryPet => 'Animalien hornigaiak';
+
+  @override
+  String get categoryBaby => 'Haurra';
+
+  @override
+  String get categoryOthers => 'Bestela';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Kaixo $name, Kipi naiz 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Kaixo, Kipi naiz 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Zerrendak eraikitzen ditut, errezetak iradokitzen ditut eta non gorde nahi dut aurkitzen. Nondik hasten gara?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Planifikatu barbakoa';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, barbakoa antolatzen ari naiz — lagundu erosketa zerrenda osatzen';
+
+  @override
+  String get aiRateLimitError =>
+      'Mezu gehiegi denbora gutxian. Itxaron segundo batzuk eta saiatu berriro.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Ezin izan da kargatu elkarrizketa';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Zerbait gaizki joan da gure aldetik. Sakatu berriro saiatu berriro saiatzeko.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Lineaz kanpo zaude';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Egiaztatu Interneteko konexioa eta saiatu berriro.';
+
+  @override
+  String get aiGeneratingResponse => 'Erantzuna sortzen…';
 }

@@ -245,6 +245,11 @@ class AppLocalizationsPl extends AppLocalizations {
   String get noItemsToBuy => 'Brak przedmiotów do kupienia';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Brakuje $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Zakupy ze spiżarni';
 
   @override
@@ -311,6 +316,12 @@ class AppLocalizationsPl extends AppLocalizations {
   String get settingsAppBar => 'Ustawienia';
 
   @override
+  String get preferencesSection => 'Preferencje';
+
+  @override
+  String get aiSection => 'Asystent AI';
+
+  @override
   String get language => 'Język';
 
   @override
@@ -339,6 +350,12 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get appearance => 'Wygląd';
+
+  @override
+  String get themeMode => 'Tryb tematyczny';
+
+  @override
+  String get chooseThemeMode => 'Wybierz tryb tematyczny';
 
   @override
   String get light => 'Jasny';
@@ -589,6 +606,13 @@ class AppLocalizationsPl extends AppLocalizations {
   String get trackStockInactive => 'Nie generuje sugestii zakupu';
 
   @override
+  String get keepAdding => 'Dodawaj dalej';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Aby dodać wiele elementów, pozostaw arkusz otwarty';
+
+  @override
   String get createListDialog => 'Utwórz listę';
 
   @override
@@ -693,6 +717,36 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Dobra odpowiedź';
+
+  @override
+  String get badResponse => 'Zła odpowiedź';
+
+  @override
+  String get scrollToBottom => 'Przewiń w dół';
+
+  @override
+  String get somethingWentWrong => 'Coś poszło nie tak';
+
+  @override
+  String get editMessage => 'Edytuj wiadomość';
+
+  @override
+  String get searchConversations => 'Wyszukaj rozmowy';
+
+  @override
+  String get dateGroupToday => 'Dzisiaj';
+
+  @override
+  String get dateGroupYesterday => 'Wczoraj';
+
+  @override
+  String get dateGroupPrevious7Days => 'Poprzednie 7 dni';
+
+  @override
+  String get dateGroupOlder => 'Starszy';
+
+  @override
   String get aiAssistantTitle => 'Asystent AI';
 
   @override
@@ -733,6 +787,33 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Osiągnięto miesięczny limit AI. Przejdź na wersję Pro bez ograniczeń →';
+
+  @override
+  String get undo => 'Cofnij';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'Lista Kipi';
@@ -944,6 +1025,20 @@ class AppLocalizationsPl extends AppLocalizations {
   String get recipeAddToList => 'Dodaj do listy zakupów';
 
   @override
+  String get recipeAddError =>
+      'Nie udało się dodać do listy. Spróbuj ponownie.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Stuknij składnik, aby sprawdzić go podczas gotowania';
+
+  @override
+  String get recipeIngredientInPantry => 'W spiżarni';
+
+  @override
+  String get recipeIngredientLowPantry => 'Nisko w spiżarni';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count składniki dodane do $listName';
   }
@@ -1056,12 +1151,12 @@ class AppLocalizationsPl extends AppLocalizations {
   String get paywallSelectPlan => 'Wybierz swój plan:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'ZAOSZCZĘDŹ $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Tylko $price/miesiąc';
   }
 
@@ -1097,6 +1192,36 @@ class AppLocalizationsPl extends AppLocalizations {
   String get paywallRestore => 'Przywrócić';
 
   @override
+  String get paywallTimelineToday => 'Dzisiaj';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Natychmiast odblokuj pełny dostęp';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Dzień $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Przypominamy przed zakończeniem okresu próbnego';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Twoja subskrypcja się rozpoczyna — możesz ją anulować w dowolnym momencie';
+
+  @override
+  String get paywallHeroFeatureTitle => 'Asystent zakupów AI';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Wypowiedz lub wklej całą listę — sztuczna inteligencja sortuje ją, kategoryzuje i budżetuje w ciągu kilku sekund';
+
+  @override
+  String get paywallBasedOnAnswers =>
+      'Spersonalizowane na podstawie Twoich odpowiedzi';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI zawsze po Twojej stronie';
 
   @override
@@ -1129,9 +1254,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Przedmiot usunięty';
-
-  @override
-  String get undo => 'Cofnij';
 
   @override
   String get emptyListTitle => 'Twoja lista jest pusta';
@@ -1249,6 +1371,9 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Przedmiot usunięty';
+
+  @override
+  String get pantryItemAdded => 'Dodano element';
 
   @override
   String deficitItems(int deficit) {
@@ -1655,6 +1780,33 @@ class AppLocalizationsPl extends AppLocalizations {
   String get prepTimeMinutes => 'Czas przygotowania (minuty)';
 
   @override
+  String get recipeYieldServings => 'Wydaj porcje';
+
+  @override
+  String get recipeManualTotalCost => 'Ręczny koszt całkowity';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Pozostaw puste, aby oszacować na podstawie cen składników.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Szacunkowy koszt całkowity';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / porcja';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Służy $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Częściowa wycena na podstawie składników wraz z ceną.';
+
+  @override
   String get instructionsHint => 'Wpisz jeden krok w wierszu...';
 
   @override
@@ -1783,6 +1935,10 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Wycena na podstawie przepisów z częściowymi danymi cenowymi.';
+
+  @override
   String get mealPlannerGenerateList => 'Wygeneruj listę zakupów';
 
   @override
@@ -1876,6 +2032,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get catalogRareSection => 'mniej powszechne w Twoim kraju';
 
   @override
+  String get catalogRareBadge => 'Rzadki';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1893,7 +2052,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get catalogBrowse => 'Przeglądaj katalog';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kategorie';
 
   @override
   String get offlineBanner => 'Jesteś offline';
@@ -1924,6 +2083,41 @@ class AppLocalizationsPl extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Zarządzaj rodzajami posiłków';
+
+  @override
+  String get mealPlannerAddType => 'Dodaj rodzaj posiłku';
+
+  @override
+  String get mealPlannerEditType => 'Edytuj rodzaj posiłku';
+
+  @override
+  String get mealPlannerTypeName => 'Nazwa';
+
+  @override
+  String get mealPlannerTypeColor => 'Kolor';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikona';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Czy na pewno chcesz usunąć ten rodzaj posiłku? Zaplanowane posiłki tego typu pozostaną.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Nazwa nie może być pusta';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Nie można usunąć tego typu posiłku.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Typ niestandardowy';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Typ domyślny';
 
   @override
   String get expirationDate => 'Data ważności';
@@ -1984,6 +2178,9 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Błąd podczas ładowania list';
+
+  @override
+  String get errorLoadingItems => 'Błąd ładowania elementów';
 
   @override
   String get noListsFound => 'Nie znaleziono żadnych list';
@@ -2664,7 +2861,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get obQuizMethodPaper => 'Papier i długopis';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'Aplikacja Notatki';
 
   @override
   String get obQuizMethodMemory => 'Trzymam to w głowie';
@@ -2764,6 +2961,214 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get obLoginError =>
       'Logowanie nie powiodło się. Spróbuj ponownie lub na razie pomiń.';
+
+  @override
+  String get searchMessages => 'Wyszukaj wiadomości...';
+
+  @override
+  String get deletedList => 'Usunięta lista';
+
+  @override
+  String get openConversation => 'Otwarta rozmowa';
+
+  @override
+  String get userRole => 'Ty';
+
+  @override
+  String get assistantRole => 'Asystent';
+
+  @override
+  String get agentActionsRunning => 'Uruchamianie akcji...';
+
+  @override
+  String get agentActionsFailed => 'Nie udało się uruchomić akcji';
+
+  @override
+  String get agentActionsPremium => 'Akcje wymagają konta Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Cofnij zmiany';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Pozycja dodana do listy.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Poprzedni stan: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Subskrybuj Premium, aby odblokować automatyczne akcje.';
+
+  @override
+  String get viewPlans => 'Zobacz plany';
+
+  @override
+  String get artifactSynced => 'Zsynchronizowane';
+
+  @override
+  String get artifactBudgetLabel => 'Budżet:';
+
+  @override
+  String get totalEstimatedLabel => 'Szacunkowa suma';
+
+  @override
+  String get quickActionPantry => 'Zobacz spiżarnię';
+
+  @override
+  String get quickActionAi => 'Porozmawiaj z Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Usługa AI zwróciła błąd ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Żądanie trwało zbyt długo. Spróbuj ponownie.';
+
+  @override
+  String get aiConnectionError =>
+      'Nie można połączyć się z usługą AI. Sprawdź swoje połączenie.';
+
+  @override
+  String get aiEmptyResponseError => 'Usługa AI zwróciła pustą odpowiedź.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Usługa AI zwróciła nieprawidłową odpowiedź.';
+
+  @override
+  String get categoryFruits => 'Owoce';
+
+  @override
+  String get categoryCleaning => 'Czyszczenie';
+
+  @override
+  String get categoryBeverages => 'Napoje';
+
+  @override
+  String get categoryBakery => 'Piekarnia';
+
+  @override
+  String get categoryMeat => 'Mięso';
+
+  @override
+  String get categoryDairy => 'Mleczarnia';
+
+  @override
+  String get categoryVegetables => 'Warzywa';
+
+  @override
+  String get categoryGrains => 'Ziarna i zboża';
+
+  @override
+  String get categoryHygiene => 'Opieka osobista';
+
+  @override
+  String get categoryFrozen => 'Mrożone produkty spożywcze';
+
+  @override
+  String get categoryCanned => 'Konserwy';
+
+  @override
+  String get categorySeasonings => 'Przyprawy';
+
+  @override
+  String get categorySweets => 'Słodycze i desery';
+
+  @override
+  String get categoryAlcohol => 'Napoje alkoholowe';
+
+  @override
+  String get categoryFish => 'Ryba';
+
+  @override
+  String get categoryColdCuts => 'Wędliny';
+
+  @override
+  String get categoryUtilities => 'Artykuły gospodarstwa domowego';
+
+  @override
+  String get categoryPet => 'Artykuły dla zwierząt';
+
+  @override
+  String get categoryBaby => 'Dziecko';
+
+  @override
+  String get categoryOthers => 'Inny';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Cześć $name, jestem Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Cześć, jestem Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Tworzę listy, sugeruję przepisy i znajduję miejsca, w których można je zapisać. Gdzie zaczynamy?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Zaplanuj grilla';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, organizuję grilla — pomóż mi ułożyć listę zakupów';
+
+  @override
+  String get aiRateLimitError =>
+      'Za dużo wiadomości w krótkim czasie. Poczekaj kilka sekund i spróbuj ponownie.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Nie udało się wczytać tej rozmowy';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Coś poszło nie tak po naszej stronie. Kliknij spróbuj ponownie, aby spróbować ponownie.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Jesteś offline';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Sprawdź swoje połączenie internetowe i spróbuj ponownie.';
+
+  @override
+  String get aiGeneratingResponse => 'Generuję odpowiedź…';
 }
 
 /// The translations for Polish, as used in Poland (`pl_PL`).
@@ -3007,6 +3412,11 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   String get noItemsToBuy => 'Brak przedmiotów do kupienia';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Brakuje $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Zakupy ze spiżarni';
 
   @override
@@ -3073,6 +3483,12 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   String get settingsAppBar => 'Ustawienia';
 
   @override
+  String get preferencesSection => 'Preferencje';
+
+  @override
+  String get aiSection => 'Asystent AI';
+
+  @override
   String get language => 'Język';
 
   @override
@@ -3101,6 +3517,12 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
 
   @override
   String get appearance => 'Wygląd';
+
+  @override
+  String get themeMode => 'Tryb tematyczny';
+
+  @override
+  String get chooseThemeMode => 'Wybierz tryb tematyczny';
 
   @override
   String get light => 'Jasny';
@@ -3351,6 +3773,13 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   String get trackStockInactive => 'Nie generuje sugestii zakupu';
 
   @override
+  String get keepAdding => 'Dodawaj dalej';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Aby dodać wiele elementów, pozostaw arkusz otwarty';
+
+  @override
   String get createListDialog => 'Utwórz listę';
 
   @override
@@ -3455,6 +3884,36 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   }
 
   @override
+  String get goodResponse => 'Dobra odpowiedź';
+
+  @override
+  String get badResponse => 'Zła odpowiedź';
+
+  @override
+  String get scrollToBottom => 'Przewiń w dół';
+
+  @override
+  String get somethingWentWrong => 'Coś poszło nie tak';
+
+  @override
+  String get editMessage => 'Edytuj wiadomość';
+
+  @override
+  String get searchConversations => 'Wyszukaj rozmowy';
+
+  @override
+  String get dateGroupToday => 'Dzisiaj';
+
+  @override
+  String get dateGroupYesterday => 'Wczoraj';
+
+  @override
+  String get dateGroupPrevious7Days => 'Poprzednie 7 dni';
+
+  @override
+  String get dateGroupOlder => 'Starszy';
+
+  @override
   String get aiAssistantTitle => 'Asystent AI';
 
   @override
@@ -3495,6 +3954,9 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   @override
   String get aiUsageExhausted =>
       'Osiągnięto miesięczny limit AI. Przejdź na wersję Pro bez ograniczeń →';
+
+  @override
+  String get undo => 'Cofnij';
 
   @override
   String get kipiListTitle => 'Lista Kipi';
@@ -3706,6 +4168,20 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   String get recipeAddToList => 'Dodaj do listy zakupów';
 
   @override
+  String get recipeAddError =>
+      'Nie udało się dodać do listy. Spróbuj ponownie.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Stuknij składnik, aby sprawdzić go podczas gotowania';
+
+  @override
+  String get recipeIngredientInPantry => 'W spiżarni';
+
+  @override
+  String get recipeIngredientLowPantry => 'Nisko w spiżarni';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count składniki dodane do $listName';
   }
@@ -3818,12 +4294,12 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   String get paywallSelectPlan => 'Wybierz swój plan:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'ZAOSZCZĘDŹ $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Tylko $price/miesiąc';
   }
 
@@ -3859,6 +4335,36 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   String get paywallRestore => 'Przywrócić';
 
   @override
+  String get paywallTimelineToday => 'Dzisiaj';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Natychmiast odblokuj pełny dostęp';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Dzień $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Przypominamy przed zakończeniem okresu próbnego';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Twoja subskrypcja się rozpoczyna — możesz ją anulować w dowolnym momencie';
+
+  @override
+  String get paywallHeroFeatureTitle => 'Asystent zakupów AI';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Wypowiedz lub wklej całą listę — sztuczna inteligencja sortuje ją, kategoryzuje i budżetuje w ciągu kilku sekund';
+
+  @override
+  String get paywallBasedOnAnswers =>
+      'Spersonalizowane na podstawie Twoich odpowiedzi';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI zawsze po Twojej stronie';
 
   @override
@@ -3891,9 +4397,6 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
 
   @override
   String get itemRemoved => 'Przedmiot usunięty';
-
-  @override
-  String get undo => 'Cofnij';
 
   @override
   String get emptyListTitle => 'Twoja lista jest pusta';
@@ -4011,6 +4514,9 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
 
   @override
   String get pantryItemRemoved => 'Przedmiot usunięty';
+
+  @override
+  String get pantryItemAdded => 'Dodano element';
 
   @override
   String deficitItems(int deficit) {
@@ -4417,6 +4923,33 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   String get prepTimeMinutes => 'Czas przygotowania (minuty)';
 
   @override
+  String get recipeYieldServings => 'Wydaj porcje';
+
+  @override
+  String get recipeManualTotalCost => 'Ręczny koszt całkowity';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Pozostaw puste, aby oszacować na podstawie cen składników.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Szacunkowy koszt całkowity';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / porcja';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Służy $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Częściowa wycena na podstawie składników wraz z ceną.';
+
+  @override
   String get instructionsHint => 'Wpisz jeden krok w wierszu...';
 
   @override
@@ -4545,6 +5078,10 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Wycena na podstawie przepisów z częściowymi danymi cenowymi.';
+
+  @override
   String get mealPlannerGenerateList => 'Wygeneruj listę zakupów';
 
   @override
@@ -4638,6 +5175,9 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   String get catalogRareSection => 'mniej powszechne w Twoim kraju';
 
   @override
+  String get catalogRareBadge => 'Rzadki';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4653,6 +5193,9 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
 
   @override
   String get catalogBrowse => 'Przeglądaj katalog';
+
+  @override
+  String get catalogCategories => 'Kategorie';
 
   @override
   String get offlineBanner => 'Jesteś offline';
@@ -4683,6 +5226,41 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Zarządzaj rodzajami posiłków';
+
+  @override
+  String get mealPlannerAddType => 'Dodaj rodzaj posiłku';
+
+  @override
+  String get mealPlannerEditType => 'Edytuj rodzaj posiłku';
+
+  @override
+  String get mealPlannerTypeName => 'Nazwa';
+
+  @override
+  String get mealPlannerTypeColor => 'Kolor';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikona';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Czy na pewno chcesz usunąć ten rodzaj posiłku? Zaplanowane posiłki tego typu pozostaną.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Nazwa nie może być pusta';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Nie można usunąć tego typu posiłku.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Typ niestandardowy';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Typ domyślny';
 
   @override
   String get expirationDate => 'Data ważności';
@@ -4743,6 +5321,9 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
 
   @override
   String get errorLoadingLists => 'Błąd podczas ładowania list';
+
+  @override
+  String get errorLoadingItems => 'Błąd ładowania elementów';
 
   @override
   String get noListsFound => 'Nie znaleziono żadnych list';
@@ -5523,4 +6104,212 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   @override
   String get obLoginError =>
       'Logowanie nie powiodło się. Spróbuj ponownie lub na razie pomiń.';
+
+  @override
+  String get searchMessages => 'Wyszukaj wiadomości...';
+
+  @override
+  String get deletedList => 'Usunięta lista';
+
+  @override
+  String get openConversation => 'Otwarta rozmowa';
+
+  @override
+  String get userRole => 'Ty';
+
+  @override
+  String get assistantRole => 'Asystent';
+
+  @override
+  String get agentActionsRunning => 'Uruchamianie akcji...';
+
+  @override
+  String get agentActionsFailed => 'Nie udało się uruchomić akcji';
+
+  @override
+  String get agentActionsPremium => 'Akcje wymagają konta Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Cofnij zmiany';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Pozycja dodana do listy.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Poprzedni stan: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Subskrybuj Premium, aby odblokować automatyczne akcje.';
+
+  @override
+  String get viewPlans => 'Zobacz plany';
+
+  @override
+  String get artifactSynced => 'Zsynchronizowane';
+
+  @override
+  String get artifactBudgetLabel => 'Budżet:';
+
+  @override
+  String get totalEstimatedLabel => 'Szacunkowa suma';
+
+  @override
+  String get quickActionPantry => 'Zobacz spiżarnię';
+
+  @override
+  String get quickActionAi => 'Porozmawiaj z Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Usługa AI zwróciła błąd ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Żądanie trwało zbyt długo. Spróbuj ponownie.';
+
+  @override
+  String get aiConnectionError =>
+      'Nie można połączyć się z usługą AI. Sprawdź swoje połączenie.';
+
+  @override
+  String get aiEmptyResponseError => 'Usługa AI zwróciła pustą odpowiedź.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Usługa AI zwróciła nieprawidłową odpowiedź.';
+
+  @override
+  String get categoryFruits => 'Owoce';
+
+  @override
+  String get categoryCleaning => 'Czyszczenie';
+
+  @override
+  String get categoryBeverages => 'Napoje';
+
+  @override
+  String get categoryBakery => 'Piekarnia';
+
+  @override
+  String get categoryMeat => 'Mięso';
+
+  @override
+  String get categoryDairy => 'Mleczarnia';
+
+  @override
+  String get categoryVegetables => 'Warzywa';
+
+  @override
+  String get categoryGrains => 'Ziarna i zboża';
+
+  @override
+  String get categoryHygiene => 'Opieka osobista';
+
+  @override
+  String get categoryFrozen => 'Mrożone produkty spożywcze';
+
+  @override
+  String get categoryCanned => 'Konserwy';
+
+  @override
+  String get categorySeasonings => 'Przyprawy';
+
+  @override
+  String get categorySweets => 'Słodycze i desery';
+
+  @override
+  String get categoryAlcohol => 'Napoje alkoholowe';
+
+  @override
+  String get categoryFish => 'Ryba';
+
+  @override
+  String get categoryColdCuts => 'Wędliny';
+
+  @override
+  String get categoryUtilities => 'Artykuły gospodarstwa domowego';
+
+  @override
+  String get categoryPet => 'Artykuły dla zwierząt';
+
+  @override
+  String get categoryBaby => 'Dziecko';
+
+  @override
+  String get categoryOthers => 'Inny';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Cześć $name, jestem Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Cześć, jestem Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Tworzę listy, sugeruję przepisy i znajduję miejsca, w których można je zapisać. Gdzie zaczynamy?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Zaplanuj grilla';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, organizuję grilla — pomóż mi ułożyć listę zakupów';
+
+  @override
+  String get aiRateLimitError =>
+      'Za dużo wiadomości w krótkim czasie. Poczekaj kilka sekund i spróbuj ponownie.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Nie udało się wczytać tej rozmowy';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Coś poszło nie tak po naszej stronie. Kliknij spróbuj ponownie, aby spróbować ponownie.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Jesteś offline';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Sprawdź swoje połączenie internetowe i spróbuj ponownie.';
+
+  @override
+  String get aiGeneratingResponse => 'Generuję odpowiedź…';
 }

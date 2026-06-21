@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +161,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -280,6 +301,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -309,6 +333,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -960,6 +991,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1107,6 +1148,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1145,6 +1193,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1218,7 +1289,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1366,42 +1451,56 @@
   "addToPantryPrompt": "Gehitu \"{name}\" zure Jakitegian?",
   "addedFeedback": "Gehituta!",
   "advancedFeatures": "Ezaugarri aurreratuak",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Ezin izan dira ekintzak exekutatu",
+  "agentActionsPremium": "Ekintzek Premium behar dute",
+  "agentActionsRunning": "Ekintzak martxan...",
+  "aiApiError": "AI zerbitzuak errore bat itzuli du ({statusCode}).",
   "aiAssistant": "AI Laguntzailea",
   "aiAssistantDescription": "Eskuratu iradokizun adimentsuak, errezetak eta aholku pertsonalizatuak gure AI laguntzailearekin.",
   "aiAssistantGeneral": "Laguntzaile Nagusia",
   "aiAssistantHistory": "Laguntzailea Historia",
   "aiAssistantTitle": "AI Laguntzailea",
+  "aiConnectionError": "Ezin izan da AI zerbitzura konektatu. Egiaztatu zure konexioa.",
   "aiConversationHistory": "Elkarrizketa historia",
   "aiCreditsRemaining": "{remaining} kreditu geratzen dira",
   "aiDeleteConversationConfirm": "Ezabatu",
   "aiDeleteConversationTitle": "Elkarrizketa ezabatu?",
   "aiDeletedList": "Ezabatutako Zerrenda",
+  "aiEmptyResponseError": "AI zerbitzuak erantzun huts bat itzuli du.",
   "aiEnergy": "AI Energia",
   "aiEnergyLow": "AI energia baxua",
   "aiError": "Barkatu, errorea gertatu da zure eskaera prozesatzean. Egiaztatu konexioa edo saiatu berriro geroago.",
   "aiFirstOpenHint": "Kipi naiz, zure erosketa laguntzailea. Galde iezadazu ezer zure zerrendari buruz!",
+  "aiGeneratingResponse": "Erantzuna sortzen…",
   "aiHello": "Kaixo! Kipi naiz",
   "aiHowCanIHelp": "Nola lagundu dezaket gaur?",
+  "aiInvalidResponseError": "AI zerbitzuak erantzun baliogabe bat itzuli du.",
   "aiLimitAlmostReached": "Ia AI mezurik gabe",
   "aiNewConversation": "Elkarrizketa berria",
   "aiNewSession": "Saio Berria",
   "aiNoConversationFound": "Ez da elkarrizketarik aurkitu",
   "aiNoMessagesFound": "Ez da mezurik aurkitu",
   "aiPremiumUpsell": "Joan Premium",
+  "aiRateLimitError": "Mezu gehiegi denbora gutxian. Itxaron segundo batzuk eta saiatu berriro.",
   "aiRecentConversations": "Azken Elkarrizketak",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} gaur",
   "aiSearchMessages": "Bilatu mezuak...",
+  "aiSection": "AI Laguntzailea",
   "aiStartNewConversation": "Hasi elkarrizketa berria",
   "aiSubscribeUnlimited": "Harpidetu AI mugagabea lortzeko",
   "aiSuggestCreateList": "Sortu nire lehen zerrenda",
   "aiSuggestSaveMore": "Nola aurreztu gehiago?",
   "aiTeaserFallback": "Harpidetu Premium-era erantzun osoa desblokeatzeko eta erosketetarako AI aholku mugagabeak jasotzeko...",
+  "aiTimeoutError": "Eskaerak luzeegia hartu zuen. Mesedez, saiatu berriro.",
   "aiUnlockUnlimited": "Desblokeatu AI mugagabea",
   "aiUnlockWithAd": "Desblokeatu iragarkiarekin",
   "aiUsageExhausted": "Hileko AI mugara iritsi da. Berritu Pro-ra mugarik gabe →",
   "aiUsageWarning": "{remaining} AI ekintzak geratzen dira hilabete honetan: berritu mugarik gabe",
   "aiVoiceCommandTooltip": "AI Ahots Komandoa (Premium)",
   "aiWelcomeContent": "Kaixo! 👋 **Kipi** naiz, zure erosketa eta errezeten laguntzaile pertsonala!\n\nHemen nago zuri laguntzeko:\n🛒 **Antola ezazu** zure erosketak kategorien arabera automatikoki\n💰 ** Jarraitu ** zure aurrekontua eta eman dirua aurrezteko aholkuak\n🍲 **Iradoki** errezeta goxoak dagoeneko duzunarekin\n\nNola lagundu dezaket gaur? Zure lehen zerrenda sortzen has zaitezke!",
+  "aiWelcomeSuggestBarbecue": "Planifikatu barbakoa",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, barbakoa antolatzen ari naiz — lagundu erosketa zerrenda osatzen",
   "aiWelcomeSuggestCreateList": "Sortu nire lehen zerrenda",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, lagundu nire lehen erosketa zerrenda sortzen",
   "aiWelcomeSuggestSave": "Nola aurreztu dirua?",
@@ -1412,14 +1511,17 @@
   "appTitle": "Erosketa Zerrenda",
   "appearance": "Itxura",
   "archiveList": "Artxibatu zerrenda",
+  "artifactBudgetLabel": "Aurrekontua:",
   "artifactReplaceBody": "Hautatu produktuaren alternatiba kostua optimizatzeko.",
   "artifactReplaceTitle": "Ordeztu {name}",
   "artifactSuggestedItems": "Iradokitako elementuak",
   "artifactSwapButton": "Trukatu",
   "artifactSwappedLabel": "Trukatu",
+  "artifactSynced": "Sinkronizatuta",
   "assistantHistory": "Laguntzailea historia",
   "assistantHistorySubtitle": "Ikusi zure elkarrizketen historia",
   "assistantName": "Laguntzailearen izena",
+  "assistantRole": "Laguntzailea",
   "backToChat": "Itzuli txateara",
   "backToToday": "Itzuli gaurkora",
   "backupExported": "Segurtasun kopia esportatuta!",
@@ -1427,6 +1529,7 @@
   "backupPremiumDescription": "Segurtasun kopia eta esportazioa premium ezaugarria da",
   "backupSubtitle": "Esportatu edo inportatu zure datuak",
   "backupTitle": "Segurtasun kopia",
+  "badResponse": "Erantzun txarra",
   "badgeBeginner": "Hasiberria",
   "badgeOrganized": "Antolatua",
   "badgeSavingMaster": "Maisua salbatzen",
@@ -1454,10 +1557,12 @@
   "catOthers": "Besteak",
   "catalogAddItems": "Gehitu {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Arakatu Katalogoa",
+  "catalogCategories": "Kategoriak",
   "catalogFilterNational": "Nazionalak",
   "catalogItemAdded": "{name} gehitu da",
   "catalogMyFrequents": "Nire Maizak",
   "catalogProductNotFound": "Produktua ez da aurkitu, idatzi izena",
+  "catalogRareBadge": "Arraroa",
   "catalogRareSection": "ez da hain ohikoa zure herrialdean",
   "catalogRetry": "Saiatu berriro",
   "catalogSearchGlobal": "Bilatu edozein produktu...",
@@ -1466,16 +1571,43 @@
   "catalogSortPopular": "Ezagunenak",
   "catalogTitle": "Katalogoa",
   "category": "Kategoria",
+  "categoryAlcohol": "Edari alkoholdunak",
+  "categoryBaby": "Haurra",
+  "categoryBakery": "Okindegia",
+  "categoryBeverages": "Edariak",
+  "categoryCanned": "Kontserbak",
+  "categoryCleaning": "Garbiketa",
+  "categoryColdCuts": "Hotzak",
   "categoryColorLabel": "Kolorea",
+  "categoryDairy": "Esnekiak",
+  "categoryFish": "Arraina",
+  "categoryFrozen": "Elikagai izoztuak",
+  "categoryFruits": "Frutak",
+  "categoryGrains": "Zerealak eta zerealak",
+  "categoryHygiene": "Zainketa pertsonala",
   "categoryIconLabel": "Ikonoa",
   "categoryLimitReached": "Kategoriaren mugara iritsi da",
+  "categoryMeat": "Haragia",
   "categoryName": "Kategoriaren izena",
   "categoryNameHint": "Sartu kategoriaren izena",
+  "categoryOthers": "Bestela",
+  "categoryPet": "Animalien hornigaiak",
+  "categorySeasonings": "Ongailuak",
+  "categorySweets": "Gozokiak eta postreak",
+  "categoryUtilities": "Etxeko hornigaiak",
+  "categoryVegetables": "Barazkiak",
+  "chatEmptyGreeting": "Kaixo {name}, Kipi naiz 👋",
+  "chatEmptyGreetingNoName": "Kaixo, Kipi naiz 👋",
+  "chatEmptyPitch": "Zerrendak eraikitzen ditut, errezetak iradokitzen ditut eta non gorde nahi dut aurkitzen. Nondik hasten gara?",
   "chatEmptySubtitle": "Hasteko, eskatu elementuen iradokizunak, errezetak edo gordetzeko aholkuak.",
   "chatEmptyTitle": "Zure txata hutsik dago",
   "chatError": "Errorea txata kargatzean: {error}",
   "chatHint": "Idatzi zure mezua...",
   "chatHintBlocked": "Desblokeatu AI txateatzeko",
+  "chatHistoryErrorBody": "Zerbait gaizki joan da gure aldetik. Sakatu berriro saiatu berriro saiatzeko.",
+  "chatHistoryErrorTitle": "Ezin izan da kargatu elkarrizketa",
+  "chatHistoryOfflineBody": "Egiaztatu Interneteko konexioa eta saiatu berriro.",
+  "chatHistoryOfflineTitle": "Lineaz kanpo zaude",
   "chatSubtitle": "Eskatu elementu iradokizunak, errezetak edo aurrezteko aholkuak.",
   "chatSubtitleShort": "Galdetu prezioak, errezetak, antolaketa...",
   "chooseCurrency": "Hautatu Moneta",
@@ -1483,6 +1615,7 @@
   "chooseImageSource": "Hautatu irudiaren jatorria",
   "chooseLanguage": "Hautatu hizkuntza",
   "chooseThemeColor": "Aukeratu gaiaren kolorea",
+  "chooseThemeMode": "Hautatu gaiaren modua",
   "clear": "Garbitu",
   "clearHistory": "Garbitu Historia",
   "clearHistoryConfirm": "Saio honetako mezu guztiak garbitu?",
@@ -1525,6 +1658,10 @@
   "customizeAssistant": "Pertsonalizatu",
   "dark": "Iluna",
   "data": "Datuak",
+  "dateGroupOlder": "Zaharragoa",
+  "dateGroupPrevious7Days": "Aurreko 7 egunak",
+  "dateGroupToday": "Gaur",
+  "dateGroupYesterday": "Atzo",
   "deficitItems": "{deficit,plural, one{{deficit} elementu erosi behar da} other{{deficit} elementu erosi behar dira}}",
   "delete": "Ezabatu",
   "deleteCategory": "Ezabatu",
@@ -1541,6 +1678,7 @@
   "deleteRecipeConfirmMsg": "Ziur zaude \"{recipeName}\" ezabatu nahi duzula? Ekintza hau ezin da desegin.",
   "deleteSession": "Ezabatu txata",
   "deleteSessionConfirm": "Ziur txat hau ezabatu nahi duzula? Mezuak betiko galduko dira.",
+  "deletedList": "Ezabatutako zerrenda",
   "deselectAll": "Deshautatu guztiak",
   "dietaryRestrictions": "Dietaren murrizketak",
   "dietaryRestrictionsHint": "Dieta-murrizketarik?",
@@ -1553,6 +1691,7 @@
   "editCategoryDialog": "Editatu kategoria",
   "editItem": "Editatu Elementua",
   "editItemPrice": "Estimatutako prezioa",
+  "editMessage": "Editatu mezua",
   "editPantryItem": "Editatu {name}",
   "editRecipe": "Editatu",
   "editRecipeTitle": "Editatu errezeta",
@@ -1574,6 +1713,7 @@
   "errorLoadingChat": "Aupa! Arazoren bat izan da txata kargatzean.",
   "errorLoadingChatSubtitle": "Egiaztatu konexioa edo saiatu berriro geroago.",
   "errorLoadingHistory": "Errore bat gertatu da historia kargatzean",
+  "errorLoadingItems": "Errore bat gertatu da elementuak kargatzean",
   "errorLoadingLists": "Errore bat gertatu da zerrendak kargatzean",
   "errorLoadingRecipes": "Errorea errezetak kargatzean",
   "errorLoadingSubscription": "Errore bat gertatu da harpidetza kargatzean",
@@ -1626,6 +1766,7 @@
   "generateShoppingList": "Sortu erosketa zerrenda",
   "gestureHint": "Eduki sakatuta hautatzeko • Irristatu kentzeko",
   "globalAssistant": "Laguntzaile orokorra",
+  "goodResponse": "Erantzun ona",
   "howCanIHelp": "Nola lagundu dezaket?",
   "idealQty": "Kopuru ideala",
   "idealQuantity": "Kantitate ideala",
@@ -1642,14 +1783,18 @@
   "instructionsHint": "Idatzi urrats bat lerroko...",
   "inviteToList": "Gonbidatu zerrendara",
   "itemAddedSnack": "{name} gehitu da",
+  "itemAddedToList": "Elementua zerrendara gehitu da.",
   "itemName": "Elementuaren izena",
   "itemRemoved": "Elementua kenduta",
   "itemsAddedSuccess": "Elementuak behar bezala gehitu dira zerrendara!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} elementu(k) erosi behar dira",
   "itemsPurchased": "Erositako elementuak",
   "itemsPurchasedCount": "{purchased}/{total} erosi dira",
   "itemsPurchasedShort": "{purchased}/{total} erosi du",
   "itemsWillBeAdded": "{count} elementu(k) gehituko dira",
+  "keepAdding": "Jarraitu gehitzen",
+  "keepAddingSubtitle": "Mantendu orria irekita hainbat elementu gehitzeko",
   "kipiListProActive": "KipiList Pro Aktiboa",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Zer erosi behar duzu?",
@@ -1696,16 +1841,22 @@
   "mealDragHint": "Eduki sakatuta arrastatu eta mugitzeko",
   "mealNoRecipeFound": "Ez da errezetarik aurkitu",
   "mealPlannerAddMeal": "Gehitu otordua",
+  "mealPlannerAddType": "Gehitu otordu mota",
+  "mealPlannerCustomTypeLabel": "Mota pertsonalizatua",
   "mealPlannerDateLabel": "Data",
+  "mealPlannerDefaultTypeLabel": "Mota lehenetsia",
   "mealPlannerDeleteMeal": "Kendu otordua",
   "mealPlannerEditMeal": "Editatu otordua",
+  "mealPlannerEditType": "Editatu otordu mota",
   "mealPlannerError": "Errorea otorduen plana kargatzean",
+  "mealPlannerEstimatePartial": "Prezio partzialak dituzten errezetetan oinarritutako estimazioa.",
   "mealPlannerGenerateList": "Sortu erosketa zerrenda",
   "mealPlannerGenerateListConfirm": "Gehitu aste honetako otorduetako osagai guztiak erosketa zerrendara?",
   "mealPlannerGenerateListEmpty": "Ez dago osagairik gehitzeko. Planifikatu otorduak errezetekin lehenik.",
   "mealPlannerGenerateListNoList": "Sortu erosketa zerrenda bat lehenik.",
   "mealPlannerGenerateListSuccess": "¡{count} osagai gehitu dira zerrendara!",
   "mealPlannerLoading": "Otorduen plana kargatzen...",
+  "mealPlannerManageTypes": "Kudeatu otordu motak",
   "mealPlannerMealDeleted": "Otordua kenduta",
   "mealPlannerMealTypeBreakfast": "Gosaria",
   "mealPlannerMealTypeDinner": "Afaria",
@@ -1725,6 +1876,12 @@
   "mealPlannerServings": "{count,plural, one{{count} ano} other{{count} ano}}",
   "mealPlannerServingsLabel": "Anoak",
   "mealPlannerTitle": "Otorduen planifikatzailea",
+  "mealPlannerTypeColor": "Kolorea",
+  "mealPlannerTypeDeleteConfirm": "Ziur otordu mota hau ezabatu nahi duzula? Mota honekin aurreikusitako otorduak mantenduko dira.",
+  "mealPlannerTypeDeleteError": "Ezin da ezabatu otordu mota hau.",
+  "mealPlannerTypeIcon": "Ikonoa",
+  "mealPlannerTypeName": "Izena",
+  "mealPlannerTypeNameEmpty": "Izena ezin da hutsik egon",
   "mealPlannerViewMonthly": "Hileko ikuspegia",
   "mealPlannerViewWeekly": "Asteko ikuspegia",
   "mealPlannerWeekEmpty": "Ez dago ezer planifikatuta aste honetarako",
@@ -1940,6 +2097,7 @@
   "onboardingViewAllPlans": "Ikusi plan guztiak",
   "onboardingWelcomeDesc": "Erosketak antolatzeko eta dirua aurrezteko modurik adimentsuena.",
   "onboardingWelcomeTitle": "Ongi etorri KipiList-era",
+  "openConversation": "Elkarrizketa irekia",
   "openMenu": "Ireki menua",
   "organizeAisles": "Antolatu pasilloka",
   "organizeAislesPrompt": "Antolatu merkatuaren pasilloen arabera.",
@@ -1952,6 +2110,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} jakitegian",
   "pantryCompactView": "Ikuspegi trinkoa",
   "pantryDeficit": "{amount}{unit} falta da",
+  "pantryDeficitCount": "{count}{unit} falta da",
   "pantryDeleteItemsContent": "Hautatutako {count} elementu ezabatu nahi dituzu?",
   "pantryDeleteItemsTitle": "Ezabatu elementuak",
   "pantryDeleteSelected": "Ezabatu hautatutakoa",
@@ -1968,6 +2127,7 @@
   "pantryFilterExpiring": "Iraungitzen",
   "pantryFilterOutStock": "Agortuta dago",
   "pantryFirstOpenHint": "Jarrai ezazu etxean duzunaren jarraipena. Gehitu elementuak edo eskaneatu barra-kodeak.",
+  "pantryItemAdded": "Elementua gehitu da",
   "pantryItemRemoved": "Elementua kenduta",
   "pantryMoreDetails": "Xehetasun gehiago",
   "pantryNoItemsFound": "Ez da elementurik aurkitu \"{query}\"-rentzat",
@@ -1981,6 +2141,7 @@
   "paywallAfterItem2": "Garbiketa",
   "paywallAfterItem3": "Haragiak",
   "paywallAfterItem4": "Okindegia",
+  "paywallBasedOnAnswers": "Zure erantzunetatik pertsonalizatua",
   "paywallBeforeAfterTitle": "AI aurretik eta ondoren:",
   "paywallBeforeItem1": "arroza",
   "paywallBeforeItem2": "xaboia",
@@ -2018,6 +2179,8 @@
   "paywallGoalHeadlinePantry": "{name}, jarraitu zure despentsa ezin hobeto!",
   "paywallGoalHeadlineRecipes": "{name}, ezagutu errezeta berriak!",
   "paywallGoalHeadlineSaveMoney": "{name}, aurreztu bidaia guztietan!",
+  "paywallHeroFeatureDesc": "Esan edo itsatsi zerrenda oso bat — AI-ak segundotan ordenatzen, sailkatu eta aurrekontuetan jartzen du",
+  "paywallHeroFeatureTitle": "AI Erosketa Laguntzailea",
   "paywallHeroHeadline": "Kipi AI beti zure ondoan",
   "paywallHeroSubtitle": "Gehitu elementuak, antolatu zerrendak eta aurreztu denbora zure poltsikoan AI-arekin",
   "paywallHeroSubtitlePersonalized": "Kaixo {name}, antolatu zure erosketak modu egokian.",
@@ -2052,6 +2215,11 @@
   "paywallTestimonial2Text": "Ez dut inoiz ahaztu zerrendako elementu bat berriro. AI txata sekulakoa da!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Gure erabiltzaileek diotena:",
+  "paywallTimelineChargeDesc": "Zure harpidetza hasten da — bertan behera utzi edonoiz",
+  "paywallTimelineDay": "{day} eguna",
+  "paywallTimelineReminderDesc": "Gogorarazten dizugu epaiketa amaitu baino lehen",
+  "paywallTimelineToday": "Gaur",
+  "paywallTimelineTodayDesc": "Desblokeatu sarbide osoa berehala",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Hasi Doako Proba",
   "paywallTrialDays": "{days} EGUN DOAN",
@@ -2074,11 +2242,15 @@
   "prefSharing": "Partekatu zerrendak",
   "prefUnlimitedLists": "Zerrenda mugagabeak",
   "prefUnlimitedPantry": "Jakitegi mugagabea",
+  "preferencesSection": "Hobespenak",
   "preferredMarket": "Lehenetsitako merkatua",
   "preferredMarketHint": "Non egiten dituzu erosketak normalean?",
+  "premiumActionsPrompt": "Harpidetu Premium-era ekintza automatikoak desblokeatzeko.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Hobetu desblokeatzeko",
   "prepTime": "Prestatze denbora",
   "prepTimeMinutes": "Prestatze denbora (minutuak)",
+  "previousItemState": "Aurreko egoera: {quantity} {unit} [{category}]{price}",
   "privacy": "Pribatutasuna",
   "product": "Produktua",
   "productName": "Produktuaren izena",
@@ -2095,21 +2267,34 @@
   "quantityShort": "Kop",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Txateatu Kipi-rekin",
+  "quickActionPantry": "Ikusi despentsa",
   "quickRecipe": "Errezeta azkarra",
   "quickRecipePrompt": "Iradoki errezetak nire zerrendako elementuekin.",
   "quickReplies": "Erantzun azkarrak:",
   "quickSuggestions": "Iradokizun azkarrak",
+  "recipeAddError": "Ezin izan da zure zerrendan gehitu. Mesedez, saiatu berriro.",
   "recipeAddToList": "Gehitu erosketa zerrendara",
   "recipeAddedConfirmation": "{count} osagaiak gehitu dira {listName}",
   "recipeCreated": "Errezeta sortuta!",
   "recipeDeleted": "Errezeta ezabatuta",
+  "recipeEstimatePartial": "Prezioa duten osagaietan oinarritutako estimazio partziala.",
+  "recipeEstimatedCostPerServing": "{cost} / zerbitzatu",
+  "recipeEstimatedTotalCost": "Zenbatetsitako kostu osoa",
   "recipeImage": "Errezetaren irudia",
+  "recipeIngredientInPantry": "Jakitegian",
+  "recipeIngredientLowPantry": "Despentsa gutxi",
   "recipeIngredientSingular": "1 osagai",
   "recipeIngredientsPlural": "{count} osagaiak",
+  "recipeManualTotalCost": "Eskuzko kostu osoa",
+  "recipeManualTotalCostHint": "Utzi hutsik osagaien prezioen arabera kalkulatzeko.",
   "recipeName": "Errezetaren izena",
   "recipeSaved": "Errezeta gordeta!",
+  "recipeServesCount": "{count} zerbitzatzen du",
   "recipeSuggestion": "Errezeta iradokizuna",
   "recipeTags": "Errezetaren etiketak",
+  "recipeTapToCheck": "Sakatu osagai bat prestatzen ari zaren bitartean egiaztatzeko",
+  "recipeYieldServings": "Eman anoak",
   "regenerate": "Birgeneratu",
   "remove": "Kendu",
   "removeBudget": "Kendu",
@@ -2133,9 +2318,12 @@
   "savings": "Aurrezkiak",
   "scanBarcodeTitle": "Eskaneatu barra-kodea",
   "scanProductTitle": "Eskaneatu produktua",
+  "scrollToBottom": "Joan behealdera",
+  "searchConversations": "Bilatu elkarrizketak",
   "searchCurrency": "Bilatu moneta...",
   "searchInConversation": "Bilatu elkarrizketan...",
   "searchLanguage": "Bilatu hizkuntza...",
+  "searchMessages": "Bilatu mezuak...",
   "searchRecipes": "Bilatu errezetak...",
   "selectAll": "Hautatu guztiak",
   "selectCheaperAlternative": "Aukeratu alternatiba merkeagoa",
@@ -2192,6 +2380,7 @@
   "signInGoogle": "Saioa hasi Google-rekin",
   "skip": "Saltatu",
   "smartOrganization": "Antolaketa Adimentsua",
+  "somethingWentWrong": "Zerbait gaizki joan da",
   "sortAZ": "A–Z",
   "sortCategory": "Kategoria",
   "sortDate": "Data",
@@ -2222,6 +2411,7 @@
   "themeColor": "Gaiaren kolorea",
   "themeGreen": "Berdea",
   "themeIndigo": "Indigoa",
+  "themeMode": "Gaiaren modua",
   "themeOrange": "Laranja",
   "themePink": "Arrosa",
   "themePurple": "Morea",
@@ -2229,12 +2419,14 @@
   "themeSelectionTitle": "Aukeratu Gaiaren kolorea",
   "themeTeal": "Teala",
   "totalEstimated": "Guztira estimatua: {amount}",
+  "totalEstimatedLabel": "Guztira zenbatetsia",
   "totalSavings": "Guztizko aurrezkia",
   "totalSpending": "Gastatutako Guztira",
   "trackStock": "Jarraitu stocka",
   "trackStockActive": "Erosketa iradokizunetan agertzen da",
   "trackStockInactive": "Ez du erosketa iradokizunik sortzen",
   "undo": "Desegin",
+  "undoChanges": "Desegin aldaketak",
   "unit": "Unitatea",
   "unitPack": "pakete",
   "unlockAi": "Desblokeatu AI mugagabea",
@@ -2259,6 +2451,7 @@
   "userProfileSaveButton": "Gorde profila",
   "userProfileSaved": "Profila behar bezala gorde da!",
   "userProfileTitle": "Nire profila",
+  "userRole": "Zuk",
   "validForLimitedTime": "Denbora mugaturako baliozkoa",
   "version": "Bertsioa",
   "viewActive": "Ikusi Aktiboak",
@@ -2266,6 +2459,7 @@
   "viewHistory": "Ikusi Historia",
   "viewItems": "Ikusi elementuak",
   "viewList": "Ikusi zerrenda",
+  "viewPlans": "Ikusi planoak",
   "viewPro": "Ikusi Pro",
   "viewRecipe": "Ikusi errezeta",
   "voiceCommandContent": "Hitzez naturalki zure zerrenda kudeatzeko!\n\nAdibideak:\n• 'Gehitu ogia, gazta eta urdaiazpikoa'\n• 'Kendu detergentea'\n• 'Aldatu gaia urdinera'\n\nHau KipiList Premium-en ezaugarri esklusiboa da.",

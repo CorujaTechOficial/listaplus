@@ -246,6 +246,11 @@ class AppLocalizationsUk extends AppLocalizations {
   String get noItemsToBuy => 'Нічого не потрібно купувати';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Відсутній $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Покупки з комори';
 
   @override
@@ -312,6 +317,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get settingsAppBar => 'Налаштування';
 
   @override
+  String get preferencesSection => 'Уподобання';
+
+  @override
+  String get aiSection => 'ШІ помічник';
+
+  @override
   String get language => 'Мова';
 
   @override
@@ -340,6 +351,12 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get appearance => 'Зовнішній вигляд';
+
+  @override
+  String get themeMode => 'Тематичний режим';
+
+  @override
+  String get chooseThemeMode => 'Виберіть режим теми';
 
   @override
   String get light => 'Світла';
@@ -589,6 +606,13 @@ class AppLocalizationsUk extends AppLocalizations {
   String get trackStockInactive => 'Не створює пропозицій щодо покупок';
 
   @override
+  String get keepAdding => 'Продовжуйте додавати';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Тримайте аркуш відкритим, щоб додати кілька елементів';
+
+  @override
   String get createListDialog => 'Створити список';
 
   @override
@@ -693,6 +717,36 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Хороша відповідь';
+
+  @override
+  String get badResponse => 'Погана відповідь';
+
+  @override
+  String get scrollToBottom => 'Прокрутіть вниз';
+
+  @override
+  String get somethingWentWrong => 'Щось пішло не так';
+
+  @override
+  String get editMessage => 'Редагувати повідомлення';
+
+  @override
+  String get searchConversations => 'Пошук розмов';
+
+  @override
+  String get dateGroupToday => 'Сьогодні';
+
+  @override
+  String get dateGroupYesterday => 'вчора';
+
+  @override
+  String get dateGroupPrevious7Days => 'Попередні 7 днів';
+
+  @override
+  String get dateGroupOlder => 'Старший';
+
+  @override
   String get aiAssistantTitle => 'ШІ помічник';
 
   @override
@@ -733,6 +787,33 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Досягнуто місячного ліміту ШІ. Оновіть до Pro для необмеженого →';
+
+  @override
+  String get undo => 'Скасувати';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -942,6 +1023,20 @@ class AppLocalizationsUk extends AppLocalizations {
   String get recipeAddToList => 'Додати до списку покупок';
 
   @override
+  String get recipeAddError =>
+      'Не вдалося додати до вашого списку. Спробуйте ще раз.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Торкніться інгредієнта, щоб позначити його під час приготування';
+
+  @override
+  String get recipeIngredientInPantry => 'У коморі';
+
+  @override
+  String get recipeIngredientLowPantry => 'Низько в коморі';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1059,12 +1154,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get paywallSelectPlan => 'Виберіть свій план:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'ЕКОНОМІЯ $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Лише $price/місяць';
   }
 
@@ -1099,6 +1194,35 @@ class AppLocalizationsUk extends AppLocalizations {
   String get paywallRestore => 'Відновити';
 
   @override
+  String get paywallTimelineToday => 'Сьогодні';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Миттєво розблокуйте повний доступ';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'День $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Нагадуємо вам до завершення випробування';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Ваша підписка починається — будь-коли скасуйте її';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI Shopping Assistant';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Продиктуйте або вставте цілий список — штучний інтелект сортує, класифікує та розподіляє його за лічені секунди';
+
+  @override
+  String get paywallBasedOnAnswers => 'Персоналізовано з ваших відповідей';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI завжди поруч';
 
   @override
@@ -1131,9 +1255,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Елемент видалено';
-
-  @override
-  String get undo => 'Скасувати';
 
   @override
   String get emptyListTitle => 'Ваш список порожній';
@@ -1250,6 +1371,9 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Елемент видалено';
+
+  @override
+  String get pantryItemAdded => 'Товар додано';
 
   @override
   String deficitItems(int deficit) {
@@ -1657,6 +1781,33 @@ class AppLocalizationsUk extends AppLocalizations {
   String get prepTimeMinutes => 'Час приготування (хв)';
 
   @override
+  String get recipeYieldServings => 'Вихід порцій';
+
+  @override
+  String get recipeManualTotalCost => 'Ручна загальна вартість';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Залиште пустим, щоб оцінити вартість інгредієнтів.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Орієнтовна загальна вартість';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / порція';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Обслуговує $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Часткова оцінка на основі інгредієнтів із ціною.';
+
+  @override
   String get instructionsHint => 'Введіть один крок на рядок...';
 
   @override
@@ -1785,6 +1936,10 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Оцінка на основі рецептів із частковими даними про ціни.';
+
+  @override
   String get mealPlannerGenerateList => 'Створити список покупок';
 
   @override
@@ -1878,6 +2033,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get catalogRareSection => 'рідше у вашій країні';
 
   @override
+  String get catalogRareBadge => 'Рідкісний';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1895,7 +2053,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get catalogBrowse => 'Перегляньте каталог';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Категорії';
 
   @override
   String get offlineBanner => 'Ви офлайн';
@@ -1926,6 +2084,40 @@ class AppLocalizationsUk extends AppLocalizations {
     );
     return '$count $_temp0 відсутні';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Керуйте типами їжі';
+
+  @override
+  String get mealPlannerAddType => 'Додайте тип їжі';
+
+  @override
+  String get mealPlannerEditType => 'Змінити тип їжі';
+
+  @override
+  String get mealPlannerTypeName => 'Ім\'я';
+
+  @override
+  String get mealPlannerTypeColor => 'Колір';
+
+  @override
+  String get mealPlannerTypeIcon => 'значок';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Ви впевнені, що хочете видалити цей тип їжі? Планове харчування цього типу залишиться.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Назва не може бути пустою';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'Неможливо видалити цей тип їжі.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Спеціальний тип';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Тип за замовчуванням';
 
   @override
   String get expirationDate => 'Термін придатності';
@@ -1986,6 +2178,9 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Помилка завантаження списків';
+
+  @override
+  String get errorLoadingItems => 'Помилка завантаження елементів';
 
   @override
   String get noListsFound => 'Списків не знайдено';
@@ -2590,171 +2785,385 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get obHookTitle => 'Smarter shopping starts here';
+  String get obHookTitle => 'Розумні покупки починаються тут';
 
   @override
   String get obHookSubtitle =>
-      'AI-powered lists that save you time and money, every single trip.';
+      'Списки на основі штучного інтелекту, які економлять ваш час і гроші під час кожної подорожі.';
 
   @override
-  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+  String get obHookSocial => 'Довіряють тисячі покупців у всьому світі';
 
   @override
-  String get obHookCta => 'Get Started';
+  String get obHookCta => 'Почніть роботу';
 
   @override
-  String get obQuizHouseholdTitle => 'Who do you shop for?';
+  String get obQuizHouseholdTitle => 'Для кого ти робиш покупки?';
 
   @override
-  String get obQuizHouseholdSolo => 'Just me';
+  String get obQuizHouseholdSolo => 'просто я';
 
   @override
-  String get obQuizHouseholdCouple => 'Me and my partner';
+  String get obQuizHouseholdCouple => 'Я і мій партнер';
 
   @override
-  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+  String get obQuizHouseholdFamilySmall => 'Сім\'я з 3-4 осіб';
 
   @override
-  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+  String get obQuizHouseholdFamilyLarge => 'Сім\'я 5+';
 
   @override
-  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+  String get obQuizFrequencyTitle => 'Як часто ви купуєте продукти?';
 
   @override
-  String get obQuizFrequencyDaily => 'Almost every day';
+  String get obQuizFrequencyDaily => 'Майже кожен день';
 
   @override
-  String get obQuizFrequencyWeekly => 'Once a week';
+  String get obQuizFrequencyWeekly => 'Раз на тиждень';
 
   @override
-  String get obQuizFrequencyBiweekly => 'Every two weeks';
+  String get obQuizFrequencyBiweekly => 'Кожні два тижні';
 
   @override
-  String get obQuizFrequencyMonthly => 'Big monthly haul';
+  String get obQuizFrequencyMonthly => 'Великий місячний прибуток';
 
   @override
-  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+  String get obQuizPainTitle => 'Що вас найбільше засмучує в покупках?';
 
   @override
-  String get obQuizPainForget => 'I always forget items';
+  String get obQuizPainForget => 'Я завжди забуваю речі';
 
   @override
-  String get obQuizPainOverspend => 'I spend more than planned';
+  String get obQuizPainOverspend => 'Я витрачаю більше, ніж планував';
 
   @override
-  String get obQuizPainWaste => 'Food goes to waste at home';
+  String get obQuizPainWaste => 'Вдома їжа йде на сміття';
 
   @override
-  String get obQuizPainTime => 'It takes too much time';
+  String get obQuizPainTime => 'Це займає занадто багато часу';
 
   @override
-  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+  String get obQuizSavingsTitle => 'Скільки б ви хотіли щомісяця заощаджувати?';
 
   @override
-  String get obQuizSavingsSmall => 'A little — every bit counts';
+  String get obQuizSavingsSmall => 'Трохи — кожна частинка має значення';
 
   @override
-  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+  String get obQuizSavingsMedium => 'Близько 10% мого рахунку за продукти';
 
   @override
-  String get obQuizSavingsLarge => 'As much as possible';
+  String get obQuizSavingsLarge => 'Якомога більше';
 
   @override
-  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+  String get obQuizMethodTitle => 'Як ви сьогодні складаєте списки покупок?';
 
   @override
-  String get obQuizMethodPaper => 'Pen and paper';
+  String get obQuizMethodPaper => 'Ручка і папір';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'Додаток для нотаток';
 
   @override
-  String get obQuizMethodMemory => 'I keep it in my head';
+  String get obQuizMethodMemory => 'Я тримаю це в голові';
 
   @override
-  String get obQuizMethodNone => 'I don\'t make lists';
+  String get obQuizMethodNone => 'Я не складаю списки';
 
   @override
-  String get obSocialTitle => 'You\'re in good company';
+  String get obSocialTitle => 'Ти в хорошій компанії';
 
   @override
   String get obSocialSubtitle =>
-      'Shoppers like you are already saving with KipiList';
+      'Такі покупці, як ви, вже економлять за допомогою KipiList';
 
   @override
   String get obSocialQuote1 =>
-      'I never forget anything anymore. The AI builds my list in seconds.';
+      'Я більше ніколи нічого не забуваю. ШІ створює мій список за секунди.';
 
   @override
   String get obSocialQuote2 =>
-      'We cut our grocery bill noticeably in the first month.';
+      'У перший місяць ми помітно скоротили рахунок за продукти.';
 
   @override
   String get obSocialQuote3 =>
-      'Sharing the list with my partner ended our shopping chaos.';
+      'Поділившись списком із моїм партнером, наш шопінговий хаос закінчився.';
 
   @override
-  String get obLoadingTitle => 'Building your personalized plan...';
+  String get obLoadingTitle => 'Створення індивідуального плану...';
 
   @override
-  String get obLoadingStepProfile => 'Adjusting for your household';
+  String get obLoadingStepProfile => 'Налаштування під ваше домогосподарство';
 
   @override
-  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+  String get obLoadingStepHabits => 'Налаштуйтеся на свій розпорядок покупок';
 
   @override
-  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+  String get obLoadingStepSavings => 'Оптимізація стратегії заощаджень';
 
   @override
-  String get obLoadingStepLists => 'Preparing your smart lists';
+  String get obLoadingStepLists => 'Підготовка розумних списків';
 
   @override
-  String get obRevealTitle => 'Your plan is ready!';
+  String get obRevealTitle => 'Ваш план готовий!';
 
   @override
-  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+  String get obRevealSubtitle => 'Ось як KipiList буде працювати для вас';
 
   @override
-  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+  String get obRevealSavingsCaption =>
+      'Прогнозована економія за допомогою KipiList';
 
   @override
   String obRevealMonth(int n) {
-    return 'Month $n';
+    return 'Місяць $n';
   }
 
   @override
-  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+  String get obRevealFeatureAi => 'AI створює та впорядковує ваші списки';
 
   @override
-  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+  String get obRevealFeatureBudget =>
+      'Витрати відстежуються відповідно до вашої цілі';
 
   @override
-  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+  String get obRevealFeaturePantry =>
+      'Відстеження комори скорочує харчові відходи';
 
   @override
-  String get obRevealFeatureShare => 'Real-time sharing with your household';
+  String get obRevealFeatureShare =>
+      'Спільний доступ у реальному часі до вашої родини';
 
   @override
-  String get obPaywallTitle => 'Unlock your plan';
+  String get obPaywallTitle => 'Розблокуйте свій план';
 
   @override
-  String get obPaywallRetry => 'Try again';
+  String get obPaywallRetry => 'Спробуйте знову';
 
   @override
-  String get obLoginTitle => 'Save your plan';
+  String get obLoginTitle => 'Збережіть свій план';
 
   @override
-  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+  String get obLoginSubtitle =>
+      'Увійдіть, щоб ваші списки синхронізувалися на всіх пристроях';
 
   @override
-  String get obLoginGoogle => 'Continue with Google';
+  String get obLoginGoogle => 'Продовжуйте з Google';
 
   @override
-  String get obLoginApple => 'Continue with Apple';
+  String get obLoginApple => 'Продовжуйте з Apple';
 
   @override
-  String get obLoginSkip => 'Not now';
+  String get obLoginSkip => 'Не зараз';
 
   @override
-  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
+  String get obLoginError =>
+      'Помилка входу. Спробуйте ще раз або поки що пропустіть.';
+
+  @override
+  String get searchMessages => 'Пошук повідомлень...';
+
+  @override
+  String get deletedList => 'Видалений список';
+
+  @override
+  String get openConversation => 'Відкрита розмова';
+
+  @override
+  String get userRole => 'Ви';
+
+  @override
+  String get assistantRole => 'помічник';
+
+  @override
+  String get agentActionsRunning => 'Запуск дій...';
+
+  @override
+  String get agentActionsFailed => 'Не вдалося виконати дії';
+
+  @override
+  String get agentActionsPremium => 'Дії потребують Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Скасувати зміни';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Преміум)';
+  }
+
+  @override
+  String get itemAddedToList => 'Елемент додано до списку.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Попередній стан: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Підпишіться на Premium, щоб розблокувати автоматичні дії.';
+
+  @override
+  String get viewPlans => 'Переглянути плани';
+
+  @override
+  String get artifactSynced => 'Синхронізовано';
+
+  @override
+  String get artifactBudgetLabel => 'бюджет:';
+
+  @override
+  String get totalEstimatedLabel => 'Розрахункова сума';
+
+  @override
+  String get quickActionPantry => 'Переглянути комору';
+
+  @override
+  String get quickActionAi => 'Побалакати з Кіпі';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Служба AI повернула помилку ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Запит тривав надто довго. Спробуйте ще раз.';
+
+  @override
+  String get aiConnectionError =>
+      'Не вдалося підключитися до служби AI. Перевірте підключення.';
+
+  @override
+  String get aiEmptyResponseError => 'Служба AI повернула порожню відповідь.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Служба AI повернула недійсну відповідь.';
+
+  @override
+  String get categoryFruits => 'Фрукти';
+
+  @override
+  String get categoryCleaning => 'прибирання';
+
+  @override
+  String get categoryBeverages => 'Напої';
+
+  @override
+  String get categoryBakery => 'Пекарня';
+
+  @override
+  String get categoryMeat => 'м\'ясо';
+
+  @override
+  String get categoryDairy => 'Молочна';
+
+  @override
+  String get categoryVegetables => 'Овочі';
+
+  @override
+  String get categoryGrains => 'Зерно і крупи';
+
+  @override
+  String get categoryHygiene => 'Особистий догляд';
+
+  @override
+  String get categoryFrozen => 'Заморожені продукти';
+
+  @override
+  String get categoryCanned => 'Консерви';
+
+  @override
+  String get categorySeasonings => 'Приправи';
+
+  @override
+  String get categorySweets => 'Солодощі та десерти';
+
+  @override
+  String get categoryAlcohol => 'Алкогольні напої';
+
+  @override
+  String get categoryFish => 'риба';
+
+  @override
+  String get categoryColdCuts => 'Нарізки';
+
+  @override
+  String get categoryUtilities => 'Господарські товари';
+
+  @override
+  String get categoryPet => 'Товари для тварин';
+
+  @override
+  String get categoryBaby => 'дитина';
+
+  @override
+  String get categoryOthers => 'інше';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Привіт $name, я Кіпі 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Привіт, я Кіпі 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Я складаю списки, пропоную рецепти та знаходжу, де зберегти. З чого ми починаємо?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Плануйте барбекю';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Кіпі, я влаштовую барбекю — допоможи мені скласти список покупок';
+
+  @override
+  String get aiRateLimitError =>
+      'Забагато повідомлень за короткий час. Зачекайте кілька секунд і повторіть спробу.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Не вдалося завантажити цю розмову';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'З нашого боку щось пішло не так. Торкніться «Повторити», щоб повторити спробу.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Ви офлайн';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Перевірте підключення до Інтернету та повторіть спробу.';
+
+  @override
+  String get aiGeneratingResponse => 'Створення відповіді…';
 }

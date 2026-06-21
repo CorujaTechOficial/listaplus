@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +161,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -280,6 +301,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -309,6 +333,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -967,6 +998,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1114,6 +1155,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1152,6 +1200,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1225,7 +1296,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1373,42 +1458,56 @@
   "addToPantryPrompt": "Idagdag ang \"{name}\" sa iyong Dispatch?",
   "addedFeedback": "Naidagdag!",
   "advancedFeatures": "Mga advanced na feature",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Nabigong magpatakbo ng mga pagkilos",
+  "agentActionsPremium": "Ang mga aksyon ay nangangailangan ng Premium",
+  "agentActionsRunning": "Nagpapatakbo ng mga aksyon...",
+  "aiApiError": "Nagbalik ng error ang serbisyo ng AI ({statusCode}).",
   "aiAssistant": "AI Assistant",
   "aiAssistantDescription": "Kumuha ng matatalinong mungkahi, recipe at personal na tip gamit ang aming AI assistant.",
   "aiAssistantGeneral": "General Assistant",
   "aiAssistantHistory": "Kasaysayan ng Katulong",
   "aiAssistantTitle": "AI Assistant",
+  "aiConnectionError": "Hindi makakonekta sa serbisyo ng AI. Suriin ang iyong koneksyon.",
   "aiConversationHistory": "Kasaysayan ng Pag-uusap",
   "aiCreditsRemaining": "{remaining} natitirang credits",
   "aiDeleteConversationConfirm": "Tanggalin",
   "aiDeleteConversationTitle": "Tanggalin ang Pag-uusap?",
   "aiDeletedList": "Tinanggal na Listahan",
+  "aiEmptyResponseError": "Ang serbisyo ng AI ay nagbalik ng walang laman na tugon.",
   "aiEnergy": "AI Energy",
   "aiEnergyLow": "Mababang enerhiya ng AI",
   "aiError": "Paumanhin, may error sa pagproseso ng iyong kahilingan. Suriin ang iyong koneksyon o subukan muli mamaya.",
   "aiFirstOpenHint": "Ako si Kipi, ang iyong shopping assistant. Magtanong sa akin ng kahit ano tungkol sa iyong listahan!",
+  "aiGeneratingResponse": "Bumubuo ng tugon...",
   "aiHello": "Hello! Ako si Kipi",
   "aiHowCanIHelp": "Paano kita matutulungan ngayon?",
+  "aiInvalidResponseError": "Ang serbisyo ng AI ay nagbalik ng isang di-wastong tugon.",
   "aiLimitAlmostReached": "Halos wala na sa mga mensahe ng AI",
   "aiNewConversation": "Bagong Pag-uusap",
   "aiNewSession": "Bagong Sesyon",
   "aiNoConversationFound": "Walang nahanap na pag-uusap",
   "aiNoMessagesFound": "Walang nakitang mga mensahe",
   "aiPremiumUpsell": "Pumunta sa Premium",
+  "aiRateLimitError": "Masyadong maraming mensahe sa maikling panahon. Maghintay ng ilang segundo at subukang muli.",
   "aiRecentConversations": "Mga Kamakailang Pag-uusap",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} ngayon",
   "aiSearchMessages": "Maghanap ng mga mensahe...",
+  "aiSection": "AI Assistant",
   "aiStartNewConversation": "Magsimula ng bagong pag-uusap",
   "aiSubscribeUnlimited": "Mag-subscribe para sa walang limitasyong AI",
   "aiSuggestCreateList": "Lumikha ng aking unang listahan",
   "aiSuggestSaveMore": "Paano makatipid ng higit pa?",
   "aiTeaserFallback": "Mag-subscribe sa Premium upang i-unlock ang buong tugon at makakuha ng walang limitasyong mga tip sa AI para sa iyong pamimili...",
+  "aiTimeoutError": "Masyadong matagal ang kahilingan. Pakisubukang muli.",
   "aiUnlockUnlimited": "I-unlock ang walang limitasyong AI",
   "aiUnlockWithAd": "I-unlock gamit ang Ad",
   "aiUsageExhausted": "Naabot na ang buwanang limitasyon ng AI. Mag-upgrade sa Pro para sa walang limitasyong →",
   "aiUsageWarning": "{remaining} AI actions left this month — upgrade para sa unlimited",
   "aiVoiceCommandTooltip": "AI Voice Command (Premium)",
   "aiWelcomeContent": "Hello! 👋 Ako si **Kipi**, ang iyong personal shopping at recipe assistant!\n\nNandito ako para tulungan ka:\n🛒 **Awtomatikong ayusin** ang iyong pamimili ayon sa mga kategorya\n💰 **Subaybayan** ang iyong badyet at bigyan ka ng mga tip sa pagtitipid\n🍲 **Magmungkahi** ng mga masasarap na recipe na mayroon ka na\n\nPaano kita matutulungan ngayon? Maaari kang magsimula sa pamamagitan ng paggawa ng iyong unang listahan!",
+  "aiWelcomeSuggestBarbecue": "Magplano ng barbecue",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, nagho-host ako ng barbecue — tulungan mo akong bumuo ng listahan ng pamimili",
   "aiWelcomeSuggestCreateList": "Lumikha ng aking unang listahan",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, tulungan mo akong gumawa ng aking unang shopping list",
   "aiWelcomeSuggestSave": "Paano makatipid?",
@@ -1419,14 +1518,17 @@
   "appTitle": "Listahan ng Pamimili",
   "appearance": "Itsura",
   "archiveList": "I-archive ang listahan",
+  "artifactBudgetLabel": "Badyet:",
   "artifactReplaceBody": "Pumili ng alternatibong produkto para ma-optimize ang gastos.",
   "artifactReplaceTitle": "Palitan ang {name}",
   "artifactSuggestedItems": "Mga Iminungkahing Item",
   "artifactSwapButton": "Magpalit",
   "artifactSwappedLabel": "Pinagpalit",
+  "artifactSynced": "Naka-sync",
   "assistantHistory": "Kasaysayan ng assistant",
   "assistantHistorySubtitle": "Tingnan ang iyong kasaysayan ng pag-uusap",
   "assistantName": "Pangalan ng Assistant",
+  "assistantRole": "Katulong",
   "backToChat": "Bumalik sa Chat",
   "backToToday": "Bumalik sa ngayon",
   "backupExported": "Na-export ang backup!",
@@ -1434,6 +1536,7 @@
   "backupPremiumDescription": "Ang backup at pag-export ay isang premium na feature",
   "backupSubtitle": "I-export o i-import ang iyong data",
   "backupTitle": "Backup",
+  "badResponse": "Masamang tugon",
   "badgeBeginner": "Baguhan",
   "badgeOrganized": "Organisado",
   "badgeSavingMaster": "Nagliligtas Master",
@@ -1461,10 +1564,12 @@
   "catOthers": "Iba pa",
   "catalogAddItems": "Magdagdag ng {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Mag-browse ng Catalog",
+  "catalogCategories": "Mga kategorya",
   "catalogFilterNational": "mga nasyonal",
   "catalogItemAdded": "{name} idinagdag",
   "catalogMyFrequents": "Aking Mga Madalas",
   "catalogProductNotFound": "Hindi nakita ang produkto, i-type ang pangalan",
+  "catalogRareBadge": "Bihira",
   "catalogRareSection": "hindi gaanong karaniwan sa iyong bansa",
   "catalogRetry": "Subukan muli",
   "catalogSearchGlobal": "Maghanap ng anumang produkto...",
@@ -1473,16 +1578,43 @@
   "catalogSortPopular": "Pinakasikat",
   "catalogTitle": "Catalog",
   "category": "Kategorya",
+  "categoryAlcohol": "Mga inuming may alkohol",
+  "categoryBaby": "Baby",
+  "categoryBakery": "Panaderya",
+  "categoryBeverages": "Mga inumin",
+  "categoryCanned": "Mga de-latang paninda",
+  "categoryCleaning": "Paglilinis",
+  "categoryColdCuts": "Malamig na hiwa",
   "categoryColorLabel": "Kulay",
+  "categoryDairy": "Pagawaan ng gatas",
+  "categoryFish": "Isda",
+  "categoryFrozen": "Mga frozen na pagkain",
+  "categoryFruits": "Mga prutas",
+  "categoryGrains": "Mga butil at cereal",
+  "categoryHygiene": "Personal na pangangalaga",
   "categoryIconLabel": "Icon",
   "categoryLimitReached": "Naabot na ang limitasyon ng kategorya",
+  "categoryMeat": "karne",
   "categoryName": "Pangalan ng kategorya",
   "categoryNameHint": "Ipasok ang pangalan ng kategorya",
+  "categoryOthers": "Iba pa",
+  "categoryPet": "Mga gamit ng alagang hayop",
+  "categorySeasonings": "Mga pampalasa",
+  "categorySweets": "Mga matamis at panghimagas",
+  "categoryUtilities": "Mga gamit sa bahay",
+  "categoryVegetables": "Mga gulay",
+  "chatEmptyGreeting": "Kumusta {name}, ako si Kipi 👋",
+  "chatEmptyGreetingNoName": "Hi, ako si Kipi 👋",
+  "chatEmptyPitch": "Gumagawa ako ng mga listahan, nagmumungkahi ng mga recipe, at naghahanap kung saan mag-iipon. Saan tayo magsisimula?",
   "chatEmptySubtitle": "Humingi ng mga mungkahi sa item, mga recipe o mga tip sa pag-save upang makapagsimula.",
   "chatEmptyTitle": "Walang laman ang iyong chat",
   "chatError": "Error sa pag-load ng chat: {error}",
   "chatHint": "I-type ang iyong mensahe...",
   "chatHintBlocked": "I-unlock ang AI para makipag-chat",
+  "chatHistoryErrorBody": "May nangyaring mali sa aming pagtatapos. I-tap ang muling subukan upang subukang muli.",
+  "chatHistoryErrorTitle": "Hindi ma-load ang pag-uusap na ito",
+  "chatHistoryOfflineBody": "Suriin ang iyong koneksyon sa internet at subukang muli.",
+  "chatHistoryOfflineTitle": "Offline ka",
   "chatSubtitle": "Humiling ng mga mungkahi sa item, recipe o tip sa pagtitipid.",
   "chatSubtitleShort": "Magtanong tungkol sa mga presyo, recipe, organisasyon...",
   "chooseCurrency": "Piliin ang Pera",
@@ -1490,6 +1622,7 @@
   "chooseImageSource": "Pumili ng pagkukunan ng larawan",
   "chooseLanguage": "Pumili ng Wika",
   "chooseThemeColor": "Pumili ng kulay ng tema",
+  "chooseThemeMode": "Piliin ang mode ng tema",
   "clear": "Linisin",
   "clearHistory": "Linisin ang Kasaysayan",
   "clearHistoryConfirm": "Linisin lahat ng mensahe sa session na ito?",
@@ -1532,6 +1665,10 @@
   "customizeAssistant": "I-customize",
   "dark": "Madilim",
   "data": "Data",
+  "dateGroupOlder": "Mas matanda",
+  "dateGroupPrevious7Days": "Nakaraang 7 araw",
+  "dateGroupToday": "Ngayong araw",
+  "dateGroupYesterday": "Kahapon",
   "deficitItems": "{deficit,plural, one{{deficit} item ang kailangang bilhin} other{{deficit} item ang kailangang bilhin}}",
   "delete": "Burahin",
   "deleteCategory": "Tanggalin",
@@ -1548,6 +1685,7 @@
   "deleteRecipeConfirmMsg": "Sigurado ka bang gusto mong burahin ang \"{recipeName}\"? Ang aksyong ito ay hindi na maaaring bawiin.",
   "deleteSession": "Tanggalin ang Chat",
   "deleteSessionConfirm": "Sigurado ka bang gusto mong tanggalin ang chat na ito? Ang mga mensahe ay permanenteng mawawala.",
+  "deletedList": "Tinanggal na listahan",
   "deselectAll": "Alisin lahat ng pagpili",
   "dietaryRestrictions": "Mga paghihigpit sa pagkain",
   "dietaryRestrictionsHint": "Anumang mga paghihigpit sa pagkain?",
@@ -1560,6 +1698,7 @@
   "editCategoryDialog": "I-edit ang kategorya",
   "editItem": "I-edit ang Item",
   "editItemPrice": "Tantiya sa presyo",
+  "editMessage": "I-edit ang mensahe",
   "editPantryItem": "I-edit ang {name}",
   "editRecipe": "I-edit",
   "editRecipeTitle": "I-edit ang Recipe",
@@ -1581,6 +1720,7 @@
   "errorLoadingChat": "Oops! Nagkaproblema sa paglo-load ng chat.",
   "errorLoadingChatSubtitle": "Suriin ang iyong koneksyon o subukang muli sa ibang pagkakataon.",
   "errorLoadingHistory": "Error sa paglo-load ng history",
+  "errorLoadingItems": "Error sa paglo-load ng mga item",
   "errorLoadingLists": "Error sa paglo-load ng mga listahan",
   "errorLoadingRecipes": "Error sa paglo-load ng mga recipe",
   "errorLoadingSubscription": "Error sa paglo-load ng subscription",
@@ -1633,6 +1773,7 @@
   "generateShoppingList": "Gumawa ng listahan ng pamimili",
   "gestureHint": "I-hold para piliin ang • Mag-swipe para alisin",
   "globalAssistant": "Pangkalahatang katulong",
+  "goodResponse": "Magandang tugon",
   "howCanIHelp": "Paano ako makakatulong?",
   "idealQty": "Tamang dami",
   "idealQuantity": "Tamang dami",
@@ -1649,14 +1790,18 @@
   "instructionsHint": "Mag-type ng isang hakbang bawat linya...",
   "inviteToList": "Mag-imbita sa listahan",
   "itemAddedSnack": "{name} idinagdag",
+  "itemAddedToList": "Idinagdag ang item sa listahan.",
   "itemName": "Pangalan ng item",
   "itemRemoved": "Naalis ang item",
   "itemsAddedSuccess": "Matagumpay na naidagdag ang mga item sa listahan!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} item ang kailangang bilhin",
   "itemsPurchased": "Mga bagay na binili",
   "itemsPurchasedCount": "{purchased} ng {total} ang binili",
   "itemsPurchasedShort": "{purchased}/{total} ang binili",
   "itemsWillBeAdded": "{count} item ang idadagdag",
+  "keepAdding": "Patuloy na magdagdag",
+  "keepAddingSubtitle": "Panatilihing bukas ang sheet para magdagdag ng maraming item",
   "kipiListProActive": "Aktibo ang KipiList Pro",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Ano ang kailangan mong bilhin?",
@@ -1703,16 +1848,22 @@
   "mealDragHint": "Pindutin upang i-drag at ilipat",
   "mealNoRecipeFound": "Walang nakitang recipe",
   "mealPlannerAddMeal": "Magdagdag ng Pagkain",
+  "mealPlannerAddType": "Magdagdag ng uri ng pagkain",
+  "mealPlannerCustomTypeLabel": "Pasadyang uri",
   "mealPlannerDateLabel": "Petsa",
+  "mealPlannerDefaultTypeLabel": "Default na uri",
   "mealPlannerDeleteMeal": "Alisin ang pagkain",
   "mealPlannerEditMeal": "I-edit ang Pagkain",
+  "mealPlannerEditType": "I-edit ang uri ng pagkain",
   "mealPlannerError": "Error sa paglo-load ng meal plan",
+  "mealPlannerEstimatePartial": "Tantyahin batay sa mga recipe na may bahagyang data ng presyo.",
   "mealPlannerGenerateList": "Gumawa ng listahan ng pamimili",
   "mealPlannerGenerateListConfirm": "Idagdag ang lahat ng mga sahog mula sa mga nakaplanong pagkain sa linggong ito sa iyong listahan ng pamimili?",
   "mealPlannerGenerateListEmpty": "Walang mga sahog na idadagdag. Magplano muna ng ilang pagkain na may mga recipe.",
   "mealPlannerGenerateListNoList": "Gumawa muna ng listahan ng pamimili.",
   "mealPlannerGenerateListSuccess": "{count} (na) sahog ang naidagdag sa iyong listahan!",
   "mealPlannerLoading": "Naglo-load ng meal plan...",
+  "mealPlannerManageTypes": "Pamahalaan ang mga uri ng pagkain",
   "mealPlannerMealDeleted": "Naalis na ang pagkain",
   "mealPlannerMealTypeBreakfast": "Almusal",
   "mealPlannerMealTypeDinner": "Hapunan",
@@ -1732,6 +1883,12 @@
   "mealPlannerServings": "{count,plural, one{{count} serving} other{{count} serving}}",
   "mealPlannerServingsLabel": "Mga Serving",
   "mealPlannerTitle": "Meal Planner",
+  "mealPlannerTypeColor": "Kulay",
+  "mealPlannerTypeDeleteConfirm": "Sigurado ka bang gusto mong tanggalin ang uri ng pagkain na ito? Ang mga nakaplanong pagkain na may ganitong uri ay mananatili.",
+  "mealPlannerTypeDeleteError": "Hindi matanggal ang ganitong uri ng pagkain.",
+  "mealPlannerTypeIcon": "Icon",
+  "mealPlannerTypeName": "Pangalan",
+  "mealPlannerTypeNameEmpty": "Hindi maaaring walang laman ang pangalan",
   "mealPlannerViewMonthly": "Buwanang view",
   "mealPlannerViewWeekly": "Lingguhang view",
   "mealPlannerWeekEmpty": "Walang nakaplano para sa linggong ito",
@@ -1947,6 +2104,7 @@
   "onboardingViewAllPlans": "Tingnan ang lahat ng mga plano",
   "onboardingWelcomeDesc": "Ang pinakamatalinong paraan upang ayusin ang iyong pamimili at makatipid ng pera.",
   "onboardingWelcomeTitle": "Maligayang pagdating sa KipiList",
+  "openConversation": "Buksan ang pag-uusap",
   "openMenu": "Buksan ang menu",
   "organizeAisles": "Ayusin ayon sa mga aisle",
   "organizeAislesPrompt": "Ayusin ayon sa mga aisle ng palengke.",
@@ -1959,6 +2117,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} sa pantry",
   "pantryCompactView": "Compact View",
   "pantryDeficit": "Nawawala ang {amount}{unit}",
+  "pantryDeficitCount": "Nawawala ang {count}{unit}",
   "pantryDeleteItemsContent": "Gusto mo bang tanggalin ang {count} napiling mga item?",
   "pantryDeleteItemsTitle": "Tanggalin ang mga item",
   "pantryDeleteSelected": "Tanggalin ang napili",
@@ -1975,6 +2134,7 @@
   "pantryFilterExpiring": "Mag-e-expire",
   "pantryFilterOutStock": "Out of stock",
   "pantryFirstOpenHint": "Subaybayan kung ano ang mayroon ka sa bahay. Magdagdag ng mga item o mag-scan ng mga barcode.",
+  "pantryItemAdded": "Idinagdag ang item",
   "pantryItemRemoved": "Naalis ang item",
   "pantryMoreDetails": "Higit pang mga detalye",
   "pantryNoItemsFound": "Walang nakitang mga item para sa \"{query}\"",
@@ -1988,6 +2148,7 @@
   "paywallAfterItem2": "Paglilinis",
   "paywallAfterItem3": "Mga karne",
   "paywallAfterItem4": "Panaderya",
+  "paywallBasedOnAnswers": "Personalized mula sa iyong mga sagot",
   "paywallBeforeAfterTitle": "AI Bago at Pagkatapos:",
   "paywallBeforeItem1": "kanin",
   "paywallBeforeItem2": "sabon",
@@ -2025,6 +2186,8 @@
   "paywallGoalHeadlinePantry": "{name}, subaybayan ang iyong pantry nang perpekto!",
   "paywallGoalHeadlineRecipes": "{name}, tumuklas ng mga bagong recipe!",
   "paywallGoalHeadlineSaveMoney": "{name}, makatipid sa bawat biyahe!",
+  "paywallHeroFeatureDesc": "Magsalita o mag-paste ng isang buong listahan — pinag-uuri-uriin, ikinategorya, at bina-budget ng AI sa loob ng ilang segundo",
+  "paywallHeroFeatureTitle": "AI Shopping Assistant",
   "paywallHeroHeadline": "Kipi AI laging nasa tabi mo",
   "paywallHeroSubtitle": "Magdagdag ng mga item, ayusin ang mga listahan at makatipid ng oras gamit ang AI sa iyong bulsa",
   "paywallHeroSubtitlePersonalized": "Uy {name}, ayusin ang iyong pamimili sa tamang paraan.",
@@ -2059,6 +2222,11 @@
   "paywallTestimonial2Text": "Hindi ko na nakalimutan muli ang isang item sa listahan. Ang AI chat ay kahindik-hindik!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Ano ang sinasabi ng aming mga gumagamit:",
+  "paywallTimelineChargeDesc": "Magsisimula ang iyong subscription — kanselahin anumang oras",
+  "paywallTimelineDay": "Araw {day}",
+  "paywallTimelineReminderDesc": "Pinapaalalahanan ka namin bago matapos ang pagsubok",
+  "paywallTimelineToday": "Ngayong araw",
+  "paywallTimelineTodayDesc": "I-unlock kaagad ang buong access",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Simulan ang Libreng Pagsubok",
   "paywallTrialDays": "{days} ARAW NA LIBRE",
@@ -2081,11 +2249,15 @@
   "prefSharing": "Ibahagi ang mga listahan",
   "prefUnlimitedLists": "Walang limitasyong listahan",
   "prefUnlimitedPantry": "Walang limitasyong dispatch",
+  "preferencesSection": "Mga Kagustuhan",
   "preferredMarket": "Ginustong merkado",
   "preferredMarketHint": "Saan ka kadalasang namimili?",
+  "premiumActionsPrompt": "Mag-subscribe sa Premium para i-unlock ang mga awtomatikong pagkilos.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Mag-upgrade para ma-unlock",
   "prepTime": "Oras ng paghahanda",
   "prepTimeMinutes": "Oras ng paghahanda (minuto)",
+  "previousItemState": "Nakaraang estado: {quantity} {unit} [{category}]{price}",
   "privacy": "Pagkapribado",
   "product": "produkto",
   "productName": "Pangalan ng produkto",
@@ -2102,21 +2274,34 @@
   "quantityShort": "Dami",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Makipag-chat kay Kipi",
+  "quickActionPantry": "Tingnan ang pantry",
   "quickRecipe": "Mabilis na recipe",
   "quickRecipePrompt": "Magmungkahi ng mga recipe gamit ang mga item mula sa aking listahan.",
   "quickReplies": "Mabilis na tugon:",
   "quickSuggestions": "Mabilis na mga mungkahi",
+  "recipeAddError": "Hindi maidagdag sa iyong listahan. Pakisubukang muli.",
   "recipeAddToList": "Idagdag sa listahan ng pamimili",
   "recipeAddedConfirmation": "{count} na sangkap ang idinagdag sa {listName}",
   "recipeCreated": "Recipe na gawa na!",
   "recipeDeleted": "Recipe na burado na",
+  "recipeEstimatePartial": "Bahagyang pagtatantya batay sa mga sangkap na may presyo.",
+  "recipeEstimatedCostPerServing": "{cost} / paghahatid",
+  "recipeEstimatedTotalCost": "Tinatayang kabuuang gastos",
   "recipeImage": "Larawan ng recipe",
+  "recipeIngredientInPantry": "Sa pantry",
+  "recipeIngredientLowPantry": "Mababa sa pantry",
   "recipeIngredientSingular": "1 sangkap",
   "recipeIngredientsPlural": "{count} sangkap",
+  "recipeManualTotalCost": "Manu-manong kabuuang gastos",
+  "recipeManualTotalCostHint": "Iwanang walang laman upang matantya mula sa mga presyo ng sangkap.",
   "recipeName": "Pangalan ng recipe",
   "recipeSaved": "Recipe na-save na!",
+  "recipeServesCount": "Nagsisilbi sa {count}",
   "recipeSuggestion": "Mungkahing recipe",
   "recipeTags": "Mga tag ng recipe",
+  "recipeTapToCheck": "Mag-tap ng isang sangkap upang suriin ito habang nagluluto ka",
+  "recipeYieldServings": "Magbigay ng mga servings",
   "regenerate": "Muling buuin",
   "remove": "Alisin",
   "removeBudget": "Alisin",
@@ -2140,9 +2325,12 @@
   "savings": "Mga Natipid",
   "scanBarcodeTitle": "I-scan ang Barcode",
   "scanProductTitle": "I-scan ang Produkto",
+  "scrollToBottom": "Mag-scroll pababa",
+  "searchConversations": "Maghanap ng mga pag-uusap",
   "searchCurrency": "Maghanap ng pera...",
   "searchInConversation": "Maghanap sa pag-uusap...",
   "searchLanguage": "Maghanap ng wika...",
+  "searchMessages": "Maghanap ng mga mensahe...",
   "searchRecipes": "Maghanap ng mga recipe...",
   "selectAll": "Piliin lahat",
   "selectCheaperAlternative": "Pumili ng mas murang alternatibo",
@@ -2199,6 +2387,7 @@
   "signInGoogle": "Mag-sign in gamit ang Google",
   "skip": "Laktawan",
   "smartOrganization": "Matalinong Organisasyon",
+  "somethingWentWrong": "Nagkaproblema",
   "sortAZ": "A–Z",
   "sortCategory": "Kategorya",
   "sortDate": "Petsa",
@@ -2229,6 +2418,7 @@
   "themeColor": "Kulay ng tema",
   "themeGreen": "Berde",
   "themeIndigo": "Indigo",
+  "themeMode": "Mode ng tema",
   "themeOrange": "Kahel",
   "themePink": "Rosas",
   "themePurple": "Lila",
@@ -2236,12 +2426,14 @@
   "themeSelectionTitle": "Pumili ng Kulay ng Tema",
   "themeTeal": "Teal",
   "totalEstimated": "Kabuuang tantiya: {amount}",
+  "totalEstimatedLabel": "Tinatayang kabuuan",
   "totalSavings": "Kabuuang Savings",
   "totalSpending": "Kabuuang Nagastos",
   "trackStock": "Subaybayan ang stock",
   "trackStockActive": "Lumalabas sa mga mungkahi sa pamimili",
   "trackStockInactive": "Hindi lumilikha ng mungkahi sa pamimili",
   "undo": "I-undo",
+  "undoChanges": "I-undo ang mga pagbabago",
   "unit": "Yunit",
   "unitPack": "pack",
   "unlockAi": "I-unlock ang walang limitasyong AI",
@@ -2266,6 +2458,7 @@
   "userProfileSaveButton": "I-save ang Profile",
   "userProfileSaved": "Matagumpay na na-save ang profile!",
   "userProfileTitle": "Aking Profile",
+  "userRole": "Ikaw",
   "validForLimitedTime": "May bisa sa limitadong panahon",
   "version": "Bersyon",
   "viewActive": "Tingnan ang Aktibo",
@@ -2273,6 +2466,7 @@
   "viewHistory": "Tingnan ang Kasaysayan",
   "viewItems": "Tingnan ang mga item",
   "viewList": "Tingnan ang listahan",
+  "viewPlans": "Tingnan ang mga plano",
   "viewPro": "Tingnan ang Pro",
   "viewRecipe": "Tingnan ang Recipe",
   "voiceCommandContent": "Magsalita nang natural para pamahalaan ang iyong listahan!\n\nMga Halimbawa:\n• 'Magdagdag ng tinapay, keso, at hamon'\n• 'Alisin ang detergent'\n• 'Palitan ang tema sa asul'\n\nIto ay isang eksklusibong feature ng KipiList Premium.",

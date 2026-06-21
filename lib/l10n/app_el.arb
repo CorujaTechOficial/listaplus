@@ -8,6 +8,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -110,6 +124,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -243,6 +264,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -272,6 +296,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -895,6 +926,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1014,6 +1055,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1052,6 +1100,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1125,7 +1196,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1256,22 +1341,36 @@
   "addToPantryPrompt": "Να προστεθεί το \"{name}\" στο ντουλάπι σας;",
   "addedFeedback": "Προστέθηκε!",
   "advancedFeatures": "Προηγμένες λειτουργίες",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Αποτυχία εκτέλεσης ενεργειών",
+  "agentActionsPremium": "Οι ενέργειες απαιτούν Premium",
+  "agentActionsRunning": "Εκτέλεση ενεργειών...",
+  "aiApiError": "Η υπηρεσία AI επέστρεψε ένα σφάλμα ({statusCode}).",
   "aiAssistant": "Βοηθός AI",
   "aiAssistantDescription": "Λάβετε έξυπνες προτάσεις, συνταγές και εξατομικευμένες συμβουλές με τον βοηθό AI μας.",
   "aiAssistantTitle": "Βοηθός AI",
+  "aiConnectionError": "Δεν ήταν δυνατή η σύνδεση με την υπηρεσία AI. Ελέγξτε τη σύνδεσή σας.",
   "aiCreditsRemaining": "Απομένουν {remaining} πιστώσεις",
+  "aiEmptyResponseError": "Η υπηρεσία AI επέστρεψε μια κενή απάντηση.",
   "aiEnergy": "AI Energy",
   "aiEnergyLow": "Χαμηλή ενέργεια AI",
   "aiError": "Λυπούμαστε, παρουσιάστηκε σφάλμα κατά την επεξεργασία του αιτήματός σας. Ελέγξτε τη σύνδεσή σας ή δοκιμάστε ξανά αργότερα.",
+  "aiGeneratingResponse": "Δημιουργία απόκρισης…",
+  "aiInvalidResponseError": "Η υπηρεσία AI επέστρεψε μια μη έγκυρη απάντηση.",
   "aiLimitAlmostReached": "Σχεδόν εξαντλήθηκαν τα μηνύματα AI",
+  "aiRateLimitError": "Πάρα πολλά μηνύματα σε σύντομο χρονικό διάστημα. Περιμένετε μερικά δευτερόλεπτα και δοκιμάστε ξανά.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} σήμερα",
+  "aiSection": "Βοηθός AI",
   "aiSubscribeUnlimited": "Εγγραφείτε για απεριόριστο AI",
   "aiTeaserFallback": "Εγγραφείτε στο Premium για να ξεκλειδώσετε την πλήρη απόκριση και να λάβετε απεριόριστες συμβουλές AI για τις αγορές σας...",
+  "aiTimeoutError": "Το αίτημα κράτησε πάρα πολύ. Δοκιμάστε ξανά.",
   "aiUnlockUnlimited": "Ξεκλειδώστε απεριόριστο AI",
   "aiUsageExhausted": "Συμπληρώθηκε το μηνιαίο όριο τεχνητής νοημοσύνης. Αναβάθμιση σε Pro για απεριόριστο →",
   "aiUsageWarning": "{remaining} Απομένουν ενέργειες AI αυτόν τον μήνα — αναβάθμιση για απεριόριστη",
   "aiVoiceCommandTooltip": "Φωνητική εντολή AI (Premium)",
   "aiWelcomeContent": "Γειά σου! 👋 Είμαι ο **Kipi**, ο προσωπικός σας βοηθός αγορών και συνταγών!\n\nΕίμαι εδώ για να σας βοηθήσω:\n🛒 **Οργανώστε** τις αγορές σας ανά κατηγορίες αυτόματα\n💰 **Παρακολουθήστε** τον προϋπολογισμό σας και δώστε συμβουλές εξοικονόμησης χρημάτων\n🍲 **Προτείνετε** νόστιμες συνταγές με αυτά που ήδη έχετε\n\nΠώς μπορώ να σας βοηθήσω σήμερα; Μπορείτε να ξεκινήσετε δημιουργώντας την πρώτη σας λίστα!",
+  "aiWelcomeSuggestBarbecue": "Σχεδιάστε ένα μπάρμπεκιου",
+  "aiWelcomeSuggestBarbecuePrompt": "Κήπη, διοργανώνω μπάρμπεκιου — βοήθησέ με να φτιάξω τη λίστα αγορών",
   "aiWelcomeSuggestCreateList": "Δημιουργήστε την πρώτη μου λίστα",
   "aiWelcomeSuggestCreateListPrompt": "Κήπη, βοήθησέ με να δημιουργήσω την πρώτη μου λίστα αγορών",
   "aiWelcomeSuggestSave": "Πώς να εξοικονομήσετε χρήματα;",
@@ -1281,9 +1380,12 @@
   "appTitle": "Λίστα Αγορών",
   "appearance": "Εμφάνιση",
   "archiveList": "Αρχειοθέτηση λίστας",
+  "artifactBudgetLabel": "Προϋπολογισμός:",
+  "artifactSynced": "Συγχρονίστηκε",
   "assistantHistory": "Ιστορικό βοηθού",
   "assistantHistorySubtitle": "Δείτε το ιστορικό συνομιλιών σας",
   "assistantName": "Όνομα βοηθού",
+  "assistantRole": "Βοηθός",
   "backToChat": "Επιστροφή στο Chat",
   "backToToday": "Επιστροφή στο σήμερα",
   "backupExported": "Το αντίγραφο ασφαλείας εξήχθη!",
@@ -1291,6 +1393,7 @@
   "backupPremiumDescription": "Το αντίγραφο ασφαλείας και η εξαγωγή είναι λειτουργία Premium",
   "backupSubtitle": "Εξαγωγή ή εισαγωγή δεδομένων",
   "backupTitle": "Αντίγραφο ασφαλείας",
+  "badResponse": "Κακή απάντηση",
   "badgeBeginner": "Αρχάριος",
   "badgeOrganized": "Οργανωμένος",
   "badgeSavingMaster": "Saving Master",
@@ -1316,9 +1419,11 @@
   "catOthers": "Άλλα",
   "catalogAddItems": "Προσθήκη {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Περιήγηση στον Κατάλογο",
+  "catalogCategories": "Κατηγορίες",
   "catalogFilterNational": "Εθνικοί",
   "catalogMyFrequents": "Οι συχνές μου",
   "catalogProductNotFound": "Το προϊόν δεν βρέθηκε, πληκτρολογήστε το όνομα",
+  "catalogRareBadge": "Σπάνιος",
   "catalogRareSection": "λιγότερο συνηθισμένο στη χώρα σας",
   "catalogSearchGlobal": "Αναζητήστε οποιοδήποτε προϊόν...",
   "catalogSearchInCategory": "Αναζήτηση στο {category}...",
@@ -1326,16 +1431,43 @@
   "catalogSortPopular": "Το πιο δημοφιλές",
   "catalogTitle": "Κατάλογος",
   "category": "Κατηγορία",
+  "categoryAlcohol": "Αλκοολούχα ποτά",
+  "categoryBaby": "Μωρό",
+  "categoryBakery": "Αρτοποιείο",
+  "categoryBeverages": "Ποτά",
+  "categoryCanned": "Κονσερβοποιημένα προϊόντα",
+  "categoryCleaning": "Καθάρισμα",
+  "categoryColdCuts": "Αλλαντικά",
   "categoryColorLabel": "Χρώμα",
+  "categoryDairy": "Γαλακτοκομείο",
+  "categoryFish": "Ψάρι",
+  "categoryFrozen": "Κατεψυγμένα τρόφιμα",
+  "categoryFruits": "Φρούτα",
+  "categoryGrains": "Δημητριακά και δημητριακά",
+  "categoryHygiene": "Προσωπική φροντίδα",
   "categoryIconLabel": "Εικόνισμα",
   "categoryLimitReached": "Συμπληρώθηκε το όριο κατηγορίας",
+  "categoryMeat": "Κρέας",
   "categoryName": "Όνομα κατηγορίας",
   "categoryNameHint": "Εισαγάγετε το όνομα της κατηγορίας",
+  "categoryOthers": "Αλλος",
+  "categoryPet": "Προμήθειες για κατοικίδια",
+  "categorySeasonings": "Καρυκεύματα",
+  "categorySweets": "Γλυκά και επιδόρπια",
+  "categoryUtilities": "Οικιακά είδη",
+  "categoryVegetables": "Λαχανικά",
+  "chatEmptyGreeting": "Γεια {name}, είμαι η Kipi 👋",
+  "chatEmptyGreetingNoName": "Γεια, είμαι η Kipi 👋",
+  "chatEmptyPitch": "Δημιουργώ λίστες, προτείνω συνταγές και βρίσκω πού να αποθηκεύσω. Από πού ξεκινάμε;",
   "chatEmptySubtitle": "Ζητήστε προτάσεις προϊόντων, συνταγές ή συμβουλές αποθήκευσης για να ξεκινήσετε.",
   "chatEmptyTitle": "Η συνομιλία σας είναι άδεια",
   "chatError": "Σφάλμα φόρτωσης συνομιλίας: {error}",
   "chatHint": "Πληκτρολογήστε το μήνυμά σας...",
   "chatHintBlocked": "Ξεκλειδώστε το AI για συνομιλία",
+  "chatHistoryErrorBody": "Κάτι πήγε στραβά από την πλευρά μας. Πατήστε επανάληψη για να προσπαθήσετε ξανά.",
+  "chatHistoryErrorTitle": "Δεν ήταν δυνατή η φόρτωση αυτής της συνομιλίας",
+  "chatHistoryOfflineBody": "Ελέγξτε τη σύνδεσή σας στο διαδίκτυο και δοκιμάστε ξανά.",
+  "chatHistoryOfflineTitle": "Είστε εκτός σύνδεσης",
   "chatSubtitle": "Ζητήστε προτάσεις στοιχείων, συνταγές ή συμβουλές εξοικονόμησης.",
   "chatSubtitleShort": "Ρωτήστε για τιμές, συνταγές, οργάνωση...",
   "chooseCurrency": "Επιλέξτε Νόμισμα",
@@ -1343,6 +1475,7 @@
   "chooseImageSource": "Επιλογή πηγής εικόνας",
   "chooseLanguage": "Επιλογή γλώσσας",
   "chooseThemeColor": "Επιλέξτε χρώμα θέματος",
+  "chooseThemeMode": "Επιλέξτε λειτουργία θέματος",
   "clear": "Εκκαθάριση",
   "clearHistory": "Εκκαθάριση ιστορικού",
   "clearHistoryConfirm": "Να διαγραφούν όλα τα μηνύματα αυτής της συνεδρίας;",
@@ -1385,6 +1518,10 @@
   "customizeAssistant": "Προσαρμογή",
   "dark": "Σκοτεινό",
   "data": "Δεδομένα",
+  "dateGroupOlder": "Πιο παλιά",
+  "dateGroupPrevious7Days": "Προηγούμενες 7 ημέρες",
+  "dateGroupToday": "Σήμερα",
+  "dateGroupYesterday": "Εχθές",
   "deficitItems": "{deficit,plural, one{{deficit} στοιχείο χρειάζεται αγορά} other{{deficit} στοιχεία χρειάζονται αγορά}}",
   "delete": "Διαγραφή",
   "deleteCategory": "Διαγράφω",
@@ -1401,6 +1538,7 @@
   "deleteRecipeConfirmMsg": "Είστε σίγουροι ότι θέλετε να διαγράψετε τη συνταγή \"{recipeName}\"; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.",
   "deleteSession": "Διαγραφή συνομιλίας",
   "deleteSessionConfirm": "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν τη συνομιλία; Τα μηνύματα θα χαθούν οριστικά.",
+  "deletedList": "Διαγραμμένη λίστα",
   "deselectAll": "Αποεπιλογή όλων",
   "dietaryRestrictions": "Διατροφικοί περιορισμοί",
   "dietaryRestrictionsHint": "Υπάρχουν διατροφικοί περιορισμοί;",
@@ -1413,6 +1551,7 @@
   "editCategoryDialog": "Επεξεργασία κατηγορίας",
   "editItem": "Επεξεργασία στοιχείου",
   "editItemPrice": "Εκτιμώμενη τιμή",
+  "editMessage": "Επεξεργασία μηνύματος",
   "editPantryItem": "Επεξεργασία {name}",
   "editRecipe": "Επεξεργασία",
   "editRecipeTitle": "Επεξεργασία συνταγής",
@@ -1426,6 +1565,7 @@
   "errorLoadingChat": "Ωχ! Κάτι πήγε στραβά κατά τη φόρτωση της συνομιλίας.",
   "errorLoadingChatSubtitle": "Ελέγξτε τη σύνδεσή σας ή δοκιμάστε ξανά αργότερα.",
   "errorLoadingHistory": "Σφάλμα κατά τη φόρτωση του ιστορικού",
+  "errorLoadingItems": "Σφάλμα κατά τη φόρτωση στοιχείων",
   "errorLoadingLists": "Σφάλμα κατά τη φόρτωση λιστών",
   "errorLoadingRecipes": "Σφάλμα κατά τη φόρτωση των συνταγών",
   "errorLoadingSubscription": "Σφάλμα κατά τη φόρτωση της συνδρομής",
@@ -1478,6 +1618,7 @@
   "generateShoppingList": "Δημιουργία λίστας αγορών",
   "gestureHint": "Κρατήστε πατημένο για να επιλέξετε • Σύρετε για κατάργηση",
   "globalAssistant": "Γενικός βοηθός",
+  "goodResponse": "Καλή ανταπόκριση",
   "howCanIHelp": "Πώς μπορώ να βοηθήσω;",
   "idealQty": "Ιδανική ποσ",
   "idealQuantity": "Ιδανική ποσότητα",
@@ -1494,14 +1635,18 @@
   "instructionsHint": "Πληκτρολογήστε ένα βήμα ανά γραμμή...",
   "inviteToList": "Πρόσκληση στη λίστα",
   "itemAddedSnack": "Προστέθηκε {name}",
+  "itemAddedToList": "Το στοιχείο προστέθηκε στη λίστα.",
   "itemName": "Όνομα στοιχείου",
   "itemRemoved": "Το στοιχείο αφαιρέθηκε",
   "itemsAddedSuccess": "Τα στοιχεία προστέθηκαν επιτυχώς στη λίστα!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} στοιχείο(α) χρειάζονται αγορά",
   "itemsPurchased": "Αγορασμένα είδη",
   "itemsPurchasedCount": "{purchased} από {total} αγοράστηκε",
   "itemsPurchasedShort": "{purchased}/{total} αγοράστηκε",
   "itemsWillBeAdded": "{count} στοιχείο(α) θα προστεθούν",
+  "keepAdding": "Συνεχίστε να προσθέτετε",
+  "keepAddingSubtitle": "Κρατήστε το φύλλο ανοιχτό για να προσθέσετε πολλά στοιχεία",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Τι χρειάζεστε για να αγοράσετε;",
@@ -1537,16 +1682,22 @@
   "marketsToAvoid": "Αγορές προς αποφυγή",
   "marketsToAvoidHint": "Αγορές στις οποίες προτιμάτε να μην ψωνίζετε",
   "mealPlannerAddMeal": "Προσθήκη γεύματος",
+  "mealPlannerAddType": "Προσθήκη τύπου γεύματος",
+  "mealPlannerCustomTypeLabel": "Προσαρμοσμένος τύπος",
   "mealPlannerDateLabel": "Ημερομηνία",
+  "mealPlannerDefaultTypeLabel": "Προεπιλεγμένος τύπος",
   "mealPlannerDeleteMeal": "Αφαίρεση γεύματος",
   "mealPlannerEditMeal": "Επεξεργασία γεύματος",
+  "mealPlannerEditType": "Επεξεργασία τύπου γεύματος",
   "mealPlannerError": "Σφάλμα κατά τη φόρτωση του προγράμματος γευμάτων",
+  "mealPlannerEstimatePartial": "Εκτίμηση με βάση συνταγές με στοιχεία μερικής τιμής.",
   "mealPlannerGenerateList": "Δημιουργία λίστας αγορών",
   "mealPlannerGenerateListConfirm": "Προσθήκη όλων των συστατικών από τα προγραμματισμένα γεύματα αυτής της εβδομάδας στη λίστα αγορών σας;",
   "mealPlannerGenerateListEmpty": "Δεν υπάρχουν συστατικά για προσθήκη. Προγραμματίστε πρώτα μερικά γεύματα με συνταγές.",
   "mealPlannerGenerateListNoList": "Δημιουργήστε πρώτα μια λίστα αγορών.",
   "mealPlannerGenerateListSuccess": "Προστέθηκαν {count} συστατικά στη λίστα σας!",
   "mealPlannerLoading": "Φόρτωση προγράμματος γευμάτων...",
+  "mealPlannerManageTypes": "Διαχειριστείτε τους τύπους γευμάτων",
   "mealPlannerMealDeleted": "Το γεύμα αφαιρέθηκε",
   "mealPlannerMealTypeBreakfast": "Πρωινό",
   "mealPlannerMealTypeDinner": "Δείπνο",
@@ -1566,6 +1717,12 @@
   "mealPlannerServings": "{count,plural, one{{count} μερίδα} other{{count} μερίδες}}",
   "mealPlannerServingsLabel": "Μερίδες",
   "mealPlannerTitle": "Πρόγραμμα γευμάτων",
+  "mealPlannerTypeColor": "Χρώμα",
+  "mealPlannerTypeDeleteConfirm": "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν τον τύπο γεύματος; Τα προγραμματισμένα γεύματα με αυτόν τον τύπο θα παραμείνουν.",
+  "mealPlannerTypeDeleteError": "Δεν είναι δυνατή η διαγραφή αυτού του τύπου γεύματος.",
+  "mealPlannerTypeIcon": "Εικόνισμα",
+  "mealPlannerTypeName": "Ονομα",
+  "mealPlannerTypeNameEmpty": "Το όνομα δεν μπορεί να είναι κενό",
   "mealPlannerViewMonthly": "Μηνιαία προβολή",
   "mealPlannerViewWeekly": "Εβδομαδιαία προβολή",
   "mealPlannerWeekEmpty": "Τίποτα προγραμματισμένο για αυτήν την εβδομάδα",
@@ -1777,6 +1934,7 @@
   "onboardingViewAllPlans": "Δείτε όλα τα σχέδια",
   "onboardingWelcomeDesc": "Ο πιο έξυπνος τρόπος για να οργανώσετε τις αγορές σας και να εξοικονομήσετε χρήματα.",
   "onboardingWelcomeTitle": "Καλώς ήρθατε στο KipiList",
+  "openConversation": "Ανοιχτή συνομιλία",
   "openMenu": "Άνοιγμα μενού",
   "organizeAisles": "Οργάνωση ανά διαδρόμους",
   "organizeAislesPrompt": "Οργάνωση ανά διαδρόμους σούπερ μάρκετ.",
@@ -1786,14 +1944,17 @@
   "pantryAppBar": "Ντουλάπι",
   "pantryAvailabilityAll": "Όλα έτοιμα!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} σε ντουλάπι",
+  "pantryDeficitCount": "Λείπει {count}{unit}",
   "pantryEditTitle": "Επεξεργασία {name}",
   "pantryEmpty": "Άδειο ντουλάπι",
   "pantryEmptySubtitle": "Προσθέστε προϊόντα που θέλετε να έχετε στο σπίτι",
+  "pantryItemAdded": "Το στοιχείο προστέθηκε",
   "pantryItemRemoved": "Το στοιχείο αφαιρέθηκε",
   "paywallAfterItem1": "Σιτηρά",
   "paywallAfterItem2": "Καθάρισμα",
   "paywallAfterItem3": "κρέατα",
   "paywallAfterItem4": "Αρτοποιείο",
+  "paywallBasedOnAnswers": "Εξατομικευμένη από τις απαντήσεις σας",
   "paywallBeforeAfterTitle": "AI Πριν και Μετά:",
   "paywallBeforeItem1": "ρύζι",
   "paywallBeforeItem2": "σαπούνι",
@@ -1831,6 +1992,8 @@
   "paywallGoalHeadlinePantry": "{name}, παρακολουθήστε τέλεια το ντουλάπι σας!",
   "paywallGoalHeadlineRecipes": "{name}, ανακαλύψτε νέες συνταγές!",
   "paywallGoalHeadlineSaveMoney": "{name}, εξοικονομήστε χρήματα σε κάθε ταξίδι!",
+  "paywallHeroFeatureDesc": "Εκφωνήστε ή επικολλήστε μια ολόκληρη λίστα — η τεχνητή νοημοσύνη την ταξινομεί, την κατηγοριοποιεί και την προϋπολογίζει σε δευτερόλεπτα",
+  "paywallHeroFeatureTitle": "AI Shopping Assistant",
   "paywallHeroHeadline": "Το Kipi AI πάντα δίπλα σας",
   "paywallHeroSubtitle": "Προσθέστε αντικείμενα, οργανώστε λίστες και εξοικονομήστε χρόνο με την τεχνητή νοημοσύνη στην τσέπη σας",
   "paywallHeroSubtitlePersonalized": "Γεια {name}, οργανώστε τις αγορές σας με τον σωστό τρόπο.",
@@ -1865,6 +2028,11 @@
   "paywallTestimonial2Text": "Δεν ξέχασα ποτέ ξανά ένα στοιχείο λίστας. Η συνομιλία AI είναι συγκλονιστική!",
   "paywallTestimonialAuthor": "Ανν Σ.",
   "paywallTestimonialsTitle": "Τι λένε οι χρήστες μας:",
+  "paywallTimelineChargeDesc": "Η συνδρομή σας ξεκινά — ακυρώστε ανά πάσα στιγμή",
+  "paywallTimelineDay": "Ημέρα {day}",
+  "paywallTimelineReminderDesc": "Σας υπενθυμίζουμε πριν τελειώσει η δίκη",
+  "paywallTimelineToday": "Σήμερα",
+  "paywallTimelineTodayDesc": "Ξεκλειδώστε την πλήρη πρόσβαση αμέσως",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Ξεκινήστε τη δωρεάν δοκιμή",
   "paywallTrialDays": "{days} ΜΕΡΕΣ ΔΩΡΕΑΝ",
@@ -1887,11 +2055,15 @@
   "prefSharing": "Κοινή χρήση λιστών",
   "prefUnlimitedLists": "Απεριόριστες λίστες",
   "prefUnlimitedPantry": "Απεριόριστο ντουλάπι",
+  "preferencesSection": "Προτιμήσεις",
   "preferredMarket": "Προτιμώμενη αγορά",
   "preferredMarketHint": "Πού ψωνίζετε συνήθως;",
+  "premiumActionsPrompt": "Εγγραφείτε στο Premium για να ξεκλειδώσετε αυτόματες ενέργειες.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Αναβαθμίστε για ξεκλείδωμα",
   "prepTime": "Χρόνος προετοιμασίας",
   "prepTimeMinutes": "Χρόνος προετοιμασίας (λεπτά)",
+  "previousItemState": "Προηγούμενη κατάσταση: {quantity} {unit} [{category}]{price}",
   "privacy": "Απόρρητο",
   "product": "Προϊόν",
   "productName": "Όνομα προϊόντος",
@@ -1908,21 +2080,34 @@
   "quantityShort": "Ποσ",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Συνομιλία με τον Kipi",
+  "quickActionPantry": "Προβολή αποθήκης",
   "quickRecipe": "Γρήγορη συνταγή",
   "quickRecipePrompt": "Προτείνετε συνταγές με στοιχεία από τη λίστα μου.",
   "quickReplies": "Γρήγορες απαντήσεις:",
   "quickSuggestions": "Γρήγορες προτάσεις",
+  "recipeAddError": "Δεν ήταν δυνατή η προσθήκη στη λίστα σας. Δοκιμάστε ξανά.",
   "recipeAddToList": "Προσθήκη στη λίστα αγορών",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Η συνταγή δημιουργήθηκε!",
   "recipeDeleted": "Η συνταγή διαγράφηκε",
+  "recipeEstimatePartial": "Μερική εκτίμηση με βάση τα συστατικά με τιμή.",
+  "recipeEstimatedCostPerServing": "{cost} / μερίδα",
+  "recipeEstimatedTotalCost": "Εκτιμώμενο συνολικό κόστος",
   "recipeImage": "Εικόνα συνταγής",
+  "recipeIngredientInPantry": "Στο ντουλάπι",
+  "recipeIngredientLowPantry": "Χαμηλό σε ντουλάπι",
   "recipeIngredientSingular": "1 συστατικό",
   "recipeIngredientsPlural": "{count} συστατικά",
+  "recipeManualTotalCost": "Χειροκίνητο συνολικό κόστος",
+  "recipeManualTotalCostHint": "Αφήστε κενό για εκτίμηση από τις τιμές των συστατικών.",
   "recipeName": "Όνομα συνταγής",
   "recipeSaved": "Η συνταγή αποθηκεύτηκε!",
+  "recipeServesCount": "Εξυπηρετεί {count}",
   "recipeSuggestion": "Πρόταση συνταγής",
   "recipeTags": "Ετικέτες συνταγής",
+  "recipeTapToCheck": "Πατήστε ένα συστατικό για να το ελέγξετε καθώς μαγειρεύετε",
+  "recipeYieldServings": "Απόδοση μερίδες",
   "regenerate": "Αναγέννηση",
   "remove": "Αφαίρεση",
   "removeBudget": "Αφαίρεση",
@@ -1946,9 +2131,12 @@
   "savings": "Εξοικονόμηση",
   "scanBarcodeTitle": "Σάρωση γραμμικού κώδικα",
   "scanProductTitle": "Σάρωση προϊόντος",
+  "scrollToBottom": "Κάντε κύλιση προς τα κάτω",
+  "searchConversations": "Αναζήτηση συνομιλιών",
   "searchCurrency": "Αναζήτηση νομίσματος...",
   "searchInConversation": "Αναζήτηση στη συνομιλία...",
   "searchLanguage": "Αναζήτηση γλώσσας...",
+  "searchMessages": "Αναζήτηση μηνυμάτων...",
   "searchRecipes": "Αναζήτηση συνταγών...",
   "selectAll": "Επιλογή όλων",
   "selectCheaperAlternative": "Επιλέξτε φθηνότερη εναλλακτική",
@@ -1982,6 +2170,7 @@
   "signInGoogle": "Σύνδεση με Google",
   "skip": "Παραλείπω",
   "smartOrganization": "Έξυπνη οργάνωση",
+  "somethingWentWrong": "Κάτι πήγε στραβά",
   "sortCategory": "Κατηγορία",
   "sortDate": "Ημερομηνία",
   "sortManual": "Χειροκίνητα",
@@ -2011,18 +2200,21 @@
   "themeColor": "Χρώμα θέματος",
   "themeGreen": "Πράσινο",
   "themeIndigo": "Λουλακί",
+  "themeMode": "Λειτουργία θέματος",
   "themeOrange": "Πορτοκαλί",
   "themePink": "Ροζ",
   "themePurple": "Μωβ",
   "themeRed": "Κόκκινο",
   "themeTeal": "Γαλαζοπράσινο",
   "totalEstimated": "Σύνολο εκτιμώμενο: {amount}",
+  "totalEstimatedLabel": "Εκτιμώμενο σύνολο",
   "totalSavings": "Συνολική Εξοικονόμηση",
   "totalSpending": "Συνολικές δαπάνες",
   "trackStock": "Παρακολούθηση αποθέματος",
   "trackStockActive": "Εμφανίζεται σε προτάσεις αγορών",
   "trackStockInactive": "Δεν δημιουργεί πρόταση αγοράς",
   "undo": "Αναίρεση",
+  "undoChanges": "Αναίρεση αλλαγών",
   "unit": "Μονάδα",
   "unitPack": "συσκευασία",
   "unlockAi": "Ξεκλειδώστε απεριόριστο AI",
@@ -2033,6 +2225,7 @@
   "unmark": "Αποεπισήμανση",
   "upgrade": "Αναβάθμιση",
   "userProfile": "Προφίλ χρήστη",
+  "userRole": "Εσείς",
   "validForLimitedTime": "Ισχύει για περιορισμένο χρόνο",
   "version": "Έκδοση",
   "viewActive": "Προβολή ενεργών",
@@ -2040,6 +2233,7 @@
   "viewHistory": "Προβολή ιστορικού",
   "viewItems": "Προβολή στοιχείων",
   "viewList": "Προβολή λίστας",
+  "viewPlans": "Προβολή σχεδίων",
   "viewPro": "Προβολή Pro",
   "viewRecipe": "Προβολή συνταγής",
   "voiceCommandContent": "Μιλήστε φυσικά για να διαχειριστείτε τη λίστα σας!\n\nΠαραδείγματα:\n• 'Πρόσθεσε ψωμί, τυρί και ζαμπόν'\n• 'Αφαίρεσε το απορρυπαντικό'\n• 'Άλλαξε θέμα σε μπλε'\n\nΑυτή είναι μια αποκλειστική λειτουργία του KipiList Premium.",

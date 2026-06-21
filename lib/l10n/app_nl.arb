@@ -8,6 +8,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -115,6 +129,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -312,6 +333,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingProducts": {
     "placeholders": {
       "error": {
@@ -459,6 +483,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1083,6 +1114,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1237,6 +1278,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1269,6 +1317,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@progressBudget": {
     "placeholders": {
@@ -1330,7 +1401,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1471,22 +1556,31 @@
   "addingItems": "Items aan de lijst toevoegen...",
   "addingToPantry": "Toevoegen aan voorraadkast...",
   "advancedFeatures": "Geavanceerde functies",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Kan acties niet uitvoeren",
+  "agentActionsPremium": "Acties vereisen Premium",
+  "agentActionsRunning": "Acties uitvoeren...",
+  "aiApiError": "De AI-service heeft een fout geretourneerd ({statusCode}).",
   "aiAssistant": "AI-assistent",
   "aiAssistantDescription": "Krijg slimme suggesties, recepten en persoonlijke tips met onze AI-assistent.",
   "aiAssistantGeneral": "Algemeen assistent",
   "aiAssistantHistory": "Assistent Geschiedenis",
   "aiAssistantTitle": "AI-assistent",
+  "aiConnectionError": "Kan geen verbinding maken met de AI-service. Controleer uw verbinding.",
   "aiConversationHistory": "Gespreksgeschiedenis",
   "aiCreditsRemaining": "{remaining} credits over",
   "aiDeleteConversationConfirm": "Verwijderen",
   "aiDeleteConversationTitle": "Gesprek verwijderen?",
   "aiDeletedList": "Lijst verwijderd",
+  "aiEmptyResponseError": "De AI-service heeft een leeg antwoord geretourneerd.",
   "aiEnergy": "AI-energie",
   "aiEnergyLow": "Lage AI-energie",
   "aiError": "Sorry, er is een fout opgetreden bij het verwerken van je verzoek. Controleer je verbinding of probeer het later opnieuw.",
   "aiFirstOpenHint": "Ik ben Kipi, je winkelassistent. Vraag me alles over je lijst!",
+  "aiGeneratingResponse": "Reactie genereren...",
   "aiHello": "Hallo! Ik ben Kipi",
   "aiHowCanIHelp": "Hoe kan ik je vandaag helpen?",
+  "aiInvalidResponseError": "De AI-service heeft een ongeldig antwoord geretourneerd.",
   "aiLimitAlmostReached": "Bijna geen AI-berichten meer",
   "aiNewConversation": "Nieuw gesprek",
   "aiNewSession": "Nieuwe sessie",
@@ -1494,20 +1588,25 @@
   "aiNoMessagesFound": "Geen berichten gevonden",
   "aiPremiumDescription": "Deze interactieve interface maakt gebruik van geavanceerde kunstmatige intelligentie en is exclusief voor Pro-leden of via een snelle advertentie.",
   "aiPremiumUpsell": "Ga voor Premium",
+  "aiRateLimitError": "Te veel berichten in korte tijd. Wacht een paar seconden en probeer het opnieuw.",
   "aiRecentConversations": "Recente gesprekken",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} vandaag",
   "aiSearchMessages": "Berichten zoeken...",
+  "aiSection": "AI-assistent",
   "aiStartNewConversation": "Begin een nieuw gesprek",
   "aiSubscribeUnlimited": "Abonneer u op onbeperkte AI",
   "aiSuggestCreateList": "Maak mijn eerste lijst",
   "aiSuggestSaveMore": "Hoe kunt u meer besparen?",
   "aiTeaserFallback": "Abonneer u op Premium om het volledige antwoord te ontgrendelen en onbeperkte AI-tips te krijgen voor uw boodschappen...",
+  "aiTimeoutError": "Het verzoek duurde te lang. Probeer het opnieuw.",
   "aiUnlockUnlimited": "Ontgrendel onbeperkte AI",
   "aiUnlockWithAd": "Ontgrendel met advertentie",
   "aiUsageExhausted": "Maandelijkse AI-limiet bereikt. Upgrade naar Pro voor onbeperkt →",
   "aiUsageWarning": "{remaining} AI-acties over deze maand: upgrade voor onbeperkt",
   "aiVoiceCommandTooltip": "AI-stemcommando (Premium)",
   "aiWelcomeContent": "Hallo! 👋 Ik ben **Kipi**, jouw persoonlijke winkel- en receptenassistent!\n\nIk ben hier om je te helpen:\n🛒 **Organiseer** uw boodschappen automatisch op categorieën\n💰 **Volg** uw budget en geef u geldbesparende tips\n🍲 **Stel** heerlijke recepten voor met wat je al hebt\n\nHoe kan ik je vandaag helpen? U kunt beginnen met het maken van uw eerste lijst!",
+  "aiWelcomeSuggestBarbecue": "Plan een barbecue",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, ik organiseer een barbecue – help me met het samenstellen van het boodschappenlijstje",
   "aiWelcomeSuggestCreateList": "Maak mijn eerste lijst",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, help me mijn eerste boodschappenlijstje te maken",
   "aiWelcomeSuggestSave": "Hoe geld besparen?",
@@ -1518,14 +1617,17 @@
   "appTitle": "Boodschappenlijst",
   "appearance": "Weergave",
   "archiveList": "Lijst archiveren",
+  "artifactBudgetLabel": "Begroting:",
   "artifactReplaceBody": "Selecteer een productalternatief om de kosten te optimaliseren.",
   "artifactReplaceTitle": "Vervang {name}",
   "artifactSuggestedItems": "Voorgestelde items",
   "artifactSwapButton": "Ruil",
   "artifactSwappedLabel": "Verwisseld",
+  "artifactSynced": "Gesynchroniseerd",
   "assistantHistory": "Assistent geschiedenis",
   "assistantHistorySubtitle": "Bekijk uw gespreksgeschiedenis",
   "assistantName": "Naam van de assistent",
+  "assistantRole": "Assistent",
   "backToChat": "Terug naar Chatten",
   "backToToday": "Terug naar vandaag",
   "backupExported": "Back-up geëxporteerd!",
@@ -1533,6 +1635,7 @@
   "backupPremiumDescription": "Back-up en export is een Premium-functie",
   "backupSubtitle": "Exporteer of importeer je gegevens",
   "backupTitle": "Back-up",
+  "badResponse": "Slechte reactie",
   "badgeBeginner": "Beginner",
   "badgeOrganized": "Georganiseerd",
   "badgeSavingMaster": "Meester redden",
@@ -1560,10 +1663,12 @@
   "catOthers": "Overig",
   "catalogAddItems": "Voeg {count} {count, plural, one{item} other{items}} toe →",
   "catalogBrowse": "Catalogus doorbladeren",
+  "catalogCategories": "Categorieën",
   "catalogFilterNational": "Onderdanen",
   "catalogItemAdded": "{name} toegevoegd",
   "catalogMyFrequents": "Mijn frequente bezoekers",
   "catalogProductNotFound": "Product niet gevonden, typ de naam",
+  "catalogRareBadge": "Zeldzaam",
   "catalogRareSection": "minder gebruikelijk in uw land",
   "catalogRetry": "Probeer het opnieuw",
   "catalogSearchGlobal": "Zoek een product...",
@@ -1573,16 +1678,43 @@
   "catalogTitle": "Catalogus",
   "categorizingItems": "Artikelen categoriseren...",
   "category": "Categorie",
+  "categoryAlcohol": "Alcoholische dranken",
+  "categoryBaby": "Baby",
+  "categoryBakery": "Bakkerij",
+  "categoryBeverages": "Dranken",
+  "categoryCanned": "Ingeblikte goederen",
+  "categoryCleaning": "Schoonmaak",
+  "categoryColdCuts": "Vleeswaren",
   "categoryColorLabel": "Kleur",
+  "categoryDairy": "Zuivel",
+  "categoryFish": "Vis",
+  "categoryFrozen": "Bevroren voedsel",
+  "categoryFruits": "Fruit",
+  "categoryGrains": "Granen en granen",
+  "categoryHygiene": "Persoonlijke verzorging",
   "categoryIconLabel": "Icon",
   "categoryLimitReached": "Limiet van 10 categorieën in de gratis versie. Upgrade naar Pro!",
+  "categoryMeat": "Vlees",
   "categoryName": "Categorienaam",
   "categoryNameHint": "Bijvoorbeeld: vlees",
+  "categoryOthers": "Ander",
+  "categoryPet": "Benodigdheden voor huisdieren",
+  "categorySeasonings": "Kruiderijen",
+  "categorySweets": "Snoepjes en desserts",
+  "categoryUtilities": "Huishoudelijke benodigdheden",
+  "categoryVegetables": "Groenten",
+  "chatEmptyGreeting": "Hallo {name}, ik ben Kipi 👋",
+  "chatEmptyGreetingNoName": "Hallo, ik ben Kipi 👋",
+  "chatEmptyPitch": "Ik maak lijsten, stel recepten voor en zoek waar ik kan opslaan. Waar beginnen we?",
   "chatEmptySubtitle": "Vraag om artikelenuggesties, recepten of bewaartips om aan de slag te gaan.",
   "chatEmptyTitle": "Je chat is leeg",
   "chatError": "Fout bij laden chat: {error}",
   "chatHint": "Typ je bericht...",
   "chatHintBlocked": "Ontgrendel AI om te chatten",
+  "chatHistoryErrorBody": "Er is iets misgegaan aan onze kant. Tik op opnieuw proberen om het opnieuw te proberen.",
+  "chatHistoryErrorTitle": "Kan dit gesprek niet laden",
+  "chatHistoryOfflineBody": "Controleer uw internetverbinding en probeer het opnieuw.",
+  "chatHistoryOfflineTitle": "Je bent offline",
   "chatSubtitle": "Vraag om productsuggesties, recepten of bespaartips.",
   "chatSubtitleShort": "Vraag naar prijzen, recepten, organisatie...",
   "checkingItem": "Artikel controleren...",
@@ -1593,6 +1725,7 @@
   "chooseImageSource": "Kies bron van afbeelding",
   "chooseLanguage": "Selecteer taal",
   "chooseThemeColor": "Kies Themakleur",
+  "chooseThemeMode": "Selecteer de themamodus",
   "clear": "Leegmaken",
   "clearHistory": "Geschiedenis wissen",
   "clearHistoryConfirm": "Alle berichten in deze sessie wissen?",
@@ -1641,6 +1774,10 @@
   "customizeAssistant": "Pas aan",
   "dark": "Donker",
   "data": "Gegevens",
+  "dateGroupOlder": "Ouder",
+  "dateGroupPrevious7Days": "Vorige 7 dagen",
+  "dateGroupToday": "Vandaag",
+  "dateGroupYesterday": "Gisteren",
   "dayFri": "Vr",
   "dayMon": "ma",
   "daySat": "Zat",
@@ -1664,6 +1801,7 @@
   "deleteRecipeConfirmMsg": "Weet je zeker dat je \"{recipeName}\" wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
   "deleteSession": "Chat verwijderen",
   "deleteSessionConfirm": "Weet je zeker dat je deze chat wilt verwijderen? De berichten gaan definitief verloren.",
+  "deletedList": "Lijst verwijderd",
   "deselectAll": "Alles deselecteren",
   "dietaryRestrictions": "Dieetbeperkingen",
   "dietaryRestrictionsHint": "Bijvoorbeeld: veganistisch, vegetarisch, glutenvrij",
@@ -1676,6 +1814,7 @@
   "editCategoryDialog": "Categorie bewerken",
   "editItem": "Item bewerken",
   "editItemPrice": "Geschatte prijs",
+  "editMessage": "Bericht bewerken",
   "editPantryItem": "{name} bewerken",
   "editRecipe": "Bewerken",
   "editRecipeTitle": "Recept bewerken",
@@ -1709,6 +1848,7 @@
   "errorLoadingChat": "Oeps! Er is iets misgegaan bij het laden van de chat.",
   "errorLoadingChatSubtitle": "Controleer uw verbinding of probeer het later opnieuw.",
   "errorLoadingHistory": "Fout bij laden van geschiedenis",
+  "errorLoadingItems": "Fout bij het laden van items",
   "errorLoadingLists": "Fout bij het laden van lijsten",
   "errorLoadingProducts": "Fout bij het laden van producten: {error}",
   "errorLoadingRecipes": "Fout bij laden van recepten",
@@ -1783,6 +1923,7 @@
   "generatingShareLink": "Deellink genereren...",
   "gestureHint": "Houd ingedrukt om te selecteren • Veeg om te verwijderen",
   "globalAssistant": "Globale assistent",
+  "goodResponse": "Goede reactie",
   "howCanIHelp": "Hoe kan ik helpen?",
   "icon": "Icon:",
   "idealQty": "Ideale aant",
@@ -1801,14 +1942,18 @@
   "inviteToList": "Uitnodigen voor lijst",
   "itemAdded": "{name} toegevoegd",
   "itemAddedSnack": "{name} toegevoegd",
+  "itemAddedToList": "Artikel toegevoegd aan de lijst.",
   "itemName": "Itemnaam",
   "itemRemoved": "Item verwijderd",
   "itemsAddedSuccess": "Items succesvol toegevoegd aan lijst!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} item(s) moeten gekocht worden",
   "itemsPurchased": "Gekochte artikelen",
   "itemsPurchasedCount": "{purchased} van {total} gekocht",
   "itemsPurchasedShort": "{purchased}/{total} gekocht",
   "itemsWillBeAdded": "{count} item(s) worden toegevoegd",
+  "keepAdding": "Blijf toevoegen",
+  "keepAddingSubtitle": "Houd het blad open om meerdere items toe te voegen",
   "kipiListProActive": "KipiList Pro Actief",
   "kipiListTitle": "KipiLijst",
   "kipiQuickBarHint": "Wat moet je kopen?",
@@ -1858,16 +2003,22 @@
   "mealDragHint": "Houd ingedrukt om te slepen en te verplaatsen",
   "mealNoRecipeFound": "Geen recept gevonden",
   "mealPlannerAddMeal": "Maaltijd toevoegen",
+  "mealPlannerAddType": "Maaltijdsoort toevoegen",
+  "mealPlannerCustomTypeLabel": "Aangepast type",
   "mealPlannerDateLabel": "Datum",
+  "mealPlannerDefaultTypeLabel": "Standaardtype",
   "mealPlannerDeleteMeal": "Maaltijd verwijderen",
   "mealPlannerEditMeal": "Maaltijd bewerken",
+  "mealPlannerEditType": "Maaltijdtype bewerken",
   "mealPlannerError": "Fout bij laden van maaltijdplanning",
+  "mealPlannerEstimatePartial": "Schatting gebaseerd op recepten met gedeeltelijke prijsgegevens.",
   "mealPlannerGenerateList": "Boodschappenlijst genereren",
   "mealPlannerGenerateListConfirm": "Alle ingrediënten van geplande maaltijden voor deze week toevoegen aan je boodschappenlijst?",
   "mealPlannerGenerateListEmpty": "Geen ingrediënten om toe te voegen. Plan eerst maaltijden met recepten.",
   "mealPlannerGenerateListNoList": "Maak eerst een boodschappenlijst aan.",
   "mealPlannerGenerateListSuccess": "{count} ingrediënt(en) toegevoegd aan je lijst!",
   "mealPlannerLoading": "Maaltijdplanning laden...",
+  "mealPlannerManageTypes": "Beheer maaltijdtypes",
   "mealPlannerMealDeleted": "Maaltijd verwijderd",
   "mealPlannerMealTypeBreakfast": "Ontbijt",
   "mealPlannerMealTypeDinner": "Diner",
@@ -1887,6 +2038,12 @@
   "mealPlannerServings": "{count,plural, one{{count} portie} other{{count} porties}}",
   "mealPlannerServingsLabel": "Porties",
   "mealPlannerTitle": "Maaltijdplanner",
+  "mealPlannerTypeColor": "Kleur",
+  "mealPlannerTypeDeleteConfirm": "Weet u zeker dat u dit maaltijdtype wilt verwijderen? Geplande maaltijden met dit type blijven behouden.",
+  "mealPlannerTypeDeleteError": "Kan dit maaltijdtype niet verwijderen.",
+  "mealPlannerTypeIcon": "Icon",
+  "mealPlannerTypeName": "Naam",
+  "mealPlannerTypeNameEmpty": "Naam mag niet leeg zijn",
   "mealPlannerViewMonthly": "Maandweergave",
   "mealPlannerViewWeekly": "Weekweergave",
   "mealPlannerWeekEmpty": "Niets gepland voor deze week",
@@ -2116,6 +2273,7 @@
   "onboardingViewAllPlans": "Bekijk alle abonnementen",
   "onboardingWelcomeDesc": "De slimste manier om uw boodschappen te organiseren en geld te besparen.",
   "onboardingWelcomeTitle": "Welkom bij KipiList",
+  "openConversation": "Open gesprek",
   "openMenu": "Menu openen",
   "organizeAisles": "Ordenen op gang",
   "organizeAislesPrompt": "Ordenen op supermarktgang.",
@@ -2130,6 +2288,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} in de voorraadkast",
   "pantryCompactView": "Compacte weergave",
   "pantryDeficit": "Ontbrekende {amount}{unit}",
+  "pantryDeficitCount": "Ontbrekende {count}{unit}",
   "pantryDeleteItemsContent": "Wilt u {count} geselecteerde items verwijderen?",
   "pantryDeleteItemsTitle": "Artikelen verwijderen",
   "pantryDeleteSelected": "Geselecteerde verwijderen",
@@ -2146,6 +2305,7 @@
   "pantryFilterExpiring": "Verloopt",
   "pantryFilterOutStock": "Niet op voorraad",
   "pantryFirstOpenHint": "Houd bij wat je in huis hebt. Voeg items toe of scan barcodes.",
+  "pantryItemAdded": "Artikel toegevoegd",
   "pantryItemRemoved": "Item verwijderd",
   "pantryLimitReached": "Limiet van {count} artikelen in de voorraadkast bij het gratis abonnement. Upgrade om meer toe te voegen.",
   "pantryMoreDetails": "Meer details",
@@ -2160,6 +2320,7 @@
   "paywallAfterItem2": "Schoonmaak",
   "paywallAfterItem3": "Vlees",
   "paywallAfterItem4": "Bakkerij",
+  "paywallBasedOnAnswers": "Gepersonaliseerd op basis van uw antwoorden",
   "paywallBeforeAfterTitle": "AI voor en na:",
   "paywallBeforeItem1": "rijst",
   "paywallBeforeItem2": "zeep",
@@ -2197,6 +2358,8 @@
   "paywallGoalHeadlinePantry": "{name}, volg je voorraadkast perfect!",
   "paywallGoalHeadlineRecipes": "{name}, ontdek nieuwe recepten!",
   "paywallGoalHeadlineSaveMoney": "{name}, bespaar op elke reis!",
+  "paywallHeroFeatureDesc": "Spreek of plak een hele lijst: AI sorteert, categoriseert en budgetteert deze in enkele seconden",
+  "paywallHeroFeatureTitle": "AI-winkelassistent",
   "paywallHeroHeadline": "Kipi AI staat altijd aan uw zijde",
   "paywallHeroSubtitle": "Voeg items toe, organiseer lijsten en bespaar tijd met AI op zak",
   "paywallHeroSubtitlePersonalized": "Hé {name}, organiseer je boodschappen op de juiste manier.",
@@ -2231,6 +2394,11 @@
   "paywallTestimonial2Text": "Ik ben nooit meer een lijstitem vergeten. De AI-chat is sensationeel!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Wat onze gebruikers zeggen:",
+  "paywallTimelineChargeDesc": "Uw abonnement gaat in. U kunt op elk gewenst moment opzeggen",
+  "paywallTimelineDay": "Dag {day}",
+  "paywallTimelineReminderDesc": "We herinneren u eraan voordat de proefperiode afloopt",
+  "paywallTimelineToday": "Vandaag",
+  "paywallTimelineTodayDesc": "Ontgrendel onmiddellijk volledige toegang",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Gratis proefperiode starten",
   "paywallTrialDays": "{days} DAGEN GRATIS",
@@ -2253,11 +2421,15 @@
   "prefSharing": "Lijsten delen",
   "prefUnlimitedLists": "Ongelimiteerde lijsten",
   "prefUnlimitedPantry": "Ongelimiteerde voorraadkast",
+  "preferencesSection": "Voorkeuren",
   "preferredMarket": "Voorkeursmarkt",
   "preferredMarketHint": "Bijvoorbeeld: supermarkt X",
+  "premiumActionsPrompt": "Abonneer u op Premium om automatische acties te ontgrendelen.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Upgrade om te ontgrendelen",
   "prepTime": "Bereidingstijd",
   "prepTimeMinutes": "Bereidingstijd (minuten)",
+  "previousItemState": "Vorige status: {quantity} {unit} [{category}]{price}",
   "privacy": "Privacy",
   "processing": "Verwerken...",
   "product": "Product",
@@ -2277,21 +2449,34 @@
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "Uw lijsten opvragen...",
+  "quickActionAi": "Chat met Kipi",
+  "quickActionPantry": "Bekijk voorraadkast",
   "quickRecipe": "Snel recept",
   "quickRecipePrompt": "Stel recepten voor met items uit mijn lijst.",
   "quickReplies": "Snelle antwoorden:",
   "quickSuggestions": "Snelle suggesties",
+  "recipeAddError": "Kan niet toevoegen aan je lijst. Probeer het opnieuw.",
   "recipeAddToList": "Toevoegen aan boodschappenlijstje",
   "recipeAddedConfirmation": "{count} ingrediënten toegevoegd aan {listName}",
   "recipeCreated": "Recept aangemaakt!",
   "recipeDeleted": "Recept verwijderd",
+  "recipeEstimatePartial": "Gedeeltelijke schatting op basis van ingrediënten met prijs.",
+  "recipeEstimatedCostPerServing": "{cost} / portie",
+  "recipeEstimatedTotalCost": "Geschatte totale kosten",
   "recipeImage": "Afbeelding van recept",
+  "recipeIngredientInPantry": "In voorraadkast",
+  "recipeIngredientLowPantry": "Laag in de voorraadkast",
   "recipeIngredientSingular": "1 ingrediënt",
   "recipeIngredientsPlural": "{count} ingrediënten",
+  "recipeManualTotalCost": "Handmatige totale kosten",
+  "recipeManualTotalCostHint": "Laat leeg om een ​​schatting te maken op basis van de ingrediëntenprijzen.",
   "recipeName": "Naam van recept",
   "recipeSaved": "Recept opgeslagen!",
+  "recipeServesCount": "Serveert {count}",
   "recipeSuggestion": "Receptsuggestie",
   "recipeTags": "Recepttags",
+  "recipeTapToCheck": "Tik op een ingrediënt om het aan te vinken terwijl je kookt",
+  "recipeYieldServings": "Opbrengst porties",
   "regenerate": "Opnieuw genereren",
   "remove": "Verwijderen",
   "removeBudget": "Verwijderen",
@@ -2326,9 +2511,12 @@
   "scanBarcodeTitle": "Streepjescode scannen",
   "scanProduct": "Product scannen",
   "scanProductTitle": "Product scannen",
+  "scrollToBottom": "Scroll naar beneden",
+  "searchConversations": "Zoek gesprekken",
   "searchCurrency": "Valuta zoeken...",
   "searchInConversation": "Zoeken in gesprek...",
   "searchLanguage": "Taal zoeken...",
+  "searchMessages": "Berichten zoeken...",
   "searchRecipes": "Recepten zoeken...",
   "searchingCategories": "Categorieën zoeken...",
   "searchingProducts": "Producten zoeken...",
@@ -2391,6 +2579,7 @@
   "signInGoogle": "Inloggen met Google",
   "skip": "Overslaan",
   "smartOrganization": "Slimme organisatie",
+  "somethingWentWrong": "Er is iets misgegaan",
   "sortAZ": "A-Z",
   "sortCategory": "Categorie",
   "sortDate": "Datum",
@@ -2422,6 +2611,7 @@
   "themeColor": "Themakleur",
   "themeGreen": "Groen",
   "themeIndigo": "Indigo",
+  "themeMode": "Thema-modus",
   "themeOrange": "Oranje",
   "themePink": "Roze",
   "themePurple": "Paars",
@@ -2440,6 +2630,7 @@
   "toolSaveRecipe": "Recept opslaan",
   "toolShareList": "Lijst delen",
   "totalEstimated": "Totaal geschat: {amount}",
+  "totalEstimatedLabel": "Geschat totaal",
   "totalSavings": "Totale besparingen",
   "totalSpending": "Totaal uitgegeven",
   "trackStock": "Voorraad bijhouden",
@@ -2447,6 +2638,7 @@
   "trackStockInactive": "Genereert geen winkel suggestie",
   "uncheckingItem": "Artikel uitvinken...",
   "undo": "Ongedaan maken",
+  "undoChanges": "Wijzigingen ongedaan maken",
   "unit": "Eenheid",
   "unitPack": "pak",
   "unlockAi": "Ontgrendel onbeperkte AI",
@@ -2474,6 +2666,7 @@
   "userProfileSaveButton": "Profiel opslaan",
   "userProfileSaved": "Profiel succesvol opgeslagen!",
   "userProfileTitle": "Mijn profiel",
+  "userRole": "Jij",
   "validForLimitedTime": "Beperkt geldig",
   "version": "Versie",
   "viewActive": "Actieve bekijken",
@@ -2481,6 +2674,7 @@
   "viewHistory": "Geschiedenis bekijken",
   "viewItems": "Bekijk artikelen",
   "viewList": "Lijst bekijken",
+  "viewPlans": "Bekijk plannen",
   "viewPro": "Bekijk Pro",
   "viewRecipe": "Recept bekijken",
   "voiceCommandContent": "Spreek natuurlijk om je lijst te beheren!\n\nVoorbeelden:\n• 'Voeg brood, kaas en ham toe'\n• 'Verwijder wasmiddel'\n• 'Verander thema naar blauw'\n\nDit is een exclusieve functie van KipiList Premium.",

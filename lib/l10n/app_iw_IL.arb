@@ -8,6 +8,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -121,6 +135,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -261,6 +282,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -290,6 +314,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -965,6 +996,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1112,6 +1153,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1150,6 +1198,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1223,7 +1294,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1371,42 +1456,56 @@
   "addToPantryPrompt": "להוסיף את \"{name}\" למזווה שלך?",
   "addedFeedback": "נוסף!",
   "advancedFeatures": "תכונות מתקדמות",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "הפעלת הפעולות נכשלה",
+  "agentActionsPremium": "פעולות דורשות פרימיום",
+  "agentActionsRunning": "הפעלת פעולות...",
+  "aiApiError": "שירות AI החזיר שגיאה ({statusCode}).",
   "aiAssistant": "עוזר AI",
   "aiAssistantDescription": "קבל הצעות חכמות, מתכונים וטיפים מותאמים אישית עם עוזר ה-AI שלנו.",
   "aiAssistantGeneral": "עוזר כללי",
   "aiAssistantHistory": "היסטוריה של עוזר",
   "aiAssistantTitle": "עוזר AI",
+  "aiConnectionError": "לא ניתן להתחבר לשירות AI. בדוק את החיבור שלך.",
   "aiConversationHistory": "היסטוריית שיחות",
   "aiCreditsRemaining": "נותרו {remaining} נקודות זכות",
   "aiDeleteConversationConfirm": "לִמְחוֹק",
   "aiDeleteConversationTitle": "למחוק את השיחה?",
   "aiDeletedList": "רשימה שנמחקה",
+  "aiEmptyResponseError": "שירות AI החזיר תגובה ריקה.",
   "aiEnergy": "AI Energy",
   "aiEnergyLow": "אנרגיית AI נמוכה",
   "aiError": "מצטערים, אירעה שגיאה בעיבוד הבקשה שלך. בדוק את החיבור או נסה שוב מאוחר יותר.",
   "aiFirstOpenHint": "אני קיפי, עוזרת הקניות שלך. שאל אותי כל דבר על הרשימה שלך!",
+  "aiGeneratingResponse": "מייצר תגובה...",
   "aiHello": "שלום! אני קיפי",
   "aiHowCanIHelp": "איך אני יכול לעזור לך היום?",
+  "aiInvalidResponseError": "שירות AI החזיר תגובה לא חוקית.",
   "aiLimitAlmostReached": "כמעט נגמרו הודעות הבינה המלאכותית",
   "aiNewConversation": "שיחה חדשה",
   "aiNewSession": "מושב חדש",
   "aiNoConversationFound": "לא נמצאה שיחה",
   "aiNoMessagesFound": "לא נמצאו הודעות",
   "aiPremiumUpsell": "עבור לפרימיום",
+  "aiRateLimitError": "יותר מדי הודעות בזמן קצר. המתן מספר שניות ונסה שוב.",
   "aiRecentConversations": "שיחות אחרונות",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} היום",
   "aiSearchMessages": "חפש הודעות...",
+  "aiSection": "עוזר AI",
   "aiStartNewConversation": "התחל שיחה חדשה",
   "aiSubscribeUnlimited": "הירשם ל-AI ללא הגבלה",
   "aiSuggestCreateList": "צור את הרשימה הראשונה שלי",
   "aiSuggestSaveMore": "איך לחסוך יותר?",
   "aiTeaserFallback": "הירשם ל-Premium כדי לפתוח את התגובה המלאה ולקבל טיפים בלתי מוגבלים בינה מלאכותית לקניות שלך...",
+  "aiTimeoutError": "הבקשה ארכה יותר מדי זמן. אנא נסה שוב.",
   "aiUnlockUnlimited": "פתח AI ללא הגבלה",
   "aiUnlockWithAd": "בטל את הנעילה באמצעות Ad",
   "aiUsageExhausted": "הגעת למגבלת AI חודשית. שדרג ל-Pro ללא הגבלה →",
   "aiUsageWarning": "{remaining} נותרו פעולות בינה מלאכותית החודש - שדרוג ללא הגבלה",
   "aiVoiceCommandTooltip": "פקודה קולית AI (Premium)",
   "aiWelcomeContent": "שלום! 👋 אני **קיפי**, עוזרת הקניות והמתכונים האישית שלך!\n\nאני כאן כדי לעזור לך:\n🛒 **ארגן** את הקניות שלך לפי קטגוריות באופן אוטומטי\n💰 **עקוב** אחר התקציב שלך ותן לך טיפים לחיסכון בכסף\n🍲 **הצע** מתכונים טעימים עם מה שכבר יש לכם\n\nאיך אני יכול לעזור לך היום? אתה יכול להתחיל ביצירת הרשימה הראשונה שלך!",
+  "aiWelcomeSuggestBarbecue": "תכנן ברביקיו",
+  "aiWelcomeSuggestBarbecuePrompt": "קיפי, אני מארחת ברביקיו - עזור לי לבנות את רשימת הקניות",
   "aiWelcomeSuggestCreateList": "צור את הרשימה הראשונה שלי",
   "aiWelcomeSuggestCreateListPrompt": "קיפי, עזור לי ליצור את רשימת הקניות הראשונה שלי",
   "aiWelcomeSuggestSave": "איך לחסוך כסף?",
@@ -1417,14 +1516,17 @@
   "appTitle": "רשימת קניות",
   "appearance": "מראה",
   "archiveList": "ארכוב רשימה",
+  "artifactBudgetLabel": "תַקצִיב:",
   "artifactReplaceBody": "בחר חלופה למוצר כדי לייעל את העלות.",
   "artifactReplaceTitle": "החלף {name}",
   "artifactSuggestedItems": "פריטים מוצעים",
   "artifactSwapButton": "לְהַחלִיף",
   "artifactSwappedLabel": "הוחלף",
+  "artifactSynced": "מסונכרן",
   "assistantHistory": "היסטוריית Assistant",
   "assistantHistorySubtitle": "הצג את היסטוריית השיחות שלך",
   "assistantName": "שם עוזר",
+  "assistantRole": "עוֹזֵר",
   "backToChat": "חזרה לצ'אט",
   "backToToday": "בחזרה להיום",
   "backupExported": "הגיבוי יוצא!",
@@ -1432,6 +1534,7 @@
   "backupPremiumDescription": "גיבוי וייצוא הם תכונת Premium",
   "backupSubtitle": "ייצא או ייבא את הנתונים שלך",
   "backupTitle": "גיבוי",
+  "badResponse": "תגובה גרועה",
   "badgeBeginner": "מַתחִיל",
   "badgeOrganized": "מְאוּרגָן",
   "badgeSavingMaster": "מאסטר הצלה",
@@ -1459,10 +1562,12 @@
   "catOthers": "אחר",
   "catalogAddItems": "הוסף {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "עיין בקטלוג",
+  "catalogCategories": "קטגוריות",
   "catalogFilterNational": "אזרחים",
   "catalogItemAdded": "{name} נוסף",
   "catalogMyFrequents": "התדירות שלי",
   "catalogProductNotFound": "המוצר לא נמצא, הקלד את השם",
+  "catalogRareBadge": "נָדִיר",
   "catalogRareSection": "פחות נפוץ במדינה שלך",
   "catalogRetry": "נסה שוב",
   "catalogSearchGlobal": "חפש בכל מוצר...",
@@ -1471,16 +1576,43 @@
   "catalogSortPopular": "הכי פופולרי",
   "catalogTitle": "קָטָלוֹג",
   "category": "קטגוריה",
+  "categoryAlcohol": "משקאות אלכוהוליים",
+  "categoryBaby": "תִינוֹק",
+  "categoryBakery": "מַאֲפִיָה",
+  "categoryBeverages": "מַשׁקָאוֹת",
+  "categoryCanned": "שימורים",
+  "categoryCleaning": "ניקוי",
+  "categoryColdCuts": "נקניקים",
   "categoryColorLabel": "צֶבַע",
+  "categoryDairy": "מַחלָבָה",
+  "categoryFish": "לָדוּג",
+  "categoryFrozen": "מזון קפוא",
+  "categoryFruits": "פירות",
+  "categoryGrains": "דגנים ודגנים",
+  "categoryHygiene": "טיפול אישי",
   "categoryIconLabel": "סמל",
   "categoryLimitReached": "הגעת למגבלת הקטגוריה",
+  "categoryMeat": "בָּשָׂר",
   "categoryName": "שם הקטגוריה",
   "categoryNameHint": "הזן את שם הקטגוריה",
+  "categoryOthers": "אַחֵר",
+  "categoryPet": "ציוד לחיות מחמד",
+  "categorySeasonings": "תבלינים",
+  "categorySweets": "ממתקים וקינוחים",
+  "categoryUtilities": "ציוד לבית",
+  "categoryVegetables": "יְרָקוֹת",
+  "chatEmptyGreeting": "היי {name}, אני קיפי 👋",
+  "chatEmptyGreetingNoName": "היי, אני קיפי 👋",
+  "chatEmptyPitch": "אני בונה רשימות, מציע מתכונים ומוצא איפה לשמור. מאיפה נתחיל?",
   "chatEmptySubtitle": "בקש הצעות לפריטים, מתכונים או טיפים לשמירה כדי להתחיל.",
   "chatEmptyTitle": "הצ'אט שלך ריק",
   "chatError": "שגיאה בטעינת הצ'אט: {error}",
   "chatHint": "הקלד את ההודעה שלך...",
   "chatHintBlocked": "פתח את הנעילה של AI כדי לשוחח",
+  "chatHistoryErrorBody": "משהו השתבש אצלנו. הקש על נסה שוב כדי לנסות שוב.",
+  "chatHistoryErrorTitle": "לא ניתן לטעון את השיחה הזו",
+  "chatHistoryOfflineBody": "בדוק את חיבור האינטרנט שלך ונסה שוב.",
+  "chatHistoryOfflineTitle": "אתה במצב לא מקוון",
   "chatSubtitle": "בקש הצעות לפריטים, מתכונים או טיפים לחיסכון.",
   "chatSubtitleShort": "שאל על מחירים, מתכונים, ארגון...",
   "chooseCurrency": "בחר מטבע",
@@ -1488,6 +1620,7 @@
   "chooseImageSource": "בחר מקור תמונה",
   "chooseLanguage": "בחר שפה",
   "chooseThemeColor": "בחר צבע נושא",
+  "chooseThemeMode": "בחר מצב ערכת נושא",
   "clear": "ניקוי",
   "clearHistory": "נקה היסטוריה",
   "clearHistoryConfirm": "למחוק את כל ההודעות בפגישה זו?",
@@ -1530,6 +1663,10 @@
   "customizeAssistant": "התאמה אישית",
   "dark": "כהה",
   "data": "נתונים",
+  "dateGroupOlder": "ישן יותר",
+  "dateGroupPrevious7Days": "7 הימים הקודמים",
+  "dateGroupToday": "הַיוֹם",
+  "dateGroupYesterday": "אֶתמוֹל",
   "deficitItems": "{deficit, plural,  one{other{deficit} פריט} two{יש לרכוש {deficit} פריטים} many{יש לרכוש {deficit} פריטים} other{יש לרכוש {deficit} פריטים}}",
   "delete": "מחיקה",
   "deleteCategory": "לִמְחוֹק",
@@ -1546,6 +1683,7 @@
   "deleteRecipeConfirmMsg": "האם אתה בטוח שברצונך למחוק את \"{recipeName}\"? לא ניתן לבטל פעולה זו.",
   "deleteSession": "מחק את הצ'אט",
   "deleteSessionConfirm": "האם אתה בטוח שברצונך למחוק את הצ'אט הזה? ההודעות יאבדו לצמיתות.",
+  "deletedList": "רשימה שנמחקה",
   "deselectAll": "בטל בחירה",
   "dietaryRestrictions": "הגבלות תזונתיות",
   "dietaryRestrictionsHint": "יש הגבלות תזונתיות?",
@@ -1558,6 +1696,7 @@
   "editCategoryDialog": "ערוך קטגוריה",
   "editItem": "ערוך פריט",
   "editItemPrice": "מחיר משוער",
+  "editMessage": "ערוך הודעה",
   "editPantryItem": "ערוך {name}",
   "editRecipe": "ערוך",
   "editRecipeTitle": "ערוך מתכון",
@@ -1579,6 +1718,7 @@
   "errorLoadingChat": "אופס! משהו השתבש בטעינת הצ'אט.",
   "errorLoadingChatSubtitle": "בדוק את החיבור שלך או נסה שוב מאוחר יותר.",
   "errorLoadingHistory": "שגיאה בטעינת ההיסטוריה",
+  "errorLoadingItems": "שגיאה בטעינת פריטים",
   "errorLoadingLists": "שגיאה בטעינת רשימות",
   "errorLoadingRecipes": "שגיאה בטעינת מתכונים",
   "errorLoadingSubscription": "שגיאה בטעינת המנוי",
@@ -1631,6 +1771,7 @@
   "generateShoppingList": "צור רשימת קניות",
   "gestureHint": "החזק כדי לבחור • החלק להסרה",
   "globalAssistant": "עוזר כללי",
+  "goodResponse": "תגובה טובה",
   "howCanIHelp": "איך אני יכול לעזור?",
   "idealQty": "כמות אידיאלית",
   "idealQuantity": "כמות אידיאלית",
@@ -1647,14 +1788,18 @@
   "instructionsHint": "הקלד שלב אחד בכל שורה...",
   "inviteToList": "הזמינו לרשימה",
   "itemAddedSnack": "{name} נוסף",
+  "itemAddedToList": "פריט נוסף לרשימה.",
   "itemName": "שם הפריט",
   "itemRemoved": "הפריט הוסר",
   "itemsAddedSuccess": "הפריטים נוספו בהצלחה לרשימה!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} פריט(ים) צריך/צריכים להירכש",
   "itemsPurchased": "פריטים שנרכשו",
   "itemsPurchasedCount": "{purchased} מתוך {total} נרכש",
   "itemsPurchasedShort": "{purchased}/{total} נרכש",
   "itemsWillBeAdded": "{count} פריט(ים) יתווספו",
+  "keepAdding": "תמשיך להוסיף",
+  "keepAddingSubtitle": "השאר את הגיליון פתוח כדי להוסיף פריטים מרובים",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "מה צריך לקנות?",
@@ -1701,16 +1846,22 @@
   "mealDragHint": "החזק כדי לגרור ולהזיז",
   "mealNoRecipeFound": "לא נמצא מתכון",
   "mealPlannerAddMeal": "הוסף ארוחה",
+  "mealPlannerAddType": "הוסף סוג ארוחה",
+  "mealPlannerCustomTypeLabel": "סוג מותאם אישית",
   "mealPlannerDateLabel": "תאריך",
+  "mealPlannerDefaultTypeLabel": "סוג ברירת מחדל",
   "mealPlannerDeleteMeal": "הסר ארוחה",
   "mealPlannerEditMeal": "ערוך ארוחה",
+  "mealPlannerEditType": "ערוך את סוג הארוחה",
   "mealPlannerError": "שגיאה בטעינת תוכנית הארוחות",
+  "mealPlannerEstimatePartial": "הערכה מבוססת על מתכונים עם נתוני מחיר חלקיים.",
   "mealPlannerGenerateList": "צור רשימת קניות",
   "mealPlannerGenerateListConfirm": "להוסיף את כל הרכיבים מהארוחות המתוכננות השבוע לרשימת הקניות שלך?",
   "mealPlannerGenerateListEmpty": "אין רכיבים להוספה. תכנן תחילה ארוחות עם מתכונים.",
   "mealPlannerGenerateListNoList": "צור רשימת קניות תחילה.",
   "mealPlannerGenerateListSuccess": "{count} רכיבים נוספו לרשימה שלך!",
   "mealPlannerLoading": "טוען תוכנית ארוחות...",
+  "mealPlannerManageTypes": "ניהול סוגי ארוחות",
   "mealPlannerMealDeleted": "הארוחה הוסרה",
   "mealPlannerMealTypeBreakfast": "ארוחת בוקר",
   "mealPlannerMealTypeDinner": "ארוחת ערב",
@@ -1730,6 +1881,12 @@
   "mealPlannerServings": "{count,plural, one{{count} מנה} other{{count} מנות}}",
   "mealPlannerServingsLabel": "מנות",
   "mealPlannerTitle": "מתכנן ארוחות",
+  "mealPlannerTypeColor": "צֶבַע",
+  "mealPlannerTypeDeleteConfirm": "האם אתה בטוח שברצונך למחוק את סוג הארוחה הזה? ארוחות מתוכננות עם סוג זה יישארו.",
+  "mealPlannerTypeDeleteError": "לא ניתן למחוק את סוג הארוחה הזה.",
+  "mealPlannerTypeIcon": "סמל",
+  "mealPlannerTypeName": "שֵׁם",
+  "mealPlannerTypeNameEmpty": "השם לא יכול להיות ריק",
   "mealPlannerViewMonthly": "תצוגה חודשית",
   "mealPlannerViewWeekly": "תצוגה שבועית",
   "mealPlannerWeekEmpty": "שום דבר לא מתוכנן לשבוע זה",
@@ -1945,6 +2102,7 @@
   "onboardingViewAllPlans": "הצג את כל התוכניות",
   "onboardingWelcomeDesc": "הדרך החכמה ביותר לארגן את הקניות ולחסוך כסף.",
   "onboardingWelcomeTitle": "ברוכים הבאים ל- KipiList",
+  "openConversation": "שיחה פתוחה",
   "openMenu": "פתח תפריט",
   "organizeAisles": "ארגן לפי מעברים",
   "organizeAislesPrompt": "ארגן לפי מעברים בסופר.",
@@ -1957,6 +2115,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} במזווה",
   "pantryCompactView": "תצוגה קומפקטית",
   "pantryDeficit": "חסר {amount}{unit}",
+  "pantryDeficitCount": "חסר {count}{unit}",
   "pantryDeleteItemsContent": "האם ברצונך למחוק {count} פריטים נבחרים?",
   "pantryDeleteItemsTitle": "מחק פריטים",
   "pantryDeleteSelected": "מחק את הבחירה",
@@ -1973,6 +2132,7 @@
   "pantryFilterExpiring": "פג תוקף",
   "pantryFilterOutStock": "אזל המלאי",
   "pantryFirstOpenHint": "עקוב אחר מה שיש לך בבית. הוסף פריטים או סרוק ברקודים.",
+  "pantryItemAdded": "פריט נוסף",
   "pantryItemRemoved": "הפריט הוסר",
   "pantryMoreDetails": "פרטים נוספים",
   "pantryNoItemsFound": "לא נמצאו פריטים עבור \"{query}\"",
@@ -1986,6 +2146,7 @@
   "paywallAfterItem2": "ניקוי",
   "paywallAfterItem3": "בשרים",
   "paywallAfterItem4": "מַאֲפִיָה",
+  "paywallBasedOnAnswers": "מותאם אישית מהתשובות שלך",
   "paywallBeforeAfterTitle": "AI לפני ואחרי:",
   "paywallBeforeItem1": "אוֹרֶז",
   "paywallBeforeItem2": "סַבּוֹן",
@@ -2023,6 +2184,8 @@
   "paywallGoalHeadlinePantry": "{name}, עקוב אחר המזווה שלך בצורה מושלמת!",
   "paywallGoalHeadlineRecipes": "{name}, גלה מתכונים חדשים!",
   "paywallGoalHeadlineSaveMoney": "{name}, חסוך בכל נסיעה!",
+  "paywallHeroFeatureDesc": "דבר או הדבק רשימה שלמה - בינה מלאכותית ממיינת, מסווגת ומתקצבת אותה בשניות",
+  "paywallHeroFeatureTitle": "עוזר קניות בינה מלאכותית",
   "paywallHeroHeadline": "Kipi AI תמיד לצידך",
   "paywallHeroSubtitle": "הוסף פריטים, ארגן רשימות וחסוך זמן עם AI בכיס",
   "paywallHeroSubtitlePersonalized": "היי {name}, ארגן את הקניות שלך בצורה הנכונה.",
@@ -2057,6 +2220,11 @@
   "paywallTestimonial2Text": "לא שכחתי שוב פריט ברשימה. צ'אט AI הוא סנסציוני!",
   "paywallTestimonialAuthor": "אן ס.",
   "paywallTestimonialsTitle": "מה המשתמשים שלנו אומרים:",
+  "paywallTimelineChargeDesc": "המנוי שלך מתחיל - בטל בכל עת",
+  "paywallTimelineDay": "יום {day}",
+  "paywallTimelineReminderDesc": "אנו מזכירים לך לפני סיום המשפט",
+  "paywallTimelineToday": "הַיוֹם",
+  "paywallTimelineTodayDesc": "בטל את הנעילה של גישה מלאה באופן מיידי",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "התחל ניסיון חינם",
   "paywallTrialDays": "{days} ימים בחינם",
@@ -2079,11 +2247,15 @@
   "prefSharing": "שתף רשימות",
   "prefUnlimitedLists": "רשימות ללא הגבלה",
   "prefUnlimitedPantry": "מזווה ללא הגבלה",
+  "preferencesSection": "העדפות",
   "preferredMarket": "שוק מועדף",
   "preferredMarketHint": "איפה אתה עושה קניות בדרך כלל?",
+  "premiumActionsPrompt": "הירשם ל-Premium כדי לפתוח פעולות אוטומטיות.",
+  "premiumStepDescription": "{description} (פרימיום)",
   "premiumUpgrade": "שדרג כדי לפתוח",
   "prepTime": "זמן הכנה",
   "prepTimeMinutes": "זמן הכנה (דקות)",
+  "previousItemState": "מצב קודם: {quantity} {unit} [{category}]{price}",
   "privacy": "פרטיות",
   "product": "מוּצָר",
   "productName": "שם המוצר",
@@ -2100,21 +2272,34 @@
   "quantityShort": "כמות",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "צ'אט עם Kipi",
+  "quickActionPantry": "צפה במזווה",
   "quickRecipe": "מתכון מהיר",
   "quickRecipePrompt": "הצע מתכונים עם פריטים מהרשימה שלי.",
   "quickReplies": "תשובות מהירות:",
   "quickSuggestions": "הצעות מהירות",
+  "recipeAddError": "לא ניתן להוסיף לרשימה שלך. אנא נסה שוב.",
   "recipeAddToList": "הוסף לרשימת הקניות",
   "recipeAddedConfirmation": "{count} מרכיבים נוספו ל{listName}",
   "recipeCreated": "המתכון נוצר!",
   "recipeDeleted": "המתכון נמחק",
+  "recipeEstimatePartial": "הערכה חלקית מבוססת על מרכיבים עם מחיר.",
+  "recipeEstimatedCostPerServing": "{cost} / מנה",
+  "recipeEstimatedTotalCost": "עלות כוללת משוערת",
   "recipeImage": "תמונת מתכון",
+  "recipeIngredientInPantry": "במזווה",
+  "recipeIngredientLowPantry": "נמוך במזווה",
   "recipeIngredientSingular": "מרכיב אחד",
   "recipeIngredientsPlural": "{count} מרכיבים",
+  "recipeManualTotalCost": "עלות כוללת ידנית",
+  "recipeManualTotalCostHint": "השאר ריק להערכת מחירי הרכיבים.",
   "recipeName": "שם המתכון",
   "recipeSaved": "המתכון נשמר!",
+  "recipeServesCount": "משרת {count}",
   "recipeSuggestion": "הצעת מתכון",
   "recipeTags": "תגיות מתכון",
+  "recipeTapToCheck": "הקש על מרכיב כדי לסמן אותו בזמן הבישול",
+  "recipeYieldServings": "תניב מנות",
   "regenerate": "יצירה מחדש",
   "remove": "הסרה",
   "removeBudget": "הסר",
@@ -2138,9 +2323,12 @@
   "savings": "חיסכון",
   "scanBarcodeTitle": "סרוק ברקוד",
   "scanProductTitle": "סרוק מוצר",
+  "scrollToBottom": "גלול למטה",
+  "searchConversations": "חפש שיחות",
   "searchCurrency": "חפש מטבע...",
   "searchInConversation": "חפש בשיחה...",
   "searchLanguage": "חפש שפה...",
+  "searchMessages": "חפש הודעות...",
   "searchRecipes": "חפש מתכונים...",
   "selectAll": "בחר הכל",
   "selectCheaperAlternative": "בחר חלופה זולה יותר",
@@ -2197,6 +2385,7 @@
   "signInGoogle": "התחבר עם Google",
   "skip": "לְדַלֵג",
   "smartOrganization": "ארגון חכם",
+  "somethingWentWrong": "משהו השתבש",
   "sortAZ": "א–ז",
   "sortCategory": "קטגוריה",
   "sortDate": "תאריך",
@@ -2227,6 +2416,7 @@
   "themeColor": "צבע נושא",
   "themeGreen": "ירוק",
   "themeIndigo": "אינדיגו",
+  "themeMode": "מצב ערכת נושא",
   "themeOrange": "כתום",
   "themePink": "ורוד",
   "themePurple": "סגול",
@@ -2234,12 +2424,14 @@
   "themeSelectionTitle": "בחר צבע ערכת נושא",
   "themeTeal": "טיל",
   "totalEstimated": "סה\"כ מוערך: {amount}",
+  "totalEstimatedLabel": "סה\"כ משוער",
   "totalSavings": "סך החיסכון",
   "totalSpending": "סה\"כ הוצאות",
   "trackStock": "מעקב מלאי",
   "trackStockActive": "מופיע בהצעות קנייה",
   "trackStockInactive": "לא יוצר הצעת קנייה",
   "undo": "בטל",
+  "undoChanges": "בטל שינויים",
   "unit": "יחידה",
   "unitPack": "חבילה",
   "unlockAi": "פתח AI ללא הגבלה",
@@ -2264,6 +2456,7 @@
   "userProfileSaveButton": "שמור פרופיל",
   "userProfileSaved": "הפרופיל נשמר בהצלחה!",
   "userProfileTitle": "הפרופיל שלי",
+  "userRole": "אַתָה",
   "validForLimitedTime": "תקף לזמן מוגבל",
   "version": "גרסה",
   "viewActive": "צפה בפעילות",
@@ -2271,6 +2464,7 @@
   "viewHistory": "צפה בהיסטוריה",
   "viewItems": "הצג פריטים",
   "viewList": "צפה ברשימה",
+  "viewPlans": "צפה בתוכניות",
   "viewPro": "View Pro",
   "viewRecipe": "צפה במתכון",
   "voiceCommandContent": "דבר באופן טבעי כדי לנהל את הרשימה שלך!\n\nדוגמאות:\n• 'הוסף לחם, גבינה ונקניק'\n• 'הסר אבקת כביסה'\n• 'שנה נושא לכחול'\n\nזוהי תכונה בלעדית של KipiList Premium.",

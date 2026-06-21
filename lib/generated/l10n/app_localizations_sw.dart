@@ -244,6 +244,11 @@ class AppLocalizationsSw extends AppLocalizations {
   String get noItemsToBuy => 'Hakuna vitu vinavyohitaji kununuliwa';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Inakosa ${count}PH1__';
+  }
+
+  @override
   String get newPantryList => 'Ununuzi wa Pantri';
 
   @override
@@ -310,6 +315,12 @@ class AppLocalizationsSw extends AppLocalizations {
   String get settingsAppBar => 'Mipangilio';
 
   @override
+  String get preferencesSection => 'Mapendeleo';
+
+  @override
+  String get aiSection => 'Msaidizi wa AI';
+
+  @override
   String get language => 'Lugha';
 
   @override
@@ -338,6 +349,12 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get appearance => 'Mwonekano';
+
+  @override
+  String get themeMode => 'Hali ya mandhari';
+
+  @override
+  String get chooseThemeMode => 'Chagua hali ya mandhari';
 
   @override
   String get light => 'Mwanga';
@@ -587,6 +604,12 @@ class AppLocalizationsSw extends AppLocalizations {
   String get trackStockInactive => 'Haizalishi mapendekezo ya ununuzi';
 
   @override
+  String get keepAdding => 'Endelea kuongeza';
+
+  @override
+  String get keepAddingSubtitle => 'Weka laha wazi ili kuongeza vipengee vingi';
+
+  @override
   String get createListDialog => 'Unda Orodha';
 
   @override
@@ -691,6 +714,36 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Jibu zuri';
+
+  @override
+  String get badResponse => 'Jibu baya';
+
+  @override
+  String get scrollToBottom => 'Tembeza hadi chini';
+
+  @override
+  String get somethingWentWrong => 'Hitilafu fulani imetokea';
+
+  @override
+  String get editMessage => 'Hariri ujumbe';
+
+  @override
+  String get searchConversations => 'Tafuta mazungumzo';
+
+  @override
+  String get dateGroupToday => 'Leo';
+
+  @override
+  String get dateGroupYesterday => 'Jana';
+
+  @override
+  String get dateGroupPrevious7Days => 'Siku 7 zilizopita';
+
+  @override
+  String get dateGroupOlder => 'Mzee';
+
+  @override
   String get aiAssistantTitle => 'Msaidizi wa AI';
 
   @override
@@ -731,6 +784,33 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Kikomo cha AI cha kila mwezi kimefikiwa. Pata toleo jipya la Pro kwa ukomo →';
+
+  @override
+  String get undo => 'Tengua';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -941,6 +1021,19 @@ class AppLocalizationsSw extends AppLocalizations {
   String get recipeAddToList => 'Ongeza kwenye orodha ya ununuzi';
 
   @override
+  String get recipeAddError =>
+      'Haikuweza kuongeza kwenye orodha yako. Tafadhali jaribu tena.';
+
+  @override
+  String get recipeTapToCheck => 'Gusa kiungo ili kukizima unapopika';
+
+  @override
+  String get recipeIngredientInPantry => 'Katika pantry';
+
+  @override
+  String get recipeIngredientLowPantry => 'Chini katika pantry';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1059,12 +1152,12 @@ class AppLocalizationsSw extends AppLocalizations {
   String get paywallSelectPlan => 'Chagua mpango wako:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'OKOA $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return '$price pekee kwa mwezi';
   }
 
@@ -1097,6 +1190,35 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get paywallRestore => 'Rejesha';
+
+  @override
+  String get paywallTimelineToday => 'Leo';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Fungua ufikiaji kamili papo hapo';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Siku $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Tunakukumbusha kabla ya jaribio kuisha';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Usajili wako unaanza - ghairi wakati wowote';
+
+  @override
+  String get paywallHeroFeatureTitle => 'Msaidizi wa Ununuzi wa AI';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Ongea au ubandike orodha nzima - AI hupanga, kuainisha na kupanga bajeti kwa sekunde';
+
+  @override
+  String get paywallBasedOnAnswers => 'Imebinafsishwa kutoka kwa majibu yako';
 
   @override
   String get paywallHeroHeadline => 'Kipi AI daima kando yako';
@@ -1132,9 +1254,6 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Kitu kimeondolewa';
-
-  @override
-  String get undo => 'Tengua';
 
   @override
   String get emptyListTitle => 'Orodha yako haina kitu';
@@ -1251,6 +1370,9 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Kitu kimeondolewa';
+
+  @override
+  String get pantryItemAdded => 'Kipengee kimeongezwa';
 
   @override
   String deficitItems(int deficit) {
@@ -1656,6 +1778,33 @@ class AppLocalizationsSw extends AppLocalizations {
   String get prepTimeMinutes => 'Muda wa maandalizi (dakika)';
 
   @override
+  String get recipeYieldServings => 'Mazao resheni';
+
+  @override
+  String get recipeManualTotalCost => 'Gharama ya jumla ya mwongozo';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Acha tupu ili kukadiria kutoka kwa bei za viungo.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Gharama iliyokadiriwa';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / inahudumia';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Inahudumia $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Kadirio la sehemu kulingana na viungo vilivyo na bei.';
+
+  @override
   String get instructionsHint => 'Andika hatua moja kwa kila mstari...';
 
   @override
@@ -1784,6 +1933,10 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Kadiria kulingana na mapishi na data ya bei isiyokamilika.';
+
+  @override
   String get mealPlannerGenerateList => 'Tengeneza orodha ya ununuzi';
 
   @override
@@ -1877,6 +2030,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get catalogRareSection => 'chini ya kawaida katika nchi yako';
 
   @override
+  String get catalogRareBadge => 'Nadra';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1894,7 +2050,7 @@ class AppLocalizationsSw extends AppLocalizations {
   String get catalogBrowse => 'Vinjari Katalogi';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kategoria';
 
   @override
   String get offlineBanner => 'Hauko mtandaoni';
@@ -1925,6 +2081,41 @@ class AppLocalizationsSw extends AppLocalizations {
     );
     return '$count $_temp0 haipo';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Dhibiti aina za milo';
+
+  @override
+  String get mealPlannerAddType => 'Ongeza aina ya chakula';
+
+  @override
+  String get mealPlannerEditType => 'Badilisha aina ya chakula';
+
+  @override
+  String get mealPlannerTypeName => 'Jina';
+
+  @override
+  String get mealPlannerTypeColor => 'Rangi';
+
+  @override
+  String get mealPlannerTypeIcon => 'Aikoni';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Je, una uhakika unataka kufuta aina hii ya chakula? Milo iliyopangwa na aina hii itabaki.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Jina haliwezi kuwa tupu';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Haiwezi kufuta aina hii ya chakula.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Aina maalum';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Aina chaguomsingi';
 
   @override
   String get expirationDate => 'Tarehe ya kumalizika muda wake';
@@ -1985,6 +2176,9 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Hitilafu katika kupakia orodha';
+
+  @override
+  String get errorLoadingItems => 'Hitilafu katika kupakia vipengee';
 
   @override
   String get noListsFound => 'Hakuna orodha zilizopatikana';
@@ -2584,171 +2778,386 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
-  String get obHookTitle => 'Smarter shopping starts here';
+  String get obHookTitle => 'Ununuzi nadhifu huanzia hapa';
 
   @override
   String get obHookSubtitle =>
-      'AI-powered lists that save you time and money, every single trip.';
+      'Orodha zinazoendeshwa na AI zinazookoa muda na pesa, kila safari moja.';
 
   @override
-  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+  String get obHookSocial => 'Inaaminiwa na maelfu ya wanunuzi duniani kote';
 
   @override
-  String get obHookCta => 'Get Started';
+  String get obHookCta => 'Anza';
 
   @override
-  String get obQuizHouseholdTitle => 'Who do you shop for?';
+  String get obQuizHouseholdTitle => 'Unamnunulia nani?';
 
   @override
-  String get obQuizHouseholdSolo => 'Just me';
+  String get obQuizHouseholdSolo => 'Mimi tu';
 
   @override
-  String get obQuizHouseholdCouple => 'Me and my partner';
+  String get obQuizHouseholdCouple => 'Mimi na mwenzangu';
 
   @override
-  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+  String get obQuizHouseholdFamilySmall => 'Familia ya 3-4';
 
   @override
-  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+  String get obQuizHouseholdFamilyLarge => 'Familia ya 5+';
 
   @override
-  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+  String get obQuizFrequencyTitle => 'Je, unanunua mboga mara ngapi?';
 
   @override
-  String get obQuizFrequencyDaily => 'Almost every day';
+  String get obQuizFrequencyDaily => 'Karibu kila siku';
 
   @override
-  String get obQuizFrequencyWeekly => 'Once a week';
+  String get obQuizFrequencyWeekly => 'Mara moja kwa wiki';
 
   @override
-  String get obQuizFrequencyBiweekly => 'Every two weeks';
+  String get obQuizFrequencyBiweekly => 'Kila baada ya wiki mbili';
 
   @override
-  String get obQuizFrequencyMonthly => 'Big monthly haul';
+  String get obQuizFrequencyMonthly => 'Usafirishaji mkubwa wa kila mwezi';
 
   @override
-  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+  String get obQuizPainTitle =>
+      'Ni nini kinachokukatisha tamaa zaidi kuhusu ununuzi?';
 
   @override
-  String get obQuizPainForget => 'I always forget items';
+  String get obQuizPainForget => 'Mimi husahau vitu kila wakati';
 
   @override
-  String get obQuizPainOverspend => 'I spend more than planned';
+  String get obQuizPainOverspend => 'Ninatumia zaidi ya ilivyopangwa';
 
   @override
-  String get obQuizPainWaste => 'Food goes to waste at home';
+  String get obQuizPainWaste => 'Chakula hupotea nyumbani';
 
   @override
-  String get obQuizPainTime => 'It takes too much time';
+  String get obQuizPainTime => 'Inachukua muda mwingi sana';
 
   @override
-  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+  String get obQuizSavingsTitle =>
+      'Je, ungependa kuokoa kiasi gani kila mwezi?';
 
   @override
-  String get obQuizSavingsSmall => 'A little — every bit counts';
+  String get obQuizSavingsSmall => 'Kidogo - kila kidogo ni muhimu';
 
   @override
-  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+  String get obQuizSavingsMedium => 'Takriban 10% ya bili yangu ya mboga';
 
   @override
-  String get obQuizSavingsLarge => 'As much as possible';
+  String get obQuizSavingsLarge => 'Kwa kadiri iwezekanavyo';
 
   @override
-  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+  String get obQuizMethodTitle => 'Je, unatengenezaje orodha za ununuzi leo?';
 
   @override
-  String get obQuizMethodPaper => 'Pen and paper';
+  String get obQuizMethodPaper => 'Kalamu na karatasi';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'Programu ya madokezo';
 
   @override
-  String get obQuizMethodMemory => 'I keep it in my head';
+  String get obQuizMethodMemory => 'Ninaiweka kichwani mwangu';
 
   @override
-  String get obQuizMethodNone => 'I don\'t make lists';
+  String get obQuizMethodNone => 'Sifanyi orodha';
 
   @override
-  String get obSocialTitle => 'You\'re in good company';
+  String get obSocialTitle => 'Uko katika kampuni nzuri';
 
   @override
   String get obSocialSubtitle =>
-      'Shoppers like you are already saving with KipiList';
+      'Wanunuzi kama wewe tayari wanaokoa kwa kutumia KipiList';
 
   @override
   String get obSocialQuote1 =>
-      'I never forget anything anymore. The AI builds my list in seconds.';
+      'Sisahau chochote tena. AI huunda orodha yangu kwa sekunde.';
 
   @override
   String get obSocialQuote2 =>
-      'We cut our grocery bill noticeably in the first month.';
+      'Tulipunguza bili yetu ya mboga katika mwezi wa kwanza.';
 
   @override
   String get obSocialQuote3 =>
-      'Sharing the list with my partner ended our shopping chaos.';
+      'Kushiriki orodha na mwenzangu kulimaliza fujo zetu za ununuzi.';
 
   @override
-  String get obLoadingTitle => 'Building your personalized plan...';
+  String get obLoadingTitle => 'Inaunda mpango wako uliobinafsishwa...';
 
   @override
-  String get obLoadingStepProfile => 'Adjusting for your household';
+  String get obLoadingStepProfile => 'Kurekebisha kwa kaya yako';
 
   @override
-  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+  String get obLoadingStepHabits => 'Kurekebisha utaratibu wako wa ununuzi';
 
   @override
-  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+  String get obLoadingStepSavings => 'Kuboresha mkakati wako wa kuweka akiba';
 
   @override
-  String get obLoadingStepLists => 'Preparing your smart lists';
+  String get obLoadingStepLists => 'Kuandaa orodha zako mahiri';
 
   @override
-  String get obRevealTitle => 'Your plan is ready!';
+  String get obRevealTitle => 'Mpango wako uko tayari!';
 
   @override
-  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+  String get obRevealSubtitle => 'Hivi ndivyo KipiList itakufanyia kazi';
 
   @override
-  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+  String get obRevealSavingsCaption => 'Akiba iliyokadiriwa na KipiList';
 
   @override
   String obRevealMonth(int n) {
-    return 'Month $n';
+    return 'Mwezi $n';
   }
 
   @override
-  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+  String get obRevealFeatureAi => 'AI huunda na kupanga orodha zako';
 
   @override
-  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+  String get obRevealFeatureBudget =>
+      'Matumizi yanafuatiliwa dhidi ya lengo lako';
 
   @override
-  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+  String get obRevealFeaturePantry =>
+      'Ufuatiliaji wa pantry hupunguza upotevu wa chakula';
 
   @override
-  String get obRevealFeatureShare => 'Real-time sharing with your household';
+  String get obRevealFeatureShare => 'Kushiriki kwa wakati halisi na kaya yako';
 
   @override
-  String get obPaywallTitle => 'Unlock your plan';
+  String get obPaywallTitle => 'Fungua mpango wako';
 
   @override
-  String get obPaywallRetry => 'Try again';
+  String get obPaywallRetry => 'Jaribu tena';
 
   @override
-  String get obLoginTitle => 'Save your plan';
+  String get obLoginTitle => 'Hifadhi mpango wako';
 
   @override
-  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+  String get obLoginSubtitle =>
+      'Ingia katika akaunti ili orodha zako zisawazishe kwenye vifaa vyote';
 
   @override
-  String get obLoginGoogle => 'Continue with Google';
+  String get obLoginGoogle => 'Endelea na Google';
 
   @override
-  String get obLoginApple => 'Continue with Apple';
+  String get obLoginApple => 'Endelea na Apple';
 
   @override
-  String get obLoginSkip => 'Not now';
+  String get obLoginSkip => 'Si sasa';
 
   @override
-  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
+  String get obLoginError =>
+      'Kuingia kumeshindwa. Jaribu tena au uruke kwa sasa.';
+
+  @override
+  String get searchMessages => 'Tafuta ujumbe...';
+
+  @override
+  String get deletedList => 'Orodha iliyofutwa';
+
+  @override
+  String get openConversation => 'Fungua mazungumzo';
+
+  @override
+  String get userRole => 'Wewe';
+
+  @override
+  String get assistantRole => 'Msaidizi';
+
+  @override
+  String get agentActionsRunning => 'Kuendesha vitendo...';
+
+  @override
+  String get agentActionsFailed => 'Imeshindwa kutekeleza vitendo';
+
+  @override
+  String get agentActionsPremium => 'Vitendo vinahitaji Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Tendua mabadiliko';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Malipo)';
+  }
+
+  @override
+  String get itemAddedToList => 'Kipengee kimeongezwa kwenye orodha.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Hali iliyotangulia: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Jisajili kwenye Premium ili upate vitendo vya kiotomatiki.';
+
+  @override
+  String get viewPlans => 'Tazama mipango';
+
+  @override
+  String get artifactSynced => 'Imesawazishwa';
+
+  @override
+  String get artifactBudgetLabel => 'Bajeti:';
+
+  @override
+  String get totalEstimatedLabel => 'Jumla iliyokadiriwa';
+
+  @override
+  String get quickActionPantry => 'Angalia pantry';
+
+  @override
+  String get quickActionAi => 'Sogoa na Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Huduma ya AI ilileta hitilafu ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Ombi lilichukua muda mrefu sana. Tafadhali jaribu tena.';
+
+  @override
+  String get aiConnectionError =>
+      'Haikuweza kuunganisha kwa huduma ya AI. Angalia muunganisho wako.';
+
+  @override
+  String get aiEmptyResponseError => 'Huduma ya AI ilirudisha jibu tupu.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Huduma ya AI ilileta jibu lisilo sahihi.';
+
+  @override
+  String get categoryFruits => 'Matunda';
+
+  @override
+  String get categoryCleaning => 'Kusafisha';
+
+  @override
+  String get categoryBeverages => 'Vinywaji';
+
+  @override
+  String get categoryBakery => 'Bakery';
+
+  @override
+  String get categoryMeat => 'Nyama';
+
+  @override
+  String get categoryDairy => 'Maziwa';
+
+  @override
+  String get categoryVegetables => 'Mboga';
+
+  @override
+  String get categoryGrains => 'Nafaka na nafaka';
+
+  @override
+  String get categoryHygiene => 'Utunzaji wa kibinafsi';
+
+  @override
+  String get categoryFrozen => 'Vyakula vilivyogandishwa';
+
+  @override
+  String get categoryCanned => 'Bidhaa za makopo';
+
+  @override
+  String get categorySeasonings => 'Majira';
+
+  @override
+  String get categorySweets => 'Pipi na desserts';
+
+  @override
+  String get categoryAlcohol => 'Vinywaji vya pombe';
+
+  @override
+  String get categoryFish => 'Samaki';
+
+  @override
+  String get categoryColdCuts => 'Kupunguzwa kwa baridi';
+
+  @override
+  String get categoryUtilities => 'Vifaa vya kaya';
+
+  @override
+  String get categoryPet => 'Vifaa vya kipenzi';
+
+  @override
+  String get categoryBaby => 'Mtoto';
+
+  @override
+  String get categoryOthers => 'Nyingine';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hujambo $name, mimi ni Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Habari, mimi ni Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Ninaunda orodha, kupendekeza mapishi, na kupata mahali pa kuhifadhi. Tunaanzia wapi?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Panga barbeque';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, ninaandaa barbeque — nisaidie kuunda orodha ya ununuzi';
+
+  @override
+  String get aiRateLimitError =>
+      'Ujumbe mwingi sana kwa muda mfupi. Subiri sekunde chache na ujaribu tena.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Haikuweza kupakia mazungumzo haya';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Hitilafu fulani imetokea upande wetu. Gusa jaribu tena kujaribu tena.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Hauko mtandaoni';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Angalia muunganisho wako wa intaneti na ujaribu tena.';
+
+  @override
+  String get aiGeneratingResponse => 'Inazalisha majibu...';
 }

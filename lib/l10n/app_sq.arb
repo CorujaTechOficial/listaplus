@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -130,6 +144,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -334,6 +355,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingProducts": {
     "placeholders": {
       "error": {
@@ -481,6 +505,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1105,6 +1136,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1231,6 +1272,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1263,6 +1311,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@progressBudget": {
     "placeholders": {
@@ -1324,7 +1395,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1448,23 +1533,37 @@
   "addingItems": "Po shtohen artikuj në listë...",
   "addingToPantry": "Po shtohet në qilar...",
   "advancedFeatures": "Veçori të avancuara",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Ekzekutimi i veprimeve dështoi",
+  "agentActionsPremium": "Veprimet kërkojnë Premium",
+  "agentActionsRunning": "Veprimet e kryera...",
+  "aiApiError": "Shërbimi i AI ktheu një gabim ({statusCode}).",
   "aiAssistant": "Asistent AI",
   "aiAssistantDescription": "Merr sugjerime të zgjuara, receta dhe këshilla të personalizuara me asistentin tonë AI.",
   "aiAssistantTitle": "Asistent i AI",
+  "aiConnectionError": "Nuk mund të lidhej me shërbimin e AI. Kontrolloni lidhjen tuaj.",
   "aiCreditsRemaining": "{remaining} kredite të mbetura",
+  "aiEmptyResponseError": "Shërbimi i AI ktheu një përgjigje boshe.",
   "aiEnergy": "Energjia e AI",
   "aiEnergyLow": "Energji e ulët e AI",
   "aiError": "Na vjen keq, ndodhi një gabim gjatë përpunimit të kërkesës suaj. Kontrollo lidhjen ose provo përsëri më vonë.",
+  "aiGeneratingResponse": "Po gjeneron përgjigje…",
+  "aiInvalidResponseError": "Shërbimi i AI ktheu një përgjigje të pavlefshme.",
   "aiLimitAlmostReached": "Pothuajse nuk ka mesazhe të AI",
   "aiPremiumDescription": "Kjo ndërfaqe interaktive përdor inteligjencën artificiale të avancuar dhe është ekskluzive për anëtarët Pro ose nëpërmjet një reklame të shpejtë.",
+  "aiRateLimitError": "Shumë mesazhe në një kohë të shkurtër. Prisni disa sekonda dhe provoni përsëri.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} sot",
+  "aiSection": "Asistent i AI",
   "aiSubscribeUnlimited": "Abonohu ​​për AI të pakufizuar",
   "aiTeaserFallback": "Abonohu ​​në Premium për të zhbllokuar përgjigjen e plotë dhe për të marrë këshilla të pakufizuara për AI për blerjet tuaja...",
+  "aiTimeoutError": "Kërkesa zgjati shumë. Ju lutemi provoni përsëri.",
   "aiUnlockUnlimited": "Zhbllokoni AI të pakufizuar",
   "aiUsageExhausted": "U arrit kufiri mujor i AI. Përmirësojeni në Pro për pakufizuar →",
   "aiUsageWarning": "{remaining} Veprimet e inteligjencës artificiale të mbetura këtë muaj — përmirësimi pa kufi",
   "aiVoiceCommandTooltip": "Komandë Zëri AI (Premium)",
   "aiWelcomeContent": "Përshëndetje! 👋 Unë jam **Kipi**, asistentja juaj personale e blerjeve dhe recetave!\n\nUnë jam këtu për t'ju ndihmuar:\n🛒 **Organizoni** blerjet tuaja sipas kategorive automatikisht\n💰 **Ndiq** buxhetin tënd dhe jep këshilla për kursimin e parave\n🍲 **Sugjeroni** receta të shijshme me atë që tashmë keni\n\nSi mund t'ju ndihmoj sot? Mund të filloni duke krijuar listën tuaj të parë!",
+  "aiWelcomeSuggestBarbecue": "Planifikoni një Barbecue",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, unë jam duke organizuar një Barbecue - më ndihmo të krijoj listën e blerjeve",
   "aiWelcomeSuggestCreateList": "Krijo listën time të parë",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, më ndihmo të krijoj listën time të parë të blerjeve",
   "aiWelcomeSuggestSave": "Si të kurseni para?",
@@ -1474,9 +1573,12 @@
   "appTitle": "Lista e Blerjeve",
   "appearance": "Pamja",
   "archiveList": "Arkivo listën",
+  "artifactBudgetLabel": "Buxheti:",
+  "artifactSynced": "Sinkronizuar",
   "assistantHistory": "Historia e asistentit",
   "assistantHistorySubtitle": "Shikoni historikun tuaj të bisedave",
   "assistantName": "Emri i asistentit",
+  "assistantRole": "Asistent",
   "backToChat": "Kthehu te Chat",
   "backToToday": "Kthehu tek sot",
   "backupExported": "Rezervimi u eksportua!",
@@ -1484,6 +1586,7 @@
   "backupPremiumDescription": "Rezervimi dhe eksportimi janë veçori premium",
   "backupSubtitle": "Eksporto ose importo të dhënat e tua",
   "backupTitle": "Rezervim",
+  "badResponse": "Përgjigje e keqe",
   "badgeBeginner": "Fillestar",
   "badgeOrganized": "Organizuar",
   "badgeSavingMaster": "Shpëtim Master",
@@ -1509,9 +1612,11 @@
   "catOthers": "Të tjera",
   "catalogAddItems": "Shto {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Shfletoni Katalogun",
+  "catalogCategories": "Kategoritë",
   "catalogFilterNational": "Kombëtaret",
   "catalogMyFrequents": "Frekuencat e Mia",
   "catalogProductNotFound": "Produkti nuk u gjet, shkruani emrin",
+  "catalogRareBadge": "E rrallë",
   "catalogRareSection": "më pak të zakonshme në vendin tuaj",
   "catalogSearchGlobal": "Kërkoni ndonjë produkt...",
   "catalogSearchInCategory": "Kërko në {category}...",
@@ -1520,16 +1625,43 @@
   "catalogTitle": "Katalogu",
   "categorizingItems": "Kategorizimi i artikujve...",
   "category": "Kategoria",
+  "categoryAlcohol": "Pijet alkoolike",
+  "categoryBaby": "bebe",
+  "categoryBakery": "Furra buke",
+  "categoryBeverages": "Pijet",
+  "categoryCanned": "Mallra të konservuara",
+  "categoryCleaning": "Pastrimi",
+  "categoryColdCuts": "Prerje të ftohtë",
   "categoryColorLabel": "Ngjyra",
+  "categoryDairy": "Qumështore",
+  "categoryFish": "Peshku",
+  "categoryFrozen": "Ushqimet e ngrira",
+  "categoryFruits": "Frutat",
+  "categoryGrains": "Drithërat dhe drithërat",
+  "categoryHygiene": "Kujdesi personal",
   "categoryIconLabel": "Ikona",
   "categoryLimitReached": "Kufiri prej 10 kategorish në versionin falas. Përmirësojeni në Pro!",
+  "categoryMeat": "Mishi",
   "categoryName": "Emri i kategorisë",
   "categoryNameHint": "P.sh.: Mishrat",
+  "categoryOthers": "Të tjera",
+  "categoryPet": "Furnizime për kafshë shtëpiake",
+  "categorySeasonings": "Erëza",
+  "categorySweets": "Ëmbëlsirat dhe ëmbëlsirat",
+  "categoryUtilities": "Furnizimet shtëpiake",
+  "categoryVegetables": "Perimet",
+  "chatEmptyGreeting": "Përshëndetje {name}, unë jam Kipi 👋",
+  "chatEmptyGreetingNoName": "Përshëndetje, unë jam Kipi 👋",
+  "chatEmptyPitch": "Unë ndërtoj lista, sugjeroj receta dhe gjej ku të ruaj. Ku të fillojmë?",
   "chatEmptySubtitle": "Kërkoni sugjerime për artikuj, receta ose këshilla për kursimin për të filluar.",
   "chatEmptyTitle": "Biseda juaj është bosh",
   "chatError": "Gabim në ngarkimin e bisedës: {error}",
   "chatHint": "Shkruaj mesazhin tënd...",
   "chatHintBlocked": "Zhbllokoni AI për të biseduar",
+  "chatHistoryErrorBody": "Diçka shkoi keq nga ana jonë. Trokit \"Riprovo\" për të provuar përsëri.",
+  "chatHistoryErrorTitle": "Kjo bisedë nuk mund të ngarkohej",
+  "chatHistoryOfflineBody": "Kontrollo lidhjen tënde të internetit dhe provo sërish.",
+  "chatHistoryOfflineTitle": "Je jashtë linje",
   "chatSubtitle": "Kërko sugjerime për artikuj, receta ose këshilla kursimi.",
   "chatSubtitleShort": "Pyetni për çmimet, recetat, organizimin...",
   "checkingItem": "Po kontrollon artikullin...",
@@ -1540,6 +1672,7 @@
   "chooseImageSource": "Zgjidhni burimin e imazhit",
   "chooseLanguage": "Zgjidhni gjuhën",
   "chooseThemeColor": "Zgjidhni ngjyrën e temës",
+  "chooseThemeMode": "Zgjidhni modalitetin e temës",
   "clear": "Pastro",
   "clearHistory": "Pastro Historikun",
   "clearHistoryConfirm": "Pastro të gjitha mesazhet në këtë sesion?",
@@ -1588,6 +1721,10 @@
   "customizeAssistant": "Personalizoje",
   "dark": "E errët",
   "data": "Të dhënat",
+  "dateGroupOlder": "Më të vjetër",
+  "dateGroupPrevious7Days": "7 ditët e mëparshme",
+  "dateGroupToday": "Sot",
+  "dateGroupYesterday": "Dje",
   "dayFri": "e premte",
   "dayMon": "e hënë",
   "daySat": "Shtu",
@@ -1611,6 +1748,7 @@
   "deleteRecipeConfirmMsg": "Jeni i sigurt që dëshironi të fshini \"{recipeName}\"? Ky veprim nuk mund të zhbëhet.",
   "deleteSession": "Fshi Chat",
   "deleteSessionConfirm": "Je i sigurt që dëshiron ta fshish këtë bisedë? Mesazhet do të humbasin përgjithmonë.",
+  "deletedList": "Lista e fshirë",
   "deselectAll": "Çzgjidh të gjitha",
   "dietaryRestrictions": "Kufizimet dietike",
   "dietaryRestrictionsHint": "P.sh.: vegan, vegjetarian, pa gluten",
@@ -1623,6 +1761,7 @@
   "editCategoryDialog": "Redakto kategorinë",
   "editItem": "Ndrysho Artikull",
   "editItemPrice": "Çmimi i vlerësuar",
+  "editMessage": "Redakto mesazhin",
   "editPantryItem": "Ndrysho {name}",
   "editRecipe": "Redakto",
   "editRecipeTitle": "Redakto recetën",
@@ -1648,6 +1787,7 @@
   "errorLoadingChat": "Oops! Ndodhi një gabim gjatë ngarkimit të bisedës.",
   "errorLoadingChatSubtitle": "Kontrollo lidhjen tënde ose provo sërish më vonë.",
   "errorLoadingHistory": "Gabim gjatë ngarkimit të historikut",
+  "errorLoadingItems": "Gabim gjatë ngarkimit të artikujve",
   "errorLoadingLists": "Gabim gjatë ngarkimit të listave",
   "errorLoadingProducts": "Gabim gjatë ngarkimit të produkteve: {error}",
   "errorLoadingRecipes": "Gabim gjatë ngarkimit të recetave",
@@ -1722,6 +1862,7 @@
   "generatingShareLink": "Po krijon lidhjen e ndarjes...",
   "gestureHint": "Mbajeni për të zgjedhur • Rrëshqitni për ta hequr",
   "globalAssistant": "Asistent global",
+  "goodResponse": "Përgjigje e mirë",
   "howCanIHelp": "Si mund të ndihmoj?",
   "icon": "Ikona:",
   "idealQty": "Sasia ideale",
@@ -1740,14 +1881,18 @@
   "inviteToList": "Fto në listë",
   "itemAdded": "{name} u shtua",
   "itemAddedSnack": "{name} u shtua",
+  "itemAddedToList": "Artikulli u shtua në listë.",
   "itemName": "Emri i artikullit",
   "itemRemoved": "Artikulli u hoq",
   "itemsAddedSuccess": "Artikujt u shtuan me sukses në listë!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} artikuj duhet të blihen",
   "itemsPurchased": "Artikujt e blerë",
   "itemsPurchasedCount": "blerë {purchased} nga {total}",
   "itemsPurchasedShort": "{purchased}/{total} blerë",
   "itemsWillBeAdded": "{count} artikuj do të shtohen",
+  "keepAdding": "Vazhdoni të shtoni",
+  "keepAddingSubtitle": "Mbajeni fletën të hapur për të shtuar disa artikuj",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Çfarë ju duhet për të blerë?",
@@ -1786,16 +1931,22 @@
   "marketsToAvoid": "Tregjet që duhen shmangur",
   "marketsToAvoidHint": "P.sh.: Tregu Y, Tregu Z",
   "mealPlannerAddMeal": "Shtoni vaktin",
+  "mealPlannerAddType": "Shto llojin e vaktit",
+  "mealPlannerCustomTypeLabel": "Lloji i personalizuar",
   "mealPlannerDateLabel": "Data",
+  "mealPlannerDefaultTypeLabel": "Lloji i parazgjedhur",
   "mealPlannerDeleteMeal": "Hiqni vaktin",
   "mealPlannerEditMeal": "Redakto vaktin",
+  "mealPlannerEditType": "Ndrysho llojin e vaktit",
   "mealPlannerError": "Gabim gjatë ngarkimit të planit të vaktit",
+  "mealPlannerEstimatePartial": "Vlerësimi bazuar në recetat me të dhëna të pjesshme të çmimeve.",
   "mealPlannerGenerateList": "Gjeneroni listën e blerjeve",
   "mealPlannerGenerateListConfirm": "Shtoni të gjithë përbërësit nga vaktet e planifikuara këtë javë në listën tuaj të blerjeve?",
   "mealPlannerGenerateListEmpty": "Nuk ka përbërës për të shtuar. Planifikoni fillimisht disa vakte me receta.",
   "mealPlannerGenerateListNoList": "Krijoni së pari një listë blerjesh.",
   "mealPlannerGenerateListSuccess": "{count} përbërësit u shtuan në listën tuaj!",
   "mealPlannerLoading": "Plani i ushqimit po ngarkohet...",
+  "mealPlannerManageTypes": "Menaxhoni llojet e vakteve",
   "mealPlannerMealDeleted": "Vakti i hequr",
   "mealPlannerMealTypeBreakfast": "Mëngjesi",
   "mealPlannerMealTypeDinner": "Darka",
@@ -1815,6 +1966,12 @@
   "mealPlannerServings": "{count,plural, one{{count} shërbim} other{{count} shërbime}}",
   "mealPlannerServingsLabel": "Shërbimet",
   "mealPlannerTitle": "Planifikues i vakteve",
+  "mealPlannerTypeColor": "Ngjyra",
+  "mealPlannerTypeDeleteConfirm": "Je i sigurt që dëshiron ta fshish këtë lloj vakti? Vaktet e planifikuara me këtë lloj do të mbeten.",
+  "mealPlannerTypeDeleteError": "Ky lloj vakti nuk mund të fshihet.",
+  "mealPlannerTypeIcon": "Ikona",
+  "mealPlannerTypeName": "Emri",
+  "mealPlannerTypeNameEmpty": "Emri nuk mund të jetë bosh",
   "mealPlannerViewMonthly": "Pamje mujore",
   "mealPlannerViewWeekly": "Pamje javore",
   "mealPlannerWeekEmpty": "Asgjë e planifikuar për këtë javë",
@@ -1871,60 +2028,60 @@
   "noRecipesSavedHint": "Krijoni recetën tuaj të parë të personalizuar duke shtypur butonin më poshtë.",
   "noTracking": "Pa gjurmim",
   "notInformed": "Nuk është vendosur",
-  "obHookCta": "Get Started",
-  "obHookSocial": "Trusted by thousands of shoppers worldwide",
-  "obHookSubtitle": "AI-powered lists that save you time and money, every single trip.",
-  "obHookTitle": "Smarter shopping starts here",
-  "obLoadingStepHabits": "Tuning to your shopping routine",
-  "obLoadingStepLists": "Preparing your smart lists",
-  "obLoadingStepProfile": "Adjusting for your household",
-  "obLoadingStepSavings": "Optimizing your savings strategy",
-  "obLoadingTitle": "Building your personalized plan...",
-  "obLoginApple": "Continue with Apple",
-  "obLoginError": "Sign-in failed. Try again or skip for now.",
-  "obLoginGoogle": "Continue with Google",
-  "obLoginSkip": "Not now",
-  "obLoginSubtitle": "Sign in so your lists sync across devices",
-  "obLoginTitle": "Save your plan",
-  "obPaywallRetry": "Try again",
-  "obPaywallTitle": "Unlock your plan",
-  "obQuizFrequencyBiweekly": "Every two weeks",
-  "obQuizFrequencyDaily": "Almost every day",
-  "obQuizFrequencyMonthly": "Big monthly haul",
-  "obQuizFrequencyTitle": "How often do you shop for groceries?",
-  "obQuizFrequencyWeekly": "Once a week",
-  "obQuizHouseholdCouple": "Me and my partner",
-  "obQuizHouseholdFamilyLarge": "Family of 5+",
-  "obQuizHouseholdFamilySmall": "Family of 3–4",
-  "obQuizHouseholdSolo": "Just me",
-  "obQuizHouseholdTitle": "Who do you shop for?",
-  "obQuizMethodMemory": "I keep it in my head",
-  "obQuizMethodNone": "I don't make lists",
-  "obQuizMethodNotes": "Notes app",
-  "obQuizMethodPaper": "Pen and paper",
-  "obQuizMethodTitle": "How do you make shopping lists today?",
-  "obQuizPainForget": "I always forget items",
-  "obQuizPainOverspend": "I spend more than planned",
-  "obQuizPainTime": "It takes too much time",
-  "obQuizPainTitle": "What frustrates you most about shopping?",
-  "obQuizPainWaste": "Food goes to waste at home",
-  "obQuizSavingsLarge": "As much as possible",
-  "obQuizSavingsMedium": "Around 10% of my grocery bill",
-  "obQuizSavingsSmall": "A little — every bit counts",
-  "obQuizSavingsTitle": "How much would you like to save monthly?",
-  "obRevealFeatureAi": "AI builds and organizes your lists",
-  "obRevealFeatureBudget": "Spending tracked against your goal",
-  "obRevealFeaturePantry": "Pantry tracking cuts food waste",
-  "obRevealFeatureShare": "Real-time sharing with your household",
-  "obRevealMonth": "Month {n}",
-  "obRevealSavingsCaption": "Projected savings with KipiList",
-  "obRevealSubtitle": "Here's how KipiList will work for you",
-  "obRevealTitle": "Your plan is ready!",
-  "obSocialQuote1": "I never forget anything anymore. The AI builds my list in seconds.",
-  "obSocialQuote2": "We cut our grocery bill noticeably in the first month.",
-  "obSocialQuote3": "Sharing the list with my partner ended our shopping chaos.",
-  "obSocialSubtitle": "Shoppers like you are already saving with KipiList",
-  "obSocialTitle": "You're in good company",
+  "obHookCta": "Filloni",
+  "obHookSocial": "I besuar nga mijëra blerës në mbarë botën",
+  "obHookSubtitle": "Listat e fuqizuara nga AI që ju kursejnë kohë dhe para, çdo udhëtim të vetëm.",
+  "obHookTitle": "Blerja më e zgjuar fillon këtu",
+  "obLoadingStepHabits": "Duke u përshtatur me rutinën tuaj të blerjeve",
+  "obLoadingStepLists": "Përgatitja e listave tuaja të zgjuara",
+  "obLoadingStepProfile": "Përshtatje për shtëpinë tuaj",
+  "obLoadingStepSavings": "Optimizimi i strategjisë suaj të kursimeve",
+  "obLoadingTitle": "Ndërtimi i planit tuaj të personalizuar...",
+  "obLoginApple": "Vazhdoni me Apple",
+  "obLoginError": "Identifikimi dështoi. Provo sërish ose kalo për momentin.",
+  "obLoginGoogle": "Vazhdo me Google",
+  "obLoginSkip": "Jo tani",
+  "obLoginSubtitle": "Identifikohu që listat e tua të sinkronizohen nëpër pajisje",
+  "obLoginTitle": "Ruani planin tuaj",
+  "obPaywallRetry": "Provo sërish",
+  "obPaywallTitle": "Zhbllokoni planin tuaj",
+  "obQuizFrequencyBiweekly": "Çdo dy javë",
+  "obQuizFrequencyDaily": "Pothuajse çdo ditë",
+  "obQuizFrequencyMonthly": "Transport i madh mujor",
+  "obQuizFrequencyTitle": "Sa shpesh bëni blerje për sende ushqimore?",
+  "obQuizFrequencyWeekly": "Një herë në javë",
+  "obQuizHouseholdCouple": "Unë dhe partneri im",
+  "obQuizHouseholdFamilyLarge": "Familje prej 5+",
+  "obQuizHouseholdFamilySmall": "Familje prej 3-4",
+  "obQuizHouseholdSolo": "Vetëm unë",
+  "obQuizHouseholdTitle": "Për kë bëni pazar?",
+  "obQuizMethodMemory": "E mbaj në kokën time",
+  "obQuizMethodNone": "Unë nuk bëj lista",
+  "obQuizMethodNotes": "Aplikacioni Shënime",
+  "obQuizMethodPaper": "Stilolaps dhe letër",
+  "obQuizMethodTitle": "Si i bëni listat e blerjeve sot?",
+  "obQuizPainForget": "I harroj gjithmonë sendet",
+  "obQuizPainOverspend": "Unë shpenzoj më shumë se sa ishte planifikuar",
+  "obQuizPainTime": "Duhet shumë kohë",
+  "obQuizPainTitle": "Çfarë ju frustron më shumë në blerjet?",
+  "obQuizPainWaste": "Ushqimi shkon dëm në shtëpi",
+  "obQuizSavingsLarge": "Sa më shumë që të jetë e mundur",
+  "obQuizSavingsMedium": "Rreth 10% e faturës sime të ushqimeve",
+  "obQuizSavingsSmall": "Pak - çdo grimë ka rëndësi",
+  "obQuizSavingsTitle": "Sa do të dëshironit të kurseni çdo muaj?",
+  "obRevealFeatureAi": "AI ndërton dhe organizon listat tuaja",
+  "obRevealFeatureBudget": "Shpenzimet e gjurmuara kundrejt qëllimit tuaj",
+  "obRevealFeaturePantry": "Gjurmimi i qilarit shkurton mbetjet ushqimore",
+  "obRevealFeatureShare": "Ndarje në kohë reale me familjen tuaj",
+  "obRevealMonth": "muaj {n}",
+  "obRevealSavingsCaption": "Kursime të parashikuara me KipiList",
+  "obRevealSubtitle": "Ja se si do të funksionojë KipiList për ju",
+  "obRevealTitle": "Plani juaj është gati!",
+  "obSocialQuote1": "Nuk harroj më asgjë. AI ndërton listën time në sekonda.",
+  "obSocialQuote2": "Ne e shkurtuam dukshëm faturën tonë të ushqimeve në muajin e parë.",
+  "obSocialQuote3": "Ndarja e listës me partnerin tim i dha fund kaosit tonë të blerjeve.",
+  "obSocialSubtitle": "Blerësit si ju tashmë po kursejnë me KipiList",
+  "obSocialTitle": "Ju jeni në shoqëri të mirë",
   "observations": "Shënime",
   "observationsHint": "Preferenca të tjera për asistentin",
   "offlineBanner": "Ju jeni jashtë linje",
@@ -2040,6 +2197,7 @@
   "onboardingViewAllPlans": "Shikoni të gjitha planet",
   "onboardingWelcomeDesc": "Mënyra më e zgjuar për të organizuar blerjet tuaja dhe për të kursyer para.",
   "onboardingWelcomeTitle": "Mirësevini në KipiList",
+  "openConversation": "Hap bisedën",
   "openMenu": "Hap menunë",
   "organizeAisles": "Organizo sipas korridoreve",
   "organizeAislesPrompt": "Organizo sipas korridoreve të supermarketit.",
@@ -2051,15 +2209,18 @@
   "pantryAppBar": "Qilar",
   "pantryAvailabilityAll": "Gjithçka gati!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} në qilar",
+  "pantryDeficitCount": "Mungon {count}{unit}",
   "pantryEditTitle": "Ndrysho {name}",
   "pantryEmpty": "Qilar bosh",
   "pantryEmptySubtitle": "Shto produktet që dëshiron të mbash në shtëpi",
+  "pantryItemAdded": "Artikulli u shtua",
   "pantryItemRemoved": "Artikulli u hoq",
   "pantryLimitReached": "Kufiri i {count} artikujve në qilar në planin falas. Përmirëso për të shtuar më shumë.",
   "paywallAfterItem1": "Kokrrat",
   "paywallAfterItem2": "Pastrimi",
   "paywallAfterItem3": "Mishrat",
   "paywallAfterItem4": "Furra buke",
+  "paywallBasedOnAnswers": "Personalizuar nga përgjigjet tuaja",
   "paywallBeforeAfterTitle": "AI para dhe pas:",
   "paywallBeforeItem1": "oriz",
   "paywallBeforeItem2": "sapun",
@@ -2097,6 +2258,8 @@
   "paywallGoalHeadlinePantry": "{name}, gjurmoni në mënyrë perfekte qilarin tuaj!",
   "paywallGoalHeadlineRecipes": "{name}, zbulo receta të reja!",
   "paywallGoalHeadlineSaveMoney": "{name}, kurseni në çdo udhëtim!",
+  "paywallHeroFeatureDesc": "Flisni ose ngjisni një listë të tërë - AI e rendit, e kategorizon dhe e buxheton atë në sekonda",
+  "paywallHeroFeatureTitle": "Asistent i blerjeve të AI",
   "paywallHeroHeadline": "Kipi AI gjithmonë pranë jush",
   "paywallHeroSubtitle": "Shtoni artikuj, organizoni listat dhe kurseni kohë me AI në xhepin tuaj",
   "paywallHeroSubtitlePersonalized": "Hej {name}, organizoje blerjet në mënyrën e duhur.",
@@ -2131,6 +2294,11 @@
   "paywallTestimonial2Text": "Nuk harrova më kurrë një artikull në listë. Biseda me AI është sensacionale!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Çfarë thonë përdoruesit tanë:",
+  "paywallTimelineChargeDesc": "Abonimi juaj fillon - anuloni në çdo kohë",
+  "paywallTimelineDay": "dita {day}",
+  "paywallTimelineReminderDesc": "Ju kujtojmë para se të përfundojë gjyqi",
+  "paywallTimelineToday": "Sot",
+  "paywallTimelineTodayDesc": "Zhbllokoni aksesin e plotë në çast",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Filloni provën falas",
   "paywallTrialDays": "{days} DITË FALAS",
@@ -2153,11 +2321,15 @@
   "prefSharing": "Ndaj lista",
   "prefUnlimitedLists": "Lista të pakufizuara",
   "prefUnlimitedPantry": "Qilar i pakufizuar",
+  "preferencesSection": "Preferencat",
   "preferredMarket": "Tregu i preferuar",
   "preferredMarketHint": "P.sh.: Supermarketi X",
+  "premiumActionsPrompt": "Abonohu ​​në Premium për të zhbllokuar veprimet automatike.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Përmirëso për të zhbllokuar",
   "prepTime": "Koha e pergatitjes",
   "prepTimeMinutes": "Koha e përgatitjes (minuta)",
+  "previousItemState": "Gjendja e mëparshme: {quantity} {unit} [{category}]{price}",
   "privacy": "Privatësia",
   "processing": "Po përpunohet...",
   "product": "Produkti",
@@ -2177,21 +2349,34 @@
   "quantityUnitWithPrice": "{qty} {unit} - {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "Po pyet listat tuaja...",
+  "quickActionAi": "Bisedoni me Kipin",
+  "quickActionPantry": "Shikoni qilarin",
   "quickRecipe": "Recetë e shpejtë",
   "quickRecipePrompt": "Sugjero receta me artikuj nga lista ime.",
   "quickReplies": "Përgjigje të shpejta:",
   "quickSuggestions": "Sugjerime të shpejta",
+  "recipeAddError": "Nuk mund të shtohej në listën tuaj. Ju lutemi provoni përsëri.",
   "recipeAddToList": "Shto në listën e blerjeve",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Receta e krijuar!",
   "recipeDeleted": "Receta u fshi",
+  "recipeEstimatePartial": "Vlerësim i pjesshëm bazuar në përbërësit me çmim.",
+  "recipeEstimatedCostPerServing": "{cost} / shërbim",
+  "recipeEstimatedTotalCost": "Kostoja totale e vlerësuar",
   "recipeImage": "Imazhi i recetës",
+  "recipeIngredientInPantry": "Në qilar",
+  "recipeIngredientLowPantry": "I ulët në qilar",
   "recipeIngredientSingular": "1 përbërës",
   "recipeIngredientsPlural": "{count} përbërës",
+  "recipeManualTotalCost": "Kostoja totale manuale",
+  "recipeManualTotalCostHint": "Lëreni bosh për të vlerësuar nga çmimet e përbërësve.",
   "recipeName": "Emri i recetës",
   "recipeSaved": "Receta u ruajt!",
+  "recipeServesCount": "Shërben {count}",
   "recipeSuggestion": "Sugjerim recete",
   "recipeTags": "Etiketat e recetave",
+  "recipeTapToCheck": "Prekni një përbërës për ta kontrolluar atë ndërsa gatuani",
+  "recipeYieldServings": "Rendimentet",
   "regenerate": "Rigjenero",
   "remove": "Hiq",
   "removeBudget": "Hiq",
@@ -2226,9 +2411,12 @@
   "scanBarcodeTitle": "Skanoni barkodin",
   "scanProduct": "Skanoni produktin",
   "scanProductTitle": "Skanoni produktin",
+  "scrollToBottom": "Lëvizni në fund",
+  "searchConversations": "Kërko biseda",
   "searchCurrency": "Kërko monedhën...",
   "searchInConversation": "Kërko në bisedë...",
   "searchLanguage": "Kërko gjuhën...",
+  "searchMessages": "Kërko mesazhe...",
   "searchRecipes": "Kërkoni receta...",
   "searchingCategories": "Po kërkon kategoritë...",
   "searchingProducts": "Po kërkon produkte...",
@@ -2268,6 +2456,7 @@
   "signInGoogle": "Hyr me Google",
   "skip": "Kapërce",
   "smartOrganization": "Organizim i Mençur",
+  "somethingWentWrong": "Diçka shkoi keq",
   "sortAZ": "A-Z",
   "sortCategory": "Kategoria",
   "sortDate": "Data",
@@ -2299,6 +2488,7 @@
   "themeColor": "Ngjyra e temës",
   "themeGreen": "Jeshile",
   "themeIndigo": "Lejla",
+  "themeMode": "Modaliteti i temës",
   "themeOrange": "Portokalli",
   "themePink": "Rozë",
   "themePurple": "Vjollcë",
@@ -2316,6 +2506,7 @@
   "toolSaveRecipe": "Ruani recetën",
   "toolShareList": "Lista e ndarjes",
   "totalEstimated": "Totali i vlerësuar: {amount}",
+  "totalEstimatedLabel": "Totali i vlerësuar",
   "totalSavings": "Kursimet totale",
   "totalSpending": "Totali i Shpenzuar",
   "trackStock": "Gjurmo stokun",
@@ -2323,6 +2514,7 @@
   "trackStockInactive": "Nuk gjeneron sugjerim blerjeje",
   "uncheckingItem": "Po anulon zgjedhjen e artikullit...",
   "undo": "Çbëj",
+  "undoChanges": "Zhbër ndryshimet",
   "unit": "Njësia",
   "unitPack": "pako",
   "unlockAi": "Zhbllokoni AI të pakufizuar",
@@ -2336,6 +2528,7 @@
   "updatingPantry": "Po përditëson qilarin...",
   "upgrade": "Përmirëso",
   "userProfile": "Profili i përdoruesit",
+  "userRole": "Ju",
   "validForLimitedTime": "Vlefshëm për kohë të kufizuar",
   "version": "Versioni",
   "viewActive": "Shiko Aktive",
@@ -2343,6 +2536,7 @@
   "viewHistory": "Shiko Historikun",
   "viewItems": "Shiko artikujt",
   "viewList": "Shiko listën",
+  "viewPlans": "Shikoni planet",
   "viewPro": "Shiko Pro",
   "viewRecipe": "Shikoni recetën",
   "voiceCommandContent": "Flit natyrshëm për të menaxhuar listën tënde!\n\nShembuj:\n• 'Shto bukë, djathë dhe proshutë'\n• 'Hiq detergjentin e rrobave'\n• 'Ndrysho temën në blu'\n\nKjo është një veçori ekskluzive e KipiList Premium.",

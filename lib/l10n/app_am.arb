@@ -34,6 +34,35 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +176,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -280,6 +316,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -309,6 +348,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -399,6 +445,9 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
@@ -427,6 +476,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -953,6 +1005,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1100,6 +1162,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1138,6 +1207,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1198,6 +1290,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1211,7 +1306,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1359,42 +1468,61 @@
   "addToPantryPrompt": "\"{name}\" ወደ ምግብ ቤትህ ጨምር?",
   "addedFeedback": "ተጨምሯል!",
   "advancedFeatures": "የላቁ ባህሪዎች",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "እርምጃዎችን ማስኬድ አልተሳካም።",
+  "agentActionsPremium": "እርምጃዎች ፕሪሚየም ያስፈልጋቸዋል",
+  "agentActionsRunning": "እርምጃዎችን በማሄድ ላይ...",
+  "aiApiError": "የ AI አገልግሎት ስህተት መልሷል ({statusCode})።",
   "aiAssistant": "AI ረዳት",
   "aiAssistantDescription": "ከAI ረዳታችን ጋር ብልህ ሃሳቦችን፣ የምግብ አዘገጃጀቶችን እና የግል ምክሮችን አግኝ።",
   "aiAssistantGeneral": "አጠቃላይ ረዳት",
   "aiAssistantHistory": "የረዳት ታሪክ",
   "aiAssistantTitle": "AI ረዳት",
+  "aiCapabilitiesBudget": "በጀት እና ዋጋዎች",
+  "aiCapabilitiesLists": "የግዢ ዝርዝሮች",
+  "aiCapabilitiesOrganize": "ድርጅት",
+  "aiCapabilitiesRecipes": "የምግብ አዘገጃጀት እና ምናሌዎች",
+  "aiCapabilitiesTitle": "ምን ላድርግ፧",
+  "aiConnectionError": "ከ AI አገልግሎት ጋር መገናኘት አልተቻለም። ግንኙነትዎን ያረጋግጡ።",
   "aiConversationHistory": "የውይይት ታሪክ",
   "aiCreditsRemaining": "{remaining} የተረፉ ክሬዲቶች",
   "aiDeleteConversationConfirm": "ሰርዝ",
   "aiDeleteConversationTitle": "ውይይት ይሰረዝ?",
   "aiDeletedList": "ዝርዝር ተሰርዟል።",
+  "aiEmptyResponseError": "የ AI አገልግሎት ባዶ ምላሽ መለሰ።",
   "aiEnergy": "AI ኢነርጂ",
   "aiEnergyLow": "ዝቅተኛ AI ኃይል",
   "aiError": "ይቅርታ፣ ጥያቄህን በማስኬድ ላይ ስህተት ተከስቷል። ግንኙነትህን አረጋግጥ ወይም በኋላ እንደገና ሞክር።",
   "aiFirstOpenHint": "እኔ ኪፒ ነኝ፣የእርስዎ የግዢ ረዳት። ስለ ዝርዝርህ ማንኛውንም ነገር ጠይቀኝ!",
+  "aiGeneratingResponse": "ምላሽ በማመንጨት ላይ…",
   "aiHello": "ሀሎ! እኔ ኪፒ ነኝ",
   "aiHowCanIHelp": "ዛሬ እንዴት ልረዳህ እችላለሁ?",
+  "aiInvalidResponseError": "የ AI አገልግሎት ልክ ያልሆነ ምላሽ መለሰ።",
   "aiLimitAlmostReached": "ከ AI መልእክቶች ሊጨርሱ ነው።",
   "aiNewConversation": "አዲስ ውይይት",
   "aiNewSession": "አዲስ ክፍለ ጊዜ",
   "aiNoConversationFound": "ምንም ውይይት አልተገኘም።",
   "aiNoMessagesFound": "ምንም መልዕክቶች አልተገኙም።",
   "aiPremiumUpsell": "ወደ ፕሪሚየም ይሂዱ",
+  "aiRateLimitError": "በአጭር ጊዜ ውስጥ በጣም ብዙ መልዕክቶች። ጥቂት ሰከንዶች ይጠብቁ እና እንደገና ይሞክሩ።",
   "aiRecentConversations": "የቅርብ ጊዜ ውይይቶች",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} ዛሬ",
   "aiSearchMessages": "መልዕክቶችን ፈልግ...",
+  "aiSection": "AI ረዳት",
   "aiStartNewConversation": "አዲስ ውይይት ጀምር",
   "aiSubscribeUnlimited": "ላልተገደበ AI ይመዝገቡ",
   "aiSuggestCreateList": "የእኔን የመጀመሪያ ዝርዝር ይፍጠሩ",
   "aiSuggestSaveMore": "ተጨማሪ እንዴት መቆጠብ ይቻላል?",
   "aiTeaserFallback": "ሙሉውን ምላሽ ለመክፈት እና ለግዢዎ ያልተገደበ AI ጠቃሚ ምክሮችን ለማግኘት ለPremium ይመዝገቡ...",
+  "aiTimeoutError": "ጥያቄው በጣም ረጅም ጊዜ ወስዷል። እባክዎ እንደገና ይሞክሩ።",
   "aiUnlockUnlimited": "ያልተገደበ AI ይክፈቱ",
   "aiUnlockWithAd": "በማስታወቂያ ይክፈቱ",
   "aiUsageExhausted": "ወርሃዊ AI ገደብ ላይ ደርሷል። ላልተገደበ → ወደ Pro ያሻሽሉ።",
   "aiUsageWarning": "{remaining} AI ድርጊቶች በዚህ ወር ቀርተዋል - ላልተወሰነ አሻሽል።",
   "aiVoiceCommandTooltip": "AI የድምጽ ትእዛዝ (ፕሪሚየም)",
   "aiWelcomeContent": "ሀሎ! 👋 እኔ ** ኪፒ** ነኝ፣ የእርስዎ የግል ግብይት እና የምግብ አሰራር ረዳት!\n\nእርስዎን ለመርዳት እዚህ ነኝ፡-\n🛒 **አደራጅ** ግብይትዎን በምድቦች በራስ ሰር ያደራጁ\n💰 ** በጀትዎን ይከታተሉ እና ገንዘብ ቆጣቢ ምክሮችን ይስጡ\n🍲 **አስተያየት** ጣፋጭ የምግብ አሰራር ካለህ ጋር\n\nዛሬ እንዴት ልረዳህ እችላለሁ? የመጀመሪያ ዝርዝርዎን በመፍጠር መጀመር ይችላሉ!",
+  "aiWelcomeSuggestBarbecue": "ባርቤኪው ያቅዱ",
+  "aiWelcomeSuggestBarbecuePrompt": "ኪፒ፣ ባርቤኪው እያስተናገድኩ ነው - የግዢ ዝርዝሩን እንድገነባ እርዳኝ።",
   "aiWelcomeSuggestCreateList": "የመጀመሪያ ዝርዝሬን ፍጠር",
   "aiWelcomeSuggestCreateListPrompt": "ኪፒ፣ የመጀመሪያውን የግዢ ዝርዝሬን እንድፈጥር እርዳኝ።",
   "aiWelcomeSuggestSave": "ገንዘብን እንዴት መቆጠብ ይቻላል?",
@@ -1405,14 +1533,17 @@
   "appTitle": "የግብዣ ዝርዝር",
   "appearance": "መልክ",
   "archiveList": "ዝርዝሩን አርክቭ አድርግ",
+  "artifactBudgetLabel": "በጀት፡-",
   "artifactReplaceBody": "ወጪን ለማመቻቸት የምርት አማራጭ ይምረጡ።",
   "artifactReplaceTitle": "{name} ተካ",
   "artifactSuggestedItems": "የተጠቆሙ ዕቃዎች",
   "artifactSwapButton": "መለዋወጥ",
   "artifactSwappedLabel": "ተቀይሯል",
+  "artifactSynced": "ተመሳስሏል",
   "assistantHistory": "የረዳት ታሪክ",
   "assistantHistorySubtitle": "የውይይት ታሪክዎን ይመልከቱ",
   "assistantName": "የረዳት ስም",
+  "assistantRole": "ረዳት",
   "backToChat": "ወደ ውይይት ተመለስ",
   "backToToday": "ወደ ዛሬ ተመለስ",
   "backupExported": "ምትኬ ተልኳል!",
@@ -1420,6 +1551,7 @@
   "backupPremiumDescription": "ምትኬ እና መላክ ፕሪሚየም ባህሪ ነው",
   "backupSubtitle": "ውሂብህን ላክ ወይም አስመጣ",
   "backupTitle": "ምትኬ",
+  "badResponse": "መጥፎ ምላሽ",
   "badgeBeginner": "ጀማሪ",
   "badgeOrganized": "የተደራጀ",
   "badgeSavingMaster": "መምህርን በማስቀመጥ ላይ",
@@ -1452,6 +1584,7 @@
   "catalogItemAdded": "{name} ታክሏል።",
   "catalogMyFrequents": "የእኔ ድግግሞሽ",
   "catalogProductNotFound": "ምርቱ አልተገኘም, ስሙን ይተይቡ",
+  "catalogRareBadge": "ብርቅዬ",
   "catalogRareSection": "በአገርዎ ብዙም ያልተለመደ",
   "catalogRetry": "እንደገና ይሞክሩ",
   "catalogSearchGlobal": "ማንኛውንም ምርት ይፈልጉ...",
@@ -1460,16 +1593,43 @@
   "catalogSortPopular": "በጣም ታዋቂ",
   "catalogTitle": "ካታሎግ",
   "category": "ምድብ",
+  "categoryAlcohol": "የአልኮል መጠጦች",
+  "categoryBaby": "ቤቢ",
+  "categoryBakery": "ዳቦ ቤት",
+  "categoryBeverages": "መጠጦች",
+  "categoryCanned": "የታሸጉ እቃዎች",
+  "categoryCleaning": "ማጽዳት",
+  "categoryColdCuts": "ቀዝቃዛ መቆረጥ",
   "categoryColorLabel": "ቀለም",
+  "categoryDairy": "የወተት ምርቶች",
+  "categoryFish": "ዓሳ",
+  "categoryFrozen": "የቀዘቀዙ ምግቦች",
+  "categoryFruits": "ፍራፍሬዎች",
+  "categoryGrains": "ጥራጥሬዎች እና ጥራጥሬዎች",
+  "categoryHygiene": "የግል እንክብካቤ",
   "categoryIconLabel": "አዶ",
   "categoryLimitReached": "የምድብ ገደብ ላይ ደርሷል",
+  "categoryMeat": "ስጋ",
   "categoryName": "የምድብ ስም",
   "categoryNameHint": "የምድብ ስም አስገባ",
+  "categoryOthers": "ሌላ",
+  "categoryPet": "የቤት እንስሳት አቅርቦቶች",
+  "categorySeasonings": "ወቅቶች",
+  "categorySweets": "ጣፋጮች እና ጣፋጮች",
+  "categoryUtilities": "የቤት እቃዎች",
+  "categoryVegetables": "አትክልቶች",
+  "chatEmptyGreeting": "ሰላም {name}፣ እኔ ኪፒ 👋 ነኝ",
+  "chatEmptyGreetingNoName": "ሰላም እኔ ኪፒ ነኝ 👋",
+  "chatEmptyPitch": "ዝርዝሮችን እገነባለሁ፣ የምግብ አዘገጃጀት መመሪያዎችን እጠቁማለሁ እና የት ማስቀመጥ እንዳለብኝ አገኛለሁ። ከየት ነው የምንጀምረው?",
   "chatEmptySubtitle": "ለመጀመር የንጥል ጥቆማዎችን፣ የምግብ አዘገጃጀት መመሪያዎችን ወይም የማስቀመጫ ምክሮችን ይጠይቁ።",
   "chatEmptyTitle": "ውይይትህ ባዶ ነው።",
   "chatError": "ውይይቱን በመጫን ላይ ስህተት፦ {error}",
   "chatHint": "መልእክትህን ጻፍ...",
   "chatHintBlocked": "ለመወያየት AIን ይክፈቱ",
+  "chatHistoryErrorBody": "በእኛ በኩል የሆነ ችግር ተፈጥሯል። እንደገና ለመሞከር እንደገና ይሞክሩ።",
+  "chatHistoryErrorTitle": "ይህን ውይይት መጫን አልተቻለም",
+  "chatHistoryOfflineBody": "የበይነመረብ ግንኙነትዎን ይፈትሹ እና እንደገና ይሞክሩ።",
+  "chatHistoryOfflineTitle": "ከመስመር ውጭ ነዎት",
   "chatSubtitle": "ለንጥሎች፣ የምግብ አዘገጃጀት ወይም የቁጠባ ምክሮች ጠይቅ።",
   "chatSubtitleShort": "ስለ ዋጋዎች፣ የምግብ አዘገጃጀት መመሪያዎች፣ ድርጅት... ይጠይቁ።",
   "chooseCurrency": "ምንዛሪ ይምረጡ",
@@ -1477,6 +1637,7 @@
   "chooseImageSource": "የምስል ምንጭ ምረጥ",
   "chooseLanguage": "ቋንቋ ምረጥ",
   "chooseThemeColor": "የገጽታ ቀለም ይምረጡ",
+  "chooseThemeMode": "የገጽታ ሁነታን ይምረጡ",
   "clear": "አጽዳ",
   "clearHistory": "ታሪክ አጽዳ",
   "clearHistoryConfirm": "በዚህ ክፍለ ጊዜ ውስጥ ያሉትን ሁሉንም መልእክቶች ማጽዳት?",
@@ -1519,6 +1680,10 @@
   "customizeAssistant": "አብጅ",
   "dark": "ጨለማ",
   "data": "ውሂብ",
+  "dateGroupOlder": "የቆዩ",
+  "dateGroupPrevious7Days": "ያለፉት 7 ቀናት",
+  "dateGroupToday": "ዛሬ",
+  "dateGroupYesterday": "ትናንት",
   "deficitItems": "{deficit,plural, one{{deficit} ንጥል መግዛት ያስፈልጋል} other{{deficit} ንጥሎች መግዛት ያስፈልጋል}}",
   "delete": "ሰርዝ",
   "deleteCategory": "ሰርዝ",
@@ -1535,6 +1700,7 @@
   "deleteRecipeConfirmMsg": "\"{recipeName}\"ን መሰረዝ እንደሚፈልጉ እርግጠኛ ነዎት? ይህ ድርጊት ሊመለስ አይችልም።",
   "deleteSession": "ውይይትን ሰርዝ",
   "deleteSessionConfirm": "እርግጠኛ ነዎት ይህን ውይይት መሰረዝ ይፈልጋሉ? መልእክቶቹ እስከመጨረሻው ይጠፋሉ.",
+  "deletedList": "ዝርዝር ተሰርዟል።",
   "deselectAll": "ሁሉንም አይምረጥ",
   "dietaryRestrictions": "የአመጋገብ ገደቦች",
   "dietaryRestrictionsHint": "ማንኛውም የአመጋገብ ገደቦች?",
@@ -1547,6 +1713,7 @@
   "editCategoryDialog": "ምድብ አርትዕ",
   "editItem": "ንጥል አስተካክል",
   "editItemPrice": "የተገመተ ዋጋ",
+  "editMessage": "መልእክት ያርትዑ",
   "editPantryItem": "{name} አስተካክል",
   "editRecipe": "አስተካክል",
   "editRecipeTitle": "የምግብ አዘገጃጀት አስተካክል",
@@ -1568,6 +1735,7 @@
   "errorLoadingChat": "ውይ! ቻቱን በመጫን ላይ የሆነ ችግር ተፈጥሯል።",
   "errorLoadingChatSubtitle": "ግንኙነትዎን ይፈትሹ ወይም ቆይተው እንደገና ይሞክሩ።",
   "errorLoadingHistory": "ታሪክን መጫን ላይ ስህተት",
+  "errorLoadingItems": "ንጥሎችን መጫን ላይ ስህተት",
   "errorLoadingLists": "ዝርዝሮችን መጫን ላይ ስህተት",
   "errorLoadingRecipes": "የምግብ አዘገጃጀቶችን በመጫን ላይ ስህተት ተከስቷል",
   "errorLoadingSubscription": "የደንበኝነት ምዝገባን መጫን ላይ ስህተት",
@@ -1620,6 +1788,7 @@
   "generateShoppingList": "የግብዣ ዝርዝር አመንጭ",
   "gestureHint": "ለመምረጥ ይያዙ • ለማስወገድ ያንሸራትቱ",
   "globalAssistant": "አለምአቀፍ ረዳት",
+  "goodResponse": "ጥሩ ምላሽ",
   "howCanIHelp": "እንዴት መርዳት እችላለሁ?",
   "idealQty": "ተስማሚ ብዛት",
   "idealQuantity": "ተስማሚ ብዛት",
@@ -1636,14 +1805,18 @@
   "instructionsHint": "በአንድ መስመር አንድ እርምጃ ይተይቡ...",
   "inviteToList": "ወደ ዝርዝር ጋብዝ",
   "itemAddedSnack": "{name} ታክሏል።",
+  "itemAddedToList": "ንጥል ወደ ዝርዝሩ ታክሏል።",
   "itemName": "የንጥል ስም",
   "itemRemoved": "ንጥል ተወግዷል",
   "itemsAddedSuccess": "ንጥሎች በተሳካ ሁኔታ ወደ ዝርዝሩ ተጨምረዋል!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} ንጥሎች መግዛት ያስፈልጋል",
   "itemsPurchased": "የተገዙ ዕቃዎች",
   "itemsPurchasedCount": "{purchased} ከ{total} ተገዝቷል።",
   "itemsPurchasedShort": "{purchased}/{total} ተገዝቷል።",
   "itemsWillBeAdded": "{count} ንጥሎች ይጨመራሉ",
+  "keepAdding": "ማከልዎን ይቀጥሉ",
+  "keepAddingSubtitle": "ብዙ ንጥሎችን ለመጨመር ሉህ ክፍት ያድርጉት",
   "kipiListProActive": "KipiList Pro ንቁ",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "ለመግዛት ምን ያስፈልግዎታል?",
@@ -1685,21 +1858,28 @@
   "markAsPurchased": "እንደተገዛ ምልክት አድርግ",
   "markItemsToSeeAnalysis": "ትንተናውን ለማየት ንጥሎችን እንደተገዙ ምልክት አድርግ።",
   "marketMode": "የገበያ ሁኔታ",
+  "marketModeDescription": "ሲገዙ ዕቃዎችን ያረጋግጡ",
   "marketsToAvoid": "ለማስወገድ ገበያዎች",
   "marketsToAvoidHint": "ላለመግዛት የሚመርጡት ገበያዎች",
   "mealDragHint": "ለመጎተት እና ለመንቀሳቀስ ይያዙ",
   "mealNoRecipeFound": "ምንም የምግብ አሰራር አልተገኘም።",
   "mealPlannerAddMeal": "ምግብ ጨምር",
+  "mealPlannerAddType": "የምግብ ዓይነት ይጨምሩ",
+  "mealPlannerCustomTypeLabel": "ብጁ ዓይነት",
   "mealPlannerDateLabel": "ቀን",
+  "mealPlannerDefaultTypeLabel": "ነባሪ ዓይነት",
   "mealPlannerDeleteMeal": "ምግብ አስወግድ",
   "mealPlannerEditMeal": "ምግብ አስተካክል",
+  "mealPlannerEditType": "የምግብ አይነት አርትዕ",
   "mealPlannerError": "የምግብ እቅዱን በመጫን ላይ ስህተት ተከስቷል",
+  "mealPlannerEstimatePartial": "ከፊል የዋጋ ውሂብ ጋር በምግብ አዘገጃጀት ላይ የተመሠረተ ግምት።",
   "mealPlannerGenerateList": "የግብዣ ዝርዝር አመንጭ",
   "mealPlannerGenerateListConfirm": "በዚህ ሳምንት ከታቀዱ ምግቦች ውስጥ ያሉትን ሁሉንም ንጥረ ነገሮች ወደ ግብዣ ዝርዝርዎ ልጨምራቸው?",
   "mealPlannerGenerateListEmpty": "ሚጨመር ንጥረ ነገር የለም። መጀመሪያ የምግብ አዘገጃጀት ያላቸውን ምግቦች ያቅዱ።",
   "mealPlannerGenerateListNoList": "መጀመሪያ የግብዣ ዝርዝር ይፍጠሩ።",
   "mealPlannerGenerateListSuccess": "{count} ንጥረ ነገሮች ወደ ዝርዝርዎ ተጨምረዋል!",
   "mealPlannerLoading": "የምግብ እቅዱን በመጫን ላይ...",
+  "mealPlannerManageTypes": "የምግብ ዓይነቶችን ይቆጣጠሩ",
   "mealPlannerMealDeleted": "ምግብ ተወግዷል",
   "mealPlannerMealTypeBreakfast": "ቁርስ",
   "mealPlannerMealTypeDinner": "እራት",
@@ -1719,6 +1899,12 @@
   "mealPlannerServings": "{count,plural, one{{count} ሰው} other{{count} ሰዎች}}",
   "mealPlannerServingsLabel": "ተመጋቢዎች",
   "mealPlannerTitle": "የምግብ እቅድ አውጪ",
+  "mealPlannerTypeColor": "ቀለም",
+  "mealPlannerTypeDeleteConfirm": "እርግጠኛ ነዎት ይህን የምግብ አይነት መሰረዝ ይፈልጋሉ? እንደዚህ አይነት የታቀዱ ምግቦች ይቀራሉ.",
+  "mealPlannerTypeDeleteError": "ይህን የምግብ አይነት መሰረዝ አይቻልም።",
+  "mealPlannerTypeIcon": "አዶ",
+  "mealPlannerTypeName": "ስም",
+  "mealPlannerTypeNameEmpty": "ስም ባዶ ሊሆን አይችልም።",
   "mealPlannerViewMonthly": "የወር እይታ",
   "mealPlannerViewWeekly": "የሳምንት እይታ",
   "mealPlannerWeekEmpty": "ለዚህ ሳምንት የታቀደ ነገር የለም",
@@ -1740,6 +1926,7 @@
   "navRecipes": "የምግብ አዘገጃጀት",
   "newCategoryDialog": "አዲስ ምድብ",
   "newChat": "አዲስ ውይይት",
+  "newChatStarted": "አዲስ ውይይት ተጀመረ",
   "newListTitle": "አዲስ የግብዣ ዝርዝር",
   "newPantryList": "ከምግብ ቤት ግብዣ",
   "newRecipe": "አዲስ የምግብ አዘገጃጀት",
@@ -1934,6 +2121,7 @@
   "onboardingViewAllPlans": "ሁሉንም እቅዶች ይመልከቱ",
   "onboardingWelcomeDesc": "ግብይትዎን ለማደራጀት እና ገንዘብ ለመቆጠብ በጣም ብልጥ መንገድ።",
   "onboardingWelcomeTitle": "እንኳን ወደ KipiList በደህና መጡ",
+  "openConversation": "ውይይት ክፈት",
   "openMenu": "ሜኑ ክፈት",
   "organizeAisles": "በመደርደሪያ አደራጅ",
   "organizeAislesPrompt": "በገበያ መደርደሪያዎች አደራጅ።",
@@ -1946,6 +2134,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} በጓዳ ውስጥ",
   "pantryCompactView": "የታመቀ እይታ",
   "pantryDeficit": "{amount}{unit} ይጎድላል",
+  "pantryDeficitCount": "{count}{unit} ይጎድላል",
   "pantryDeleteItemsContent": "{count} የተመረጡ ንጥሎችን መሰረዝ ይፈልጋሉ?",
   "pantryDeleteItemsTitle": "ንጥሎችን ሰርዝ",
   "pantryDeleteSelected": "ሰርዝ ተመርጧል",
@@ -1962,6 +2151,7 @@
   "pantryFilterExpiring": "ጊዜው ያለፈበት",
   "pantryFilterOutStock": "አክሲዮን አልቋል",
   "pantryFirstOpenHint": "ቤት ውስጥ ያለዎትን ይከታተሉ። እቃዎችን ያክሉ ወይም ባርኮዶችን ይቃኙ።",
+  "pantryItemAdded": "ንጥል ታክሏል።",
   "pantryItemRemoved": "ንጥል ተወግዷል",
   "pantryMoreDetails": "ተጨማሪ ዝርዝሮች",
   "pantryNoItemsFound": "ለ\"{query}\" ምንም ንጥሎች አልተገኙም",
@@ -1975,6 +2165,7 @@
   "paywallAfterItem2": "ማጽዳት",
   "paywallAfterItem3": "ስጋዎች",
   "paywallAfterItem4": "ዳቦ ቤት",
+  "paywallBasedOnAnswers": "ከመልሶቻችሁ ለግል የተበጁ",
   "paywallBeforeAfterTitle": "AI በፊት እና በኋላ:",
   "paywallBeforeItem1": "ሩዝ",
   "paywallBeforeItem2": "ሳሙና",
@@ -2012,6 +2203,8 @@
   "paywallGoalHeadlinePantry": "{name}፣ ጓዳዎን በትክክል ይከታተሉ!",
   "paywallGoalHeadlineRecipes": "{name}፣ አዲስ የምግብ አዘገጃጀት ያግኙ!",
   "paywallGoalHeadlineSaveMoney": "{name}፣ በእያንዳንዱ ጉዞ ላይ ይቆጥቡ!",
+  "paywallHeroFeatureDesc": "አንድ ሙሉ ዝርዝር ይናገሩ ወይም ይለጥፉ - AI በሴኮንዶች ውስጥ ይመድባል፣ ይመድባል እና ያበጀዋል።",
+  "paywallHeroFeatureTitle": "AI የግዢ ረዳት",
   "paywallHeroHeadline": "Kipi AI ሁልጊዜ ከጎንህ ነው።",
   "paywallHeroSubtitle": "ንጥሎችን ያክሉ፣ ዝርዝሮችን ያደራጁ እና በኪስዎ ውስጥ ባለው AI ጊዜ ይቆጥቡ",
   "paywallHeroSubtitlePersonalized": "ሰላም {name}፣ ግብይትዎን በትክክለኛው መንገድ ያደራጁ።",
@@ -2046,6 +2239,11 @@
   "paywallTestimonial2Text": "እንደገና የዝርዝር ንጥል ነገር አልረሳሁትም። የ AI ውይይት ስሜት ቀስቃሽ ነው!",
   "paywallTestimonialAuthor": "አን ኤስ.",
   "paywallTestimonialsTitle": "ተጠቃሚዎቻችን የሚሉት፡-",
+  "paywallTimelineChargeDesc": "የደንበኝነት ምዝገባዎ ይጀምራል - በማንኛውም ጊዜ ይሰርዙ",
+  "paywallTimelineDay": "ቀን {day}",
+  "paywallTimelineReminderDesc": "የፍርድ ሂደቱ ከማብቃቱ በፊት እናስታውስዎታለን",
+  "paywallTimelineToday": "ዛሬ",
+  "paywallTimelineTodayDesc": "ሙሉ መዳረሻን ወዲያውኑ ይክፈቱ",
   "paywallTitle": "KipiList ፕሪሚየም",
   "paywallTrialCta": "ነጻ ሙከራ ጀምር",
   "paywallTrialDays": "{days} ቀናት ነፃ",
@@ -2068,11 +2266,15 @@
   "prefSharing": "ዝርዝሮችን አጋራ",
   "prefUnlimitedLists": "ያልተገደቡ ዝርዝሮች",
   "prefUnlimitedPantry": "ያልተገደበ ምግብ ቤት",
+  "preferencesSection": "ምርጫዎች",
   "preferredMarket": "ተመራጭ ገበያ",
   "preferredMarketHint": "ብዙውን ጊዜ የት ነው የሚገዙት?",
+  "premiumActionsPrompt": "ራስ-ሰር ድርጊቶችን ለመክፈት ለPremium ይመዝገቡ።",
+  "premiumStepDescription": "{description} (ፕሪሚየም)",
   "premiumUpgrade": "ለመክፈት አሻሽል",
   "prepTime": "የዝግጅት ጊዜ",
   "prepTimeMinutes": "የዝግጅት ጊዜ (በደቂቃ)",
+  "previousItemState": "ያለፈው ሁኔታ፡ {quantity} {unit} [{category}]{price}",
   "privacy": "ግላዊነት",
   "product": "ምርት",
   "productName": "የምርት ስም",
@@ -2089,21 +2291,35 @@
   "quantityShort": "ብዛት",
   "quantityUnitWithPrice": "{qty} {unit} - {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "ከኪፒ ጋር ይወያዩ",
+  "quickActionPantry": "ጓዳ ይመልከቱ",
+  "quickAddToList": "ወደ ዝርዝር ያክሉ",
   "quickRecipe": "ፈጣን የምግብ አዘገጃጀት",
   "quickRecipePrompt": "ከዝርዝሬ ንጥሎች ጋር የምግብ አዘገጃጀቶችን ጠቁም።",
   "quickReplies": "ፈጣን ምላሾች፡-",
   "quickSuggestions": "ፈጣን ጥቆማዎች",
+  "recipeAddError": "ወደ ዝርዝርዎ ማከል አልተቻለም። እባክህ እንደገና ሞክር።",
   "recipeAddToList": "ወደ የግዢ ዝርዝር ያክሉ",
   "recipeAddedConfirmation": "{count} ንጥረ ነገሮች ወደ {listName} ተጨምረዋል",
   "recipeCreated": "የምግብ አዘገጃጀት ተፈጥሯል!",
   "recipeDeleted": "የምግብ አዘገጃጀት ተሰርዟል",
+  "recipeEstimatePartial": "ዋጋ ባላቸው ንጥረ ነገሮች ላይ የተመሰረተ ከፊል ግምት.",
+  "recipeEstimatedCostPerServing": "{cost} / የሚያገለግል",
+  "recipeEstimatedTotalCost": "የተገመተው ጠቅላላ ወጪ",
   "recipeImage": "የምግብ አዘገጃጀት ምስል",
+  "recipeIngredientInPantry": "በጓዳ ውስጥ",
+  "recipeIngredientLowPantry": "በጓዳ ውስጥ ዝቅተኛ",
   "recipeIngredientSingular": "1 ንጥረ ነገር",
   "recipeIngredientsPlural": "{count} ንጥረ ነገሮች",
+  "recipeManualTotalCost": "በእጅ ጠቅላላ ወጪ",
+  "recipeManualTotalCostHint": "ከንጥረ ነገሮች ዋጋ ለመገመት ባዶ ይተውት።",
   "recipeName": "የምግብ አዘገጃጀት ስም",
   "recipeSaved": "የምግብ አዘገጃጀት ተቀምጧል!",
+  "recipeServesCount": "ያገለግላል {count}",
   "recipeSuggestion": "የምግብ አዘገጃጀት ምክር",
   "recipeTags": "የምግብ አዘገጃጀት መለያዎች",
+  "recipeTapToCheck": "ምግብ በሚያበስሉበት ጊዜ ለማጣራት አንድን ንጥረ ነገር ይንኩ።",
+  "recipeYieldServings": "አቅርቦቶችን ስጥ",
   "regenerate": "እንደገና አመንጭ",
   "remove": "አስወግድ",
   "removeBudget": "አስወግድ",
@@ -2127,9 +2343,12 @@
   "savings": "ቁጠባዎች",
   "scanBarcodeTitle": "ባርኮድ ይቃኙ",
   "scanProductTitle": "ምርትን ይቃኙ",
+  "scrollToBottom": "ወደ ታች ይሸብልሉ",
+  "searchConversations": "ውይይቶችን ፈልግ",
   "searchCurrency": "ምንዛሬ ፈልግ...",
   "searchInConversation": "በውይይት ውስጥ ፈልግ...",
   "searchLanguage": "ቋንቋ ፈልግ...",
+  "searchMessages": "መልዕክቶችን ፈልግ...",
   "searchRecipes": "የምግብ አዘገጃጀት ፈልግ...",
   "selectAll": "ሁሉንም ምረጥ",
   "selectCheaperAlternative": "ርካሽ አማራጭ ይምረጡ",
@@ -2186,6 +2405,7 @@
   "signInGoogle": "በGoogle ግባ",
   "skip": "ዝለል",
   "smartOrganization": "ብልህ ድርጅት",
+  "somethingWentWrong": "የሆነ ችግር ተፈጥሯል።",
   "sortAZ": "አ–ዜ",
   "sortCategory": "ምድብ",
   "sortDate": "ቀን",
@@ -2216,6 +2436,7 @@
   "themeColor": "የቲም ቀለም",
   "themeGreen": "አረንጓዴ",
   "themeIndigo": "ኢንዲጎ",
+  "themeMode": "ገጽታ ሁነታ",
   "themeOrange": "ብርቱካን",
   "themePink": "ሮዝ",
   "themePurple": "ሐምራዊ",
@@ -2223,12 +2444,14 @@
   "themeSelectionTitle": "የገጽታ ቀለም ይምረጡ",
   "themeTeal": "ቲል",
   "totalEstimated": "ጠቅላላ ግምት፦ {amount}",
+  "totalEstimatedLabel": "የተገመተው ጠቅላላ",
   "totalSavings": "ጠቅላላ ቁጠባዎች",
   "totalSpending": "ጠቅላላ ወጪ",
   "trackStock": "ክምችት ተከታተል",
   "trackStockActive": "በግብዣ ሃሳቦች ውስጥ ይታያል",
   "trackStockInactive": "የግብዣ ሃሳብ አያመነጭም",
   "undo": "ቀልብስ",
+  "undoChanges": "ለውጦችን ይቀልብሱ",
   "unit": "አሃድ",
   "unitPack": "ጥቅል",
   "unlockAi": "ያልተገደበ AI ይክፈቱ",
@@ -2253,6 +2476,7 @@
   "userProfileSaveButton": "መገለጫ አስቀምጥ",
   "userProfileSaved": "መገለጫ በተሳካ ሁኔታ ተቀምጧል!",
   "userProfileTitle": "የእኔ መገለጫ",
+  "userRole": "አንተ",
   "validForLimitedTime": "ለተወሰነ ጊዜ የሚሰራ",
   "version": "ስሪት",
   "viewActive": "ንቁዎችን ተመልከት",
@@ -2260,6 +2484,7 @@
   "viewHistory": "ታሪክ ተመልከት",
   "viewItems": "እቃዎችን ይመልከቱ",
   "viewList": "ዝርዝሩን ተመልከት",
+  "viewPlans": "ዕቅዶችን ይመልከቱ",
   "viewPro": "ፕሮ ን ይመልከቱ",
   "viewRecipe": "የምግብ አዘገጃጀቱን ተመልከት",
   "voiceCommandContent": "ዝርዝርህን ለማስተዳደር በተፈጥሮ ተናገር!\n\nምሳሌዎች፦\n• 'ዳቦ፣ አይብ እና ካም ጨምር'\n• 'የልብስ ማጠቢያ ሳሙና አስወግድ'\n• 'ገጽታውን ወደ ሰማያዊ ቀይር'\n\nይህ የKipiList ፕሪሚየም ልዩ ባህሪ ነው።",

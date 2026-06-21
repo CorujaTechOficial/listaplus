@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +161,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -280,6 +301,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -309,6 +333,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -953,6 +984,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1100,6 +1141,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1138,6 +1186,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1211,7 +1282,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1359,42 +1444,56 @@
   "addToPantryPrompt": "ເພີ່ມ \"{name}\" ໃສ່ຕູ້ເຄື່ອງໃຊ້ຂອງທ່ານ?",
   "addedFeedback": "ເພີ່ມແລ້ວ!",
   "advancedFeatures": "ຟີເຈີຣ໌ຂັ້ນສູງ",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "ແລ່ນຄຳສັ່ງບໍ່ສຳເລັດ",
+  "agentActionsPremium": "ຄຳສັ່ງຕ້ອງການ Premium",
+  "agentActionsRunning": "ກຳລັງແລ່ນຄຳສັ່ງ...",
+  "aiApiError": "ບໍລິການ AI ສົ່ງຄືນຂໍ້ຜິດພາດ ({statusCode}).",
   "aiAssistant": "ຜູ້ຊ່ວຍ AI",
   "aiAssistantDescription": "ຮັບຄຳແນະນຳອັດສະລິຍະ ສູດອາຫານ ແລະ ຄຳແນະນຳສ່ວນຕົວກັບຜູ້ຊ່ວຍ AI ຂອງພວກເຮົາ.",
   "aiAssistantGeneral": "ຜູ້ຊ່ວຍທົ່ວໄປ",
   "aiAssistantHistory": "ປະຫວັດຜູ້ຊ່ວຍ",
   "aiAssistantTitle": "ຜູ້ຊ່ວຍ AI",
+  "aiConnectionError": "ບໍ່ສາມາດເຊື່ອມຕໍ່ກັບການບໍລິການ AI ໄດ້. ກວດເບິ່ງການເຊື່ອມຕໍ່ຂອງທ່ານ.",
   "aiConversationHistory": "ປະຫວັດການສົນທະນາ",
   "aiCreditsRemaining": "ຍັງເຫຼືອ {remaining} ເຄຣດິດ",
   "aiDeleteConversationConfirm": "ລຶບ",
   "aiDeleteConversationTitle": "ລຶບການສົນທະນາບໍ?",
   "aiDeletedList": "ລາຍຊື່ທີ່ຖືກລົບ",
+  "aiEmptyResponseError": "ການບໍລິການ AI ກັບຄືນຄໍາຕອບທີ່ຫວ່າງເປົ່າ.",
   "aiEnergy": "ພະລັງງານ AI",
   "aiEnergyLow": "ພະລັງງານ AI ຕໍ່າ",
   "aiError": "ຂໍອະໄພ ມີຂໍ້ຜິດພາດໃນການດຳເນີນການຕາມຄຳຂໍຂອງທ່ານ. ກະລຸນາກວດສອບການເຊື່ອມຕໍ່ ຫຼື ລອງໃໝ່ພາຍຫຼັງ.",
   "aiFirstOpenHint": "ຂ້ອຍແມ່ນ Kipi, ຜູ້ຊ່ວຍຊື້ເຄື່ອງຂອງເຈົ້າ. ຖາມຂ້ອຍຫຍັງກ່ຽວກັບລາຍຊື່ຂອງເຈົ້າ!",
+  "aiGeneratingResponse": "ກຳລັງສ້າງຄຳຕອບ...",
   "aiHello": "ສະບາຍດີ! ຂ້ອຍແມ່ນ Kipi",
   "aiHowCanIHelp": "ຂ້ອຍສາມາດຊ່ວຍເຈົ້າໄດ້ແນວໃດໃນມື້ນີ້?",
+  "aiInvalidResponseError": "ບໍລິການ AI ສົ່ງຄືນການຕອບໂຕ້ທີ່ບໍ່ຖືກຕ້ອງ.",
   "aiLimitAlmostReached": "ເກືອບອອກຈາກຂໍ້ຄວາມ AI",
   "aiNewConversation": "ການສົນທະນາໃຫມ່",
   "aiNewSession": "ເຊດຊັນໃໝ່",
   "aiNoConversationFound": "ບໍ່ພົບການສົນທະນາ",
   "aiNoMessagesFound": "ບໍ່ພົບຂໍ້ຄວາມ",
   "aiPremiumUpsell": "ໄປ Premium",
+  "aiRateLimitError": "ຂໍ້ຄວາມຫຼາຍເກີນໄປໃນເວລາສັ້ນໆ. ລໍຖ້າສອງສາມວິນາທີແລ້ວລອງອີກຄັ້ງ.",
   "aiRecentConversations": "ການສົນທະນາທີ່ຜ່ານມາ",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} ມື້ນີ້",
   "aiSearchMessages": "ຊອກຫາຂໍ້ຄວາມ...",
+  "aiSection": "ຜູ້ຊ່ວຍ AI",
   "aiStartNewConversation": "ເລີ່ມການສົນທະນາໃໝ່",
   "aiSubscribeUnlimited": "ສະໝັກໃຊ້ AI ບໍ່ຈຳກັດ",
   "aiSuggestCreateList": "ສ້າງບັນຊີລາຍຊື່ທໍາອິດຂອງຂ້ອຍ",
   "aiSuggestSaveMore": "ວິທີການປະຫຍັດຫຼາຍ?",
   "aiTeaserFallback": "ສະໝັກໃຊ້ Premium ເພື່ອປົດລັອກການຕອບຮັບເຕັມຮູບແບບ ແລະ ຮັບເຄັດລັບ AI ແບບບໍ່ຈຳກັດສຳລັບການໄປຊື້ເຄື່ອງຂອງທ່ານ...",
+  "aiTimeoutError": "ການຮ້ອງຂໍໃຊ້ເວລາດົນເກີນໄປ. ກະລຸນາລອງອີກຄັ້ງ.",
   "aiUnlockUnlimited": "ປົດລັອກ AI ບໍ່ຈໍາກັດ",
   "aiUnlockWithAd": "ປົດລັອກດ້ວຍການໂຄສະນາ",
   "aiUsageExhausted": "ຮອດຂີດຈຳກັດ AI ປະຈຳເດືອນແລ້ວ. ອັບເກຣດເປັນ Pro ໂດຍບໍ່ຈຳກັດ →",
   "aiUsageWarning": "{remaining} ຄຳສັ່ງ AI ໄວ້ໃນເດືອນນີ້ — ອັບເກຣດແບບບໍ່ຈຳກັດ",
   "aiVoiceCommandTooltip": "ຄຳສັ່ງສຽງ AI (Premium)",
   "aiWelcomeContent": "ສະບາຍດີ! 👋 ຂ້ອຍແມ່ນ **Kipi**, ຜູ້ຊ່ວຍຊື້ເຄື່ອງ ແລະ ສູດອາຫານສ່ວນຕົວຂອງເຈົ້າ!\n\nຂ້ອຍຢູ່ທີ່ນີ້ເພື່ອຊ່ວຍເຈົ້າ:\n🛒 **ຈັດລະບຽບ** ການຊື້ເຄື່ອງຂອງເຈົ້າຕາມໝວດໝູ່ໂດຍອັດຕະໂນມັດ\n💰 ** ຕິດຕາມ ** ງົບປະມານຂອງທ່ານແລະໃຫ້ຄໍາແນະນໍາການປະຫຍັດເງິນ\n🍲 **ແນະນຳ** ສູດແຊບໆ ກັບສິ່ງທີ່ເຈົ້າມີຢູ່ແລ້ວ\n\nຂ້ອຍສາມາດຊ່ວຍເຈົ້າໄດ້ແນວໃດໃນມື້ນີ້? ທ່ານສາມາດເລີ່ມຕົ້ນໂດຍການສ້າງບັນຊີລາຍຊື່ທໍາອິດຂອງທ່ານ!",
+  "aiWelcomeSuggestBarbecue": "ວາງແຜນບາບີຄິວ",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, ຂ້ອຍເປັນເຈົ້າພາບບາບີຄິວ — ຊ່ວຍຂ້ອຍສ້າງລາຍການຊື້ເຄື່ອງ",
   "aiWelcomeSuggestCreateList": "ສ້າງບັນຊີລາຍຊື່ທໍາອິດຂອງຂ້ອຍ",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, ຊ່ວຍຂ້ອຍສ້າງລາຍການຊື້ເຄື່ອງທໍາອິດຂອງຂ້ອຍ",
   "aiWelcomeSuggestSave": "ວິທີການປະຫຍັດເງິນ?",
@@ -1405,14 +1504,17 @@
   "appTitle": "ລາຍການຊື້ເຄື່ອງ",
   "appearance": "ຮູບລັກສະນະ",
   "archiveList": "ເກັບລາຍການ",
+  "artifactBudgetLabel": "ງົບປະມານ:",
   "artifactReplaceBody": "ເລືອກທາງເລືອກຜະລິດຕະພັນເພື່ອເພີ່ມປະສິດທິພາບຄ່າໃຊ້ຈ່າຍ.",
   "artifactReplaceTitle": "ແທນທີ່ {name}",
   "artifactSuggestedItems": "ລາຍການທີ່ແນະນຳ",
   "artifactSwapButton": "ແລກປ່ຽນ",
   "artifactSwappedLabel": "ແລກປ່ຽນ",
+  "artifactSynced": "ຊິງຄ໌ແລ້ວ",
   "assistantHistory": "ປະຫວັດຜູ້ຊ່ວຍ",
   "assistantHistorySubtitle": "ເບິ່ງປະຫວັດການສົນທະນາຂອງທ່ານ",
   "assistantName": "ຊື່ຜູ້ຊ່ວຍ",
+  "assistantRole": "ຜູ້ຊ່ວຍ",
   "backToChat": "ກັບໄປທີ່ການສົນທະນາ",
   "backToToday": "ກັບໄປຫາມື້ນີ້",
   "backupExported": "ສົ່ງອອກສຳຮອງແລ້ວ!",
@@ -1420,6 +1522,7 @@
   "backupPremiumDescription": "ການສຳຮອງ ແລະ ສົ່ງອອກແມ່ນຟີເຈີຣ໌ Premium",
   "backupSubtitle": "ສົ່ງອອກ ຫຼື ນຳເຂົ້າຂໍ້ມູນຂອງທ່ານ",
   "backupTitle": "ສຳຮອງ",
+  "badResponse": "ການຕອບໂຕ້ທີ່ບໍ່ດີ",
   "badgeBeginner": "ຜູ້ເລີ່ມຕົ້ນ",
   "badgeOrganized": "ຈັດຕັ້ງ",
   "badgeSavingMaster": "ອາຈານປະຢັດ",
@@ -1447,10 +1550,12 @@
   "catOthers": "ອື່ນໆ",
   "catalogAddItems": "ເພີ່ມ {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "ຊອກຫາລາຍການ",
+  "catalogCategories": "ໝວດໝູ່",
   "catalogFilterNational": "ຊາດ",
   "catalogItemAdded": "{name} ເພີ່ມແລ້ວ",
   "catalogMyFrequents": "ເລື້ອຍໆຂອງຂ້ອຍ",
   "catalogProductNotFound": "ບໍ່ພົບສິນຄ້າ, ພິມຊື່",
+  "catalogRareBadge": "ຫາຍາກ",
   "catalogRareSection": "ບໍ່ຄ່ອຍມີຢູ່ໃນປະເທດຂອງເຈົ້າ",
   "catalogRetry": "ລອງອີກຄັ້ງ",
   "catalogSearchGlobal": "ຊອກຫາຜະລິດຕະພັນໃດນຶ່ງ...",
@@ -1459,16 +1564,43 @@
   "catalogSortPopular": "ນິຍົມທີ່ສຸດ",
   "catalogTitle": "ລາຍການ",
   "category": "ໝວດ",
+  "categoryAlcohol": "ເຄື່ອງດື່ມແອນກໍຮໍ",
+  "categoryBaby": "ເດັກນ້ອຍ",
+  "categoryBakery": "ເບເກີຣີ",
+  "categoryBeverages": "ເຄື່ອງດື່ມ",
+  "categoryCanned": "ສິນຄ້າກະປ໋ອງ",
+  "categoryCleaning": "ທໍາຄວາມສະອາດ",
+  "categoryColdCuts": "ແຜເຢັນ",
   "categoryColorLabel": "ສີ",
+  "categoryDairy": "ນົມ",
+  "categoryFish": "ປາ",
+  "categoryFrozen": "ອາຫານແຊ່ແຂງ",
+  "categoryFruits": "ໝາກໄມ້",
+  "categoryGrains": "ເມັດພືດ ແລະທັນຍາພືດ",
+  "categoryHygiene": "ການດູແລສ່ວນບຸກຄົນ",
   "categoryIconLabel": "ໄອຄອນ",
   "categoryLimitReached": "ຮອດຂີດຈຳກັດໝວດໝູ່ແລ້ວ",
+  "categoryMeat": "ຊີ້ນ",
   "categoryName": "ຊື່ປະເພດ",
   "categoryNameHint": "ໃສ່ຊື່ໝວດໝູ່",
+  "categoryOthers": "ອື່ນໆ",
+  "categoryPet": "ອຸປະກອນສັດລ້ຽງ",
+  "categorySeasonings": "ເຄື່ອງປຸງ",
+  "categorySweets": "ເຂົ້າຫນົມຫວານແລະຂອງຫວານ",
+  "categoryUtilities": "ເຄື່ອງໃຊ້ໃນຄົວເຮືອນ",
+  "categoryVegetables": "ຜັກ",
+  "chatEmptyGreeting": "ສະບາຍດີ {name}, ຂ້ອຍແມ່ນ Kipi 👋",
+  "chatEmptyGreetingNoName": "ສະບາຍດີ, ຂ້ອຍແມ່ນ Kipi 👋",
+  "chatEmptyPitch": "ຂ້ອຍສ້າງລາຍຊື່, ແນະນໍາສູດອາຫານ, ແລະຊອກຫາບ່ອນທີ່ຈະຊ່ວຍປະຢັດ. ພວກເຮົາເລີ່ມຕົ້ນບ່ອນໃດ?",
   "chatEmptySubtitle": "ຂໍຄໍາແນະນໍາລາຍການ, ສູດອາຫານຫຼືຄໍາແນະນໍາກ່ຽວກັບການປະຫຍັດເພື່ອເລີ່ມຕົ້ນ.",
   "chatEmptyTitle": "ການສົນທະນາຂອງທ່ານຫວ່າງເປົ່າ",
   "chatError": "ຂໍ້ຜິດພາດໃນການໂຫຼດການສົນທະນາ: {error}",
   "chatHint": "ພິມຂໍ້ຄວາມຂອງທ່ານ...",
   "chatHintBlocked": "ປົດລັອກ AI ເພື່ອສົນທະນາ",
+  "chatHistoryErrorBody": "ມີບາງຢ່າງຜິດພາດຢູ່ໃນທ້າຍຂອງພວກເຮົາ. ແຕະລອງອີກຄັ້ງເພື່ອລອງອີກຄັ້ງ.",
+  "chatHistoryErrorTitle": "ບໍ່ສາມາດໂຫຼດການສົນທະນານີ້ໄດ້",
+  "chatHistoryOfflineBody": "ກວດເບິ່ງການເຊື່ອມຕໍ່ອິນເຕີເນັດຂອງເຈົ້າແລ້ວລອງໃໝ່ອີກຄັ້ງ.",
+  "chatHistoryOfflineTitle": "ທ່ານອອບລາຍຢູ່",
   "chatSubtitle": "ຖາມຫາຄຳແນະນຳລາຍການ ສູດອາຫານ ຫຼື ຄຳແນະນຳການປະຫຍັດເງິນ.",
   "chatSubtitleShort": "ສອບຖາມລາຄາ, ສູດອາຫານ, ອົງກອນ...",
   "chooseCurrency": "ເລືອກສະກຸນເງິນ",
@@ -1476,6 +1608,7 @@
   "chooseImageSource": "ເລືອກແຫຼ່ງຮູບພາບ",
   "chooseLanguage": "ເລືອກພາສາ",
   "chooseThemeColor": "ເລືອກສີຫົວຂໍ້",
+  "chooseThemeMode": "ເລືອກຮູບແບບສີສັນ",
   "clear": "ລ້າງ",
   "clearHistory": "ລ້າງປະຫວັດ",
   "clearHistoryConfirm": "ລ້າງຂໍ້ຄວາມທັງໝົດໃນເຊສຊັນນີ້?",
@@ -1518,6 +1651,10 @@
   "customizeAssistant": "ປັບແຕ່ງ",
   "dark": "ມືດ",
   "data": "ຂໍ້ມູນ",
+  "dateGroupOlder": "ແກ່ກວ່າ",
+  "dateGroupPrevious7Days": "7 ມື້ທີ່ຜ່ານມາ",
+  "dateGroupToday": "ມື້ນີ້",
+  "dateGroupYesterday": "ມື້ວານນີ້",
   "deficitItems": "{deficit} ລາຍການທີ່ຕ້ອງຊື້",
   "delete": "ລຶບ",
   "deleteCategory": "ລຶບ",
@@ -1534,6 +1671,7 @@
   "deleteRecipeConfirmMsg": "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບ \"{recipeName}\"? ການດຳເນີນການນີ້ບໍ່ສາມາດຍົກເລີກໄດ້.",
   "deleteSession": "ລຶບການສົນທະນາ",
   "deleteSessionConfirm": "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບການສົນທະນານີ້? ຂໍ້ຄວາມຈະສູນເສຍຢ່າງຖາວອນ.",
+  "deletedList": "ບັນຊີລາຍຊື່ທີ່ຖືກລົບ",
   "deselectAll": "ຍົກເລີກການເລືອກທັງໝົດ",
   "dietaryRestrictions": "ຂໍ້ ຈຳ ກັດດ້ານອາຫານ",
   "dietaryRestrictionsHint": "ຂໍ້ຈຳກັດດ້ານອາຫານບໍ?",
@@ -1546,6 +1684,7 @@
   "editCategoryDialog": "ແກ້ໄຂໝວດໝູ່",
   "editItem": "ແກ້ໄຂລາຍການ",
   "editItemPrice": "ລາຄາປະມານ",
+  "editMessage": "ແກ້ໄຂຂໍ້ຄວາມ",
   "editPantryItem": "ແກ້ໄຂ {name}",
   "editRecipe": "ແກ້ໄຂ",
   "editRecipeTitle": "ແກ້ໄຂສູດອາຫານ",
@@ -1567,6 +1706,7 @@
   "errorLoadingChat": "ອຸຍ! ເກີດບາງຢ່າງຜິດພາດຂຶ້ນໃນການໂຫລດການສົນທະນາ.",
   "errorLoadingChatSubtitle": "ກວດເບິ່ງການເຊື່ອມຕໍ່ຂອງທ່ານ ຫຼືລອງໃໝ່ໃນພາຍຫຼັງ.",
   "errorLoadingHistory": "ເກີດຄວາມຜິດພາດໃນການໂຫຼດປະຫວັດ",
+  "errorLoadingItems": "ເກີດຄວາມຜິດພາດໃນການໂຫຼດລາຍການ",
   "errorLoadingLists": "ເກີດຄວາມຜິດພາດໃນການໂຫລດລາຍຊື່",
   "errorLoadingRecipes": "ເກີດຂໍ້ຜິດພາດໃນການໂຫຼດສູດອາຫານ",
   "errorLoadingSubscription": "ເກີດຄວາມຜິດພາດໃນການໂຫຼດການສະໝັກໃຊ້",
@@ -1619,6 +1759,7 @@
   "generateShoppingList": "ສ້າງລາຍການຊື້ເຄື່ອງ",
   "gestureHint": "ກົດຄ້າງໄວ້ເພື່ອເລືອກ • ປັດເພື່ອເອົາອອກ",
   "globalAssistant": "ຜູ້ຊ່ວຍທົ່ວໄປ",
+  "goodResponse": "ຄໍາຕອບທີ່ດີ",
   "howCanIHelp": "ຂ້ອຍສາມາດຊ່ວຍໄດ້ແນວໃດ?",
   "idealQty": "ຈຳນວນທີ່ຕ້ອງການ",
   "idealQuantity": "ປະລິມານທີ່ຕ້ອງການ",
@@ -1635,14 +1776,18 @@
   "instructionsHint": "ພິມຂັ້ນຕອນລະໜຶ່ງແຖວ...",
   "inviteToList": "ເຊີນເຂົ້າຮ່ວມລາຍການ",
   "itemAddedSnack": "{name} ເພີ່ມແລ້ວ",
+  "itemAddedToList": "ເພີ່ມລາຍການໃສ່ລາຍຊື່ແລ້ວ.",
   "itemName": "ຊື່ລາຍການ",
   "itemRemoved": "ລາຍການຖືກລຶບອອກ",
   "itemsAddedSuccess": "ເພີ່ມລາຍການໃສ່ລາຍການສຳເລັດແລ້ວ!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} ລາຍການທີ່ຕ້ອງຊື້",
   "itemsPurchased": "ລາຍການທີ່ຊື້",
   "itemsPurchasedCount": "{purchased} ຈາກທັງໝົດ {total} ຊື້ແລ້ວ",
   "itemsPurchasedShort": "{purchased}/{total} ຊື້ແລ້ວ",
   "itemsWillBeAdded": "{count} ລາຍການຈະຖືກເພີ່ມ",
+  "keepAdding": "ສືບຕໍ່ເພີ່ມ",
+  "keepAddingSubtitle": "ເປີດຊີດໄວ້ເພື່ອເພີ່ມຫຼາຍລາຍການ",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "ເຈົ້າຕ້ອງການຊື້ຫຍັງ?",
@@ -1689,16 +1834,22 @@
   "mealDragHint": "ກົດຄ້າງໄວ້ເພື່ອລາກແລະຍ້າຍ",
   "mealNoRecipeFound": "ບໍ່ພົບສູດອາຫານ",
   "mealPlannerAddMeal": "ເພີ່ມຄາບອາຫານ",
+  "mealPlannerAddType": "ເພີ່ມປະເພດອາຫານ",
+  "mealPlannerCustomTypeLabel": "ປະເພດແບບກຳນົດເອງ",
   "mealPlannerDateLabel": "ວັນທີ",
+  "mealPlannerDefaultTypeLabel": "ປະເພດເລີ່ມຕົ້ນ",
   "mealPlannerDeleteMeal": "ລຶບຄາບອາຫານອອກ",
   "mealPlannerEditMeal": "ແກ້ໄຂຄາບອາຫານ",
+  "mealPlannerEditType": "ແກ້ໄຂປະເພດອາຫານ",
   "mealPlannerError": "ເກີດຂໍ້ຜິດພາດໃນການໂຫຼດແຜນອາຫານ",
+  "mealPlannerEstimatePartial": "ຄາດຄະເນໂດຍອີງໃສ່ສູດອາຫານທີ່ມີຂໍ້ມູນລາຄາບາງສ່ວນ.",
   "mealPlannerGenerateList": "ສ້າງລາຍການຊື້ເຄື່ອງ",
   "mealPlannerGenerateListConfirm": "ເພີ່ມສ່ວນປະສົມທັງໝົດຈາກຄາບອາຫານທີ່ວາງແຜນໄວ້ໃນອາທິດນີ້ໃສ່ລາຍການຊື້ເຄື່ອງຂອງທ່ານບໍ?",
   "mealPlannerGenerateListEmpty": "ບໍ່ມີສ່ວນປະສົມທີ່ຈະເພີ່ມ. ວາງແຜນຄາບອາຫານດ້ວຍສູດອາຫານກ່ອນ.",
   "mealPlannerGenerateListNoList": "ສ້າງລາຍການຊື້ເຄື່ອງກ່ອນ.",
   "mealPlannerGenerateListSuccess": "ເພີ່ມ {count} ສ່ວນປະສົມໃສ່ລາຍການຂອງທ່ານແລ້ວ!",
   "mealPlannerLoading": "ກຳລັງໂຫຼດແຜນອາຫານ...",
+  "mealPlannerManageTypes": "ຈັດການປະເພດອາຫານ",
   "mealPlannerMealDeleted": "ລຶບຄາບອາຫານອອກແລ້ວ",
   "mealPlannerMealTypeBreakfast": "ອາຫານເຊົ້າ",
   "mealPlannerMealTypeDinner": "ອາຫານແລງ",
@@ -1718,6 +1869,12 @@
   "mealPlannerServings": "{count,plural, one{{count} ທີ່} other{{count} ທີ່}}",
   "mealPlannerServingsLabel": "ຈຳນວນທີ່",
   "mealPlannerTitle": "ເຄື່ອງມືວາງແຜນອາຫານ",
+  "mealPlannerTypeColor": "ສີ",
+  "mealPlannerTypeDeleteConfirm": "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບປະເພດອາຫານນີ້? ອາຫານທີ່ວາງແຜນໄວ້ກັບປະເພດນີ້ຈະຍັງຄົງຢູ່.",
+  "mealPlannerTypeDeleteError": "ບໍ່ສາມາດລຶບປະເພດອາຫານນີ້ໄດ້.",
+  "mealPlannerTypeIcon": "ໄອຄອນ",
+  "mealPlannerTypeName": "ຊື່",
+  "mealPlannerTypeNameEmpty": "ຊື່ບໍ່ສາມາດຫວ່າງເປົ່າໄດ້",
   "mealPlannerViewMonthly": "ເບິ່ງແບບລາຍເດືອນ",
   "mealPlannerViewWeekly": "ເບິ່ງແບບລາຍອາທິດ",
   "mealPlannerWeekEmpty": "ບໍ່ມີແຜນສຳລັບອາທິດນີ້",
@@ -1933,6 +2090,7 @@
   "onboardingViewAllPlans": "ເບິ່ງແຜນການທັງຫມົດ",
   "onboardingWelcomeDesc": "ວິທີທີ່ສະຫລາດທີ່ສຸດໃນການຈັດລະບຽບການຊື້ເຄື່ອງຂອງທ່ານແລະປະຫຍັດເງິນ.",
   "onboardingWelcomeTitle": "ຍິນດີຕ້ອນຮັບສູ່ KipiList",
+  "openConversation": "ເປີດການສົນທະນາ",
   "openMenu": "ເປີດເມນູ",
   "organizeAisles": "ຈັດລະບຽບຕາມແຖວ",
   "organizeAislesPrompt": "ຈັດລະບຽບຕາມແຖວຕະຫຼາດ.",
@@ -1945,6 +2103,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} ໃນ pantry",
   "pantryCompactView": "Compact View",
   "pantryDeficit": "ບໍ່ມີ {amount}{unit}",
+  "pantryDeficitCount": "ບໍ່ມີ {count}{unit}",
   "pantryDeleteItemsContent": "ທ່ານຕ້ອງການລຶບ {count} ລາຍການທີ່ເລືອກບໍ?",
   "pantryDeleteItemsTitle": "ລຶບລາຍການ",
   "pantryDeleteSelected": "ລຶບທີ່ເລືອກ",
@@ -1961,6 +2120,7 @@
   "pantryFilterExpiring": "ໝົດອາຍຸ",
   "pantryFilterOutStock": "ສິນຄ້າໝົດ",
   "pantryFirstOpenHint": "ຕິດຕາມສິ່ງທີ່ທ່ານມີຢູ່ເຮືອນ. ເພີ່ມລາຍການ ຫຼືສະແກນບາໂຄດ.",
+  "pantryItemAdded": "ເພີ່ມລາຍການແລ້ວ",
   "pantryItemRemoved": "ລາຍການຖືກລຶບອອກ",
   "pantryMoreDetails": "ລາຍລະອຽດເພີ່ມເຕີມ",
   "pantryNoItemsFound": "ບໍ່ພົບລາຍການສຳລັບ \"{query}\"",
@@ -1974,6 +2134,7 @@
   "paywallAfterItem2": "ທໍາຄວາມສະອາດ",
   "paywallAfterItem3": "ຊີ້ນ",
   "paywallAfterItem4": "ເບເກີຣີ",
+  "paywallBasedOnAnswers": "ປັບແຕ່ງສ່ວນຕົວຈາກຄຳຕອບຂອງເຈົ້າ",
   "paywallBeforeAfterTitle": "AI ກ່ອນ ແລະ ຫຼັງ:",
   "paywallBeforeItem1": "ເຂົ້າ",
   "paywallBeforeItem2": "ສະບູ່",
@@ -2011,6 +2172,8 @@
   "paywallGoalHeadlinePantry": "{name}, ຕິດ​ຕາມ pantry ຂອງ​ທ່ານ​ຢ່າງ​ສົມ​ບູນ​!",
   "paywallGoalHeadlineRecipes": "{name}, ຄົ້ນພົບສູດອາຫານໃໝ່!",
   "paywallGoalHeadlineSaveMoney": "{name}, ປະຫຍັດທຸກການເດີນທາງ!",
+  "paywallHeroFeatureDesc": "ເວົ້າ ຫຼືວາງລາຍຊື່ທັງໝົດ — AI ຈັດຮຽງ, ຈັດໝວດໝູ່ ແລະຈັດງົບປະມານໃນວິນາທີ",
+  "paywallHeroFeatureTitle": "AI Shopping Assistant",
   "paywallHeroHeadline": "Kipi AI ຢູ່ຄຽງຂ້າງເຈົ້າສະເໝີ",
   "paywallHeroSubtitle": "ເພີ່ມລາຍການ, ຈັດລະບຽບລາຍການແລະປະຫຍັດເວລາດ້ວຍ AI ໃນຖົງຂອງທ່ານ",
   "paywallHeroSubtitlePersonalized": "ສະບາຍດີ {name}, ຈັດລະບຽບການຊື້ເຄື່ອງຂອງເຈົ້າໃຫ້ຖືກຕ້ອງ.",
@@ -2045,6 +2208,11 @@
   "paywallTestimonial2Text": "ຂ້ອຍບໍ່ເຄີຍລືມລາຍການລາຍຊື່ອີກ. AI ສົນທະນາແມ່ນຄວາມຮູ້ສຶກ!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "ສິ່ງທີ່ຜູ້ໃຊ້ຂອງພວກເຮົາເວົ້າ:",
+  "paywallTimelineChargeDesc": "ການສະໝັກສະມາຊິກຂອງທ່ານເລີ່ມຕົ້ນ — ຍົກເລີກໄດ້ທຸກເວລາ",
+  "paywallTimelineDay": "ມື້ {day}",
+  "paywallTimelineReminderDesc": "ພວກເຮົາເຕືອນທ່ານກ່ອນທີ່ການທົດລອງສິ້ນສຸດລົງ",
+  "paywallTimelineToday": "ມື້ນີ້",
+  "paywallTimelineTodayDesc": "ປົດລັອກການເຂົ້າເຖິງຢ່າງເຕັມທີ່ທັນທີ",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "ເລີ່ມການທົດລອງໃຊ້ຟຣີ",
   "paywallTrialDays": "{days} ມື້ຟຣີ",
@@ -2067,11 +2235,15 @@
   "prefSharing": "ແບ່ງປັນລາຍການ",
   "prefUnlimitedLists": "ລາຍການບໍ່ຈຳກັດ",
   "prefUnlimitedPantry": "ຕູ້ເຄື່ອງໃຊ້ບໍ່ຈຳກັດ",
+  "preferencesSection": "ການຕັ້ງຄ່າ",
   "preferredMarket": "ຕະຫຼາດທີ່ຕ້ອງການ",
   "preferredMarketHint": "ປົກກະຕິແລ້ວເຈົ້າໄປຊື້ເຄື່ອງຢູ່ໃສ?",
+  "premiumActionsPrompt": "ສະໝັກໃຊ້ Premium ເພື່ອປົດລັອກຄຳສັ່ງອັດຕະໂນມັດ.",
+  "premiumStepDescription": "{description} (ພຣີມຽມ)",
   "premiumUpgrade": "ອັບເກຣດເພື່ອປົດລັອກ",
   "prepTime": "ເວລາໃນການກຽມ",
   "prepTimeMinutes": "ເວລາໃນການກຽມ (ນາທີ)",
+  "previousItemState": "ສະຖານະທີ່ຜ່ານມາ: {quantity} {unit} [{category}]{price}",
   "privacy": "ຄວາມເປັນສ່ວນຕົວ",
   "product": "ຜະລິດຕະພັນ",
   "productName": "ຊື່ສິນຄ້າ",
@@ -2088,21 +2260,34 @@
   "quantityShort": "ຈຳນວນ",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "ສົນທະນາກັບ Kipi",
+  "quickActionPantry": "ເບິ່ງ pantry",
   "quickRecipe": "ສູດອາຫານດ່ວນ",
   "quickRecipePrompt": "ແນະນຳສູດອາຫານດ້ວຍລາຍການຈາກລາຍການຂອງຂ້ອຍ.",
   "quickReplies": "ຕອບກັບດ່ວນ:",
   "quickSuggestions": "ຄຳແນະນຳດ່ວນ",
+  "recipeAddError": "ບໍ່ສາມາດເພີ່ມໃສ່ລາຍຊື່ຂອງທ່ານໄດ້. ກະລຸນາລອງອີກຄັ້ງ.",
   "recipeAddToList": "ເພີ່ມໃສ່ລາຍການຊື້ເຄື່ອງ",
   "recipeAddedConfirmation": "{count} ສ່ວນປະກອບເພີ່ມໃສ່ {listName}",
   "recipeCreated": "ສ້າງສູດອາຫານແລ້ວ!",
   "recipeDeleted": "ລຶບສູດອາຫານແລ້ວ",
+  "recipeEstimatePartial": "ການຄາດຄະເນບາງສ່ວນໂດຍອີງໃສ່ສ່ວນປະກອບທີ່ມີລາຄາ.",
+  "recipeEstimatedCostPerServing": "{cost} / ໃຫ້ບໍລິການ",
+  "recipeEstimatedTotalCost": "ຄາດຄະເນຄ່າໃຊ້ຈ່າຍທັງໝົດ",
   "recipeImage": "ຮູບພາບສູດອາຫານ",
+  "recipeIngredientInPantry": "ໃນ pantry",
+  "recipeIngredientLowPantry": "ຕໍ່າໃນ pantry",
   "recipeIngredientSingular": "1 ສ່ວນປະກອບ",
   "recipeIngredientsPlural": "{count} ສ່ວນປະກອບ",
+  "recipeManualTotalCost": "ຄ່າໃຊ້ຈ່າຍທັງຫມົດຄູ່ມື",
+  "recipeManualTotalCostHint": "ປ່ອຍໃຫ້ຫວ່າງເປົ່າເພື່ອປະເມີນລາຄາສ່ວນປະກອບ.",
   "recipeName": "ຊື່ສູດອາຫານ",
   "recipeSaved": "ບັນທຶກສູດອາຫານແລ້ວ!",
+  "recipeServesCount": "ໃຫ້ບໍລິການ {count}",
   "recipeSuggestion": "ຄຳແນະນຳສູດອາຫານ",
   "recipeTags": "ແທັກສູດອາຫານ",
+  "recipeTapToCheck": "ແຕະສ່ວນປະກອບເພື່ອກວດເບິ່ງມັນໃນຂະນະທີ່ທ່ານແຕ່ງກິນ",
+  "recipeYieldServings": "ຜົນຜະລິດ",
   "regenerate": "ສ້າງໃໝ່",
   "remove": "ລຶບອອກ",
   "removeBudget": "ລຶບອອກ",
@@ -2126,9 +2311,12 @@
   "savings": "ການປະຫຍັດ",
   "scanBarcodeTitle": "ສະແກນບາໂຄດ",
   "scanProductTitle": "ສະແກນຜະລິດຕະພັນ",
+  "scrollToBottom": "ເລື່ອນລົງລຸ່ມສຸດ",
+  "searchConversations": "ຊອກຫາການສົນທະນາ",
   "searchCurrency": "ຊອກຫາສະກຸນເງິນ...",
   "searchInConversation": "ຊອກຫາໃນການສົນທະນາ...",
   "searchLanguage": "ຄົ້ນຫາພາສາ...",
+  "searchMessages": "ຊອກຫາຂໍ້ຄວາມ...",
   "searchRecipes": "ຄົ້ນຫາສູດອາຫານ...",
   "selectAll": "ເລືອກທັງໝົດ",
   "selectCheaperAlternative": "ເລືອກທາງເລືອກທີ່ຖືກກວ່າ",
@@ -2185,6 +2373,7 @@
   "signInGoogle": "ເຂົ້າສູ່ລະບົບດ້ວຍ Google",
   "skip": "ຂ້າມ",
   "smartOrganization": "ການຈັດລະບຽບອັດສະລິຍະ",
+  "somethingWentWrong": "ມີບາງຢ່າງຜິດພາດ",
   "sortAZ": "A–Z",
   "sortCategory": "ໝວດ",
   "sortDate": "ວັນທີ",
@@ -2215,6 +2404,7 @@
   "themeColor": "ສີຊຸດຮູບແບບ",
   "themeGreen": "ຂຽວ",
   "themeIndigo": "ຄາມ",
+  "themeMode": "ຮູບແບບສີສັນ",
   "themeOrange": "ສົ້ມ",
   "themePink": "ບົວ",
   "themePurple": "ມ່ວງ",
@@ -2222,12 +2412,14 @@
   "themeSelectionTitle": "ເລືອກສີຫົວຂໍ້",
   "themeTeal": "ຂຽວຟ້າ",
   "totalEstimated": "ປະມານລວມ: {amount}",
+  "totalEstimatedLabel": "ຄາດຄະເນທັງໝົດ",
   "totalSavings": "ເງິນຝາກປະຢັດທັງໝົດ",
   "totalSpending": "ການໃຊ້ຈ່າຍທັງໝົດ",
   "trackStock": "ຕິດຕາມສະຕັອກ",
   "trackStockActive": "ສະແດງໃນຄຳແນະນຳການຊື້ເຄື່ອງ",
   "trackStockInactive": "ບໍ່ສ້າງຄຳແນະນຳການຊື້ເຄື່ອງ",
   "undo": "ຍົກເລີກ",
+  "undoChanges": "ຍົກເລີກການປ່ຽນແປງ",
   "unit": "ຫົວໜ່ວຍ",
   "unitPack": "ຊອງ",
   "unlockAi": "ປົດລັອກ AI ບໍ່ຈໍາກັດ",
@@ -2252,6 +2444,7 @@
   "userProfileSaveButton": "ບັນທຶກໂປຣໄຟລ໌",
   "userProfileSaved": "ບັນທຶກໂປຣໄຟລ໌ສຳເລັດແລ້ວ!",
   "userProfileTitle": "ໂປຣໄຟລ໌ຂອງຂ້ອຍ",
+  "userRole": "ເຈົ້າ",
   "validForLimitedTime": "ໃຊ້ໄດ້ໃນເວລາຈຳກັດ",
   "version": "ເວີຊັນ",
   "viewActive": "ເບິ່ງທີ່ໃຊ້ງານ",
@@ -2259,6 +2452,7 @@
   "viewHistory": "ເບິ່ງປະຫວັດ",
   "viewItems": "ເບິ່ງລາຍການ",
   "viewList": "ເບິ່ງລາຍການ",
+  "viewPlans": "ເບິ່ງແຜນການ",
   "viewPro": "ເບິ່ງ Pro",
   "viewRecipe": "ເບິ່ງສູດອາຫານ",
   "voiceCommandContent": "ເວົ້າຢ່າງທຳມະຊາດເພື່ອຈັດການລາຍການຂອງທ່ານ!\n\nຕົວຢ່າງ:\n• 'ເພີ່ມເຂົ້າຈີ່ ເນີຍແຂງ ແລະ ແຮມ'\n• 'ລຶບຜົງຊັກຟອກ'\n• 'ປ່ຽນຊຸດຮູບແບບເປັນສີຟ້າ'\n\nນີ້ແມ່ນຟີເຈີຣ໌ສະເພາະຂອງ KipiList Premium.",

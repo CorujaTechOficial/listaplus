@@ -246,6 +246,11 @@ class AppLocalizationsHu extends AppLocalizations {
   String get noItemsToBuy => 'Nincs vásárolandó termék';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Hiányzik $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Kamra bevásárlás';
 
   @override
@@ -312,6 +317,12 @@ class AppLocalizationsHu extends AppLocalizations {
   String get settingsAppBar => 'Beállítások';
 
   @override
+  String get preferencesSection => 'Preferences';
+
+  @override
+  String get aiSection => 'AI asszisztens';
+
+  @override
   String get language => 'Nyelv';
 
   @override
@@ -340,6 +351,12 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get appearance => 'Megjelenés';
+
+  @override
+  String get themeMode => 'Téma mód';
+
+  @override
+  String get chooseThemeMode => 'Válassza ki a téma módot';
 
   @override
   String get light => 'Világos';
@@ -589,6 +606,13 @@ class AppLocalizationsHu extends AppLocalizations {
   String get trackStockInactive => 'Nem generál vásárlási javaslatot';
 
   @override
+  String get keepAdding => 'Folytassa a hozzáadást';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Több elem hozzáadásához tartsa nyitva a lapot';
+
+  @override
   String get createListDialog => 'Lista létrehozása';
 
   @override
@@ -694,6 +718,36 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Jó válasz';
+
+  @override
+  String get badResponse => 'Rossz válasz';
+
+  @override
+  String get scrollToBottom => 'Görgessen lefelé';
+
+  @override
+  String get somethingWentWrong => 'Valami elromlott';
+
+  @override
+  String get editMessage => 'Üzenet szerkesztése';
+
+  @override
+  String get searchConversations => 'Beszélgetések keresése';
+
+  @override
+  String get dateGroupToday => 'Ma';
+
+  @override
+  String get dateGroupYesterday => 'Tegnap';
+
+  @override
+  String get dateGroupPrevious7Days => 'Előző 7 nap';
+
+  @override
+  String get dateGroupOlder => 'Régebbi';
+
+  @override
   String get aiAssistantTitle => 'AI asszisztens';
 
   @override
@@ -734,6 +788,33 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Elérte a havi AI-korlátot. Frissítsen Pro-ra a korlátlan használatért →';
+
+  @override
+  String get undo => 'Visszavonás';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -944,6 +1025,20 @@ class AppLocalizationsHu extends AppLocalizations {
   String get recipeAddToList => 'Hozzáadás a bevásárlólistához';
 
   @override
+  String get recipeAddError =>
+      'Nem sikerült hozzáadni a listához. Kérjük, próbálja újra.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Érintse meg az összetevőt, hogy ellenőrizze azt főzés közben';
+
+  @override
+  String get recipeIngredientInPantry => 'Spájzban';
+
+  @override
+  String get recipeIngredientLowPantry => 'Alacsony a kamrában';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count összetevők hozzáadva a $listName-hoz';
   }
@@ -1057,12 +1152,12 @@ class AppLocalizationsHu extends AppLocalizations {
   String get paywallSelectPlan => 'Válassza ki tervét:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'MEGTAKARÍTÁS $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Csak $price/hó';
   }
 
@@ -1098,6 +1193,37 @@ class AppLocalizationsHu extends AppLocalizations {
   String get paywallRestore => 'Visszaállítás';
 
   @override
+  String get paywallTimelineToday => 'Ma';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Nyissa fel azonnal a teljes hozzáférést';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return '$day nap';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Emlékeztetjük Önt a tárgyalás vége előtt';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Előfizetése elindul – bármikor lemondhatja';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI vásárlási asszisztens';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Mondjon ki vagy illesszen be egy teljes listát – a mesterséges intelligencia másodpercek alatt rendezi, kategorizálja és költségvetést készít';
+
+  @override
+  String get paywallBasedOnAnswers =>
+      'Az Ön válaszai alapján személyre szabott';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI mindig melletted';
 
   @override
@@ -1130,9 +1256,6 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Elem eltávolítva';
-
-  @override
-  String get undo => 'Visszavonás';
 
   @override
   String get emptyListTitle => 'A lista üres';
@@ -1249,6 +1372,9 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Elem eltávolítva';
+
+  @override
+  String get pantryItemAdded => 'Elem hozzáadva';
 
   @override
   String deficitItems(int deficit) {
@@ -1654,6 +1780,33 @@ class AppLocalizationsHu extends AppLocalizations {
   String get prepTimeMinutes => 'Elkészítési idő (perc)';
 
   @override
+  String get recipeYieldServings => 'Hozam adagok';
+
+  @override
+  String get recipeManualTotalCost => 'Manuális teljes költség';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Hagyja üresen, hogy megbecsülje az összetevők árát.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Becsült összköltség';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / adag';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Kiszolgál $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Részleges becslés az összetevők és ár alapján.';
+
+  @override
   String get instructionsHint => 'Gépeljen be egy lépést soronként...';
 
   @override
@@ -1783,6 +1936,10 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Becslés receptek alapján, részleges áradatokkal.';
+
+  @override
   String get mealPlannerGenerateList => 'Bevásárlólista generálása';
 
   @override
@@ -1878,6 +2035,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get catalogRareSection => 'kevésbé gyakori az Ön országában';
 
   @override
+  String get catalogRareBadge => 'Ritka';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1896,7 +2056,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get catalogBrowse => 'Tallózás a katalógusban';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kategóriák';
 
   @override
   String get offlineBanner => 'Ön offline állapotban van';
@@ -1927,6 +2087,40 @@ class AppLocalizationsHu extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Étkezéstípusok kezelése';
+
+  @override
+  String get mealPlannerAddType => 'Adja hozzá az étkezés típusát';
+
+  @override
+  String get mealPlannerEditType => 'Étkezés típusának szerkesztése';
+
+  @override
+  String get mealPlannerTypeName => 'Név';
+
+  @override
+  String get mealPlannerTypeColor => 'Szín';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikon';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Biztosan törli ezt az étkezési típust? A tervezett étkezések ezzel a típussal megmaradnak.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'A név nem lehet üres';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'Ez az étkezéstípus nem törölhető.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Egyedi típus';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Alapértelmezett típus';
 
   @override
   String get expirationDate => 'Lejárati idő';
@@ -1986,6 +2180,9 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Hiba a listák betöltésekor';
+
+  @override
+  String get errorLoadingItems => 'Hiba az elemek betöltésekor';
 
   @override
   String get noListsFound => 'Nem találhatók listák';
@@ -2759,6 +2956,216 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get obLoginError =>
       'Sikertelen bejelentkezés. Próbálja újra, vagy most hagyja ki.';
+
+  @override
+  String get searchMessages => 'Üzenetek keresése...';
+
+  @override
+  String get deletedList => 'Lista törölve';
+
+  @override
+  String get openConversation => 'Nyissa meg a beszélgetést';
+
+  @override
+  String get userRole => 'Te';
+
+  @override
+  String get assistantRole => 'Helyettes';
+
+  @override
+  String get agentActionsRunning => 'Műveletek futtatása...';
+
+  @override
+  String get agentActionsFailed => 'Nem sikerült végrehajtani a műveleteket';
+
+  @override
+  String get agentActionsPremium => 'A műveletekhez Premium szükséges';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Változtatások visszavonása';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (prémium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Az elem hozzáadva a listához.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Előző állapot: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Iratkozzon fel a Premiumra az automatikus műveletek feloldásához.';
+
+  @override
+  String get viewPlans => 'Tervek megtekintése';
+
+  @override
+  String get artifactSynced => 'Szinkronizálva';
+
+  @override
+  String get artifactBudgetLabel => 'Költségvetés:';
+
+  @override
+  String get totalEstimatedLabel => 'Becsült összesen';
+
+  @override
+  String get quickActionPantry => 'Spájz megtekintése';
+
+  @override
+  String get quickActionAi => 'Csevegés Kipivel';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Az AI szolgáltatás hibát adott vissza ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'A kérés túl sokáig tartott. Kérjük, próbálja újra.';
+
+  @override
+  String get aiConnectionError =>
+      'Nem sikerült csatlakozni az AI-szolgáltatáshoz. Ellenőrizze a kapcsolatot.';
+
+  @override
+  String get aiEmptyResponseError => 'Az AI szolgáltatás üres választ adott.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Az AI szolgáltatás érvénytelen választ adott vissza.';
+
+  @override
+  String get categoryFruits => 'Gyümölcsök';
+
+  @override
+  String get categoryCleaning => 'Tisztítás';
+
+  @override
+  String get categoryBeverages => 'Italok';
+
+  @override
+  String get categoryBakery => 'Pékség';
+
+  @override
+  String get categoryMeat => 'Hús';
+
+  @override
+  String get categoryDairy => 'Tejtermékek';
+
+  @override
+  String get categoryVegetables => 'Zöldségek';
+
+  @override
+  String get categoryGrains => 'Gabonák és gabonafélék';
+
+  @override
+  String get categoryHygiene => 'Személyes gondoskodás';
+
+  @override
+  String get categoryFrozen => 'Fagyasztott élelmiszerek';
+
+  @override
+  String get categoryCanned => 'Konzervek';
+
+  @override
+  String get categorySeasonings => 'Fűszerek';
+
+  @override
+  String get categorySweets => 'Édességek és desszertek';
+
+  @override
+  String get categoryAlcohol => 'Alkoholos italok';
+
+  @override
+  String get categoryFish => 'Hal';
+
+  @override
+  String get categoryColdCuts => 'Felvágottak';
+
+  @override
+  String get categoryUtilities => 'Háztartási kellékek';
+
+  @override
+  String get categoryPet => 'Kisállat kellékek';
+
+  @override
+  String get categoryBaby => 'Baba';
+
+  @override
+  String get categoryOthers => 'Más';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Szia $name, Kipi vagyok 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Szia Kipi vagyok 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Listákat készítek, recepteket javaslok, és megkeresem a mentés helyét. Hol kezdjük?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Tervezze meg a grillezést';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, grillezést rendezek – segíts összeállítani a bevásárlólistát';
+
+  @override
+  String get aiRateLimitError =>
+      'Túl sok üzenet rövid időn belül. Várjon néhány másodpercet, és próbálja újra.';
+
+  @override
+  String get chatHistoryErrorTitle =>
+      'Nem sikerült betölteni ezt a beszélgetést';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Valami elromlott a mi oldalunkon. Koppintson az újrapróbálkozásra az újrapróbálkozáshoz.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Ön offline állapotban van';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Ellenőrizze az internetkapcsolatot, és próbálja újra.';
+
+  @override
+  String get aiGeneratingResponse => 'Válasz generálása…';
 }
 
 /// The translations for Hungarian, as used in Hungary (`hu_HU`).
@@ -3003,6 +3410,11 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get noItemsToBuy => 'Nincs vásárolandó termék';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Hiányzik $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Kamra bevásárlás';
 
   @override
@@ -3069,6 +3481,12 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get settingsAppBar => 'Beállítások';
 
   @override
+  String get preferencesSection => 'Preferences';
+
+  @override
+  String get aiSection => 'AI asszisztens';
+
+  @override
   String get language => 'Nyelv';
 
   @override
@@ -3097,6 +3515,12 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get appearance => 'Megjelenés';
+
+  @override
+  String get themeMode => 'Téma mód';
+
+  @override
+  String get chooseThemeMode => 'Válassza ki a téma módot';
 
   @override
   String get light => 'Világos';
@@ -3346,6 +3770,13 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get trackStockInactive => 'Nem generál vásárlási javaslatot';
 
   @override
+  String get keepAdding => 'Folytassa a hozzáadást';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Több elem hozzáadásához tartsa nyitva a lapot';
+
+  @override
   String get createListDialog => 'Lista létrehozása';
 
   @override
@@ -3451,6 +3882,36 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   }
 
   @override
+  String get goodResponse => 'Jó válasz';
+
+  @override
+  String get badResponse => 'Rossz válasz';
+
+  @override
+  String get scrollToBottom => 'Görgessen lefelé';
+
+  @override
+  String get somethingWentWrong => 'Valami elromlott';
+
+  @override
+  String get editMessage => 'Üzenet szerkesztése';
+
+  @override
+  String get searchConversations => 'Beszélgetések keresése';
+
+  @override
+  String get dateGroupToday => 'Ma';
+
+  @override
+  String get dateGroupYesterday => 'Tegnap';
+
+  @override
+  String get dateGroupPrevious7Days => 'Előző 7 nap';
+
+  @override
+  String get dateGroupOlder => 'Régebbi';
+
+  @override
   String get aiAssistantTitle => 'AI asszisztens';
 
   @override
@@ -3491,6 +3952,9 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   @override
   String get aiUsageExhausted =>
       'Elérte a havi AI-korlátot. Frissítsen Pro-ra a korlátlan használatért →';
+
+  @override
+  String get undo => 'Visszavonás';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -3701,6 +4165,20 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get recipeAddToList => 'Hozzáadás a bevásárlólistához';
 
   @override
+  String get recipeAddError =>
+      'Nem sikerült hozzáadni a listához. Kérjük, próbálja újra.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Érintse meg az összetevőt, hogy ellenőrizze azt főzés közben';
+
+  @override
+  String get recipeIngredientInPantry => 'Spájzban';
+
+  @override
+  String get recipeIngredientLowPantry => 'Alacsony a kamrában';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count összetevők hozzáadva a $listName-hoz';
   }
@@ -3814,12 +4292,12 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get paywallSelectPlan => 'Válassza ki tervét:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'MEGTAKARÍTÁS $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Csak $price/hó';
   }
 
@@ -3855,6 +4333,37 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get paywallRestore => 'Visszaállítás';
 
   @override
+  String get paywallTimelineToday => 'Ma';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Nyissa fel azonnal a teljes hozzáférést';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return '$day nap';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Emlékeztetjük Önt a tárgyalás vége előtt';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Előfizetése elindul – bármikor lemondhatja';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI vásárlási asszisztens';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Mondjon ki vagy illesszen be egy teljes listát – a mesterséges intelligencia másodpercek alatt rendezi, kategorizálja és költségvetést készít';
+
+  @override
+  String get paywallBasedOnAnswers =>
+      'Az Ön válaszai alapján személyre szabott';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI mindig melletted';
 
   @override
@@ -3887,9 +4396,6 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get itemRemoved => 'Elem eltávolítva';
-
-  @override
-  String get undo => 'Visszavonás';
 
   @override
   String get emptyListTitle => 'A lista üres';
@@ -4006,6 +4512,9 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get pantryItemRemoved => 'Elem eltávolítva';
+
+  @override
+  String get pantryItemAdded => 'Elem hozzáadva';
 
   @override
   String deficitItems(int deficit) {
@@ -4411,6 +4920,33 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get prepTimeMinutes => 'Elkészítési idő (perc)';
 
   @override
+  String get recipeYieldServings => 'Hozam adagok';
+
+  @override
+  String get recipeManualTotalCost => 'Manuális teljes költség';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Hagyja üresen, hogy megbecsülje az összetevők árát.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Becsült összköltség';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / adag';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Kiszolgál $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Részleges becslés az összetevők és ár alapján.';
+
+  @override
   String get instructionsHint => 'Gépeljen be egy lépést soronként...';
 
   @override
@@ -4540,6 +5076,10 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Becslés receptek alapján, részleges áradatokkal.';
+
+  @override
   String get mealPlannerGenerateList => 'Bevásárlólista generálása';
 
   @override
@@ -4635,6 +5175,9 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get catalogRareSection => 'kevésbé gyakori az Ön országában';
 
   @override
+  String get catalogRareBadge => 'Ritka';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4651,6 +5194,9 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get catalogBrowse => 'Tallózás a katalógusban';
+
+  @override
+  String get catalogCategories => 'Kategóriák';
 
   @override
   String get offlineBanner => 'Ön offline állapotban van';
@@ -4681,6 +5227,40 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Étkezéstípusok kezelése';
+
+  @override
+  String get mealPlannerAddType => 'Adja hozzá az étkezés típusát';
+
+  @override
+  String get mealPlannerEditType => 'Étkezés típusának szerkesztése';
+
+  @override
+  String get mealPlannerTypeName => 'Név';
+
+  @override
+  String get mealPlannerTypeColor => 'Szín';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikon';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Biztosan törli ezt az étkezési típust? A tervezett étkezések ezzel a típussal megmaradnak.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'A név nem lehet üres';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'Ez az étkezéstípus nem törölhető.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Egyedi típus';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Alapértelmezett típus';
 
   @override
   String get expirationDate => 'Lejárati idő';
@@ -4740,6 +5320,9 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
 
   @override
   String get errorLoadingLists => 'Hiba a listák betöltésekor';
+
+  @override
+  String get errorLoadingItems => 'Hiba az elemek betöltésekor';
 
   @override
   String get noListsFound => 'Nem találhatók listák';
@@ -5513,4 +6096,214 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   @override
   String get obLoginError =>
       'Sikertelen bejelentkezés. Próbálja újra, vagy most hagyja ki.';
+
+  @override
+  String get searchMessages => 'Üzenetek keresése...';
+
+  @override
+  String get deletedList => 'Lista törölve';
+
+  @override
+  String get openConversation => 'Nyissa meg a beszélgetést';
+
+  @override
+  String get userRole => 'Te';
+
+  @override
+  String get assistantRole => 'Helyettes';
+
+  @override
+  String get agentActionsRunning => 'Műveletek futtatása...';
+
+  @override
+  String get agentActionsFailed => 'Nem sikerült végrehajtani a műveleteket';
+
+  @override
+  String get agentActionsPremium => 'A műveletekhez Premium szükséges';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Változtatások visszavonása';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (prémium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Az elem hozzáadva a listához.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Előző állapot: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Iratkozzon fel a Premiumra az automatikus műveletek feloldásához.';
+
+  @override
+  String get viewPlans => 'Tervek megtekintése';
+
+  @override
+  String get artifactSynced => 'Szinkronizálva';
+
+  @override
+  String get artifactBudgetLabel => 'Költségvetés:';
+
+  @override
+  String get totalEstimatedLabel => 'Becsült összesen';
+
+  @override
+  String get quickActionPantry => 'Spájz megtekintése';
+
+  @override
+  String get quickActionAi => 'Csevegés Kipivel';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Az AI szolgáltatás hibát adott vissza ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'A kérés túl sokáig tartott. Kérjük, próbálja újra.';
+
+  @override
+  String get aiConnectionError =>
+      'Nem sikerült csatlakozni az AI-szolgáltatáshoz. Ellenőrizze a kapcsolatot.';
+
+  @override
+  String get aiEmptyResponseError => 'Az AI szolgáltatás üres választ adott.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Az AI szolgáltatás érvénytelen választ adott vissza.';
+
+  @override
+  String get categoryFruits => 'Gyümölcsök';
+
+  @override
+  String get categoryCleaning => 'Tisztítás';
+
+  @override
+  String get categoryBeverages => 'Italok';
+
+  @override
+  String get categoryBakery => 'Pékség';
+
+  @override
+  String get categoryMeat => 'Hús';
+
+  @override
+  String get categoryDairy => 'Tejtermékek';
+
+  @override
+  String get categoryVegetables => 'Zöldségek';
+
+  @override
+  String get categoryGrains => 'Gabonák és gabonafélék';
+
+  @override
+  String get categoryHygiene => 'Személyes gondoskodás';
+
+  @override
+  String get categoryFrozen => 'Fagyasztott élelmiszerek';
+
+  @override
+  String get categoryCanned => 'Konzervek';
+
+  @override
+  String get categorySeasonings => 'Fűszerek';
+
+  @override
+  String get categorySweets => 'Édességek és desszertek';
+
+  @override
+  String get categoryAlcohol => 'Alkoholos italok';
+
+  @override
+  String get categoryFish => 'Hal';
+
+  @override
+  String get categoryColdCuts => 'Felvágottak';
+
+  @override
+  String get categoryUtilities => 'Háztartási kellékek';
+
+  @override
+  String get categoryPet => 'Kisállat kellékek';
+
+  @override
+  String get categoryBaby => 'Baba';
+
+  @override
+  String get categoryOthers => 'Más';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Szia $name, Kipi vagyok 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Szia Kipi vagyok 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Listákat készítek, recepteket javaslok, és megkeresem a mentés helyét. Hol kezdjük?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Tervezze meg a grillezést';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, grillezést rendezek – segíts összeállítani a bevásárlólistát';
+
+  @override
+  String get aiRateLimitError =>
+      'Túl sok üzenet rövid időn belül. Várjon néhány másodpercet, és próbálja újra.';
+
+  @override
+  String get chatHistoryErrorTitle =>
+      'Nem sikerült betölteni ezt a beszélgetést';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Valami elromlott a mi oldalunkon. Koppintson az újrapróbálkozásra az újrapróbálkozáshoz.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Ön offline állapotban van';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Ellenőrizze az internetkapcsolatot, és próbálja újra.';
+
+  @override
+  String get aiGeneratingResponse => 'Válasz generálása…';
 }

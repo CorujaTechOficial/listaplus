@@ -244,6 +244,11 @@ class AppLocalizationsEl extends AppLocalizations {
   String get noItemsToBuy => 'Κανένα στοιχείο δεν χρειάζεται αγορά';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Λείπει $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Αγορές ντουλαπιού';
 
   @override
@@ -310,6 +315,12 @@ class AppLocalizationsEl extends AppLocalizations {
   String get settingsAppBar => 'Ρυθμίσεις';
 
   @override
+  String get preferencesSection => 'Προτιμήσεις';
+
+  @override
+  String get aiSection => 'Βοηθός AI';
+
+  @override
   String get language => 'Γλώσσα';
 
   @override
@@ -338,6 +349,12 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get appearance => 'Εμφάνιση';
+
+  @override
+  String get themeMode => 'Λειτουργία θέματος';
+
+  @override
+  String get chooseThemeMode => 'Επιλέξτε λειτουργία θέματος';
 
   @override
   String get light => 'Ανοιχτό';
@@ -590,6 +607,13 @@ class AppLocalizationsEl extends AppLocalizations {
   String get trackStockInactive => 'Δεν δημιουργεί πρόταση αγοράς';
 
   @override
+  String get keepAdding => 'Συνεχίστε να προσθέτετε';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Κρατήστε το φύλλο ανοιχτό για να προσθέσετε πολλά στοιχεία';
+
+  @override
   String get createListDialog => 'Δημιουργία λίστας';
 
   @override
@@ -695,6 +719,36 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Καλή ανταπόκριση';
+
+  @override
+  String get badResponse => 'Κακή απάντηση';
+
+  @override
+  String get scrollToBottom => 'Κάντε κύλιση προς τα κάτω';
+
+  @override
+  String get somethingWentWrong => 'Κάτι πήγε στραβά';
+
+  @override
+  String get editMessage => 'Επεξεργασία μηνύματος';
+
+  @override
+  String get searchConversations => 'Αναζήτηση συνομιλιών';
+
+  @override
+  String get dateGroupToday => 'Σήμερα';
+
+  @override
+  String get dateGroupYesterday => 'Εχθές';
+
+  @override
+  String get dateGroupPrevious7Days => 'Προηγούμενες 7 ημέρες';
+
+  @override
+  String get dateGroupOlder => 'Πιο παλιά';
+
+  @override
   String get aiAssistantTitle => 'Βοηθός AI';
 
   @override
@@ -735,6 +789,33 @@ class AppLocalizationsEl extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Συμπληρώθηκε το μηνιαίο όριο τεχνητής νοημοσύνης. Αναβάθμιση σε Pro για απεριόριστο →';
+
+  @override
+  String get undo => 'Αναίρεση';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -947,6 +1028,20 @@ class AppLocalizationsEl extends AppLocalizations {
   String get recipeAddToList => 'Προσθήκη στη λίστα αγορών';
 
   @override
+  String get recipeAddError =>
+      'Δεν ήταν δυνατή η προσθήκη στη λίστα σας. Δοκιμάστε ξανά.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Πατήστε ένα συστατικό για να το ελέγξετε καθώς μαγειρεύετε';
+
+  @override
+  String get recipeIngredientInPantry => 'Στο ντουλάπι';
+
+  @override
+  String get recipeIngredientLowPantry => 'Χαμηλό σε ντουλάπι';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1065,12 +1160,12 @@ class AppLocalizationsEl extends AppLocalizations {
   String get paywallSelectPlan => 'Επιλέξτε το σχέδιό σας:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'ΑΠΟΘΗΚΕΥΣΗ $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Μόνο $price/μήνα';
   }
 
@@ -1103,6 +1198,36 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get paywallRestore => 'Επαναφέρω';
+
+  @override
+  String get paywallTimelineToday => 'Σήμερα';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Ξεκλειδώστε την πλήρη πρόσβαση αμέσως';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Ημέρα $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Σας υπενθυμίζουμε πριν τελειώσει η δίκη';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Η συνδρομή σας ξεκινά — ακυρώστε ανά πάσα στιγμή';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI Shopping Assistant';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Εκφωνήστε ή επικολλήστε μια ολόκληρη λίστα — η τεχνητή νοημοσύνη την ταξινομεί, την κατηγοριοποιεί και την προϋπολογίζει σε δευτερόλεπτα';
+
+  @override
+  String get paywallBasedOnAnswers => 'Εξατομικευμένη από τις απαντήσεις σας';
 
   @override
   String get paywallHeroHeadline => 'Το Kipi AI πάντα δίπλα σας';
@@ -1138,9 +1263,6 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Το στοιχείο αφαιρέθηκε';
-
-  @override
-  String get undo => 'Αναίρεση';
 
   @override
   String get emptyListTitle => 'Η λίστα σας είναι άδεια';
@@ -1258,6 +1380,9 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Το στοιχείο αφαιρέθηκε';
+
+  @override
+  String get pantryItemAdded => 'Το στοιχείο προστέθηκε';
 
   @override
   String deficitItems(int deficit) {
@@ -1663,6 +1788,33 @@ class AppLocalizationsEl extends AppLocalizations {
   String get prepTimeMinutes => 'Χρόνος προετοιμασίας (λεπτά)';
 
   @override
+  String get recipeYieldServings => 'Απόδοση μερίδες';
+
+  @override
+  String get recipeManualTotalCost => 'Χειροκίνητο συνολικό κόστος';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Αφήστε κενό για εκτίμηση από τις τιμές των συστατικών.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Εκτιμώμενο συνολικό κόστος';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / μερίδα';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Εξυπηρετεί $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Μερική εκτίμηση με βάση τα συστατικά με τιμή.';
+
+  @override
   String get instructionsHint => 'Πληκτρολογήστε ένα βήμα ανά γραμμή...';
 
   @override
@@ -1793,6 +1945,10 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Εκτίμηση με βάση συνταγές με στοιχεία μερικής τιμής.';
+
+  @override
   String get mealPlannerGenerateList => 'Δημιουργία λίστας αγορών';
 
   @override
@@ -1889,6 +2045,9 @@ class AppLocalizationsEl extends AppLocalizations {
   String get catalogRareSection => 'λιγότερο συνηθισμένο στη χώρα σας';
 
   @override
+  String get catalogRareBadge => 'Σπάνιος';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1907,7 +2066,7 @@ class AppLocalizationsEl extends AppLocalizations {
   String get catalogBrowse => 'Περιήγηση στον Κατάλογο';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Κατηγορίες';
 
   @override
   String get offlineBanner => 'Είστε εκτός σύνδεσης';
@@ -1938,6 +2097,41 @@ class AppLocalizationsEl extends AppLocalizations {
     );
     return '$count $_temp0 λείπει';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Διαχειριστείτε τους τύπους γευμάτων';
+
+  @override
+  String get mealPlannerAddType => 'Προσθήκη τύπου γεύματος';
+
+  @override
+  String get mealPlannerEditType => 'Επεξεργασία τύπου γεύματος';
+
+  @override
+  String get mealPlannerTypeName => 'Ονομα';
+
+  @override
+  String get mealPlannerTypeColor => 'Χρώμα';
+
+  @override
+  String get mealPlannerTypeIcon => 'Εικόνισμα';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν τον τύπο γεύματος; Τα προγραμματισμένα γεύματα με αυτόν τον τύπο θα παραμείνουν.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Το όνομα δεν μπορεί να είναι κενό';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Δεν είναι δυνατή η διαγραφή αυτού του τύπου γεύματος.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Προσαρμοσμένος τύπος';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Προεπιλεγμένος τύπος';
 
   @override
   String get expirationDate => 'Ημερομηνία λήξης';
@@ -1998,6 +2192,9 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Σφάλμα κατά τη φόρτωση λιστών';
+
+  @override
+  String get errorLoadingItems => 'Σφάλμα κατά τη φόρτωση στοιχείων';
 
   @override
   String get noListsFound => 'Δεν βρέθηκαν λίστες';
@@ -2782,6 +2979,216 @@ class AppLocalizationsEl extends AppLocalizations {
   @override
   String get obLoginError =>
       'Η σύνδεση απέτυχε. Δοκιμάστε ξανά ή παραλείψτε προς το παρόν.';
+
+  @override
+  String get searchMessages => 'Αναζήτηση μηνυμάτων...';
+
+  @override
+  String get deletedList => 'Διαγραμμένη λίστα';
+
+  @override
+  String get openConversation => 'Ανοιχτή συνομιλία';
+
+  @override
+  String get userRole => 'Εσείς';
+
+  @override
+  String get assistantRole => 'Βοηθός';
+
+  @override
+  String get agentActionsRunning => 'Εκτέλεση ενεργειών...';
+
+  @override
+  String get agentActionsFailed => 'Αποτυχία εκτέλεσης ενεργειών';
+
+  @override
+  String get agentActionsPremium => 'Οι ενέργειες απαιτούν Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Αναίρεση αλλαγών';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Το στοιχείο προστέθηκε στη λίστα.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Προηγούμενη κατάσταση: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Εγγραφείτε στο Premium για να ξεκλειδώσετε αυτόματες ενέργειες.';
+
+  @override
+  String get viewPlans => 'Προβολή σχεδίων';
+
+  @override
+  String get artifactSynced => 'Συγχρονίστηκε';
+
+  @override
+  String get artifactBudgetLabel => 'Προϋπολογισμός:';
+
+  @override
+  String get totalEstimatedLabel => 'Εκτιμώμενο σύνολο';
+
+  @override
+  String get quickActionPantry => 'Προβολή αποθήκης';
+
+  @override
+  String get quickActionAi => 'Συνομιλία με τον Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Η υπηρεσία AI επέστρεψε ένα σφάλμα ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Το αίτημα κράτησε πάρα πολύ. Δοκιμάστε ξανά.';
+
+  @override
+  String get aiConnectionError =>
+      'Δεν ήταν δυνατή η σύνδεση με την υπηρεσία AI. Ελέγξτε τη σύνδεσή σας.';
+
+  @override
+  String get aiEmptyResponseError =>
+      'Η υπηρεσία AI επέστρεψε μια κενή απάντηση.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Η υπηρεσία AI επέστρεψε μια μη έγκυρη απάντηση.';
+
+  @override
+  String get categoryFruits => 'Φρούτα';
+
+  @override
+  String get categoryCleaning => 'Καθάρισμα';
+
+  @override
+  String get categoryBeverages => 'Ποτά';
+
+  @override
+  String get categoryBakery => 'Αρτοποιείο';
+
+  @override
+  String get categoryMeat => 'Κρέας';
+
+  @override
+  String get categoryDairy => 'Γαλακτοκομείο';
+
+  @override
+  String get categoryVegetables => 'Λαχανικά';
+
+  @override
+  String get categoryGrains => 'Δημητριακά και δημητριακά';
+
+  @override
+  String get categoryHygiene => 'Προσωπική φροντίδα';
+
+  @override
+  String get categoryFrozen => 'Κατεψυγμένα τρόφιμα';
+
+  @override
+  String get categoryCanned => 'Κονσερβοποιημένα προϊόντα';
+
+  @override
+  String get categorySeasonings => 'Καρυκεύματα';
+
+  @override
+  String get categorySweets => 'Γλυκά και επιδόρπια';
+
+  @override
+  String get categoryAlcohol => 'Αλκοολούχα ποτά';
+
+  @override
+  String get categoryFish => 'Ψάρι';
+
+  @override
+  String get categoryColdCuts => 'Αλλαντικά';
+
+  @override
+  String get categoryUtilities => 'Οικιακά είδη';
+
+  @override
+  String get categoryPet => 'Προμήθειες για κατοικίδια';
+
+  @override
+  String get categoryBaby => 'Μωρό';
+
+  @override
+  String get categoryOthers => 'Αλλος';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Γεια $name, είμαι η Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Γεια, είμαι η Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Δημιουργώ λίστες, προτείνω συνταγές και βρίσκω πού να αποθηκεύσω. Από πού ξεκινάμε;';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Σχεδιάστε ένα μπάρμπεκιου';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Κήπη, διοργανώνω μπάρμπεκιου — βοήθησέ με να φτιάξω τη λίστα αγορών';
+
+  @override
+  String get aiRateLimitError =>
+      'Πάρα πολλά μηνύματα σε σύντομο χρονικό διάστημα. Περιμένετε μερικά δευτερόλεπτα και δοκιμάστε ξανά.';
+
+  @override
+  String get chatHistoryErrorTitle =>
+      'Δεν ήταν δυνατή η φόρτωση αυτής της συνομιλίας';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Κάτι πήγε στραβά από την πλευρά μας. Πατήστε επανάληψη για να προσπαθήσετε ξανά.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Είστε εκτός σύνδεσης';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Ελέγξτε τη σύνδεσή σας στο διαδίκτυο και δοκιμάστε ξανά.';
+
+  @override
+  String get aiGeneratingResponse => 'Δημιουργία απόκρισης…';
 }
 
 /// The translations for Modern Greek, as used in Greece (`el_GR`).
@@ -3024,6 +3431,11 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get noItemsToBuy => 'Κανένα στοιχείο δεν χρειάζεται αγορά';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Λείπει $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Αγορές ντουλαπιού';
 
   @override
@@ -3090,6 +3502,12 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get settingsAppBar => 'Ρυθμίσεις';
 
   @override
+  String get preferencesSection => 'Προτιμήσεις';
+
+  @override
+  String get aiSection => 'Βοηθός AI';
+
+  @override
   String get language => 'Γλώσσα';
 
   @override
@@ -3118,6 +3536,12 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get appearance => 'Εμφάνιση';
+
+  @override
+  String get themeMode => 'Λειτουργία θέματος';
+
+  @override
+  String get chooseThemeMode => 'Επιλέξτε λειτουργία θέματος';
 
   @override
   String get light => 'Ανοιχτό';
@@ -3370,6 +3794,13 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get trackStockInactive => 'Δεν δημιουργεί πρόταση αγοράς';
 
   @override
+  String get keepAdding => 'Συνεχίστε να προσθέτετε';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Κρατήστε το φύλλο ανοιχτό για να προσθέσετε πολλά στοιχεία';
+
+  @override
   String get createListDialog => 'Δημιουργία λίστας';
 
   @override
@@ -3475,6 +3906,36 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   }
 
   @override
+  String get goodResponse => 'Καλή ανταπόκριση';
+
+  @override
+  String get badResponse => 'Κακή απάντηση';
+
+  @override
+  String get scrollToBottom => 'Κάντε κύλιση προς τα κάτω';
+
+  @override
+  String get somethingWentWrong => 'Κάτι πήγε στραβά';
+
+  @override
+  String get editMessage => 'Επεξεργασία μηνύματος';
+
+  @override
+  String get searchConversations => 'Αναζήτηση συνομιλιών';
+
+  @override
+  String get dateGroupToday => 'Σήμερα';
+
+  @override
+  String get dateGroupYesterday => 'Εχθές';
+
+  @override
+  String get dateGroupPrevious7Days => 'Προηγούμενες 7 ημέρες';
+
+  @override
+  String get dateGroupOlder => 'Πιο παλιά';
+
+  @override
   String get aiAssistantTitle => 'Βοηθός AI';
 
   @override
@@ -3515,6 +3976,9 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   @override
   String get aiUsageExhausted =>
       'Συμπληρώθηκε το μηνιαίο όριο τεχνητής νοημοσύνης. Αναβάθμιση σε Pro για απεριόριστο →';
+
+  @override
+  String get undo => 'Αναίρεση';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -3727,6 +4191,20 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get recipeAddToList => 'Προσθήκη στη λίστα αγορών';
 
   @override
+  String get recipeAddError =>
+      'Δεν ήταν δυνατή η προσθήκη στη λίστα σας. Δοκιμάστε ξανά.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Πατήστε ένα συστατικό για να το ελέγξετε καθώς μαγειρεύετε';
+
+  @override
+  String get recipeIngredientInPantry => 'Στο ντουλάπι';
+
+  @override
+  String get recipeIngredientLowPantry => 'Χαμηλό σε ντουλάπι';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -3845,12 +4323,12 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get paywallSelectPlan => 'Επιλέξτε το σχέδιό σας:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'ΑΠΟΘΗΚΕΥΣΗ $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Μόνο $price/μήνα';
   }
 
@@ -3883,6 +4361,36 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get paywallRestore => 'Επαναφέρω';
+
+  @override
+  String get paywallTimelineToday => 'Σήμερα';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Ξεκλειδώστε την πλήρη πρόσβαση αμέσως';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Ημέρα $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Σας υπενθυμίζουμε πριν τελειώσει η δίκη';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Η συνδρομή σας ξεκινά — ακυρώστε ανά πάσα στιγμή';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI Shopping Assistant';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Εκφωνήστε ή επικολλήστε μια ολόκληρη λίστα — η τεχνητή νοημοσύνη την ταξινομεί, την κατηγοριοποιεί και την προϋπολογίζει σε δευτερόλεπτα';
+
+  @override
+  String get paywallBasedOnAnswers => 'Εξατομικευμένη από τις απαντήσεις σας';
 
   @override
   String get paywallHeroHeadline => 'Το Kipi AI πάντα δίπλα σας';
@@ -3918,9 +4426,6 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get itemRemoved => 'Το στοιχείο αφαιρέθηκε';
-
-  @override
-  String get undo => 'Αναίρεση';
 
   @override
   String get emptyListTitle => 'Η λίστα σας είναι άδεια';
@@ -4038,6 +4543,9 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get pantryItemRemoved => 'Το στοιχείο αφαιρέθηκε';
+
+  @override
+  String get pantryItemAdded => 'Το στοιχείο προστέθηκε';
 
   @override
   String deficitItems(int deficit) {
@@ -4443,6 +4951,33 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get prepTimeMinutes => 'Χρόνος προετοιμασίας (λεπτά)';
 
   @override
+  String get recipeYieldServings => 'Απόδοση μερίδες';
+
+  @override
+  String get recipeManualTotalCost => 'Χειροκίνητο συνολικό κόστος';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Αφήστε κενό για εκτίμηση από τις τιμές των συστατικών.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Εκτιμώμενο συνολικό κόστος';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / μερίδα';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Εξυπηρετεί $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Μερική εκτίμηση με βάση τα συστατικά με τιμή.';
+
+  @override
   String get instructionsHint => 'Πληκτρολογήστε ένα βήμα ανά γραμμή...';
 
   @override
@@ -4573,6 +5108,10 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Εκτίμηση με βάση συνταγές με στοιχεία μερικής τιμής.';
+
+  @override
   String get mealPlannerGenerateList => 'Δημιουργία λίστας αγορών';
 
   @override
@@ -4669,6 +5208,9 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get catalogRareSection => 'λιγότερο συνηθισμένο στη χώρα σας';
 
   @override
+  String get catalogRareBadge => 'Σπάνιος';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4685,6 +5227,9 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get catalogBrowse => 'Περιήγηση στον Κατάλογο';
+
+  @override
+  String get catalogCategories => 'Κατηγορίες';
 
   @override
   String get offlineBanner => 'Είστε εκτός σύνδεσης';
@@ -4715,6 +5260,41 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
     );
     return '$count $_temp0 λείπει';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Διαχειριστείτε τους τύπους γευμάτων';
+
+  @override
+  String get mealPlannerAddType => 'Προσθήκη τύπου γεύματος';
+
+  @override
+  String get mealPlannerEditType => 'Επεξεργασία τύπου γεύματος';
+
+  @override
+  String get mealPlannerTypeName => 'Ονομα';
+
+  @override
+  String get mealPlannerTypeColor => 'Χρώμα';
+
+  @override
+  String get mealPlannerTypeIcon => 'Εικόνισμα';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν τον τύπο γεύματος; Τα προγραμματισμένα γεύματα με αυτόν τον τύπο θα παραμείνουν.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Το όνομα δεν μπορεί να είναι κενό';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Δεν είναι δυνατή η διαγραφή αυτού του τύπου γεύματος.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Προσαρμοσμένος τύπος';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Προεπιλεγμένος τύπος';
 
   @override
   String get expirationDate => 'Ημερομηνία λήξης';
@@ -4775,6 +5355,9 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
 
   @override
   String get errorLoadingLists => 'Σφάλμα κατά τη φόρτωση λιστών';
+
+  @override
+  String get errorLoadingItems => 'Σφάλμα κατά τη φόρτωση στοιχείων';
 
   @override
   String get noListsFound => 'Δεν βρέθηκαν λίστες';
@@ -5559,4 +6142,214 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   @override
   String get obLoginError =>
       'Η σύνδεση απέτυχε. Δοκιμάστε ξανά ή παραλείψτε προς το παρόν.';
+
+  @override
+  String get searchMessages => 'Αναζήτηση μηνυμάτων...';
+
+  @override
+  String get deletedList => 'Διαγραμμένη λίστα';
+
+  @override
+  String get openConversation => 'Ανοιχτή συνομιλία';
+
+  @override
+  String get userRole => 'Εσείς';
+
+  @override
+  String get assistantRole => 'Βοηθός';
+
+  @override
+  String get agentActionsRunning => 'Εκτέλεση ενεργειών...';
+
+  @override
+  String get agentActionsFailed => 'Αποτυχία εκτέλεσης ενεργειών';
+
+  @override
+  String get agentActionsPremium => 'Οι ενέργειες απαιτούν Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Αναίρεση αλλαγών';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Το στοιχείο προστέθηκε στη λίστα.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Προηγούμενη κατάσταση: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Εγγραφείτε στο Premium για να ξεκλειδώσετε αυτόματες ενέργειες.';
+
+  @override
+  String get viewPlans => 'Προβολή σχεδίων';
+
+  @override
+  String get artifactSynced => 'Συγχρονίστηκε';
+
+  @override
+  String get artifactBudgetLabel => 'Προϋπολογισμός:';
+
+  @override
+  String get totalEstimatedLabel => 'Εκτιμώμενο σύνολο';
+
+  @override
+  String get quickActionPantry => 'Προβολή αποθήκης';
+
+  @override
+  String get quickActionAi => 'Συνομιλία με τον Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Η υπηρεσία AI επέστρεψε ένα σφάλμα ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Το αίτημα κράτησε πάρα πολύ. Δοκιμάστε ξανά.';
+
+  @override
+  String get aiConnectionError =>
+      'Δεν ήταν δυνατή η σύνδεση με την υπηρεσία AI. Ελέγξτε τη σύνδεσή σας.';
+
+  @override
+  String get aiEmptyResponseError =>
+      'Η υπηρεσία AI επέστρεψε μια κενή απάντηση.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Η υπηρεσία AI επέστρεψε μια μη έγκυρη απάντηση.';
+
+  @override
+  String get categoryFruits => 'Φρούτα';
+
+  @override
+  String get categoryCleaning => 'Καθάρισμα';
+
+  @override
+  String get categoryBeverages => 'Ποτά';
+
+  @override
+  String get categoryBakery => 'Αρτοποιείο';
+
+  @override
+  String get categoryMeat => 'Κρέας';
+
+  @override
+  String get categoryDairy => 'Γαλακτοκομείο';
+
+  @override
+  String get categoryVegetables => 'Λαχανικά';
+
+  @override
+  String get categoryGrains => 'Δημητριακά και δημητριακά';
+
+  @override
+  String get categoryHygiene => 'Προσωπική φροντίδα';
+
+  @override
+  String get categoryFrozen => 'Κατεψυγμένα τρόφιμα';
+
+  @override
+  String get categoryCanned => 'Κονσερβοποιημένα προϊόντα';
+
+  @override
+  String get categorySeasonings => 'Καρυκεύματα';
+
+  @override
+  String get categorySweets => 'Γλυκά και επιδόρπια';
+
+  @override
+  String get categoryAlcohol => 'Αλκοολούχα ποτά';
+
+  @override
+  String get categoryFish => 'Ψάρι';
+
+  @override
+  String get categoryColdCuts => 'Αλλαντικά';
+
+  @override
+  String get categoryUtilities => 'Οικιακά είδη';
+
+  @override
+  String get categoryPet => 'Προμήθειες για κατοικίδια';
+
+  @override
+  String get categoryBaby => 'Μωρό';
+
+  @override
+  String get categoryOthers => 'Αλλος';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Γεια $name, είμαι η Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Γεια, είμαι η Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Δημιουργώ λίστες, προτείνω συνταγές και βρίσκω πού να αποθηκεύσω. Από πού ξεκινάμε;';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Σχεδιάστε ένα μπάρμπεκιου';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Κήπη, διοργανώνω μπάρμπεκιου — βοήθησέ με να φτιάξω τη λίστα αγορών';
+
+  @override
+  String get aiRateLimitError =>
+      'Πάρα πολλά μηνύματα σε σύντομο χρονικό διάστημα. Περιμένετε μερικά δευτερόλεπτα και δοκιμάστε ξανά.';
+
+  @override
+  String get chatHistoryErrorTitle =>
+      'Δεν ήταν δυνατή η φόρτωση αυτής της συνομιλίας';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Κάτι πήγε στραβά από την πλευρά μας. Πατήστε επανάληψη για να προσπαθήσετε ξανά.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Είστε εκτός σύνδεσης';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Ελέγξτε τη σύνδεσή σας στο διαδίκτυο και δοκιμάστε ξανά.';
+
+  @override
+  String get aiGeneratingResponse => 'Δημιουργία απόκρισης…';
 }

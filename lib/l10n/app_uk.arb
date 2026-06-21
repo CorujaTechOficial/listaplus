@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -130,6 +144,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -334,6 +355,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingProducts": {
     "placeholders": {
       "error": {
@@ -481,6 +505,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1105,6 +1136,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1231,6 +1272,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1263,6 +1311,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@progressBudget": {
     "placeholders": {
@@ -1324,7 +1395,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1448,23 +1533,37 @@
   "addingItems": "Додавання елементів до списку...",
   "addingToPantry": "Додавання до комори...",
   "advancedFeatures": "Розширені функції",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Не вдалося виконати дії",
+  "agentActionsPremium": "Дії потребують Premium",
+  "agentActionsRunning": "Запуск дій...",
+  "aiApiError": "Служба AI повернула помилку ({statusCode}).",
   "aiAssistant": "AI помічник",
   "aiAssistantDescription": "Отримуйте розумні пропозиції, рецепти та персоналізовані поради з нашим AI помічником.",
   "aiAssistantTitle": "ШІ помічник",
+  "aiConnectionError": "Не вдалося підключитися до служби AI. Перевірте підключення.",
   "aiCreditsRemaining": "Залишилося {remaining} кредитів",
+  "aiEmptyResponseError": "Служба AI повернула порожню відповідь.",
   "aiEnergy": "AI Energy",
   "aiEnergyLow": "Низька енергія ШІ",
   "aiError": "Вибачте, сталася помилка під час обробки вашого запиту. Перевірте з'єднання або спробуйте пізніше.",
+  "aiGeneratingResponse": "Створення відповіді…",
+  "aiInvalidResponseError": "Служба AI повернула недійсну відповідь.",
   "aiLimitAlmostReached": "Майже закінчилося повідомлення ШІ",
   "aiPremiumDescription": "Цей інтерактивний інтерфейс використовує вдосконалений штучний інтелект і є ексклюзивним для членів Pro або через швидке оголошення.",
+  "aiRateLimitError": "Забагато повідомлень за короткий час. Зачекайте кілька секунд і повторіть спробу.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} сьогодні",
+  "aiSection": "ШІ помічник",
   "aiSubscribeUnlimited": "Підпишіться на необмежений ШІ",
   "aiTeaserFallback": "Підпишіться на Premium, щоб розблокувати повну відповідь і отримати необмежену кількість порад штучного інтелекту для покупок...",
+  "aiTimeoutError": "Запит тривав надто довго. Спробуйте ще раз.",
   "aiUnlockUnlimited": "Розблокуйте необмежений ШІ",
   "aiUsageExhausted": "Досягнуто місячного ліміту ШІ. Оновіть до Pro для необмеженого →",
   "aiUsageWarning": "Цього місяця залишилося {remaining} дій штучного інтелекту — оновлюйте без обмежень",
   "aiVoiceCommandTooltip": "AI голосова команда (Premium)",
   "aiWelcomeContent": "Привіт! 👋 Я **Кіпі**, ваш особистий помічник у покупках і рецептах!\n\nЯ тут, щоб допомогти вам:\n🛒 **Автоматично організуйте** ваші покупки за категоріями\n💰 **Відстежуйте** свій бюджет і давайте поради щодо економії грошей\n🍲 **Пропонуйте** смачні рецепти з того, що у вас уже є\n\nЧим я можу тобі допомогти сьогодні? Ви можете почати зі створення свого першого списку!",
+  "aiWelcomeSuggestBarbecue": "Плануйте барбекю",
+  "aiWelcomeSuggestBarbecuePrompt": "Кіпі, я влаштовую барбекю — допоможи мені скласти список покупок",
   "aiWelcomeSuggestCreateList": "Створіть мій перший список",
   "aiWelcomeSuggestCreateListPrompt": "Кіпі, допоможи мені створити мій перший список покупок",
   "aiWelcomeSuggestSave": "Як заощадити?",
@@ -1474,9 +1573,12 @@
   "appTitle": "Список покупок",
   "appearance": "Зовнішній вигляд",
   "archiveList": "Архівувати список",
+  "artifactBudgetLabel": "бюджет:",
+  "artifactSynced": "Синхронізовано",
   "assistantHistory": "Історія помічника",
   "assistantHistorySubtitle": "Перегляньте історію розмов",
   "assistantName": "Ім'я помічника",
+  "assistantRole": "помічник",
   "backToChat": "Назад до чату",
   "backToToday": "Назад до сьогоднішнього дня",
   "backupExported": "Резервну копію експортовано!",
@@ -1484,6 +1586,7 @@
   "backupPremiumDescription": "Резервне копіювання та експорт — це функція Premium",
   "backupSubtitle": "Експортуйте або імпортуйте свої дані",
   "backupTitle": "Резервне копіювання",
+  "badResponse": "Погана відповідь",
   "badgeBeginner": "Початківець",
   "badgeOrganized": "Організовано",
   "badgeSavingMaster": "Спасибі Майстра",
@@ -1509,9 +1612,11 @@
   "catOthers": "Інше",
   "catalogAddItems": "Додати {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Перегляньте каталог",
+  "catalogCategories": "Категорії",
   "catalogFilterNational": "Громадяни",
   "catalogMyFrequents": "Мої постійні відвідувачі",
   "catalogProductNotFound": "Товар не знайдено, введіть назву",
+  "catalogRareBadge": "Рідкісний",
   "catalogRareSection": "рідше у вашій країні",
   "catalogSearchGlobal": "Пошук будь-якого товару...",
   "catalogSearchInCategory": "Шукати в {category}...",
@@ -1520,16 +1625,43 @@
   "catalogTitle": "Каталог",
   "categorizingItems": "Класифікація елементів...",
   "category": "Категорія",
+  "categoryAlcohol": "Алкогольні напої",
+  "categoryBaby": "дитина",
+  "categoryBakery": "Пекарня",
+  "categoryBeverages": "Напої",
+  "categoryCanned": "Консерви",
+  "categoryCleaning": "прибирання",
+  "categoryColdCuts": "Нарізки",
   "categoryColorLabel": "Колір",
+  "categoryDairy": "Молочна",
+  "categoryFish": "риба",
+  "categoryFrozen": "Заморожені продукти",
+  "categoryFruits": "Фрукти",
+  "categoryGrains": "Зерно і крупи",
+  "categoryHygiene": "Особистий догляд",
   "categoryIconLabel": "значок",
   "categoryLimitReached": "Обмеження в 10 категорій у безкоштовній версії. Оновіть до Pro!",
+  "categoryMeat": "м'ясо",
   "categoryName": "Назва категорії",
   "categoryNameHint": "Наприклад: м'ясо",
+  "categoryOthers": "інше",
+  "categoryPet": "Товари для тварин",
+  "categorySeasonings": "Приправи",
+  "categorySweets": "Солодощі та десерти",
+  "categoryUtilities": "Господарські товари",
+  "categoryVegetables": "Овочі",
+  "chatEmptyGreeting": "Привіт {name}, я Кіпі 👋",
+  "chatEmptyGreetingNoName": "Привіт, я Кіпі 👋",
+  "chatEmptyPitch": "Я складаю списки, пропоную рецепти та знаходжу, де зберегти. З чого ми починаємо?",
   "chatEmptySubtitle": "Щоб почати, попросіть пропозицій щодо продуктів, рецептів або порад щодо збереження.",
   "chatEmptyTitle": "Ваш чат порожній",
   "chatError": "Помилка завантаження чату: {error}",
   "chatHint": "Напишіть своє повідомлення...",
   "chatHintBlocked": "Розблокуйте AI для чату",
+  "chatHistoryErrorBody": "З нашого боку щось пішло не так. Торкніться «Повторити», щоб повторити спробу.",
+  "chatHistoryErrorTitle": "Не вдалося завантажити цю розмову",
+  "chatHistoryOfflineBody": "Перевірте підключення до Інтернету та повторіть спробу.",
+  "chatHistoryOfflineTitle": "Ви офлайн",
   "chatSubtitle": "Попросіть пропозиції щодо товарів, рецепти або поради щодо економії.",
   "chatSubtitleShort": "Запитайте про ціни, рецепти, організацію...",
   "checkingItem": "Перевірка товару...",
@@ -1540,6 +1672,7 @@
   "chooseImageSource": "Виберіть джерело зображення",
   "chooseLanguage": "Виберіть мову",
   "chooseThemeColor": "Виберіть колір теми",
+  "chooseThemeMode": "Виберіть режим теми",
   "clear": "Очистити",
   "clearHistory": "Очистити історію",
   "clearHistoryConfirm": "Очистити всі повідомлення в цьому сеансі?",
@@ -1588,6 +1721,10 @@
   "customizeAssistant": "Налаштувати",
   "dark": "Темна",
   "data": "Дані",
+  "dateGroupOlder": "Старший",
+  "dateGroupPrevious7Days": "Попередні 7 днів",
+  "dateGroupToday": "Сьогодні",
+  "dateGroupYesterday": "вчора",
   "dayFri": "пт",
   "dayMon": "Пн",
   "daySat": "сб",
@@ -1611,6 +1748,7 @@
   "deleteRecipeConfirmMsg": "Ви впевнені, що хочете видалити \"{recipeName}\"? Цю дію не можна скасувати.",
   "deleteSession": "Видалити чат",
   "deleteSessionConfirm": "Ви впевнені, що хочете видалити цей чат? Повідомлення буде остаточно втрачено.",
+  "deletedList": "Видалений список",
   "deselectAll": "Зняти вибір",
   "dietaryRestrictions": "Дієтичні обмеження",
   "dietaryRestrictionsHint": "Наприклад: веганський, вегетаріанський, безглютеновий",
@@ -1623,6 +1761,7 @@
   "editCategoryDialog": "Редагувати категорію",
   "editItem": "Редагувати елемент",
   "editItemPrice": "Орієнтовна ціна",
+  "editMessage": "Редагувати повідомлення",
   "editPantryItem": "Редагувати {name}",
   "editRecipe": "Редагувати",
   "editRecipeTitle": "Редагувати рецепт",
@@ -1648,6 +1787,7 @@
   "errorLoadingChat": "Ой! Під час завантаження чату сталася помилка.",
   "errorLoadingChatSubtitle": "Перевірте підключення або повторіть спробу пізніше.",
   "errorLoadingHistory": "Помилка завантаження історії",
+  "errorLoadingItems": "Помилка завантаження елементів",
   "errorLoadingLists": "Помилка завантаження списків",
   "errorLoadingProducts": "Помилка завантаження продуктів: {error}",
   "errorLoadingRecipes": "Помилка завантаження рецептів",
@@ -1722,6 +1862,7 @@
   "generatingShareLink": "Створення посилання для спільного доступу...",
   "gestureHint": "Утримуйте, щоб вибрати • Проведіть, щоб видалити",
   "globalAssistant": "Глобальний помічник",
+  "goodResponse": "Хороша відповідь",
   "howCanIHelp": "Чим я можу допомогти?",
   "icon": "Значок:",
   "idealQty": "Ідеальна к-сть",
@@ -1740,14 +1881,18 @@
   "inviteToList": "Запросити до списку",
   "itemAdded": "{name} додано",
   "itemAddedSnack": "{name} додано",
+  "itemAddedToList": "Елемент додано до списку.",
   "itemName": "Назва елемента",
   "itemRemoved": "Елемент видалено",
   "itemsAddedSuccess": "Елементи успішно додано до списку!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} елемент(и) потрібно купити",
   "itemsPurchased": "Придбані предмети",
   "itemsPurchasedCount": "Придбано {purchased} з {total}",
   "itemsPurchasedShort": "{purchased}/{total} придбано",
   "itemsWillBeAdded": "{count} елемент(и) буде додано",
+  "keepAdding": "Продовжуйте додавати",
+  "keepAddingSubtitle": "Тримайте аркуш відкритим, щоб додати кілька елементів",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Що вам потрібно купити?",
@@ -1786,16 +1931,22 @@
   "marketsToAvoid": "Ринки, яких слід уникати",
   "marketsToAvoidHint": "Наприклад: Ринок Y, Ринок Z",
   "mealPlannerAddMeal": "Додати їжу",
+  "mealPlannerAddType": "Додайте тип їжі",
+  "mealPlannerCustomTypeLabel": "Спеціальний тип",
   "mealPlannerDateLabel": "Дата",
+  "mealPlannerDefaultTypeLabel": "Тип за замовчуванням",
   "mealPlannerDeleteMeal": "Видалити їжу",
   "mealPlannerEditMeal": "Редагувати їжу",
+  "mealPlannerEditType": "Змінити тип їжі",
   "mealPlannerError": "Помилка завантаження плану харчування",
+  "mealPlannerEstimatePartial": "Оцінка на основі рецептів із частковими даними про ціни.",
   "mealPlannerGenerateList": "Створити список покупок",
   "mealPlannerGenerateListConfirm": "Додати всі інгредієнти із запланованих страв цього тижня до списку покупок?",
   "mealPlannerGenerateListEmpty": "Немає інгредієнтів для додавання. Спочатку сплануйте деякі страви за рецептами.",
   "mealPlannerGenerateListNoList": "Спочатку створіть список покупок.",
   "mealPlannerGenerateListSuccess": "{count} інгредієнт(ів) додано до вашого списку!",
   "mealPlannerLoading": "Завантаження плану харчування...",
+  "mealPlannerManageTypes": "Керуйте типами їжі",
   "mealPlannerMealDeleted": "Їжа видалена",
   "mealPlannerMealTypeBreakfast": "Сніданок",
   "mealPlannerMealTypeDinner": "Вечеря",
@@ -1815,6 +1966,12 @@
   "mealPlannerServings": "{count,plural, one{{count} порцій} other{{count} порцій}}",
   "mealPlannerServingsLabel": "Порції",
   "mealPlannerTitle": "Планувальник їжі",
+  "mealPlannerTypeColor": "Колір",
+  "mealPlannerTypeDeleteConfirm": "Ви впевнені, що хочете видалити цей тип їжі? Планове харчування цього типу залишиться.",
+  "mealPlannerTypeDeleteError": "Неможливо видалити цей тип їжі.",
+  "mealPlannerTypeIcon": "значок",
+  "mealPlannerTypeName": "Ім'я",
+  "mealPlannerTypeNameEmpty": "Назва не може бути пустою",
   "mealPlannerViewMonthly": "Місячний перегляд",
   "mealPlannerViewWeekly": "Тижневий перегляд",
   "mealPlannerWeekEmpty": "На цей тиждень нічого не планується",
@@ -1871,60 +2028,60 @@
   "noRecipesSavedHint": "Створіть свій перший індивідуальний рецепт, натиснувши кнопку нижче.",
   "noTracking": "Без відстеження",
   "notInformed": "Не встановлено",
-  "obHookCta": "Get Started",
-  "obHookSocial": "Trusted by thousands of shoppers worldwide",
-  "obHookSubtitle": "AI-powered lists that save you time and money, every single trip.",
-  "obHookTitle": "Smarter shopping starts here",
-  "obLoadingStepHabits": "Tuning to your shopping routine",
-  "obLoadingStepLists": "Preparing your smart lists",
-  "obLoadingStepProfile": "Adjusting for your household",
-  "obLoadingStepSavings": "Optimizing your savings strategy",
-  "obLoadingTitle": "Building your personalized plan...",
-  "obLoginApple": "Continue with Apple",
-  "obLoginError": "Sign-in failed. Try again or skip for now.",
-  "obLoginGoogle": "Continue with Google",
-  "obLoginSkip": "Not now",
-  "obLoginSubtitle": "Sign in so your lists sync across devices",
-  "obLoginTitle": "Save your plan",
-  "obPaywallRetry": "Try again",
-  "obPaywallTitle": "Unlock your plan",
-  "obQuizFrequencyBiweekly": "Every two weeks",
-  "obQuizFrequencyDaily": "Almost every day",
-  "obQuizFrequencyMonthly": "Big monthly haul",
-  "obQuizFrequencyTitle": "How often do you shop for groceries?",
-  "obQuizFrequencyWeekly": "Once a week",
-  "obQuizHouseholdCouple": "Me and my partner",
-  "obQuizHouseholdFamilyLarge": "Family of 5+",
-  "obQuizHouseholdFamilySmall": "Family of 3–4",
-  "obQuizHouseholdSolo": "Just me",
-  "obQuizHouseholdTitle": "Who do you shop for?",
-  "obQuizMethodMemory": "I keep it in my head",
-  "obQuizMethodNone": "I don't make lists",
-  "obQuizMethodNotes": "Notes app",
-  "obQuizMethodPaper": "Pen and paper",
-  "obQuizMethodTitle": "How do you make shopping lists today?",
-  "obQuizPainForget": "I always forget items",
-  "obQuizPainOverspend": "I spend more than planned",
-  "obQuizPainTime": "It takes too much time",
-  "obQuizPainTitle": "What frustrates you most about shopping?",
-  "obQuizPainWaste": "Food goes to waste at home",
-  "obQuizSavingsLarge": "As much as possible",
-  "obQuizSavingsMedium": "Around 10% of my grocery bill",
-  "obQuizSavingsSmall": "A little — every bit counts",
-  "obQuizSavingsTitle": "How much would you like to save monthly?",
-  "obRevealFeatureAi": "AI builds and organizes your lists",
-  "obRevealFeatureBudget": "Spending tracked against your goal",
-  "obRevealFeaturePantry": "Pantry tracking cuts food waste",
-  "obRevealFeatureShare": "Real-time sharing with your household",
-  "obRevealMonth": "Month {n}",
-  "obRevealSavingsCaption": "Projected savings with KipiList",
-  "obRevealSubtitle": "Here's how KipiList will work for you",
-  "obRevealTitle": "Your plan is ready!",
-  "obSocialQuote1": "I never forget anything anymore. The AI builds my list in seconds.",
-  "obSocialQuote2": "We cut our grocery bill noticeably in the first month.",
-  "obSocialQuote3": "Sharing the list with my partner ended our shopping chaos.",
-  "obSocialSubtitle": "Shoppers like you are already saving with KipiList",
-  "obSocialTitle": "You're in good company",
+  "obHookCta": "Почніть роботу",
+  "obHookSocial": "Довіряють тисячі покупців у всьому світі",
+  "obHookSubtitle": "Списки на основі штучного інтелекту, які економлять ваш час і гроші під час кожної подорожі.",
+  "obHookTitle": "Розумні покупки починаються тут",
+  "obLoadingStepHabits": "Налаштуйтеся на свій розпорядок покупок",
+  "obLoadingStepLists": "Підготовка розумних списків",
+  "obLoadingStepProfile": "Налаштування під ваше домогосподарство",
+  "obLoadingStepSavings": "Оптимізація стратегії заощаджень",
+  "obLoadingTitle": "Створення індивідуального плану...",
+  "obLoginApple": "Продовжуйте з Apple",
+  "obLoginError": "Помилка входу. Спробуйте ще раз або поки що пропустіть.",
+  "obLoginGoogle": "Продовжуйте з Google",
+  "obLoginSkip": "Не зараз",
+  "obLoginSubtitle": "Увійдіть, щоб ваші списки синхронізувалися на всіх пристроях",
+  "obLoginTitle": "Збережіть свій план",
+  "obPaywallRetry": "Спробуйте знову",
+  "obPaywallTitle": "Розблокуйте свій план",
+  "obQuizFrequencyBiweekly": "Кожні два тижні",
+  "obQuizFrequencyDaily": "Майже кожен день",
+  "obQuizFrequencyMonthly": "Великий місячний прибуток",
+  "obQuizFrequencyTitle": "Як часто ви купуєте продукти?",
+  "obQuizFrequencyWeekly": "Раз на тиждень",
+  "obQuizHouseholdCouple": "Я і мій партнер",
+  "obQuizHouseholdFamilyLarge": "Сім'я 5+",
+  "obQuizHouseholdFamilySmall": "Сім'я з 3-4 осіб",
+  "obQuizHouseholdSolo": "просто я",
+  "obQuizHouseholdTitle": "Для кого ти робиш покупки?",
+  "obQuizMethodMemory": "Я тримаю це в голові",
+  "obQuizMethodNone": "Я не складаю списки",
+  "obQuizMethodNotes": "Додаток для нотаток",
+  "obQuizMethodPaper": "Ручка і папір",
+  "obQuizMethodTitle": "Як ви сьогодні складаєте списки покупок?",
+  "obQuizPainForget": "Я завжди забуваю речі",
+  "obQuizPainOverspend": "Я витрачаю більше, ніж планував",
+  "obQuizPainTime": "Це займає занадто багато часу",
+  "obQuizPainTitle": "Що вас найбільше засмучує в покупках?",
+  "obQuizPainWaste": "Вдома їжа йде на сміття",
+  "obQuizSavingsLarge": "Якомога більше",
+  "obQuizSavingsMedium": "Близько 10% мого рахунку за продукти",
+  "obQuizSavingsSmall": "Трохи — кожна частинка має значення",
+  "obQuizSavingsTitle": "Скільки б ви хотіли щомісяця заощаджувати?",
+  "obRevealFeatureAi": "AI створює та впорядковує ваші списки",
+  "obRevealFeatureBudget": "Витрати відстежуються відповідно до вашої цілі",
+  "obRevealFeaturePantry": "Відстеження комори скорочує харчові відходи",
+  "obRevealFeatureShare": "Спільний доступ у реальному часі до вашої родини",
+  "obRevealMonth": "Місяць {n}",
+  "obRevealSavingsCaption": "Прогнозована економія за допомогою KipiList",
+  "obRevealSubtitle": "Ось як KipiList буде працювати для вас",
+  "obRevealTitle": "Ваш план готовий!",
+  "obSocialQuote1": "Я більше ніколи нічого не забуваю. ШІ створює мій список за секунди.",
+  "obSocialQuote2": "У перший місяць ми помітно скоротили рахунок за продукти.",
+  "obSocialQuote3": "Поділившись списком із моїм партнером, наш шопінговий хаос закінчився.",
+  "obSocialSubtitle": "Такі покупці, як ви, вже економлять за допомогою KipiList",
+  "obSocialTitle": "Ти в хорошій компанії",
   "observations": "Примітки",
   "observationsHint": "Інші переваги для помічника",
   "offlineBanner": "Ви офлайн",
@@ -2040,6 +2197,7 @@
   "onboardingViewAllPlans": "Переглянути всі плани",
   "onboardingWelcomeDesc": "Найрозумніший спосіб організувати покупки та заощадити гроші.",
   "onboardingWelcomeTitle": "Ласкаво просимо до KipiList",
+  "openConversation": "Відкрита розмова",
   "openMenu": "Відкрити меню",
   "organizeAisles": "Організувати за відділами",
   "organizeAislesPrompt": "Організувати за відділами магазину.",
@@ -2051,15 +2209,18 @@
   "pantryAppBar": "Комора",
   "pantryAvailabilityAll": "Все готово!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} в коморі",
+  "pantryDeficitCount": "Відсутній {count}{unit}",
   "pantryEditTitle": "Редагувати {name}",
   "pantryEmpty": "Порожня комора",
   "pantryEmptySubtitle": "Додайте продукти, які ви хочете мати вдома",
+  "pantryItemAdded": "Товар додано",
   "pantryItemRemoved": "Елемент видалено",
   "pantryLimitReached": "Ліміт {count} предметів у коморі на безкоштовному плані. Оновіть, щоб додати більше.",
   "paywallAfterItem1": "Зерна",
   "paywallAfterItem2": "прибирання",
   "paywallAfterItem3": "м'ясо",
   "paywallAfterItem4": "Пекарня",
+  "paywallBasedOnAnswers": "Персоналізовано з ваших відповідей",
   "paywallBeforeAfterTitle": "ШІ до і після:",
   "paywallBeforeItem1": "рис",
   "paywallBeforeItem2": "мило",
@@ -2097,6 +2258,8 @@
   "paywallGoalHeadlinePantry": "{name}, відстежуй свою комору ідеально!",
   "paywallGoalHeadlineRecipes": "{name}, відкривай нові рецепти!",
   "paywallGoalHeadlineSaveMoney": "{name}, економте на кожній поїздці!",
+  "paywallHeroFeatureDesc": "Продиктуйте або вставте цілий список — штучний інтелект сортує, класифікує та розподіляє його за лічені секунди",
+  "paywallHeroFeatureTitle": "AI Shopping Assistant",
   "paywallHeroHeadline": "Kipi AI завжди поруч",
   "paywallHeroSubtitle": "Додавайте елементи, упорядковуйте списки та економте час за допомогою AI у вашій кишені",
   "paywallHeroSubtitlePersonalized": "Привіт, {name}, організуй покупки правильно.",
@@ -2131,6 +2294,11 @@
   "paywallTestimonial2Text": "Я більше ніколи не забував жодного пункту списку. ШІ-чат — це сенсація!",
   "paywallTestimonialAuthor": "Енн С.",
   "paywallTestimonialsTitle": "Що говорять наші користувачі:",
+  "paywallTimelineChargeDesc": "Ваша підписка починається — будь-коли скасуйте її",
+  "paywallTimelineDay": "День {day}",
+  "paywallTimelineReminderDesc": "Нагадуємо вам до завершення випробування",
+  "paywallTimelineToday": "Сьогодні",
+  "paywallTimelineTodayDesc": "Миттєво розблокуйте повний доступ",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Розпочніть безкоштовну пробну версію",
   "paywallTrialDays": "{days} ДНІВ БЕЗКОШТОВНО",
@@ -2153,11 +2321,15 @@
   "prefSharing": "Спільні списки",
   "prefUnlimitedLists": "Необмежена кількість списків",
   "prefUnlimitedPantry": "Необмежена комора",
+  "preferencesSection": "Уподобання",
   "preferredMarket": "Привілейований ринок",
   "preferredMarketHint": "Наприклад: Супермаркет X",
+  "premiumActionsPrompt": "Підпишіться на Premium, щоб розблокувати автоматичні дії.",
+  "premiumStepDescription": "{description} (Преміум)",
   "premiumUpgrade": "Оновіть, щоб розблокувати",
   "prepTime": "Час підготовки",
   "prepTimeMinutes": "Час приготування (хв)",
+  "previousItemState": "Попередній стан: {quantity} {unit} [{category}]{price}",
   "privacy": "Конфіденційність",
   "processing": "Обробка...",
   "product": "Продукт",
@@ -2177,21 +2349,34 @@
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "Запит ваших списків...",
+  "quickActionAi": "Побалакати з Кіпі",
+  "quickActionPantry": "Переглянути комору",
   "quickRecipe": "Швидкий рецепт",
   "quickRecipePrompt": "Запропонуйте рецепти з продуктами з мого списку.",
   "quickReplies": "Швидкі відповіді:",
   "quickSuggestions": "Швидкі пропозиції",
+  "recipeAddError": "Не вдалося додати до вашого списку. Спробуйте ще раз.",
   "recipeAddToList": "Додати до списку покупок",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Рецепт створено!",
   "recipeDeleted": "Рецепт видалено",
+  "recipeEstimatePartial": "Часткова оцінка на основі інгредієнтів із ціною.",
+  "recipeEstimatedCostPerServing": "{cost} / порція",
+  "recipeEstimatedTotalCost": "Орієнтовна загальна вартість",
   "recipeImage": "Зображення рецепта",
+  "recipeIngredientInPantry": "У коморі",
+  "recipeIngredientLowPantry": "Низько в коморі",
   "recipeIngredientSingular": "1 інгредієнт",
   "recipeIngredientsPlural": "{count} інгредієнтів",
+  "recipeManualTotalCost": "Ручна загальна вартість",
+  "recipeManualTotalCostHint": "Залиште пустим, щоб оцінити вартість інгредієнтів.",
   "recipeName": "Назва рецепта",
   "recipeSaved": "Рецепт збережено!",
+  "recipeServesCount": "Обслуговує {count}",
   "recipeSuggestion": "Пропозиція рецепту",
   "recipeTags": "Теги рецептів",
+  "recipeTapToCheck": "Торкніться інгредієнта, щоб позначити його під час приготування",
+  "recipeYieldServings": "Вихід порцій",
   "regenerate": "Перегенерувати",
   "remove": "Видалити",
   "removeBudget": "Видалити",
@@ -2226,9 +2411,12 @@
   "scanBarcodeTitle": "Сканувати штрих-код",
   "scanProduct": "Сканувати продукт",
   "scanProductTitle": "Сканувати продукт",
+  "scrollToBottom": "Прокрутіть вниз",
+  "searchConversations": "Пошук розмов",
   "searchCurrency": "Пошук валюти...",
   "searchInConversation": "Пошук у розмові...",
   "searchLanguage": "Мова пошуку...",
+  "searchMessages": "Пошук повідомлень...",
   "searchRecipes": "Пошук рецептів...",
   "searchingCategories": "Пошук категорій...",
   "searchingProducts": "Пошук продуктів...",
@@ -2268,6 +2456,7 @@
   "signInGoogle": "Увійти через Google",
   "skip": "Пропустити",
   "smartOrganization": "Розумна організація",
+  "somethingWentWrong": "Щось пішло не так",
   "sortAZ": "А-Я",
   "sortCategory": "Категорія",
   "sortDate": "Дата",
@@ -2299,6 +2488,7 @@
   "themeColor": "Колір теми",
   "themeGreen": "Зелений",
   "themeIndigo": "Індиго",
+  "themeMode": "Тематичний режим",
   "themeOrange": "Помаранчевий",
   "themePink": "Рожевий",
   "themePurple": "Фіолетовий",
@@ -2316,6 +2506,7 @@
   "toolSaveRecipe": "Зберегти рецепт",
   "toolShareList": "Поділитися списком",
   "totalEstimated": "Загальна оцінка: {amount}",
+  "totalEstimatedLabel": "Розрахункова сума",
   "totalSavings": "Загальна економія",
   "totalSpending": "Загальні витрати",
   "trackStock": "Відстежувати запаси",
@@ -2323,6 +2514,7 @@
   "trackStockInactive": "Не створює пропозицій щодо покупок",
   "uncheckingItem": "Зняття прапорця з елемента...",
   "undo": "Скасувати",
+  "undoChanges": "Скасувати зміни",
   "unit": "Одиниця",
   "unitPack": "уп.",
   "unlockAi": "Розблокуйте необмежений ШІ",
@@ -2336,6 +2528,7 @@
   "updatingPantry": "Оновлення комори...",
   "upgrade": "Оновити",
   "userProfile": "Профіль користувача",
+  "userRole": "Ви",
   "validForLimitedTime": "Діє обмежений час",
   "version": "Версія",
   "viewActive": "Переглянути активні",
@@ -2343,6 +2536,7 @@
   "viewHistory": "Переглянути історію",
   "viewItems": "Переглянути предмети",
   "viewList": "Переглянути список",
+  "viewPlans": "Переглянути плани",
   "viewPro": "Переглянути Pro",
   "viewRecipe": "Переглянути рецепт",
   "voiceCommandContent": "Говоріть природно, щоб керувати списком!\n\nПриклади:\n• 'Додати хліб, сир і шинку'\n• 'Видалити пральний порошок'\n• 'Змінити тему на синю'\n\nЦе ексклюзивна функція KipiList Premium.",

@@ -34,6 +34,35 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +176,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -280,6 +316,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -309,6 +348,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -399,6 +445,9 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
@@ -427,6 +476,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -953,6 +1005,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1100,6 +1162,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1138,6 +1207,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1198,6 +1290,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1211,7 +1306,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1359,42 +1468,61 @@
   "addToPantryPrompt": "إضافة \"{name}\" إلى المخزن؟",
   "addedFeedback": "تمت الإضافة!",
   "advancedFeatures": "ميزات متقدمة",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "فشل في تشغيل الإجراءات",
+  "agentActionsPremium": "تتطلب الإجراءات Premium",
+  "agentActionsRunning": "تشغيل الإجراءات...",
+  "aiApiError": "أرجعت خدمة AI خطأ ({statusCode}).",
   "aiAssistant": "مساعد الذكاء الاصطناعي",
   "aiAssistantDescription": "احصل على اقتراحات ذكية ووصفات ونصائح مخصصة مع مساعد الذكاء الاصطناعي.",
   "aiAssistantGeneral": "مساعد عام",
   "aiAssistantHistory": "مساعد التاريخ",
   "aiAssistantTitle": "مساعد الذكاء الاصطناعي",
+  "aiCapabilitiesBudget": "الميزانية والأسعار",
+  "aiCapabilitiesLists": "قوائم التسوق",
+  "aiCapabilitiesOrganize": "منظمة",
+  "aiCapabilitiesRecipes": "وصفات والقوائم",
+  "aiCapabilitiesTitle": "ماذا يمكنني أن أفعل؟",
+  "aiConnectionError": "تعذر الاتصال بخدمة AI. تحقق من اتصالك.",
   "aiConversationHistory": "تاريخ المحادثة",
   "aiCreditsRemaining": "{remaining} رصيد متبقي",
   "aiDeleteConversationConfirm": "يمسح",
   "aiDeleteConversationTitle": "هل تريد حذف المحادثة؟",
   "aiDeletedList": "القائمة المحذوفة",
+  "aiEmptyResponseError": "أعادت خدمة الذكاء الاصطناعي استجابة فارغة.",
   "aiEnergy": "طاقة الذكاء الاصطناعي",
   "aiEnergyLow": "طاقة الذكاء الاصطناعي منخفضة",
   "aiError": "عذراً، حدث خطأ أثناء معالجة طلبك. تحقق من اتصالك أو حاول مرة أخرى لاحقاً.",
   "aiFirstOpenHint": "أنا كيبي، مساعد التسوق الخاص بك. اسألني أي شيء عن قائمتك!",
+  "aiGeneratingResponse": "جارٍ إنشاء الاستجابة…",
   "aiHello": "مرحبًا! أنا كيبي",
   "aiHowCanIHelp": "كيف يمكنني مساعدتك اليوم؟",
+  "aiInvalidResponseError": "أرجعت خدمة AI استجابة غير صالحة.",
   "aiLimitAlmostReached": "لقد نفدت رسائل الذكاء الاصطناعي تقريبًا",
   "aiNewConversation": "محادثة جديدة",
   "aiNewSession": "جلسة جديدة",
   "aiNoConversationFound": "لم يتم العثور على محادثة",
   "aiNoMessagesFound": "لم يتم العثور على رسائل",
   "aiPremiumUpsell": "اذهب إلى الإصدار المميز",
+  "aiRateLimitError": "عدد كبير جدًا من الرسائل في وقت قصير. انتظر بضع ثوان وحاول مرة أخرى.",
   "aiRecentConversations": "المحادثات الأخيرة",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} اليوم",
   "aiSearchMessages": "بحث في الرسائل...",
+  "aiSection": "مساعد الذكاء الاصطناعي",
   "aiStartNewConversation": "ابدأ محادثة جديدة",
   "aiSubscribeUnlimited": "اشترك للحصول على الذكاء الاصطناعي غير المحدود",
   "aiSuggestCreateList": "إنشاء قائمتي الأولى",
   "aiSuggestSaveMore": "كيفية توفير المزيد؟",
   "aiTeaserFallback": "اشترك في Premium للحصول على الاستجابة الكاملة والحصول على نصائح غير محدودة بتقنية الذكاء الاصطناعي لتسوقك...",
+  "aiTimeoutError": "استغرق الطلب وقتا طويلا. يرجى المحاولة مرة أخرى.",
   "aiUnlockUnlimited": "فتح الذكاء الاصطناعي غير المحدود",
   "aiUnlockWithAd": "فتح مع الإعلان",
   "aiUsageExhausted": "تم الوصول إلى حد الذكاء الاصطناعي الشهري. الترقية إلى Pro لعدد غير محدود →",
   "aiUsageWarning": "{remaining} تبقى إجراءات الذكاء الاصطناعي هذا الشهر — قم بالترقية لعدد غير محدود",
   "aiVoiceCommandTooltip": "أمر صوتي بالذكاء الاصطناعي (بريميوم)",
   "aiWelcomeContent": "مرحبًا! 👋 أنا **Kipi**، مساعدك الشخصي في التسوق ووصفات الطعام!\n\nأنا هنا لمساعدتك:\n🛒 **تنظيم** تسوقك حسب الفئات تلقائيًا\n💰 **تتبع** ميزانيتك وقدم لك نصائح لتوفير المال\n🍲 **اقتراح** وصفات لذيذة بما لديك بالفعل\n\nكيف يمكنني مساعدتك اليوم؟ يمكنك البدء بإنشاء قائمتك الأولى!",
+  "aiWelcomeSuggestBarbecue": "خطط لحفلة شواء",
+  "aiWelcomeSuggestBarbecuePrompt": "كيبي، أنا أستضيف حفل شواء - ساعدني في إنشاء قائمة التسوق",
   "aiWelcomeSuggestCreateList": "إنشاء قائمتي الأولى",
   "aiWelcomeSuggestCreateListPrompt": "كيبي، ساعدني في إنشاء قائمة التسوق الأولى الخاصة بي",
   "aiWelcomeSuggestSave": "كيفية توفير المال؟",
@@ -1405,14 +1533,17 @@
   "appTitle": "قائمة التسوق",
   "appearance": "المظهر",
   "archiveList": "أرشفة القائمة",
+  "artifactBudgetLabel": "ميزانية:",
   "artifactReplaceBody": "حدد بديل المنتج لتحسين التكلفة.",
   "artifactReplaceTitle": "استبدال {name}",
   "artifactSuggestedItems": "العناصر المقترحة",
   "artifactSwapButton": "تبديل",
   "artifactSwappedLabel": "مبادلة",
+  "artifactSynced": "تمت المزامنة",
   "assistantHistory": "التاريخ المساعد",
   "assistantHistorySubtitle": "عرض سجل المحادثات الخاصة بك",
   "assistantName": "اسم المساعد",
+  "assistantRole": "مساعد",
   "backToChat": "العودة إلى الدردشة",
   "backToToday": "العودة إلى اليوم",
   "backupExported": "تم تصدير النسخ الاحتياطي!",
@@ -1420,6 +1551,7 @@
   "backupPremiumDescription": "النسخ الاحتياطي والتصدير ميزة بريميوم",
   "backupSubtitle": "تصدير أو استيراد بياناتك",
   "backupTitle": "النسخ الاحتياطي",
+  "badResponse": "استجابة سيئة",
   "badgeBeginner": "مبتدئ",
   "badgeOrganized": "منظمة",
   "badgeSavingMaster": "إنقاذ ماستر",
@@ -1447,10 +1579,12 @@
   "catOthers": "أخرى",
   "catalogAddItems": "أضف {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "تصفح الكتالوج",
+  "catalogCategories": "فئات",
   "catalogFilterNational": "المواطنين",
   "catalogItemAdded": "تمت إضافة {name}",
   "catalogMyFrequents": "تردداتي",
   "catalogProductNotFound": "لم يتم العثور على المنتج، اكتب الاسم",
+  "catalogRareBadge": "نادر",
   "catalogRareSection": "أقل شيوعا في بلدك",
   "catalogRetry": "حاول ثانية",
   "catalogSearchGlobal": "ابحث عن أي منتج...",
@@ -1459,16 +1593,43 @@
   "catalogSortPopular": "الأكثر شعبية",
   "catalogTitle": "كتالوج",
   "category": "الفئة",
+  "categoryAlcohol": "المشروبات الكحولية",
+  "categoryBaby": "طفل",
+  "categoryBakery": "مخبز",
+  "categoryBeverages": "المشروبات",
+  "categoryCanned": "السلع المعلبة",
+  "categoryCleaning": "تنظيف",
+  "categoryColdCuts": "اللحوم الباردة",
   "categoryColorLabel": "لون",
+  "categoryDairy": "ألبان",
+  "categoryFish": "سمكة",
+  "categoryFrozen": "الأطعمة المجمدة",
+  "categoryFruits": "الفواكه",
+  "categoryGrains": "الحبوب والحبوب",
+  "categoryHygiene": "العناية الشخصية",
   "categoryIconLabel": "رمز",
   "categoryLimitReached": "تم الوصول إلى الحد الأقصى للفئة",
+  "categoryMeat": "لحمة",
   "categoryName": "اسم الفئة",
   "categoryNameHint": "أدخل اسم الفئة",
+  "categoryOthers": "آخر",
+  "categoryPet": "مستلزمات الحيوانات الأليفة",
+  "categorySeasonings": "توابل",
+  "categorySweets": "الحلويات والحلويات",
+  "categoryUtilities": "مستلزمات منزلية",
+  "categoryVegetables": "خضار",
+  "chatEmptyGreeting": "مرحبًا {name}، أنا كيبي 👋",
+  "chatEmptyGreetingNoName": "مرحبًا، أنا كيبي 👋",
+  "chatEmptyPitch": "أقوم بإنشاء قوائم، واقتراح وصفات، والعثور على مكان لحفظها. من أين نبدأ؟",
   "chatEmptySubtitle": "اطلب اقتراحات العناصر أو الوصفات أو نصائح الحفظ للبدء.",
   "chatEmptyTitle": "الدردشة الخاصة بك فارغة",
   "chatError": "خطأ في تحميل الدردشة: {error}",
   "chatHint": "اكتب رسالتك...",
   "chatHintBlocked": "فتح الذكاء الاصطناعي للدردشة",
+  "chatHistoryErrorBody": "حدث خطأ ما من جانبنا. اضغط على إعادة المحاولة للمحاولة مرة أخرى.",
+  "chatHistoryErrorTitle": "تعذر تحميل هذه المحادثة",
+  "chatHistoryOfflineBody": "تحقق من اتصالك بالإنترنت وحاول مرة أخرى.",
+  "chatHistoryOfflineTitle": "أنت غير متصل بالإنترنت",
   "chatSubtitle": "اطلب اقتراحات عناصر أو وصفات أو نصائح للتوفير.",
   "chatSubtitleShort": "اسأل عن الأسعار، الوصفات، التنظيم...",
   "chooseCurrency": "حدد العملة",
@@ -1476,6 +1637,7 @@
   "chooseImageSource": "اختر مصدر الصورة",
   "chooseLanguage": "اختر اللغة",
   "chooseThemeColor": "اختر لون الموضوع",
+  "chooseThemeMode": "حدد وضع الموضوع",
   "clear": "مسح",
   "clearHistory": "مسح السجل",
   "clearHistoryConfirm": "مسح جميع الرسائل في هذه الجلسة؟",
@@ -1518,6 +1680,10 @@
   "customizeAssistant": "تخصيص",
   "dark": "داكن",
   "data": "البيانات",
+  "dateGroupOlder": "أقدم",
+  "dateGroupPrevious7Days": "7 أيام السابقة",
+  "dateGroupToday": "اليوم",
+  "dateGroupYesterday": "أمس",
   "deficitItems": "{deficit,plural, zero{{deficit} عنصر بحاجة للشراء} one{{deficit} عنصر بحاجة للشراء} two{{deficit} عنصر بحاجة للشراء} few{{deficit} عناصر بحاجة للشراء} many{{deficit} عنصراً بحاجة للشراء} other{{deficit} عنصر بحاجة للشراء}}",
   "delete": "حذف",
   "deleteCategory": "يمسح",
@@ -1534,6 +1700,7 @@
   "deleteRecipeConfirmMsg": "هل أنت متأكد أنك تريد حذف \"{recipeName}\"؟ لا يمكن التراجع عن هذا الإجراء.",
   "deleteSession": "حذف الدردشة",
   "deleteSessionConfirm": "هل أنت متأكد أنك تريد حذف هذه الدردشة؟ سيتم فقدان الرسائل إلى الأبد.",
+  "deletedList": "القائمة المحذوفة",
   "deselectAll": "إلغاء تحديد الكل",
   "dietaryRestrictions": "القيود الغذائية",
   "dietaryRestrictionsHint": "أي قيود غذائية؟",
@@ -1546,6 +1713,7 @@
   "editCategoryDialog": "تحرير الفئة",
   "editItem": "تعديل العنصر",
   "editItemPrice": "السعر التقديري",
+  "editMessage": "تحرير الرسالة",
   "editPantryItem": "تعديل {name}",
   "editRecipe": "تعديل",
   "editRecipeTitle": "تعديل الوصفة",
@@ -1567,6 +1735,7 @@
   "errorLoadingChat": "أُووبس! حدث خطأ ما أثناء تحميل الدردشة.",
   "errorLoadingChatSubtitle": "تحقق من اتصالك أو حاول مرة أخرى لاحقًا.",
   "errorLoadingHistory": "حدث خطأ أثناء تحميل السجل",
+  "errorLoadingItems": "حدث خطأ أثناء تحميل العناصر",
   "errorLoadingLists": "خطأ في تحميل القوائم",
   "errorLoadingRecipes": "خطأ في تحميل الوصفات",
   "errorLoadingSubscription": "حدث خطأ أثناء تحميل الاشتراك",
@@ -1619,6 +1788,7 @@
   "generateShoppingList": "إنشاء قائمة تسوق",
   "gestureHint": "اضغط مع الاستمرار لتحديد • اسحب للإزالة",
   "globalAssistant": "المساعد العام",
+  "goodResponse": "استجابة جيدة",
   "howCanIHelp": "كيف يمكنني المساعدة؟",
   "idealQty": "الكمية المثالية",
   "idealQuantity": "الكمية المثالية",
@@ -1635,14 +1805,18 @@
   "instructionsHint": "اكتب خطوة واحدة في كل سطر...",
   "inviteToList": "دعوة إلى القائمة",
   "itemAddedSnack": "تمت إضافة {name}",
+  "itemAddedToList": "تمت إضافة العنصر إلى القائمة.",
   "itemName": "اسم العنصر",
   "itemRemoved": "تمت إزالة العنصر",
   "itemsAddedSuccess": "تمت إضافة العناصر إلى القائمة بنجاح!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} عنصر بحاجة للشراء",
   "itemsPurchased": "العناصر التي تم شراؤها",
   "itemsPurchasedCount": "تم شراء {purchased} من {total}",
   "itemsPurchasedShort": "تم شراء {purchased}/{total}",
   "itemsWillBeAdded": "سيتم إضافة {count} عنصر",
+  "keepAdding": "استمر في الإضافة",
+  "keepAddingSubtitle": "أبقِ الورقة مفتوحة لإضافة عناصر متعددة",
   "kipiListProActive": "KipiList برو نشط",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "ماذا تحتاج للشراء؟",
@@ -1684,21 +1858,28 @@
   "markAsPurchased": "تحديد كمشتري",
   "markItemsToSeeAnalysis": "حدد العناصر كمشتريات لرؤية التحليل.",
   "marketMode": "وضع السوق",
+  "marketModeDescription": "تحقق من العناصر أثناء التسوق",
   "marketsToAvoid": "الأسواق لتجنب",
   "marketsToAvoidHint": "الأسواق التي لا تفضل التسوق فيها",
   "mealDragHint": "استمر في السحب والتحرك",
   "mealNoRecipeFound": "لم يتم العثور على وصفة",
   "mealPlannerAddMeal": "إضافة وجبة",
+  "mealPlannerAddType": "إضافة نوع الوجبة",
+  "mealPlannerCustomTypeLabel": "نوع مخصص",
   "mealPlannerDateLabel": "التاريخ",
+  "mealPlannerDefaultTypeLabel": "النوع الافتراضي",
   "mealPlannerDeleteMeal": "إزالة الوجبة",
   "mealPlannerEditMeal": "تعديل الوجبة",
+  "mealPlannerEditType": "تعديل نوع الوجبة",
   "mealPlannerError": "خطأ في تحميل خطة الوجبات",
+  "mealPlannerEstimatePartial": "تقدير بناءً على الوصفات مع بيانات الأسعار الجزئية.",
   "mealPlannerGenerateList": "إنشاء قائمة تسوق",
   "mealPlannerGenerateListConfirm": "هل تريد إضافة جميع المكونات من الوجبات المخطط لها هذا الأسبوع إلى قائمة التسوق الخاصة بك؟",
   "mealPlannerGenerateListEmpty": "لا توجد مكونات لإضافتها. خطط لبعض الوجبات مع وصفات أولاً.",
   "mealPlannerGenerateListNoList": "أنشئ قائمة تسوق أولاً.",
   "mealPlannerGenerateListSuccess": "تم إضافة {count} من المكونات إلى قائمتك!",
   "mealPlannerLoading": "جارٍ تحميل خطة الوجبات...",
+  "mealPlannerManageTypes": "إدارة أنواع الوجبات",
   "mealPlannerMealDeleted": "تم إزالة الوجبة",
   "mealPlannerMealTypeBreakfast": "إفطار",
   "mealPlannerMealTypeDinner": "عشاء",
@@ -1718,6 +1899,12 @@
   "mealPlannerServings": "{count,plural, zero{{count} حصة} one{{count} حصة} two{{count} حصة} few{{count} حصص} many{{count} حصة} other{{count} حصة}}",
   "mealPlannerServingsLabel": "عدد الحصص",
   "mealPlannerTitle": "مخطط الوجبات",
+  "mealPlannerTypeColor": "لون",
+  "mealPlannerTypeDeleteConfirm": "هل أنت متأكد أنك تريد حذف هذا النوع من الوجبة؟ ستبقى الوجبات المخططة من هذا النوع.",
+  "mealPlannerTypeDeleteError": "لا يمكن حذف هذا النوع من الوجبة.",
+  "mealPlannerTypeIcon": "رمز",
+  "mealPlannerTypeName": "اسم",
+  "mealPlannerTypeNameEmpty": "لا يمكن أن يكون الاسم فارغًا",
   "mealPlannerViewMonthly": "عرض شهري",
   "mealPlannerViewWeekly": "عرض أسبوعي",
   "mealPlannerWeekEmpty": "لا يوجد شيء مخطط لهذا الأسبوع",
@@ -1739,6 +1926,7 @@
   "navRecipes": "وصفات",
   "newCategoryDialog": "فئة جديدة",
   "newChat": "دردشة جديدة",
+  "newChatStarted": "بدأت محادثة جديدة",
   "newListTitle": "قائمة تسوق جديدة",
   "newPantryList": "تسوق المخزن",
   "newRecipe": "وصفة جديدة",
@@ -1933,6 +2121,7 @@
   "onboardingViewAllPlans": "عرض جميع الخطط",
   "onboardingWelcomeDesc": "أذكى طريقة لتنظيم التسوق الخاص بك وتوفير المال.",
   "onboardingWelcomeTitle": "مرحبًا بك في KipiList",
+  "openConversation": "محادثة مفتوحة",
   "openMenu": "فتح القائمة",
   "organizeAisles": "تنظيم حسب الممرات",
   "organizeAislesPrompt": "نظم حسب ممرات المتجر.",
@@ -1945,6 +2134,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} في المخزن",
   "pantryCompactView": "عرض مدمج",
   "pantryDeficit": "مفقود {amount}{unit}",
+  "pantryDeficitCount": "مفقود {count}{unit}",
   "pantryDeleteItemsContent": "هل تريد حذف {count} العناصر المحددة؟",
   "pantryDeleteItemsTitle": "حذف العناصر",
   "pantryDeleteSelected": "حذف المحدد",
@@ -1961,6 +2151,7 @@
   "pantryFilterExpiring": "انتهاء الصلاحية",
   "pantryFilterOutStock": "إنتهى من المخزن",
   "pantryFirstOpenHint": "تتبع ما لديك في المنزل. إضافة عناصر أو مسح الباركود.",
+  "pantryItemAdded": "تمت إضافة العنصر",
   "pantryItemRemoved": "تمت إزالة العنصر",
   "pantryMoreDetails": "مزيد من التفاصيل",
   "pantryNoItemsFound": "لم يتم العثور على أي عناصر لـ \"{query}\"",
@@ -1974,6 +2165,7 @@
   "paywallAfterItem2": "تنظيف",
   "paywallAfterItem3": "اللحوم",
   "paywallAfterItem4": "مخبز",
+  "paywallBasedOnAnswers": "شخصية من إجاباتك",
   "paywallBeforeAfterTitle": "الذكاء الاصطناعي قبل وبعد:",
   "paywallBeforeItem1": "أرز",
   "paywallBeforeItem2": "صابون",
@@ -2011,6 +2203,8 @@
   "paywallGoalHeadlinePantry": "{name}، تتبع مخزنك بشكل مثالي!",
   "paywallGoalHeadlineRecipes": "{name}، اكتشف وصفات جديدة!",
   "paywallGoalHeadlineSaveMoney": "{name}، احفظ في كل رحلة!",
+  "paywallHeroFeatureDesc": "تحدث أو الصق قائمة كاملة - يقوم الذكاء الاصطناعي بفرزها وتصنيفها ووضع ميزانيتها في ثوانٍ",
+  "paywallHeroFeatureTitle": "مساعد التسوق بالذكاء الاصطناعي",
   "paywallHeroHeadline": "Kipi AI دائما بجانبك",
   "paywallHeroSubtitle": "قم بإضافة العناصر وتنظيم القوائم وتوفير الوقت باستخدام الذكاء الاصطناعي في جيبك",
   "paywallHeroSubtitlePersonalized": "مرحبًا {name}، نظم تسوقك بالطريقة الصحيحة.",
@@ -2045,6 +2239,11 @@
   "paywallTestimonial2Text": "لم أنس أبدًا عنصر القائمة مرة أخرى. دردشة الذكاء الاصطناعي مثيرة!",
   "paywallTestimonialAuthor": "آن س.",
   "paywallTestimonialsTitle": "ماذا يقول مستخدمونا:",
+  "paywallTimelineChargeDesc": "يبدأ اشتراكك — قم بالإلغاء في أي وقت",
+  "paywallTimelineDay": "اليوم {day}",
+  "paywallTimelineReminderDesc": "نذكركم قبل انتهاء المحاكمة",
+  "paywallTimelineToday": "اليوم",
+  "paywallTimelineTodayDesc": "فتح الوصول الكامل على الفور",
   "paywallTitle": "KipiList بريميوم",
   "paywallTrialCta": "ابدأ النسخة التجريبية المجانية",
   "paywallTrialDays": "{days} أيام مجانية",
@@ -2067,11 +2266,15 @@
   "prefSharing": "مشاركة القوائم",
   "prefUnlimitedLists": "قوائم غير محدودة",
   "prefUnlimitedPantry": "مخزن غير محدود",
+  "preferencesSection": "التفضيلات",
   "preferredMarket": "السوق المفضل",
   "preferredMarketHint": "أين تتسوق عادة؟",
+  "premiumActionsPrompt": "اشترك في Premium لفتح الإجراءات التلقائية.",
+  "premiumStepDescription": "{description} (بريميوم)",
   "premiumUpgrade": "قم بالترقية لفتح الميزة",
   "prepTime": "وقت التحضير",
   "prepTimeMinutes": "وقت التحضير (بالدقائق)",
+  "previousItemState": "الحالة السابقة: {quantity} {unit} [{category}]{price}",
   "privacy": "الخصوصية",
   "product": "منتج",
   "productName": "اسم المنتج",
@@ -2088,21 +2291,35 @@
   "quantityShort": "الكمية",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "الدردشة مع كيبي",
+  "quickActionPantry": "عرض المخزن",
+  "quickAddToList": "أضف إلى القائمة",
   "quickRecipe": "وصفة سريعة",
   "quickRecipePrompt": "اقترح وصفات باستخدام عناصر من قائمتي.",
   "quickReplies": "ردود سريعة:",
   "quickSuggestions": "اقتراحات سريعة",
+  "recipeAddError": "تعذرت الإضافة إلى قائمتك. يرجى المحاولة مرة أخرى.",
   "recipeAddToList": "أضف إلى قائمة التسوق",
   "recipeAddedConfirmation": "تمت إضافة مكونات {count} إلى {listName}",
   "recipeCreated": "تم إنشاء الوصفة!",
   "recipeDeleted": "تم حذف الوصفة",
+  "recipeEstimatePartial": "تقدير جزئي على أساس المكونات مع السعر.",
+  "recipeEstimatedCostPerServing": "{cost} / خدمة",
+  "recipeEstimatedTotalCost": "التكلفة الإجمالية المقدرة",
   "recipeImage": "صورة الوصفة",
+  "recipeIngredientInPantry": "في المخزن",
+  "recipeIngredientLowPantry": "منخفضة في المخزن",
   "recipeIngredientSingular": "1 عنصر",
   "recipeIngredientsPlural": "{count} المكونات",
+  "recipeManualTotalCost": "التكلفة الإجمالية اليدوية",
+  "recipeManualTotalCostHint": "اتركه فارغًا للتقدير من أسعار المكونات.",
   "recipeName": "اسم الوصفة",
   "recipeSaved": "تم حفظ الوصفة!",
+  "recipeServesCount": "يخدم {count}",
   "recipeSuggestion": "اقتراح وصفة",
   "recipeTags": "وسوم الوصفة",
+  "recipeTapToCheck": "اضغط على أحد المكونات للتحقق منه أثناء الطهي",
+  "recipeYieldServings": "حصص العائد",
   "regenerate": "إعادة إنشاء",
   "remove": "إزالة",
   "removeBudget": "إزالة",
@@ -2126,9 +2343,12 @@
   "savings": "توفير",
   "scanBarcodeTitle": "مسح الباركود",
   "scanProductTitle": "مسح المنتج",
+  "scrollToBottom": "قم بالتمرير إلى الأسفل",
+  "searchConversations": "بحث في المحادثات",
   "searchCurrency": "بحث عن العملة...",
   "searchInConversation": "البحث في المحادثة...",
   "searchLanguage": "بحث عن لغة...",
+  "searchMessages": "بحث في الرسائل...",
   "searchRecipes": "بحث عن وصفات...",
   "selectAll": "تحديد الكل",
   "selectCheaperAlternative": "اختر بديلاً أرخص",
@@ -2185,6 +2405,7 @@
   "signInGoogle": "تسجيل الدخول باستخدام Google",
   "skip": "يتخطى",
   "smartOrganization": "تنظيم ذكي",
+  "somethingWentWrong": "حدث خطأ ما",
   "sortAZ": "من الألف إلى الياء",
   "sortCategory": "الفئة",
   "sortDate": "التاريخ",
@@ -2215,6 +2436,7 @@
   "themeColor": "لون السمة",
   "themeGreen": "أخضر",
   "themeIndigo": "نيلي",
+  "themeMode": "وضع الموضوع",
   "themeOrange": "برتقالي",
   "themePink": "وردي",
   "themePurple": "أرجواني",
@@ -2222,12 +2444,14 @@
   "themeSelectionTitle": "اختر لون الموضوع",
   "themeTeal": "شرشيري",
   "totalEstimated": "الإجمالي التقديري: {amount}",
+  "totalEstimatedLabel": "الإجمالي المقدر",
   "totalSavings": "إجمالي المدخرات",
   "totalSpending": "إجمالي الإنفاق",
   "trackStock": "تتبع المخزون",
   "trackStockActive": "يظهر في اقتراحات التسوق",
   "trackStockInactive": "لا يُنشئ اقتراح شراء",
   "undo": "تراجع",
+  "undoChanges": "التراجع عن التغييرات",
   "unit": "الوحدة",
   "unitPack": "حزمة",
   "unlockAi": "فتح الذكاء الاصطناعي غير المحدود",
@@ -2252,6 +2476,7 @@
   "userProfileSaveButton": "حفظ الملف الشخصي",
   "userProfileSaved": "تم حفظ الملف الشخصي بنجاح!",
   "userProfileTitle": "ملفي الشخصي",
+  "userRole": "أنت",
   "validForLimitedTime": "صالح لفترة محدودة",
   "version": "الإصدار",
   "viewActive": "عرض النشطة",
@@ -2259,6 +2484,7 @@
   "viewHistory": "عرض السجل",
   "viewItems": "عرض العناصر",
   "viewList": "عرض القائمة",
+  "viewPlans": "عرض الخطط",
   "viewPro": "عرض برو",
   "viewRecipe": "عرض الوصفة",
   "voiceCommandContent": "تحدث بشكل طبيعي لإدارة قائمتك!\n\nأمثلة:\n• 'أضف خبزاً وجبناً ولحماً'\n• 'أزل مسحوق الغسيل'\n• 'غيّر السمة إلى الأزرق'\n\nهذه ميزة حصرية من KipiList Premium.",

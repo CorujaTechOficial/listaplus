@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +161,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -287,6 +308,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -316,6 +340,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -991,6 +1022,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1138,6 +1179,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1176,6 +1224,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1249,7 +1320,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1397,42 +1482,56 @@
   "addToPantryPrompt": "\"{name}\"-г агуулаханд нэмэх үү?",
   "addedFeedback": "Нэмэгдсэн!",
   "advancedFeatures": "Дэвшилтэт онцлогууд",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Үйлдлийг гүйцэтгэж чадсангүй",
+  "agentActionsPremium": "Үйлдлүүд нь Premium шаарддаг",
+  "agentActionsRunning": "Ажиллаж байгаа үйлдлүүд...",
+  "aiApiError": "AI үйлчилгээ алдаа буцаасан ({statusCode}).",
   "aiAssistant": "AI туслах",
   "aiAssistantDescription": "Манай AI туслахаар ухаалаг санал, жор, хувийн зөвлөгөө аваарай.",
   "aiAssistantGeneral": "Ерөнхий туслах",
   "aiAssistantHistory": "Туслах түүх",
   "aiAssistantTitle": "AI туслах",
+  "aiConnectionError": "AI үйлчилгээнд холбогдож чадсангүй. Холболтоо шалгана уу.",
   "aiConversationHistory": "Харилцааны түүх",
   "aiCreditsRemaining": "{remaining} кредит үлдсэн",
   "aiDeleteConversationConfirm": "Устгах",
   "aiDeleteConversationTitle": "Харилцан яриаг устгах уу?",
   "aiDeletedList": "Устгасан жагсаалт",
+  "aiEmptyResponseError": "AI үйлчилгээ хоосон хариулт өгсөн.",
   "aiEnergy": "AI эрчим хүч",
   "aiEnergyLow": "AI бага энерги",
   "aiError": "Уучлаарай, таны хүсэлтийг боловсруулахад алдаа гарлаа. Холболтоо шалгах эсвэл дараа дахин оролдоно уу.",
   "aiFirstOpenHint": "Би бол таны худалдааны туслах Кипи байна. Жагсаалтынхаа талаар надаас асуугаарай!",
+  "aiGeneratingResponse": "Хариулт үүсгэж байна...",
   "aiHello": "Сайн байна уу! Би бол Кипи",
   "aiHowCanIHelp": "Өнөөдөр би чамд яаж туслах вэ?",
+  "aiInvalidResponseError": "AI үйлчилгээ хүчингүй хариулт өгсөн.",
   "aiLimitAlmostReached": "AI мессеж бараг байхгүй болсон",
   "aiNewConversation": "Шинэ яриа",
   "aiNewSession": "Шинэ сесс",
   "aiNoConversationFound": "Харилцаа олдсонгүй",
   "aiNoMessagesFound": "Мессеж олдсонгүй",
   "aiPremiumUpsell": "Дээд зэрэглэлийн",
+  "aiRateLimitError": "Богино хугацаанд хэт олон мессеж. Хэдэн секунд хүлээгээд дахин оролдоно уу.",
   "aiRecentConversations": "Сүүлийн үеийн харилцан яриа",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} өнөөдөр",
   "aiSearchMessages": "Зурвас хайх...",
+  "aiSection": "AI туслах",
   "aiStartNewConversation": "Шинэ яриа эхлүүлэх",
   "aiSubscribeUnlimited": "Хязгааргүй хиймэл оюун ухаанд бүртгүүлээрэй",
   "aiSuggestCreateList": "Миний анхны жагсаалтыг үүсгэ",
   "aiSuggestSaveMore": "Хэрхэн илүү хэмнэх вэ?",
   "aiTeaserFallback": "Бүрэн хариултыг нээхийн тулд Premium-д бүртгүүлж, дэлгүүр хэсэхдээ хязгааргүй хиймэл оюун ухааны зөвлөгөө аваарай...",
+  "aiTimeoutError": "Хүсэлт хэтэрхий удсан. Дахин оролдоно уу.",
   "aiUnlockUnlimited": "Хязгааргүй хиймэл оюун ухааны түгжээг тайл",
   "aiUnlockWithAd": "Зарын тусламжтайгаар түгжээг тайл",
   "aiUsageExhausted": "AI-ийн сарын хязгаарт хүрсэн. Хязгааргүй → Pro руу шинэчилнэ үү",
   "aiUsageWarning": "{remaining} AI үйлдлүүд энэ сард үлдсэн — хязгааргүй шинэчлээрэй",
   "aiVoiceCommandTooltip": "AI дуут команд (Premium)",
   "aiWelcomeContent": "Сайн уу! 👋 Би бол **Kipi**, таны дэлгүүр хэсэх болон жорны туслах!\n\nБи танд туслахаар ирлээ:\n🛒 ** Худалдан авалтаа автоматаар ангиллаар нь зохион байгуул\n💰 **Төсвөө хянаж**, мөнгө хэмнэх зөвлөгөөг өгөөрэй\n🍲 **Санал болго** амттай жороо өөрт байгаа зүйлээрээ\n\nӨнөөдөр би чамд яаж туслах вэ? Та анхны жагсаалтаа үүсгэж эхэлж болно!",
+  "aiWelcomeSuggestBarbecue": "Шарсан мах төлөвлө",
+  "aiWelcomeSuggestBarbecuePrompt": "Кипи, би шарсан мах хийж байна - дэлгүүрийн жагсаалтыг гаргахад тусална уу",
   "aiWelcomeSuggestCreateList": "Миний анхны жагсаалтыг үүсгэ",
   "aiWelcomeSuggestCreateListPrompt": "Кипи, миний анхны худалдааны жагсаалтыг гаргахад тусална уу",
   "aiWelcomeSuggestSave": "Хэрхэн мөнгө хэмнэх вэ?",
@@ -1443,14 +1542,17 @@
   "appTitle": "Дэлгүүрийн жагсаалт",
   "appearance": "Гадаад байдал",
   "archiveList": "Жагсаалтыг архивлах",
+  "artifactBudgetLabel": "Төсөв:",
   "artifactReplaceBody": "Зардлыг оновчтой болгохын тулд өөр бүтээгдэхүүн сонгох.",
   "artifactReplaceTitle": "{name} солих",
   "artifactSuggestedItems": "Санал болгож буй зүйлс",
   "artifactSwapButton": "Солих",
   "artifactSwappedLabel": "Солигдсон",
+  "artifactSynced": "Синк хийсэн",
   "assistantHistory": "Туслахын түүх",
   "assistantHistorySubtitle": "Харилцааны түүхийг харах",
   "assistantName": "Туслахын нэр",
+  "assistantRole": "Туслах",
   "backToChat": "Чат руу буцах",
   "backToToday": "Өнөөдөр рүү буцах",
   "backupExported": "Нөөц хуулбар экспортлогдсон!",
@@ -1458,6 +1560,7 @@
   "backupPremiumDescription": "Нөөц хуулбар ба экспорт нь Premium онцлог юм",
   "backupSubtitle": "Өгөгдлөө экспортлох эсвэл импортлох",
   "backupTitle": "Нөөц хуулбар",
+  "badResponse": "Муу хариу",
   "badgeBeginner": "Эхлэгч",
   "badgeOrganized": "Зохион байгуулалттай",
   "badgeSavingMaster": "Мастерыг аварч байна",
@@ -1485,10 +1588,12 @@
   "catOthers": "Бусад",
   "catalogAddItems": "{count} {count, plural, one{item} other{items}} нэмэх →",
   "catalogBrowse": "Каталог үзэх",
+  "catalogCategories": "Ангилал",
   "catalogFilterNational": "Үндэсний хүмүүс",
   "catalogItemAdded": "{name} нэмсэн",
   "catalogMyFrequents": "Миний байнгын хүмүүс",
   "catalogProductNotFound": "Бүтээгдэхүүн олдсонгүй, нэрийг бичнэ үү",
+  "catalogRareBadge": "Ховор",
   "catalogRareSection": "танай улсад бага тохиолддог",
   "catalogRetry": "Дахин оролдоно уу",
   "catalogSearchGlobal": "Ямар ч бүтээгдэхүүн хайх...",
@@ -1497,16 +1602,43 @@
   "catalogSortPopular": "Хамгийн алдартай",
   "catalogTitle": "Каталог",
   "category": "Ангилал",
+  "categoryAlcohol": "Согтууруулах ундаа",
+  "categoryBaby": "Хонгор минь",
+  "categoryBakery": "Талх нарийн боов",
+  "categoryBeverages": "Ундаа",
+  "categoryCanned": "Лаазалсан бүтээгдэхүүн",
+  "categoryCleaning": "Цэвэрлэгээ",
+  "categoryColdCuts": "Хүйтэн зүслэг",
   "categoryColorLabel": "Өнгө",
+  "categoryDairy": "Сүүн бүтээгдэхүүн",
+  "categoryFish": "Загас",
+  "categoryFrozen": "Хөлдөөсөн хоол",
+  "categoryFruits": "Жимс",
+  "categoryGrains": "Үр тариа, үр тариа",
+  "categoryHygiene": "Хувийн арчилгаа",
   "categoryIconLabel": "Дүрс",
   "categoryLimitReached": "Ангиллын хязгаарт хүрсэн",
+  "categoryMeat": "Мах",
   "categoryName": "Ангиллын нэр",
   "categoryNameHint": "Ангиллын нэрийг оруулна уу",
+  "categoryOthers": "Бусад",
+  "categoryPet": "Амьтны хангамж",
+  "categorySeasonings": "Амтлагч",
+  "categorySweets": "Амттан, амттан",
+  "categoryUtilities": "Гэр ахуйн хэрэгсэл",
+  "categoryVegetables": "Хүнсний ногоо",
+  "chatEmptyGreeting": "Сайн уу {name}, намайг Кипи гэдэг 👋",
+  "chatEmptyGreetingNoName": "Сайн уу, намайг Кипи гэдэг 👋",
+  "chatEmptyPitch": "Би жагсаалт гаргаж, жор санал болгож, хаана хадгалахаа олдог. Бид хаанаас эхлэх вэ?",
   "chatEmptySubtitle": "Эхлэхийн тулд зүйлийн санал, жор эсвэл хадгалах зөвлөмжийг хүс.",
   "chatEmptyTitle": "Таны чат хоосон байна",
   "chatError": "Чат ачааллахад алдаа: {error}",
   "chatHint": "Зурвасаа бичнэ үү...",
   "chatHintBlocked": "Чатлахын тулд AI-ийн түгжээг тайлаарай",
+  "chatHistoryErrorBody": "Бидний талд ямар нэг зүйл буруу болсон. Дахин оролдохын тулд дахин оролдоно уу.",
+  "chatHistoryErrorTitle": "Энэ харилцан яриаг ачаалж чадсангүй",
+  "chatHistoryOfflineBody": "Интернэт холболтоо шалгаад дахин оролдоно уу.",
+  "chatHistoryOfflineTitle": "Та офлайн байна",
   "chatSubtitle": "Зүйлсийн санал, жор, хэмнэлтийн зөвлөгөө авахыг асуу.",
   "chatSubtitleShort": "Үнэ, жор, зохион байгуулалтын талаар асуу...",
   "chooseCurrency": "Валют сонгоно уу",
@@ -1514,6 +1646,7 @@
   "chooseImageSource": "Зургийн эх үүсвэрийг сонгоно уу",
   "chooseLanguage": "Хэл сонгох",
   "chooseThemeColor": "Загварын өнгө сонгох",
+  "chooseThemeMode": "Загварын горимыг сонгоно уу",
   "clear": "Цэвэрлэх",
   "clearHistory": "Түүхийг цэвэрлэх",
   "clearHistoryConfirm": "Энэ сессийн бүх зурвасыг цэвэрлэх үү?",
@@ -1556,6 +1689,10 @@
   "customizeAssistant": "Тохируулах",
   "dark": "Харанхуй",
   "data": "Өгөгдөл",
+  "dateGroupOlder": "Хуучин",
+  "dateGroupPrevious7Days": "Өмнөх 7 хоног",
+  "dateGroupToday": "Өнөөдөр",
+  "dateGroupYesterday": "Өчигдөр",
   "deficitItems": "{deficit} зүйл(с) худалдаж авах шаардлагатай",
   "delete": "Устгах",
   "deleteCategory": "Устгах",
@@ -1572,6 +1709,7 @@
   "deleteRecipeConfirmMsg": "Та \"{recipeName}\" жорыг устгахдаа итгэлтэй байна уу? Энэ үйлдлийг буцаах боломжгүй.",
   "deleteSession": "Чатыг устгах",
   "deleteSessionConfirm": "Та энэ чатыг устгахдаа итгэлтэй байна уу? Зурвасууд бүрмөсөн алга болно.",
+  "deletedList": "Жагсаалтыг устгасан",
   "deselectAll": "Бүгдийг цуцлах",
   "dietaryRestrictions": "Хоолны хязгаарлалт",
   "dietaryRestrictionsHint": "Хоолны дэглэмийн хязгаарлалт уу?",
@@ -1584,6 +1722,7 @@
   "editCategoryDialog": "Ангилал засах",
   "editItem": "Зүйл засах",
   "editItemPrice": "Тооцоолсон үнэ",
+  "editMessage": "Зурвас засах",
   "editPantryItem": "{name} засах",
   "editRecipe": "Засварлах",
   "editRecipeTitle": "Жор засварлах",
@@ -1605,6 +1744,7 @@
   "errorLoadingChat": "Өө! Чатыг ачаалахад алдаа гарлаа.",
   "errorLoadingChatSubtitle": "Холболтоо шалгах эсвэл дараа дахин оролдоно уу.",
   "errorLoadingHistory": "Түүхийг ачаалахад алдаа гарлаа",
+  "errorLoadingItems": "Зүйлс ачаалахад алдаа гарлаа",
   "errorLoadingLists": "Жагсаалтыг ачаалахад алдаа гарлаа",
   "errorLoadingRecipes": "Жор ачаалахад алдаа гарлаа",
   "errorLoadingSubscription": "Бүртгэлийг ачаалахад алдаа гарлаа",
@@ -1657,6 +1797,7 @@
   "generateShoppingList": "Дэлгүүрийн жагсаалт үүсгэх",
   "gestureHint": "Сонгохын тулд удаан дарна уу • Устгахын тулд шударна уу",
   "globalAssistant": "Ерөнхий туслах",
+  "goodResponse": "Сайн хариу",
   "howCanIHelp": "Би яаж туслах вэ?",
   "idealQty": "Тохиромжтой тоо",
   "idealQuantity": "Хамгийн тохиромжтой тоо хэмжээ",
@@ -1673,14 +1814,18 @@
   "instructionsHint": "Мөр бүрт нэг алхам бичнэ үү...",
   "inviteToList": "Жагсаалтад урих",
   "itemAddedSnack": "{name} нэмсэн",
+  "itemAddedToList": "Жагсаалтад нэмсэн зүйл.",
   "itemName": "Зүйлийн нэр",
   "itemRemoved": "Зүйл устгагдсан",
   "itemsAddedSuccess": "Зүйлс жагсаалтад амжилттай нэмэгдсэн!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} зүйл(с) худалдаж авах шаардлагатай",
   "itemsPurchased": "Худалдан авсан зүйлс",
   "itemsPurchasedCount": "{total}-ийн {purchased}-г худалдаж авсан",
   "itemsPurchasedShort": "{purchased}/{total} худалдаж авсан",
   "itemsWillBeAdded": "{count} зүйл(с) нэмэгдэх болно",
+  "keepAdding": "Үргэлжлүүлэн нэмээрэй",
+  "keepAddingSubtitle": "Олон зүйл нэмэхийн тулд хуудсыг нээлттэй байлга",
   "kipiListProActive": "KipiList Pro идэвхтэй",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Та юу худалдаж авах хэрэгтэй вэ?",
@@ -1727,16 +1872,22 @@
   "mealDragHint": "Чирч, зөөхийн тулд удаан дарна уу",
   "mealNoRecipeFound": "Жор олдсонгүй",
   "mealPlannerAddMeal": "Хоол нэмэх",
+  "mealPlannerAddType": "Хоолны төрлийг нэмнэ үү",
+  "mealPlannerCustomTypeLabel": "Захиалгат төрөл",
   "mealPlannerDateLabel": "Огноо",
+  "mealPlannerDefaultTypeLabel": "Өгөгдмөл төрөл",
   "mealPlannerDeleteMeal": "Хоол устгах",
   "mealPlannerEditMeal": "Хоол засварлах",
+  "mealPlannerEditType": "Хоолны төрлийг засах",
   "mealPlannerError": "Хоолны төлөвлөгөө ачаалахад алдаа гарлаа",
+  "mealPlannerEstimatePartial": "Хэсэгчилсэн үнийн мэдээлэл бүхий жор дээр үндэслэн тооцоол.",
   "mealPlannerGenerateList": "Шопинг жагсаалт гаргах",
   "mealPlannerGenerateListConfirm": "Энэ долоо хоногт төлөвлөсөн хоолны бүх найрлагыг шопинг жагсаалтад нэмэх үү?",
   "mealPlannerGenerateListEmpty": "Нэмэх найрлага алга. Эхлээд жороор хоол төлөвлөнө үү.",
   "mealPlannerGenerateListNoList": "Эхлээд шопинг жагсаалт үүсгэнэ үү.",
   "mealPlannerGenerateListSuccess": "{count} найрлага таны жагсаалтад нэмэгдлээ!",
   "mealPlannerLoading": "Хоолны төлөвлөгөө ачаалж байна...",
+  "mealPlannerManageTypes": "Хоолны төрлийг удирдах",
   "mealPlannerMealDeleted": "Хоол устгагдсан",
   "mealPlannerMealTypeBreakfast": "Өглөөний цай",
   "mealPlannerMealTypeDinner": "Оройн хоол",
@@ -1756,6 +1907,12 @@
   "mealPlannerServings": "{count,plural, one{{count} порц} other{{count} порц}}",
   "mealPlannerServingsLabel": "Порц",
   "mealPlannerTitle": "Хоолны төлөвлөгч",
+  "mealPlannerTypeColor": "Өнгө",
+  "mealPlannerTypeDeleteConfirm": "Та энэ хоолны төрлийг устгахдаа итгэлтэй байна уу? Энэ төрлийн төлөвлөсөн хоол хэвээр байх болно.",
+  "mealPlannerTypeDeleteError": "Энэ төрлийн хоолыг устгах боломжгүй.",
+  "mealPlannerTypeIcon": "Дүрс",
+  "mealPlannerTypeName": "Нэр",
+  "mealPlannerTypeNameEmpty": "Нэр хоосон байж болохгүй",
   "mealPlannerViewMonthly": "Сар бүрийн харагдац",
   "mealPlannerViewWeekly": "Долоо хоногийн харагдац",
   "mealPlannerWeekEmpty": "Энэ долоо хоногт төлөвлөсөн зүйл алга",
@@ -1971,6 +2128,7 @@
   "onboardingViewAllPlans": "Бүх төлөвлөгөөг харах",
   "onboardingWelcomeDesc": "Худалдан авалтаа зохион байгуулж, мөнгөө хэмнэх хамгийн ухаалаг арга.",
   "onboardingWelcomeTitle": "KipiList-д тавтай морил",
+  "openConversation": "Нээлттэй харилцан яриа",
   "openMenu": "Цэс нээх",
   "organizeAisles": "Тавиураар зохион байгуулах",
   "organizeAislesPrompt": "Дэлгүүрийн тавиураар зохион байгуулах.",
@@ -1983,6 +2141,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} агуулахад байна",
   "pantryCompactView": "Компакт харах",
   "pantryDeficit": "{amount}{unit} дутуу байна",
+  "pantryDeficitCount": "{count}{unit} дутуу байна",
   "pantryDeleteItemsContent": "Та сонгосон {count} зүйлийг устгахыг хүсэж байна уу?",
   "pantryDeleteItemsTitle": "Зүйлс устгах",
   "pantryDeleteSelected": "Сонгосон устгах",
@@ -1999,6 +2158,7 @@
   "pantryFilterExpiring": "Хугацаа нь дуусч байна",
   "pantryFilterOutStock": "нөөц дууссан",
   "pantryFirstOpenHint": "Гэртээ байгаа зүйлээ хянаж байгаарай. Зүйлс нэмэх эсвэл бар код сканнердах.",
+  "pantryItemAdded": "Зүйл нэмсэн",
   "pantryItemRemoved": "Зүйл устгагдсан",
   "pantryMoreDetails": "Илүү дэлгэрэнгүй",
   "pantryNoItemsFound": "\"{query}\"-н зүйл олдсонгүй",
@@ -2012,6 +2172,7 @@
   "paywallAfterItem2": "Цэвэрлэгээ",
   "paywallAfterItem3": "Мах",
   "paywallAfterItem4": "Талх нарийн боов",
+  "paywallBasedOnAnswers": "Таны хариултаас тохируулсан",
   "paywallBeforeAfterTitle": "AI өмнө ба дараа:",
   "paywallBeforeItem1": "будаа",
   "paywallBeforeItem2": "саван",
@@ -2049,6 +2210,8 @@
   "paywallGoalHeadlinePantry": "{name}, агуулахаа төгс хянаарай!",
   "paywallGoalHeadlineRecipes": "{name}, шинэ жор олж мэдээрэй!",
   "paywallGoalHeadlineSaveMoney": "{name}, аялал бүрдээ хэмнээрэй!",
+  "paywallHeroFeatureDesc": "Жагсаалтыг бүхэлд нь хэлэх эсвэл буулгах - AI үүнийг хэдхэн секундын дотор ангилж, ангилж, төсөвлөнө",
+  "paywallHeroFeatureTitle": "AI худалдааны туслах",
   "paywallHeroHeadline": "Kipi AI үргэлж таны хажууд байдаг",
   "paywallHeroSubtitle": "Хиймэл оюун ухааны тусламжтайгаар халаасандаа байгаа зүйлсээ нэмж, жагсаалтаа цэгцэлж, цаг хэмнээрэй",
   "paywallHeroSubtitlePersonalized": "Хөөе {name}, худалдан авалтаа зөв зохион байгуулаарай.",
@@ -2083,6 +2246,11 @@
   "paywallTestimonial2Text": "Би жагсаалтын нэг зүйлийг дахин хэзээ ч мартсангүй. AI чат нь сенсаацтай юм!",
   "paywallTestimonialAuthor": "Анн С.",
   "paywallTestimonialsTitle": "Манай хэрэглэгчид юу гэж хэлдэг:",
+  "paywallTimelineChargeDesc": "Таны захиалга эхэлж байна - хүссэн үедээ цуцлаарай",
+  "paywallTimelineDay": "Өдөр {day}",
+  "paywallTimelineReminderDesc": "Шүүх хурал дуусахаас өмнө бид танд сануулж байна",
+  "paywallTimelineToday": "Өнөөдөр",
+  "paywallTimelineTodayDesc": "Бүрэн хандалтын түгжээг нэн даруй нээнэ үү",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Үнэгүй туршилтыг эхлүүлэх",
   "paywallTrialDays": "{days} ӨДӨР ҮНЭГҮЙ",
@@ -2105,11 +2273,15 @@
   "prefSharing": "Жагсаалт хуваалцах",
   "prefUnlimitedLists": "Хязгааргүй жагсаалт",
   "prefUnlimitedPantry": "Хязгааргүй агуулах",
+  "preferencesSection": "Сонголтууд",
   "preferredMarket": "Давуу зах зээл",
   "preferredMarketHint": "Та ихэвчлэн хаана дэлгүүр хэсдэг вэ?",
+  "premiumActionsPrompt": "Автомат үйлдлийн түгжээг тайлахын тулд Premium-д бүртгүүлнэ үү.",
+  "premiumStepDescription": "{description} (Дээд зэрэглэлийн)",
   "premiumUpgrade": "Нээхээр шинэчлэх",
   "prepTime": "Бэлтгэх хугацаа",
   "prepTimeMinutes": "Бэлтгэх хугацаа (минут)",
+  "previousItemState": "Өмнөх төлөв: {quantity} {unit} [{category}]{price}",
   "privacy": "Нууцлал",
   "product": "Бүтээгдэхүүн",
   "productName": "Бүтээгдэхүүний нэр",
@@ -2126,21 +2298,34 @@
   "quantityShort": "Тоо",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Kipi-тэй чатлах",
+  "quickActionPantry": "агуулах үзэх",
   "quickRecipe": "Хурдан жор",
   "quickRecipePrompt": "Миний жагсаалтын зүйлсээр жор санал болго.",
   "quickReplies": "Шуурхай хариултууд:",
   "quickSuggestions": "Шуурхай зөвлөмжүүд",
+  "recipeAddError": "Таны жагсаалтад нэмж чадсангүй. Дахин оролдоно уу.",
   "recipeAddToList": "Худалдан авалтын жагсаалтад нэмнэ үү",
   "recipeAddedConfirmation": "{count} найрлагыг {listName}-д нэмсэн",
   "recipeCreated": "Жор үүсгэгдлээ!",
   "recipeDeleted": "Жор устгагдсан",
+  "recipeEstimatePartial": "Үнийн хамт найрлагад үндэслэн хэсэгчилсэн тооцоолол.",
+  "recipeEstimatedCostPerServing": "{cost} / үйлчлэх",
+  "recipeEstimatedTotalCost": "Тооцоолсон нийт зардал",
   "recipeImage": "Жорын зураг",
+  "recipeIngredientInPantry": "агуулахад",
+  "recipeIngredientLowPantry": "Хоолны агуулах бага",
   "recipeIngredientSingular": "1 найрлага",
   "recipeIngredientsPlural": "{count} найрлага",
+  "recipeManualTotalCost": "Гарын авлагын нийт зардал",
+  "recipeManualTotalCostHint": "Найрлагын үнээс тооцоолохын тулд хоосон орхино уу.",
   "recipeName": "Жорын нэр",
   "recipeSaved": "Жор хадгалагдлаа!",
+  "recipeServesCount": "{count} үйлчилдэг",
   "recipeSuggestion": "Жорын санал",
   "recipeTags": "Жорын шошго",
+  "recipeTapToCheck": "Хоол хийх явцдаа орцыг нь шалгана уу",
+  "recipeYieldServings": "Үр порц",
   "regenerate": "Дахин үүсгэх",
   "remove": "Устгах",
   "removeBudget": "Устгах",
@@ -2164,9 +2349,12 @@
   "savings": "Хэмнэлт",
   "scanBarcodeTitle": "Бар кодыг сканнердах",
   "scanProductTitle": "Бүтээгдэхүүнийг сканнердах",
+  "scrollToBottom": "Доош гүйлгэх",
+  "searchConversations": "Харилцан яриа хайх",
   "searchCurrency": "Валют хайх...",
   "searchInConversation": "Харилцан ярианаас хайх...",
   "searchLanguage": "Хэл хайх...",
+  "searchMessages": "Зурвас хайх...",
   "searchRecipes": "Жор хайх...",
   "selectAll": "Бүгдийг сонгох",
   "selectCheaperAlternative": "Илүү хямд хувилбарыг сонго",
@@ -2223,6 +2411,7 @@
   "signInGoogle": "Google-р нэвтрэх",
   "skip": "Алгасах",
   "smartOrganization": "Ухаалаг зохион байгуулалт",
+  "somethingWentWrong": "Ямар нэг алдаа гарлаа",
   "sortAZ": "А–З",
   "sortCategory": "Ангилал",
   "sortDate": "Огноо",
@@ -2253,6 +2442,7 @@
   "themeColor": "Сэдвийн өнгө",
   "themeGreen": "Ногоон",
   "themeIndigo": "Индиго",
+  "themeMode": "Сэдвийн горим",
   "themeOrange": "Улбар шар",
   "themePink": "Ягаан",
   "themePurple": "Ягаан",
@@ -2260,12 +2450,14 @@
   "themeSelectionTitle": "Загварын өнгө сонгох",
   "themeTeal": "Номин",
   "totalEstimated": "Нийт тооцоолсон: {amount}",
+  "totalEstimatedLabel": "Тооцоолсон нийт",
   "totalSavings": "Нийт хадгаламж",
   "totalSpending": "Нийт зарцуулсан",
   "trackStock": "Нөөцийг хянах",
   "trackStockActive": "Дэлгүүрийн зөвлөмжид харагдана",
   "trackStockInactive": "Дэлгүүрийн зөвлөмж үүсгэхгүй",
   "undo": "Буцаах",
+  "undoChanges": "Өөрчлөлтүүдийг буцаах",
   "unit": "Нэгж",
   "unitPack": "багц",
   "unlockAi": "Хязгааргүй хиймэл оюун ухааны түгжээг тайл",
@@ -2290,6 +2482,7 @@
   "userProfileSaveButton": "Профайлыг хадгалах",
   "userProfileSaved": "Профайлыг амжилттай хадгаллаа!",
   "userProfileTitle": "Миний профайл",
+  "userRole": "Та",
   "validForLimitedTime": "Хязгаарлагдмал хугацаанд хүчинтэй",
   "version": "Хувилбар",
   "viewActive": "Идэвхтэйг харах",
@@ -2297,6 +2490,7 @@
   "viewHistory": "Түүхийг харах",
   "viewItems": "Зүйлс харах",
   "viewList": "Жагсаалтыг үзэх",
+  "viewPlans": "Төлөвлөгөө харах",
   "viewPro": "Pro харах",
   "viewRecipe": "Жор үзэх",
   "voiceCommandContent": "Жагсаалтаа удирдахаар байгалийн ярь!\n\nЖишээнүүд:\n• 'Талх, бяслаг, хиам нэм'\n• 'Угаалгын нунтаг устга'\n• 'Сэдвийг цэнхэр болго'\n\nЭнэ бол KipiList Premium-ын онцгой онцлог юм.",

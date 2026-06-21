@@ -244,6 +244,11 @@ class AppLocalizationsSl extends AppLocalizations {
   String get noItemsToBuy => 'Ni predmetov za nakup';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Manjka $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Nakup iz shrambe';
 
   @override
@@ -310,6 +315,12 @@ class AppLocalizationsSl extends AppLocalizations {
   String get settingsAppBar => 'Nastavitve';
 
   @override
+  String get preferencesSection => 'Nastavitve';
+
+  @override
+  String get aiSection => 'Pomočnik AI';
+
+  @override
   String get language => 'Jezik';
 
   @override
@@ -338,6 +349,12 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get appearance => 'Videz';
+
+  @override
+  String get themeMode => 'Tematski način';
+
+  @override
+  String get chooseThemeMode => 'Izberite način teme';
 
   @override
   String get light => 'Svetlo';
@@ -587,6 +604,13 @@ class AppLocalizationsSl extends AppLocalizations {
   String get trackStockInactive => 'Ne ustvarja nakupovalnega predloga';
 
   @override
+  String get keepAdding => 'Še naprej dodajajte';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Če želite dodati več elementov, imejte list odprt';
+
+  @override
   String get createListDialog => 'Ustvari seznam';
 
   @override
@@ -691,6 +715,36 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Dober odziv';
+
+  @override
+  String get badResponse => 'Slab odziv';
+
+  @override
+  String get scrollToBottom => 'Pomaknite se na dno';
+
+  @override
+  String get somethingWentWrong => 'Nekaj ​​je šlo narobe';
+
+  @override
+  String get editMessage => 'Uredi sporočilo';
+
+  @override
+  String get searchConversations => 'Iskanje pogovorov';
+
+  @override
+  String get dateGroupToday => 'Danes';
+
+  @override
+  String get dateGroupYesterday => 'včeraj';
+
+  @override
+  String get dateGroupPrevious7Days => 'Prejšnjih 7 dni';
+
+  @override
+  String get dateGroupOlder => 'Starejši';
+
+  @override
   String get aiAssistantTitle => 'Pomočnik AI';
 
   @override
@@ -731,6 +785,33 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Mesečna omejitev AI je dosežena. Nadgradite na Pro za neomejeno →';
+
+  @override
+  String get undo => 'Razveljavi';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -938,6 +1019,20 @@ class AppLocalizationsSl extends AppLocalizations {
   String get recipeAddToList => 'Dodaj na nakupovalni seznam';
 
   @override
+  String get recipeAddError =>
+      'Ni bilo mogoče dodati na vaš seznam. prosim poskusite znova';
+
+  @override
+  String get recipeTapToCheck =>
+      'Dotaknite se sestavine, da jo obkljukate med kuhanjem';
+
+  @override
+  String get recipeIngredientInPantry => 'V shrambi';
+
+  @override
+  String get recipeIngredientLowPantry => 'Nizko v shrambi';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1055,12 +1150,12 @@ class AppLocalizationsSl extends AppLocalizations {
   String get paywallSelectPlan => 'Izberite svoj načrt:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'PRIHRANITE $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Samo $price/mesec';
   }
 
@@ -1095,6 +1190,35 @@ class AppLocalizationsSl extends AppLocalizations {
   String get paywallRestore => 'Obnovi';
 
   @override
+  String get paywallTimelineToday => 'Danes';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Takoj odklenite popoln dostop';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'dan $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Pred koncem preizkusa vas spomnimo';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Vaša naročnina se začne - prekličite kadar koli';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI Nakupovalni pomočnik';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Izgovorite ali prilepite cel seznam – umetna inteligenca ga razvrsti, kategorizira in proračuna v nekaj sekundah';
+
+  @override
+  String get paywallBasedOnAnswers => 'Prilagojeno iz vaših odgovorov';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI vedno ob tebi';
 
   @override
@@ -1127,9 +1251,6 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Predmet odstranjen';
-
-  @override
-  String get undo => 'Razveljavi';
 
   @override
   String get emptyListTitle => 'Vaš seznam je prazen';
@@ -1246,6 +1367,9 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Predmet odstranjen';
+
+  @override
+  String get pantryItemAdded => 'Artikel dodan';
 
   @override
   String deficitItems(int deficit) {
@@ -1653,6 +1777,32 @@ class AppLocalizationsSl extends AppLocalizations {
   String get prepTimeMinutes => 'Čas priprave (minute)';
 
   @override
+  String get recipeYieldServings => 'Donos obrokov';
+
+  @override
+  String get recipeManualTotalCost => 'Ročni skupni stroški';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Pustite prazno za oceno glede na cene sestavin.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Ocenjeni skupni stroški';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / porcija';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Služi $count';
+  }
+
+  @override
+  String get recipeEstimatePartial => 'Delna ocena na podlagi sestavin s ceno.';
+
+  @override
   String get instructionsHint => 'Vnesite en korak na vrstico ...';
 
   @override
@@ -1783,6 +1933,10 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Ocena na podlagi receptov z delnimi podatki o cenah.';
+
+  @override
   String get mealPlannerGenerateList => 'Ustvari nakupovalni seznam';
 
   @override
@@ -1876,6 +2030,9 @@ class AppLocalizationsSl extends AppLocalizations {
   String get catalogRareSection => 'manj pogosto v vaši državi';
 
   @override
+  String get catalogRareBadge => 'Redko';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1893,7 +2050,7 @@ class AppLocalizationsSl extends AppLocalizations {
   String get catalogBrowse => 'Prelistajte katalog';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'kategorije';
 
   @override
   String get offlineBanner => 'Nisi povezan';
@@ -1924,6 +2081,41 @@ class AppLocalizationsSl extends AppLocalizations {
     );
     return '$count $_temp0 manjka';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Upravljajte vrste obrokov';
+
+  @override
+  String get mealPlannerAddType => 'Dodajte vrsto obroka';
+
+  @override
+  String get mealPlannerEditType => 'Uredite vrsto obroka';
+
+  @override
+  String get mealPlannerTypeName => 'Ime';
+
+  @override
+  String get mealPlannerTypeColor => 'barva';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikona';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Ali ste prepričani, da želite izbrisati to vrsto obroka? Načrtovani obroki s to vrsto bodo ostali.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Ime ne sme biti prazno';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Te vrste obroka ni mogoče izbrisati.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Vrsta po meri';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Privzeta vrsta';
 
   @override
   String get expirationDate => 'Rok uporabe';
@@ -1984,6 +2176,9 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Napaka pri nalaganju seznamov';
+
+  @override
+  String get errorLoadingItems => 'Napaka pri nalaganju elementov';
 
   @override
   String get noListsFound => 'Ni seznamov';
@@ -2588,171 +2783,382 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
-  String get obHookTitle => 'Smarter shopping starts here';
+  String get obHookTitle => 'Pametnejše nakupovanje se začne tukaj';
 
   @override
   String get obHookSubtitle =>
-      'AI-powered lists that save you time and money, every single trip.';
+      'Seznami, ki jih poganja AI, ki vam prihranijo čas in denar na vsakem potovanju.';
 
   @override
-  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+  String get obHookSocial => 'Zaupa mu na tisoče kupcev po vsem svetu';
 
   @override
-  String get obHookCta => 'Get Started';
+  String get obHookCta => 'Začnite';
 
   @override
-  String get obQuizHouseholdTitle => 'Who do you shop for?';
+  String get obQuizHouseholdTitle => 'Za koga nakupuješ?';
 
   @override
-  String get obQuizHouseholdSolo => 'Just me';
+  String get obQuizHouseholdSolo => 'Samo jaz';
 
   @override
-  String get obQuizHouseholdCouple => 'Me and my partner';
+  String get obQuizHouseholdCouple => 'Jaz in moj partner';
 
   @override
-  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+  String get obQuizHouseholdFamilySmall => '3–4-članska družina';
 
   @override
-  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+  String get obQuizHouseholdFamilyLarge => 'Družina 5+';
 
   @override
-  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+  String get obQuizFrequencyTitle => 'Kako pogosto nakupujete živila?';
 
   @override
-  String get obQuizFrequencyDaily => 'Almost every day';
+  String get obQuizFrequencyDaily => 'Skoraj vsak dan';
 
   @override
-  String get obQuizFrequencyWeekly => 'Once a week';
+  String get obQuizFrequencyWeekly => 'Enkrat na teden';
 
   @override
-  String get obQuizFrequencyBiweekly => 'Every two weeks';
+  String get obQuizFrequencyBiweekly => 'Vsaka dva tedna';
 
   @override
-  String get obQuizFrequencyMonthly => 'Big monthly haul';
+  String get obQuizFrequencyMonthly => 'Velik mesečni ulov';
 
   @override
-  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+  String get obQuizPainTitle => 'Kaj vas najbolj moti pri nakupovanju?';
 
   @override
-  String get obQuizPainForget => 'I always forget items';
+  String get obQuizPainForget => 'Vedno pozabim predmete';
 
   @override
-  String get obQuizPainOverspend => 'I spend more than planned';
+  String get obQuizPainOverspend => 'Porabim več od načrtovanega';
 
   @override
-  String get obQuizPainWaste => 'Food goes to waste at home';
+  String get obQuizPainWaste => 'Hrana gre doma v nič';
 
   @override
-  String get obQuizPainTime => 'It takes too much time';
+  String get obQuizPainTime => 'Preveč časa vzame';
 
   @override
-  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+  String get obQuizSavingsTitle => 'Koliko bi radi prihranili mesečno?';
 
   @override
-  String get obQuizSavingsSmall => 'A little — every bit counts';
+  String get obQuizSavingsSmall => 'Malo — vsak delček šteje';
 
   @override
-  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+  String get obQuizSavingsMedium => 'Približno 10 % mojega računa za živila';
 
   @override
-  String get obQuizSavingsLarge => 'As much as possible';
+  String get obQuizSavingsLarge => 'Čim več';
 
   @override
-  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+  String get obQuizMethodTitle => 'Kako danes sestavljate nakupovalne sezname?';
 
   @override
-  String get obQuizMethodPaper => 'Pen and paper';
+  String get obQuizMethodPaper => 'Pero in papir';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'Aplikacija Notes';
 
   @override
-  String get obQuizMethodMemory => 'I keep it in my head';
+  String get obQuizMethodMemory => 'To držim v glavi';
 
   @override
-  String get obQuizMethodNone => 'I don\'t make lists';
+  String get obQuizMethodNone => 'Ne delam seznamov';
 
   @override
-  String get obSocialTitle => 'You\'re in good company';
+  String get obSocialTitle => 'Ste v dobri družbi';
 
   @override
-  String get obSocialSubtitle =>
-      'Shoppers like you are already saving with KipiList';
+  String get obSocialSubtitle => 'Kupci, kot ste vi, že varčujejo s KipiListom';
 
   @override
   String get obSocialQuote1 =>
-      'I never forget anything anymore. The AI builds my list in seconds.';
+      'Nikoli več ničesar ne pozabim. Umetna inteligenca sestavi moj seznam v nekaj sekundah.';
 
   @override
   String get obSocialQuote2 =>
-      'We cut our grocery bill noticeably in the first month.';
+      'V prvem mesecu smo opazno znižali račun za živila.';
 
   @override
   String get obSocialQuote3 =>
-      'Sharing the list with my partner ended our shopping chaos.';
+      'Deljenje seznama s partnerjem je končalo naš nakupovalni kaos.';
 
   @override
-  String get obLoadingTitle => 'Building your personalized plan...';
+  String get obLoadingTitle => 'Izdelava vašega prilagojenega načrta ...';
 
   @override
-  String get obLoadingStepProfile => 'Adjusting for your household';
+  String get obLoadingStepProfile => 'Prilagoditev za vaše gospodinjstvo';
 
   @override
-  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+  String get obLoadingStepHabits => 'Prilagoditev vaši nakupovalni rutini';
 
   @override
-  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+  String get obLoadingStepSavings => 'Optimizacija vaše varčevalne strategije';
 
   @override
-  String get obLoadingStepLists => 'Preparing your smart lists';
+  String get obLoadingStepLists => 'Priprava pametnih seznamov';
 
   @override
-  String get obRevealTitle => 'Your plan is ready!';
+  String get obRevealTitle => 'Vaš načrt je pripravljen!';
 
   @override
-  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+  String get obRevealSubtitle => 'Evo, kako bo KipiList deloval za vas';
 
   @override
-  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+  String get obRevealSavingsCaption => 'Predvideni prihranki s KipiList';
 
   @override
   String obRevealMonth(int n) {
-    return 'Month $n';
+    return 'Mesec $n';
   }
 
   @override
-  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+  String get obRevealFeatureAi => 'AI gradi in organizira vaše sezname';
 
   @override
-  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+  String get obRevealFeatureBudget => 'Poraba se spremlja glede na vaš cilj';
 
   @override
-  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+  String get obRevealFeaturePantry => 'Sledenje shrambi zmanjša zavrženo hrano';
 
   @override
-  String get obRevealFeatureShare => 'Real-time sharing with your household';
+  String get obRevealFeatureShare =>
+      'Deljenje v realnem času z vašim gospodinjstvom';
 
   @override
-  String get obPaywallTitle => 'Unlock your plan';
+  String get obPaywallTitle => 'Odkleni svoj načrt';
 
   @override
-  String get obPaywallRetry => 'Try again';
+  String get obPaywallRetry => 'Poskusite znova';
 
   @override
-  String get obLoginTitle => 'Save your plan';
+  String get obLoginTitle => 'Shranite svoj načrt';
 
   @override
-  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+  String get obLoginSubtitle =>
+      'Prijavite se, da se vaši seznami sinhronizirajo med napravami';
 
   @override
-  String get obLoginGoogle => 'Continue with Google';
+  String get obLoginGoogle => 'Nadaljujte z Googlom';
 
   @override
-  String get obLoginApple => 'Continue with Apple';
+  String get obLoginApple => 'Nadaljujte z Appleom';
 
   @override
-  String get obLoginSkip => 'Not now';
+  String get obLoginSkip => 'Ne zdaj';
 
   @override
-  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
+  String get obLoginError =>
+      'Prijava ni uspela. Poskusite znova ali za zdaj preskočite.';
+
+  @override
+  String get searchMessages => 'Iskanje sporočil ...';
+
+  @override
+  String get deletedList => 'Izbrisan seznam';
+
+  @override
+  String get openConversation => 'Odprt pogovor';
+
+  @override
+  String get userRole => 'Ti';
+
+  @override
+  String get assistantRole => 'Pomočnik';
+
+  @override
+  String get agentActionsRunning => 'Izvajanje dejanj ...';
+
+  @override
+  String get agentActionsFailed => 'Zagon dejanj ni uspel';
+
+  @override
+  String get agentActionsPremium => 'Dejanja zahtevajo Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Razveljavi spremembe';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Artikel dodan na seznam.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Prejšnje stanje: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Naročite se na Premium, da odklenete samodejna dejanja.';
+
+  @override
+  String get viewPlans => 'Ogled načrtov';
+
+  @override
+  String get artifactSynced => 'Sinhronizirano';
+
+  @override
+  String get artifactBudgetLabel => 'Proračun:';
+
+  @override
+  String get totalEstimatedLabel => 'Ocenjeno skupno';
+
+  @override
+  String get quickActionPantry => 'Ogled shrambe';
+
+  @override
+  String get quickActionAi => 'Klepetajte s Kipijem';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Storitev AI je vrnila napako ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Zahteva je trajala predolgo. prosim poskusite ponovno';
+
+  @override
+  String get aiConnectionError =>
+      'Ni bilo mogoče vzpostaviti povezave s storitvijo AI. Preverite povezavo.';
+
+  @override
+  String get aiEmptyResponseError => 'Storitev AI je vrnila prazen odgovor.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Storitev AI je vrnila neveljaven odgovor.';
+
+  @override
+  String get categoryFruits => 'sadje';
+
+  @override
+  String get categoryCleaning => 'Čiščenje';
+
+  @override
+  String get categoryBeverages => 'pijače';
+
+  @override
+  String get categoryBakery => 'Pekarna';
+
+  @override
+  String get categoryMeat => 'Meso';
+
+  @override
+  String get categoryDairy => 'Mlečni izdelki';
+
+  @override
+  String get categoryVegetables => 'zelenjava';
+
+  @override
+  String get categoryGrains => 'Zrna in žitarice';
+
+  @override
+  String get categoryHygiene => 'Osebna nega';
+
+  @override
+  String get categoryFrozen => 'Zamrznjena živila';
+
+  @override
+  String get categoryCanned => 'Konzerve';
+
+  @override
+  String get categorySeasonings => 'Začimbe';
+
+  @override
+  String get categorySweets => 'Slaščice in sladice';
+
+  @override
+  String get categoryAlcohol => 'Alkoholne pijače';
+
+  @override
+  String get categoryFish => 'ribe';
+
+  @override
+  String get categoryColdCuts => 'Narezki';
+
+  @override
+  String get categoryUtilities => 'Gospodinjski pripomočki';
+
+  @override
+  String get categoryPet => 'Potrebščine za hišne ljubljenčke';
+
+  @override
+  String get categoryBaby => 'Baby';
+
+  @override
+  String get categoryOthers => 'drugo';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Živjo $name, jaz sem Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Živjo, jaz sem Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Sestavljam sezname, predlagam recepte in najdem, kje shraniti. Kje začnemo?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Načrtujte žar';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, pripravljam žar — pomagaj mi sestaviti nakupovalni seznam';
+
+  @override
+  String get aiRateLimitError =>
+      'Preveč sporočil v kratkem času. Počakajte nekaj sekund in poskusite znova.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Tega pogovora ni bilo mogoče naložiti';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Na naši strani je šlo nekaj narobe. Tapnite poskusi znova, da poskusite znova.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Nisi povezan';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Preverite internetno povezavo in poskusite znova.';
+
+  @override
+  String get aiGeneratingResponse => 'Ustvarjanje odgovora ...';
 }

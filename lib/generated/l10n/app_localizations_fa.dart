@@ -243,6 +243,11 @@ class AppLocalizationsFa extends AppLocalizations {
   String get noItemsToBuy => 'هیچ آیتمی نیاز به خرید ندارد';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'وجود ندارد $count$unit';
+  }
+
+  @override
   String get newPantryList => 'خرید از انباری';
 
   @override
@@ -309,6 +314,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get settingsAppBar => 'تنظیمات';
 
   @override
+  String get preferencesSection => 'ترجیحات';
+
+  @override
+  String get aiSection => 'دستیار هوش مصنوعی';
+
+  @override
   String get language => 'زبان';
 
   @override
@@ -337,6 +348,12 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get appearance => 'ظاهر';
+
+  @override
+  String get themeMode => 'حالت تم';
+
+  @override
+  String get chooseThemeMode => 'حالت تم را انتخاب کنید';
 
   @override
   String get light => 'روشن';
@@ -587,6 +604,13 @@ class AppLocalizationsFa extends AppLocalizations {
   String get trackStockInactive => 'پیشنهاد خرید ایجاد نمی‌کند';
 
   @override
+  String get keepAdding => 'به اضافه کردن ادامه دهید';
+
+  @override
+  String get keepAddingSubtitle =>
+      'برای افزودن چندین مورد، برگه را باز نگه دارید';
+
+  @override
   String get createListDialog => 'ایجاد لیست';
 
   @override
@@ -691,6 +715,36 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'پاسخ خوب';
+
+  @override
+  String get badResponse => 'پاسخ بد';
+
+  @override
+  String get scrollToBottom => 'به پایین اسکرول کنید';
+
+  @override
+  String get somethingWentWrong => 'مشکلی پیش آمد';
+
+  @override
+  String get editMessage => 'ویرایش پیام';
+
+  @override
+  String get searchConversations => 'جستجوی مکالمات';
+
+  @override
+  String get dateGroupToday => 'امروز';
+
+  @override
+  String get dateGroupYesterday => 'دیروز';
+
+  @override
+  String get dateGroupPrevious7Days => '7 روز قبل';
+
+  @override
+  String get dateGroupOlder => 'قدیمی تر';
+
+  @override
   String get aiAssistantTitle => 'دستیار هوش مصنوعی';
 
   @override
@@ -731,6 +785,33 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'به محدودیت ماهانه هوش مصنوعی رسیده است. به صورت نامحدود به Pro ارتقا دهید →';
+
+  @override
+  String get undo => 'واگردانی';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -940,6 +1021,20 @@ class AppLocalizationsFa extends AppLocalizations {
   String get recipeAddToList => 'به لیست خرید اضافه کنید';
 
   @override
+  String get recipeAddError =>
+      'به لیست شما اضافه نشد. لطفا دوباره امتحان کنید.';
+
+  @override
+  String get recipeTapToCheck =>
+      'روی یک ماده ضربه بزنید تا هنگام آشپزی آن را بررسی کنید';
+
+  @override
+  String get recipeIngredientInPantry => 'در انباری';
+
+  @override
+  String get recipeIngredientLowPantry => 'انباری کم';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count مواد به $listName اضافه شد';
   }
@@ -1052,12 +1147,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get paywallSelectPlan => 'طرح خود را انتخاب کنید:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'ذخیره $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'فقط $price/ماه';
   }
 
@@ -1092,6 +1187,35 @@ class AppLocalizationsFa extends AppLocalizations {
   String get paywallRestore => 'بازیابی کنید';
 
   @override
+  String get paywallTimelineToday => 'امروز';
+
+  @override
+  String get paywallTimelineTodayDesc => 'دسترسی کامل را فوراً باز کنید';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'روز $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'قبل از پایان دادگاه به شما یادآوری می کنیم';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'اشتراک شما شروع می شود - هر زمان خواستید لغو کنید';
+
+  @override
+  String get paywallHeroFeatureTitle => 'دستیار خرید هوش مصنوعی';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'یک لیست کامل را بنویسید یا بچسبانید - هوش مصنوعی آن را در چند ثانیه مرتب می کند، دسته بندی می کند و بودجه بندی می کند';
+
+  @override
+  String get paywallBasedOnAnswers => 'از پاسخ های شما شخصی شده است';
+
+  @override
   String get paywallHeroHeadline => 'هوش مصنوعی Kipi همیشه در کنار شماست';
 
   @override
@@ -1124,9 +1248,6 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get itemRemoved => 'آیتم حذف شد';
-
-  @override
-  String get undo => 'واگردانی';
 
   @override
   String get emptyListTitle => 'لیست شما خالی است';
@@ -1243,6 +1364,9 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'آیتم حذف شد';
+
+  @override
+  String get pantryItemAdded => 'مورد اضافه شد';
 
   @override
   String deficitItems(int deficit) {
@@ -1647,6 +1771,32 @@ class AppLocalizationsFa extends AppLocalizations {
   String get prepTimeMinutes => 'زمان پخت (دقیقه)';
 
   @override
+  String get recipeYieldServings => 'وعده های بازده';
+
+  @override
+  String get recipeManualTotalCost => 'هزینه کل دستی';
+
+  @override
+  String get recipeManualTotalCostHint => 'برای تخمین قیمت مواد، خالی بگذارید.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'کل هزینه تخمینی';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / خدمت';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'خدمات $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'برآورد جزئی بر اساس مواد تشکیل دهنده با قیمت.';
+
+  @override
   String get instructionsHint => 'در هر خط یک مرحله بنویسید...';
 
   @override
@@ -1776,6 +1926,10 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'بر اساس دستور العمل هایی با داده های قیمت جزئی تخمین بزنید.';
+
+  @override
   String get mealPlannerGenerateList => 'ایجاد لیست خرید';
 
   @override
@@ -1870,6 +2024,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get catalogRareSection => 'در کشور شما کمتر رایج است';
 
   @override
+  String get catalogRareBadge => 'نادر';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1887,7 +2044,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get catalogBrowse => 'کاتالوگ را مرور کنید';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'دسته بندی ها';
 
   @override
   String get offlineBanner => 'شما آفلاین هستید';
@@ -1918,6 +2075,40 @@ class AppLocalizationsFa extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'انواع وعده های غذایی را مدیریت کنید';
+
+  @override
+  String get mealPlannerAddType => 'نوع غذا را اضافه کنید';
+
+  @override
+  String get mealPlannerEditType => 'نوع غذا را ویرایش کنید';
+
+  @override
+  String get mealPlannerTypeName => 'نام';
+
+  @override
+  String get mealPlannerTypeColor => 'رنگ';
+
+  @override
+  String get mealPlannerTypeIcon => 'نماد';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'آیا مطمئنید که می خواهید این نوع غذا را حذف کنید؟ وعده های غذایی برنامه ریزی شده با این نوع باقی می ماند.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'نام نمی تواند خالی باشد';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'نمی توان این نوع غذا را حذف کرد.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'نوع سفارشی';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'نوع پیش فرض';
 
   @override
   String get expirationDate => 'تاریخ انقضا';
@@ -1978,6 +2169,9 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'خطا در بارگیری لیست ها';
+
+  @override
+  String get errorLoadingItems => 'خطا در بارگیری موارد';
 
   @override
   String get noListsFound => 'هیچ لیستی پیدا نشد';
@@ -2749,6 +2943,215 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get obLoginError =>
       'ورود به سیستم انجام نشد. دوباره امتحان کنید یا فعلا رد شوید.';
+
+  @override
+  String get searchMessages => 'جستجوی پیام ها...';
+
+  @override
+  String get deletedList => 'لیست حذف شده';
+
+  @override
+  String get openConversation => 'گفتگو را باز کنید';
+
+  @override
+  String get userRole => 'شما';
+
+  @override
+  String get assistantRole => 'دستیار';
+
+  @override
+  String get agentActionsRunning => 'در حال اجرا اقدامات...';
+
+  @override
+  String get agentActionsFailed => 'عملکردها اجرا نشد';
+
+  @override
+  String get agentActionsPremium => 'اقدامات به Premium نیاز دارند';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'لغو تغییرات';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (حق بیمه)';
+  }
+
+  @override
+  String get itemAddedToList => 'مورد به لیست اضافه شد';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'وضعیت قبلی: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'برای باز کردن قفل اقدامات خودکار در Premium مشترک شوید.';
+
+  @override
+  String get viewPlans => 'مشاهده پلان ها';
+
+  @override
+  String get artifactSynced => 'همگام سازی شد';
+
+  @override
+  String get artifactBudgetLabel => 'بودجه:';
+
+  @override
+  String get totalEstimatedLabel => 'کل تخمینی';
+
+  @override
+  String get quickActionPantry => 'مشاهده انباری';
+
+  @override
+  String get quickActionAi => 'با کیپی چت کنید';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'سرویس هوش مصنوعی یک خطا ($statusCode) برگرداند.';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'درخواست خیلی طول کشید. لطفا دوباره امتحان کنید.';
+
+  @override
+  String get aiConnectionError =>
+      'به سرویس هوش مصنوعی متصل نشد. اتصال خود را بررسی کنید.';
+
+  @override
+  String get aiEmptyResponseError => 'سرویس هوش مصنوعی یک پاسخ خالی برگرداند.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'سرویس هوش مصنوعی پاسخ نامعتبری را برگرداند.';
+
+  @override
+  String get categoryFruits => 'میوه ها';
+
+  @override
+  String get categoryCleaning => 'تمیز کردن';
+
+  @override
+  String get categoryBeverages => 'نوشیدنی ها';
+
+  @override
+  String get categoryBakery => 'نانوایی';
+
+  @override
+  String get categoryMeat => 'گوشت';
+
+  @override
+  String get categoryDairy => 'لبنیات';
+
+  @override
+  String get categoryVegetables => 'سبزیجات';
+
+  @override
+  String get categoryGrains => 'غلات و غلات';
+
+  @override
+  String get categoryHygiene => 'مراقبت شخصی';
+
+  @override
+  String get categoryFrozen => 'غذاهای منجمد';
+
+  @override
+  String get categoryCanned => 'کنسرو';
+
+  @override
+  String get categorySeasonings => 'چاشنی ها';
+
+  @override
+  String get categorySweets => 'شیرینی و دسر';
+
+  @override
+  String get categoryAlcohol => 'نوشیدنی های الکلی';
+
+  @override
+  String get categoryFish => 'ماهی';
+
+  @override
+  String get categoryColdCuts => 'سرماخوردگی';
+
+  @override
+  String get categoryUtilities => 'لوازم خانگی';
+
+  @override
+  String get categoryPet => 'لوازم حیوانات خانگی';
+
+  @override
+  String get categoryBaby => 'عزیزم';
+
+  @override
+  String get categoryOthers => 'دیگر';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'سلام $name، من کیپی هستم 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'سلام من کیپی هستم 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'من فهرست‌ها را می‌سازم، دستور العمل‌هایی را پیشنهاد می‌کنم و مکان ذخیره‌سازی را پیدا می‌کنم. از کجا شروع کنیم؟';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'برای باربیکیو برنامه ریزی کنید';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'کیپی، من یک باربیکیو میزبانی می کنم - به من کمک کن لیست خرید را بسازم';
+
+  @override
+  String get aiRateLimitError =>
+      'تعداد زیادی پیام در مدت زمان کوتاهی. چند ثانیه صبر کنید و دوباره امتحان کنید.';
+
+  @override
+  String get chatHistoryErrorTitle => 'این مکالمه بارگیری نشد';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'مشکلی در انتهای ما پیش آمد. روی سعی مجدد ضربه بزنید تا دوباره امتحان کنید.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'شما آفلاین هستید';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'اتصال اینترنت خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get aiGeneratingResponse => 'در حال ایجاد پاسخ…';
 }
 
 /// The translations for Persian, as used in the United Arab Emirates (`fa_AE`).
@@ -2990,6 +3393,11 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get noItemsToBuy => 'هیچ آیتمی نیاز به خرید ندارد';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'وجود ندارد $count$unit';
+  }
+
+  @override
   String get newPantryList => 'خرید از انباری';
 
   @override
@@ -3056,6 +3464,12 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get settingsAppBar => 'تنظیمات';
 
   @override
+  String get preferencesSection => 'ترجیحات';
+
+  @override
+  String get aiSection => 'دستیار هوش مصنوعی';
+
+  @override
   String get language => 'زبان';
 
   @override
@@ -3084,6 +3498,12 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get appearance => 'ظاهر';
+
+  @override
+  String get themeMode => 'حالت تم';
+
+  @override
+  String get chooseThemeMode => 'حالت تم را انتخاب کنید';
 
   @override
   String get light => 'روشن';
@@ -3334,6 +3754,13 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get trackStockInactive => 'پیشنهاد خرید ایجاد نمی‌کند';
 
   @override
+  String get keepAdding => 'به اضافه کردن ادامه دهید';
+
+  @override
+  String get keepAddingSubtitle =>
+      'برای افزودن چندین مورد، برگه را باز نگه دارید';
+
+  @override
   String get createListDialog => 'ایجاد لیست';
 
   @override
@@ -3438,6 +3865,36 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   }
 
   @override
+  String get goodResponse => 'پاسخ خوب';
+
+  @override
+  String get badResponse => 'پاسخ بد';
+
+  @override
+  String get scrollToBottom => 'به پایین اسکرول کنید';
+
+  @override
+  String get somethingWentWrong => 'مشکلی پیش آمد';
+
+  @override
+  String get editMessage => 'ویرایش پیام';
+
+  @override
+  String get searchConversations => 'جستجوی مکالمات';
+
+  @override
+  String get dateGroupToday => 'امروز';
+
+  @override
+  String get dateGroupYesterday => 'دیروز';
+
+  @override
+  String get dateGroupPrevious7Days => '7 روز قبل';
+
+  @override
+  String get dateGroupOlder => 'قدیمی تر';
+
+  @override
   String get aiAssistantTitle => 'دستیار هوش مصنوعی';
 
   @override
@@ -3478,6 +3935,9 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   @override
   String get aiUsageExhausted =>
       'به محدودیت ماهانه هوش مصنوعی رسیده است. به صورت نامحدود به Pro ارتقا دهید →';
+
+  @override
+  String get undo => 'واگردانی';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -3687,6 +4147,20 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get recipeAddToList => 'به لیست خرید اضافه کنید';
 
   @override
+  String get recipeAddError =>
+      'به لیست شما اضافه نشد. لطفا دوباره امتحان کنید.';
+
+  @override
+  String get recipeTapToCheck =>
+      'روی یک ماده ضربه بزنید تا هنگام آشپزی آن را بررسی کنید';
+
+  @override
+  String get recipeIngredientInPantry => 'در انباری';
+
+  @override
+  String get recipeIngredientLowPantry => 'انباری کم';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count مواد به $listName اضافه شد';
   }
@@ -3799,12 +4273,12 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get paywallSelectPlan => 'طرح خود را انتخاب کنید:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'ذخیره $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'فقط $price/ماه';
   }
 
@@ -3839,6 +4313,35 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get paywallRestore => 'بازیابی کنید';
 
   @override
+  String get paywallTimelineToday => 'امروز';
+
+  @override
+  String get paywallTimelineTodayDesc => 'دسترسی کامل را فوراً باز کنید';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'روز $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'قبل از پایان دادگاه به شما یادآوری می کنیم';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'اشتراک شما شروع می شود - هر زمان خواستید لغو کنید';
+
+  @override
+  String get paywallHeroFeatureTitle => 'دستیار خرید هوش مصنوعی';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'یک لیست کامل را بنویسید یا بچسبانید - هوش مصنوعی آن را در چند ثانیه مرتب می کند، دسته بندی می کند و بودجه بندی می کند';
+
+  @override
+  String get paywallBasedOnAnswers => 'از پاسخ های شما شخصی شده است';
+
+  @override
   String get paywallHeroHeadline => 'هوش مصنوعی Kipi همیشه در کنار شماست';
 
   @override
@@ -3871,9 +4374,6 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get itemRemoved => 'آیتم حذف شد';
-
-  @override
-  String get undo => 'واگردانی';
 
   @override
   String get emptyListTitle => 'لیست شما خالی است';
@@ -3990,6 +4490,9 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get pantryItemRemoved => 'آیتم حذف شد';
+
+  @override
+  String get pantryItemAdded => 'مورد اضافه شد';
 
   @override
   String deficitItems(int deficit) {
@@ -4394,6 +4897,32 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get prepTimeMinutes => 'زمان پخت (دقیقه)';
 
   @override
+  String get recipeYieldServings => 'وعده های بازده';
+
+  @override
+  String get recipeManualTotalCost => 'هزینه کل دستی';
+
+  @override
+  String get recipeManualTotalCostHint => 'برای تخمین قیمت مواد، خالی بگذارید.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'کل هزینه تخمینی';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / خدمت';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'خدمات $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'برآورد جزئی بر اساس مواد تشکیل دهنده با قیمت.';
+
+  @override
   String get instructionsHint => 'در هر خط یک مرحله بنویسید...';
 
   @override
@@ -4523,6 +5052,10 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'بر اساس دستور العمل هایی با داده های قیمت جزئی تخمین بزنید.';
+
+  @override
   String get mealPlannerGenerateList => 'ایجاد لیست خرید';
 
   @override
@@ -4617,6 +5150,9 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get catalogRareSection => 'در کشور شما کمتر رایج است';
 
   @override
+  String get catalogRareBadge => 'نادر';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4632,6 +5168,9 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get catalogBrowse => 'کاتالوگ را مرور کنید';
+
+  @override
+  String get catalogCategories => 'دسته بندی ها';
 
   @override
   String get offlineBanner => 'شما آفلاین هستید';
@@ -4662,6 +5201,40 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'انواع وعده های غذایی را مدیریت کنید';
+
+  @override
+  String get mealPlannerAddType => 'نوع غذا را اضافه کنید';
+
+  @override
+  String get mealPlannerEditType => 'نوع غذا را ویرایش کنید';
+
+  @override
+  String get mealPlannerTypeName => 'نام';
+
+  @override
+  String get mealPlannerTypeColor => 'رنگ';
+
+  @override
+  String get mealPlannerTypeIcon => 'نماد';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'آیا مطمئنید که می خواهید این نوع غذا را حذف کنید؟ وعده های غذایی برنامه ریزی شده با این نوع باقی می ماند.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'نام نمی تواند خالی باشد';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'نمی توان این نوع غذا را حذف کرد.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'نوع سفارشی';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'نوع پیش فرض';
 
   @override
   String get expirationDate => 'تاریخ انقضا';
@@ -4722,6 +5295,9 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
 
   @override
   String get errorLoadingLists => 'خطا در بارگیری لیست ها';
+
+  @override
+  String get errorLoadingItems => 'خطا در بارگیری موارد';
 
   @override
   String get noListsFound => 'هیچ لیستی پیدا نشد';
@@ -5493,6 +6069,215 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   @override
   String get obLoginError =>
       'ورود به سیستم انجام نشد. دوباره امتحان کنید یا فعلا رد شوید.';
+
+  @override
+  String get searchMessages => 'جستجوی پیام ها...';
+
+  @override
+  String get deletedList => 'لیست حذف شده';
+
+  @override
+  String get openConversation => 'گفتگو را باز کنید';
+
+  @override
+  String get userRole => 'شما';
+
+  @override
+  String get assistantRole => 'دستیار';
+
+  @override
+  String get agentActionsRunning => 'در حال اجرا...';
+
+  @override
+  String get agentActionsFailed => 'عملکردها اجرا نشد';
+
+  @override
+  String get agentActionsPremium => 'اقدامات به Premium نیاز دارند';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'لغو تغییرات';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (حق بیمه)';
+  }
+
+  @override
+  String get itemAddedToList => 'مورد به لیست اضافه شد';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'وضعیت قبلی: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'برای باز کردن قفل اقدامات خودکار در Premium مشترک شوید.';
+
+  @override
+  String get viewPlans => 'مشاهده پلان ها';
+
+  @override
+  String get artifactSynced => 'همگام سازی شد';
+
+  @override
+  String get artifactBudgetLabel => 'بودجه:';
+
+  @override
+  String get totalEstimatedLabel => 'کل تخمینی';
+
+  @override
+  String get quickActionPantry => 'مشاهده انباری';
+
+  @override
+  String get quickActionAi => 'با کیپی چت کنید';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'سرویس هوش مصنوعی یک خطا ($statusCode) برگرداند.';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'درخواست خیلی طول کشید. لطفا دوباره امتحان کنید.';
+
+  @override
+  String get aiConnectionError =>
+      'به سرویس هوش مصنوعی متصل نشد. اتصال خود را بررسی کنید.';
+
+  @override
+  String get aiEmptyResponseError => 'سرویس هوش مصنوعی یک پاسخ خالی برگرداند.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'سرویس هوش مصنوعی پاسخ نامعتبری را برگرداند.';
+
+  @override
+  String get categoryFruits => 'میوه ها';
+
+  @override
+  String get categoryCleaning => 'تمیز کردن';
+
+  @override
+  String get categoryBeverages => 'نوشیدنی ها';
+
+  @override
+  String get categoryBakery => 'نانوایی';
+
+  @override
+  String get categoryMeat => 'گوشت';
+
+  @override
+  String get categoryDairy => 'لبنیات';
+
+  @override
+  String get categoryVegetables => 'سبزیجات';
+
+  @override
+  String get categoryGrains => 'غلات و غلات';
+
+  @override
+  String get categoryHygiene => 'مراقبت شخصی';
+
+  @override
+  String get categoryFrozen => 'غذاهای منجمد';
+
+  @override
+  String get categoryCanned => 'کنسرو';
+
+  @override
+  String get categorySeasonings => 'چاشنی ها';
+
+  @override
+  String get categorySweets => 'شیرینی و دسر';
+
+  @override
+  String get categoryAlcohol => 'نوشیدنی های الکلی';
+
+  @override
+  String get categoryFish => 'ماهی';
+
+  @override
+  String get categoryColdCuts => 'سرماخوردگی';
+
+  @override
+  String get categoryUtilities => 'لوازم خانگی';
+
+  @override
+  String get categoryPet => 'لوازم حیوانات خانگی';
+
+  @override
+  String get categoryBaby => 'عزیزم';
+
+  @override
+  String get categoryOthers => 'دیگر';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'سلام $name، من کیپی هستم 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'سلام من کیپی هستم 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'من فهرست‌ها را می‌سازم، دستور العمل‌هایی را پیشنهاد می‌کنم و مکان ذخیره‌سازی را پیدا می‌کنم. از کجا شروع کنیم؟';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'برای باربیکیو برنامه ریزی کنید';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'کیپی، من یک باربیکیو میزبانی می کنم - به من کمک کن لیست خرید را بسازم';
+
+  @override
+  String get aiRateLimitError =>
+      'تعداد زیادی پیام در مدت زمان کوتاهی. چند ثانیه صبر کنید و دوباره امتحان کنید.';
+
+  @override
+  String get chatHistoryErrorTitle => 'این مکالمه بارگیری نشد';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'مشکلی در انتهای ما پیش آمد. روی سعی مجدد ضربه بزنید تا دوباره امتحان کنید.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'شما آفلاین هستید';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'اتصال اینترنت خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get aiGeneratingResponse => 'در حال ایجاد پاسخ…';
 }
 
 /// The translations for Persian, as used in Afghanistan (`fa_AF`).
@@ -5734,6 +6519,11 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get noItemsToBuy => 'هیچ آیتمی نیاز به خرید ندارد';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'وجود ندارد $count$unit';
+  }
+
+  @override
   String get newPantryList => 'خرید از انباری';
 
   @override
@@ -5800,6 +6590,12 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get settingsAppBar => 'تنظیمات';
 
   @override
+  String get preferencesSection => 'ترجیحات';
+
+  @override
+  String get aiSection => 'دستیار هوش مصنوعی';
+
+  @override
   String get language => 'زبان';
 
   @override
@@ -5828,6 +6624,12 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get appearance => 'ظاهر';
+
+  @override
+  String get themeMode => 'حالت تم';
+
+  @override
+  String get chooseThemeMode => 'حالت تم را انتخاب کنید';
 
   @override
   String get light => 'روشن';
@@ -6078,6 +6880,13 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get trackStockInactive => 'پیشنهاد خرید ایجاد نمی‌کند';
 
   @override
+  String get keepAdding => 'به اضافه کردن ادامه دهید';
+
+  @override
+  String get keepAddingSubtitle =>
+      'برای افزودن چندین مورد، برگه را باز نگه دارید';
+
+  @override
   String get createListDialog => 'ایجاد لیست';
 
   @override
@@ -6182,6 +6991,36 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   }
 
   @override
+  String get goodResponse => 'پاسخ خوب';
+
+  @override
+  String get badResponse => 'پاسخ بد';
+
+  @override
+  String get scrollToBottom => 'به پایین اسکرول کنید';
+
+  @override
+  String get somethingWentWrong => 'مشکلی پیش آمد';
+
+  @override
+  String get editMessage => 'ویرایش پیام';
+
+  @override
+  String get searchConversations => 'جستجوی مکالمات';
+
+  @override
+  String get dateGroupToday => 'امروز';
+
+  @override
+  String get dateGroupYesterday => 'دیروز';
+
+  @override
+  String get dateGroupPrevious7Days => '7 روز قبل';
+
+  @override
+  String get dateGroupOlder => 'قدیمی تر';
+
+  @override
   String get aiAssistantTitle => 'دستیار هوش مصنوعی';
 
   @override
@@ -6222,6 +7061,9 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   @override
   String get aiUsageExhausted =>
       'به محدودیت ماهانه هوش مصنوعی رسیده است. به صورت نامحدود به Pro ارتقا دهید →';
+
+  @override
+  String get undo => 'واگردانی';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -6431,6 +7273,20 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get recipeAddToList => 'به لیست خرید اضافه کنید';
 
   @override
+  String get recipeAddError =>
+      'به لیست شما اضافه نشد. لطفا دوباره امتحان کنید.';
+
+  @override
+  String get recipeTapToCheck =>
+      'روی یک ماده ضربه بزنید تا هنگام آشپزی آن را بررسی کنید';
+
+  @override
+  String get recipeIngredientInPantry => 'در انباری';
+
+  @override
+  String get recipeIngredientLowPantry => 'انباری کم';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count مواد به $listName اضافه شد';
   }
@@ -6543,12 +7399,12 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get paywallSelectPlan => 'طرح خود را انتخاب کنید:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'ذخیره $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'فقط $price/ماه';
   }
 
@@ -6583,6 +7439,35 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get paywallRestore => 'بازیابی کنید';
 
   @override
+  String get paywallTimelineToday => 'امروز';
+
+  @override
+  String get paywallTimelineTodayDesc => 'دسترسی کامل را فوراً باز کنید';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'روز $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'قبل از پایان دادگاه به شما یادآوری می کنیم';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'اشتراک شما شروع می شود - هر زمان خواستید لغو کنید';
+
+  @override
+  String get paywallHeroFeatureTitle => 'دستیار خرید هوش مصنوعی';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'یک لیست کامل را بنویسید یا بچسبانید - هوش مصنوعی آن را در چند ثانیه مرتب می کند، دسته بندی می کند و بودجه بندی می کند';
+
+  @override
+  String get paywallBasedOnAnswers => 'از پاسخ های شما شخصی شده است';
+
+  @override
   String get paywallHeroHeadline => 'هوش مصنوعی Kipi همیشه در کنار شماست';
 
   @override
@@ -6615,9 +7500,6 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get itemRemoved => 'آیتم حذف شد';
-
-  @override
-  String get undo => 'واگردانی';
 
   @override
   String get emptyListTitle => 'لیست شما خالی است';
@@ -6734,6 +7616,9 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get pantryItemRemoved => 'آیتم حذف شد';
+
+  @override
+  String get pantryItemAdded => 'مورد اضافه شد';
 
   @override
   String deficitItems(int deficit) {
@@ -7138,6 +8023,32 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get prepTimeMinutes => 'زمان پخت (دقیقه)';
 
   @override
+  String get recipeYieldServings => 'وعده های بازده';
+
+  @override
+  String get recipeManualTotalCost => 'هزینه کل دستی';
+
+  @override
+  String get recipeManualTotalCostHint => 'برای تخمین قیمت مواد، خالی بگذارید.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'کل هزینه تخمینی';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / خدمت';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'خدمات $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'برآورد جزئی بر اساس مواد تشکیل دهنده با قیمت.';
+
+  @override
   String get instructionsHint => 'در هر خط یک مرحله بنویسید...';
 
   @override
@@ -7267,6 +8178,10 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'بر اساس دستور العمل هایی با داده های قیمت جزئی تخمین بزنید.';
+
+  @override
   String get mealPlannerGenerateList => 'ایجاد لیست خرید';
 
   @override
@@ -7361,6 +8276,9 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get catalogRareSection => 'در کشور شما کمتر رایج است';
 
   @override
+  String get catalogRareBadge => 'نادر';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -7376,6 +8294,9 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get catalogBrowse => 'کاتالوگ را مرور کنید';
+
+  @override
+  String get catalogCategories => 'دسته بندی ها';
 
   @override
   String get offlineBanner => 'شما آفلاین هستید';
@@ -7406,6 +8327,40 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'انواع وعده های غذایی را مدیریت کنید';
+
+  @override
+  String get mealPlannerAddType => 'نوع غذا را اضافه کنید';
+
+  @override
+  String get mealPlannerEditType => 'نوع غذا را ویرایش کنید';
+
+  @override
+  String get mealPlannerTypeName => 'نام';
+
+  @override
+  String get mealPlannerTypeColor => 'رنگ';
+
+  @override
+  String get mealPlannerTypeIcon => 'نماد';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'آیا مطمئنید که می خواهید این نوع غذا را حذف کنید؟ وعده های غذایی برنامه ریزی شده با این نوع باقی می ماند.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'نام نمی تواند خالی باشد';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'نمی توان این نوع غذا را حذف کرد.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'نوع سفارشی';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'نوع پیش فرض';
 
   @override
   String get expirationDate => 'تاریخ انقضا';
@@ -7466,6 +8421,9 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
 
   @override
   String get errorLoadingLists => 'خطا در بارگیری لیست ها';
+
+  @override
+  String get errorLoadingItems => 'خطا در بارگیری موارد';
 
   @override
   String get noListsFound => 'هیچ لیستی پیدا نشد';
@@ -8237,6 +9195,215 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   @override
   String get obLoginError =>
       'ورود به سیستم انجام نشد. دوباره امتحان کنید یا فعلا رد شوید.';
+
+  @override
+  String get searchMessages => 'جستجوی پیام ها...';
+
+  @override
+  String get deletedList => 'لیست حذف شده';
+
+  @override
+  String get openConversation => 'گفتگو را باز کنید';
+
+  @override
+  String get userRole => 'شما';
+
+  @override
+  String get assistantRole => 'دستیار';
+
+  @override
+  String get agentActionsRunning => 'در حال اجرا...';
+
+  @override
+  String get agentActionsFailed => 'عملکردها اجرا نشد';
+
+  @override
+  String get agentActionsPremium => 'اقدامات به Premium نیاز دارند';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'لغو تغییرات';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (حق بیمه)';
+  }
+
+  @override
+  String get itemAddedToList => 'مورد به لیست اضافه شد';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'وضعیت قبلی: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'برای باز کردن قفل اقدامات خودکار در Premium مشترک شوید.';
+
+  @override
+  String get viewPlans => 'مشاهده پلان ها';
+
+  @override
+  String get artifactSynced => 'همگام سازی شد';
+
+  @override
+  String get artifactBudgetLabel => 'بودجه:';
+
+  @override
+  String get totalEstimatedLabel => 'کل تخمینی';
+
+  @override
+  String get quickActionPantry => 'مشاهده انباری';
+
+  @override
+  String get quickActionAi => 'با کیپی چت کنید';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'سرویس هوش مصنوعی یک خطا ($statusCode) برگرداند.';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'درخواست خیلی طول کشید. لطفا دوباره امتحان کنید.';
+
+  @override
+  String get aiConnectionError =>
+      'به سرویس هوش مصنوعی متصل نشد. اتصال خود را بررسی کنید.';
+
+  @override
+  String get aiEmptyResponseError => 'سرویس هوش مصنوعی یک پاسخ خالی برگرداند.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'سرویس هوش مصنوعی پاسخ نامعتبری را برگرداند.';
+
+  @override
+  String get categoryFruits => 'میوه ها';
+
+  @override
+  String get categoryCleaning => 'تمیز کردن';
+
+  @override
+  String get categoryBeverages => 'نوشیدنی ها';
+
+  @override
+  String get categoryBakery => 'نانوایی';
+
+  @override
+  String get categoryMeat => 'گوشت';
+
+  @override
+  String get categoryDairy => 'لبنیات';
+
+  @override
+  String get categoryVegetables => 'سبزیجات';
+
+  @override
+  String get categoryGrains => 'غلات و غلات';
+
+  @override
+  String get categoryHygiene => 'مراقبت شخصی';
+
+  @override
+  String get categoryFrozen => 'غذاهای منجمد';
+
+  @override
+  String get categoryCanned => 'کنسرو';
+
+  @override
+  String get categorySeasonings => 'چاشنی ها';
+
+  @override
+  String get categorySweets => 'شیرینی و دسر';
+
+  @override
+  String get categoryAlcohol => 'نوشیدنی های الکلی';
+
+  @override
+  String get categoryFish => 'ماهی';
+
+  @override
+  String get categoryColdCuts => 'سرماخوردگی';
+
+  @override
+  String get categoryUtilities => 'لوازم خانگی';
+
+  @override
+  String get categoryPet => 'لوازم حیوانات خانگی';
+
+  @override
+  String get categoryBaby => 'عزیزم';
+
+  @override
+  String get categoryOthers => 'دیگر';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'سلام $name، من کیپی هستم 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'سلام من کیپی هستم 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'من فهرست‌ها را می‌سازم، دستور العمل‌هایی را پیشنهاد می‌کنم و مکان ذخیره‌سازی را پیدا می‌کنم. از کجا شروع کنیم؟';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'برای باربیکیو برنامه ریزی کنید';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'کیپی، من یک باربیکیو میزبانی می کنم - به من کمک کن لیست خرید را بسازم';
+
+  @override
+  String get aiRateLimitError =>
+      'تعداد زیادی پیام در مدت زمان کوتاهی. چند ثانیه صبر کنید و دوباره امتحان کنید.';
+
+  @override
+  String get chatHistoryErrorTitle => 'این مکالمه بارگیری نشد';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'مشکلی در انتهای ما پیش آمد. روی سعی مجدد ضربه بزنید تا دوباره امتحان کنید.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'شما آفلاین هستید';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'اتصال اینترنت خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get aiGeneratingResponse => 'در حال ایجاد پاسخ…';
 }
 
 /// The translations for Persian, as used in Islamic Republic of Iran (`fa_IR`).
@@ -8478,6 +9645,11 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get noItemsToBuy => 'هیچ آیتمی نیاز به خرید ندارد';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'وجود ندارد $count$unit';
+  }
+
+  @override
   String get newPantryList => 'خرید از انباری';
 
   @override
@@ -8544,6 +9716,12 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get settingsAppBar => 'تنظیمات';
 
   @override
+  String get preferencesSection => 'ترجیحات';
+
+  @override
+  String get aiSection => 'دستیار هوش مصنوعی';
+
+  @override
   String get language => 'زبان';
 
   @override
@@ -8572,6 +9750,12 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get appearance => 'ظاهر';
+
+  @override
+  String get themeMode => 'حالت تم';
+
+  @override
+  String get chooseThemeMode => 'حالت تم را انتخاب کنید';
 
   @override
   String get light => 'روشن';
@@ -8822,6 +10006,13 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get trackStockInactive => 'پیشنهاد خرید ایجاد نمی‌کند';
 
   @override
+  String get keepAdding => 'به اضافه کردن ادامه دهید';
+
+  @override
+  String get keepAddingSubtitle =>
+      'برای افزودن چندین مورد، برگه را باز نگه دارید';
+
+  @override
   String get createListDialog => 'ایجاد لیست';
 
   @override
@@ -8926,6 +10117,36 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   }
 
   @override
+  String get goodResponse => 'پاسخ خوب';
+
+  @override
+  String get badResponse => 'پاسخ بد';
+
+  @override
+  String get scrollToBottom => 'به پایین اسکرول کنید';
+
+  @override
+  String get somethingWentWrong => 'مشکلی پیش آمد';
+
+  @override
+  String get editMessage => 'ویرایش پیام';
+
+  @override
+  String get searchConversations => 'جستجوی مکالمات';
+
+  @override
+  String get dateGroupToday => 'امروز';
+
+  @override
+  String get dateGroupYesterday => 'دیروز';
+
+  @override
+  String get dateGroupPrevious7Days => '7 روز قبل';
+
+  @override
+  String get dateGroupOlder => 'قدیمی تر';
+
+  @override
   String get aiAssistantTitle => 'دستیار هوش مصنوعی';
 
   @override
@@ -8966,6 +10187,9 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   @override
   String get aiUsageExhausted =>
       'به محدودیت ماهانه هوش مصنوعی رسیده است. به صورت نامحدود به Pro ارتقا دهید →';
+
+  @override
+  String get undo => 'واگردانی';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -9175,6 +10399,20 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get recipeAddToList => 'به لیست خرید اضافه کنید';
 
   @override
+  String get recipeAddError =>
+      'به لیست شما اضافه نشد. لطفا دوباره امتحان کنید.';
+
+  @override
+  String get recipeTapToCheck =>
+      'روی یک ماده ضربه بزنید تا هنگام آشپزی آن را بررسی کنید';
+
+  @override
+  String get recipeIngredientInPantry => 'در انباری';
+
+  @override
+  String get recipeIngredientLowPantry => 'انباری کم';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count مواد به $listName اضافه شد';
   }
@@ -9287,12 +10525,12 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get paywallSelectPlan => 'طرح خود را انتخاب کنید:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'ذخیره $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'فقط $price/ماه';
   }
 
@@ -9327,6 +10565,35 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get paywallRestore => 'بازیابی کنید';
 
   @override
+  String get paywallTimelineToday => 'امروز';
+
+  @override
+  String get paywallTimelineTodayDesc => 'دسترسی کامل را فوراً باز کنید';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'روز $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'قبل از پایان دادگاه به شما یادآوری می کنیم';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'اشتراک شما شروع می شود - هر زمان خواستید لغو کنید';
+
+  @override
+  String get paywallHeroFeatureTitle => 'دستیار خرید هوش مصنوعی';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'یک لیست کامل را بنویسید یا بچسبانید - هوش مصنوعی آن را در چند ثانیه مرتب می کند، دسته بندی می کند و بودجه بندی می کند';
+
+  @override
+  String get paywallBasedOnAnswers => 'از پاسخ های شما شخصی شده است';
+
+  @override
   String get paywallHeroHeadline => 'هوش مصنوعی Kipi همیشه در کنار شماست';
 
   @override
@@ -9359,9 +10626,6 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get itemRemoved => 'آیتم حذف شد';
-
-  @override
-  String get undo => 'واگردانی';
 
   @override
   String get emptyListTitle => 'لیست شما خالی است';
@@ -9478,6 +10742,9 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get pantryItemRemoved => 'آیتم حذف شد';
+
+  @override
+  String get pantryItemAdded => 'مورد اضافه شد';
 
   @override
   String deficitItems(int deficit) {
@@ -9882,6 +11149,32 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get prepTimeMinutes => 'زمان پخت (دقیقه)';
 
   @override
+  String get recipeYieldServings => 'وعده های بازده';
+
+  @override
+  String get recipeManualTotalCost => 'هزینه کل دستی';
+
+  @override
+  String get recipeManualTotalCostHint => 'برای تخمین قیمت مواد، خالی بگذارید.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'کل هزینه تخمینی';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / خدمت';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'خدمات $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'برآورد جزئی بر اساس مواد تشکیل دهنده با قیمت.';
+
+  @override
   String get instructionsHint => 'در هر خط یک مرحله بنویسید...';
 
   @override
@@ -10011,6 +11304,10 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'بر اساس دستور العمل هایی با داده های قیمت جزئی تخمین بزنید.';
+
+  @override
   String get mealPlannerGenerateList => 'ایجاد لیست خرید';
 
   @override
@@ -10105,6 +11402,9 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get catalogRareSection => 'در کشور شما کمتر رایج است';
 
   @override
+  String get catalogRareBadge => 'نادر';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -10120,6 +11420,9 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get catalogBrowse => 'کاتالوگ را مرور کنید';
+
+  @override
+  String get catalogCategories => 'دسته بندی ها';
 
   @override
   String get offlineBanner => 'شما آفلاین هستید';
@@ -10150,6 +11453,40 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'انواع وعده های غذایی را مدیریت کنید';
+
+  @override
+  String get mealPlannerAddType => 'نوع غذا را اضافه کنید';
+
+  @override
+  String get mealPlannerEditType => 'نوع غذا را ویرایش کنید';
+
+  @override
+  String get mealPlannerTypeName => 'نام';
+
+  @override
+  String get mealPlannerTypeColor => 'رنگ';
+
+  @override
+  String get mealPlannerTypeIcon => 'نماد';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'آیا مطمئنید که می خواهید این نوع غذا را حذف کنید؟ وعده های غذایی برنامه ریزی شده با این نوع باقی می ماند.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'نام نمی تواند خالی باشد';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'نمی توان این نوع غذا را حذف کرد.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'نوع سفارشی';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'نوع پیش فرض';
 
   @override
   String get expirationDate => 'تاریخ انقضا';
@@ -10210,6 +11547,9 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
 
   @override
   String get errorLoadingLists => 'خطا در بارگیری لیست ها';
+
+  @override
+  String get errorLoadingItems => 'خطا در بارگیری موارد';
 
   @override
   String get noListsFound => 'هیچ لیستی پیدا نشد';
@@ -10981,4 +12321,213 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   @override
   String get obLoginError =>
       'ورود به سیستم انجام نشد. دوباره امتحان کنید یا فعلا رد شوید.';
+
+  @override
+  String get searchMessages => 'جستجوی پیام ها...';
+
+  @override
+  String get deletedList => 'لیست حذف شده';
+
+  @override
+  String get openConversation => 'گفتگو را باز کنید';
+
+  @override
+  String get userRole => 'شما';
+
+  @override
+  String get assistantRole => 'دستیار';
+
+  @override
+  String get agentActionsRunning => 'در حال اجرا اقدامات...';
+
+  @override
+  String get agentActionsFailed => 'عملکردها اجرا نشد';
+
+  @override
+  String get agentActionsPremium => 'اقدامات به Premium نیاز دارند';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'لغو تغییرات';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (حق بیمه)';
+  }
+
+  @override
+  String get itemAddedToList => 'مورد به لیست اضافه شد';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'وضعیت قبلی: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'برای باز کردن قفل اقدامات خودکار در Premium مشترک شوید.';
+
+  @override
+  String get viewPlans => 'مشاهده پلان ها';
+
+  @override
+  String get artifactSynced => 'همگام سازی شد';
+
+  @override
+  String get artifactBudgetLabel => 'بودجه:';
+
+  @override
+  String get totalEstimatedLabel => 'کل تخمینی';
+
+  @override
+  String get quickActionPantry => 'مشاهده انباری';
+
+  @override
+  String get quickActionAi => 'با کیپی چت کنید';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'سرویس هوش مصنوعی یک خطا ($statusCode) برگرداند.';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'درخواست خیلی طول کشید. لطفا دوباره امتحان کنید.';
+
+  @override
+  String get aiConnectionError =>
+      'به سرویس هوش مصنوعی متصل نشد. اتصال خود را بررسی کنید.';
+
+  @override
+  String get aiEmptyResponseError => 'سرویس هوش مصنوعی یک پاسخ خالی برگرداند.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'سرویس هوش مصنوعی پاسخ نامعتبری را برگرداند.';
+
+  @override
+  String get categoryFruits => 'میوه ها';
+
+  @override
+  String get categoryCleaning => 'تمیز کردن';
+
+  @override
+  String get categoryBeverages => 'نوشیدنی ها';
+
+  @override
+  String get categoryBakery => 'نانوایی';
+
+  @override
+  String get categoryMeat => 'گوشت';
+
+  @override
+  String get categoryDairy => 'لبنیات';
+
+  @override
+  String get categoryVegetables => 'سبزیجات';
+
+  @override
+  String get categoryGrains => 'غلات و غلات';
+
+  @override
+  String get categoryHygiene => 'مراقبت شخصی';
+
+  @override
+  String get categoryFrozen => 'غذاهای منجمد';
+
+  @override
+  String get categoryCanned => 'کنسرو';
+
+  @override
+  String get categorySeasonings => 'چاشنی ها';
+
+  @override
+  String get categorySweets => 'شیرینی و دسر';
+
+  @override
+  String get categoryAlcohol => 'نوشیدنی های الکلی';
+
+  @override
+  String get categoryFish => 'ماهی';
+
+  @override
+  String get categoryColdCuts => 'سرماخوردگی';
+
+  @override
+  String get categoryUtilities => 'لوازم خانگی';
+
+  @override
+  String get categoryPet => 'لوازم حیوانات خانگی';
+
+  @override
+  String get categoryBaby => 'عزیزم';
+
+  @override
+  String get categoryOthers => 'دیگر';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'سلام $name، من کیپی هستم 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'سلام من کیپی هستم 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'من فهرست‌ها را می‌سازم، دستور العمل‌هایی را پیشنهاد می‌کنم و مکان ذخیره‌سازی را پیدا می‌کنم. از کجا شروع کنیم؟';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'برای باربیکیو برنامه ریزی کنید';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'کیپی، من یک باربیکیو میزبانی می کنم - به من کمک کن لیست خرید را بسازم';
+
+  @override
+  String get aiRateLimitError =>
+      'تعداد زیادی پیام در مدت زمان کوتاهی. چند ثانیه صبر کنید و دوباره امتحان کنید.';
+
+  @override
+  String get chatHistoryErrorTitle => 'این مکالمه بارگیری نشد';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'مشکلی در انتهای ما پیش آمد. روی سعی مجدد ضربه بزنید تا دوباره امتحان کنید.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'شما آفلاین هستید';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'اتصال اینترنت خود را بررسی کنید و دوباره امتحان کنید.';
+
+  @override
+  String get aiGeneratingResponse => 'در حال ایجاد پاسخ…';
 }

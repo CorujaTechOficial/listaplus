@@ -242,6 +242,11 @@ class AppLocalizationsAm extends AppLocalizations {
   String get noItemsToBuy => 'ምንም የሚገዙ ንጥሎች የሉም';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return '$count$unit ይጎድላል';
+  }
+
+  @override
   String get newPantryList => 'ከምግብ ቤት ግብዣ';
 
   @override
@@ -308,6 +313,12 @@ class AppLocalizationsAm extends AppLocalizations {
   String get settingsAppBar => 'ቅንብሮች';
 
   @override
+  String get preferencesSection => 'ምርጫዎች';
+
+  @override
+  String get aiSection => 'AI ረዳት';
+
+  @override
   String get language => 'ቋንቋ';
 
   @override
@@ -336,6 +347,12 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get appearance => 'መልክ';
+
+  @override
+  String get themeMode => 'ገጽታ ሁነታ';
+
+  @override
+  String get chooseThemeMode => 'የገጽታ ሁነታን ይምረጡ';
 
   @override
   String get light => 'ብርሃን';
@@ -584,6 +601,12 @@ class AppLocalizationsAm extends AppLocalizations {
   String get trackStockInactive => 'የግብዣ ሃሳብ አያመነጭም';
 
   @override
+  String get keepAdding => 'ማከልዎን ይቀጥሉ';
+
+  @override
+  String get keepAddingSubtitle => 'ብዙ ንጥሎችን ለመጨመር ሉህ ክፍት ያድርጉት';
+
+  @override
   String get createListDialog => 'ዝርዝር ፍጠር';
 
   @override
@@ -688,6 +711,36 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'ጥሩ ምላሽ';
+
+  @override
+  String get badResponse => 'መጥፎ ምላሽ';
+
+  @override
+  String get scrollToBottom => 'ወደ ታች ይሸብልሉ';
+
+  @override
+  String get somethingWentWrong => 'የሆነ ችግር ተፈጥሯል።';
+
+  @override
+  String get editMessage => 'መልእክት ያርትዑ';
+
+  @override
+  String get searchConversations => 'ውይይቶችን ፈልግ';
+
+  @override
+  String get dateGroupToday => 'ዛሬ';
+
+  @override
+  String get dateGroupYesterday => 'ትናንት';
+
+  @override
+  String get dateGroupPrevious7Days => 'ያለፉት 7 ቀናት';
+
+  @override
+  String get dateGroupOlder => 'የቆዩ';
+
+  @override
   String get aiAssistantTitle => 'AI ረዳት';
 
   @override
@@ -726,6 +779,33 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get aiUsageExhausted => 'ወርሃዊ AI ገደብ ላይ ደርሷል። ላልተገደበ → ወደ Pro ያሻሽሉ።';
+
+  @override
+  String get undo => 'ቀልብስ';
+
+  @override
+  String get newChatStarted => 'አዲስ ውይይት ተጀመረ';
+
+  @override
+  String get quickAddToList => 'ወደ ዝርዝር ያክሉ';
+
+  @override
+  String get aiCapabilitiesTitle => 'ምን ላድርግ፧';
+
+  @override
+  String get aiCapabilitiesLists => 'የግዢ ዝርዝሮች';
+
+  @override
+  String get aiCapabilitiesBudget => 'በጀት እና ዋጋዎች';
+
+  @override
+  String get aiCapabilitiesRecipes => 'የምግብ አዘገጃጀት እና ምናሌዎች';
+
+  @override
+  String get aiCapabilitiesOrganize => 'ድርጅት';
+
+  @override
+  String get marketModeDescription => 'ሲገዙ ዕቃዎችን ያረጋግጡ';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -927,6 +1007,18 @@ class AppLocalizationsAm extends AppLocalizations {
   String get recipeAddToList => 'ወደ የግዢ ዝርዝር ያክሉ';
 
   @override
+  String get recipeAddError => 'ወደ ዝርዝርዎ ማከል አልተቻለም። እባክህ እንደገና ሞክር።';
+
+  @override
+  String get recipeTapToCheck => 'ምግብ በሚያበስሉበት ጊዜ ለማጣራት አንድን ንጥረ ነገር ይንኩ።';
+
+  @override
+  String get recipeIngredientInPantry => 'በጓዳ ውስጥ';
+
+  @override
+  String get recipeIngredientLowPantry => 'በጓዳ ውስጥ ዝቅተኛ';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count ንጥረ ነገሮች ወደ $listName ተጨምረዋል';
   }
@@ -1036,12 +1128,12 @@ class AppLocalizationsAm extends AppLocalizations {
   String get paywallSelectPlan => 'እቅድዎን ይምረጡ፡-';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return '$percent% ይቆጥቡ';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'በወር $price ብቻ';
   }
 
@@ -1075,6 +1167,34 @@ class AppLocalizationsAm extends AppLocalizations {
   String get paywallRestore => 'እነበረበት መልስ';
 
   @override
+  String get paywallTimelineToday => 'ዛሬ';
+
+  @override
+  String get paywallTimelineTodayDesc => 'ሙሉ መዳረሻን ወዲያውኑ ይክፈቱ';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'ቀን $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc => 'የፍርድ ሂደቱ ከማብቃቱ በፊት እናስታውስዎታለን';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'የደንበኝነት ምዝገባዎ ይጀምራል - በማንኛውም ጊዜ ይሰርዙ';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI የግዢ ረዳት';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'አንድ ሙሉ ዝርዝር ይናገሩ ወይም ይለጥፉ - AI በሴኮንዶች ውስጥ ይመድባል፣ ይመድባል እና ያበጀዋል።';
+
+  @override
+  String get paywallBasedOnAnswers => 'ከመልሶቻችሁ ለግል የተበጁ';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI ሁልጊዜ ከጎንህ ነው።';
 
   @override
@@ -1106,9 +1226,6 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get itemRemoved => 'ንጥል ተወግዷል';
-
-  @override
-  String get undo => 'ቀልብስ';
 
   @override
   String get emptyListTitle => 'ዝርዝርህ ባዶ ነው';
@@ -1225,6 +1342,9 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'ንጥል ተወግዷል';
+
+  @override
+  String get pantryItemAdded => 'ንጥል ታክሏል።';
 
   @override
   String deficitItems(int deficit) {
@@ -1621,6 +1741,31 @@ class AppLocalizationsAm extends AppLocalizations {
   String get prepTimeMinutes => 'የዝግጅት ጊዜ (በደቂቃ)';
 
   @override
+  String get recipeYieldServings => 'አቅርቦቶችን ስጥ';
+
+  @override
+  String get recipeManualTotalCost => 'በእጅ ጠቅላላ ወጪ';
+
+  @override
+  String get recipeManualTotalCostHint => 'ከንጥረ ነገሮች ዋጋ ለመገመት ባዶ ይተውት።';
+
+  @override
+  String get recipeEstimatedTotalCost => 'የተገመተው ጠቅላላ ወጪ';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / የሚያገለግል';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'ያገለግላል $count';
+  }
+
+  @override
+  String get recipeEstimatePartial => 'ዋጋ ባላቸው ንጥረ ነገሮች ላይ የተመሰረተ ከፊል ግምት.';
+
+  @override
   String get instructionsHint => 'በአንድ መስመር አንድ እርምጃ ይተይቡ...';
 
   @override
@@ -1749,6 +1894,10 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'ከፊል የዋጋ ውሂብ ጋር በምግብ አዘገጃጀት ላይ የተመሠረተ ግምት።';
+
+  @override
   String get mealPlannerGenerateList => 'የግብዣ ዝርዝር አመንጭ';
 
   @override
@@ -1840,6 +1989,9 @@ class AppLocalizationsAm extends AppLocalizations {
   String get catalogRareSection => 'በአገርዎ ብዙም ያልተለመደ';
 
   @override
+  String get catalogRareBadge => 'ብርቅዬ';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1888,6 +2040,40 @@ class AppLocalizationsAm extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'የምግብ ዓይነቶችን ይቆጣጠሩ';
+
+  @override
+  String get mealPlannerAddType => 'የምግብ ዓይነት ይጨምሩ';
+
+  @override
+  String get mealPlannerEditType => 'የምግብ አይነት አርትዕ';
+
+  @override
+  String get mealPlannerTypeName => 'ስም';
+
+  @override
+  String get mealPlannerTypeColor => 'ቀለም';
+
+  @override
+  String get mealPlannerTypeIcon => 'አዶ';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'እርግጠኛ ነዎት ይህን የምግብ አይነት መሰረዝ ይፈልጋሉ? እንደዚህ አይነት የታቀዱ ምግቦች ይቀራሉ.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'ስም ባዶ ሊሆን አይችልም።';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'ይህን የምግብ አይነት መሰረዝ አይቻልም።';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'ብጁ ዓይነት';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'ነባሪ ዓይነት';
 
   @override
   String get expirationDate => 'የሚያበቃበት ቀን';
@@ -1945,6 +2131,9 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'ዝርዝሮችን መጫን ላይ ስህተት';
+
+  @override
+  String get errorLoadingItems => 'ንጥሎችን መጫን ላይ ስህተት';
 
   @override
   String get noListsFound => 'ምንም ዝርዝሮች አልተገኙም።';
@@ -2696,4 +2885,208 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get obLoginError => 'መግባት አልተሳካም። እንደገና ይሞክሩ ወይም ለአሁኑ ይዝለሉ።';
+
+  @override
+  String get searchMessages => 'መልዕክቶችን ፈልግ...';
+
+  @override
+  String get deletedList => 'ዝርዝር ተሰርዟል።';
+
+  @override
+  String get openConversation => 'ውይይት ክፈት';
+
+  @override
+  String get userRole => 'አንተ';
+
+  @override
+  String get assistantRole => 'ረዳት';
+
+  @override
+  String get agentActionsRunning => 'እርምጃዎችን በማሄድ ላይ...';
+
+  @override
+  String get agentActionsFailed => 'እርምጃዎችን ማስኬድ አልተሳካም።';
+
+  @override
+  String get agentActionsPremium => 'እርምጃዎች ፕሪሚየም ያስፈልጋቸዋል';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'ለውጦችን ይቀልብሱ';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (ፕሪሚየም)';
+  }
+
+  @override
+  String get itemAddedToList => 'ንጥል ወደ ዝርዝሩ ታክሏል።';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'ያለፈው ሁኔታ፡ $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt => 'ራስ-ሰር ድርጊቶችን ለመክፈት ለPremium ይመዝገቡ።';
+
+  @override
+  String get viewPlans => 'ዕቅዶችን ይመልከቱ';
+
+  @override
+  String get artifactSynced => 'ተመሳስሏል';
+
+  @override
+  String get artifactBudgetLabel => 'በጀት፡-';
+
+  @override
+  String get totalEstimatedLabel => 'የተገመተው ጠቅላላ';
+
+  @override
+  String get quickActionPantry => 'ጓዳ ይመልከቱ';
+
+  @override
+  String get quickActionAi => 'ከኪፒ ጋር ይወያዩ';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'የ AI አገልግሎት ስህተት መልሷል ($statusCode)።';
+  }
+
+  @override
+  String get aiTimeoutError => 'ጥያቄው በጣም ረጅም ጊዜ ወስዷል። እባክዎ እንደገና ይሞክሩ።';
+
+  @override
+  String get aiConnectionError => 'ከ AI አገልግሎት ጋር መገናኘት አልተቻለም። ግንኙነትዎን ያረጋግጡ።';
+
+  @override
+  String get aiEmptyResponseError => 'የ AI አገልግሎት ባዶ ምላሽ መለሰ።';
+
+  @override
+  String get aiInvalidResponseError => 'የ AI አገልግሎት ልክ ያልሆነ ምላሽ መለሰ።';
+
+  @override
+  String get categoryFruits => 'ፍራፍሬዎች';
+
+  @override
+  String get categoryCleaning => 'ማጽዳት';
+
+  @override
+  String get categoryBeverages => 'መጠጦች';
+
+  @override
+  String get categoryBakery => 'ዳቦ ቤት';
+
+  @override
+  String get categoryMeat => 'ስጋ';
+
+  @override
+  String get categoryDairy => 'የወተት ምርቶች';
+
+  @override
+  String get categoryVegetables => 'አትክልቶች';
+
+  @override
+  String get categoryGrains => 'ጥራጥሬዎች እና ጥራጥሬዎች';
+
+  @override
+  String get categoryHygiene => 'የግል እንክብካቤ';
+
+  @override
+  String get categoryFrozen => 'የቀዘቀዙ ምግቦች';
+
+  @override
+  String get categoryCanned => 'የታሸጉ እቃዎች';
+
+  @override
+  String get categorySeasonings => 'ወቅቶች';
+
+  @override
+  String get categorySweets => 'ጣፋጮች እና ጣፋጮች';
+
+  @override
+  String get categoryAlcohol => 'የአልኮል መጠጦች';
+
+  @override
+  String get categoryFish => 'ዓሳ';
+
+  @override
+  String get categoryColdCuts => 'ቀዝቃዛ መቆረጥ';
+
+  @override
+  String get categoryUtilities => 'የቤት እቃዎች';
+
+  @override
+  String get categoryPet => 'የቤት እንስሳት አቅርቦቶች';
+
+  @override
+  String get categoryBaby => 'ቤቢ';
+
+  @override
+  String get categoryOthers => 'ሌላ';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'ሰላም $name፣ እኔ ኪፒ 👋 ነኝ';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'ሰላም እኔ ኪፒ ነኝ 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'ዝርዝሮችን እገነባለሁ፣ የምግብ አዘገጃጀት መመሪያዎችን እጠቁማለሁ እና የት ማስቀመጥ እንዳለብኝ አገኛለሁ። ከየት ነው የምንጀምረው?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'ባርቤኪው ያቅዱ';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'ኪፒ፣ ባርቤኪው እያስተናገድኩ ነው - የግዢ ዝርዝሩን እንድገነባ እርዳኝ።';
+
+  @override
+  String get aiRateLimitError =>
+      'በአጭር ጊዜ ውስጥ በጣም ብዙ መልዕክቶች። ጥቂት ሰከንዶች ይጠብቁ እና እንደገና ይሞክሩ።';
+
+  @override
+  String get chatHistoryErrorTitle => 'ይህን ውይይት መጫን አልተቻለም';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'በእኛ በኩል የሆነ ችግር ተፈጥሯል። እንደገና ለመሞከር እንደገና ይሞክሩ።';
+
+  @override
+  String get chatHistoryOfflineTitle => 'ከመስመር ውጭ ነዎት';
+
+  @override
+  String get chatHistoryOfflineBody => 'የበይነመረብ ግንኙነትዎን ይፈትሹ እና እንደገና ይሞክሩ።';
+
+  @override
+  String get aiGeneratingResponse => 'ምላሽ በማመንጨት ላይ…';
 }

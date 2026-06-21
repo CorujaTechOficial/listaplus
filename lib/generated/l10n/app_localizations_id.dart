@@ -238,6 +238,11 @@ class AppLocalizationsId extends AppLocalizations {
   String get noItemsToBuy => 'Tidak ada item yang perlu dibeli';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Hilang $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Belanja Dapur';
 
   @override
@@ -304,6 +309,12 @@ class AppLocalizationsId extends AppLocalizations {
   String get settingsAppBar => 'Pengaturan';
 
   @override
+  String get preferencesSection => 'Preferensi';
+
+  @override
+  String get aiSection => 'Asisten AI';
+
+  @override
   String get language => 'Bahasa';
 
   @override
@@ -332,6 +343,12 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get appearance => 'Tampilan';
+
+  @override
+  String get themeMode => 'Modus tema';
+
+  @override
+  String get chooseThemeMode => 'Pilih mode tema';
 
   @override
   String get light => 'Terang';
@@ -582,6 +599,13 @@ class AppLocalizationsId extends AppLocalizations {
   String get trackStockInactive => 'Tidak menghasilkan saran belanja';
 
   @override
+  String get keepAdding => 'Terus tambahkan';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Biarkan lembar tetap terbuka untuk menambahkan beberapa item';
+
+  @override
   String get createListDialog => 'Buat Daftar';
 
   @override
@@ -686,6 +710,36 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Respon yang bagus';
+
+  @override
+  String get badResponse => 'Respon yang buruk';
+
+  @override
+  String get scrollToBottom => 'Gulir ke bawah';
+
+  @override
+  String get somethingWentWrong => 'Ada yang tidak beres';
+
+  @override
+  String get editMessage => 'Sunting pesan';
+
+  @override
+  String get searchConversations => 'Cari percakapan';
+
+  @override
+  String get dateGroupToday => 'Hari ini';
+
+  @override
+  String get dateGroupYesterday => 'Kemarin';
+
+  @override
+  String get dateGroupPrevious7Days => '7 hari sebelumnya';
+
+  @override
+  String get dateGroupOlder => 'Lebih tua';
+
+  @override
   String get aiAssistantTitle => 'Asisten AI';
 
   @override
@@ -726,6 +780,33 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Batas AI bulanan tercapai. Tingkatkan ke Pro tanpa batas →';
+
+  @override
+  String get undo => 'Urungkan';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'Daftar Kipi';
@@ -936,6 +1017,20 @@ class AppLocalizationsId extends AppLocalizations {
   String get recipeAddToList => 'Tambahkan ke daftar belanja';
 
   @override
+  String get recipeAddError =>
+      'Tidak dapat menambahkan ke daftar Anda. Silakan coba lagi.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Ketuk bahan untuk memeriksanya saat Anda memasak';
+
+  @override
+  String get recipeIngredientInPantry => 'Di dapur';
+
+  @override
+  String get recipeIngredientLowPantry => 'Rendah di dapur';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count bahan ditambahkan ke $listName';
   }
@@ -1048,12 +1143,12 @@ class AppLocalizationsId extends AppLocalizations {
   String get paywallSelectPlan => 'Pilih paket Anda:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'HEMAT $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Hanya $price/bulan';
   }
 
@@ -1088,6 +1183,35 @@ class AppLocalizationsId extends AppLocalizations {
   String get paywallRestore => 'Memulihkan';
 
   @override
+  String get paywallTimelineToday => 'Hari ini';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Buka kunci akses penuh secara instan';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Hari $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Kami ingatkan sebelum sidang berakhir';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Langganan Anda dimulai — batalkan kapan saja';
+
+  @override
+  String get paywallHeroFeatureTitle => 'Asisten Belanja AI';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Ucapkan atau tempel seluruh daftar — AI mengurutkan, mengkategorikan, dan menganggarkannya dalam hitungan detik';
+
+  @override
+  String get paywallBasedOnAnswers => 'Dipersonalisasi dari jawaban Anda';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI selalu di sisimu';
 
   @override
@@ -1120,9 +1244,6 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Item dihapus';
-
-  @override
-  String get undo => 'Urungkan';
 
   @override
   String get emptyListTitle => 'Daftar Anda kosong';
@@ -1239,6 +1360,9 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Item dihapus';
+
+  @override
+  String get pantryItemAdded => 'Barang ditambahkan';
 
   @override
   String deficitItems(int deficit) {
@@ -1639,6 +1763,33 @@ class AppLocalizationsId extends AppLocalizations {
   String get prepTimeMinutes => 'Waktu persiapan (menit)';
 
   @override
+  String get recipeYieldServings => 'Porsi hasil';
+
+  @override
+  String get recipeManualTotalCost => 'Total biaya manual';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Biarkan kosong untuk memperkirakan harga bahan.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Perkiraan total biaya';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / porsi';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Melayani $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Perkiraan sebagian berdasarkan bahan dengan harga.';
+
+  @override
   String get instructionsHint => 'Ketik satu langkah per baris...';
 
   @override
@@ -1767,6 +1918,10 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Perkirakan berdasarkan resep dengan data harga parsial.';
+
+  @override
   String get mealPlannerGenerateList => 'Buat daftar belanja';
 
   @override
@@ -1860,6 +2015,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get catalogRareSection => 'kurang umum di negara Anda';
 
   @override
+  String get catalogRareBadge => 'Langka';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1878,7 +2036,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get catalogBrowse => 'Telusuri Katalog';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kategori';
 
   @override
   String get offlineBanner => 'Anda sedang luring';
@@ -1909,6 +2067,41 @@ class AppLocalizationsId extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Kelola jenis makanan';
+
+  @override
+  String get mealPlannerAddType => 'Tambahkan jenis makanan';
+
+  @override
+  String get mealPlannerEditType => 'Edit jenis makanan';
+
+  @override
+  String get mealPlannerTypeName => 'Nama';
+
+  @override
+  String get mealPlannerTypeColor => 'Warna';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikon';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Apakah Anda yakin ingin menghapus jenis makanan ini? Makanan yang direncanakan dengan jenis ini akan tetap ada.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Nama tidak boleh kosong';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Tidak dapat menghapus jenis makanan ini.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Tipe khusus';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Tipe bawaan';
 
   @override
   String get expirationDate => 'Kedaluwarsa';
@@ -1969,6 +2162,9 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Terjadi kesalahan saat memuat daftar';
+
+  @override
+  String get errorLoadingItems => 'Terjadi kesalahan saat memuat item';
 
   @override
   String get noListsFound => 'Tidak ada daftar yang ditemukan';
@@ -2753,4 +2949,213 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get obLoginError => 'Gagal masuk. Coba lagi atau lewati sekarang.';
+
+  @override
+  String get searchMessages => 'Telusuri pesan...';
+
+  @override
+  String get deletedList => 'Daftar yang dihapus';
+
+  @override
+  String get openConversation => 'Buka percakapan';
+
+  @override
+  String get userRole => 'Anda';
+
+  @override
+  String get assistantRole => 'Asisten';
+
+  @override
+  String get agentActionsRunning => 'Tindakan berjalan...';
+
+  @override
+  String get agentActionsFailed => 'Gagal menjalankan tindakan';
+
+  @override
+  String get agentActionsPremium => 'Tindakan memerlukan Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Membatalkan perubahan';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Item ditambahkan ke daftar.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Status sebelumnya: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Berlangganan Premium untuk membuka kunci tindakan otomatis.';
+
+  @override
+  String get viewPlans => 'Lihat rencana';
+
+  @override
+  String get artifactSynced => 'Disinkronkan';
+
+  @override
+  String get artifactBudgetLabel => 'Anggaran:';
+
+  @override
+  String get totalEstimatedLabel => 'Perkiraan jumlah';
+
+  @override
+  String get quickActionPantry => 'Lihat dapur';
+
+  @override
+  String get quickActionAi => 'Ngobrol dengan Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Layanan AI mengembalikan kesalahan ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Permintaan itu memakan waktu terlalu lama. Silakan coba lagi.';
+
+  @override
+  String get aiConnectionError =>
+      'Tidak dapat terhubung ke layanan AI. Periksa koneksi Anda.';
+
+  @override
+  String get aiEmptyResponseError => 'Layanan AI memberikan respons kosong.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Layanan AI mengembalikan respons yang tidak valid.';
+
+  @override
+  String get categoryFruits => 'Buah-buahan';
+
+  @override
+  String get categoryCleaning => 'Pembersihan';
+
+  @override
+  String get categoryBeverages => 'Minuman';
+
+  @override
+  String get categoryBakery => 'Toko roti';
+
+  @override
+  String get categoryMeat => 'Daging';
+
+  @override
+  String get categoryDairy => 'Produk susu';
+
+  @override
+  String get categoryVegetables => 'Sayuran';
+
+  @override
+  String get categoryGrains => 'Biji-bijian dan sereal';
+
+  @override
+  String get categoryHygiene => 'Perawatan pribadi';
+
+  @override
+  String get categoryFrozen => 'Makanan beku';
+
+  @override
+  String get categoryCanned => 'Barang kaleng';
+
+  @override
+  String get categorySeasonings => 'Bumbu';
+
+  @override
+  String get categorySweets => 'Permen dan makanan penutup';
+
+  @override
+  String get categoryAlcohol => 'Minuman beralkohol';
+
+  @override
+  String get categoryFish => 'Ikan';
+
+  @override
+  String get categoryColdCuts => 'Potongan dingin';
+
+  @override
+  String get categoryUtilities => 'Perlengkapan rumah tangga';
+
+  @override
+  String get categoryPet => 'Persediaan hewan peliharaan';
+
+  @override
+  String get categoryBaby => 'Bayi';
+
+  @override
+  String get categoryOthers => 'Lainnya';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hai $name, saya Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hai, saya Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Saya membuat daftar, menyarankan resep, dan menemukan tempat untuk menyimpan. Di mana kita mulai?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Rencanakan barbekyu';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, saya mengadakan acara barbekyu — bantu saya membuat daftar belanjaan';
+
+  @override
+  String get aiRateLimitError =>
+      'Terlalu banyak pesan dalam waktu singkat. Tunggu beberapa detik dan coba lagi.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Tidak dapat memuat percakapan ini';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Ada yang tidak beres di pihak kami. Ketuk coba lagi untuk mencoba lagi.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Anda sedang luring';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Periksa koneksi internet Anda dan coba lagi.';
+
+  @override
+  String get aiGeneratingResponse => 'Menghasilkan respons…';
 }

@@ -245,6 +245,11 @@ class AppLocalizationsKa extends AppLocalizations {
   String get noItemsToBuy => 'ყიდვის საჭირო ელემენტები არ არის';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'აკლია $count$unit';
+  }
+
+  @override
   String get newPantryList => 'საკუჭნაოს შესყიდვა';
 
   @override
@@ -311,6 +316,12 @@ class AppLocalizationsKa extends AppLocalizations {
   String get settingsAppBar => 'პარამეტრები';
 
   @override
+  String get preferencesSection => 'პრეფერენციები';
+
+  @override
+  String get aiSection => 'AI ასისტენტი';
+
+  @override
   String get language => 'ენა';
 
   @override
@@ -339,6 +350,12 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get appearance => 'გარეგნობა';
+
+  @override
+  String get themeMode => 'თემის რეჟიმი';
+
+  @override
+  String get chooseThemeMode => 'აირჩიეთ თემის რეჟიმი';
 
   @override
   String get light => 'ღია';
@@ -588,6 +605,13 @@ class AppLocalizationsKa extends AppLocalizations {
   String get trackStockInactive => 'არ ქმნის სავაჭრო შემოთავაზებას';
 
   @override
+  String get keepAdding => 'განაგრძეთ დამატება';
+
+  @override
+  String get keepAddingSubtitle =>
+      'შეინახეთ ფურცელი ღია, რათა დაამატოთ მრავალი ელემენტი';
+
+  @override
   String get createListDialog => 'სიის შექმნა';
 
   @override
@@ -692,6 +716,36 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'კარგი გამოხმაურება';
+
+  @override
+  String get badResponse => 'ცუდი პასუხი';
+
+  @override
+  String get scrollToBottom => 'გადაახვიეთ ბოლოში';
+
+  @override
+  String get somethingWentWrong => 'რაღაც შეფერხდა';
+
+  @override
+  String get editMessage => 'შეტყობინების რედაქტირება';
+
+  @override
+  String get searchConversations => 'მოძებნეთ საუბრები';
+
+  @override
+  String get dateGroupToday => 'დღეს';
+
+  @override
+  String get dateGroupYesterday => 'გუშინ';
+
+  @override
+  String get dateGroupPrevious7Days => 'წინა 7 დღე';
+
+  @override
+  String get dateGroupOlder => 'უფრო ძველი';
+
+  @override
   String get aiAssistantTitle => 'AI ასისტენტი';
 
   @override
@@ -732,6 +786,33 @@ class AppLocalizationsKa extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'მიღწეულია ყოველთვიური AI ლიმიტი. განაახლეთ Pro-ზე შეუზღუდავად →';
+
+  @override
+  String get undo => 'უკან დაბრუნება';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -943,6 +1024,20 @@ class AppLocalizationsKa extends AppLocalizations {
   String get recipeAddToList => 'საყიდლების სიაში დამატება';
 
   @override
+  String get recipeAddError =>
+      'თქვენს სიაში დამატება ვერ მოხერხდა. გთხოვთ, სცადოთ ხელახლა.';
+
+  @override
+  String get recipeTapToCheck =>
+      'შეეხეთ ინგრედიენტს, რათა შეამოწმოთ იგი მომზადებისას';
+
+  @override
+  String get recipeIngredientInPantry => 'საკუჭნაოში';
+
+  @override
+  String get recipeIngredientLowPantry => 'დაბალი საკუჭნაო';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count ინგრედიენტი დაემატა $listName-ს';
   }
@@ -1054,12 +1149,12 @@ class AppLocalizationsKa extends AppLocalizations {
   String get paywallSelectPlan => 'აირჩიეთ თქვენი გეგმა:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'შენახვა $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'მხოლოდ $price/თვეში';
   }
 
@@ -1095,6 +1190,35 @@ class AppLocalizationsKa extends AppLocalizations {
   String get paywallRestore => 'აღდგენა';
 
   @override
+  String get paywallTimelineToday => 'დღეს';
+
+  @override
+  String get paywallTimelineTodayDesc => 'მყისიერად განბლოკეთ სრული წვდომა';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'დღე $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'შეგახსენებთ სასამართლო პროცესის დასრულებამდე';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'თქვენი გამოწერა იწყება — გააუქმეთ ნებისმიერ დროს';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI შოპინგის ასისტენტი';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'წარმოთქვით ან ჩასვით მთელი სია — ხელოვნური ინტელექტი ახარისხებს, კატეგორიზებს და ანაწილებს მას წამებში';
+
+  @override
+  String get paywallBasedOnAnswers => 'პერსონალიზებულია თქვენი პასუხებიდან';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI ყოველთვის თქვენს გვერდით';
 
   @override
@@ -1127,9 +1251,6 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get itemRemoved => 'ელემენტი წაიშალა';
-
-  @override
-  String get undo => 'უკან დაბრუნება';
 
   @override
   String get emptyListTitle => 'თქვენი სია ცარიელია';
@@ -1246,6 +1367,9 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'ელემენტი წაიშალა';
+
+  @override
+  String get pantryItemAdded => 'ელემენტი დამატებულია';
 
   @override
   String deficitItems(int deficit) {
@@ -1649,6 +1773,33 @@ class AppLocalizationsKa extends AppLocalizations {
   String get prepTimeMinutes => 'მომზადების დრო (წუთებში)';
 
   @override
+  String get recipeYieldServings => 'მოსავლიანობის პორცია';
+
+  @override
+  String get recipeManualTotalCost => 'მექანიკური მთლიანი ღირებულება';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'დატოვეთ ცარიელი ინგრედიენტების ფასების შესაფასებლად.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'სავარაუდო ჯამური ღირებულება';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / მომსახურება';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'ემსახურება $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'ნაწილობრივი შეფასება ინგრედიენტების მიხედვით ფასით.';
+
+  @override
   String get instructionsHint => 'შეიყვანეთ თითო ნაბიჯი თითო ხაზზე...';
 
   @override
@@ -1777,6 +1928,10 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'შეაფასეთ რეცეპტების საფუძველზე ნაწილობრივი ფასის მონაცემებით.';
+
+  @override
   String get mealPlannerGenerateList => 'საყიდლების სიის გენერირება';
 
   @override
@@ -1870,6 +2025,9 @@ class AppLocalizationsKa extends AppLocalizations {
   String get catalogRareSection => 'ნაკლებად გავრცელებული თქვენს ქვეყანაში';
 
   @override
+  String get catalogRareBadge => 'იშვიათი';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1887,7 +2045,7 @@ class AppLocalizationsKa extends AppLocalizations {
   String get catalogBrowse => 'კატალოგის დათვალიერება';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'კატეგორიები';
 
   @override
   String get offlineBanner => 'თქვენ ხაზგარეშე ხართ';
@@ -1918,6 +2076,40 @@ class AppLocalizationsKa extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'მართეთ კვების ტიპები';
+
+  @override
+  String get mealPlannerAddType => 'დაამატეთ კვების ტიპი';
+
+  @override
+  String get mealPlannerEditType => 'შეცვალეთ კვების ტიპი';
+
+  @override
+  String get mealPlannerTypeName => 'სახელი';
+
+  @override
+  String get mealPlannerTypeColor => 'ფერი';
+
+  @override
+  String get mealPlannerTypeIcon => 'ხატულა';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'დარწმუნებული ხართ, რომ გსურთ ამ ტიპის კვების წაშლა? ამ ტიპის დაგეგმილი კვება დარჩება.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'სახელი არ შეიძლება იყოს ცარიელი';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'ამ ტიპის კვების წაშლა შეუძლებელია.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'მორგებული ტიპი';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'ნაგულისხმევი ტიპი';
 
   @override
   String get expirationDate => 'ვარგისიანობის ვადა';
@@ -1978,6 +2170,9 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'შეცდომა სიების ჩატვირთვისას';
+
+  @override
+  String get errorLoadingItems => 'შეცდომა ერთეულების ჩატვირთვისას';
 
   @override
   String get noListsFound => 'სიები ვერ მოიძებნა';
@@ -2747,6 +2942,214 @@ class AppLocalizationsKa extends AppLocalizations {
   @override
   String get obLoginError =>
       'შესვლა ვერ მოხერხდა. სცადეთ ხელახლა ან გამოტოვეთ ახლა.';
+
+  @override
+  String get searchMessages => 'შეტყობინებების ძიება...';
+
+  @override
+  String get deletedList => 'წაშლილი სია';
+
+  @override
+  String get openConversation => 'გახსენით საუბარი';
+
+  @override
+  String get userRole => 'შენ';
+
+  @override
+  String get assistantRole => 'ასისტენტი';
+
+  @override
+  String get agentActionsRunning => 'მიმდინარეობს მოქმედებები...';
+
+  @override
+  String get agentActionsFailed => 'მოქმედებების გაშვება ვერ მოხერხდა';
+
+  @override
+  String get agentActionsPremium => 'ქმედებები მოითხოვს პრემიუმს';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'ცვლილებების გაუქმება';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (პრემიუმი)';
+  }
+
+  @override
+  String get itemAddedToList => 'ელემენტი დაემატა სიას.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'წინა მდგომარეობა: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'გამოიწერეთ Premium ავტომატური მოქმედებების განსაბლოკად.';
+
+  @override
+  String get viewPlans => 'გეგმების ნახვა';
+
+  @override
+  String get artifactSynced => 'სინქრონიზებული';
+
+  @override
+  String get artifactBudgetLabel => 'ბიუჯეტი:';
+
+  @override
+  String get totalEstimatedLabel => 'სავარაუდო სულ';
+
+  @override
+  String get quickActionPantry => 'საკუჭნაოს ნახვა';
+
+  @override
+  String get quickActionAi => 'ესაუბრეთ Kipi-ს';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI სერვისმა დააბრუნა შეცდომა ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'მოთხოვნას ძალიან დიდი დრო დასჭირდა. გთხოვთ, სცადოთ ხელახლა.';
+
+  @override
+  String get aiConnectionError =>
+      'AI სერვისთან დაკავშირება ვერ მოხერხდა. შეამოწმეთ თქვენი კავშირი.';
+
+  @override
+  String get aiEmptyResponseError => 'AI სერვისმა დააბრუნა ცარიელი პასუხი.';
+
+  @override
+  String get aiInvalidResponseError => 'AI სერვისმა დააბრუნა არასწორი პასუხი.';
+
+  @override
+  String get categoryFruits => 'ხილი';
+
+  @override
+  String get categoryCleaning => 'დასუფთავება';
+
+  @override
+  String get categoryBeverages => 'სასმელები';
+
+  @override
+  String get categoryBakery => 'საცხობი';
+
+  @override
+  String get categoryMeat => 'ხორცი';
+
+  @override
+  String get categoryDairy => 'რძის პროდუქტები';
+
+  @override
+  String get categoryVegetables => 'ბოსტნეული';
+
+  @override
+  String get categoryGrains => 'მარცვლეული და მარცვლეული';
+
+  @override
+  String get categoryHygiene => 'პირადი მოვლა';
+
+  @override
+  String get categoryFrozen => 'გაყინული საკვები';
+
+  @override
+  String get categoryCanned => 'დაკონსერვებული საქონელი';
+
+  @override
+  String get categorySeasonings => 'სანელებლები';
+
+  @override
+  String get categorySweets => 'ტკბილეული და დესერტები';
+
+  @override
+  String get categoryAlcohol => 'ალკოჰოლური სასმელები';
+
+  @override
+  String get categoryFish => 'თევზი';
+
+  @override
+  String get categoryColdCuts => 'გაციება';
+
+  @override
+  String get categoryUtilities => 'საყოფაცხოვრებო ნივთები';
+
+  @override
+  String get categoryPet => 'შინაური ცხოველების მარაგი';
+
+  @override
+  String get categoryBaby => 'ბავშვი';
+
+  @override
+  String get categoryOthers => 'სხვა';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'გამარჯობა $name, მე ვარ Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'გამარჯობა, მე ვარ Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'მე ვაშენებ სიებს, ვთავაზობ რეცეპტებს და ვპოულობ სად შევინახო. საიდან დავიწყოთ?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'დაგეგმეთ მწვადი';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'კიფი, მე ვაწყობ მწვადს — დამეხმარეთ საყიდლების სიის შექმნაში';
+
+  @override
+  String get aiRateLimitError =>
+      'ძალიან ბევრი შეტყობინება მოკლე დროში. დაელოდეთ რამდენიმე წამს და სცადეთ ხელახლა.';
+
+  @override
+  String get chatHistoryErrorTitle => 'ეს მიმოწერა ვერ ჩაიტვირთა';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'რაღაც შეფერხდა ჩვენს მხარეს. შეეხეთ ხელახლა საცდელად.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'თქვენ ხაზგარეშე ხართ';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'შეამოწმეთ თქვენი ინტერნეტ კავშირი და სცადეთ ხელახლა.';
+
+  @override
+  String get aiGeneratingResponse => 'პასუხის გენერირება…';
 }
 
 /// The translations for Georgian, as used in Georgia (`ka_GE`).
@@ -2988,6 +3391,11 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get noItemsToBuy => 'ყიდვისთვის საჭირო ნივთები არ არის';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'აკლია $count$unit';
+  }
+
+  @override
   String get newPantryList => 'საკუჭნაოს შეძენა';
 
   @override
@@ -3054,6 +3462,12 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get settingsAppBar => 'პარამეტრები';
 
   @override
+  String get preferencesSection => 'პრეფერენციები';
+
+  @override
+  String get aiSection => 'AI ასისტენტი';
+
+  @override
   String get language => 'ენა';
 
   @override
@@ -3082,6 +3496,12 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get appearance => 'გარეგნობა';
+
+  @override
+  String get themeMode => 'თემის რეჟიმი';
+
+  @override
+  String get chooseThemeMode => 'აირჩიეთ თემის რეჟიმი';
 
   @override
   String get light => 'ღია';
@@ -3331,6 +3751,13 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get trackStockInactive => 'არ ქმნის შეძენის წინადადებას';
 
   @override
+  String get keepAdding => 'განაგრძეთ დამატება';
+
+  @override
+  String get keepAddingSubtitle =>
+      'შეინახეთ ფურცელი ღია, რათა დაამატოთ მრავალი ელემენტი';
+
+  @override
   String get createListDialog => 'სიის შექმნა';
 
   @override
@@ -3435,6 +3862,36 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   }
 
   @override
+  String get goodResponse => 'კარგი გამოხმაურება';
+
+  @override
+  String get badResponse => 'ცუდი პასუხი';
+
+  @override
+  String get scrollToBottom => 'გადაახვიეთ ბოლოში';
+
+  @override
+  String get somethingWentWrong => 'რაღაც შეფერხდა';
+
+  @override
+  String get editMessage => 'შეტყობინების რედაქტირება';
+
+  @override
+  String get searchConversations => 'მოძებნეთ საუბრები';
+
+  @override
+  String get dateGroupToday => 'დღეს';
+
+  @override
+  String get dateGroupYesterday => 'გუშინ';
+
+  @override
+  String get dateGroupPrevious7Days => 'წინა 7 დღე';
+
+  @override
+  String get dateGroupOlder => 'უფრო ძველი';
+
+  @override
   String get aiAssistantTitle => 'AI ასისტენტი';
 
   @override
@@ -3475,6 +3932,9 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   @override
   String get aiUsageExhausted =>
       'მიღწეულია ყოველთვიური AI ლიმიტი. განაახლეთ Pro-ზე შეუზღუდავად →';
+
+  @override
+  String get undo => 'დაბრუნება';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -3686,6 +4146,20 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get recipeAddToList => 'საყიდლების სიაში დამატება';
 
   @override
+  String get recipeAddError =>
+      'თქვენს სიაში დამატება ვერ მოხერხდა. გთხოვთ, სცადოთ ხელახლა.';
+
+  @override
+  String get recipeTapToCheck =>
+      'შეეხეთ ინგრედიენტს, რათა შეამოწმოთ იგი მომზადებისას';
+
+  @override
+  String get recipeIngredientInPantry => 'საკუჭნაოში';
+
+  @override
+  String get recipeIngredientLowPantry => 'დაბალი საკუჭნაო';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count ინგრედიენტი დაემატა $listName-ს';
   }
@@ -3797,12 +4271,12 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get paywallSelectPlan => 'აირჩიეთ თქვენი გეგმა:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'შენახვა $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'მხოლოდ $price/თვეში';
   }
 
@@ -3838,6 +4312,35 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get paywallRestore => 'აღდგენა';
 
   @override
+  String get paywallTimelineToday => 'დღეს';
+
+  @override
+  String get paywallTimelineTodayDesc => 'მყისიერად განბლოკეთ სრული წვდომა';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'დღე $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'შეგახსენებთ სასამართლო პროცესის დასრულებამდე';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'თქვენი გამოწერა იწყება — გააუქმეთ ნებისმიერ დროს';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI შოპინგის ასისტენტი';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'წარმოთქვით ან ჩასვით მთელი სია — ხელოვნური ინტელექტი ახარისხებს, კატეგორიზებს და ანაწილებს მას წამებში';
+
+  @override
+  String get paywallBasedOnAnswers => 'პერსონალიზებულია თქვენი პასუხებიდან';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI ყოველთვის თქვენს გვერდით';
 
   @override
@@ -3870,9 +4373,6 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get itemRemoved => 'ნივთი წაიშალა';
-
-  @override
-  String get undo => 'დაბრუნება';
 
   @override
   String get emptyListTitle => 'თქვენი სია ცარიელია';
@@ -3989,6 +4489,9 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get pantryItemRemoved => 'ნივთი წაიშალა';
+
+  @override
+  String get pantryItemAdded => 'ელემენტი დამატებულია';
 
   @override
   String deficitItems(int deficit) {
@@ -4392,6 +4895,33 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get prepTimeMinutes => 'მომზადების დრო (წუთებში)';
 
   @override
+  String get recipeYieldServings => 'მოსავლიანობის პორცია';
+
+  @override
+  String get recipeManualTotalCost => 'მექანიკური მთლიანი ღირებულება';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'დატოვეთ ცარიელი ინგრედიენტების ფასების შესაფასებლად.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'სავარაუდო ჯამური ღირებულება';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / მომსახურება';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'ემსახურება $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'ნაწილობრივი შეფასება ინგრედიენტების მიხედვით ფასით.';
+
+  @override
   String get instructionsHint => 'შეიყვანეთ თითო ნაბიჯი თითო ხაზზე...';
 
   @override
@@ -4520,6 +5050,10 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'შეაფასეთ რეცეპტების საფუძველზე ნაწილობრივი ფასის მონაცემებით.';
+
+  @override
   String get mealPlannerGenerateList => 'საყიდლების სიის გენერირება';
 
   @override
@@ -4613,6 +5147,9 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get catalogRareSection => 'ნაკლებად გავრცელებული თქვენს ქვეყანაში';
 
   @override
+  String get catalogRareBadge => 'იშვიათი';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4628,6 +5165,9 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get catalogBrowse => 'კატალოგის დათვალიერება';
+
+  @override
+  String get catalogCategories => 'კატეგორიები';
 
   @override
   String get offlineBanner => 'თქვენ ხაზგარეშე ხართ';
@@ -4658,6 +5198,40 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'მართეთ კვების ტიპები';
+
+  @override
+  String get mealPlannerAddType => 'დაამატეთ კვების ტიპი';
+
+  @override
+  String get mealPlannerEditType => 'შეცვალეთ კვების ტიპი';
+
+  @override
+  String get mealPlannerTypeName => 'სახელი';
+
+  @override
+  String get mealPlannerTypeColor => 'ფერი';
+
+  @override
+  String get mealPlannerTypeIcon => 'ხატულა';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'დარწმუნებული ხართ, რომ გსურთ ამ ტიპის კვების წაშლა? ამ ტიპის დაგეგმილი კვება დარჩება.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'სახელი არ შეიძლება იყოს ცარიელი';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'ამ ტიპის კვების წაშლა შეუძლებელია.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'მორგებული ტიპი';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'ნაგულისხმევი ტიპი';
 
   @override
   String get expirationDate => 'ვარგისიანობის ვადა';
@@ -4718,6 +5292,9 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
 
   @override
   String get errorLoadingLists => 'შეცდომა სიების ჩატვირთვისას';
+
+  @override
+  String get errorLoadingItems => 'შეცდომა ერთეულების ჩატვირთვისას';
 
   @override
   String get noListsFound => 'სიები ვერ მოიძებნა';
@@ -5487,4 +6064,212 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   @override
   String get obLoginError =>
       'შესვლა ვერ მოხერხდა. სცადეთ ხელახლა ან გამოტოვეთ ახლა.';
+
+  @override
+  String get searchMessages => 'შეტყობინებების ძიება...';
+
+  @override
+  String get deletedList => 'წაშლილი სია';
+
+  @override
+  String get openConversation => 'გახსენით საუბარი';
+
+  @override
+  String get userRole => 'შენ';
+
+  @override
+  String get assistantRole => 'ასისტენტი';
+
+  @override
+  String get agentActionsRunning => 'მიმდინარეობს მოქმედებები...';
+
+  @override
+  String get agentActionsFailed => 'მოქმედებების გაშვება ვერ მოხერხდა';
+
+  @override
+  String get agentActionsPremium => 'ქმედებები მოითხოვს პრემიუმს';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'ცვლილებების გაუქმება';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (პრემიუმი)';
+  }
+
+  @override
+  String get itemAddedToList => 'ელემენტი დაემატა სიას.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'წინა მდგომარეობა: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'გამოიწერეთ Premium ავტომატური მოქმედებების განსაბლოკად.';
+
+  @override
+  String get viewPlans => 'გეგმების ნახვა';
+
+  @override
+  String get artifactSynced => 'სინქრონიზებული';
+
+  @override
+  String get artifactBudgetLabel => 'ბიუჯეტი:';
+
+  @override
+  String get totalEstimatedLabel => 'სავარაუდო სულ';
+
+  @override
+  String get quickActionPantry => 'საკუჭნაოს ნახვა';
+
+  @override
+  String get quickActionAi => 'ესაუბრეთ Kipi-ს';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI სერვისმა დააბრუნა შეცდომა ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'მოთხოვნას ძალიან დიდი დრო დასჭირდა. გთხოვთ, სცადოთ ხელახლა.';
+
+  @override
+  String get aiConnectionError =>
+      'AI სერვისთან დაკავშირება ვერ მოხერხდა. შეამოწმეთ თქვენი კავშირი.';
+
+  @override
+  String get aiEmptyResponseError => 'AI სერვისმა დააბრუნა ცარიელი პასუხი.';
+
+  @override
+  String get aiInvalidResponseError => 'AI სერვისმა დააბრუნა არასწორი პასუხი.';
+
+  @override
+  String get categoryFruits => 'ხილი';
+
+  @override
+  String get categoryCleaning => 'დასუფთავება';
+
+  @override
+  String get categoryBeverages => 'სასმელები';
+
+  @override
+  String get categoryBakery => 'საცხობი';
+
+  @override
+  String get categoryMeat => 'ხორცი';
+
+  @override
+  String get categoryDairy => 'რძის პროდუქტები';
+
+  @override
+  String get categoryVegetables => 'ბოსტნეული';
+
+  @override
+  String get categoryGrains => 'მარცვლეული და მარცვლეული';
+
+  @override
+  String get categoryHygiene => 'პირადი მოვლა';
+
+  @override
+  String get categoryFrozen => 'გაყინული საკვები';
+
+  @override
+  String get categoryCanned => 'დაკონსერვებული საქონელი';
+
+  @override
+  String get categorySeasonings => 'სანელებლები';
+
+  @override
+  String get categorySweets => 'ტკბილეული და დესერტები';
+
+  @override
+  String get categoryAlcohol => 'ალკოჰოლური სასმელები';
+
+  @override
+  String get categoryFish => 'თევზი';
+
+  @override
+  String get categoryColdCuts => 'გაციება';
+
+  @override
+  String get categoryUtilities => 'საყოფაცხოვრებო ნივთები';
+
+  @override
+  String get categoryPet => 'შინაური ცხოველების მარაგი';
+
+  @override
+  String get categoryBaby => 'ბავშვი';
+
+  @override
+  String get categoryOthers => 'სხვა';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'გამარჯობა $name, მე ვარ Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'გამარჯობა, მე ვარ Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'მე ვაშენებ სიებს, ვთავაზობ რეცეპტებს და ვპოულობ სად შევინახო. საიდან დავიწყოთ?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'დაგეგმეთ მწვადი';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'კიფი, მე ვაწყობ მწვადს — დამეხმარეთ საყიდლების სიის შექმნაში';
+
+  @override
+  String get aiRateLimitError =>
+      'ძალიან ბევრი შეტყობინება მოკლე დროში. დაელოდეთ რამდენიმე წამს და სცადეთ ხელახლა.';
+
+  @override
+  String get chatHistoryErrorTitle => 'ეს მიმოწერა ვერ ჩაიტვირთა';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'რაღაც შეფერხდა ჩვენს მხარეს. შეეხეთ ხელახლა საცდელად.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'თქვენ ხაზგარეშე ხართ';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'შეამოწმეთ თქვენი ინტერნეტ კავშირი და სცადეთ ხელახლა.';
+
+  @override
+  String get aiGeneratingResponse => 'პასუხის გენერირება…';
 }

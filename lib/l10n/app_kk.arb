@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +161,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -280,6 +301,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -309,6 +333,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -953,6 +984,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1100,6 +1141,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1138,6 +1186,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1211,7 +1282,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1359,42 +1444,56 @@
   "addToPantryPrompt": "\"{name}\" қорыңызға қосу?",
   "addedFeedback": "Қосылды!",
   "advancedFeatures": "Кеңейтілген мүмкіндіктер",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Әрекеттер орындалмады",
+  "agentActionsPremium": "Әрекеттерге Premium қажет",
+  "agentActionsRunning": "Орындалуда...",
+  "aiApiError": "AI қызметі қатені қайтарды ({statusCode}).",
   "aiAssistant": "AI Көмекші",
   "aiAssistantDescription": "Біздің AI көмекшімізбен ақылды ұсыныстар, рецептер және жеке кеңестер алыңыз.",
   "aiAssistantGeneral": "Бас ассистент",
   "aiAssistantHistory": "Assistant History",
   "aiAssistantTitle": "AI көмекшісі",
+  "aiConnectionError": "AI қызметіне қосылу мүмкін болмады. Байланысты тексеріңіз.",
   "aiConversationHistory": "Әңгімелесу тарихы",
   "aiCreditsRemaining": "{remaining} кредит қалды",
   "aiDeleteConversationConfirm": "Жою",
   "aiDeleteConversationTitle": "Сөйлесуді жою керек пе?",
   "aiDeletedList": "Жойылған тізім",
+  "aiEmptyResponseError": "AI қызметі бос жауап қайтарды.",
   "aiEnergy": "AI энергиясы",
   "aiEnergyLow": "Төмен AI энергиясы",
   "aiError": "Кешіріңіз, сұрауыңызды өңдеу кезінде қате пайда болды. Қосылымыңызды тексеріңіз немесе кейінірек қайталап көріңіз.",
   "aiFirstOpenHint": "Мен Кипимін, сіздің сауда көмекшісімін. Менен тізіміңіз туралы кез келген нәрсені сұраңыз!",
+  "aiGeneratingResponse": "Жауап жасалуда…",
   "aiHello": "Сәлем! Мен Кипимін",
   "aiHowCanIHelp": "Бүгін мен сізге қалай көмектесе аламын?",
+  "aiInvalidResponseError": "AI қызметі жарамсыз жауап қайтарды.",
   "aiLimitAlmostReached": "AI хабарлары дерлік",
   "aiNewConversation": "Жаңа әңгіме",
   "aiNewSession": "Жаңа сессия",
   "aiNoConversationFound": "Сөйлесу табылмады",
   "aiNoMessagesFound": "Хабарлар табылмады",
   "aiPremiumUpsell": "Премиумға өтіңіз",
+  "aiRateLimitError": "Қысқа уақыт ішінде тым көп хабарлар. Бірнеше секунд күтіп, әрекетті қайталаңыз.",
   "aiRecentConversations": "Соңғы сұхбаттар",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} бүгін",
   "aiSearchMessages": "Хабарларды іздеу...",
+  "aiSection": "AI көмекшісі",
   "aiStartNewConversation": "Жаңа әңгіме бастау",
   "aiSubscribeUnlimited": "Шексіз AI үшін жазылыңыз",
   "aiSuggestCreateList": "Менің бірінші тізімімді жасаңыз",
   "aiSuggestSaveMore": "Қалай көбірек үнемдеуге болады?",
   "aiTeaserFallback": "Толық жауаптың құлпын ашу және сатып алу үшін шексіз AI кеңестерін алу үшін Premium-ге жазылыңыз...",
+  "aiTimeoutError": "Сұраныс тым ұзаққа созылды. Қайталап көріңіз.",
   "aiUnlockUnlimited": "Шексіз AI құлпын ашыңыз",
   "aiUnlockWithAd": "Жарнама арқылы құлыпты ашыңыз",
   "aiUsageExhausted": "Ай сайынғы AI шегіне жетті. Шексіз → Pro нұсқасына жаңартыңыз",
   "aiUsageWarning": "{remaining} AI әрекеттері осы айда қалды — шексіз жаңарту",
   "aiVoiceCommandTooltip": "AI Дауыс Пәрмені (Premium)",
   "aiWelcomeContent": "Сәлем! 👋 Мен **Kipi**, сіздің жеке сатып алу және рецепт бойынша көмекшіңізмін!\n\nМен сізге көмектесу үшін келдім:\n🛒 **Сатып алуды автоматты түрде санаттар бойынша ұйымдастырыңыз**\n💰 **Бюджетіңізді қадағалаңыз** және ақша үнемдеу бойынша кеңестер беріңіз\n🍲 **Ұсыныңыз** дәмді рецепттер сізде бұрыннан бар\n\nБүгін мен сізге қалай көмектесе аламын? Сіз өзіңіздің бірінші тізіміңізді жасаудан бастай аласыз!",
+  "aiWelcomeSuggestBarbecue": "Барбекюді жоспарлаңыз",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, мен барбекю ұйымдастырып жатырмын — маған сатып алулар тізімін жасауға көмектесіңіз",
   "aiWelcomeSuggestCreateList": "Менің бірінші тізімімді жасаңыз",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, бірінші сатып алу тізімімді жасауға көмектес",
   "aiWelcomeSuggestSave": "Ақшаны қалай үнемдеуге болады?",
@@ -1405,14 +1504,17 @@
   "appTitle": "Сатып алу тізімі",
   "appearance": "Көрініс",
   "archiveList": "Тізімді мұрағаттау",
+  "artifactBudgetLabel": "Бюджет:",
   "artifactReplaceBody": "Құнды оңтайландыру үшін өнім баламасын таңдаңыз.",
   "artifactReplaceTitle": "{name} ауыстыру",
   "artifactSuggestedItems": "Ұсынылған элементтер",
   "artifactSwapButton": "Ауыстыру",
   "artifactSwappedLabel": "Ауыстырылды",
+  "artifactSynced": "Синхрондалған",
   "assistantHistory": "Assistant тарихы",
   "assistantHistorySubtitle": "Әңгімелесу тарихын қараңыз",
   "assistantName": "Көмекшінің аты",
+  "assistantRole": "Көмекші",
   "backToChat": "Чатқа оралу",
   "backToToday": "Бүгінге оралу",
   "backupExported": "Сақтық көшірме экспортталды!",
@@ -1420,6 +1522,7 @@
   "backupPremiumDescription": "Сақтық көшірме және экспорттау премиум мүмкіндігі",
   "backupSubtitle": "Деректеріңізді экспорттау немесе импорттау",
   "backupTitle": "Сақтық көшірме",
+  "badResponse": "Жаман жауап",
   "badgeBeginner": "Бастаушы",
   "badgeOrganized": "Ұйымдастырылған",
   "badgeSavingMaster": "Мастерді сақтау",
@@ -1447,10 +1550,12 @@
   "catOthers": "Басқалар",
   "catalogAddItems": "{count} {count, plural, one{item} other{items}} қосу →",
   "catalogBrowse": "Каталогты шолу",
+  "catalogCategories": "Санаттар",
   "catalogFilterNational": "Ұлттық",
   "catalogItemAdded": "{name} қосылды",
   "catalogMyFrequents": "Менің жиілерім",
   "catalogProductNotFound": "Өнім табылмады, атын теріңіз",
+  "catalogRareBadge": "Сирек",
   "catalogRareSection": "еліңізде сирек кездеседі",
   "catalogRetry": "Қайтадан байқап көріңіз",
   "catalogSearchGlobal": "Кез келген өнімді іздеу...",
@@ -1459,16 +1564,43 @@
   "catalogSortPopular": "Ең танымал",
   "catalogTitle": "Каталог",
   "category": "Санат",
+  "categoryAlcohol": "Алкогольді сусындар",
+  "categoryBaby": "Балапан",
+  "categoryBakery": "Наубайхана",
+  "categoryBeverages": "Сусындар",
+  "categoryCanned": "Консервіленген өнімдер",
+  "categoryCleaning": "Тазалау",
+  "categoryColdCuts": "Суық кесу",
   "categoryColorLabel": "Түс",
+  "categoryDairy": "Сүт",
+  "categoryFish": "Балық",
+  "categoryFrozen": "Мұздатылған тағамдар",
+  "categoryFruits": "Жемістер",
+  "categoryGrains": "Дәнді және дәнді дақылдар",
+  "categoryHygiene": "Жеке күтім",
   "categoryIconLabel": "Белгіше",
   "categoryLimitReached": "Санат шегіне жетті",
+  "categoryMeat": "Ет",
   "categoryName": "Санат атауы",
   "categoryNameHint": "Санат атауын енгізіңіз",
+  "categoryOthers": "Басқа",
+  "categoryPet": "Үй жануарларына арналған керек-жарақтар",
+  "categorySeasonings": "Дәмдеуіштер",
+  "categorySweets": "Кәмпиттер мен десерттер",
+  "categoryUtilities": "Тұрмыстық керек-жарақтар",
+  "categoryVegetables": "Көкөністер",
+  "chatEmptyGreeting": "Сәлем {name}, мен Кипимін 👋",
+  "chatEmptyGreetingNoName": "Сәлем, мен Кипимін 👋",
+  "chatEmptyPitch": "Мен тізімдер құрастырамын, рецепттер ұсынамын және қайда сақтау керектігін табамын. Біз неден бастаймыз?",
   "chatEmptySubtitle": "Бастау үшін элементтер туралы ұсыныстарды, рецепттерді немесе сақтау бойынша кеңестерді сұраңыз.",
   "chatEmptyTitle": "Сіздің чатыңыз бос",
   "chatError": "Чатты жүктеу қатесі: {error}",
   "chatHint": "Хабарламаңызды жазыңыз...",
   "chatHintBlocked": "Сөйлесу үшін AI құлпын ашыңыз",
+  "chatHistoryErrorBody": "Біздің тарапымыздан бірдеңе дұрыс болмады. Қайталап көру үшін қайталап көру түймесін түртіңіз.",
+  "chatHistoryErrorTitle": "Бұл әңгімені жүктеу мүмкін болмады",
+  "chatHistoryOfflineBody": "Интернет байланысын тексеріп, әрекетті қайталаңыз.",
+  "chatHistoryOfflineTitle": "Сіз офлайнсыз",
   "chatSubtitle": "Элемент ұсыныстарын, рецептерді немесе үнемдеу кеңестерін сұраңыз.",
   "chatSubtitleShort": "Бағалар, рецепттер, ұйымдастыру туралы сұраңыз...",
   "chooseCurrency": "Валюта таңдаңыз",
@@ -1476,6 +1608,7 @@
   "chooseImageSource": "Сурет көзін таңдаңыз",
   "chooseLanguage": "Тілді таңдаңыз",
   "chooseThemeColor": "Тақырып түсін таңдаңыз",
+  "chooseThemeMode": "Тақырып режимін таңдаңыз",
   "clear": "Тазалау",
   "clearHistory": "Тарихты Тазалау",
   "clearHistoryConfirm": "Осы сессиядағы барлық хабарларды тазалау?",
@@ -1518,6 +1651,10 @@
   "customizeAssistant": "Баптау",
   "dark": "Қараңғы",
   "data": "Деректер",
+  "dateGroupOlder": "Үлкенірек",
+  "dateGroupPrevious7Days": "Алдыңғы 7 күн",
+  "dateGroupToday": "Бүгін",
+  "dateGroupYesterday": "Кеше",
   "deficitItems": "{deficit,plural, one{{deficit} элемент сатып алынуы керек} other{{deficit} элемент сатып алынуы керек}}",
   "delete": "Жою",
   "deleteCategory": "Жою",
@@ -1534,6 +1671,7 @@
   "deleteRecipeConfirmMsg": "\"{recipeName}\" рецептін жоюға сенімдісіз бе? Бұл әрекетті қайтару мүмкін емес.",
   "deleteSession": "Чатты жою",
   "deleteSessionConfirm": "Бұл чатты шынымен жойғыңыз келе ме? Хабарламалар біржола жоғалады.",
+  "deletedList": "Жойылған тізім",
   "deselectAll": "Барлығынан таңдауды алу",
   "dietaryRestrictions": "Диеталық шектеулер",
   "dietaryRestrictionsHint": "Диеталық шектеулер бар ма?",
@@ -1546,6 +1684,7 @@
   "editCategoryDialog": "Санатты өңдеу",
   "editItem": "Элементті Өңдеу",
   "editItemPrice": "Болжалды баға",
+  "editMessage": "Хабарламаны өңдеу",
   "editPantryItem": "{name} өңдеу",
   "editRecipe": "Өңдеу",
   "editRecipeTitle": "Рецептті өңдеу",
@@ -1567,6 +1706,7 @@
   "errorLoadingChat": "Ой! Чатты жүктеу кезінде бірдеңе дұрыс болмады.",
   "errorLoadingChatSubtitle": "Байланысты тексеріңіз немесе кейінірек қайталап көріңіз.",
   "errorLoadingHistory": "Тарихты жүктеу қатесі",
+  "errorLoadingItems": "Элементтерді жүктеу қатесі",
   "errorLoadingLists": "Тізімдерді жүктеу қатесі",
   "errorLoadingRecipes": "Рецепттерді жүктеу қатесі",
   "errorLoadingSubscription": "Жазылымды жүктеу қатесі",
@@ -1619,6 +1759,7 @@
   "generateShoppingList": "Сатып алу тізімін жасау",
   "gestureHint": "Таңдау үшін басып тұрыңыз • Жою үшін сырғытыңыз",
   "globalAssistant": "Жаһандық көмекші",
+  "goodResponse": "Жақсы жауап",
   "howCanIHelp": "Қалай көмектесе аламын?",
   "idealQty": "Идеалды саны",
   "idealQuantity": "Идеалды мөлшер",
@@ -1635,14 +1776,18 @@
   "instructionsHint": "Бір жолға бір қадамнан енгізіңіз...",
   "inviteToList": "Тізімге шақыру",
   "itemAddedSnack": "{name} қосылды",
+  "itemAddedToList": "Элемент тізімге қосылды.",
   "itemName": "Элемент атауы",
   "itemRemoved": "Элемент жойылды",
   "itemsAddedSuccess": "Элементтер тізімге сәтті қосылды!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} элемент(ті) сатып алу керек",
   "itemsPurchased": "Сатып алынған заттар",
   "itemsPurchasedCount": "{purchased}/{total} сатып алынды",
   "itemsPurchasedShort": "{purchased}/{total} сатып алынды",
   "itemsWillBeAdded": "{count} элемент(тер) қосылады",
+  "keepAdding": "Қосуды жалғастырыңыз",
+  "keepAddingSubtitle": "Бірнеше элементтерді қосу үшін парақты ашық ұстаңыз",
   "kipiListProActive": "KipiList Pro белсенді",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Сатып алу үшін не қажет?",
@@ -1689,16 +1834,22 @@
   "mealDragHint": "Сүйреп апару және жылжыту үшін басып тұрыңыз",
   "mealNoRecipeFound": "Рецепт табылмады",
   "mealPlannerAddMeal": "Тамақты қосу",
+  "mealPlannerAddType": "Тамақ түрін қосыңыз",
+  "mealPlannerCustomTypeLabel": "Арнаулы түрі",
   "mealPlannerDateLabel": "Күні",
+  "mealPlannerDefaultTypeLabel": "Әдепкі түрі",
   "mealPlannerDeleteMeal": "Тамақты алып тастау",
   "mealPlannerEditMeal": "Тамақты өңдеу",
+  "mealPlannerEditType": "Тамақ түрін өңдеу",
   "mealPlannerError": "Тамақтану жоспарын жүктеу қатесі",
+  "mealPlannerEstimatePartial": "Ішінара баға деректері бар рецепттерге негізделген бағалау.",
   "mealPlannerGenerateList": "Сатып алу тізімін жасау",
   "mealPlannerGenerateListConfirm": "Осы аптаға жоспарланған барлық тамақ ингредиенттерін сатып алу тізіміне қосу керек пе?",
   "mealPlannerGenerateListEmpty": "Қосатын ингредиенттер жоқ. Алдымен рецепттері бар тамақтарды жоспарлаңыз.",
   "mealPlannerGenerateListNoList": "Алдымен сатып алу тізімін жасаңыз.",
   "mealPlannerGenerateListSuccess": "{count} ингредиент тізімге қосылды!",
   "mealPlannerLoading": "Тамақтану жоспары жүктелуде...",
+  "mealPlannerManageTypes": "Тамақ түрлерін басқарыңыз",
   "mealPlannerMealDeleted": "Тамақ алып тасталды",
   "mealPlannerMealTypeBreakfast": "Таңғы ас",
   "mealPlannerMealTypeDinner": "Кешкі ас",
@@ -1718,6 +1869,12 @@
   "mealPlannerServings": "{count,plural, one{{count} порция} other{{count} порция}}",
   "mealPlannerServingsLabel": "Порциялар",
   "mealPlannerTitle": "Тамақтану жоспарлаушысы",
+  "mealPlannerTypeColor": "Түс",
+  "mealPlannerTypeDeleteConfirm": "Бұл тағам түрін шынымен жойғыңыз келе ме? Осы түрдегі жоспарланған тағамдар қалады.",
+  "mealPlannerTypeDeleteError": "Бұл тағам түрін жою мүмкін емес.",
+  "mealPlannerTypeIcon": "Белгіше",
+  "mealPlannerTypeName": "Аты",
+  "mealPlannerTypeNameEmpty": "Аты бос болмауы керек",
   "mealPlannerViewMonthly": "Айлық көрініс",
   "mealPlannerViewWeekly": "Апталық көрініс",
   "mealPlannerWeekEmpty": "Бұл аптаға ештеңе жоспарланбаған",
@@ -1933,6 +2090,7 @@
   "onboardingViewAllPlans": "Барлық жоспарларды қараңыз",
   "onboardingWelcomeDesc": "Сатып алуды ұйымдастырудың және ақша үнемдеудің ең ақылды жолы.",
   "onboardingWelcomeTitle": "KipiList қолданбасына қош келдіңіз",
+  "openConversation": "Ашық әңгіме",
   "openMenu": "Мәзірді ашу",
   "organizeAisles": "Сөрелер бойынша ұйымдастыру",
   "organizeAislesPrompt": "Дүкен сөрелері бойынша ұйымдастыру.",
@@ -1945,6 +2103,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} қоймада",
   "pantryCompactView": "Шағын көрініс",
   "pantryDeficit": "{amount}{unit} жоқ",
+  "pantryDeficitCount": "{count}{unit} жоқ",
   "pantryDeleteItemsContent": "Таңдалған {count} элементтерді жойғыңыз келе ме?",
   "pantryDeleteItemsTitle": "Элементтерді жою",
   "pantryDeleteSelected": "Таңдалғанды ​​жою",
@@ -1961,6 +2120,7 @@
   "pantryFilterExpiring": "Мерзімі аяқталуда",
   "pantryFilterOutStock": "Қоймада жоқ",
   "pantryFirstOpenHint": "Үйде не бар екенін қадағалаңыз. Элементтерді қосыңыз немесе штрих-кодтарды сканерлеңіз.",
+  "pantryItemAdded": "Элемент қосылды",
   "pantryItemRemoved": "Элемент жойылды",
   "pantryMoreDetails": "Қосымша мәліметтер",
   "pantryNoItemsFound": "\"{query}\" үшін ешбір элемент табылмады",
@@ -1974,6 +2134,7 @@
   "paywallAfterItem2": "Тазалау",
   "paywallAfterItem3": "Еттер",
   "paywallAfterItem4": "Наубайхана",
+  "paywallBasedOnAnswers": "Жауаптарыңыздан жекелендірілген",
   "paywallBeforeAfterTitle": "AI алдында және кейін:",
   "paywallBeforeItem1": "күріш",
   "paywallBeforeItem2": "сабын",
@@ -2011,6 +2172,8 @@
   "paywallGoalHeadlinePantry": "{name}, қоймаңызды тамаша қадағалаңыз!",
   "paywallGoalHeadlineRecipes": "{name}, жаңа рецепттерді табыңыз!",
   "paywallGoalHeadlineSaveMoney": "{name}, әр сапарда үнемдеңіз!",
+  "paywallHeroFeatureDesc": "Бүкіл тізімді сөйлеңіз немесе қойыңыз — AI оны секундтарда сұрыптайды, санаттайды және бюджетке бөледі",
+  "paywallHeroFeatureTitle": "AI Shopping Assistant",
   "paywallHeroHeadline": "Kipi AI әрқашан сіздің қасыңызда",
   "paywallHeroSubtitle": "Қалтаңыздағы AI көмегімен элементтерді қосыңыз, тізімдерді реттеңіз және уақытты үнемдеңіз",
   "paywallHeroSubtitlePersonalized": "Сәлем {name}, сатып алуды дұрыс ұйымдастырыңыз.",
@@ -2045,6 +2208,11 @@
   "paywallTestimonial2Text": "Мен тізімдегі бір элементті қайтадан ұмытпадым. AI чаты сенсациялық!",
   "paywallTestimonialAuthor": "Энн С.",
   "paywallTestimonialsTitle": "Біздің қолданушылар не дейді:",
+  "paywallTimelineChargeDesc": "Жазылым басталады — кез келген уақытта бас тартыңыз",
+  "paywallTimelineDay": "{day} күні",
+  "paywallTimelineReminderDesc": "Сынақ аяқталмай тұрып еске саламыз",
+  "paywallTimelineToday": "Бүгін",
+  "paywallTimelineTodayDesc": "Толық қолжетімділікті бірден ашыңыз",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Тегін сынақ нұсқасын бастаңыз",
   "paywallTrialDays": "{days} КҮН ТЕГІН",
@@ -2067,11 +2235,15 @@
   "prefSharing": "Тізімдермен бөлісу",
   "prefUnlimitedLists": "Шексіз тізімдер",
   "prefUnlimitedPantry": "Шексіз азық-түлік қоры",
+  "preferencesSection": "Параметрлер",
   "preferredMarket": "Артықшылықты нарық",
   "preferredMarketHint": "Сіз әдетте қай жерде дүкен жасайсыз?",
+  "premiumActionsPrompt": "Автоматты әрекеттердің құлпын ашу үшін Premium қызметіне жазылыңыз.",
+  "premiumStepDescription": "{description} (Премиум)",
   "premiumUpgrade": "Құлыптан шығару үшін жаңартыңыз",
   "prepTime": "Дайындау уақыты",
   "prepTimeMinutes": "Дайындау уақыты (минут)",
+  "previousItemState": "Алдыңғы күй: {quantity} {unit} [{category}]{price}",
   "privacy": "Құпиялылық",
   "product": "Өнім",
   "productName": "Өнім атауы",
@@ -2088,21 +2260,34 @@
   "quantityShort": "Саны",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Kipi-мен сөйлесу",
+  "quickActionPantry": "Қойманы қарау",
   "quickRecipe": "Жылдам рецепт",
   "quickRecipePrompt": "Менің тізімдегі элементтермен рецептер ұсыныңыз.",
   "quickReplies": "Жылдам жауаптар:",
   "quickSuggestions": "Жылдам ұсыныстар",
+  "recipeAddError": "Тізіміңізге қосу мүмкін болмады. Қайталап көріңіз.",
   "recipeAddToList": "Сатып алу тізіміне қосыңыз",
   "recipeAddedConfirmation": "{count} ингредиенттер {listName} ішіне қосылды",
   "recipeCreated": "Рецепт жасалды!",
   "recipeDeleted": "Рецепт жойылды",
+  "recipeEstimatePartial": "Бағасы бар ингредиенттерге негізделген ішінара бағалау.",
+  "recipeEstimatedCostPerServing": "{cost} / қызмет көрсету",
+  "recipeEstimatedTotalCost": "Болжалды жалпы құны",
   "recipeImage": "Рецепт суреті",
+  "recipeIngredientInPantry": "Қоймада",
+  "recipeIngredientLowPantry": "Қоймада төмен",
   "recipeIngredientSingular": "1 ингредиент",
   "recipeIngredientsPlural": "{count} ингредиенттер",
+  "recipeManualTotalCost": "Қолмен жалпы құны",
+  "recipeManualTotalCostHint": "Ингредиент бағасынан бағалау үшін бос қалдырыңыз.",
   "recipeName": "Рецепт атауы",
   "recipeSaved": "Рецепт сақталды!",
+  "recipeServesCount": "{count} қызмет етеді",
   "recipeSuggestion": "Рецепт ұсынысы",
   "recipeTags": "Рецепт тегтері",
+  "recipeTapToCheck": "Пісіру кезінде оны тексеру үшін ингредиентті түртіңіз",
+  "recipeYieldServings": "Өнімділік порциялары",
   "regenerate": "Қайта жасау",
   "remove": "Алып тастау",
   "removeBudget": "Алып тастау",
@@ -2126,9 +2311,12 @@
   "savings": "Үнемдеу",
   "scanBarcodeTitle": "Штрих-кодты сканерлеу",
   "scanProductTitle": "Өнімді сканерлеу",
+  "scrollToBottom": "Төменге жылжытыңыз",
+  "searchConversations": "Сөйлесулерді іздеу",
   "searchCurrency": "Валюта іздеу...",
   "searchInConversation": "Әңгімелесуден іздеу...",
   "searchLanguage": "Тілді іздеу...",
+  "searchMessages": "Хабарларды іздеу...",
   "searchRecipes": "Рецепттерді іздеу...",
   "selectAll": "Барлығын таңдау",
   "selectCheaperAlternative": "Неғұрлым арзан балама таңдаңыз",
@@ -2185,6 +2373,7 @@
   "signInGoogle": "Google арқылы кіру",
   "skip": "Өткізіп жіберу",
   "smartOrganization": "Ақылды Ұйымдастыру",
+  "somethingWentWrong": "Бірдеңе дұрыс болмады",
   "sortAZ": "A–Z",
   "sortCategory": "Санат",
   "sortDate": "Күні",
@@ -2215,6 +2404,7 @@
   "themeColor": "Тақырып түсі",
   "themeGreen": "Жасыл",
   "themeIndigo": "Индиго",
+  "themeMode": "Тақырып режимі",
   "themeOrange": "Қызғылт сары",
   "themePink": "Қызғылт",
   "themePurple": "Күлгін",
@@ -2222,12 +2412,14 @@
   "themeSelectionTitle": "Тақырып түсін таңдаңыз",
   "themeTeal": "Теал",
   "totalEstimated": "Болжалды жиынтық: {amount}",
+  "totalEstimatedLabel": "Болжалды жиынтық",
   "totalSavings": "Жалпы үнемдеу",
   "totalSpending": "Жалпы Жұмсалған",
   "trackStock": "Қорды бақылау",
   "trackStockActive": "Сатып алу ұсыныстарында көрсетіледі",
   "trackStockInactive": "Сатып алу ұсынысын жасамайды",
   "undo": "Болдырмау",
+  "undoChanges": "Өзгерістерді болдырмау",
   "unit": "Бірлік",
   "unitPack": "орам",
   "unlockAi": "Шексіз AI құлпын ашыңыз",
@@ -2252,6 +2444,7 @@
   "userProfileSaveButton": "Профильді сақтау",
   "userProfileSaved": "Профиль сәтті сақталды!",
   "userProfileTitle": "Менің профилім",
+  "userRole": "Сіз",
   "validForLimitedTime": "Шектеулі уақытқа жарамды",
   "version": "Нұсқа",
   "viewActive": "Белсенділерді Көру",
@@ -2259,6 +2452,7 @@
   "viewHistory": "Тарихты Көру",
   "viewItems": "Элементтерді көру",
   "viewList": "Тізімді көру",
+  "viewPlans": "Жоспарларды қарау",
   "viewPro": "Pro",
   "viewRecipe": "Рецептті көру",
   "voiceCommandContent": "Тізіміңізді басқару үшін табиғи сөйлеңіз!\n\nМысалдар:\n• 'Нан, ірімшік және ветчина қосу'\n• 'Кір жуғыш ұнтақты алып тастау'\n• 'Тақырыпты көкке өзгерту'\n\nБұл KipiList Premium-ның эксклюзивті мүмкіндігі.",

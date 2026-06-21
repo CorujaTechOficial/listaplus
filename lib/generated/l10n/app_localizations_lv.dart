@@ -244,6 +244,11 @@ class AppLocalizationsLv extends AppLocalizations {
   String get noItemsToBuy => 'Nav jāiegādājas neviens vienums';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Trūkst $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Pieliekamā iepirkums';
 
   @override
@@ -310,6 +315,12 @@ class AppLocalizationsLv extends AppLocalizations {
   String get settingsAppBar => 'Iestatījumi';
 
   @override
+  String get preferencesSection => 'Preferences';
+
+  @override
+  String get aiSection => 'AI palīgs';
+
+  @override
   String get language => 'Valoda';
 
   @override
@@ -338,6 +349,12 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get appearance => 'Izskats';
+
+  @override
+  String get themeMode => 'Motīvu režīms';
+
+  @override
+  String get chooseThemeMode => 'Izvēlieties motīva režīmu';
 
   @override
   String get light => 'Gaišs';
@@ -588,6 +605,13 @@ class AppLocalizationsLv extends AppLocalizations {
   String get trackStockInactive => 'Neģenerē iepirkumu ieteikumus';
 
   @override
+  String get keepAdding => 'Turpiniet pievienot';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Turiet lapu atvērtu, lai pievienotu vairākus vienumus';
+
+  @override
   String get createListDialog => 'Izveidot sarakstu';
 
   @override
@@ -692,6 +716,36 @@ class AppLocalizationsLv extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Laba atbilde';
+
+  @override
+  String get badResponse => 'Slikta atbilde';
+
+  @override
+  String get scrollToBottom => 'Ritiniet līdz apakšai';
+
+  @override
+  String get somethingWentWrong => 'Kaut kas nogāja greizi';
+
+  @override
+  String get editMessage => 'Rediģēt ziņojumu';
+
+  @override
+  String get searchConversations => 'Meklēt sarunas';
+
+  @override
+  String get dateGroupToday => 'Šodien';
+
+  @override
+  String get dateGroupYesterday => 'vakar';
+
+  @override
+  String get dateGroupPrevious7Days => 'Iepriekšējās 7 dienas';
+
+  @override
+  String get dateGroupOlder => 'Vecāks';
+
+  @override
   String get aiAssistantTitle => 'AI palīgs';
 
   @override
@@ -732,6 +786,33 @@ class AppLocalizationsLv extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Sasniegts mēneša AI ierobežojums. Jauniniet uz Pro, lai iegūtu neierobežotu →';
+
+  @override
+  String get undo => 'Atsaukt';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -941,6 +1022,20 @@ class AppLocalizationsLv extends AppLocalizations {
   String get recipeAddToList => 'Pievienot iepirkumu sarakstam';
 
   @override
+  String get recipeAddError =>
+      'Nevarēja pievienot jūsu sarakstam. Lūdzu, mēģiniet vēlreiz.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Pieskarieties kādai sastāvdaļai, lai ēdiena gatavošanas laikā to pārbaudītu';
+
+  @override
+  String get recipeIngredientInPantry => 'Pieliekamajā';
+
+  @override
+  String get recipeIngredientLowPantry => 'Zems pieliekamais';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count sastāvdaļas pievienotas $listName';
   }
@@ -1054,12 +1149,12 @@ class AppLocalizationsLv extends AppLocalizations {
   String get paywallSelectPlan => 'Izvēlieties savu plānu:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'IETAUPĪT $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Tikai $price mēnesī';
   }
 
@@ -1094,6 +1189,36 @@ class AppLocalizationsLv extends AppLocalizations {
   String get paywallRestore => 'Atjaunot';
 
   @override
+  String get paywallTimelineToday => 'Šodien';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Nekavējoties atbloķējiet pilnu piekļuvi';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return '$day diena';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Atgādinām pirms izmēģinājuma beigām';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Jūsu abonements sākas — jebkurā laikā varat to atcelt';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI iepirkšanās palīgs';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Izrunājiet vai ielīmējiet visu sarakstu — mākslīgais intelekts to sakārto, kategorizē un veido budžetu dažu sekunžu laikā';
+
+  @override
+  String get paywallBasedOnAnswers => 'Personalizēta no jūsu atbildēm';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI vienmēr ir jūsu pusē';
 
   @override
@@ -1126,9 +1251,6 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Vienums noņemts';
-
-  @override
-  String get undo => 'Atsaukt';
 
   @override
   String get emptyListTitle => 'Jūsu saraksts ir tukšs';
@@ -1246,6 +1368,9 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Vienums noņemts';
+
+  @override
+  String get pantryItemAdded => 'Vienums pievienots';
 
   @override
   String deficitItems(int deficit) {
@@ -1650,6 +1775,33 @@ class AppLocalizationsLv extends AppLocalizations {
   String get prepTimeMinutes => 'Gatavošanas laiks (minūtes)';
 
   @override
+  String get recipeYieldServings => 'Ražas porcijas';
+
+  @override
+  String get recipeManualTotalCost => 'Manuālās kopējās izmaksas';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Atstājiet tukšu, lai novērtētu sastāvdaļu cenas.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Paredzamās kopējās izmaksas';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / porcija';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Apkalpo $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Daļēja aplēse, pamatojoties uz sastāvdaļām un cenu.';
+
+  @override
   String get instructionsHint => 'Ierakstiet vienu soli rindā...';
 
   @override
@@ -1780,6 +1932,10 @@ class AppLocalizationsLv extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Aprēķins, pamatojoties uz receptēm ar daļējiem cenu datiem.';
+
+  @override
   String get mealPlannerGenerateList => 'Ģenerēt iepirkumu sarakstu';
 
   @override
@@ -1873,6 +2029,9 @@ class AppLocalizationsLv extends AppLocalizations {
   String get catalogRareSection => 'retāk jūsu valstī';
 
   @override
+  String get catalogRareBadge => 'Reti';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1891,7 +2050,7 @@ class AppLocalizationsLv extends AppLocalizations {
   String get catalogBrowse => 'Pārlūkot katalogu';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kategorijas';
 
   @override
   String get offlineBanner => 'Jūs esat bezsaistē';
@@ -1922,6 +2081,41 @@ class AppLocalizationsLv extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Pārvaldiet ēdienreižu veidus';
+
+  @override
+  String get mealPlannerAddType => 'Pievienojiet ēdienreizes veidu';
+
+  @override
+  String get mealPlannerEditType => 'Rediģēt ēdienreizes veidu';
+
+  @override
+  String get mealPlannerTypeName => 'Vārds';
+
+  @override
+  String get mealPlannerTypeColor => 'Krāsa';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikona';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Vai tiešām vēlaties dzēst šo maltītes veidu? Plānotās ēdienreizes ar šo veidu paliks.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Vārda lauks nedrīkst būt tukšs';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Šo ēdienreizes veidu nevar izdzēst.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Pielāgots veids';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Noklusējuma veids';
 
   @override
   String get expirationDate => 'Derīguma termiņš';
@@ -1982,6 +2176,9 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Ielādējot sarakstus, radās kļūda';
+
+  @override
+  String get errorLoadingItems => 'Ielādējot vienumus, radās kļūda';
 
   @override
   String get noListsFound => 'Nav atrasts neviens saraksts';
@@ -2756,4 +2953,213 @@ class AppLocalizationsLv extends AppLocalizations {
   @override
   String get obLoginError =>
       'Pierakstīšanās neizdevās. Mēģiniet vēlreiz vai pagaidām izlaidiet.';
+
+  @override
+  String get searchMessages => 'Meklēt ziņas...';
+
+  @override
+  String get deletedList => 'Izdzēsts saraksts';
+
+  @override
+  String get openConversation => 'Atvērt sarunu';
+
+  @override
+  String get userRole => 'Tu';
+
+  @override
+  String get assistantRole => 'Asistents';
+
+  @override
+  String get agentActionsRunning => 'Notiek darbības...';
+
+  @override
+  String get agentActionsFailed => 'Neizdevās izpildīt darbības';
+
+  @override
+  String get agentActionsPremium => 'Darbībām ir nepieciešama Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Atsaukt izmaiņas';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Vienums pievienots sarakstam.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Iepriekšējais stāvoklis: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Abonējiet Premium, lai atbloķētu automātiskās darbības.';
+
+  @override
+  String get viewPlans => 'Skatīt plānus';
+
+  @override
+  String get artifactSynced => 'Sinhronizēts';
+
+  @override
+  String get artifactBudgetLabel => 'Budžets:';
+
+  @override
+  String get totalEstimatedLabel => 'Paredzamā kopsumma';
+
+  @override
+  String get quickActionPantry => 'Skatīt pieliekamo';
+
+  @override
+  String get quickActionAi => 'Tērzējiet ar Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI pakalpojums atgrieza kļūdu ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Pieprasījums aizņēma pārāk ilgu laiku. Lūdzu, mēģiniet vēlreiz.';
+
+  @override
+  String get aiConnectionError =>
+      'Nevarēja izveidot savienojumu ar AI pakalpojumu. Pārbaudiet savienojumu.';
+
+  @override
+  String get aiEmptyResponseError => 'AI pakalpojums sniedza tukšu atbildi.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'AI pakalpojums sniedza nederīgu atbildi.';
+
+  @override
+  String get categoryFruits => 'Augļi';
+
+  @override
+  String get categoryCleaning => 'Tīrīšana';
+
+  @override
+  String get categoryBeverages => 'Dzērieni';
+
+  @override
+  String get categoryBakery => 'Maiznīca';
+
+  @override
+  String get categoryMeat => 'Gaļa';
+
+  @override
+  String get categoryDairy => 'Piena produkti';
+
+  @override
+  String get categoryVegetables => 'Dārzeņi';
+
+  @override
+  String get categoryGrains => 'Graudi un graudaugi';
+
+  @override
+  String get categoryHygiene => 'Personīgā aprūpe';
+
+  @override
+  String get categoryFrozen => 'Saldēti pārtikas produkti';
+
+  @override
+  String get categoryCanned => 'Konservētas preces';
+
+  @override
+  String get categorySeasonings => 'Garšvielas';
+
+  @override
+  String get categorySweets => 'Saldumi un deserti';
+
+  @override
+  String get categoryAlcohol => 'Alkoholiskie dzērieni';
+
+  @override
+  String get categoryFish => 'Zivis';
+
+  @override
+  String get categoryColdCuts => 'Aukstā griešana';
+
+  @override
+  String get categoryUtilities => 'Mājsaimniecības preces';
+
+  @override
+  String get categoryPet => 'Mājdzīvnieku piederumi';
+
+  @override
+  String get categoryBaby => 'Mazulis';
+
+  @override
+  String get categoryOthers => 'Cits';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Sveiki, $name, es esmu Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Sveiki, es esmu Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Es veidoju sarakstus, iesaku receptes un atrodu, kur saglabāt. Kur mēs sākam?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Plānojiet bārbekjū';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, es rīkoju bārbekjū — palīdzi man izveidot iepirkumu sarakstu';
+
+  @override
+  String get aiRateLimitError =>
+      'Pārāk daudz ziņojumu īsā laikā. Pagaidiet dažas sekundes un mēģiniet vēlreiz.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Nevarēja ielādēt šo sarunu';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Mūsu pusē kaut kas nogāja greizi. Pieskarieties vēlreiz, lai mēģinātu vēlreiz.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Jūs esat bezsaistē';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Pārbaudiet interneta savienojumu un mēģiniet vēlreiz.';
+
+  @override
+  String get aiGeneratingResponse => 'Notiek atbildes ģenerēšana…';
 }

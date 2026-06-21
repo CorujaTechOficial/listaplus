@@ -237,6 +237,11 @@ class AppLocalizationsVi extends AppLocalizations {
   String get noItemsToBuy => 'Không có mục nào cần mua';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Thiếu $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Mua sắm từ phòng đựng thức ăn';
 
   @override
@@ -303,6 +308,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get settingsAppBar => 'Cài đặt';
 
   @override
+  String get preferencesSection => 'Tùy chọn';
+
+  @override
+  String get aiSection => 'Trợ lý AI';
+
+  @override
   String get language => 'Ngôn ngữ';
 
   @override
@@ -331,6 +342,12 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get appearance => 'Giao diện';
+
+  @override
+  String get themeMode => 'Chế độ chủ đề';
+
+  @override
+  String get chooseThemeMode => 'Chọn chế độ chủ đề';
 
   @override
   String get light => 'Sáng';
@@ -582,6 +599,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get trackStockInactive => 'Không tạo gợi ý mua sắm';
 
   @override
+  String get keepAdding => 'Tiếp tục thêm';
+
+  @override
+  String get keepAddingSubtitle => 'Giữ trang tính mở để thêm nhiều mục';
+
+  @override
   String get createListDialog => 'Tạo danh sách';
 
   @override
@@ -686,6 +709,36 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'phản hồi tốt';
+
+  @override
+  String get badResponse => 'Phản hồi xấu';
+
+  @override
+  String get scrollToBottom => 'Cuộn xuống dưới cùng';
+
+  @override
+  String get somethingWentWrong => 'Đã xảy ra lỗi';
+
+  @override
+  String get editMessage => 'Chỉnh sửa tin nhắn';
+
+  @override
+  String get searchConversations => 'Tìm kiếm cuộc trò chuyện';
+
+  @override
+  String get dateGroupToday => 'Hôm nay';
+
+  @override
+  String get dateGroupYesterday => 'Hôm qua';
+
+  @override
+  String get dateGroupPrevious7Days => '7 ngày trước';
+
+  @override
+  String get dateGroupOlder => 'Lớn hơn';
+
+  @override
   String get aiAssistantTitle => 'Trợ lý AI';
 
   @override
@@ -727,6 +780,33 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Đã đạt đến giới hạn AI hàng tháng. Nâng cấp lên Pro không giới hạn →';
+
+  @override
+  String get undo => 'Hoàn tác';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiDanh sách';
@@ -937,6 +1017,20 @@ class AppLocalizationsVi extends AppLocalizations {
   String get recipeAddToList => 'Thêm vào danh sách mua sắm';
 
   @override
+  String get recipeAddError =>
+      'Không thể thêm vào danh sách của bạn. Vui lòng thử lại.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Nhấn vào một thành phần để kiểm tra khi bạn nấu';
+
+  @override
+  String get recipeIngredientInPantry => 'Trong phòng đựng thức ăn';
+
+  @override
+  String get recipeIngredientLowPantry => 'Thấp trong phòng đựng thức ăn';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1056,12 +1150,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get paywallSelectPlan => 'Chọn kế hoạch của bạn:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'TIẾT KIỆM $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Chỉ $price/tháng';
   }
 
@@ -1096,6 +1190,36 @@ class AppLocalizationsVi extends AppLocalizations {
   String get paywallRestore => 'Khôi phục';
 
   @override
+  String get paywallTimelineToday => 'Hôm nay';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Mở khóa toàn quyền truy cập ngay lập tức';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Ngày $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Chúng tôi nhắc nhở bạn trước khi thời gian dùng thử kết thúc';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Đăng ký của bạn bắt đầu — hủy bất cứ lúc nào';
+
+  @override
+  String get paywallHeroFeatureTitle => 'Trợ lý mua sắm AI';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Nói hoặc dán toàn bộ danh sách - AI sắp xếp, phân loại và lập ngân sách trong vài giây';
+
+  @override
+  String get paywallBasedOnAnswers => 'Được cá nhân hóa từ câu trả lời của bạn';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI luôn bên cạnh bạn';
 
   @override
@@ -1127,9 +1251,6 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Đã xóa mục';
-
-  @override
-  String get undo => 'Hoàn tác';
 
   @override
   String get emptyListTitle => 'Danh sách của bạn trống';
@@ -1246,6 +1367,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Đã xóa mục';
+
+  @override
+  String get pantryItemAdded => 'Đã thêm mục';
 
   @override
   String deficitItems(int deficit) {
@@ -1646,6 +1770,33 @@ class AppLocalizationsVi extends AppLocalizations {
   String get prepTimeMinutes => 'Thời gian chuẩn bị (phút)';
 
   @override
+  String get recipeYieldServings => 'suất ăn';
+
+  @override
+  String get recipeManualTotalCost => 'Tổng chi phí thủ công';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Để trống để ước tính giá nguyên liệu.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Tổng chi phí ước tính';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost/khẩu phần';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Phục vụ $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Ước tính một phần dựa trên các thành phần với giá cả.';
+
+  @override
   String get instructionsHint => 'Nhập một bước trên mỗi dòng...';
 
   @override
@@ -1774,6 +1925,10 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Ước tính dựa trên công thức nấu ăn với dữ liệu giá một phần.';
+
+  @override
   String get mealPlannerGenerateList => 'Tạo danh sách mua sắm';
 
   @override
@@ -1867,6 +2022,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get catalogRareSection => 'ít phổ biến hơn ở nước bạn';
 
   @override
+  String get catalogRareBadge => 'Hiếm';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1884,7 +2042,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get catalogBrowse => 'Duyệt danh mục';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Thể loại';
 
   @override
   String get offlineBanner => 'Bạn đang ngoại tuyến';
@@ -1915,6 +2073,40 @@ class AppLocalizationsVi extends AppLocalizations {
     );
     return '$count $_temp0 bị thiếu';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Quản lý loại bữa ăn';
+
+  @override
+  String get mealPlannerAddType => 'Thêm loại bữa ăn';
+
+  @override
+  String get mealPlannerEditType => 'Chỉnh sửa loại bữa ăn';
+
+  @override
+  String get mealPlannerTypeName => 'Tên';
+
+  @override
+  String get mealPlannerTypeColor => 'Màu sắc';
+
+  @override
+  String get mealPlannerTypeIcon => 'Biểu tượng';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Bạn có chắc chắn muốn xóa loại bữa ăn này không? Các bữa ăn theo kế hoạch với loại hình này sẽ vẫn còn.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Tên không thể trống';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'Không thể xóa loại bữa ăn này.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Loại tùy chỉnh';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Loại mặc định';
 
   @override
   String get expirationDate => 'Ngày hết hạn';
@@ -1975,6 +2167,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Lỗi tải danh sách';
+
+  @override
+  String get errorLoadingItems => 'Lỗi tải mục';
 
   @override
   String get noListsFound => 'Không tìm thấy danh sách nào';
@@ -2585,171 +2780,387 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get obHookTitle => 'Smarter shopping starts here';
+  String get obHookTitle => 'Mua sắm thông minh hơn bắt đầu từ đây';
 
   @override
   String get obHookSubtitle =>
-      'AI-powered lists that save you time and money, every single trip.';
+      'Danh sách được hỗ trợ bởi AI giúp bạn tiết kiệm thời gian và tiền bạc trong mỗi chuyến đi.';
 
   @override
-  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+  String get obHookSocial =>
+      'Được hàng ngàn người mua hàng trên toàn thế giới tin cậy';
 
   @override
-  String get obHookCta => 'Get Started';
+  String get obHookCta => 'Bắt đầu';
 
   @override
-  String get obQuizHouseholdTitle => 'Who do you shop for?';
+  String get obQuizHouseholdTitle => 'Bạn mua sắm cho ai?';
 
   @override
-  String get obQuizHouseholdSolo => 'Just me';
+  String get obQuizHouseholdSolo => 'Chỉ có tôi';
 
   @override
-  String get obQuizHouseholdCouple => 'Me and my partner';
+  String get obQuizHouseholdCouple => 'Tôi và đối tác của tôi';
 
   @override
-  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+  String get obQuizHouseholdFamilySmall => 'Gia đình 3-4 người';
 
   @override
-  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+  String get obQuizHouseholdFamilyLarge => 'Gia đình trên 5 người';
 
   @override
-  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+  String get obQuizFrequencyTitle =>
+      'Bạn có thường xuyên mua sắm đồ tạp hóa không?';
 
   @override
-  String get obQuizFrequencyDaily => 'Almost every day';
+  String get obQuizFrequencyDaily => 'Hầu như mỗi ngày';
 
   @override
-  String get obQuizFrequencyWeekly => 'Once a week';
+  String get obQuizFrequencyWeekly => 'Mỗi tuần một lần';
 
   @override
-  String get obQuizFrequencyBiweekly => 'Every two weeks';
+  String get obQuizFrequencyBiweekly => 'Hai tuần một lần';
 
   @override
-  String get obQuizFrequencyMonthly => 'Big monthly haul';
+  String get obQuizFrequencyMonthly => 'Lô hàng lớn hàng tháng';
 
   @override
-  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+  String get obQuizPainTitle => 'Điều gì làm bạn thất vọng nhất khi mua sắm?';
 
   @override
-  String get obQuizPainForget => 'I always forget items';
+  String get obQuizPainForget => 'Tôi luôn quên đồ';
 
   @override
-  String get obQuizPainOverspend => 'I spend more than planned';
+  String get obQuizPainOverspend => 'Tôi chi tiêu nhiều hơn dự định';
 
   @override
-  String get obQuizPainWaste => 'Food goes to waste at home';
+  String get obQuizPainWaste => 'Thức ăn bị lãng phí ở nhà';
 
   @override
-  String get obQuizPainTime => 'It takes too much time';
+  String get obQuizPainTime => 'Phải mất quá nhiều thời gian';
 
   @override
-  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+  String get obQuizSavingsTitle => 'Bạn muốn tiết kiệm bao nhiêu hàng tháng?';
 
   @override
-  String get obQuizSavingsSmall => 'A little — every bit counts';
+  String get obQuizSavingsSmall => 'Một chút - mỗi chút đều có giá trị';
 
   @override
-  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+  String get obQuizSavingsMedium => 'Khoảng 10% hóa đơn hàng tạp hóa của tôi';
 
   @override
-  String get obQuizSavingsLarge => 'As much as possible';
+  String get obQuizSavingsLarge => 'Nhiều nhất có thể';
 
   @override
-  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+  String get obQuizMethodTitle =>
+      'Làm thế nào để bạn lập danh sách mua sắm ngày hôm nay?';
 
   @override
-  String get obQuizMethodPaper => 'Pen and paper';
+  String get obQuizMethodPaper => 'Bút và giấy';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'ứng dụng ghi chú';
 
   @override
-  String get obQuizMethodMemory => 'I keep it in my head';
+  String get obQuizMethodMemory => 'Tôi giữ nó trong đầu';
 
   @override
-  String get obQuizMethodNone => 'I don\'t make lists';
+  String get obQuizMethodNone => 'Tôi không lập danh sách';
 
   @override
-  String get obSocialTitle => 'You\'re in good company';
+  String get obSocialTitle => 'Bạn đang ở trong một công ty tốt';
 
   @override
   String get obSocialSubtitle =>
-      'Shoppers like you are already saving with KipiList';
+      'Những người mua sắm như bạn đã tiết kiệm được với KipiList';
 
   @override
   String get obSocialQuote1 =>
-      'I never forget anything anymore. The AI builds my list in seconds.';
+      'Tôi không bao giờ quên bất cứ điều gì nữa. AI xây dựng danh sách của tôi trong vài giây.';
 
   @override
   String get obSocialQuote2 =>
-      'We cut our grocery bill noticeably in the first month.';
+      'Chúng tôi đã cắt giảm đáng kể hóa đơn hàng tạp hóa trong tháng đầu tiên.';
 
   @override
   String get obSocialQuote3 =>
-      'Sharing the list with my partner ended our shopping chaos.';
+      'Chia sẻ danh sách với đối tác của tôi đã chấm dứt sự hỗn loạn mua sắm của chúng tôi.';
 
   @override
-  String get obLoadingTitle => 'Building your personalized plan...';
+  String get obLoadingTitle => 'Xây dựng kế hoạch cá nhân của bạn...';
 
   @override
-  String get obLoadingStepProfile => 'Adjusting for your household';
+  String get obLoadingStepProfile => 'Điều chỉnh cho hộ gia đình của bạn';
 
   @override
-  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+  String get obLoadingStepHabits => 'Điều chỉnh thói quen mua sắm của bạn';
 
   @override
-  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+  String get obLoadingStepSavings => 'Tối ưu hóa chiến lược tiết kiệm của bạn';
 
   @override
-  String get obLoadingStepLists => 'Preparing your smart lists';
+  String get obLoadingStepLists => 'Chuẩn bị danh sách thông minh của bạn';
 
   @override
-  String get obRevealTitle => 'Your plan is ready!';
+  String get obRevealTitle => 'Kế hoạch của bạn đã sẵn sàng!';
 
   @override
-  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+  String get obRevealSubtitle => 'Đây là cách KipiList sẽ giúp ích cho bạn';
 
   @override
-  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+  String get obRevealSavingsCaption => 'Tiết kiệm dự kiến ​​với KipiList';
 
   @override
   String obRevealMonth(int n) {
-    return 'Month $n';
+    return 'Tháng $n';
   }
 
   @override
-  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+  String get obRevealFeatureAi => 'AI xây dựng và sắp xếp danh sách của bạn';
 
   @override
-  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+  String get obRevealFeatureBudget =>
+      'Chi tiêu được theo dõi theo mục tiêu của bạn';
 
   @override
-  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+  String get obRevealFeaturePantry =>
+      'Theo dõi phòng đựng thức ăn giúp giảm lãng phí thực phẩm';
 
   @override
-  String get obRevealFeatureShare => 'Real-time sharing with your household';
+  String get obRevealFeatureShare => 'Chia sẻ thời gian thực với gia đình bạn';
 
   @override
-  String get obPaywallTitle => 'Unlock your plan';
+  String get obPaywallTitle => 'Mở khóa kế hoạch của bạn';
 
   @override
-  String get obPaywallRetry => 'Try again';
+  String get obPaywallRetry => 'Thử lại';
 
   @override
-  String get obLoginTitle => 'Save your plan';
+  String get obLoginTitle => 'Lưu kế hoạch của bạn';
 
   @override
-  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+  String get obLoginSubtitle =>
+      'Đăng nhập để danh sách của bạn đồng bộ hóa trên các thiết bị';
 
   @override
-  String get obLoginGoogle => 'Continue with Google';
+  String get obLoginGoogle => 'Tiếp tục với Google';
 
   @override
-  String get obLoginApple => 'Continue with Apple';
+  String get obLoginApple => 'Tiếp tục với Apple';
 
   @override
-  String get obLoginSkip => 'Not now';
+  String get obLoginSkip => 'Không phải bây giờ';
 
   @override
-  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
+  String get obLoginError =>
+      'Đăng nhập không thành công. Hãy thử lại hoặc bỏ qua bây giờ.';
+
+  @override
+  String get searchMessages => 'Tìm kiếm tin nhắn...';
+
+  @override
+  String get deletedList => 'Danh sách đã xóa';
+
+  @override
+  String get openConversation => 'Cuộc trò chuyện mở';
+
+  @override
+  String get userRole => 'Bạn';
+
+  @override
+  String get assistantRole => 'Trợ lý';
+
+  @override
+  String get agentActionsRunning => 'Hành động đang chạy...';
+
+  @override
+  String get agentActionsFailed => 'Không thể chạy hành động';
+
+  @override
+  String get agentActionsPremium => 'Hành động yêu cầu Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Hoàn tác các thay đổi';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Cao cấp)';
+  }
+
+  @override
+  String get itemAddedToList => 'Mục được thêm vào danh sách.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Trạng thái trước đó: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Đăng ký Premium để mở khóa các hành động tự động.';
+
+  @override
+  String get viewPlans => 'Xem kế hoạch';
+
+  @override
+  String get artifactSynced => 'Đã đồng bộ hóa';
+
+  @override
+  String get artifactBudgetLabel => 'Ngân sách:';
+
+  @override
+  String get totalEstimatedLabel => 'Tổng số ước tính';
+
+  @override
+  String get quickActionPantry => 'Xem phòng đựng thức ăn';
+
+  @override
+  String get quickActionAi => 'Trò chuyện với Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Dịch vụ AI trả về lỗi ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Yêu cầu mất quá nhiều thời gian. Vui lòng thử lại.';
+
+  @override
+  String get aiConnectionError =>
+      'Không thể kết nối với dịch vụ AI. Kiểm tra kết nối của bạn.';
+
+  @override
+  String get aiEmptyResponseError => 'Dịch vụ AI trả về một phản hồi trống.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Dịch vụ AI trả về phản hồi không hợp lệ.';
+
+  @override
+  String get categoryFruits => 'trái cây';
+
+  @override
+  String get categoryCleaning => 'Vệ sinh';
+
+  @override
+  String get categoryBeverages => 'Đồ uống';
+
+  @override
+  String get categoryBakery => 'tiệm bánh';
+
+  @override
+  String get categoryMeat => 'Thịt';
+
+  @override
+  String get categoryDairy => 'Sữa';
+
+  @override
+  String get categoryVegetables => 'Rau';
+
+  @override
+  String get categoryGrains => 'Ngũ cốc và ngũ cốc';
+
+  @override
+  String get categoryHygiene => 'Chăm sóc cá nhân';
+
+  @override
+  String get categoryFrozen => 'Thực phẩm đông lạnh';
+
+  @override
+  String get categoryCanned => 'Đồ hộp';
+
+  @override
+  String get categorySeasonings => 'Gia vị';
+
+  @override
+  String get categorySweets => 'Đồ ngọt và món tráng miệng';
+
+  @override
+  String get categoryAlcohol => 'Đồ uống có cồn';
+
+  @override
+  String get categoryFish => 'Cá';
+
+  @override
+  String get categoryColdCuts => 'Thịt nguội';
+
+  @override
+  String get categoryUtilities => 'Đồ dùng gia đình';
+
+  @override
+  String get categoryPet => 'Đồ dùng cho thú cưng';
+
+  @override
+  String get categoryBaby => 'Đứa bé';
+
+  @override
+  String get categoryOthers => 'Khác';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Xin chào $name, tôi là Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Xin chào, tôi là Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Tôi lập danh sách, đề xuất công thức nấu ăn và tìm nơi lưu. Chúng ta bắt đầu từ đâu?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Lên kế hoạch tổ chức tiệc nướng';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, tôi đang tổ chức tiệc nướng - hãy giúp tôi lập danh sách mua sắm';
+
+  @override
+  String get aiRateLimitError =>
+      'Quá nhiều tin nhắn trong một thời gian ngắn. Đợi vài giây và thử lại.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Không thể tải cuộc trò chuyện này';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Đã xảy ra lỗi ở phía chúng tôi. Nhấn vào thử lại để thử lại.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Bạn đang ngoại tuyến';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Hãy kiểm tra kết nối Internet của bạn và thử lại.';
+
+  @override
+  String get aiGeneratingResponse => 'Đang tạo phản hồi…';
 }

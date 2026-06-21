@@ -247,6 +247,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get noItemsToBuy => 'لا توجد عناصر بحاجة للشراء';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'مفقود $count$unit';
+  }
+
+  @override
   String get newPantryList => 'تسوق المخزن';
 
   @override
@@ -313,6 +318,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsAppBar => 'الإعدادات';
 
   @override
+  String get preferencesSection => 'التفضيلات';
+
+  @override
+  String get aiSection => 'مساعد الذكاء الاصطناعي';
+
+  @override
   String get language => 'اللغة';
 
   @override
@@ -341,6 +352,12 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get appearance => 'المظهر';
+
+  @override
+  String get themeMode => 'وضع الموضوع';
+
+  @override
+  String get chooseThemeMode => 'حدد وضع الموضوع';
 
   @override
   String get light => 'فاتح';
@@ -590,6 +607,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get trackStockInactive => 'لا يُنشئ اقتراح شراء';
 
   @override
+  String get keepAdding => 'استمر في الإضافة';
+
+  @override
+  String get keepAddingSubtitle => 'أبقِ الورقة مفتوحة لإضافة عناصر متعددة';
+
+  @override
   String get createListDialog => 'إنشاء قائمة';
 
   @override
@@ -694,6 +717,36 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'استجابة جيدة';
+
+  @override
+  String get badResponse => 'استجابة سيئة';
+
+  @override
+  String get scrollToBottom => 'قم بالتمرير إلى الأسفل';
+
+  @override
+  String get somethingWentWrong => 'حدث خطأ ما';
+
+  @override
+  String get editMessage => 'تحرير الرسالة';
+
+  @override
+  String get searchConversations => 'بحث في المحادثات';
+
+  @override
+  String get dateGroupToday => 'اليوم';
+
+  @override
+  String get dateGroupYesterday => 'أمس';
+
+  @override
+  String get dateGroupPrevious7Days => '7 أيام السابقة';
+
+  @override
+  String get dateGroupOlder => 'أقدم';
+
+  @override
   String get aiAssistantTitle => 'مساعد الذكاء الاصطناعي';
 
   @override
@@ -733,6 +786,33 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'تم الوصول إلى حد الذكاء الاصطناعي الشهري. الترقية إلى Pro لعدد غير محدود →';
+
+  @override
+  String get undo => 'تراجع';
+
+  @override
+  String get newChatStarted => 'بدأت محادثة جديدة';
+
+  @override
+  String get quickAddToList => 'أضف إلى القائمة';
+
+  @override
+  String get aiCapabilitiesTitle => 'ماذا يمكنني أن أفعل؟';
+
+  @override
+  String get aiCapabilitiesLists => 'قوائم التسوق';
+
+  @override
+  String get aiCapabilitiesBudget => 'الميزانية والأسعار';
+
+  @override
+  String get aiCapabilitiesRecipes => 'وصفات والقوائم';
+
+  @override
+  String get aiCapabilitiesOrganize => 'منظمة';
+
+  @override
+  String get marketModeDescription => 'تحقق من العناصر أثناء التسوق';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -937,6 +1017,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get recipeAddToList => 'أضف إلى قائمة التسوق';
 
   @override
+  String get recipeAddError =>
+      'تعذرت الإضافة إلى قائمتك. يرجى المحاولة مرة أخرى.';
+
+  @override
+  String get recipeTapToCheck => 'اضغط على أحد المكونات للتحقق منه أثناء الطهي';
+
+  @override
+  String get recipeIngredientInPantry => 'في المخزن';
+
+  @override
+  String get recipeIngredientLowPantry => 'منخفضة في المخزن';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return 'تمت إضافة مكونات $count إلى $listName';
   }
@@ -1048,12 +1141,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get paywallSelectPlan => 'اختر خطتك:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'حفظ $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'فقط $price/شهر';
   }
 
@@ -1088,6 +1181,34 @@ class AppLocalizationsAr extends AppLocalizations {
   String get paywallRestore => 'يعيد';
 
   @override
+  String get paywallTimelineToday => 'اليوم';
+
+  @override
+  String get paywallTimelineTodayDesc => 'فتح الوصول الكامل على الفور';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'اليوم $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc => 'نذكركم قبل انتهاء المحاكمة';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'يبدأ اشتراكك — قم بالإلغاء في أي وقت';
+
+  @override
+  String get paywallHeroFeatureTitle => 'مساعد التسوق بالذكاء الاصطناعي';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'تحدث أو الصق قائمة كاملة - يقوم الذكاء الاصطناعي بفرزها وتصنيفها ووضع ميزانيتها في ثوانٍ';
+
+  @override
+  String get paywallBasedOnAnswers => 'شخصية من إجاباتك';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI دائما بجانبك';
 
   @override
@@ -1119,9 +1240,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get itemRemoved => 'تمت إزالة العنصر';
-
-  @override
-  String get undo => 'تراجع';
 
   @override
   String get emptyListTitle => 'قائمتك فارغة';
@@ -1238,6 +1356,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'تمت إزالة العنصر';
+
+  @override
+  String get pantryItemAdded => 'تمت إضافة العنصر';
 
   @override
   String deficitItems(int deficit) {
@@ -1640,6 +1761,32 @@ class AppLocalizationsAr extends AppLocalizations {
   String get prepTimeMinutes => 'وقت التحضير (بالدقائق)';
 
   @override
+  String get recipeYieldServings => 'حصص العائد';
+
+  @override
+  String get recipeManualTotalCost => 'التكلفة الإجمالية اليدوية';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'اتركه فارغًا للتقدير من أسعار المكونات.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'التكلفة الإجمالية المقدرة';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / خدمة';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'يخدم $count';
+  }
+
+  @override
+  String get recipeEstimatePartial => 'تقدير جزئي على أساس المكونات مع السعر.';
+
+  @override
   String get instructionsHint => 'اكتب خطوة واحدة في كل سطر...';
 
   @override
@@ -1771,6 +1918,10 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'تقدير بناءً على الوصفات مع بيانات الأسعار الجزئية.';
+
+  @override
   String get mealPlannerGenerateList => 'إنشاء قائمة تسوق';
 
   @override
@@ -1862,6 +2013,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get catalogRareSection => 'أقل شيوعا في بلدك';
 
   @override
+  String get catalogRareBadge => 'نادر';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1879,7 +2033,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get catalogBrowse => 'تصفح الكتالوج';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'فئات';
 
   @override
   String get offlineBanner => 'أنت غير متصل';
@@ -1910,6 +2064,40 @@ class AppLocalizationsAr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'إدارة أنواع الوجبات';
+
+  @override
+  String get mealPlannerAddType => 'إضافة نوع الوجبة';
+
+  @override
+  String get mealPlannerEditType => 'تعديل نوع الوجبة';
+
+  @override
+  String get mealPlannerTypeName => 'اسم';
+
+  @override
+  String get mealPlannerTypeColor => 'لون';
+
+  @override
+  String get mealPlannerTypeIcon => 'رمز';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'هل أنت متأكد أنك تريد حذف هذا النوع من الوجبة؟ ستبقى الوجبات المخططة من هذا النوع.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'لا يمكن أن يكون الاسم فارغًا';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'لا يمكن حذف هذا النوع من الوجبة.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'نوع مخصص';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'النوع الافتراضي';
 
   @override
   String get expirationDate => 'تاريخ انتهاء الصلاحية';
@@ -1969,6 +2157,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'خطأ في تحميل القوائم';
+
+  @override
+  String get errorLoadingItems => 'حدث خطأ أثناء تحميل العناصر';
 
   @override
   String get noListsFound => 'لم يتم العثور على قوائم';
@@ -2728,4 +2919,212 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get obLoginError => 'فشل تسجيل الدخول. حاول مرة أخرى أو تخطي الآن.';
+
+  @override
+  String get searchMessages => 'بحث في الرسائل...';
+
+  @override
+  String get deletedList => 'القائمة المحذوفة';
+
+  @override
+  String get openConversation => 'محادثة مفتوحة';
+
+  @override
+  String get userRole => 'أنت';
+
+  @override
+  String get assistantRole => 'مساعد';
+
+  @override
+  String get agentActionsRunning => 'تشغيل الإجراءات...';
+
+  @override
+  String get agentActionsFailed => 'فشل في تشغيل الإجراءات';
+
+  @override
+  String get agentActionsPremium => 'تتطلب الإجراءات Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'التراجع عن التغييرات';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (بريميوم)';
+  }
+
+  @override
+  String get itemAddedToList => 'تمت إضافة العنصر إلى القائمة.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'الحالة السابقة: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'اشترك في Premium لفتح الإجراءات التلقائية.';
+
+  @override
+  String get viewPlans => 'عرض الخطط';
+
+  @override
+  String get artifactSynced => 'تمت المزامنة';
+
+  @override
+  String get artifactBudgetLabel => 'ميزانية:';
+
+  @override
+  String get totalEstimatedLabel => 'الإجمالي المقدر';
+
+  @override
+  String get quickActionPantry => 'عرض المخزن';
+
+  @override
+  String get quickActionAi => 'الدردشة مع كيبي';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'أرجعت خدمة AI خطأ ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'استغرق الطلب وقتا طويلا. يرجى المحاولة مرة أخرى.';
+
+  @override
+  String get aiConnectionError => 'تعذر الاتصال بخدمة AI. تحقق من اتصالك.';
+
+  @override
+  String get aiEmptyResponseError =>
+      'أعادت خدمة الذكاء الاصطناعي استجابة فارغة.';
+
+  @override
+  String get aiInvalidResponseError => 'أرجعت خدمة AI استجابة غير صالحة.';
+
+  @override
+  String get categoryFruits => 'الفواكه';
+
+  @override
+  String get categoryCleaning => 'تنظيف';
+
+  @override
+  String get categoryBeverages => 'المشروبات';
+
+  @override
+  String get categoryBakery => 'مخبز';
+
+  @override
+  String get categoryMeat => 'لحمة';
+
+  @override
+  String get categoryDairy => 'ألبان';
+
+  @override
+  String get categoryVegetables => 'خضار';
+
+  @override
+  String get categoryGrains => 'الحبوب والحبوب';
+
+  @override
+  String get categoryHygiene => 'العناية الشخصية';
+
+  @override
+  String get categoryFrozen => 'الأطعمة المجمدة';
+
+  @override
+  String get categoryCanned => 'السلع المعلبة';
+
+  @override
+  String get categorySeasonings => 'توابل';
+
+  @override
+  String get categorySweets => 'الحلويات والحلويات';
+
+  @override
+  String get categoryAlcohol => 'المشروبات الكحولية';
+
+  @override
+  String get categoryFish => 'سمكة';
+
+  @override
+  String get categoryColdCuts => 'اللحوم الباردة';
+
+  @override
+  String get categoryUtilities => 'مستلزمات منزلية';
+
+  @override
+  String get categoryPet => 'مستلزمات الحيوانات الأليفة';
+
+  @override
+  String get categoryBaby => 'طفل';
+
+  @override
+  String get categoryOthers => 'آخر';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'مرحبًا $name، أنا كيبي 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'مرحبًا، أنا كيبي 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'أقوم بإنشاء قوائم، واقتراح وصفات، والعثور على مكان لحفظها. من أين نبدأ؟';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'خطط لحفلة شواء';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'كيبي، أنا أستضيف حفل شواء - ساعدني في إنشاء قائمة التسوق';
+
+  @override
+  String get aiRateLimitError =>
+      'عدد كبير جدًا من الرسائل في وقت قصير. انتظر بضع ثوان وحاول مرة أخرى.';
+
+  @override
+  String get chatHistoryErrorTitle => 'تعذر تحميل هذه المحادثة';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'حدث خطأ ما من جانبنا. اضغط على إعادة المحاولة للمحاولة مرة أخرى.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'أنت غير متصل بالإنترنت';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'تحقق من اتصالك بالإنترنت وحاول مرة أخرى.';
+
+  @override
+  String get aiGeneratingResponse => 'جارٍ إنشاء الاستجابة…';
 }

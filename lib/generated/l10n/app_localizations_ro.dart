@@ -247,6 +247,11 @@ class AppLocalizationsRo extends AppLocalizations {
   String get noItemsToBuy => 'Niciun articol de cumpărat';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Lipsește $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Cumpărături din cămară';
 
   @override
@@ -313,6 +318,12 @@ class AppLocalizationsRo extends AppLocalizations {
   String get settingsAppBar => 'Setări';
 
   @override
+  String get preferencesSection => 'Preferințe';
+
+  @override
+  String get aiSection => 'Asistent AI';
+
+  @override
   String get language => 'Limbă';
 
   @override
@@ -341,6 +352,12 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get appearance => 'Aspect';
+
+  @override
+  String get themeMode => 'Modul temă';
+
+  @override
+  String get chooseThemeMode => 'Selectați modul temă';
 
   @override
   String get light => 'Luminos';
@@ -590,6 +607,13 @@ class AppLocalizationsRo extends AppLocalizations {
   String get trackStockInactive => 'Nu generează sugestii de cumpărături';
 
   @override
+  String get keepAdding => 'Continuați să adăugați';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Păstrați foaia deschisă pentru a adăuga mai multe articole';
+
+  @override
   String get createListDialog => 'Creează listă';
 
   @override
@@ -694,6 +718,36 @@ class AppLocalizationsRo extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Bun răspuns';
+
+  @override
+  String get badResponse => 'Răspuns prost';
+
+  @override
+  String get scrollToBottom => 'Derulați în jos';
+
+  @override
+  String get somethingWentWrong => 'Ceva a mers prost';
+
+  @override
+  String get editMessage => 'Editați mesajul';
+
+  @override
+  String get searchConversations => 'Căutați conversații';
+
+  @override
+  String get dateGroupToday => 'Astăzi';
+
+  @override
+  String get dateGroupYesterday => 'Ieri';
+
+  @override
+  String get dateGroupPrevious7Days => '7 zile anterioare';
+
+  @override
+  String get dateGroupOlder => 'Mai în vârstă';
+
+  @override
   String get aiAssistantTitle => 'Asistent AI';
 
   @override
@@ -734,6 +788,33 @@ class AppLocalizationsRo extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Limita lunară AI a fost atinsă. Upgrade la Pro pentru nelimitat →';
+
+  @override
+  String get undo => 'Anulează';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -944,6 +1025,20 @@ class AppLocalizationsRo extends AppLocalizations {
   String get recipeAddToList => 'Adăugați la lista de cumpărături';
 
   @override
+  String get recipeAddError =>
+      'Nu s-a putut adăuga la lista dvs. Vă rugăm să încercați din nou.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Atingeți un ingredient pentru a-l verifica în timp ce gătiți';
+
+  @override
+  String get recipeIngredientInPantry => 'În cămară';
+
+  @override
+  String get recipeIngredientLowPantry => 'Scăzut în cămară';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1061,12 +1156,12 @@ class AppLocalizationsRo extends AppLocalizations {
   String get paywallSelectPlan => 'Alege-ți planul:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'SALVAȚI $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Doar $price/lună';
   }
 
@@ -1099,6 +1194,36 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get paywallRestore => 'Restabili';
+
+  @override
+  String get paywallTimelineToday => 'Astăzi';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Deblocați accesul complet instantaneu';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Ziua $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Vă reamintim înainte de încheierea procesului';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Abonamentul dvs. începe — anulați oricând';
+
+  @override
+  String get paywallHeroFeatureTitle => 'Asistent de cumpărături AI';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Rostiți sau lipiți o listă întreagă — AI o sortează, o clasifică și o bugetează în câteva secunde';
+
+  @override
+  String get paywallBasedOnAnswers => 'Personalizat după răspunsurile dvs';
 
   @override
   String get paywallHeroHeadline => 'Kipi AI mereu alături de tine';
@@ -1134,9 +1259,6 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Articol eliminat';
-
-  @override
-  String get undo => 'Anulează';
 
   @override
   String get emptyListTitle => 'Lista ta este goală';
@@ -1253,6 +1375,9 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Articol eliminat';
+
+  @override
+  String get pantryItemAdded => 'Articol adăugat';
 
   @override
   String deficitItems(int deficit) {
@@ -1661,6 +1786,33 @@ class AppLocalizationsRo extends AppLocalizations {
   String get prepTimeMinutes => 'Timp de pregătire (minute)';
 
   @override
+  String get recipeYieldServings => 'Dați porții';
+
+  @override
+  String get recipeManualTotalCost => 'Costul total manual';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Lăsați necompletat pentru a estima din prețurile ingredientelor.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Costul total estimat';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / servire';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Servește $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Estimare parțială bazată pe ingrediente cu preț.';
+
+  @override
   String get instructionsHint => 'Introduceți un pas pe linie...';
 
   @override
@@ -1789,6 +1941,10 @@ class AppLocalizationsRo extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Estimare bazată pe rețete cu date de preț parțiale.';
+
+  @override
   String get mealPlannerGenerateList => 'Generați lista de cumpărături';
 
   @override
@@ -1884,6 +2040,9 @@ class AppLocalizationsRo extends AppLocalizations {
   String get catalogRareSection => 'mai puțin frecvente în țara ta';
 
   @override
+  String get catalogRareBadge => 'Rar';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1902,7 +2061,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get catalogBrowse => 'Răsfoiți catalogul';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Categorii';
 
   @override
   String get offlineBanner => 'Ești offline';
@@ -1933,6 +2092,41 @@ class AppLocalizationsRo extends AppLocalizations {
     );
     return '$count $_temp0 lipsește';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Gestionați tipurile de mese';
+
+  @override
+  String get mealPlannerAddType => 'Adăugați tipul de masă';
+
+  @override
+  String get mealPlannerEditType => 'Editați tipul de masă';
+
+  @override
+  String get mealPlannerTypeName => 'Nume';
+
+  @override
+  String get mealPlannerTypeColor => 'Culoare';
+
+  @override
+  String get mealPlannerTypeIcon => 'Pictogramă';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Sigur doriți să ștergeți acest tip de masă? Mesele planificate cu acest tip vor rămâne.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Numele nu poate fi gol';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Nu se poate șterge acest tip de masă.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Tip personalizat';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Tip implicit';
 
   @override
   String get expirationDate => 'Data expirării';
@@ -1993,6 +2187,9 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Eroare la încărcarea listelor';
+
+  @override
+  String get errorLoadingItems => 'Eroare la încărcarea articolelor';
 
   @override
   String get noListsFound => 'Nu s-au găsit liste';
@@ -2679,7 +2876,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get obQuizMethodPaper => 'Stilou și hârtie';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'Aplicația Note';
 
   @override
   String get obQuizMethodMemory => 'O păstrez în minte';
@@ -2775,4 +2972,214 @@ class AppLocalizationsRo extends AppLocalizations {
   @override
   String get obLoginError =>
       'Conectarea a eșuat. Încearcă din nou sau ignoră deocamdată.';
+
+  @override
+  String get searchMessages => 'Căutați mesaje...';
+
+  @override
+  String get deletedList => 'Lista ștearsă';
+
+  @override
+  String get openConversation => 'Deschide conversația';
+
+  @override
+  String get userRole => 'Tu';
+
+  @override
+  String get assistantRole => 'Asistent';
+
+  @override
+  String get agentActionsRunning => 'Acțiuni în derulare...';
+
+  @override
+  String get agentActionsFailed => 'Nu s-au executat acțiuni';
+
+  @override
+  String get agentActionsPremium => 'Acțiunile necesită Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Anulați modificările';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Element adăugat la listă.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Stare anterioară: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Abonați-vă la Premium pentru a debloca acțiuni automate.';
+
+  @override
+  String get viewPlans => 'Vezi planuri';
+
+  @override
+  String get artifactSynced => 'Sincronizat';
+
+  @override
+  String get artifactBudgetLabel => 'Buget:';
+
+  @override
+  String get totalEstimatedLabel => 'Total estimat';
+
+  @override
+  String get quickActionPantry => 'Vedeți cămară';
+
+  @override
+  String get quickActionAi => 'Discutați cu Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Serviciul AI a returnat o eroare ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Solicitarea a durat prea mult. Vă rugăm să încercați din nou.';
+
+  @override
+  String get aiConnectionError =>
+      'Nu s-a putut conecta la serviciul AI. Verificați-vă conexiunea.';
+
+  @override
+  String get aiEmptyResponseError => 'Serviciul AI a returnat un răspuns gol.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'Serviciul AI a returnat un răspuns nevalid.';
+
+  @override
+  String get categoryFruits => 'Fructe';
+
+  @override
+  String get categoryCleaning => 'Curatenie';
+
+  @override
+  String get categoryBeverages => 'Băuturi';
+
+  @override
+  String get categoryBakery => 'Brutărie';
+
+  @override
+  String get categoryMeat => 'Carne';
+
+  @override
+  String get categoryDairy => 'Lactate';
+
+  @override
+  String get categoryVegetables => 'Legume';
+
+  @override
+  String get categoryGrains => 'Cereale și cereale';
+
+  @override
+  String get categoryHygiene => 'Îngrijire personală';
+
+  @override
+  String get categoryFrozen => 'Alimente congelate';
+
+  @override
+  String get categoryCanned => 'Conserve';
+
+  @override
+  String get categorySeasonings => 'Condimente';
+
+  @override
+  String get categorySweets => 'Dulciuri și deserturi';
+
+  @override
+  String get categoryAlcohol => 'Băuturi alcoolice';
+
+  @override
+  String get categoryFish => 'Peşte';
+
+  @override
+  String get categoryColdCuts => 'mezeluri';
+
+  @override
+  String get categoryUtilities => 'Rechizite de uz casnic';
+
+  @override
+  String get categoryPet => 'Rechizite pentru animale de companie';
+
+  @override
+  String get categoryBaby => 'Copil';
+
+  @override
+  String get categoryOthers => 'Alte';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Bună $name, sunt Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Bună, sunt Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Construiesc liste, sugerez rețete și găsesc unde să salvez. De unde începem?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Planificați un grătar';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, găzduiesc un grătar — ajută-mă să fac lista de cumpărături';
+
+  @override
+  String get aiRateLimitError =>
+      'Prea multe mesaje într-un timp scurt. Așteptați câteva secunde și încercați din nou.';
+
+  @override
+  String get chatHistoryErrorTitle =>
+      'Nu s-a putut încărca această conversație';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Ceva a mers prost din partea noastră. Atingeți Reîncercați pentru a încerca din nou.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Ești offline';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Verificați-vă conexiunea la internet și încercați din nou.';
+
+  @override
+  String get aiGeneratingResponse => 'Se generează răspuns...';
 }

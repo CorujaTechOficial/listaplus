@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -130,6 +144,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -334,6 +355,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingProducts": {
     "placeholders": {
       "error": {
@@ -481,6 +505,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1105,6 +1136,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1231,6 +1272,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1263,6 +1311,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@progressBudget": {
     "placeholders": {
@@ -1324,7 +1395,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1448,23 +1533,37 @@
   "addingItems": "將項目新增至清單...",
   "addingToPantry": "加入食品儲藏室...",
   "advancedFeatures": "高级功能",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "無法運行操作",
+  "agentActionsPremium": "行動需要高級費",
+  "agentActionsRunning": "運行動作...",
+  "aiApiError": "AI 服務回傳錯誤 ({statusCode})。",
   "aiAssistant": "AI 助手",
   "aiAssistantDescription": "通过我们的 AI 助手获取智能建议、食谱和个性化提示。",
   "aiAssistantTitle": "人工智慧助手",
+  "aiConnectionError": "無法連線到 AI 服務。檢查您的連線。",
   "aiCreditsRemaining": "剩余 {remaining} 个积分",
+  "aiEmptyResponseError": "AI 服務回傳空響應。",
   "aiEnergy": "人工智慧能源",
   "aiEnergyLow": "AI能量低",
   "aiError": "抱歉，处理您的请求时出错。请检查您的连接或稍后重试。",
+  "aiGeneratingResponse": "正在產生回應...",
+  "aiInvalidResponseError": "AI 服務傳回無效回應。",
   "aiLimitAlmostReached": "AI訊息快用完了",
   "aiPremiumDescription": "此互動介面採用先進的人工智慧，僅供專業會員使用或透過快速廣告實現。",
+  "aiRateLimitError": "短時間內留言過多。等待幾秒鐘，然後再試一次。",
   "aiRemainingFreeToday": "今天{remaining} {remaining, plural, one{free message} other{free messages}}",
+  "aiSection": "人工智慧助手",
   "aiSubscribeUnlimited": "訂閱無限 AI",
   "aiTeaserFallback": "訂閱高級版即可解鎖完整回應並獲得無限的人工智慧購物提示...",
+  "aiTimeoutError": "該請求花費的時間太長。請再試一次。",
   "aiUnlockUnlimited": "解鎖無限AI",
   "aiUsageExhausted": "已達到每月 AI 限制。升級至專業版無限 →",
   "aiUsageWarning": "{remaining} 本月剩下的 AI 動作 — 無限升級",
   "aiVoiceCommandTooltip": "AI 语音命令（高级版）",
   "aiWelcomeContent": "你好！ 👋我是**Kipi**，您的私人購物和食譜助理！\n\n我是來幫助你的：\n🛒 **自動按類別組織**您的購物\n💰 **追蹤**您的預算並為您提供省錢秘訣\n🍲 **用你已有的東西推薦**美味食譜\n\n今天我能為您提供什麼幫助？您可以從創建您的第一個清單開始！",
+  "aiWelcomeSuggestBarbecue": "計劃燒烤",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi，我要辦燒烤會 — 幫我列一下購物清單",
   "aiWelcomeSuggestCreateList": "創建我的第一個列表",
   "aiWelcomeSuggestCreateListPrompt": "Kipi，幫我建立我的第一個購物清單",
   "aiWelcomeSuggestSave": "如何省錢？",
@@ -1474,9 +1573,12 @@
   "appTitle": "购物清单",
   "appearance": "外观",
   "archiveList": "归档清单",
+  "artifactBudgetLabel": "預算：",
+  "artifactSynced": "已同步",
   "assistantHistory": "助理歷史記錄",
   "assistantHistorySubtitle": "查看您的對話記錄",
   "assistantName": "助理姓名",
+  "assistantRole": "助理",
   "backToChat": "返回聊天",
   "backToToday": "回到今天",
   "backupExported": "备份已导出！",
@@ -1484,6 +1586,7 @@
   "backupPremiumDescription": "备份和导出是高级功能",
   "backupSubtitle": "导出或导入您的数据",
   "backupTitle": "备份",
+  "badResponse": "反應不佳",
   "badgeBeginner": "初學者",
   "badgeOrganized": "有組織",
   "badgeSavingMaster": "拯救大師",
@@ -1509,9 +1612,11 @@
   "catOthers": "其他",
   "catalogAddItems": "加 {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "瀏覽目錄",
+  "catalogCategories": "類別",
   "catalogFilterNational": "國民隊",
   "catalogMyFrequents": "我的常客",
   "catalogProductNotFound": "未找到產品，請輸入名稱",
+  "catalogRareBadge": "稀有的",
   "catalogRareSection": "在你的國家不太常見",
   "catalogSearchGlobal": "搜尋任何產品...",
   "catalogSearchInCategory": "在 {category} 中搜尋...",
@@ -1520,16 +1625,43 @@
   "catalogTitle": "目錄",
   "categorizingItems": "正在對項目進行分類...",
   "category": "类别",
+  "categoryAlcohol": "酒精飲料",
+  "categoryBaby": "嬰兒",
+  "categoryBakery": "麵包店",
+  "categoryBeverages": "飲料",
+  "categoryCanned": "罐頭食品",
+  "categoryCleaning": "打掃",
+  "categoryColdCuts": "冷盤",
   "categoryColorLabel": "顏色",
+  "categoryDairy": "乳製品",
+  "categoryFish": "魚",
+  "categoryFrozen": "冷凍食品",
+  "categoryFruits": "水果",
+  "categoryGrains": "穀物和穀物",
+  "categoryHygiene": "個人護理",
   "categoryIconLabel": "圖示",
   "categoryLimitReached": "免費版本僅限 10 個類別。升級到專業版！",
+  "categoryMeat": "肉",
   "categoryName": "類別名稱",
   "categoryNameHint": "例如：肉類",
+  "categoryOthers": "其他",
+  "categoryPet": "寵物用品",
+  "categorySeasonings": "調味料",
+  "categorySweets": "糖果和甜點",
+  "categoryUtilities": "家居用品",
+  "categoryVegetables": "蔬菜",
+  "chatEmptyGreeting": "嗨 {name}，我是 Kipi 👋",
+  "chatEmptyGreetingNoName": "大家好，我是基皮👋",
+  "chatEmptyPitch": "我建立列表，建議食譜，並找到保存位置。我們從哪裡開始？",
   "chatEmptySubtitle": "詢問物品建議、食譜或保存技巧以開始使用。",
   "chatEmptyTitle": "你的聊天記錄是空的",
   "chatError": "加载聊天时出错：{error}",
   "chatHint": "输入您的消息...",
   "chatHintBlocked": "解鎖AI聊天",
+  "chatHistoryErrorBody": "我們這邊出了點問題。點擊重試以重試。",
+  "chatHistoryErrorTitle": "無法載入此對話",
+  "chatHistoryOfflineBody": "檢查您的網路連接，然後再試一次。",
+  "chatHistoryOfflineTitle": "你離線了",
   "chatSubtitle": "请求项目建议、食谱或省钱技巧。",
   "chatSubtitleShort": "詢問價格、食譜、組織…",
   "checkingItem": "檢查項目...",
@@ -1540,6 +1672,7 @@
   "chooseImageSource": "選擇影像來源",
   "chooseLanguage": "選擇語言",
   "chooseThemeColor": "選擇主題顏色",
+  "chooseThemeMode": "選擇主題模式",
   "clear": "清除",
   "clearHistory": "清除历史",
   "clearHistoryConfirm": "清除此会话中的所有消息？",
@@ -1588,6 +1721,10 @@
   "customizeAssistant": "客製化",
   "dark": "深色",
   "data": "数据",
+  "dateGroupOlder": "年長的",
+  "dateGroupPrevious7Days": "前 7 天",
+  "dateGroupToday": "今天",
+  "dateGroupYesterday": "昨天",
   "dayFri": "週五",
   "dayMon": "週一",
   "daySat": "星期六",
@@ -1611,6 +1748,7 @@
   "deleteRecipeConfirmMsg": "您確定要刪除「{recipeName}」嗎？此操作無法撤銷。",
   "deleteSession": "刪除聊天記錄",
   "deleteSessionConfirm": "您確定要刪除此聊天記錄嗎？這些訊息將永久遺失。",
+  "deletedList": "已刪除清單",
   "deselectAll": "取消全选",
   "dietaryRestrictions": "飲食限制",
   "dietaryRestrictionsHint": "例如：純素食、素食、無麩質",
@@ -1623,6 +1761,7 @@
   "editCategoryDialog": "編輯類別",
   "editItem": "编辑项目",
   "editItemPrice": "预估价格",
+  "editMessage": "編輯留言",
   "editPantryItem": "编辑 {name}",
   "editRecipe": "編輯",
   "editRecipeTitle": "編輯食譜",
@@ -1648,6 +1787,7 @@
   "errorLoadingChat": "哎呀！載入聊天時出了點問題。",
   "errorLoadingChatSubtitle": "檢查您的連線或稍後重試。",
   "errorLoadingHistory": "載入歷史記錄時出錯",
+  "errorLoadingItems": "載入項目時出錯",
   "errorLoadingLists": "載入列表時出錯",
   "errorLoadingProducts": "載入產品時發生錯誤：{error}",
   "errorLoadingRecipes": "加載食譜時出錯",
@@ -1662,7 +1802,7 @@
   "errorRestoringItem": "恢復項目時發生錯誤：{error}",
   "errorResumingLoop": "[ResumeLoop] 恢復循環時出錯",
   "errorResumingProcessing": "恢復處理時發生錯誤。",
-  "errorSavingProfile": "儲存時發生錯誤：{error}",
+  "errorSavingProfile": "儲存個人資料時發生錯誤",
   "errorServerConnection": "連接到伺服器時發生錯誤：{error}",
   "errorSettingCurrentList": "設定目前清單時發生錯誤：{error}",
   "errorTogglingItem": "切換專案狀態時發生錯誤：{error}",
@@ -1722,6 +1862,7 @@
   "generatingShareLink": "正在產生分享連結...",
   "gestureHint": "按住選擇 • 滑動刪除",
   "globalAssistant": "全局助手",
+  "goodResponse": "反應良好",
   "howCanIHelp": "我能提供什麼幫助嗎？",
   "icon": "圖示:",
   "idealQty": "理想数量",
@@ -1740,14 +1881,18 @@
   "inviteToList": "邀請列出",
   "itemAdded": "新增了 {name}",
   "itemAddedSnack": "新增了 {name}",
+  "itemAddedToList": "項目已新增至清單。",
   "itemName": "项目名称",
   "itemRemoved": "项目已移除",
   "itemsAddedSuccess": "项目已成功添加到清单！",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "有 {deficit} 个项目需要购买",
   "itemsPurchased": "購買的物品",
   "itemsPurchasedCount": "已購買 {total} 中的 {purchased}",
   "itemsPurchasedShort": "{purchased}/{total} 已購買",
   "itemsWillBeAdded": "将添加 {count} 个项目",
+  "keepAdding": "繼續添加",
+  "keepAddingSubtitle": "保持工作表開啟以新增多個項目",
   "kipiListProActive": "KipiList Pro 活躍",
   "kipiListTitle": "基皮列表",
   "kipiQuickBarHint": "你需要買什麼？",
@@ -1786,16 +1931,22 @@
   "marketsToAvoid": "應避免的市場",
   "marketsToAvoidHint": "例如：市場 Y、市場 Z",
   "mealPlannerAddMeal": "添加餐點",
+  "mealPlannerAddType": "新增餐食類型",
+  "mealPlannerCustomTypeLabel": "客製化型",
   "mealPlannerDateLabel": "日期",
+  "mealPlannerDefaultTypeLabel": "預設類型",
   "mealPlannerDeleteMeal": "去除膳食",
   "mealPlannerEditMeal": "編輯膳食",
+  "mealPlannerEditType": "編輯膳食類型",
   "mealPlannerError": "加載膳食計劃時出錯",
+  "mealPlannerEstimatePartial": "根據帶有部分價格數據的食譜進行估算。",
   "mealPlannerGenerateList": "產生購物清單",
   "mealPlannerGenerateListConfirm": "將本週規劃膳食中的所有食材加入您的購物清單中？",
   "mealPlannerGenerateListEmpty": "無需添加任何成分。首先根據食譜規劃一些膳食。",
   "mealPlannerGenerateListNoList": "首先建立一個購物清單。",
   "mealPlannerGenerateListSuccess": "{count} 成分已加入您的清單！",
   "mealPlannerLoading": "正在加載膳食計劃...",
+  "mealPlannerManageTypes": "管理膳食類型",
   "mealPlannerMealDeleted": "餐點已移除",
   "mealPlannerMealTypeBreakfast": "早餐",
   "mealPlannerMealTypeDinner": "晚餐",
@@ -1815,6 +1966,12 @@
   "mealPlannerServings": "{count,plural, one{{count} 份} other{{count} 份}}",
   "mealPlannerServingsLabel": "份量",
   "mealPlannerTitle": "膳食計劃",
+  "mealPlannerTypeColor": "顏色",
+  "mealPlannerTypeDeleteConfirm": "您確定要刪除該餐點類型嗎？此類計劃膳食將保留。",
+  "mealPlannerTypeDeleteError": "無法刪除該膳食類型。",
+  "mealPlannerTypeIcon": "圖示",
+  "mealPlannerTypeName": "姓名",
+  "mealPlannerTypeNameEmpty": "名稱不能為空",
   "mealPlannerViewMonthly": "月視圖",
   "mealPlannerViewWeekly": "每週視圖",
   "mealPlannerWeekEmpty": "這週沒有什麼計劃",
@@ -1871,60 +2028,60 @@
   "noRecipesSavedHint": "點擊下面的按鈕以建立您的第一個自訂食譜。",
   "noTracking": "不追踪",
   "notInformed": "未設定",
-  "obHookCta": "Get Started",
-  "obHookSocial": "Trusted by thousands of shoppers worldwide",
-  "obHookSubtitle": "AI-powered lists that save you time and money, every single trip.",
-  "obHookTitle": "Smarter shopping starts here",
-  "obLoadingStepHabits": "Tuning to your shopping routine",
-  "obLoadingStepLists": "Preparing your smart lists",
-  "obLoadingStepProfile": "Adjusting for your household",
-  "obLoadingStepSavings": "Optimizing your savings strategy",
-  "obLoadingTitle": "Building your personalized plan...",
-  "obLoginApple": "Continue with Apple",
-  "obLoginError": "Sign-in failed. Try again or skip for now.",
-  "obLoginGoogle": "Continue with Google",
-  "obLoginSkip": "Not now",
-  "obLoginSubtitle": "Sign in so your lists sync across devices",
-  "obLoginTitle": "Save your plan",
-  "obPaywallRetry": "Try again",
-  "obPaywallTitle": "Unlock your plan",
-  "obQuizFrequencyBiweekly": "Every two weeks",
-  "obQuizFrequencyDaily": "Almost every day",
-  "obQuizFrequencyMonthly": "Big monthly haul",
-  "obQuizFrequencyTitle": "How often do you shop for groceries?",
-  "obQuizFrequencyWeekly": "Once a week",
-  "obQuizHouseholdCouple": "Me and my partner",
-  "obQuizHouseholdFamilyLarge": "Family of 5+",
-  "obQuizHouseholdFamilySmall": "Family of 3–4",
-  "obQuizHouseholdSolo": "Just me",
-  "obQuizHouseholdTitle": "Who do you shop for?",
-  "obQuizMethodMemory": "I keep it in my head",
-  "obQuizMethodNone": "I don't make lists",
-  "obQuizMethodNotes": "Notes app",
-  "obQuizMethodPaper": "Pen and paper",
-  "obQuizMethodTitle": "How do you make shopping lists today?",
-  "obQuizPainForget": "I always forget items",
-  "obQuizPainOverspend": "I spend more than planned",
-  "obQuizPainTime": "It takes too much time",
-  "obQuizPainTitle": "What frustrates you most about shopping?",
-  "obQuizPainWaste": "Food goes to waste at home",
-  "obQuizSavingsLarge": "As much as possible",
-  "obQuizSavingsMedium": "Around 10% of my grocery bill",
-  "obQuizSavingsSmall": "A little — every bit counts",
-  "obQuizSavingsTitle": "How much would you like to save monthly?",
-  "obRevealFeatureAi": "AI builds and organizes your lists",
-  "obRevealFeatureBudget": "Spending tracked against your goal",
-  "obRevealFeaturePantry": "Pantry tracking cuts food waste",
-  "obRevealFeatureShare": "Real-time sharing with your household",
-  "obRevealMonth": "Month {n}",
-  "obRevealSavingsCaption": "Projected savings with KipiList",
-  "obRevealSubtitle": "Here's how KipiList will work for you",
-  "obRevealTitle": "Your plan is ready!",
-  "obSocialQuote1": "I never forget anything anymore. The AI builds my list in seconds.",
-  "obSocialQuote2": "We cut our grocery bill noticeably in the first month.",
-  "obSocialQuote3": "Sharing the list with my partner ended our shopping chaos.",
-  "obSocialSubtitle": "Shoppers like you are already saving with KipiList",
-  "obSocialTitle": "You're in good company",
+  "obHookCta": "開始使用",
+  "obHookSocial": "受到全球成千上萬購物者的信賴",
+  "obHookSubtitle": "由人工智慧驅動的清單可以為您的每次旅行節省時間和金錢。",
+  "obHookTitle": "智慧購物從這裡開始",
+  "obLoadingStepHabits": "調整您的購物習慣",
+  "obLoadingStepLists": "準備您的智慧列表",
+  "obLoadingStepProfile": "為您的家庭進行調整",
+  "obLoadingStepSavings": "優化您的儲蓄策略",
+  "obLoadingTitle": "制定您的個人化計劃...",
+  "obLoginApple": "繼續使用蘋果",
+  "obLoginError": "登入失敗。再試一次或暫時跳過。",
+  "obLoginGoogle": "繼續使用谷歌",
+  "obLoginSkip": "現在不要",
+  "obLoginSubtitle": "登入以便您的清單在裝置之間同步",
+  "obLoginTitle": "儲存您的計劃",
+  "obPaywallRetry": "再試一次",
+  "obPaywallTitle": "解鎖你的計劃",
+  "obQuizFrequencyBiweekly": "每兩週一次",
+  "obQuizFrequencyDaily": "幾乎每天",
+  "obQuizFrequencyMonthly": "每月大量運輸",
+  "obQuizFrequencyTitle": "您多久去一次雜貨店？",
+  "obQuizFrequencyWeekly": "每週一次",
+  "obQuizHouseholdCouple": "我和我的夥伴",
+  "obQuizHouseholdFamilyLarge": "5+ 家庭",
+  "obQuizHouseholdFamilySmall": "3-4 家庭",
+  "obQuizHouseholdSolo": "只有我",
+  "obQuizHouseholdTitle": "你為誰購物？",
+  "obQuizMethodMemory": "我把它記在心裡",
+  "obQuizMethodNone": "我不列清單",
+  "obQuizMethodNotes": "筆記應用程式",
+  "obQuizMethodPaper": "筆和紙",
+  "obQuizMethodTitle": "今天你如何制定購物清單？",
+  "obQuizPainForget": "我總是忘記物品",
+  "obQuizPainOverspend": "我的花費超出計劃",
+  "obQuizPainTime": "需要太多時間",
+  "obQuizPainTitle": "購物時最令你沮喪的是什麼？",
+  "obQuizPainWaste": "家裡的食物被浪費了",
+  "obQuizSavingsLarge": "盡量",
+  "obQuizSavingsMedium": "大約占我雜貨帳單的 10%",
+  "obQuizSavingsSmall": "一點點——每一點都很重要",
+  "obQuizSavingsTitle": "您想每月存多少錢？",
+  "obRevealFeatureAi": "人工智慧建立並組織您的列表",
+  "obRevealFeatureBudget": "根據您的目標追蹤支出",
+  "obRevealFeaturePantry": "食品儲藏室追蹤減少食物浪費",
+  "obRevealFeatureShare": "與家人即時分享",
+  "obRevealMonth": "月 {n}",
+  "obRevealSavingsCaption": "KipiList 預計節省的費用",
+  "obRevealSubtitle": "以下是 KipiList 為您服務的方式",
+  "obRevealTitle": "你的計劃已經準備好了！",
+  "obSocialQuote1": "我再也不會忘記任何事了。人工智慧在幾秒鐘內就建立了我的清單。",
+  "obSocialQuote2": "我們在第一個月就大幅削減了雜貨帳單。",
+  "obSocialQuote3": "與我的伴侶分享這份清單結束了我們的購物混亂。",
+  "obSocialSubtitle": "像您這樣的購物者已經透過 KipiList 省錢了",
+  "obSocialTitle": "你有很好的陪伴",
   "observations": "筆記",
   "observationsHint": "助理的其他偏好",
   "offlineBanner": "您離線",
@@ -2040,6 +2197,7 @@
   "onboardingViewAllPlans": "查看所有計劃",
   "onboardingWelcomeDesc": "組織購物並省錢的最明智方法。",
   "onboardingWelcomeTitle": "歡迎來到KipiList",
+  "openConversation": "開放對話",
   "openMenu": "開啟選單",
   "organizeAisles": "按通道整理",
   "organizeAislesPrompt": "按超市通道整理。",
@@ -2051,15 +2209,18 @@
   "pantryAppBar": "储藏室",
   "pantryAvailabilityAll": "一切就緒！",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} 在食品儲藏室",
+  "pantryDeficitCount": "缺少 {count}{unit}",
   "pantryEditTitle": "编辑 {name}",
   "pantryEmpty": "储藏室为空",
   "pantryEmptySubtitle": "添加您想在家中存放的商品",
+  "pantryItemAdded": "新增項目",
   "pantryItemRemoved": "项目已移除",
   "pantryLimitReached": "免費方案中食品儲藏室中的物品數量限制為 {count}。升級以添加更多。",
   "paywallAfterItem1": "穀物",
   "paywallAfterItem2": "打掃",
   "paywallAfterItem3": "肉類",
   "paywallAfterItem4": "麵包店",
+  "paywallBasedOnAnswers": "根據您的答案進行個性化設置",
   "paywallBeforeAfterTitle": "人工智慧之前和之後：",
   "paywallBeforeItem1": "白飯",
   "paywallBeforeItem2": "肥皂",
@@ -2097,6 +2258,8 @@
   "paywallGoalHeadlinePantry": "{name}，完美追蹤您的食品儲藏室！",
   "paywallGoalHeadlineRecipes": "{name}，發現新食譜！",
   "paywallGoalHeadlineSaveMoney": "{name}，每次旅行均可節省！",
+  "paywallHeroFeatureDesc": "說出或貼上整個清單 - AI 在幾秒鐘內對其進行排序、分類和預算",
+  "paywallHeroFeatureTitle": "人工智慧購物助手",
   "paywallHeroHeadline": "Kipi AI始終在您身邊",
   "paywallHeroSubtitle": "使用口袋中的 AI 添加項目、整理清單並節省時間",
   "paywallHeroSubtitlePersonalized": "嘿 {name}，以正確的方式組織您的購物。",
@@ -2131,6 +2294,11 @@
   "paywallTestimonial2Text": "我再也沒有忘記過某個清單項目。 AI聊天太棒了！",
   "paywallTestimonialAuthor": "安·S。",
   "paywallTestimonialsTitle": "我們的用戶評價：",
+  "paywallTimelineChargeDesc": "您的訂閱開始 - 隨時取消",
+  "paywallTimelineDay": "日 {day}",
+  "paywallTimelineReminderDesc": "我們在試用結束前提醒您",
+  "paywallTimelineToday": "今天",
+  "paywallTimelineTodayDesc": "立即解鎖完全存取權限",
   "paywallTitle": "KipiList 高级版",
   "paywallTrialCta": "開始免費試用",
   "paywallTrialDays": "{days} 天 免費",
@@ -2153,11 +2321,15 @@
   "prefSharing": "共享清单",
   "prefUnlimitedLists": "无限清单",
   "prefUnlimitedPantry": "无限储藏室",
+  "preferencesSection": "偏好設定",
   "preferredMarket": "首選市場",
   "preferredMarketHint": "例如：超市 X",
+  "premiumActionsPrompt": "訂閱高級版以解鎖自動操作。",
+  "premiumStepDescription": "{description}（進階）",
   "premiumUpgrade": "升级以解锁",
   "prepTime": "準備時間",
   "prepTimeMinutes": "準備時間（分鐘）",
+  "previousItemState": "先前狀態：{quantity} {unit} [{category}]{price}",
   "privacy": "隐私",
   "processing": "加工...",
   "product": "產品",
@@ -2177,21 +2349,34 @@
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "正在查詢您的清單...",
+  "quickActionAi": "與 Kipi 聊天",
+  "quickActionPantry": "查看食品儲藏室",
   "quickRecipe": "快速食谱",
   "quickRecipePrompt": "使用我清单中的项目推荐食谱。",
   "quickReplies": "快速回覆：",
   "quickSuggestions": "快速建議",
+  "recipeAddError": "無法新增到您的清單。請再試一次。",
   "recipeAddToList": "加入購物清單",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "食譜已建立！",
   "recipeDeleted": "食譜已刪除",
+  "recipeEstimatePartial": "根據成分和價格進行部分估算。",
+  "recipeEstimatedCostPerServing": "{cost} / 份",
+  "recipeEstimatedTotalCost": "預計總成本",
   "recipeImage": "食譜圖片",
+  "recipeIngredientInPantry": "在儲藏室裡",
+  "recipeIngredientLowPantry": "食品儲藏室低",
   "recipeIngredientSingular": "1 種成分",
   "recipeIngredientsPlural": "{count} 成分",
+  "recipeManualTotalCost": "人工總成本",
+  "recipeManualTotalCostHint": "留空以根據原料價格進行估算。",
   "recipeName": "食譜名稱",
   "recipeSaved": "食譜已儲存！",
+  "recipeServesCount": "服務 {count}",
   "recipeSuggestion": "食谱推荐",
   "recipeTags": "食譜標籤",
+  "recipeTapToCheck": "烹飪時點擊一種食材即可進行核對",
+  "recipeYieldServings": "產量份數",
   "regenerate": "重新生成",
   "remove": "移除",
   "removeBudget": "移除",
@@ -2226,9 +2411,12 @@
   "scanBarcodeTitle": "掃描條碼",
   "scanProduct": "掃描產品",
   "scanProductTitle": "掃描產品",
+  "scrollToBottom": "滾動到底部",
+  "searchConversations": "搜尋對話",
   "searchCurrency": "搜尋貨幣...",
   "searchInConversation": "在對話中搜尋...",
   "searchLanguage": "搜尋語言...",
+  "searchMessages": "搜尋訊息...",
   "searchRecipes": "搜尋食譜...",
   "searchingCategories": "正在搜尋類別...",
   "searchingProducts": "正在搜尋產品...",
@@ -2268,6 +2456,7 @@
   "signInGoogle": "使用 Google 登录",
   "skip": "跳過",
   "smartOrganization": "智能整理",
+  "somethingWentWrong": "出了點問題",
   "sortAZ": "A-Z",
   "sortCategory": "类别",
   "sortDate": "日期",
@@ -2299,6 +2488,7 @@
   "themeColor": "主题色",
   "themeGreen": "绿色",
   "themeIndigo": "靛蓝",
+  "themeMode": "主題模式",
   "themeOrange": "橙色",
   "themePink": "粉色",
   "themePurple": "紫色",
@@ -2316,6 +2506,7 @@
   "toolSaveRecipe": "保存食譜",
   "toolShareList": "分享列表",
   "totalEstimated": "预估总计：{amount}",
+  "totalEstimatedLabel": "預計總數",
   "totalSavings": "總節省",
   "totalSpending": "总支出",
   "trackStock": "追踪库存",
@@ -2323,6 +2514,7 @@
   "trackStockInactive": "不生成购物建议",
   "uncheckingItem": "取消選取項目...",
   "undo": "撤销",
+  "undoChanges": "撤銷更改",
   "unit": "单位",
   "unitPack": "包",
   "unlockAi": "解鎖無限AI",
@@ -2336,6 +2528,7 @@
   "updatingPantry": "正在更新食品儲藏室...",
   "upgrade": "升级",
   "userProfile": "使用者資料",
+  "userRole": "你",
   "validForLimitedTime": "限时有效",
   "version": "版本",
   "viewActive": "查看活跃",
@@ -2343,6 +2536,7 @@
   "viewHistory": "查看历史",
   "viewItems": "查看商品",
   "viewList": "查看清单",
+  "viewPlans": "查看計劃",
   "viewPro": "查看專業版",
   "viewRecipe": "查看食譜",
   "voiceCommandContent": "自然说话以管理您的清单！\n\n示例：\n• '添加面包、奶酪和火腿'\n• '移除洗衣液'\n• '将主题更改为蓝色'\n\n这是 KipiList Premium 的专属功能。",

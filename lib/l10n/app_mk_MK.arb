@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -147,6 +161,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -287,6 +308,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -316,6 +340,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -991,6 +1022,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryDeleteItemsContent": {
     "placeholders": {
       "count": {
@@ -1138,6 +1179,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1176,6 +1224,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1249,7 +1320,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1397,42 +1482,56 @@
   "addToPantryPrompt": "Да се додаде \"{name}\" во вашата остава?",
   "addedFeedback": "Додадено!",
   "advancedFeatures": "Напредни функции",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Не успеа да се извршат дејства",
+  "agentActionsPremium": "Дејствата бараат Premium",
+  "agentActionsRunning": "Водење акции...",
+  "aiApiError": "Услугата за вештачка интелигенција врати грешка ({statusCode}).",
   "aiAssistant": "AI асистент",
   "aiAssistantDescription": "Добијте паметни предлози, рецепти и персонализирани совети со нашиот AI асистент.",
   "aiAssistantGeneral": "Генерален асистент",
   "aiAssistantHistory": "Историја на асистент",
   "aiAssistantTitle": "Асистент со вештачка интелигенција",
+  "aiConnectionError": "Не може да се поврзе со услугата за вештачка интелигенција. Проверете ја вашата врска.",
   "aiConversationHistory": "Историја на разговори",
   "aiCreditsRemaining": "{remaining} кредити останати",
   "aiDeleteConversationConfirm": "Избриши",
   "aiDeleteConversationTitle": "Да се ​​избрише разговорот?",
   "aiDeletedList": "Избришана листа",
+  "aiEmptyResponseError": "Услугата за вештачка интелигенција врати празен одговор.",
   "aiEnergy": "AI енергија",
   "aiEnergyLow": "Ниска ВИ енергија",
   "aiError": "Извинете, се случи грешка при обработката на вашето барање. Проверете ја врската или обидете се подоцна.",
   "aiFirstOpenHint": "Јас сум Кипи, твојот асистент за купување. Прашајте ме нешто за вашата листа!",
+  "aiGeneratingResponse": "Се генерира одговор…",
   "aiHello": "Здраво! Јас сум Кипи",
   "aiHowCanIHelp": "Како можам да ви помогнам денес?",
+  "aiInvalidResponseError": "Услугата за вештачка интелигенција врати неважечки одговор.",
   "aiLimitAlmostReached": "Скоро немаше пораки со вештачка интелигенција",
   "aiNewConversation": "Нов разговор",
   "aiNewSession": "Нова сесија",
   "aiNoConversationFound": "Не е пронајден разговор",
   "aiNoMessagesFound": "Не се најдени пораки",
   "aiPremiumUpsell": "Go Premium",
+  "aiRateLimitError": "Премногу пораки за кратко време. Почекајте неколку секунди и обидете се повторно.",
   "aiRecentConversations": "Неодамнешни разговори",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} денес",
   "aiSearchMessages": "Барај пораки...",
+  "aiSection": "Асистент со вештачка интелигенција",
   "aiStartNewConversation": "Започнете нов разговор",
   "aiSubscribeUnlimited": "Претплатете се за неограничена вештачка интелигенција",
   "aiSuggestCreateList": "Направете ја мојата прва листа",
   "aiSuggestSaveMore": "Како да заштедите повеќе?",
   "aiTeaserFallback": "Претплатете се на Premium за да го отклучите целосниот одговор и да добивате неограничени совети за вештачка интелигенција за купување...",
+  "aiTimeoutError": "Барањето траеше предолго. Ве молиме обидете се повторно.",
   "aiUnlockUnlimited": "Отклучете неограничена вештачка интелигенција",
   "aiUnlockWithAd": "Отклучете со оглас",
   "aiUsageExhausted": "Достигнато е месечно ограничување на вештачката интелигенција. Надградете на Pro за неограничено →",
   "aiUsageWarning": "{remaining} Дејствата за вештачка интелигенција останаа овој месец - надградете неограничено",
   "aiVoiceCommandTooltip": "AI гласовна команда (Premium)",
   "aiWelcomeContent": "Здраво! 👋 Јас сум **Кипи**, вашиот личен асистент за купување и рецепти!\n\nЈас сум тука да ти помогнам:\n🛒 **Организирајте го** вашето купување по категории автоматски\n💰 **Следете го** вашиот буџет и давајте совети за заштеда на пари\n🍲 **Предложете** вкусни рецепти со она што веќе го имате\n\nКако можам да ви помогнам денес? Можете да започнете со креирање на вашата прва листа!",
+  "aiWelcomeSuggestBarbecue": "Планирајте скара",
+  "aiWelcomeSuggestBarbecuePrompt": "Кипи, организирам скара - помогни ми да го направам списокот за пазарење",
   "aiWelcomeSuggestCreateList": "Направете ја мојата прва листа",
   "aiWelcomeSuggestCreateListPrompt": "Кипи, помогни ми да ја креирам мојата прва листа за купување",
   "aiWelcomeSuggestSave": "Како да заштедите пари?",
@@ -1443,14 +1542,17 @@
   "appTitle": "Листа за купување",
   "appearance": "Изглед",
   "archiveList": "Архивирај листа",
+  "artifactBudgetLabel": "Буџет:",
   "artifactReplaceBody": "Изберете алтернатива на производ за да ја оптимизирате цената.",
   "artifactReplaceTitle": "Замени {name}",
   "artifactSuggestedItems": "Предложени ставки",
   "artifactSwapButton": "Заменете",
   "artifactSwappedLabel": "Заменет",
+  "artifactSynced": "Синхронизирано",
   "assistantHistory": "Историја на асистент",
   "assistantHistorySubtitle": "Погледнете ја вашата историја на разговори",
   "assistantName": "Име на асистентот",
+  "assistantRole": "асистент",
   "backToChat": "Назад на разговор",
   "backToToday": "Назад кон денес",
   "backupExported": "Резервната копија е извезена!",
@@ -1458,6 +1560,7 @@
   "backupPremiumDescription": "Резервната копија и извозот се премиум функција",
   "backupSubtitle": "Извези или увези податоци",
   "backupTitle": "Резервна копија",
+  "badResponse": "Лош одговор",
   "badgeBeginner": "Почетник",
   "badgeOrganized": "Организирано",
   "badgeSavingMaster": "Заштеда на мајстор",
@@ -1485,10 +1588,12 @@
   "catOthers": "Друго",
   "catalogAddItems": "Додајте {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Прелистајте го каталогот",
+  "catalogCategories": "Категории",
   "catalogFilterNational": "Националните",
   "catalogItemAdded": "додаде {name}",
   "catalogMyFrequents": "Мои фреквенции",
   "catalogProductNotFound": "Производот не е пронајден, напишете го името",
+  "catalogRareBadge": "Ретки",
   "catalogRareSection": "поретко во вашата земја",
   "catalogRetry": "Обидете се повторно",
   "catalogSearchGlobal": "Пребарајте кој било производ...",
@@ -1497,16 +1602,43 @@
   "catalogSortPopular": "Најпопуларни",
   "catalogTitle": "Каталог",
   "category": "Категорија",
+  "categoryAlcohol": "Алкохолни пијалоци",
+  "categoryBaby": "Бебе",
+  "categoryBakery": "Пекара",
+  "categoryBeverages": "Пијалоци",
+  "categoryCanned": "Конзервирана стока",
+  "categoryCleaning": "Чистење",
+  "categoryColdCuts": "Намалување",
   "categoryColorLabel": "Боја",
+  "categoryDairy": "Млечни производи",
+  "categoryFish": "Риба",
+  "categoryFrozen": "Замрзната храна",
+  "categoryFruits": "Овошје",
+  "categoryGrains": "Зрна и житарки",
+  "categoryHygiene": "Лична нега",
   "categoryIconLabel": "Икона",
   "categoryLimitReached": "Достигнато е ограничувањето на категоријата",
+  "categoryMeat": "Месото",
   "categoryName": "Име на категоријата",
   "categoryNameHint": "Внесете име на категоријата",
+  "categoryOthers": "Друго",
+  "categoryPet": "Залихи за домашни миленици",
+  "categorySeasonings": "Зачини",
+  "categorySweets": "Слатки и десерти",
+  "categoryUtilities": "Потрошен материјал за домаќинството",
+  "categoryVegetables": "Зеленчук",
+  "chatEmptyGreeting": "Здраво {name}, јас сум Кипи 👋",
+  "chatEmptyGreetingNoName": "Здраво, јас сум Кипи 👋",
+  "chatEmptyPitch": "Изградувам списоци, предлагам рецепти и наоѓам каде да зачувам. Каде да почнеме?",
   "chatEmptySubtitle": "Побарајте предлози за ставки, рецепти или совети за зачувување за да започнете.",
   "chatEmptyTitle": "Вашиот разговор е празен",
   "chatError": "Грешка при вчитување на разговорот: {error}",
   "chatHint": "Напишете ја вашата порака...",
   "chatHintBlocked": "Отклучете ја вештачката интелигенција за разговор",
+  "chatHistoryErrorBody": "Нешто тргна наопаку од нашата страна. Допрете обидете се повторно за да се обидете повторно.",
+  "chatHistoryErrorTitle": "Не можеше да се вчита разговоров",
+  "chatHistoryOfflineBody": "Проверете ја вашата интернет конекција и обидете се повторно.",
+  "chatHistoryOfflineTitle": "Офлајн сте",
   "chatSubtitle": "Прашајте за предлози, рецепти или совети за заштеда.",
   "chatSubtitleShort": "Прашајте за цени, рецепти, организација...",
   "chooseCurrency": "Изберете валута",
@@ -1514,6 +1646,7 @@
   "chooseImageSource": "Изберете извор на слика",
   "chooseLanguage": "Изберете јазик",
   "chooseThemeColor": "Изберете боја на тема",
+  "chooseThemeMode": "Изберете режим на тема",
   "clear": "Исчисти",
   "clearHistory": "Исчисти историја",
   "clearHistoryConfirm": "Да ги исчистиме сите пораки во оваа сесија?",
@@ -1556,6 +1689,10 @@
   "customizeAssistant": "Прилагодете",
   "dark": "Темно",
   "data": "Податоци",
+  "dateGroupOlder": "Постари",
+  "dateGroupPrevious7Days": "Претходните 7 дена",
+  "dateGroupToday": "Денес",
+  "dateGroupYesterday": "Вчера",
   "deficitItems": "{deficit,plural, one{{deficit} ставка треба да се купи} other{{deficit} ставки треба да се купат}}",
   "delete": "Избриши",
   "deleteCategory": "Избриши",
@@ -1572,6 +1709,7 @@
   "deleteRecipeConfirmMsg": "Дали сте сигурни дека сакате да го избришете \"{recipeName}\"? Оваа акција не може да се врати.",
   "deleteSession": "Избришете разговор",
   "deleteSessionConfirm": "Дали сте сигурни дека сакате да го избришете овој разговор? Пораките трајно ќе бидат изгубени.",
+  "deletedList": "Избришана листа",
   "deselectAll": "Одбери ги сите",
   "dietaryRestrictions": "Ограничувања во исхраната",
   "dietaryRestrictionsHint": "Дали има некои ограничувања во исхраната?",
@@ -1584,6 +1722,7 @@
   "editCategoryDialog": "Уреди категорија",
   "editItem": "Уреди ставка",
   "editItemPrice": "Проценета цена",
+  "editMessage": "Уреди порака",
   "editPantryItem": "Уреди {name}",
   "editRecipe": "Уреди",
   "editRecipeTitle": "Уреди рецепт",
@@ -1605,6 +1744,7 @@
   "errorLoadingChat": "Упс! Нешто тргна наопаку при вчитувањето на разговорот.",
   "errorLoadingChatSubtitle": "Проверете ја врската или обидете се повторно подоцна.",
   "errorLoadingHistory": "Грешка при вчитување на историјата",
+  "errorLoadingItems": "Грешка при вчитување ставки",
   "errorLoadingLists": "Грешка при вчитување списоци",
   "errorLoadingRecipes": "Грешка при вчитување на рецептите",
   "errorLoadingSubscription": "Грешка при вчитување на претплатата",
@@ -1657,6 +1797,7 @@
   "generateShoppingList": "Генерирај листа за купување",
   "gestureHint": "Држете за да изберете • Повлечете за да отстраните",
   "globalAssistant": "Глобален асистент",
+  "goodResponse": "Добар одговор",
   "howCanIHelp": "Како можам да помогнам?",
   "idealQty": "Идеална кол",
   "idealQuantity": "Идеална количина",
@@ -1673,14 +1814,18 @@
   "instructionsHint": "Напишете еден чекор по линија...",
   "inviteToList": "Покани на список",
   "itemAddedSnack": "додаде {name}",
+  "itemAddedToList": "Ставката е додадена на списокот.",
   "itemName": "Име на ставка",
   "itemRemoved": "Ставката е отстранета",
   "itemsAddedSuccess": "Ставките успешно додадени во листата!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} ставка/и треба да се купат",
   "itemsPurchased": "Купени артикли",
   "itemsPurchasedCount": "купени {purchased} од {total}",
   "itemsPurchasedShort": "Купени {purchased}/{total}",
   "itemsWillBeAdded": "{count} ставка/и ќе бидат додадени",
+  "keepAdding": "Продолжете да додавате",
+  "keepAddingSubtitle": "Чувајте го листот отворен за да додадете повеќе ставки",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Што треба да купите?",
@@ -1727,16 +1872,22 @@
   "mealDragHint": "Држете за да влечете и преместите",
   "mealNoRecipeFound": "Не е пронајден рецепт",
   "mealPlannerAddMeal": "Додај оброк",
+  "mealPlannerAddType": "Додадете тип на оброк",
+  "mealPlannerCustomTypeLabel": "Прилагоден тип",
   "mealPlannerDateLabel": "Датум",
+  "mealPlannerDefaultTypeLabel": "Стандарден тип",
   "mealPlannerDeleteMeal": "Отстрани оброк",
   "mealPlannerEditMeal": "Уреди оброк",
+  "mealPlannerEditType": "Уредете го типот на оброк",
   "mealPlannerError": "Грешка при вчитување на планот за оброци",
+  "mealPlannerEstimatePartial": "Проценка врз основа на рецепти со делумни податоци за цената.",
   "mealPlannerGenerateList": "Генерирај листа за шопинг",
   "mealPlannerGenerateListConfirm": "Да се додадат сите состојки од планираните оброци за оваа недела во вашата листа за шопинг?",
   "mealPlannerGenerateListEmpty": "Нема состојки за додавање. Прво планирајте некои оброци со рецепти.",
   "mealPlannerGenerateListNoList": "Прво креирајте листа за шопинг.",
   "mealPlannerGenerateListSuccess": "{count} состојка(и) додадени во вашата листа!",
   "mealPlannerLoading": "Се вчитува планот за оброци...",
+  "mealPlannerManageTypes": "Управувајте со видовите оброци",
   "mealPlannerMealDeleted": "Оброкот е отстранет",
   "mealPlannerMealTypeBreakfast": "Појадок",
   "mealPlannerMealTypeDinner": "Вечера",
@@ -1756,6 +1907,12 @@
   "mealPlannerServings": "{count,plural, one{{count} порција} other{{count} порции}}",
   "mealPlannerServingsLabel": "Порции",
   "mealPlannerTitle": "Планер за оброци",
+  "mealPlannerTypeColor": "Боја",
+  "mealPlannerTypeDeleteConfirm": "Дали сте сигурни дека сакате да го избришете овој тип на оброк? Планираните оброци со овој тип ќе останат.",
+  "mealPlannerTypeDeleteError": "Овој тип на оброк не може да се избрише.",
+  "mealPlannerTypeIcon": "Икона",
+  "mealPlannerTypeName": "Име",
+  "mealPlannerTypeNameEmpty": "Името не може да биде празно",
   "mealPlannerViewMonthly": "Месечен преглед",
   "mealPlannerViewWeekly": "Неделен преглед",
   "mealPlannerWeekEmpty": "Ништо не е планирано за оваа недела",
@@ -1971,6 +2128,7 @@
   "onboardingViewAllPlans": "Погледнете ги сите планови",
   "onboardingWelcomeDesc": "Најпаметен начин да го организирате купувањето и да заштедите пари.",
   "onboardingWelcomeTitle": "Добредојдовте во KipiList",
+  "openConversation": "Отворете го разговорот",
   "openMenu": "Отвори мени",
   "organizeAisles": "Организирај по патеки",
   "organizeAislesPrompt": "Организирај по пазарни патеки.",
@@ -1983,6 +2141,7 @@
   "pantryAvailabilityCount": "{availableCount}/{totalCount} во оставата, чајната кујна",
   "pantryCompactView": "Компактен поглед",
   "pantryDeficit": "Недостасува {amount}{unit}",
+  "pantryDeficitCount": "Недостасува {count}{unit}",
   "pantryDeleteItemsContent": "Дали сакате да избришете {count} избрани ставки?",
   "pantryDeleteItemsTitle": "Избришете ставки",
   "pantryDeleteSelected": "Избришете го избраното",
@@ -1999,6 +2158,7 @@
   "pantryFilterExpiring": "Истекува",
   "pantryFilterOutStock": "Нема залиха",
   "pantryFirstOpenHint": "Следете што имате дома. Додадете ставки или скенирајте бар-кодови.",
+  "pantryItemAdded": "Ставката е додадена",
   "pantryItemRemoved": "Ставката е отстранета",
   "pantryMoreDetails": "Повеќе детали",
   "pantryNoItemsFound": "Не се пронајдени ставки за „{query}“",
@@ -2012,6 +2172,7 @@
   "paywallAfterItem2": "Чистење",
   "paywallAfterItem3": "Месо",
   "paywallAfterItem4": "Пекара",
+  "paywallBasedOnAnswers": "Персонализирано од вашите одговори",
   "paywallBeforeAfterTitle": "ВИ пред и потоа:",
   "paywallBeforeItem1": "оризот",
   "paywallBeforeItem2": "сапун",
@@ -2049,6 +2210,8 @@
   "paywallGoalHeadlinePantry": "{name}, следете ја вашата оставата, чајната кујна совршено!",
   "paywallGoalHeadlineRecipes": "{name}, откријте нови рецепти!",
   "paywallGoalHeadlineSaveMoney": "{name}, заштедете на секое патување!",
+  "paywallHeroFeatureDesc": "Зборувајте или залепете цел список - вештачката интелигенција ја сортира, категоризира и буџетира за неколку секунди",
+  "paywallHeroFeatureTitle": "Асистент за купување со вештачка интелигенција",
   "paywallHeroHeadline": "Kipi AI секогаш покрај вас",
   "paywallHeroSubtitle": "Додавајте ставки, организирајте списоци и заштедете време со вештачката интелигенција во вашиот џеб",
   "paywallHeroSubtitlePersonalized": "Еј {name}, организирај го купувањето на вистински начин.",
@@ -2083,6 +2246,11 @@
   "paywallTestimonial2Text": "Никогаш повеќе не заборавив ставка од списокот. Разговорот за вештачка интелигенција е сензационален!",
   "paywallTestimonialAuthor": "Ен С.",
   "paywallTestimonialsTitle": "Што велат нашите корисници:",
+  "paywallTimelineChargeDesc": "Вашата претплата започнува - откажете се во секое време",
+  "paywallTimelineDay": "Ден {day}",
+  "paywallTimelineReminderDesc": "Ве потсетуваме пред да заврши судењето",
+  "paywallTimelineToday": "Денес",
+  "paywallTimelineTodayDesc": "Отклучете го целосниот пристап веднаш",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Започнете бесплатен пробен период",
   "paywallTrialDays": "{days} БЕСПЛАТНИ ДЕНА",
@@ -2105,11 +2273,15 @@
   "prefSharing": "Сподели листи",
   "prefUnlimitedLists": "Неограничени листи",
   "prefUnlimitedPantry": "Неограничена остава",
+  "preferencesSection": "Преференции",
   "preferredMarket": "Префериран пазар",
   "preferredMarketHint": "Каде најчесто купувате?",
+  "premiumActionsPrompt": "Претплатете се на Premium за да ги отклучите автоматските дејства.",
+  "premiumStepDescription": "{description} (премиум)",
   "premiumUpgrade": "Надгради за да отклучиш",
   "prepTime": "Време за подготовка",
   "prepTimeMinutes": "Време за подготовка (минути)",
+  "previousItemState": "Претходна состојба: {quantity} {unit} [{category}]{price}",
   "privacy": "Приватност",
   "product": "Производ",
   "productName": "Име на производ",
@@ -2126,21 +2298,34 @@
   "quantityShort": "Кол",
   "quantityUnitWithPrice": "{qty} {unit} - {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Разговарајте со Кипи",
+  "quickActionPantry": "Погледни оставата, чајната кујна",
   "quickRecipe": "Брз рецепт",
   "quickRecipePrompt": "Предложи рецепти со ставки од мојата листа.",
   "quickReplies": "Брзи одговори:",
   "quickSuggestions": "Брзи предлози",
+  "recipeAddError": "Не може да се додаде на вашата листа. Ве молиме обидете се повторно.",
   "recipeAddToList": "Додај во списокот за купување",
   "recipeAddedConfirmation": "{count} состојки додадени во {listName}",
   "recipeCreated": "Рецептот е креиран!",
   "recipeDeleted": "Рецептот е избришан",
+  "recipeEstimatePartial": "Делумна проценка врз основа на состојки со цена.",
+  "recipeEstimatedCostPerServing": "{cost} / порција",
+  "recipeEstimatedTotalCost": "Проценети вкупни трошоци",
   "recipeImage": "Слика од рецептот",
+  "recipeIngredientInPantry": "Во оставата, чајната кујна",
+  "recipeIngredientLowPantry": "Ниско во оставата, чајната кујна",
   "recipeIngredientSingular": "1 состојка",
   "recipeIngredientsPlural": "{count} состојки",
+  "recipeManualTotalCost": "Рачни вкупни трошоци",
+  "recipeManualTotalCostHint": "Оставете празно да се процени од цените на состојките.",
   "recipeName": "Име на рецептот",
   "recipeSaved": "Рецептот е зачуван!",
+  "recipeServesCount": "Служи {count}",
   "recipeSuggestion": "Предлог рецепт",
   "recipeTags": "Ознаки на рецептот",
+  "recipeTapToCheck": "Допрете некоја состојка за да ја проверите додека готвите",
+  "recipeYieldServings": "Принос порции",
   "regenerate": "Регенерирај",
   "remove": "Отстрани",
   "removeBudget": "Отстрани",
@@ -2164,9 +2349,12 @@
   "savings": "Заштеда",
   "scanBarcodeTitle": "Скенирај баркод",
   "scanProductTitle": "Скенирајте го производот",
+  "scrollToBottom": "Скролувајте до дното",
+  "searchConversations": "Пребарувајте разговори",
   "searchCurrency": "Пребарајте валута...",
   "searchInConversation": "Барај во разговор...",
   "searchLanguage": "Пребарај јазик...",
+  "searchMessages": "Барај пораки...",
   "searchRecipes": "Пребарај рецепти...",
   "selectAll": "Избери ги сите",
   "selectCheaperAlternative": "Изберете поевтина алтернатива",
@@ -2223,6 +2411,7 @@
   "signInGoogle": "Најави се со Google",
   "skip": "Прескокни",
   "smartOrganization": "Паметна организација",
+  "somethingWentWrong": "Нешто тргна наопаку",
   "sortAZ": "А–З",
   "sortCategory": "Категорија",
   "sortDate": "Датум",
@@ -2253,6 +2442,7 @@
   "themeColor": "Боја на тема",
   "themeGreen": "Зелена",
   "themeIndigo": "Индиго",
+  "themeMode": "Режим на тема",
   "themeOrange": "Портокалова",
   "themePink": "Розова",
   "themePurple": "Виолетова",
@@ -2260,12 +2450,14 @@
   "themeSelectionTitle": "Изберете боја на тема",
   "themeTeal": "Тиркизна",
   "totalEstimated": "Вкупно проценето: {amount}",
+  "totalEstimatedLabel": "Проценет вкупно",
   "totalSavings": "Вкупно заштеди",
   "totalSpending": "Вкупно потрошено",
   "trackStock": "Следи залиха",
   "trackStockActive": "Се појавува во предлози за купување",
   "trackStockInactive": "Не генерира предлог за купување",
   "undo": "Врати",
+  "undoChanges": "Врати промени",
   "unit": "Единица",
   "unitPack": "пакет",
   "unlockAi": "Отклучете неограничена вештачка интелигенција",
@@ -2290,6 +2482,7 @@
   "userProfileSaveButton": "Зачувај профил",
   "userProfileSaved": "Профилот е успешно зачуван!",
   "userProfileTitle": "Мојот профил",
+  "userRole": "Вие",
   "validForLimitedTime": "Важи ограничено време",
   "version": "Верзија",
   "viewActive": "Види активни",
@@ -2297,6 +2490,7 @@
   "viewHistory": "Види историја",
   "viewItems": "Прикажи ставки",
   "viewList": "Види листа",
+  "viewPlans": "Погледнете ги плановите",
   "viewPro": "Прикажи Про",
   "viewRecipe": "Види рецепт",
   "voiceCommandContent": "Зборувајте природно за да управувате со вашата листа!\n\nПримери:\n• 'Додај леб, сирење и шунка'\n• 'Отстрани детергент за алишта'\n• 'Промени ја темата во сина'\n\nОва е ексклузивна функција на KipiList Premium.",

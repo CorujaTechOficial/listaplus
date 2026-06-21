@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -130,6 +144,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -334,6 +355,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingProducts": {
     "placeholders": {
       "error": {
@@ -481,6 +505,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1105,6 +1136,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1231,6 +1272,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1263,6 +1311,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@progressBudget": {
     "placeholders": {
@@ -1324,7 +1395,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1448,23 +1533,37 @@
   "addingItems": "ලැයිස්තුවට අයිතම එකතු කරමින්...",
   "addingToPantry": "පැන්ට්රියට එකතු කරමින්...",
   "advancedFeatures": "උසස් විශේෂාංග",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "ක්‍රියා ධාවනය කිරීමට අසමත් විය",
+  "agentActionsPremium": "ක්‍රියා සඳහා වාරික අවශ්‍ය වේ",
+  "agentActionsRunning": "ධාවන ක්‍රියා...",
+  "aiApiError": "AI සේවාව දෝෂයක් ලබා දී ඇත ({statusCode}).",
   "aiAssistant": "AI සහායක",
   "aiAssistantDescription": "අපගේ AI සහායක සමඟ බුද්ධිමත් යෝජනා, වට්ටෝරු සහ පුද්ගලානුකූල ඉඟි ලබා ගන්න.",
   "aiAssistantTitle": "AI සහකාර",
+  "aiConnectionError": "AI සේවාවට සම්බන්ධ වීමට නොහැකි විය. ඔබගේ සම්බන්ධතාවය පරීක්ෂා කරන්න.",
   "aiCreditsRemaining": "{remaining} ණය ඉතිරිව ඇත",
+  "aiEmptyResponseError": "AI සේවාව හිස් ප්‍රතිචාරයක් ලබා දුන්නේය.",
   "aiEnergy": "AI බලශක්ති",
   "aiEnergyLow": "අඩු AI ශක්තිය",
   "aiError": "කණගාටුයි, ඔබේ ඉල්ලීම සැකසීමේදී දෝෂයක් ඇති විය. ඔබේ සම්බන්ධතාවය පරීක්ෂා කරන්න හෝ පසුව නැවත උත්සාහ කරන්න.",
+  "aiGeneratingResponse": "ප්‍රතිචාරය උත්පාදනය කරමින්...",
+  "aiInvalidResponseError": "AI සේවාව අවලංගු ප්‍රතිචාරයක් ලබා දුන්නේය.",
   "aiLimitAlmostReached": "AI පණිවිඩ වලින් පාහේ",
   "aiPremiumDescription": "මෙම අන්තර්ක්‍රියාකාරී අතුරුමුහුණත උසස් කෘත්‍රිම බුද්ධිය භාවිතා කරන අතර එය Pro සාමාජිකයින්ට හෝ ඉක්මන් දැන්වීමක් හරහා පමණක් වේ.",
+  "aiRateLimitError": "කෙටි කාලයක් තුළ බොහෝ පණිවිඩ. තත්පර කිහිපයක් රැඳී සිට නැවත උත්සාහ කරන්න.",
   "aiRemainingFreeToday": "අද {remaining} {remaining, plural, one{free message} other{free messages}}",
+  "aiSection": "AI සහකාර",
   "aiSubscribeUnlimited": "අසීමිත AI සඳහා දායක වන්න",
   "aiTeaserFallback": "සම්පූර්ණ ප්‍රතිචාරය අගුළු ඇරීමට සහ ඔබේ සාප්පු සවාරි සඳහා අසීමිත AI ඉඟි ලබා ගැනීමට Premium වෙත දායක වන්න...",
+  "aiTimeoutError": "ඉල්ලීමට වැඩි කාලයක් ගත විය. කරුණාකර නැවත උත්සාහ කරන්න.",
   "aiUnlockUnlimited": "අසීමිත AI අගුළු හරින්න",
   "aiUsageExhausted": "මාසික AI සීමාව ළඟා විය. අසීමිත → සඳහා Pro වෙත උත්ශ්‍රේණි කරන්න",
   "aiUsageWarning": "{remaining} AI ක්‍රියා මේ මාසයේ ඉතිරිව ඇත — අසීමිත සඳහා උත්ශ්‍රේණි කිරීම",
   "aiVoiceCommandTooltip": "AI හඬ විධානය (Premium)",
   "aiWelcomeContent": "ආයුබෝවන්! 👋 මම **කිපි**, ඔබේ පුද්ගලික සාප්පු සවාරි සහ වට්ටෝරු සහායකයා!\n\nමම ඔබට උදව් කිරීමට මෙහි සිටිමි:\n🛒 **ඔබගේ සාප්පු සවාරි ස්වයංක්‍රීයව කාණ්ඩ අනුව සංවිධානය කරන්න\n💰 **ඔබේ අයවැය ලුහුබැඳ ගොස් ඔබට මුදල් ඉතුරුම් ඉඟි ලබා දෙන්න\n🍲 **යෝජනා කරන්න** ඔබට දැනටමත් ඇති දේ සමඟ රසවත් වට්ටෝරු\n\nඅද මම ඔබට උදව් කරන්නේ කෙසේද? ඔබේ පළමු ලැයිස්තුව නිර්මාණය කිරීමෙන් ඔබට ආරම්භ කළ හැක!",
+  "aiWelcomeSuggestBarbecue": "බාබකියු එකක් සැලසුම් කරන්න",
+  "aiWelcomeSuggestBarbecuePrompt": "කිපි, මම බාබකියු එකක් හොස්ට් කරනවා — මට සාප්පු ලැයිස්තුව හදන්න උදවු කරන්න",
   "aiWelcomeSuggestCreateList": "මගේ පළමු ලැයිස්තුව සාදන්න",
   "aiWelcomeSuggestCreateListPrompt": "කිපි, මගේ පළමු සාප්පු ලැයිස්තුව සෑදීමට මට උදව් කරන්න",
   "aiWelcomeSuggestSave": "මුදල් ඉතිරි කරන්නේ කෙසේද?",
@@ -1474,9 +1573,12 @@
   "appTitle": "සාප්පු ලැයිස්තුව",
   "appearance": "පෙනුම",
   "archiveList": "ලැයිස්තුව සංරක්ෂණය කරන්න",
+  "artifactBudgetLabel": "අයවැය:",
+  "artifactSynced": "සමමුහුර්ත කර ඇත",
   "assistantHistory": "සහකාර ඉතිහාසය",
   "assistantHistorySubtitle": "ඔබගේ සංවාද ඉතිහාසය බලන්න",
   "assistantName": "සහකාර නම",
+  "assistantRole": "සහකාර",
   "backToChat": "නැවත කතාබස් වෙත",
   "backToToday": "අදට ආපසු",
   "backupExported": "උපස්ථය අපනයනය කරන ලදී!",
@@ -1484,6 +1586,7 @@
   "backupPremiumDescription": "උපස්ථය සහ අපනයනය Premium විශේෂාංගයකි",
   "backupSubtitle": "ඔබේ දත්ත අපනයනය හෝ ආයාත කරන්න",
   "backupTitle": "උපස්ථය",
+  "badResponse": "නරක ප්රතිචාර",
   "badgeBeginner": "ආරම්භකයා",
   "badgeOrganized": "සංවිධානය කර ඇත",
   "badgeSavingMaster": "සුරැකීමේ මාස්ටර්",
@@ -1509,9 +1612,11 @@
   "catOthers": "වෙනත්",
   "catalogAddItems": "{count} {count, plural, one{item} other{items}} → එක් කරන්න",
   "catalogBrowse": "නාමාවලිය පිරික්සන්න",
+  "catalogCategories": "වර්ග",
   "catalogFilterNational": "ජාතිකයන්",
   "catalogMyFrequents": "මගේ නිතර නිතර",
   "catalogProductNotFound": "නිෂ්පාදනය හමු නොවීය, නම ටයිප් කරන්න",
+  "catalogRareBadge": "දුර්ලභයි",
   "catalogRareSection": "ඔබේ රටේ අඩු පොදු",
   "catalogSearchGlobal": "ඕනෑම නිෂ්පාදනයක් සොයන්න...",
   "catalogSearchInCategory": "{category} හි සොයන්න...",
@@ -1520,16 +1625,43 @@
   "catalogTitle": "නාමාවලිය",
   "categorizingItems": "අයිතම වර්ගීකරණය...",
   "category": "ප්‍රවර්ගය",
+  "categoryAlcohol": "මධ්යසාර පාන වර්ග",
+  "categoryBaby": "බබා",
+  "categoryBakery": "බේකරිය",
+  "categoryBeverages": "බීම වර්ග",
+  "categoryCanned": "ටින් කළ භාණ්ඩ",
+  "categoryCleaning": "පිරිසිදු කිරීම",
+  "categoryColdCuts": "සීතල කප්පාදු",
   "categoryColorLabel": "වර්ණය",
+  "categoryDairy": "කිරි නිෂ්පාදන",
+  "categoryFish": "මාළු",
+  "categoryFrozen": "ශීත කළ ආහාර",
+  "categoryFruits": "පළතුරු",
+  "categoryGrains": "ධාන්ය වර්ග සහ ධාන්ය වර්ග",
+  "categoryHygiene": "පුද්ගලික රැකවරණය",
   "categoryIconLabel": "නිරූපකය",
   "categoryLimitReached": "නිදහස් අනුවාදය මත වර්ග 10 සීමාව. Pro වෙත උත්ශ්‍රේණි කරන්න!",
+  "categoryMeat": "මස්",
   "categoryName": "කාණ්ඩයේ නම",
   "categoryNameHint": "උදා: මස් වර්ග",
+  "categoryOthers": "වෙනත්",
+  "categoryPet": "සුරතල් සැපයුම්",
+  "categorySeasonings": "රසකාරක",
+  "categorySweets": "රසකැවිලි සහ අතුරුපස",
+  "categoryUtilities": "ගෘහස්ත සැපයුම්",
+  "categoryVegetables": "එළවළු",
+  "chatEmptyGreeting": "හායි {name}, මම කිපි 👋",
+  "chatEmptyGreetingNoName": "හායි, මම කිපි 👋",
+  "chatEmptyPitch": "මම ලැයිස්තු ගොඩනඟා, වට්ටෝරු යෝජනා, සහ සුරැකිය යුතු ස්ථානය සොයා ගන්නෙමි. අපි කොහෙන්ද පටන් ගන්නේ?",
   "chatEmptySubtitle": "ආරම්භ කිරීමට අයිතම යෝජනා, වට්ටෝරු හෝ ඉතිරි කිරීමේ ඉඟි සඳහා අසන්න.",
   "chatEmptyTitle": "ඔබගේ කතාබස් හිස්ය",
   "chatError": "කතාබහ පූරණය කිරීමේ දෝෂය: {error}",
   "chatHint": "ඔබේ පණිවිඩය ටයිප් කරන්න...",
   "chatHintBlocked": "කතාබස් කිරීමට AI අගුළු හරින්න",
+  "chatHistoryErrorBody": "අපේ පැත්තෙන් යමක් වැරදී ඇත. නැවත උත්සාහ කිරීමට නැවත උත්සාහ කරන්න තට්ටු කරන්න.",
+  "chatHistoryErrorTitle": "මෙම සංවාදය පූරණය කළ නොහැකි විය",
+  "chatHistoryOfflineBody": "ඔබගේ අන්තර්ජාල සම්බන්ධතාවය පරීක්ෂා කර නැවත උත්සාහ කරන්න.",
+  "chatHistoryOfflineTitle": "ඔබ නොබැඳිය",
   "chatSubtitle": "අයිතම යෝජනා, වට්ටෝරු හෝ ඉතිරි කිරීමේ ඉඟි සඳහා විමසන්න.",
   "chatSubtitleShort": "මිල ගණන්, වට්ටෝරු, සංවිධානය ගැන විමසන්න...",
   "checkingItem": "අයිතමය පරීක්ෂා කරමින්...",
@@ -1540,6 +1672,7 @@
   "chooseImageSource": "රූප මූලාශ්‍රය තෝරන්න",
   "chooseLanguage": "භාෂාව තෝරන්න",
   "chooseThemeColor": "තේමා වර්ණය තෝරන්න",
+  "chooseThemeMode": "තේමා මාදිලිය තෝරන්න",
   "clear": "හිස් කරන්න",
   "clearHistory": "ඉතිහාසය හිස් කරන්න",
   "clearHistoryConfirm": "මෙම සැසියේ සියලුම පණිවිඩ හිස් කරන්න?",
@@ -1588,6 +1721,10 @@
   "customizeAssistant": "අභිරුචිකරණය කරන්න",
   "dark": "අඳුරු",
   "data": "දත්ත",
+  "dateGroupOlder": "වැඩිහිටි",
+  "dateGroupPrevious7Days": "පෙර දින 7",
+  "dateGroupToday": "අද",
+  "dateGroupYesterday": "ඊයේ",
   "dayFri": "සිකු",
   "dayMon": "සඳු",
   "daySat": "සෙනසුරාදා",
@@ -1611,6 +1748,7 @@
   "deleteRecipeConfirmMsg": "ඔබට \"{recipeName}\" මැකීමට අවශ්‍ය බව විශ්වාසද? මෙම ක්‍රියාව පසුගමනය කළ නොහැක.",
   "deleteSession": "කතාබස් මකන්න",
   "deleteSessionConfirm": "ඔබට මෙම කතාබහ මැකීමට අවශ්‍ය බව විශ්වාසද? පණිවිඩ ස්ථිරවම නැති වී යයි.",
+  "deletedList": "මකා දැමූ ලැයිස්තුව",
   "deselectAll": "සියල්ල තේරීම් ඉවත් කරන්න",
   "dietaryRestrictions": "ආහාර සීමා කිරීම්",
   "dietaryRestrictionsHint": "උදා: වීගන්, නිර්මාංශ, ග්ලූටන් රහිත",
@@ -1623,6 +1761,7 @@
   "editCategoryDialog": "ප්‍රවර්ගය සංස්කරණය කරන්න",
   "editItem": "අයිතමය සංස්කරණය කරන්න",
   "editItemPrice": "ඇස්තමේන්තුගත මිල",
+  "editMessage": "පණිවිඩය සංස්කරණය කරන්න",
   "editPantryItem": "{name} සංස්කරණය කරන්න",
   "editRecipe": "සංස්කරණය කරන්න",
   "editRecipeTitle": "වට්ටෝරුව සංස්කරණය කරන්න",
@@ -1648,6 +1787,7 @@
   "errorLoadingChat": "අපොයි! කතාබහ පූරණය කිරීමේදී යම් දෝෂයක් සිදු විය.",
   "errorLoadingChatSubtitle": "ඔබගේ සම්බන්ධතාවය පරීක්ෂා කරන්න හෝ පසුව නැවත උත්සාහ කරන්න.",
   "errorLoadingHistory": "ඉතිහාසය පූරණය කිරීමේ දෝෂයකි",
+  "errorLoadingItems": "අයිතම පූරණය කිරීමේ දෝෂයකි",
   "errorLoadingLists": "ලැයිස්තු පූරණය කිරීමේ දෝෂයකි",
   "errorLoadingProducts": "නිෂ්පාදන පූරණය කිරීමේ දෝෂයකි: {error}",
   "errorLoadingRecipes": "වට්ටෝරු පූරණය කිරීමේ දෝෂයකි",
@@ -1722,6 +1862,7 @@
   "generatingShareLink": "බෙදාගැනීමේ සබැඳිය උත්පාදනය කරමින්...",
   "gestureHint": "තේරීමට අල්ලාගෙන සිටින්න • ඉවත් කිරීමට ස්වයිප් කරන්න",
   "globalAssistant": "ගෝලීය සහායක",
+  "goodResponse": "හොඳ ප්‍රතිචාරයක්",
   "howCanIHelp": "මට උදව් කළ හැක්කේ කෙසේද?",
   "icon": "නිරූපකය:",
   "idealQty": "සුදුසු ප්‍රමාණය",
@@ -1740,14 +1881,18 @@
   "inviteToList": "ලැයිස්තුවට ආරාධනා කරන්න",
   "itemAdded": "{name} එකතු කරන ලදී",
   "itemAddedSnack": "{name} එකතු කරන ලදී",
+  "itemAddedToList": "අයිතම ලැයිස්තුවට එකතු කරන ලදී.",
   "itemName": "අයිතමයේ නම",
   "itemRemoved": "අයිතමය ඉවත් කරන ලදී",
   "itemsAddedSuccess": "අයිතම සාර්ථකව ලැයිස්තුවට එකතු කරන ලදී!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} අයිතම(ය) මිලදී ගැනීමට අවශ්‍යයි",
   "itemsPurchased": "මිලදී ගත් භාණ්ඩ",
   "itemsPurchasedCount": "{total} න් {purchased} මිලදී ගන්නා ලදී",
   "itemsPurchasedShort": "{purchased}/{total} මිලදී ගන්නා ලදී",
   "itemsWillBeAdded": "{count} අයිතම(ය) එකතු කරනු ඇත",
+  "keepAdding": "දිගටම එකතු කරන්න",
+  "keepAddingSubtitle": "අයිතම කිහිපයක් එක් කිරීමට පත්‍රය විවෘතව තබන්න",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "කිපිලිස්ට්",
   "kipiQuickBarHint": "ඔබ මිලදී ගැනීමට අවශ්ය කුමක්ද?",
@@ -1786,16 +1931,22 @@
   "marketsToAvoid": "වළක්වා ගත යුතු වෙළඳපල",
   "marketsToAvoidHint": "උදා: Market Y, Market Z",
   "mealPlannerAddMeal": "කෑම එකතු කරන්න",
+  "mealPlannerAddType": "ආහාර වර්ගය එකතු කරන්න",
+  "mealPlannerCustomTypeLabel": "අභිරුචි වර්ගය",
   "mealPlannerDateLabel": "දිනය",
+  "mealPlannerDefaultTypeLabel": "පෙරනිමි වර්ගය",
   "mealPlannerDeleteMeal": "ආහාර ඉවත් කරන්න",
   "mealPlannerEditMeal": "ආහාර සංස්කරණය කරන්න",
+  "mealPlannerEditType": "ආහාර වර්ගය සංස්කරණය කරන්න",
   "mealPlannerError": "ආහාර සැලැස්ම පූරණය කිරීමේ දෝෂයකි",
+  "mealPlannerEstimatePartial": "අර්ධ මිල දත්ත සමඟ වට්ටෝරු මත පදනම්ව ඇස්තමේන්තු කරන්න.",
   "mealPlannerGenerateList": "සාප්පු සවාරි ලැයිස්තුවක් සාදන්න",
   "mealPlannerGenerateListConfirm": "මේ සතියේ සැලසුම් කළ ආහාරවලින් සියලුම අමුද්‍රව්‍ය ඔබේ සාප්පු ලැයිස්තුවට එක් කරන්නද?",
   "mealPlannerGenerateListEmpty": "එකතු කිරීමට අමුද්‍රව්‍ය නැත. මුලින්ම වට්ටෝරු සමඟ සමහර ආහාර සැලසුම් කරන්න.",
   "mealPlannerGenerateListNoList": "මුලින්ම සාප්පු ලැයිස්තුවක් සාදන්න.",
   "mealPlannerGenerateListSuccess": "{count} අමුද්‍රව්‍ය(ය) ඔබගේ ලැයිස්තුවට එක් කර ඇත!",
   "mealPlannerLoading": "ආහාර සැලැස්ම පූරණය කරමින්...",
+  "mealPlannerManageTypes": "ආහාර වර්ග කළමනාකරණය කරන්න",
   "mealPlannerMealDeleted": "ආහාර ඉවත් කර ඇත",
   "mealPlannerMealTypeBreakfast": "උදෑසන ආහාරය",
   "mealPlannerMealTypeDinner": "රාත්රී ආහාරය",
@@ -1815,6 +1966,12 @@
   "mealPlannerServings": "{count,plural, one{{count} සේවය} other{{count} සේවා}}",
   "mealPlannerServingsLabel": "සේවා",
   "mealPlannerTitle": "ආහාර සැලසුම්කරු",
+  "mealPlannerTypeColor": "වර්ණ",
+  "mealPlannerTypeDeleteConfirm": "ඔබට මෙම ආහාර වර්ගය මැකීමට අවශ්‍ය බව විශ්වාසද? මෙම වර්ගය සමඟ සැලසුම් කළ ආහාර පවතිනු ඇත.",
+  "mealPlannerTypeDeleteError": "මෙම ආහාර වර්ගය මකා දැමිය නොහැක.",
+  "mealPlannerTypeIcon": "නිරූපකය",
+  "mealPlannerTypeName": "නම",
+  "mealPlannerTypeNameEmpty": "නම හිස් විය නොහැක",
   "mealPlannerViewMonthly": "මාසික දසුන",
   "mealPlannerViewWeekly": "සතිපතා දසුන",
   "mealPlannerWeekEmpty": "මෙම සතිය සඳහා කිසිවක් සැලසුම් කර නැත",
@@ -1900,7 +2057,7 @@
   "obQuizHouseholdTitle": "ඔබ මිලදී ගන්නේ කා වෙනුවෙන්ද?",
   "obQuizMethodMemory": "මම එය මගේ හිසකෙස් මත තබා ගනිමි",
   "obQuizMethodNone": "මම ලැයිස්තු හදන්නෙ නෑ.",
-  "obQuizMethodNotes": "Notes app",
+  "obQuizMethodNotes": "සටහන් යෙදුම",
   "obQuizMethodPaper": "පෑන සහ කඩදාසි",
   "obQuizMethodTitle": "ඔබ අද වෙළඳ දැන්වීම් නිර්මාණය කරන්නේ කෙසේද?",
   "obQuizPainForget": "මට සෑම විටම අයිතම අමතක වේ",
@@ -2040,6 +2197,7 @@
   "onboardingViewAllPlans": "සියලුම සැලසුම් බලන්න",
   "onboardingWelcomeDesc": "ඔබේ සාප්පු සවාරි සංවිධානය කිරීමට සහ මුදල් ඉතිරි කිරීමට හොඳම ක්‍රමය.",
   "onboardingWelcomeTitle": "KipiList වෙත සාදරයෙන් පිළිගනිමු",
+  "openConversation": "සංවාදය විවෘත කරන්න",
   "openMenu": "මෙනුව විවෘත කරන්න",
   "organizeAisles": "කොරිඩෝ අනුව සංවිධානය කරන්න",
   "organizeAislesPrompt": "වෙළඳපල කොරිඩෝ අනුව සංවිධානය කරන්න.",
@@ -2051,15 +2209,18 @@
   "pantryAppBar": "පැන්ට්‍රිය",
   "pantryAvailabilityAll": "සියල්ල සූදානම්!",
   "pantryAvailabilityCount": "පැන්ට්රියේ {availableCount}/{totalCount}",
+  "pantryDeficitCount": "අතුරුදහන් {count}{unit}",
   "pantryEditTitle": "{name} සංස්කරණය කරන්න",
   "pantryEmpty": "හිස් පැන්ට්‍රිය",
   "pantryEmptySubtitle": "ගෙදර තබා ගැනීමට අවශ්‍ය නිෂ්පාදන එකතු කරන්න",
+  "pantryItemAdded": "අයිතමය එකතු කරන ලදී",
   "pantryItemRemoved": "අයිතමය ඉවත් කරන ලදී",
   "pantryLimitReached": "නොමිලේ සැලැස්ම මත පැන්ට්‍රියේ ඇති අයිතම {count} සීමාව. තවත් එක් කිරීමට උත්ශ්‍රේණි කරන්න.",
   "paywallAfterItem1": "ධාන්ය වර්ග",
   "paywallAfterItem2": "පිරිසිදු කිරීම",
   "paywallAfterItem3": "මස් වර්ග",
   "paywallAfterItem4": "බේකරිය",
+  "paywallBasedOnAnswers": "ඔබගේ පිළිතුරු වලින් පෞද්ගලීකරණය කර ඇත",
   "paywallBeforeAfterTitle": "AI පෙර සහ පසු:",
   "paywallBeforeItem1": "සහල්",
   "paywallBeforeItem2": "සබන්",
@@ -2097,6 +2258,8 @@
   "paywallGoalHeadlinePantry": "{name}, ඔබේ පැන්ට්රිය හොඳින් නිරීක්ෂණය කරන්න!",
   "paywallGoalHeadlineRecipes": "{name}, නව වට්ටෝරු සොයා ගන්න!",
   "paywallGoalHeadlineSaveMoney": "{name}, සෑම සංචාරයකදීම ඉතිරි කරන්න!",
+  "paywallHeroFeatureDesc": "සම්පූර්ණ ලැයිස්තුවක් කථා කරන්න හෝ අලවන්න - AI තත්පර කිහිපයකින් එය වර්ග කරයි, වර්ග කරයි සහ අයවැය කරයි",
+  "paywallHeroFeatureTitle": "AI සාප්පු සවාරි සහායක",
   "paywallHeroHeadline": "Kipi AI සැමවිටම ඔබේ පැත්තේ",
   "paywallHeroSubtitle": "අයිතම එකතු කරන්න, ලැයිස්තු සංවිධානය කරන්න සහ ඔබේ සාක්කුවේ AI සමඟ කාලය ඉතිරි කරන්න",
   "paywallHeroSubtitlePersonalized": "හේයි {name}, ඔබේ සාප්පු සවාරි නිවැරදි ආකාරයෙන් සංවිධානය කරන්න.",
@@ -2131,6 +2294,11 @@
   "paywallTestimonial2Text": "මම නැවත කිසි දිනක ලැයිස්තු අයිතමයක් අමතක නොකළෙමි. AI කතාබස් සංවේදීයි!",
   "paywallTestimonialAuthor": "ඈන් එස්.",
   "paywallTestimonialsTitle": "අපගේ පරිශීලකයින් පවසන දේ:",
+  "paywallTimelineChargeDesc": "ඔබගේ දායකත්වය ආරම්භ වේ - ඕනෑම වේලාවක අවලංගු කරන්න",
+  "paywallTimelineDay": "දිනය {day}",
+  "paywallTimelineReminderDesc": "නඩු විභාගය අවසන් වීමට පෙර අපි ඔබට මතක් කරමු",
+  "paywallTimelineToday": "අද",
+  "paywallTimelineTodayDesc": "සම්පූර්ණ ප්‍රවේශය ක්ෂණිකව අගුළු හරින්න",
   "paywallTitle": "KipiList වාරිකය",
   "paywallTrialCta": "නොමිලේ අත්හදා බැලීම ආරම්භ කරන්න",
   "paywallTrialDays": "{days} දින නොමිලේ",
@@ -2153,11 +2321,15 @@
   "prefSharing": "ලැයිස්තු බෙදා ගන්න",
   "prefUnlimitedLists": "අසීමිත ලැයිස්තු",
   "prefUnlimitedPantry": "අසීමිත පැන්ට්‍රිය",
+  "preferencesSection": "මනාප",
   "preferredMarket": "කැමති වෙළෙඳපොළ",
   "preferredMarketHint": "උදා: Supermarket X",
+  "premiumActionsPrompt": "ස්වයංක්‍රීය ක්‍රියා අගුලු හැරීමට Premium වෙත දායක වන්න.",
+  "premiumStepDescription": "{description} (වාරික)",
   "premiumUpgrade": "අගුළු ඇරීමට උත්ශ්‍රේණි කරන්න",
   "prepTime": "සූදානම් වීමේ කාලය",
   "prepTimeMinutes": "සූදානම් වීමේ කාලය (විනාඩි)",
+  "previousItemState": "පෙර තත්ත්වය: {quantity} {unit} [{category}]{price}",
   "privacy": "රහස්‍යතාව",
   "processing": "සකසමින්...",
   "product": "නිෂ්පාදනය",
@@ -2177,21 +2349,34 @@
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "ඔබගේ ලැයිස්තු විමසමින්...",
+  "quickActionAi": "කිපි සමඟ කතාබස් කරන්න",
+  "quickActionPantry": "පැන්ට්රිය බලන්න",
   "quickRecipe": "ඉක්මන් වට්ටෝරුව",
   "quickRecipePrompt": "මගේ ලැයිස්තුවේ ඇති අයිතම සමඟ වට්ටෝරු යෝජනා කරන්න.",
   "quickReplies": "ඉක්මන් පිළිතුරු:",
   "quickSuggestions": "ඉක්මන් යෝජනා",
+  "recipeAddError": "ඔබගේ ලැයිස්තුවට එක් කිරීමට නොහැකි විය. කරුණාකර නැවත උත්සාහ කරන්න.",
   "recipeAddToList": "සාප්පු ලැයිස්තුවට එක් කරන්න",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} {listName} වෙත එක් කරන ලදී",
   "recipeCreated": "වට්ටෝරුව සාදන ලදී!",
   "recipeDeleted": "වට්ටෝරුව මකා ඇත",
+  "recipeEstimatePartial": "මිල සමඟ අමුද්රව්ය මත පදනම් වූ අර්ධ ඇස්තමේන්තු.",
+  "recipeEstimatedCostPerServing": "{cost} / සේවය",
+  "recipeEstimatedTotalCost": "ඇස්තමේන්තුගත මුළු පිරිවැය",
   "recipeImage": "වට්ටෝරු රූපය",
+  "recipeIngredientInPantry": "පැන්ට්රියේ",
+  "recipeIngredientLowPantry": "පැන්ට්රි අඩුයි",
   "recipeIngredientSingular": "1 අමුද්රව්ය",
   "recipeIngredientsPlural": "{count} අමුද්රව්ය",
+  "recipeManualTotalCost": "අතින් සම්පූර්ණ පිරිවැය",
+  "recipeManualTotalCostHint": "අමුද්‍රව්‍ය මිල ගණන් වලින් ඇස්තමේන්තු කිරීමට හිස්ව තබන්න.",
   "recipeName": "වට්ටෝරුව නම",
   "recipeSaved": "වට්ටෝරුව සුරකින ලදි!",
+  "recipeServesCount": "{count} සේවය කරයි",
   "recipeSuggestion": "වට්ටෝරු යෝජනාව",
   "recipeTags": "වට්ටෝරු ටැග්",
+  "recipeTapToCheck": "ඔබ පිසින විට එය පරීක්ෂා කිරීමට අමුද්‍රව්‍යයක් තට්ටු කරන්න",
+  "recipeYieldServings": "අස්වැන්න සේවා",
   "regenerate": "නැවත උත්පාදනය කරන්න",
   "remove": "ඉවත් කරන්න",
   "removeBudget": "ඉවත් කරන්න",
@@ -2226,9 +2411,12 @@
   "scanBarcodeTitle": "තීරු කේතය පරිලෝකනය කරන්න",
   "scanProduct": "නිෂ්පාදනය ස්කෑන් කරන්න",
   "scanProductTitle": "නිෂ්පාදනය ස්කෑන් කරන්න",
+  "scrollToBottom": "පහළට අනුචලනය කරන්න",
+  "searchConversations": "සංවාද සොයන්න",
   "searchCurrency": "මුදල් සොයන්න...",
   "searchInConversation": "සංවාදයේ සොයන්න...",
   "searchLanguage": "භාෂාව සොයන්න...",
+  "searchMessages": "පණිවිඩ සොයන්න...",
   "searchRecipes": "වට්ටෝරු සොයන්න...",
   "searchingCategories": "ප්‍රවර්ග සොයමින්...",
   "searchingProducts": "නිෂ්පාදන සොයමින්...",
@@ -2268,6 +2456,7 @@
   "signInGoogle": "Google සමඟ පුරනය වන්න",
   "skip": "මඟ හරින්න",
   "smartOrganization": "බුද්ධිමත් සංවිධානය",
+  "somethingWentWrong": "යමක් වැරදී ඇත",
   "sortAZ": "A-Z",
   "sortCategory": "ප්‍රවර්ගය",
   "sortDate": "දිනය",
@@ -2299,6 +2488,7 @@
   "themeColor": "තේමා වර්ණය",
   "themeGreen": "කොළ",
   "themeIndigo": "ඉන්ඩිගෝ",
+  "themeMode": "තේමා මාදිලිය",
   "themeOrange": "තැඹිලි",
   "themePink": "රෝස",
   "themePurple": "දම්",
@@ -2316,6 +2506,7 @@
   "toolSaveRecipe": "වට්ටෝරුව සුරකින්න",
   "toolShareList": "බෙදාගැනීමේ ලැයිස්තුව",
   "totalEstimated": "ඇස්තමේන්තුගත එකතුව: {amount}",
+  "totalEstimatedLabel": "ඇස්තමේන්තුගත එකතුව",
   "totalSavings": "මුළු ඉතුරුම්",
   "totalSpending": "මුළු වියදම",
   "trackStock": "තොග නිරීක්ෂණය කරන්න",
@@ -2323,6 +2514,7 @@
   "trackStockInactive": "සාප්පු යෝජනා උත්පාදනය නොකරයි",
   "uncheckingItem": "අයිතමය සලකුණු කිරීම ඉවත් කරමින්...",
   "undo": "අහෝසි කරන්න",
+  "undoChanges": "වෙනස්කම් අහෝසි කරන්න",
   "unit": "ඒකකය",
   "unitPack": "පැක්",
   "unlockAi": "අසීමිත AI අගුළු හරින්න",
@@ -2336,6 +2528,7 @@
   "updatingPantry": "පැන්ට්රිය යාවත්කාලීන කරමින්...",
   "upgrade": "උත්ශ්‍රේණි කරන්න",
   "userProfile": "පරිශීලක පැතිකඩ",
+  "userRole": "ඔබ",
   "validForLimitedTime": "සීමිත කාලයක් සඳහා වලංගු වේ",
   "version": "අනුවාදය",
   "viewActive": "සක්‍රීය බලන්න",
@@ -2343,6 +2536,7 @@
   "viewHistory": "ඉතිහාසය බලන්න",
   "viewItems": "අයිතම බලන්න",
   "viewList": "ලැයිස්තුව බලන්න",
+  "viewPlans": "සැලසුම් බලන්න",
   "viewPro": "Pro බලන්න",
   "viewRecipe": "වට්ටෝරුව බලන්න",
   "voiceCommandContent": "ඔබේ ලැයිස්තුව කළමනාකරණය කිරීමට ස්වභාවිකව කතා කරන්න!\n\nඋදාහරණ:\n• 'පාන්, චීස් සහ හැම් එකතු කරන්න'\n• 'රෙදි සෝදන ඩිටර්ජන්ට් ඉවත් කරන්න'\n• 'තේමාව නිල් පැහැයට වෙනස් කරන්න'\n\nමෙය KipiList Premium හි සුවිශේෂී විශේෂාංගයකි.",

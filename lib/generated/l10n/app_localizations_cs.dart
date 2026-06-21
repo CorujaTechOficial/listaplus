@@ -245,6 +245,11 @@ class AppLocalizationsCs extends AppLocalizations {
   String get noItemsToBuy => 'Žádné položky ke koupi';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Chybí $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Nákup pro spižírnu';
 
   @override
@@ -311,6 +316,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String get settingsAppBar => 'Nastavení';
 
   @override
+  String get preferencesSection => 'Předvolby';
+
+  @override
+  String get aiSection => 'Asistent AI';
+
+  @override
   String get language => 'Jazyk';
 
   @override
@@ -339,6 +350,12 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get appearance => 'Vzhled';
+
+  @override
+  String get themeMode => 'Tématický režim';
+
+  @override
+  String get chooseThemeMode => 'Vyberte režim motivu';
 
   @override
   String get light => 'Světlý';
@@ -588,6 +605,13 @@ class AppLocalizationsCs extends AppLocalizations {
   String get trackStockInactive => 'Negeneruje návrh nákupu';
 
   @override
+  String get keepAdding => 'Pokračujte v přidávání';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Chcete-li přidat více položek, nechte list otevřený';
+
+  @override
   String get createListDialog => 'Vytvořit seznam';
 
   @override
@@ -692,6 +716,36 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Dobrá odezva';
+
+  @override
+  String get badResponse => 'Špatná odezva';
+
+  @override
+  String get scrollToBottom => 'Přejděte dolů';
+
+  @override
+  String get somethingWentWrong => 'Něco se pokazilo';
+
+  @override
+  String get editMessage => 'Upravit zprávu';
+
+  @override
+  String get searchConversations => 'Hledat konverzace';
+
+  @override
+  String get dateGroupToday => 'Dnes';
+
+  @override
+  String get dateGroupYesterday => 'Včera';
+
+  @override
+  String get dateGroupPrevious7Days => 'Předchozích 7 dní';
+
+  @override
+  String get dateGroupOlder => 'Starší';
+
+  @override
   String get aiAssistantTitle => 'Asistent AI';
 
   @override
@@ -732,6 +786,33 @@ class AppLocalizationsCs extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Bylo dosaženo měsíčního limitu AI. Upgradujte na Pro neomezeně →';
+
+  @override
+  String get undo => 'Zpět';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -941,6 +1022,20 @@ class AppLocalizationsCs extends AppLocalizations {
   String get recipeAddToList => 'Přidat do nákupního seznamu';
 
   @override
+  String get recipeAddError =>
+      'Do seznamu se nepodařilo přidat. Zkuste to prosím znovu.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Klepnutím na přísadu ji při vaření odškrtáváte';
+
+  @override
+  String get recipeIngredientInPantry => 'Ve spíži';
+
+  @override
+  String get recipeIngredientLowPantry => 'Nízká ve spíži';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1059,12 +1154,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String get paywallSelectPlan => 'Vyberte si svůj plán:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'UŠETŘETE $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Pouze $price/měsíc';
   }
 
@@ -1099,6 +1194,35 @@ class AppLocalizationsCs extends AppLocalizations {
   String get paywallRestore => 'Obnovit';
 
   @override
+  String get paywallTimelineToday => 'Dnes';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Okamžitě odemkněte plný přístup';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Den $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Připomínáme vám před ukončením zkušebního procesu';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Vaše předplatné začíná – můžete jej kdykoli zrušit';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI nákupní asistent';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Vyslovte nebo vložte celý seznam – umělá inteligence ho seřadí, kategorizuje a rozpočítá během několika sekund';
+
+  @override
+  String get paywallBasedOnAnswers => 'Personalizované z vašich odpovědí';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI vždy po vašem boku';
 
   @override
@@ -1131,9 +1255,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Položka odebrána';
-
-  @override
-  String get undo => 'Zpět';
 
   @override
   String get emptyListTitle => 'Tvůj seznam je prázdný';
@@ -1250,6 +1371,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Položka odebrána';
+
+  @override
+  String get pantryItemAdded => 'Položka přidána';
 
   @override
   String deficitItems(int deficit) {
@@ -1653,6 +1777,33 @@ class AppLocalizationsCs extends AppLocalizations {
   String get prepTimeMinutes => 'Čas přípravy (minuty)';
 
   @override
+  String get recipeYieldServings => 'Výtěžek porcí';
+
+  @override
+  String get recipeManualTotalCost => 'Ruční celková cena';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Chcete-li odhadnout z cen přísad, ponechte prázdné.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Odhadované celkové náklady';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / porce';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Slouží $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Částečný odhad na základě ingrediencí s cenou.';
+
+  @override
   String get instructionsHint => 'Zadejte jeden krok na řádek...';
 
   @override
@@ -1783,6 +1934,10 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Odhad na základě receptur s dílčími údaji o ceně.';
+
+  @override
   String get mealPlannerGenerateList => 'Vygenerovat nákupní seznam';
 
   @override
@@ -1876,6 +2031,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get catalogRareSection => 've vaší zemi méně běžné';
 
   @override
+  String get catalogRareBadge => 'Vzácný';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1893,7 +2051,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get catalogBrowse => 'Procházet katalog';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kategorie';
 
   @override
   String get offlineBanner => 'Jste offline';
@@ -1924,6 +2082,40 @@ class AppLocalizationsCs extends AppLocalizations {
     );
     return '$count $_temp0 chybí';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Správa typů jídel';
+
+  @override
+  String get mealPlannerAddType => 'Přidejte typ jídla';
+
+  @override
+  String get mealPlannerEditType => 'Upravit typ jídla';
+
+  @override
+  String get mealPlannerTypeName => 'Jméno';
+
+  @override
+  String get mealPlannerTypeColor => 'Barva';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikona';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Opravdu chcete smazat tento typ jídla? Plánovaná jídla u tohoto typu zůstanou.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Název nemůže být prázdný';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'Tento typ jídla nelze smazat.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Vlastní typ';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Výchozí typ';
 
   @override
   String get expirationDate => 'Datum spotřeby';
@@ -1984,6 +2176,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Chyba při načítání seznamů';
+
+  @override
+  String get errorLoadingItems => 'Chyba při načítání položek';
 
   @override
   String get noListsFound => 'Nebyly nalezeny žádné seznamy';
@@ -2749,6 +2944,214 @@ class AppLocalizationsCs extends AppLocalizations {
   @override
   String get obLoginError =>
       'Přihlášení se nezdařilo. Zkuste to znovu nebo prozatím přeskočte.';
+
+  @override
+  String get searchMessages => 'Hledat zprávy...';
+
+  @override
+  String get deletedList => 'Smazaný seznam';
+
+  @override
+  String get openConversation => 'Otevřete konverzaci';
+
+  @override
+  String get userRole => 'Vy';
+
+  @override
+  String get assistantRole => 'Asistent';
+
+  @override
+  String get agentActionsRunning => 'Probíhající akce...';
+
+  @override
+  String get agentActionsFailed => 'Akce se nepodařilo spustit';
+
+  @override
+  String get agentActionsPremium => 'Akce vyžadují Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Vrátit změny zpět';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (prémiové)';
+  }
+
+  @override
+  String get itemAddedToList => 'Položka přidána do seznamu.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Předchozí stav: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Chcete-li odemknout automatické akce, přihlaste se k odběru Premium.';
+
+  @override
+  String get viewPlans => 'Zobrazit plány';
+
+  @override
+  String get artifactSynced => 'Synchronizováno';
+
+  @override
+  String get artifactBudgetLabel => 'Rozpočet:';
+
+  @override
+  String get totalEstimatedLabel => 'Odhadovaný součet';
+
+  @override
+  String get quickActionPantry => 'Zobrazit spíž';
+
+  @override
+  String get quickActionAi => 'Chatujte s Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Služba AI vrátila chybu ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Žádost trvala příliš dlouho. Zkuste to prosím znovu.';
+
+  @override
+  String get aiConnectionError =>
+      'Nelze se připojit ke službě AI. Zkontrolujte připojení.';
+
+  @override
+  String get aiEmptyResponseError => 'Služba AI vrátila prázdnou odpověď.';
+
+  @override
+  String get aiInvalidResponseError => 'Služba AI vrátila neplatnou odpověď.';
+
+  @override
+  String get categoryFruits => 'Ovoce';
+
+  @override
+  String get categoryCleaning => 'Čištění';
+
+  @override
+  String get categoryBeverages => 'Nápoje';
+
+  @override
+  String get categoryBakery => 'Pekárna';
+
+  @override
+  String get categoryMeat => 'Maso';
+
+  @override
+  String get categoryDairy => 'Mléko';
+
+  @override
+  String get categoryVegetables => 'Zelenina';
+
+  @override
+  String get categoryGrains => 'Obiloviny a obiloviny';
+
+  @override
+  String get categoryHygiene => 'Osobní péče';
+
+  @override
+  String get categoryFrozen => 'Mražené potraviny';
+
+  @override
+  String get categoryCanned => 'Konzervy';
+
+  @override
+  String get categorySeasonings => 'Koření';
+
+  @override
+  String get categorySweets => 'Sladkosti a dezerty';
+
+  @override
+  String get categoryAlcohol => 'Alkoholické nápoje';
+
+  @override
+  String get categoryFish => 'Ryba';
+
+  @override
+  String get categoryColdCuts => 'Uzeniny';
+
+  @override
+  String get categoryUtilities => 'Potřeby pro domácnost';
+
+  @override
+  String get categoryPet => 'Potřeby pro domácí mazlíčky';
+
+  @override
+  String get categoryBaby => 'Dítě';
+
+  @override
+  String get categoryOthers => 'Ostatní';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Ahoj $name, jsem Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Ahoj, já jsem Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Vytvářím seznamy, navrhuji recepty a hledám, kam uložit. kde začneme?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Naplánujte si grilování';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, pořádám grilování — pomoz mi sestavit nákupní seznam';
+
+  @override
+  String get aiRateLimitError =>
+      'Příliš mnoho zpráv v krátkém čase. Počkejte několik sekund a zkuste to znovu.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Tuto konverzaci se nepodařilo načíst';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Na naší straně se něco pokazilo. Klepněte na tlačítko Opakovat a zkuste to znovu.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Jste offline';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Zkontrolujte připojení k internetu a zkuste to znovu.';
+
+  @override
+  String get aiGeneratingResponse => 'Generování odpovědi…';
 }
 
 /// The translations for Czech, as used in the Czechia Czech Republic (`cs_CZ`).
@@ -2992,6 +3395,11 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get noItemsToBuy => 'Žádné položky ke koupi';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Chybí $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Nákup pro spižírnu';
 
   @override
@@ -3058,6 +3466,12 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get settingsAppBar => 'Nastavení';
 
   @override
+  String get preferencesSection => 'Předvolby';
+
+  @override
+  String get aiSection => 'Asistent AI';
+
+  @override
   String get language => 'Jazyk';
 
   @override
@@ -3086,6 +3500,12 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get appearance => 'Vzhled';
+
+  @override
+  String get themeMode => 'Tématický režim';
+
+  @override
+  String get chooseThemeMode => 'Vyberte režim motivu';
 
   @override
   String get light => 'Světlý';
@@ -3335,6 +3755,13 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get trackStockInactive => 'Negeneruje návrh nákupu';
 
   @override
+  String get keepAdding => 'Pokračujte v přidávání';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Chcete-li přidat více položek, nechte list otevřený';
+
+  @override
   String get createListDialog => 'Vytvořit seznam';
 
   @override
@@ -3439,6 +3866,36 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   }
 
   @override
+  String get goodResponse => 'Dobrá odezva';
+
+  @override
+  String get badResponse => 'Špatná odezva';
+
+  @override
+  String get scrollToBottom => 'Přejděte dolů';
+
+  @override
+  String get somethingWentWrong => 'Něco se pokazilo';
+
+  @override
+  String get editMessage => 'Upravit zprávu';
+
+  @override
+  String get searchConversations => 'Hledat konverzace';
+
+  @override
+  String get dateGroupToday => 'Dnes';
+
+  @override
+  String get dateGroupYesterday => 'Včera';
+
+  @override
+  String get dateGroupPrevious7Days => 'Předchozích 7 dní';
+
+  @override
+  String get dateGroupOlder => 'Starší';
+
+  @override
   String get aiAssistantTitle => 'Asistent AI';
 
   @override
@@ -3479,6 +3936,9 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   @override
   String get aiUsageExhausted =>
       'Bylo dosaženo měsíčního limitu AI. Upgradujte na Pro neomezeně →';
+
+  @override
+  String get undo => 'Zpět';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -3688,6 +4148,20 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get recipeAddToList => 'Přidat do nákupního seznamu';
 
   @override
+  String get recipeAddError =>
+      'Do seznamu se nepodařilo přidat. Zkuste to prosím znovu.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Klepnutím na přísadu ji při vaření odškrtáváte';
+
+  @override
+  String get recipeIngredientInPantry => 'Ve spíži';
+
+  @override
+  String get recipeIngredientLowPantry => 'Nízká ve spíži';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -3806,12 +4280,12 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get paywallSelectPlan => 'Vyberte si svůj plán:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'UŠETŘETE $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Pouze $price/měsíc';
   }
 
@@ -3846,6 +4320,35 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get paywallRestore => 'Obnovit';
 
   @override
+  String get paywallTimelineToday => 'Dnes';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Okamžitě odemkněte plný přístup';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Den $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Připomínáme vám před ukončením zkušebního procesu';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Vaše předplatné začíná – můžete jej kdykoli zrušit';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI nákupní asistent';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Vyslovte nebo vložte celý seznam – umělá inteligence ho seřadí, kategorizuje a rozpočítá během několika sekund';
+
+  @override
+  String get paywallBasedOnAnswers => 'Personalizované z vašich odpovědí';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI vždy po vašem boku';
 
   @override
@@ -3878,9 +4381,6 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get itemRemoved => 'Položka odebrána';
-
-  @override
-  String get undo => 'Zpět';
 
   @override
   String get emptyListTitle => 'Tvůj seznam je prázdný';
@@ -3997,6 +4497,9 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get pantryItemRemoved => 'Položka odebrána';
+
+  @override
+  String get pantryItemAdded => 'Položka přidána';
 
   @override
   String deficitItems(int deficit) {
@@ -4400,6 +4903,33 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get prepTimeMinutes => 'Čas přípravy (minuty)';
 
   @override
+  String get recipeYieldServings => 'Výtěžek porcí';
+
+  @override
+  String get recipeManualTotalCost => 'Ruční celková cena';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Chcete-li odhadnout z cen přísad, ponechte prázdné.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Odhadované celkové náklady';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / porce';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Slouží $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Částečný odhad na základě ingrediencí s cenou.';
+
+  @override
   String get instructionsHint => 'Zadejte jeden krok na řádek...';
 
   @override
@@ -4530,6 +5060,10 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Odhad na základě receptur s dílčími údaji o ceně.';
+
+  @override
   String get mealPlannerGenerateList => 'Vygenerovat nákupní seznam';
 
   @override
@@ -4623,6 +5157,9 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get catalogRareSection => 've vaší zemi méně běžné';
 
   @override
+  String get catalogRareBadge => 'Vzácný';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4638,6 +5175,9 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get catalogBrowse => 'Procházet katalog';
+
+  @override
+  String get catalogCategories => 'Kategorie';
 
   @override
   String get offlineBanner => 'Jste offline';
@@ -4668,6 +5208,40 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
     );
     return '$count $_temp0 chybí';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Správa typů jídel';
+
+  @override
+  String get mealPlannerAddType => 'Přidejte typ jídla';
+
+  @override
+  String get mealPlannerEditType => 'Upravit typ jídla';
+
+  @override
+  String get mealPlannerTypeName => 'Jméno';
+
+  @override
+  String get mealPlannerTypeColor => 'Barva';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikona';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Opravdu chcete smazat tento typ jídla? Plánovaná jídla u tohoto typu zůstanou.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Název nemůže být prázdný';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'Tento typ jídla nelze smazat.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Vlastní typ';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Výchozí typ';
 
   @override
   String get expirationDate => 'Datum spotřeby';
@@ -4728,6 +5302,9 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
 
   @override
   String get errorLoadingLists => 'Chyba při načítání seznamů';
+
+  @override
+  String get errorLoadingItems => 'Chyba při načítání položek';
 
   @override
   String get noListsFound => 'Nebyly nalezeny žádné seznamy';
@@ -5493,4 +6070,212 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   @override
   String get obLoginError =>
       'Přihlášení se nezdařilo. Zkuste to znovu nebo prozatím přeskočte.';
+
+  @override
+  String get searchMessages => 'Hledat zprávy...';
+
+  @override
+  String get deletedList => 'Smazaný seznam';
+
+  @override
+  String get openConversation => 'Otevřete konverzaci';
+
+  @override
+  String get userRole => 'Vy';
+
+  @override
+  String get assistantRole => 'Asistent';
+
+  @override
+  String get agentActionsRunning => 'Probíhající akce...';
+
+  @override
+  String get agentActionsFailed => 'Akce se nepodařilo spustit';
+
+  @override
+  String get agentActionsPremium => 'Akce vyžadují Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Vrátit změny zpět';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (prémiové)';
+  }
+
+  @override
+  String get itemAddedToList => 'Položka přidána do seznamu.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Předchozí stav: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Chcete-li odemknout automatické akce, přihlaste se k odběru Premium.';
+
+  @override
+  String get viewPlans => 'Zobrazit plány';
+
+  @override
+  String get artifactSynced => 'Synchronizováno';
+
+  @override
+  String get artifactBudgetLabel => 'Rozpočet:';
+
+  @override
+  String get totalEstimatedLabel => 'Odhadovaný součet';
+
+  @override
+  String get quickActionPantry => 'Zobrazit spíž';
+
+  @override
+  String get quickActionAi => 'Chatujte s Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'Služba AI vrátila chybu ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Žádost trvala příliš dlouho. Zkuste to prosím znovu.';
+
+  @override
+  String get aiConnectionError =>
+      'Nelze se připojit ke službě AI. Zkontrolujte připojení.';
+
+  @override
+  String get aiEmptyResponseError => 'Služba AI vrátila prázdnou odpověď.';
+
+  @override
+  String get aiInvalidResponseError => 'Služba AI vrátila neplatnou odpověď.';
+
+  @override
+  String get categoryFruits => 'Ovoce';
+
+  @override
+  String get categoryCleaning => 'Čištění';
+
+  @override
+  String get categoryBeverages => 'Nápoje';
+
+  @override
+  String get categoryBakery => 'Pekárna';
+
+  @override
+  String get categoryMeat => 'Maso';
+
+  @override
+  String get categoryDairy => 'Mléko';
+
+  @override
+  String get categoryVegetables => 'Zelenina';
+
+  @override
+  String get categoryGrains => 'Obiloviny a obiloviny';
+
+  @override
+  String get categoryHygiene => 'Osobní péče';
+
+  @override
+  String get categoryFrozen => 'Mražené potraviny';
+
+  @override
+  String get categoryCanned => 'Konzervy';
+
+  @override
+  String get categorySeasonings => 'Koření';
+
+  @override
+  String get categorySweets => 'Sladkosti a dezerty';
+
+  @override
+  String get categoryAlcohol => 'Alkoholické nápoje';
+
+  @override
+  String get categoryFish => 'Ryba';
+
+  @override
+  String get categoryColdCuts => 'Uzeniny';
+
+  @override
+  String get categoryUtilities => 'Potřeby pro domácnost';
+
+  @override
+  String get categoryPet => 'Potřeby pro domácí mazlíčky';
+
+  @override
+  String get categoryBaby => 'Dítě';
+
+  @override
+  String get categoryOthers => 'Ostatní';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Ahoj $name, jsem Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Ahoj, já jsem Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Vytvářím seznamy, navrhuji recepty a hledám, kam uložit. kde začneme?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Naplánujte si grilování';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, pořádám grilování — pomoz mi sestavit nákupní seznam';
+
+  @override
+  String get aiRateLimitError =>
+      'Příliš mnoho zpráv v krátkém čase. Počkejte několik sekund a zkuste to znovu.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Tuto konverzaci se nepodařilo načíst';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Na naší straně se něco pokazilo. Klepněte na tlačítko Opakovat a zkuste to znovu.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Jste offline';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Zkontrolujte připojení k internetu a zkuste to znovu.';
+
+  @override
+  String get aiGeneratingResponse => 'Generování odpovědi…';
 }

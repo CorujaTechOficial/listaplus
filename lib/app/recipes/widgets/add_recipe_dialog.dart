@@ -26,9 +26,13 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
   final _descriptionController = TextEditingController();
   final _instructionsController = TextEditingController();
   final _prepTimeController = TextEditingController(text: '30');
+  final _yieldServingsController = TextEditingController(text: '1');
+  final _manualTotalCostController = TextEditingController();
   final _imageUrlController = TextEditingController();
   final _tagController = TextEditingController();
-  final List<TextEditingController> _ingredientControllers = [TextEditingController()];
+  final List<TextEditingController> _ingredientControllers = [
+    TextEditingController(),
+  ];
   bool _isSaving = false;
   File? _pickedImage;
   List<String> _selectedTags = [];
@@ -44,6 +48,8 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
       _descriptionController.text = recipe.description;
       _instructionsController.text = recipe.instructions.join('\n');
       _prepTimeController.text = recipe.prepTimeMinutes.toString();
+      _yieldServingsController.text = recipe.yieldServings.toString();
+      _manualTotalCostController.text = recipe.manualTotalCost?.toString() ?? '';
       _imageUrlController.text = recipe.imageUrl ?? '';
       _selectedTags = List.from(recipe.tags);
       _ingredientControllers.clear();
@@ -63,6 +69,8 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
     _descriptionController.dispose();
     _instructionsController.dispose();
     _prepTimeController.dispose();
+    _yieldServingsController.dispose();
+    _manualTotalCostController.dispose();
     _imageUrlController.dispose();
     _tagController.dispose();
     for (final c in _ingredientControllers) {
@@ -81,31 +89,35 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
     try {
       final l10n = AppLocalizations.of(context)!;
 
-      final ingredients = _ingredientControllers
-          .where((c) => c.text.trim().isNotEmpty)
-          .map((c) => ShoppingItem(
-                name: c.text.trim(),
-                quantity: 1,
-                shoppingListId: '',
-                unit: Unit.un,
-              ))
-          .toList();
+      final ingredients =
+          _ingredientControllers
+              .where((c) => c.text.trim().isNotEmpty)
+              .map(
+                (c) => ShoppingItem(
+                  name: c.text.trim(),
+                  quantity: 1,
+                  shoppingListId: '',
+                  unit: Unit.un,
+                ),
+              )
+              .toList();
 
-      final instructions = _instructionsController.text
-          .split('\n')
-          .where((s) => s.trim().isNotEmpty)
-          .toList();
+      final instructions =
+          _instructionsController.text
+              .split('\n')
+              .where((s) => s.trim().isNotEmpty)
+              .toList();
 
       final rawImageUrl = _imageUrlController.text.trim();
       String? imageUrl;
       if (_pickedImage != null) {
         final id = widget.recipe?.id ?? '';
-        imageUrl = await ref.read(recipesProvider.notifier).uploadRecipeImage(
-              id,
-              _pickedImage!.path,
-            );
+        imageUrl = await ref
+            .read(recipesProvider.notifier)
+            .uploadRecipeImage(id, _pickedImage!.path);
       }
       imageUrl ??= rawImageUrl.isEmpty ? null : rawImageUrl;
+      final manualTotalCostText = _manualTotalCostController.text.trim();
 
       final recipe = Recipe(
         id: widget.recipe?.id,
@@ -114,6 +126,11 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
         ingredients: ingredients,
         instructions: instructions,
         prepTimeMinutes: int.tryParse(_prepTimeController.text) ?? 30,
+        yieldServings: int.tryParse(_yieldServingsController.text.trim()) ?? 1,
+        manualTotalCost:
+            manualTotalCostText.isEmpty
+                ? null
+                : double.tryParse(manualTotalCostText.replaceAll(',', '.')),
         imageUrl: imageUrl,
         createdAt: widget.recipe?.createdAt,
         tags: _selectedTags,
@@ -122,9 +139,9 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
       if (_isEditing) {
         await ref.read(recipesProvider.notifier).updateRecipe(recipe);
         if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(l10n.recipeSaved)),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(l10n.recipeSaved)));
         }
       } else {
         await ref.read(recipesProvider.notifier).saveRecipe(recipe);
@@ -135,7 +152,11 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
     } on Exception catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('${AppLocalizations.of(context)!.errorLoadingRecipes}: $e')),
+          SnackBar(
+            content: Text(
+              '${AppLocalizations.of(context)!.errorLoadingRecipes}: $e',
+            ),
+          ),
         );
       }
     } finally {
@@ -178,7 +199,7 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
           if (_isSaving)
             const Center(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: EdgeInsets.symmetric(horizontal: Spacing.md),
                 child: SizedBox(
                   width: 20,
                   height: 20,
@@ -204,7 +225,8 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
                 labelText: l10n.recipeName,
                 border: const OutlineInputBorder(),
               ),
-              validator: (v) => (v == null || v.isEmpty) ? l10n.requiredField : null,
+              validator:
+                  (v) => (v == null || v.isEmpty) ? l10n.requiredField : null,
             ),
             const SizedBox(height: Spacing.md),
             TextFormField(
@@ -225,6 +247,29 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
               ),
               keyboardType: TextInputType.number,
             ),
+            const SizedBox(height: Spacing.md),
+            TextFormField(
+              controller: _yieldServingsController,
+              decoration: InputDecoration(
+                labelText: l10n.recipeYieldServings,
+                border: const OutlineInputBorder(),
+                prefixIcon: const Icon(Icons.room_service_outlined),
+              ),
+              keyboardType: TextInputType.number,
+            ),
+            const SizedBox(height: Spacing.md),
+            TextFormField(
+              controller: _manualTotalCostController,
+              decoration: InputDecoration(
+                labelText: l10n.recipeManualTotalCost,
+                helperText: l10n.recipeManualTotalCostHint,
+                border: const OutlineInputBorder(),
+                prefixIcon: const Icon(Icons.attach_money_rounded),
+              ),
+              keyboardType: const TextInputType.numberWithOptions(
+                decimal: true,
+              ),
+            ),
             const SizedBox(height: Spacing.lg),
             Text(l10n.recipeImage, style: theme.textTheme.titleMedium),
             const SizedBox(height: Spacing.sm),
@@ -233,20 +278,34 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(RadiusTokens.md),
-                    child: _pickedImage != null
-                        ? Image.file(_pickedImage!, height: 150, width: double.infinity, fit: BoxFit.cover)
-                        : Image.network(_imageUrlController.text, height: 150, width: double.infinity, fit: BoxFit.cover),
+                    child:
+                        _pickedImage != null
+                            ? Image.file(
+                              _pickedImage!,
+                              height: 150,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            )
+                            : Image.network(
+                              _imageUrlController.text,
+                              height: 150,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
                   ),
                   Positioned(
                     top: 4,
                     right: 4,
                     child: IconButton(
                       icon: const Icon(Icons.close, color: Colors.white),
-                      style: IconButton.styleFrom(backgroundColor: Colors.black54),
-                      onPressed: () => setState(() {
-                        _pickedImage = null;
-                        _imageUrlController.clear();
-                      }),
+                      style: IconButton.styleFrom(
+                        backgroundColor: Colors.black54,
+                      ),
+                      onPressed:
+                          () => setState(() {
+                            _pickedImage = null;
+                            _imageUrlController.clear();
+                          }),
                     ),
                   ),
                 ],
@@ -311,18 +370,28 @@ class _AddRecipeDialogState extends ConsumerState<AddRecipeDialog> {
             if (categoriesAsync.value != null) ...[
               const SizedBox(height: Spacing.xs),
               Text(l10n.suggestedTags, style: theme.textTheme.labelSmall),
-              const SizedBox(height: 4),
+              const SizedBox(height: Spacing.xxs),
               Wrap(
                 spacing: 4,
                 runSpacing: 2,
-                children: categoriesAsync.value!.map(
-                  (cat) => ActionChip(
-                    label: Text(cat.name, style: const TextStyle(fontSize: 11)),
-                    onPressed: _selectedTags.contains(cat.name) ? null : () => _addTag(cat.name),
-                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    visualDensity: VisualDensity.compact,
-                  ),
-                ).toList(),
+                children:
+                    categoriesAsync.value!
+                        .map(
+                          (cat) => ActionChip(
+                            label: Text(
+                              cat.name,
+                              style: const TextStyle(fontSize: 11),
+                            ),
+                            onPressed:
+                                _selectedTags.contains(cat.name)
+                                    ? null
+                                    : () => _addTag(cat.name),
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                            visualDensity: VisualDensity.compact,
+                          ),
+                        )
+                        .toList(),
               ),
             ],
             const SizedBox(height: Spacing.lg),

@@ -238,6 +238,11 @@ class AppLocalizationsTh extends AppLocalizations {
   String get noItemsToBuy => 'ไม่มีรายการที่ต้องซื้อ';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'ขาด $count$unit';
+  }
+
+  @override
   String get newPantryList => 'ช้อปปิ้งในตู้กับข้าว';
 
   @override
@@ -304,6 +309,12 @@ class AppLocalizationsTh extends AppLocalizations {
   String get settingsAppBar => 'การตั้งค่า';
 
   @override
+  String get preferencesSection => 'การตั้งค่า';
+
+  @override
+  String get aiSection => 'ผู้ช่วยเอไอ';
+
+  @override
   String get language => 'ภาษา';
 
   @override
@@ -332,6 +343,12 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get appearance => 'ลักษณะ';
+
+  @override
+  String get themeMode => 'โหมดธีม';
+
+  @override
+  String get chooseThemeMode => 'เลือกโหมดธีม';
 
   @override
   String get light => 'สว่าง';
@@ -581,6 +598,12 @@ class AppLocalizationsTh extends AppLocalizations {
   String get trackStockInactive => 'ไม่สร้างคำแนะนำการช้อปปิ้ง';
 
   @override
+  String get keepAdding => 'เพิ่มต่อไป';
+
+  @override
+  String get keepAddingSubtitle => 'เปิดแผ่นงานไว้เพื่อเพิ่มหลายรายการ';
+
+  @override
   String get createListDialog => 'สร้างรายการ';
 
   @override
@@ -685,6 +708,36 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'กระแสตอบรับดี';
+
+  @override
+  String get badResponse => 'การตอบสนองที่ไม่ดี';
+
+  @override
+  String get scrollToBottom => 'เลื่อนไปที่ด้านล่าง';
+
+  @override
+  String get somethingWentWrong => 'มีบางอย่างผิดพลาด';
+
+  @override
+  String get editMessage => 'แก้ไขข้อความ';
+
+  @override
+  String get searchConversations => 'ค้นหาการสนทนา';
+
+  @override
+  String get dateGroupToday => 'วันนี้';
+
+  @override
+  String get dateGroupYesterday => 'เมื่อวาน';
+
+  @override
+  String get dateGroupPrevious7Days => '7 วันที่ผ่านมา';
+
+  @override
+  String get dateGroupOlder => 'แก่กว่า';
+
+  @override
   String get aiAssistantTitle => 'ผู้ช่วยเอไอ';
 
   @override
@@ -725,6 +778,33 @@ class AppLocalizationsTh extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'ถึงขีดจำกัด AI รายเดือนแล้ว อัปเกรดเป็น Pro ไม่จำกัด →';
+
+  @override
+  String get undo => 'เลิกทำ';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -931,6 +1011,19 @@ class AppLocalizationsTh extends AppLocalizations {
   String get recipeAddToList => 'เพิ่มไปยังรายการช้อปปิ้ง';
 
   @override
+  String get recipeAddError =>
+      'ไม่สามารถเพิ่มลงในรายการของคุณได้ โปรดลองอีกครั้ง';
+
+  @override
+  String get recipeTapToCheck => 'แตะส่วนผสมเพื่อตรวจสอบขณะทำอาหาร';
+
+  @override
+  String get recipeIngredientInPantry => 'ในตู้กับข้าว';
+
+  @override
+  String get recipeIngredientLowPantry => 'ต่ำในตู้กับข้าว';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1048,12 +1141,12 @@ class AppLocalizationsTh extends AppLocalizations {
   String get paywallSelectPlan => 'เลือกแผนของคุณ:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'ประหยัด $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'เพียง $price/เดือน';
   }
 
@@ -1088,6 +1181,35 @@ class AppLocalizationsTh extends AppLocalizations {
   String get paywallRestore => 'คืนค่า';
 
   @override
+  String get paywallTimelineToday => 'วันนี้';
+
+  @override
+  String get paywallTimelineTodayDesc => 'ปลดล็อคการเข้าถึงแบบเต็มทันที';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'วัน $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'เราแจ้งเตือนคุณก่อนช่วงทดลองใช้จะสิ้นสุดลง';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'การสมัครของคุณเริ่มต้น — ยกเลิกได้ตลอดเวลา';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI ผู้ช่วยช้อปปิ้ง';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'พูดหรือวางรายการทั้งหมด — AI จัดเรียง จัดหมวดหมู่ และตั้งงบประมาณภายในไม่กี่วินาที';
+
+  @override
+  String get paywallBasedOnAnswers => 'ปรับแต่งจากคำตอบของคุณ';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI อยู่เคียงข้างคุณเสมอ';
 
   @override
@@ -1120,9 +1242,6 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get itemRemoved => 'ลบรายการแล้ว';
-
-  @override
-  String get undo => 'เลิกทำ';
 
   @override
   String get emptyListTitle => 'รายการของคุณว่างเปล่า';
@@ -1239,6 +1358,9 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'ลบรายการแล้ว';
+
+  @override
+  String get pantryItemAdded => 'เพิ่มรายการแล้ว';
 
   @override
   String deficitItems(int deficit) {
@@ -1636,6 +1758,32 @@ class AppLocalizationsTh extends AppLocalizations {
   String get prepTimeMinutes => 'เวลาเตรียม (นาที)';
 
   @override
+  String get recipeYieldServings => 'ให้ผลผลิต';
+
+  @override
+  String get recipeManualTotalCost => 'ต้นทุนรวมด้วยตนเอง';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'เว้นว่างไว้เพื่อประเมินจากราคาส่วนผสม';
+
+  @override
+  String get recipeEstimatedTotalCost => 'ค่าใช้จ่ายทั้งหมดโดยประมาณ';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / หน่วยบริโภค';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'เสิร์ฟ $count';
+  }
+
+  @override
+  String get recipeEstimatePartial => 'ประมาณการบางส่วนตามส่วนผสมพร้อมราคา';
+
+  @override
   String get instructionsHint => 'พิมพ์หนึ่งขั้นตอนต่อบรรทัด...';
 
   @override
@@ -1763,6 +1911,10 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'ประมาณการตามสูตรอาหารที่มีข้อมูลราคาบางส่วน';
+
+  @override
   String get mealPlannerGenerateList => 'สร้างรายการช้อปปิ้ง';
 
   @override
@@ -1855,6 +2007,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get catalogRareSection => 'พบได้น้อยในประเทศของคุณ';
 
   @override
+  String get catalogRareBadge => 'หายาก';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1872,7 +2027,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get catalogBrowse => 'เรียกดูแคตตาล็อก';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'หมวดหมู่';
 
   @override
   String get offlineBanner => 'คุณออฟไลน์อยู่';
@@ -1903,6 +2058,40 @@ class AppLocalizationsTh extends AppLocalizations {
     );
     return '$count $_temp0 หายไป';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'จัดการประเภทมื้ออาหาร';
+
+  @override
+  String get mealPlannerAddType => 'เพิ่มประเภทมื้ออาหาร';
+
+  @override
+  String get mealPlannerEditType => 'แก้ไขประเภทมื้ออาหาร';
+
+  @override
+  String get mealPlannerTypeName => 'ชื่อ';
+
+  @override
+  String get mealPlannerTypeColor => 'สี';
+
+  @override
+  String get mealPlannerTypeIcon => 'ไอคอน';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'คุณแน่ใจหรือไม่ว่าต้องการลบอาหารประเภทนี้ มื้ออาหารที่วางแผนไว้ประเภทนี้จะยังคงอยู่';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'ชื่อไม่สามารถเว้นว่างได้';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'ไม่สามารถลบอาหารประเภทนี้ได้';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'ประเภทที่กำหนดเอง';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'ประเภทเริ่มต้น';
 
   @override
   String get expirationDate => 'วันหมดอายุ';
@@ -1962,6 +2151,9 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'เกิดข้อผิดพลาดในการโหลดรายการ';
+
+  @override
+  String get errorLoadingItems => 'เกิดข้อผิดพลาดในการโหลดรายการ';
 
   @override
   String get noListsFound => 'ไม่พบรายการ';
@@ -2558,171 +2750,381 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get obHookTitle => 'Smarter shopping starts here';
+  String get obHookTitle => 'การช้อปปิ้งอย่างชาญฉลาดเริ่มต้นที่นี่';
 
   @override
   String get obHookSubtitle =>
-      'AI-powered lists that save you time and money, every single trip.';
+      'รายการที่ขับเคลื่อนโดย AI ซึ่งช่วยคุณประหยัดเวลาและเงินในทุกการเดินทาง';
 
   @override
-  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+  String get obHookSocial => 'ได้รับความไว้วางใจจากนักช้อปหลายพันรายทั่วโลก';
 
   @override
-  String get obHookCta => 'Get Started';
+  String get obHookCta => 'เริ่มต้นเลย';
 
   @override
-  String get obQuizHouseholdTitle => 'Who do you shop for?';
+  String get obQuizHouseholdTitle => 'คุณชอปปิ้งให้ใคร?';
 
   @override
-  String get obQuizHouseholdSolo => 'Just me';
+  String get obQuizHouseholdSolo => 'แค่ฉัน';
 
   @override
-  String get obQuizHouseholdCouple => 'Me and my partner';
+  String get obQuizHouseholdCouple => 'ฉันและคู่ของฉัน';
 
   @override
-  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+  String get obQuizHouseholdFamilySmall => 'ครอบครัว 3-4 คน';
 
   @override
-  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+  String get obQuizHouseholdFamilyLarge => 'ครอบครัว 5+';
 
   @override
-  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+  String get obQuizFrequencyTitle => 'คุณซื้อของชำบ่อยแค่ไหน?';
 
   @override
-  String get obQuizFrequencyDaily => 'Almost every day';
+  String get obQuizFrequencyDaily => 'เกือบทุกวัน';
 
   @override
-  String get obQuizFrequencyWeekly => 'Once a week';
+  String get obQuizFrequencyWeekly => 'สัปดาห์ละครั้ง';
 
   @override
-  String get obQuizFrequencyBiweekly => 'Every two weeks';
+  String get obQuizFrequencyBiweekly => 'ทุกสองสัปดาห์';
 
   @override
-  String get obQuizFrequencyMonthly => 'Big monthly haul';
+  String get obQuizFrequencyMonthly => 'ลากรายเดือนครั้งใหญ่';
 
   @override
-  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+  String get obQuizPainTitle =>
+      'อะไรทำให้คุณหงุดหงิดที่สุดเกี่ยวกับการช็อปปิ้ง?';
 
   @override
-  String get obQuizPainForget => 'I always forget items';
+  String get obQuizPainForget => 'ฉันมักจะลืมสิ่งของต่างๆ';
 
   @override
-  String get obQuizPainOverspend => 'I spend more than planned';
+  String get obQuizPainOverspend => 'ฉันใช้จ่ายมากกว่าที่วางแผนไว้';
 
   @override
-  String get obQuizPainWaste => 'Food goes to waste at home';
+  String get obQuizPainWaste => 'อาหารจะเหลือทิ้งที่บ้าน';
 
   @override
-  String get obQuizPainTime => 'It takes too much time';
+  String get obQuizPainTime => 'มันต้องใช้เวลามากเกินไป';
 
   @override
-  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+  String get obQuizSavingsTitle => 'คุณต้องการออมเงินเดือนละเท่าไร?';
 
   @override
-  String get obQuizSavingsSmall => 'A little — every bit counts';
+  String get obQuizSavingsSmall => 'เพียงเล็กน้อย — ทุกบิตมีค่า';
 
   @override
-  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+  String get obQuizSavingsMedium => 'ประมาณ 10% ของบิลร้านขายของชำของฉัน';
 
   @override
-  String get obQuizSavingsLarge => 'As much as possible';
+  String get obQuizSavingsLarge => 'ให้มากที่สุดเท่าที่เป็นไปได้';
 
   @override
-  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+  String get obQuizMethodTitle => 'วันนี้คุณทำรายการช้อปปิ้งอย่างไร?';
 
   @override
-  String get obQuizMethodPaper => 'Pen and paper';
+  String get obQuizMethodPaper => 'ปากกาและกระดาษ';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'แอพโน้ต';
 
   @override
-  String get obQuizMethodMemory => 'I keep it in my head';
+  String get obQuizMethodMemory => 'ฉันเก็บมันไว้ในหัวของฉัน';
 
   @override
-  String get obQuizMethodNone => 'I don\'t make lists';
+  String get obQuizMethodNone => 'ฉันไม่ทำรายการ';
 
   @override
-  String get obSocialTitle => 'You\'re in good company';
+  String get obSocialTitle => 'คุณอยู่ในสังคมที่ดี';
 
   @override
   String get obSocialSubtitle =>
-      'Shoppers like you are already saving with KipiList';
+      'นักช้อปเช่นคุณกำลังประหยัดกับ KipiList อยู่แล้ว';
 
   @override
   String get obSocialQuote1 =>
-      'I never forget anything anymore. The AI builds my list in seconds.';
+      'ฉันไม่เคยลืมอะไรอีกต่อไป AI สร้างรายการของฉันในไม่กี่วินาที';
 
   @override
-  String get obSocialQuote2 =>
-      'We cut our grocery bill noticeably in the first month.';
+  String get obSocialQuote2 => 'เราลดค่าของชำลงอย่างเห็นได้ชัดในเดือนแรก';
 
   @override
   String get obSocialQuote3 =>
-      'Sharing the list with my partner ended our shopping chaos.';
+      'การแชร์รายการกับคู่ของฉันช่วยยุติความวุ่นวายในการช็อปปิ้งของเรา';
 
   @override
-  String get obLoadingTitle => 'Building your personalized plan...';
+  String get obLoadingTitle => 'การสร้างแผนส่วนบุคคลของคุณ...';
 
   @override
-  String get obLoadingStepProfile => 'Adjusting for your household';
+  String get obLoadingStepProfile => 'ปรับตัวให้เข้ากับครัวเรือนของคุณ';
 
   @override
-  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+  String get obLoadingStepHabits => 'ปรับให้เข้ากับกิจวัตรการช็อปปิ้งของคุณ';
 
   @override
-  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+  String get obLoadingStepSavings => 'เพิ่มประสิทธิภาพกลยุทธ์การออมของคุณ';
 
   @override
-  String get obLoadingStepLists => 'Preparing your smart lists';
+  String get obLoadingStepLists => 'กำลังเตรียมรายการอัจฉริยะของคุณ';
 
   @override
-  String get obRevealTitle => 'Your plan is ready!';
+  String get obRevealTitle => 'แผนของคุณพร้อมแล้ว!';
 
   @override
-  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+  String get obRevealSubtitle => 'นี่คือวิธีที่ KipiList จะทำงานให้คุณ';
 
   @override
-  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+  String get obRevealSavingsCaption => 'คาดการณ์การประหยัดด้วย KipiList';
 
   @override
   String obRevealMonth(int n) {
-    return 'Month $n';
+    return 'เดือน $n';
   }
 
   @override
-  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+  String get obRevealFeatureAi => 'AI สร้างและจัดระเบียบรายการของคุณ';
 
   @override
-  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+  String get obRevealFeatureBudget => 'ติดตามการใช้จ่ายตามเป้าหมายของคุณ';
 
   @override
-  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+  String get obRevealFeaturePantry => 'การติดตามตู้กับข้าวช่วยลดขยะอาหาร';
 
   @override
-  String get obRevealFeatureShare => 'Real-time sharing with your household';
+  String get obRevealFeatureShare => 'แบ่งปันแบบเรียลไทม์กับครอบครัวของคุณ';
 
   @override
-  String get obPaywallTitle => 'Unlock your plan';
+  String get obPaywallTitle => 'ปลดล็อคแผนของคุณ';
 
   @override
-  String get obPaywallRetry => 'Try again';
+  String get obPaywallRetry => 'ลองอีกครั้ง';
 
   @override
-  String get obLoginTitle => 'Save your plan';
+  String get obLoginTitle => 'บันทึกแผนของคุณ';
 
   @override
-  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+  String get obLoginSubtitle =>
+      'ลงชื่อเข้าใช้เพื่อให้รายการของคุณซิงค์ระหว่างอุปกรณ์ต่างๆ';
 
   @override
-  String get obLoginGoogle => 'Continue with Google';
+  String get obLoginGoogle => 'ดำเนินการต่อด้วย Google';
 
   @override
-  String get obLoginApple => 'Continue with Apple';
+  String get obLoginApple => 'ต่อด้วยแอปเปิล';
 
   @override
-  String get obLoginSkip => 'Not now';
+  String get obLoginSkip => 'ไม่ใช่ตอนนี้';
 
   @override
-  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
+  String get obLoginError =>
+      'การลงชื่อเข้าใช้ล้มเหลว ลองอีกครั้งหรือข้ามไปก่อน';
+
+  @override
+  String get searchMessages => 'ค้นหาข้อความ...';
+
+  @override
+  String get deletedList => 'รายการที่ถูกลบ';
+
+  @override
+  String get openConversation => 'เปิดการสนทนา';
+
+  @override
+  String get userRole => 'คุณ';
+
+  @override
+  String get assistantRole => 'ผู้ช่วย';
+
+  @override
+  String get agentActionsRunning => 'กำลังดำเนินการ...';
+
+  @override
+  String get agentActionsFailed => 'ไม่สามารถดำเนินการได้';
+
+  @override
+  String get agentActionsPremium => 'การดำเนินการต้องใช้ระดับพรีเมียม';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'เลิกทำการเปลี่ยนแปลง';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (พรีเมียม)';
+  }
+
+  @override
+  String get itemAddedToList => 'เพิ่มรายการลงในรายการแล้ว';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'สถานะก่อนหน้า: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'สมัครสมาชิก Premium เพื่อปลดล็อกการดำเนินการอัตโนมัติ';
+
+  @override
+  String get viewPlans => 'ดูแผน';
+
+  @override
+  String get artifactSynced => 'ซิงค์แล้ว';
+
+  @override
+  String get artifactBudgetLabel => 'งบประมาณ:';
+
+  @override
+  String get totalEstimatedLabel => 'รวมประมาณ';
+
+  @override
+  String get quickActionPantry => 'ดูตู้กับข้าว';
+
+  @override
+  String get quickActionAi => 'คุยกับกีกี้';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'บริการ AI ส่งคืนข้อผิดพลาด ($statusCode)';
+  }
+
+  @override
+  String get aiTimeoutError => 'คำขอใช้เวลานานเกินไป โปรดลองอีกครั้ง';
+
+  @override
+  String get aiConnectionError =>
+      'ไม่สามารถเชื่อมต่อกับบริการ AI ได้ ตรวจสอบการเชื่อมต่อของคุณ';
+
+  @override
+  String get aiEmptyResponseError => 'บริการ AI ส่งคืนการตอบกลับที่ว่างเปล่า';
+
+  @override
+  String get aiInvalidResponseError =>
+      'บริการ AI ส่งคืนการตอบสนองที่ไม่ถูกต้อง';
+
+  @override
+  String get categoryFruits => 'ผลไม้';
+
+  @override
+  String get categoryCleaning => 'การทำความสะอาด';
+
+  @override
+  String get categoryBeverages => 'เครื่องดื่ม';
+
+  @override
+  String get categoryBakery => 'เบเกอรี่';
+
+  @override
+  String get categoryMeat => 'เนื้อ';
+
+  @override
+  String get categoryDairy => 'ผลิตภัณฑ์นม';
+
+  @override
+  String get categoryVegetables => 'ผัก';
+
+  @override
+  String get categoryGrains => 'ธัญพืชและธัญพืช';
+
+  @override
+  String get categoryHygiene => 'การดูแลส่วนบุคคล';
+
+  @override
+  String get categoryFrozen => 'อาหารแช่แข็ง';
+
+  @override
+  String get categoryCanned => 'สินค้ากระป๋อง';
+
+  @override
+  String get categorySeasonings => 'เครื่องปรุงรส';
+
+  @override
+  String get categorySweets => 'ขนมหวานและขนมหวาน';
+
+  @override
+  String get categoryAlcohol => 'เครื่องดื่มแอลกอฮอล์';
+
+  @override
+  String get categoryFish => 'ปลา';
+
+  @override
+  String get categoryColdCuts => 'การตัดเย็น';
+
+  @override
+  String get categoryUtilities => 'ของใช้ในครัวเรือน';
+
+  @override
+  String get categoryPet => 'อุปกรณ์สำหรับสัตว์เลี้ยง';
+
+  @override
+  String get categoryBaby => 'ที่รัก';
+
+  @override
+  String get categoryOthers => 'อื่น';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'สวัสดี $name ฉันชื่อกีปี 😏';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'สวัสดี ฉันชื่อกีปี 😏';
+
+  @override
+  String get chatEmptyPitch =>
+      'ฉันสร้างรายการ แนะนำสูตรอาหาร และค้นหาที่ที่จะบันทึก เราจะเริ่มต้นที่ไหน?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'วางแผนบาร์บีคิว';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi ฉันกำลังจัดบาร์บีคิวอยู่ ช่วยฉันสร้างรายการช็อปปิ้งด้วย';
+
+  @override
+  String get aiRateLimitError =>
+      'มีข้อความมากเกินไปในเวลาอันสั้น รอสักครู่แล้วลองอีกครั้ง';
+
+  @override
+  String get chatHistoryErrorTitle => 'ไม่สามารถโหลดการสนทนานี้ได้';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'มีบางอย่างผิดพลาดทางฝั่งของเรา แตะลองอีกครั้งเพื่อลองอีกครั้ง';
+
+  @override
+  String get chatHistoryOfflineTitle => 'คุณออฟไลน์อยู่';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'ตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณแล้วลองอีกครั้ง';
+
+  @override
+  String get aiGeneratingResponse => 'กำลังสร้างการตอบกลับ...';
 }

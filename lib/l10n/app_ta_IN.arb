@@ -34,6 +34,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -130,6 +144,13 @@
   },
   "@categoryName": {
     "description": "Label for category name field"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -334,6 +355,9 @@
     },
     "description": "Error message for errorIncreasingQty"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingProducts": {
     "placeholders": {
       "error": {
@@ -481,6 +505,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -1105,6 +1136,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1231,6 +1272,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1263,6 +1311,29 @@
   },
   "@paywallWelcomeOfferBadge": {
     "description": "Badge shown on paywall when no trial is available"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@progressBudget": {
     "placeholders": {
@@ -1324,7 +1395,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1448,23 +1533,37 @@
   "addingItems": "பட்டியலில் பொருட்களைச் சேர்க்கிறது...",
   "addingToPantry": "சரக்கறைக்கு சேர்க்கிறது...",
   "advancedFeatures": "மேம்பட்ட அம்சங்கள்",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "செயல்களை இயக்க முடியவில்லை",
+  "agentActionsPremium": "செயல்களுக்கு பிரீமியம் தேவை",
+  "agentActionsRunning": "செயல்களை இயக்குகிறது...",
+  "aiApiError": "AI சேவையானது ஒரு பிழையை அளித்தது ({statusCode}).",
   "aiAssistant": "AI உதவியாளர்",
   "aiAssistantDescription": "எங்கள் AI உதவியாளருடன் ஸ்மார்ட் பரிந்துரைகள், சமையல் குறிப்புகள் மற்றும் தனிப்பயனாக்கப்பட்ட உதவிக்குறிப்புகளைப் பெறுங்கள்.",
   "aiAssistantTitle": "AI உதவியாளர்",
+  "aiConnectionError": "AI சேவையுடன் இணைக்க முடியவில்லை. உங்கள் இணைப்பைச் சரிபார்க்கவும்.",
   "aiCreditsRemaining": "{remaining} கிரெடிட்கள் மீதம்",
+  "aiEmptyResponseError": "AI சேவை வெற்று பதிலை அளித்தது.",
   "aiEnergy": "AI ஆற்றல்",
   "aiEnergyLow": "குறைந்த AI ஆற்றல்",
   "aiError": "மன்னிக்கவும், உங்கள் கோரிக்கையைச் செயலாக்குவதில் பிழை ஏற்பட்டது. உங்கள் இணைப்பைச் சரிபார்த்து அல்லது பின்னர் மீண்டும் முயற்சிக்கவும்.",
+  "aiGeneratingResponse": "பதிலை உருவாக்குகிறது…",
+  "aiInvalidResponseError": "AI சேவை தவறான பதிலை அளித்துள்ளது.",
   "aiLimitAlmostReached": "கிட்டத்தட்ட AI செய்திகள் இல்லை",
   "aiPremiumDescription": "இந்த ஊடாடும் இடைமுகம் மேம்பட்ட செயற்கை நுண்ணறிவைப் பயன்படுத்துகிறது மற்றும் புரோ உறுப்பினர்களுக்கு அல்லது விரைவான விளம்பரம் மூலம் பிரத்தியேகமானது.",
+  "aiRateLimitError": "குறுகிய நேரத்தில் பல செய்திகள். சில வினாடிகள் காத்திருந்து மீண்டும் முயற்சிக்கவும்.",
   "aiRemainingFreeToday": "இன்று {remaining} {remaining, plural, one{free message} other{free messages}}",
+  "aiSection": "AI உதவியாளர்",
   "aiSubscribeUnlimited": "வரம்பற்ற AIக்கு குழுசேரவும்",
   "aiTeaserFallback": "உங்கள் ஷாப்பிங்கிற்கான வரம்பற்ற AI உதவிக்குறிப்புகளைப் பெற, முழு பதிலைத் திறக்க Premium க்கு குழுசேரவும்...",
+  "aiTimeoutError": "கோரிக்கை அதிக நேரம் எடுத்தது. மீண்டும் முயற்சிக்கவும்.",
   "aiUnlockUnlimited": "வரம்பற்ற AI ஐ திறக்கவும்",
   "aiUsageExhausted": "மாதாந்திர AI வரம்பை அடைந்தது. வரம்பற்ற →க்கு Pro க்கு மேம்படுத்தவும்",
   "aiUsageWarning": "இந்த மாதம் {remaining} AI செயல்கள் மீதமுள்ளன — வரம்பற்ற மேம்படுத்தல்",
   "aiVoiceCommandTooltip": "AI குரல் கட்டளை (பிரீமியம்)",
   "aiWelcomeContent": "வணக்கம்! 👋 நான் **கிபி**, உங்கள் தனிப்பட்ட ஷாப்பிங் மற்றும் செய்முறை உதவியாளர்!\n\nஉங்களுக்கு உதவ நான் இங்கே இருக்கிறேன்:\n🛒 **உங்கள் ஷாப்பிங்கை வகைகளின்படி தானாகவே ஒழுங்கமைக்கவும்**\n💰 **உங்கள் பட்ஜெட்டைக் கண்காணித்து, பணத்தைச் சேமிக்கும் உதவிக்குறிப்புகளை வழங்குங்கள்\n🍲 **பரிந்துரை** உங்களிடம் ஏற்கனவே உள்ளதைக் கொண்டு சுவையான சமையல் குறிப்புகள்\n\nஇன்று நான் உங்களுக்கு எப்படி உதவ முடியும்? உங்கள் முதல் பட்டியலை உருவாக்குவதன் மூலம் நீங்கள் தொடங்கலாம்!",
+  "aiWelcomeSuggestBarbecue": "பார்பிக்யூவை திட்டமிடுங்கள்",
+  "aiWelcomeSuggestBarbecuePrompt": "கிபி, நான் பார்பிக்யூவை நடத்துகிறேன் — ஷாப்பிங் பட்டியலை உருவாக்க எனக்கு உதவுங்கள்",
   "aiWelcomeSuggestCreateList": "எனது முதல் பட்டியலை உருவாக்கவும்",
   "aiWelcomeSuggestCreateListPrompt": "கிபி, எனது முதல் ஷாப்பிங் பட்டியலை உருவாக்க எனக்கு உதவுங்கள்",
   "aiWelcomeSuggestSave": "பணத்தை எவ்வாறு சேமிப்பது?",
@@ -1474,9 +1573,12 @@
   "appTitle": "ஷாப்பிங் பட்டியல்",
   "appearance": "தோற்றம்",
   "archiveList": "பட்டியலை காப்பகப்படுத்து",
+  "artifactBudgetLabel": "பட்ஜெட்:",
+  "artifactSynced": "ஒத்திசைக்கப்பட்டது",
   "assistantHistory": "உதவியாளர் வரலாறு",
   "assistantHistorySubtitle": "உங்கள் உரையாடல் வரலாற்றைப் பார்க்கவும்",
   "assistantName": "உதவியாளர் பெயர்",
+  "assistantRole": "உதவியாளர்",
   "backToChat": "அரட்டைக்குத் திரும்பு",
   "backToToday": "இன்று மீண்டும்",
   "backupExported": "காப்புப்பிரதி ஏற்றுமதி செய்யப்பட்டது!",
@@ -1484,6 +1586,7 @@
   "backupPremiumDescription": "காப்புப்பிரதி மற்றும் ஏற்றுமதி ஒரு பிரீமியம் அம்சம்",
   "backupSubtitle": "உங்கள் தரவை ஏற்றுமதி அல்லது இறக்குமதி செய்யவும்",
   "backupTitle": "காப்புப்பிரதி",
+  "badResponse": "மோசமான பதில்",
   "badgeBeginner": "ஆரம்பநிலை",
   "badgeOrganized": "ஏற்பாடு செய்யப்பட்டது",
   "badgeSavingMaster": "சேவிங் மாஸ்டர்",
@@ -1509,9 +1612,11 @@
   "catOthers": "மற்றவை",
   "catalogAddItems": "{count} {count, plural, one{item} other{items}} → சேர்",
   "catalogBrowse": "அட்டவணையை உலாவவும்",
+  "catalogCategories": "வகைகள்",
   "catalogFilterNational": "தேசியர்கள்",
   "catalogMyFrequents": "என் அடிக்கடி",
   "catalogProductNotFound": "தயாரிப்பு கிடைக்கவில்லை, பெயரை உள்ளிடவும்",
+  "catalogRareBadge": "அரிதான",
   "catalogRareSection": "உங்கள் நாட்டில் குறைவான பொதுவானது",
   "catalogSearchGlobal": "எந்தப் பொருளையும் தேடு...",
   "catalogSearchInCategory": "{category} இல் தேடவும்...",
@@ -1520,16 +1625,43 @@
   "catalogTitle": "பட்டியல்",
   "categorizingItems": "பொருட்களை வகைப்படுத்துதல்...",
   "category": "வகை",
+  "categoryAlcohol": "மது பானங்கள்",
+  "categoryBaby": "குழந்தை",
+  "categoryBakery": "பேக்கரி",
+  "categoryBeverages": "பானங்கள்",
+  "categoryCanned": "பதிவு செய்யப்பட்ட பொருட்கள்",
+  "categoryCleaning": "சுத்தம் செய்தல்",
+  "categoryColdCuts": "குளிர் வெட்டுக்கள்",
   "categoryColorLabel": "நிறம்",
+  "categoryDairy": "பால் பண்ணை",
+  "categoryFish": "மீன்",
+  "categoryFrozen": "உறைந்த உணவுகள்",
+  "categoryFruits": "பழங்கள்",
+  "categoryGrains": "தானியங்கள் மற்றும் தானியங்கள்",
+  "categoryHygiene": "தனிப்பட்ட கவனிப்பு",
   "categoryIconLabel": "ஐகான்",
   "categoryLimitReached": "இலவச பதிப்பில் 10 வகைகளின் வரம்பு. Pro க்கு மேம்படுத்தவும்!",
+  "categoryMeat": "இறைச்சி",
   "categoryName": "வகை பெயர்",
   "categoryNameHint": "எ.கா: இறைச்சிகள்",
+  "categoryOthers": "மற்றவை",
+  "categoryPet": "செல்லப்பிராணி பொருட்கள்",
+  "categorySeasonings": "சுவையூட்டிகள்",
+  "categorySweets": "இனிப்புகள் மற்றும் இனிப்புகள்",
+  "categoryUtilities": "வீட்டுப் பொருட்கள்",
+  "categoryVegetables": "காய்கறிகள்",
+  "chatEmptyGreeting": "வணக்கம் {name}, நான் கிபி 👋",
+  "chatEmptyGreetingNoName": "வணக்கம், நான் கிபி 👋",
+  "chatEmptyPitch": "நான் பட்டியல்களை உருவாக்குகிறேன், சமையல் குறிப்புகளை பரிந்துரைக்கிறேன், எங்கு சேமிப்பது என்று கண்டுபிடிக்கிறேன். நாம் எங்கு தொடங்குவது?",
   "chatEmptySubtitle": "தொடங்குவதற்கு உருப்படி பரிந்துரைகள், சமையல் குறிப்புகள் அல்லது சேமிப்பு உதவிக்குறிப்புகளைக் கேளுங்கள்.",
   "chatEmptyTitle": "உங்கள் அரட்டை காலியாக உள்ளது",
   "chatError": "அரட்டையை ஏற்றுவதில் பிழை: {error}",
   "chatHint": "உங்கள் செய்தியைத் தட்டச்சு செய்க...",
   "chatHintBlocked": "அரட்டையடிக்க AI ஐ திறக்கவும்",
+  "chatHistoryErrorBody": "எங்கள் தரப்பில் ஏதோ தவறாகிவிட்டது. மீண்டும் முயற்சிக்க மீண்டும் முயற்சிக்கவும் என்பதைத் தட்டவும்.",
+  "chatHistoryErrorTitle": "இந்த உரையாடலை ஏற்ற முடியவில்லை",
+  "chatHistoryOfflineBody": "உங்கள் இணைய இணைப்பைச் சரிபார்த்து மீண்டும் முயலவும்.",
+  "chatHistoryOfflineTitle": "ஆஃப்லைனில் உள்ளீர்கள்",
   "chatSubtitle": "பொருள் பரிந்துரைகள், சமையல் குறிப்புகள் அல்லது சேமிப்பு உதவிக்குறிப்புகளைக் கேளுங்கள்.",
   "chatSubtitleShort": "விலைகள், சமையல் வகைகள், அமைப்பு பற்றி கேளுங்கள்...",
   "checkingItem": "உருப்படியைச் சரிபார்க்கிறது...",
@@ -1540,6 +1672,7 @@
   "chooseImageSource": "படத்தின் மூலத்தைத் தேர்ந்தெடுக்கவும்",
   "chooseLanguage": "மொழியைத் தேர்ந்தெடுக்கவும்",
   "chooseThemeColor": "தீம் நிறத்தைத் தேர்ந்தெடுக்கவும்",
+  "chooseThemeMode": "தீம் பயன்முறையைத் தேர்ந்தெடுக்கவும்",
   "clear": "அழி",
   "clearHistory": "வரலாற்றை அழி",
   "clearHistoryConfirm": "இந்த அமர்வில் உள்ள அனைத்து செய்திகளையும் அழிக்கவா?",
@@ -1588,6 +1721,10 @@
   "customizeAssistant": "தனிப்பயனாக்கு",
   "dark": "இருள்",
   "data": "தரவு",
+  "dateGroupOlder": "பழையது",
+  "dateGroupPrevious7Days": "முந்தைய 7 நாட்கள்",
+  "dateGroupToday": "இன்று",
+  "dateGroupYesterday": "நேற்று",
   "dayFri": "வெள்ளி",
   "dayMon": "திங்கள்",
   "daySat": "சனி",
@@ -1611,6 +1748,7 @@
   "deleteRecipeConfirmMsg": "\"{recipeName}\" ஐ நிச்சயமாக நீக்க விரும்புகிறீர்களா? இந்தச் செயலைச் செயல்தவிர்க்க முடியாது.",
   "deleteSession": "அரட்டையை நீக்கு",
   "deleteSessionConfirm": "இந்த அரட்டையை நிச்சயமாக நீக்க விரும்புகிறீர்களா? செய்திகள் நிரந்தரமாக இழக்கப்படும்.",
+  "deletedList": "நீக்கப்பட்ட பட்டியல்",
   "deselectAll": "அனைத்தையும் தேர்ந்தெடுக்காமல் விடு",
   "dietaryRestrictions": "உணவு கட்டுப்பாடுகள்",
   "dietaryRestrictionsHint": "எ.கா: சைவம், சைவம், பசையம் இல்லாதது",
@@ -1623,6 +1761,7 @@
   "editCategoryDialog": "வகையைத் திருத்தவும்",
   "editItem": "பொருளைத் திருத்து",
   "editItemPrice": "மதிப்பிடப்பட்ட விலை",
+  "editMessage": "செய்தியைத் திருத்தவும்",
   "editPantryItem": "{name}ஐத் திருத்து",
   "editRecipe": "திருத்தவும்",
   "editRecipeTitle": "செய்முறையைத் திருத்தவும்",
@@ -1648,6 +1787,7 @@
   "errorLoadingChat": "அச்சச்சோ! அரட்டையை ஏற்றுவதில் ஏதோ தவறு ஏற்பட்டது.",
   "errorLoadingChatSubtitle": "உங்கள் இணைப்பைச் சரிபார்க்கவும் அல்லது பிறகு முயற்சிக்கவும்.",
   "errorLoadingHistory": "வரலாற்றை ஏற்றுவதில் பிழை",
+  "errorLoadingItems": "பொருட்களை ஏற்றுவதில் பிழை",
   "errorLoadingLists": "பட்டியல்களை ஏற்றுவதில் பிழை",
   "errorLoadingProducts": "தயாரிப்புகளை ஏற்றுவதில் பிழை: {error}",
   "errorLoadingRecipes": "சமையல் குறிப்புகளை ஏற்றுவதில் பிழை",
@@ -1722,6 +1862,7 @@
   "generatingShareLink": "பகிர்வு இணைப்பை உருவாக்குகிறது...",
   "gestureHint": "தேர்ந்தெடுக்க அழுத்திப் பிடிக்கவும் • அகற்ற ஸ்வைப் செய்யவும்",
   "globalAssistant": "உலகளாவிய உதவியாளர்",
+  "goodResponse": "நல்ல பதில்",
   "howCanIHelp": "நான் எப்படி உதவ முடியும்?",
   "icon": "ஐகான்:",
   "idealQty": "உகந்த அளவு",
@@ -1740,14 +1881,18 @@
   "inviteToList": "பட்டியலுக்கு அழைக்கவும்",
   "itemAdded": "{name} சேர்க்கப்பட்டது",
   "itemAddedSnack": "{name} சேர்க்கப்பட்டது",
+  "itemAddedToList": "பட்டியலில் உருப்படி சேர்க்கப்பட்டது.",
   "itemName": "பொருளின் பெயர்",
   "itemRemoved": "பொருள் அகற்றப்பட்டது",
   "itemsAddedSuccess": "பொருட்கள் பட்டியலில் வெற்றிகரமாக சேர்க்கப்பட்டன!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} பொருள்(கள்) வாங்கப்பட வேண்டும்",
   "itemsPurchased": "வாங்கிய பொருட்கள்",
   "itemsPurchasedCount": "{total} இல் {purchased} வாங்கப்பட்டது",
   "itemsPurchasedShort": "{purchased}/{total} வாங்கப்பட்டது",
   "itemsWillBeAdded": "{count} பொருள்(கள்) சேர்க்கப்படும்",
+  "keepAdding": "சேர்த்துக் கொண்டே இருங்கள்",
+  "keepAddingSubtitle": "பல பொருட்களைச் சேர்க்க, தாளைத் திறந்து வைக்கவும்",
   "kipiListProActive": "கிபிலிஸ்ட் புரோ ஆக்டிவ்",
   "kipiListTitle": "கிபிலிஸ்ட்",
   "kipiQuickBarHint": "நீங்கள் என்ன வாங்க வேண்டும்?",
@@ -1786,16 +1931,22 @@
   "marketsToAvoid": "தவிர்க்க வேண்டிய சந்தைகள்",
   "marketsToAvoidHint": "எ.கா: மார்க்கெட் ஒய், மார்க்கெட் இசட்",
   "mealPlannerAddMeal": "சாப்பாடு சேர்க்கவும்",
+  "mealPlannerAddType": "உணவு வகையைச் சேர்க்கவும்",
+  "mealPlannerCustomTypeLabel": "விருப்ப வகை",
   "mealPlannerDateLabel": "தேதி",
+  "mealPlannerDefaultTypeLabel": "இயல்புநிலை வகை",
   "mealPlannerDeleteMeal": "உணவை அகற்றவும்",
   "mealPlannerEditMeal": "உணவைத் திருத்தவும்",
+  "mealPlannerEditType": "உணவு வகையைத் திருத்தவும்",
   "mealPlannerError": "உணவுத் திட்டத்தை ஏற்றுவதில் பிழை",
+  "mealPlannerEstimatePartial": "பகுதி விலை தரவுகளுடன் சமையல் குறிப்புகளின் அடிப்படையில் மதிப்பிடவும்.",
   "mealPlannerGenerateList": "ஷாப்பிங் பட்டியலை உருவாக்கவும்",
   "mealPlannerGenerateListConfirm": "இந்த வாரம் திட்டமிட்ட உணவுகளில் இருந்து அனைத்து பொருட்களையும் உங்கள் ஷாப்பிங் பட்டியலில் சேர்க்கவா?",
   "mealPlannerGenerateListEmpty": "சேர்க்க பொருட்கள் இல்லை. முதலில் சமையல் குறிப்புகளுடன் சில உணவுகளைத் திட்டமிடுங்கள்.",
   "mealPlannerGenerateListNoList": "முதலில் ஷாப்பிங் பட்டியலை உருவாக்கவும்.",
   "mealPlannerGenerateListSuccess": "{count} மூலப்பொருள்(கள்) உங்கள் பட்டியலில் சேர்க்கப்பட்டது!",
   "mealPlannerLoading": "உணவுத் திட்டத்தை ஏற்றுகிறது...",
+  "mealPlannerManageTypes": "உணவு வகைகளை நிர்வகிக்கவும்",
   "mealPlannerMealDeleted": "உணவு நீக்கப்பட்டது",
   "mealPlannerMealTypeBreakfast": "காலை உணவு",
   "mealPlannerMealTypeDinner": "இரவு உணவு",
@@ -1815,6 +1966,12 @@
   "mealPlannerServings": "{count,plural, one{{count} பரிமாறும்} other{{count} சேவைகள்}}",
   "mealPlannerServingsLabel": "பரிமாறல்கள்",
   "mealPlannerTitle": "உணவு திட்டமிடுபவர்",
+  "mealPlannerTypeColor": "நிறம்",
+  "mealPlannerTypeDeleteConfirm": "இந்த உணவு வகையை நிச்சயமாக நீக்க விரும்புகிறீர்களா? இந்த வகையுடன் திட்டமிடப்பட்ட உணவுகள் இருக்கும்.",
+  "mealPlannerTypeDeleteError": "இந்த உணவு வகையை நீக்க முடியாது.",
+  "mealPlannerTypeIcon": "ஐகான்",
+  "mealPlannerTypeName": "பெயர்",
+  "mealPlannerTypeNameEmpty": "பெயர் காலியாக இருக்கக்கூடாது",
   "mealPlannerViewMonthly": "மாதாந்திர பார்வை",
   "mealPlannerViewWeekly": "வாராந்திர பார்வை",
   "mealPlannerWeekEmpty": "இந்த வாரம் எதுவும் திட்டமிடவில்லை",
@@ -1871,60 +2028,60 @@
   "noRecipesSavedHint": "கீழே உள்ள பொத்தானைத் தட்டுவதன் மூலம் உங்களின் முதல் தனிப்பயன் செய்முறையை உருவாக்கவும்.",
   "noTracking": "கண்காணிப்பு இல்லை",
   "notInformed": "அமைக்கப்படவில்லை",
-  "obHookCta": "Get Started",
-  "obHookSocial": "Trusted by thousands of shoppers worldwide",
-  "obHookSubtitle": "AI-powered lists that save you time and money, every single trip.",
-  "obHookTitle": "Smarter shopping starts here",
-  "obLoadingStepHabits": "Tuning to your shopping routine",
-  "obLoadingStepLists": "Preparing your smart lists",
-  "obLoadingStepProfile": "Adjusting for your household",
-  "obLoadingStepSavings": "Optimizing your savings strategy",
-  "obLoadingTitle": "Building your personalized plan...",
-  "obLoginApple": "Continue with Apple",
-  "obLoginError": "Sign-in failed. Try again or skip for now.",
-  "obLoginGoogle": "Continue with Google",
-  "obLoginSkip": "Not now",
-  "obLoginSubtitle": "Sign in so your lists sync across devices",
-  "obLoginTitle": "Save your plan",
-  "obPaywallRetry": "Try again",
-  "obPaywallTitle": "Unlock your plan",
-  "obQuizFrequencyBiweekly": "Every two weeks",
-  "obQuizFrequencyDaily": "Almost every day",
-  "obQuizFrequencyMonthly": "Big monthly haul",
-  "obQuizFrequencyTitle": "How often do you shop for groceries?",
-  "obQuizFrequencyWeekly": "Once a week",
-  "obQuizHouseholdCouple": "Me and my partner",
-  "obQuizHouseholdFamilyLarge": "Family of 5+",
-  "obQuizHouseholdFamilySmall": "Family of 3–4",
-  "obQuizHouseholdSolo": "Just me",
-  "obQuizHouseholdTitle": "Who do you shop for?",
-  "obQuizMethodMemory": "I keep it in my head",
-  "obQuizMethodNone": "I don't make lists",
-  "obQuizMethodNotes": "Notes app",
-  "obQuizMethodPaper": "Pen and paper",
-  "obQuizMethodTitle": "How do you make shopping lists today?",
-  "obQuizPainForget": "I always forget items",
-  "obQuizPainOverspend": "I spend more than planned",
-  "obQuizPainTime": "It takes too much time",
-  "obQuizPainTitle": "What frustrates you most about shopping?",
-  "obQuizPainWaste": "Food goes to waste at home",
-  "obQuizSavingsLarge": "As much as possible",
-  "obQuizSavingsMedium": "Around 10% of my grocery bill",
-  "obQuizSavingsSmall": "A little — every bit counts",
-  "obQuizSavingsTitle": "How much would you like to save monthly?",
-  "obRevealFeatureAi": "AI builds and organizes your lists",
-  "obRevealFeatureBudget": "Spending tracked against your goal",
-  "obRevealFeaturePantry": "Pantry tracking cuts food waste",
-  "obRevealFeatureShare": "Real-time sharing with your household",
-  "obRevealMonth": "Month {n}",
-  "obRevealSavingsCaption": "Projected savings with KipiList",
-  "obRevealSubtitle": "Here's how KipiList will work for you",
-  "obRevealTitle": "Your plan is ready!",
-  "obSocialQuote1": "I never forget anything anymore. The AI builds my list in seconds.",
-  "obSocialQuote2": "We cut our grocery bill noticeably in the first month.",
-  "obSocialQuote3": "Sharing the list with my partner ended our shopping chaos.",
-  "obSocialSubtitle": "Shoppers like you are already saving with KipiList",
-  "obSocialTitle": "You're in good company",
+  "obHookCta": "தொடங்குங்கள்",
+  "obHookSocial": "உலகம் முழுவதும் ஆயிரக்கணக்கான கடைக்காரர்களால் நம்பப்படுகிறது",
+  "obHookSubtitle": "ஒவ்வொரு பயணத்திலும் நேரத்தையும் பணத்தையும் மிச்சப்படுத்தும் AI-இயங்கும் பட்டியல்கள்.",
+  "obHookTitle": "சிறந்த ஷாப்பிங் இங்கே தொடங்குகிறது",
+  "obLoadingStepHabits": "உங்கள் ஷாப்பிங் வழக்கத்திற்கு ஏற்ப மாற்றுகிறது",
+  "obLoadingStepLists": "உங்கள் ஸ்மார்ட் பட்டியல்களைத் தயாரிக்கிறது",
+  "obLoadingStepProfile": "உங்கள் குடும்பத்தை சரிசெய்தல்",
+  "obLoadingStepSavings": "உங்கள் சேமிப்பு உத்தியை மேம்படுத்துதல்",
+  "obLoadingTitle": "உங்கள் தனிப்பயனாக்கப்பட்ட திட்டத்தை உருவாக்குதல்...",
+  "obLoginApple": "ஆப்பிள் உடன் தொடரவும்",
+  "obLoginError": "உள்நுழைவு தோல்வியடைந்தது. மீண்டும் முயற்சிக்கவும் அல்லது இப்போதைக்கு தவிர்க்கவும்.",
+  "obLoginGoogle": "Google உடன் தொடரவும்",
+  "obLoginSkip": "இப்போது இல்லை",
+  "obLoginSubtitle": "உங்கள் பட்டியல்கள் சாதனங்கள் முழுவதும் ஒத்திசைக்க உள்நுழையவும்",
+  "obLoginTitle": "உங்கள் திட்டத்தை சேமிக்கவும்",
+  "obPaywallRetry": "மீண்டும் முயற்சிக்கவும்",
+  "obPaywallTitle": "உங்கள் திட்டத்தைத் திறக்கவும்",
+  "obQuizFrequencyBiweekly": "ஒவ்வொரு இரண்டு வாரங்களுக்கும்",
+  "obQuizFrequencyDaily": "கிட்டத்தட்ட ஒவ்வொரு நாளும்",
+  "obQuizFrequencyMonthly": "பெரிய மாதாந்திர சுமை",
+  "obQuizFrequencyTitle": "நீங்கள் எத்தனை முறை மளிகைப் பொருட்களை வாங்குவீர்கள்?",
+  "obQuizFrequencyWeekly": "வாரம் ஒருமுறை",
+  "obQuizHouseholdCouple": "நானும் என் துணையும்",
+  "obQuizHouseholdFamilyLarge": "5+ குடும்பம்",
+  "obQuizHouseholdFamilySmall": "3-4 பேர் கொண்ட குடும்பம்",
+  "obQuizHouseholdSolo": "நான் தான்",
+  "obQuizHouseholdTitle": "நீங்கள் யாருக்காக ஷாப்பிங் செய்கிறீர்கள்?",
+  "obQuizMethodMemory": "நான் அதை என் தலையில் வைத்திருக்கிறேன்",
+  "obQuizMethodNone": "நான் பட்டியல் போடுவதில்லை",
+  "obQuizMethodNotes": "குறிப்புகள் பயன்பாடு",
+  "obQuizMethodPaper": "பேனா மற்றும் காகிதம்",
+  "obQuizMethodTitle": "இன்று ஷாப்பிங் பட்டியல்களை எவ்வாறு உருவாக்குவது?",
+  "obQuizPainForget": "நான் எப்போதும் பொருட்களை மறந்து விடுகிறேன்",
+  "obQuizPainOverspend": "திட்டமிட்டதை விட அதிகமாக செலவு செய்கிறேன்",
+  "obQuizPainTime": "இது அதிக நேரம் எடுக்கும்",
+  "obQuizPainTitle": "ஷாப்பிங் செய்வதில் உங்களை மிகவும் ஏமாற்றுவது எது?",
+  "obQuizPainWaste": "வீட்டில் உணவு வீணாகிறது",
+  "obQuizSavingsLarge": "முடிந்தவரை",
+  "obQuizSavingsMedium": "எனது மளிகைக் கட்டணத்தில் சுமார் 10%",
+  "obQuizSavingsSmall": "கொஞ்சம் - ஒவ்வொரு பிட் கணக்கிடப்படுகிறது",
+  "obQuizSavingsTitle": "மாதாந்தம் எவ்வளவு சேமிக்க விரும்புகிறீர்கள்?",
+  "obRevealFeatureAi": "AI உங்கள் பட்டியல்களை உருவாக்கி ஒழுங்கமைக்கிறது",
+  "obRevealFeatureBudget": "உங்கள் இலக்குக்கு எதிராக செலவுகள் கண்காணிக்கப்படும்",
+  "obRevealFeaturePantry": "சரக்கறை கண்காணிப்பு உணவு கழிவுகளை குறைக்கிறது",
+  "obRevealFeatureShare": "உங்கள் குடும்பத்துடன் நிகழ்நேரப் பகிர்வு",
+  "obRevealMonth": "மாதம் {n}",
+  "obRevealSavingsCaption": "KipiList உடன் திட்டமிடப்பட்ட சேமிப்புகள்",
+  "obRevealSubtitle": "KipiList உங்களுக்கு எப்படி வேலை செய்யும் என்பது இங்கே",
+  "obRevealTitle": "உங்கள் திட்டம் தயாராக உள்ளது!",
+  "obSocialQuote1": "நான் இனி எதையும் மறக்க மாட்டேன். AI எனது பட்டியலை நொடிகளில் உருவாக்குகிறது.",
+  "obSocialQuote2": "முதல் மாதத்தில் எங்கள் மளிகைக் கட்டணத்தைக் குறைத்தோம்.",
+  "obSocialQuote3": "எனது கூட்டாளருடன் பட்டியலைப் பகிர்ந்ததால் எங்கள் ஷாப்பிங் குழப்பம் முடிவுக்கு வந்தது.",
+  "obSocialSubtitle": "உங்களைப் போன்ற கடைக்காரர்கள் ஏற்கனவே KipiList உடன் சேமித்து வருகின்றனர்",
+  "obSocialTitle": "நீங்கள் நல்ல நிறுவனத்தில் இருக்கிறீர்கள்",
   "observations": "குறிப்புகள்",
   "observationsHint": "உதவியாளருக்கான பிற விருப்பத்தேர்வுகள்",
   "offlineBanner": "ஆஃப்லைனில் உள்ளீர்கள்",
@@ -2040,6 +2197,7 @@
   "onboardingViewAllPlans": "அனைத்து திட்டங்களையும் பார்க்கவும்",
   "onboardingWelcomeDesc": "உங்கள் ஷாப்பிங்கை ஒழுங்கமைத்து பணத்தைச் சேமிப்பதற்கான சிறந்த வழி.",
   "onboardingWelcomeTitle": "KipiListக்கு வரவேற்கிறோம்",
+  "openConversation": "உரையாடலைத் திறக்கவும்",
   "openMenu": "மெனுவைத் திற",
   "organizeAisles": "இடைகழிகள் வாரியாக ஒழுங்கமை",
   "organizeAislesPrompt": "சந்தை இடைகழிகள் வாரியாக ஒழுங்கமைக்கவும்.",
@@ -2051,15 +2209,18 @@
   "pantryAppBar": "சரக்கறை",
   "pantryAvailabilityAll": "எல்லாம் தயார்!",
   "pantryAvailabilityCount": "சரக்கறையில் {availableCount}/{totalCount}",
+  "pantryDeficitCount": "காணவில்லை {count}{unit}",
   "pantryEditTitle": "{name}ஐத் திருத்து",
   "pantryEmpty": "காலி சரக்கறை",
   "pantryEmptySubtitle": "நீங்கள் வீட்டில் வைத்திருக்க விரும்பும் பொருட்களைச் சேர்க்கவும்",
+  "pantryItemAdded": "பொருள் சேர்க்கப்பட்டது",
   "pantryItemRemoved": "பொருள் அகற்றப்பட்டது",
   "pantryLimitReached": "இலவச திட்டத்தில் சரக்கறையில் {count} உருப்படிகளின் வரம்பு. மேலும் சேர்க்க மேம்படுத்தவும்.",
   "paywallAfterItem1": "தானியங்கள்",
   "paywallAfterItem2": "சுத்தம் செய்தல்",
   "paywallAfterItem3": "இறைச்சிகள்",
   "paywallAfterItem4": "பேக்கரி",
+  "paywallBasedOnAnswers": "உங்கள் பதில்களிலிருந்து தனிப்பயனாக்கப்பட்டது",
   "paywallBeforeAfterTitle": "AI முன்னும் பின்னும்:",
   "paywallBeforeItem1": "அரிசி",
   "paywallBeforeItem2": "சோப்பு",
@@ -2097,6 +2258,8 @@
   "paywallGoalHeadlinePantry": "{name}, உங்கள் சரக்கறையை சரியாகக் கண்காணிக்கவும்!",
   "paywallGoalHeadlineRecipes": "{name}, புதிய சமையல் குறிப்புகளைக் கண்டறியவும்!",
   "paywallGoalHeadlineSaveMoney": "{name}, ஒவ்வொரு பயணத்திலும் சேமிக்கவும்!",
+  "paywallHeroFeatureDesc": "முழு பட்டியலையும் பேசவும் அல்லது ஒட்டவும் - AI அதை நொடிகளில் வரிசைப்படுத்துகிறது, வகைப்படுத்துகிறது மற்றும் பட்ஜெட் செய்கிறது",
+  "paywallHeroFeatureTitle": "AI ஷாப்பிங் உதவியாளர்",
   "paywallHeroHeadline": "Kipi AI எப்போதும் உங்கள் பக்கத்தில் இருக்கும்",
   "paywallHeroSubtitle": "உருப்படிகளைச் சேர்க்கவும், பட்டியல்களை ஒழுங்கமைக்கவும் மற்றும் உங்கள் பாக்கெட்டில் AI உடன் நேரத்தைச் சேமிக்கவும்",
   "paywallHeroSubtitlePersonalized": "ஏய் {name}, உங்கள் ஷாப்பிங்கை சரியான முறையில் ஒழுங்கமைக்கவும்.",
@@ -2131,6 +2294,11 @@
   "paywallTestimonial2Text": "நான் மீண்டும் ஒரு பட்டியல் உருப்படியை மறக்கவில்லை. AI அரட்டை பரபரப்பானது!",
   "paywallTestimonialAuthor": "ஆன் எஸ்.",
   "paywallTestimonialsTitle": "எங்கள் பயனர்கள் என்ன சொல்கிறார்கள்:",
+  "paywallTimelineChargeDesc": "உங்கள் சந்தா தொடங்குகிறது - எந்த நேரத்திலும் ரத்துசெய்யவும்",
+  "paywallTimelineDay": "நாள் {day}",
+  "paywallTimelineReminderDesc": "சோதனை முடிவதற்குள் உங்களுக்கு நினைவூட்டுகிறோம்",
+  "paywallTimelineToday": "இன்று",
+  "paywallTimelineTodayDesc": "முழு அணுகலை உடனடியாகத் திறக்கவும்",
   "paywallTitle": "கிபிலிஸ்ட் பிரீமியம்",
   "paywallTrialCta": "இலவச சோதனையைத் தொடங்கவும்",
   "paywallTrialDays": "{days} நாட்கள் இலவசம்",
@@ -2153,11 +2321,15 @@
   "prefSharing": "பட்டியல்களைப் பகிர்க",
   "prefUnlimitedLists": "வரம்பற்ற பட்டியல்கள்",
   "prefUnlimitedPantry": "வரம்பற்ற சரக்கறை",
+  "preferencesSection": "விருப்பங்கள்",
   "preferredMarket": "விருப்பமான சந்தை",
   "preferredMarketHint": "எ.கா.: சூப்பர் மார்க்கெட் எக்ஸ்",
+  "premiumActionsPrompt": "தானியங்கி செயல்களைத் திறக்க, Premium க்கு குழுசேரவும்.",
+  "premiumStepDescription": "{description} (பிரீமியம்)",
   "premiumUpgrade": "திறக்க மேம்படுத்தவும்",
   "prepTime": "தயாரிப்பு நேரம்",
   "prepTimeMinutes": "தயாரிப்பு நேரம் (நிமிடங்கள்)",
+  "previousItemState": "முந்தைய நிலை: {quantity} {unit} [{category}]{price}",
   "privacy": "தனியுரிமை",
   "processing": "செயலாக்குகிறது...",
   "product": "தயாரிப்பு",
@@ -2177,21 +2349,34 @@
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
   "queryingYourLists": "உங்கள் பட்டியல்களை வினவுகிறது...",
+  "quickActionAi": "கிபியுடன் அரட்டையடிக்கவும்",
+  "quickActionPantry": "பார் சரக்கறை",
   "quickRecipe": "விரைவான சமையல்",
   "quickRecipePrompt": "எனது பட்டியலில் உள்ள பொருட்களுடன் சமையல் குறிப்புகளைப் பரிந்துரைக்கவும்.",
   "quickReplies": "விரைவான பதில்கள்:",
   "quickSuggestions": "விரைவான பரிந்துரைகள்",
+  "recipeAddError": "உங்கள் பட்டியலில் சேர்க்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
   "recipeAddToList": "ஷாப்பிங் பட்டியலில் சேர்க்கவும்",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} {listName} இல் சேர்க்கப்பட்டது",
   "recipeCreated": "செய்முறை உருவாக்கப்பட்டது!",
   "recipeDeleted": "செய்முறை நீக்கப்பட்டது",
+  "recipeEstimatePartial": "விலையுடன் கூடிய பொருட்களின் அடிப்படையில் பகுதி மதிப்பீடு.",
+  "recipeEstimatedCostPerServing": "{cost} / சேவை",
+  "recipeEstimatedTotalCost": "மதிப்பிடப்பட்ட மொத்த செலவு",
   "recipeImage": "செய்முறை படம்",
+  "recipeIngredientInPantry": "சரக்கறையில்",
+  "recipeIngredientLowPantry": "சரக்கறை குறைவாக உள்ளது",
   "recipeIngredientSingular": "1 மூலப்பொருள்",
   "recipeIngredientsPlural": "{count} பொருட்கள்",
+  "recipeManualTotalCost": "கையேடு மொத்த செலவு",
+  "recipeManualTotalCostHint": "மூலப்பொருளின் விலையிலிருந்து கணக்கிட, காலியாக விடவும்.",
   "recipeName": "செய்முறை பெயர்",
   "recipeSaved": "செய்முறை சேமிக்கப்பட்டது!",
+  "recipeServesCount": "{count}க்கு சேவை செய்கிறது",
   "recipeSuggestion": "சமையல் பரிந்துரை",
   "recipeTags": "செய்முறை குறிச்சொற்கள்",
+  "recipeTapToCheck": "நீங்கள் சமைக்கும் போது அதைச் சரிபார்க்க ஒரு மூலப்பொருளைத் தட்டவும்",
+  "recipeYieldServings": "மகசூல் சேவைகள்",
   "regenerate": "மீண்டும் உருவாக்கு",
   "remove": "அகற்று",
   "removeBudget": "அகற்று",
@@ -2226,9 +2411,12 @@
   "scanBarcodeTitle": "பார்கோடு ஸ்கேன் செய்யவும்",
   "scanProduct": "தயாரிப்பு ஸ்கேன்",
   "scanProductTitle": "தயாரிப்பு ஸ்கேன்",
+  "scrollToBottom": "கீழே உருட்டவும்",
+  "searchConversations": "உரையாடல்களைத் தேடுங்கள்",
   "searchCurrency": "நாணயத்தைத் தேடு...",
   "searchInConversation": "உரையாடலில் தேடு...",
   "searchLanguage": "தேடல் மொழி...",
+  "searchMessages": "செய்திகளைத் தேடு...",
   "searchRecipes": "சமையல் குறிப்புகளைத் தேடு...",
   "searchingCategories": "வகைகளைத் தேடுகிறது...",
   "searchingProducts": "தயாரிப்புகளைத் தேடுகிறது...",
@@ -2268,6 +2456,7 @@
   "signInGoogle": "Google மூலம் உள்நுழைக",
   "skip": "தவிர்க்கவும்",
   "smartOrganization": "ஸ்மார்ட் ஒழுங்கமைப்பு",
+  "somethingWentWrong": "ஏதோ தவறாகிவிட்டது",
   "sortAZ": "A-Z",
   "sortCategory": "வகை",
   "sortDate": "தேதி",
@@ -2299,6 +2488,7 @@
   "themeColor": "தீம் நிறம்",
   "themeGreen": "பச்சை",
   "themeIndigo": "இண்டிகோ",
+  "themeMode": "தீம் பயன்முறை",
   "themeOrange": "ஆரஞ்சு",
   "themePink": "இளஞ்சிவப்பு",
   "themePurple": "ஊதா",
@@ -2316,6 +2506,7 @@
   "toolSaveRecipe": "செய்முறையைச் சேமிக்கவும்",
   "toolShareList": "பகிர்வு பட்டியல்",
   "totalEstimated": "மொத்த மதிப்பீடு: {amount}",
+  "totalEstimatedLabel": "மதிப்பிடப்பட்ட மொத்தம்",
   "totalSavings": "மொத்த சேமிப்பு",
   "totalSpending": "மொத்த செலவு",
   "trackStock": "இருப்பைக் கண்காணி",
@@ -2323,6 +2514,7 @@
   "trackStockInactive": "ஷாப்பிங் பரிந்துரையை உருவாக்காது",
   "uncheckingItem": "உருப்படியைத் தேர்வுநீக்குகிறது...",
   "undo": "செயல்தவிர்",
+  "undoChanges": "மாற்றங்களைச் செயல்தவிர்",
   "unit": "அலகு",
   "unitPack": "கட்டு",
   "unlockAi": "வரம்பற்ற AI ஐ திறக்கவும்",
@@ -2336,6 +2528,7 @@
   "updatingPantry": "சரக்கறையைப் புதுப்பிக்கிறது...",
   "upgrade": "மேம்படுத்து",
   "userProfile": "பயனர் சுயவிவரம்",
+  "userRole": "நீங்கள்",
   "validForLimitedTime": "குறிப்பிட்ட காலத்திற்கு மட்டும் செல்லுபடியாகும்",
   "version": "பதிப்பு",
   "viewActive": "செயலில் உள்ளவற்றைப் பார்",
@@ -2343,6 +2536,7 @@
   "viewHistory": "வரலாற்றைப் பார்",
   "viewItems": "பொருட்களைக் காண்க",
   "viewList": "பட்டியலைப் பார்",
+  "viewPlans": "திட்டங்களைப் பார்க்கவும்",
   "viewPro": "ப்ரோவைக் காண்க",
   "viewRecipe": "செய்முறையைப் பார்க்கவும்",
   "voiceCommandContent": "உங்கள் பட்டியலை நிர்வகிக்க இயற்கையாகப் பேசுங்கள்!\n\nஎடுத்துக்காட்டுகள்:\n• 'ரொட்டி, சீஸ் மற்றும் ஹாம் சேர்க்கவும்'\n• 'சலவை சோப்பை அகற்றவும்'\n• 'தீத்தை நீலமாக மாற்றவும்'\n\nஇது KipiList Premium இன் பிரத்யேக அம்சமாகும்.",

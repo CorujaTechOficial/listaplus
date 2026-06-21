@@ -245,6 +245,11 @@ class AppLocalizationsAz extends AppLocalizations {
   String get noItemsToBuy => 'Alınması lazım olan maddə yoxdur';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Çatışmayan $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Kiler Alış-verişi';
 
   @override
@@ -311,6 +316,12 @@ class AppLocalizationsAz extends AppLocalizations {
   String get settingsAppBar => 'Tənzimləmələr';
 
   @override
+  String get preferencesSection => 'Üstünlüklər';
+
+  @override
+  String get aiSection => 'AI köməkçisi';
+
+  @override
   String get language => 'Dil';
 
   @override
@@ -339,6 +350,12 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get appearance => 'Görünüş';
+
+  @override
+  String get themeMode => 'Mövzu rejimi';
+
+  @override
+  String get chooseThemeMode => 'Mövzu rejimini seçin';
 
   @override
   String get light => 'Açıq';
@@ -589,6 +606,13 @@ class AppLocalizationsAz extends AppLocalizations {
   String get trackStockInactive => 'Alış təklifi yaratmır';
 
   @override
+  String get keepAdding => 'Əlavə etməyə davam edin';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Birdən çox element əlavə etmək üçün vərəqi açıq saxlayın';
+
+  @override
   String get createListDialog => 'Siyahı Yarat';
 
   @override
@@ -693,6 +717,36 @@ class AppLocalizationsAz extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Yaxşı cavab';
+
+  @override
+  String get badResponse => 'Pis cavab';
+
+  @override
+  String get scrollToBottom => 'Aşağıya sürüşdürün';
+
+  @override
+  String get somethingWentWrong => 'Nəsə xəta baş verdi';
+
+  @override
+  String get editMessage => 'Mesajı redaktə edin';
+
+  @override
+  String get searchConversations => 'Söhbətləri axtarın';
+
+  @override
+  String get dateGroupToday => 'Bu gün';
+
+  @override
+  String get dateGroupYesterday => 'Dünən';
+
+  @override
+  String get dateGroupPrevious7Days => 'Əvvəlki 7 gün';
+
+  @override
+  String get dateGroupOlder => 'Yaşlı';
+
+  @override
   String get aiAssistantTitle => 'AI köməkçisi';
 
   @override
@@ -733,6 +787,33 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Aylıq AI limitinə çatıldı. Limitsiz → üçün Pro-ya yüksəldin';
+
+  @override
+  String get undo => 'Geri al';
+
+  @override
+  String get newChatStarted => 'Yeni söhbət başladı';
+
+  @override
+  String get quickAddToList => 'Siyahıya əlavə edin';
+
+  @override
+  String get aiCapabilitiesTitle => 'Mən nə edə bilərəm?';
+
+  @override
+  String get aiCapabilitiesLists => 'Alış-veriş siyahıları';
+
+  @override
+  String get aiCapabilitiesBudget => 'Büdcə və Qiymətlər';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Reseptlər və Menyular';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Təşkilat';
+
+  @override
+  String get marketModeDescription => 'Alış-veriş edərkən əşyaları yoxlayın';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -943,6 +1024,19 @@ class AppLocalizationsAz extends AppLocalizations {
   String get recipeAddToList => 'Alış-veriş siyahısına əlavə edin';
 
   @override
+  String get recipeAddError =>
+      'Siyahınıza əlavə etmək mümkün olmadı. Yenidən cəhd edin.';
+
+  @override
+  String get recipeTapToCheck => 'Bişirərkən onu yoxlamaq üçün tərkibə toxunun';
+
+  @override
+  String get recipeIngredientInPantry => 'Kilerdə';
+
+  @override
+  String get recipeIngredientLowPantry => 'Kilerdə aşağı';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count inqrediyentlər $listName-a əlavə edildi';
   }
@@ -1055,12 +1149,12 @@ class AppLocalizationsAz extends AppLocalizations {
   String get paywallSelectPlan => 'Planınızı seçin:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return '$percent% QƏNAƏT';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Yalnız $price/ay';
   }
 
@@ -1096,6 +1190,35 @@ class AppLocalizationsAz extends AppLocalizations {
   String get paywallRestore => 'Bərpa et';
 
   @override
+  String get paywallTimelineToday => 'Bu gün';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Dərhal tam girişin kilidini açın';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Gün $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Məhkəmə bitməzdən əvvəl sizə xatırladırıq';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Abunəliyiniz başlayır — istənilən vaxt ləğv edin';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI alış-veriş köməkçisi';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Bütün siyahını danışın və ya yapışdırın — AI onu saniyələr ərzində çeşidləyir, kateqoriyalara ayırır və büdcələşdirir';
+
+  @override
+  String get paywallBasedOnAnswers => 'Cavablarınızdan fərdiləşdirilmişdir';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI həmişə sənin yanındadır';
 
   @override
@@ -1128,9 +1251,6 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Maddə silindi';
-
-  @override
-  String get undo => 'Geri al';
 
   @override
   String get emptyListTitle => 'Siyahınız boşdur';
@@ -1247,6 +1367,9 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Maddə silindi';
+
+  @override
+  String get pantryItemAdded => 'Element əlavə edildi';
 
   @override
   String deficitItems(int deficit) {
@@ -1649,6 +1772,33 @@ class AppLocalizationsAz extends AppLocalizations {
   String get prepTimeMinutes => 'Hazırlanma vaxtı (dəqiqə)';
 
   @override
+  String get recipeYieldServings => 'Verilən porsiya';
+
+  @override
+  String get recipeManualTotalCost => 'Əl ilə ümumi xərc';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Tərkib qiymətlərindən təxmin etmək üçün boş buraxın.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Təxmini ümumi xərc';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / xidmət edir';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return '$count xidmət edir';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Qiyməti olan inqrediyentlərə əsaslanan qismən təxmin.';
+
+  @override
   String get instructionsHint => 'Hər sətirə bir addım yazın...';
 
   @override
@@ -1778,6 +1928,10 @@ class AppLocalizationsAz extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Qismən qiymət məlumatları ilə reseptlər əsasında təxmin edin.';
+
+  @override
   String get mealPlannerGenerateList => 'Alış-veriş siyahısı yarat';
 
   @override
@@ -1873,6 +2027,9 @@ class AppLocalizationsAz extends AppLocalizations {
   String get catalogRareSection => 'ölkənizdə daha az yayılmışdır';
 
   @override
+  String get catalogRareBadge => 'Nadir';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1890,7 +2047,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get catalogBrowse => 'Kataloqu nəzərdən keçirin';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kateqoriyalar';
 
   @override
   String get offlineBanner => 'Siz oflaynsınız';
@@ -1921,6 +2078,41 @@ class AppLocalizationsAz extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Yemək növlərini idarə edin';
+
+  @override
+  String get mealPlannerAddType => 'Yemək növünü əlavə edin';
+
+  @override
+  String get mealPlannerEditType => 'Yemək növünü redaktə edin';
+
+  @override
+  String get mealPlannerTypeName => 'ad';
+
+  @override
+  String get mealPlannerTypeColor => 'Rəng';
+
+  @override
+  String get mealPlannerTypeIcon => 'İkon';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Bu yemək növünü silmək istədiyinizə əminsiniz? Bu tipli planlaşdırılmış yeməklər qalacaq.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Ad boş ola bilməz';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Bu yemək növünü silmək mümkün deyil.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Fərdi növ';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Defolt növ';
 
   @override
   String get expirationDate => 'İstifadə müddəti';
@@ -1981,6 +2173,9 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Siyahıları yükləmə xətası';
+
+  @override
+  String get errorLoadingItems => 'Elementləri yükləmə xətası';
 
   @override
   String get noListsFound => 'Heç bir siyahı tapılmadı';
@@ -2756,4 +2951,211 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get obLoginError =>
       'Giriş uğursuz oldu. Yenidən cəhd edin və ya hələlik keçin.';
+
+  @override
+  String get searchMessages => 'Mesajları axtarın...';
+
+  @override
+  String get deletedList => 'Silinmiş siyahı';
+
+  @override
+  String get openConversation => 'Açıq söhbət';
+
+  @override
+  String get userRole => 'sən';
+
+  @override
+  String get assistantRole => 'köməkçi';
+
+  @override
+  String get agentActionsRunning => 'Əməliyyatlar icra olunur...';
+
+  @override
+  String get agentActionsFailed => 'Əməliyyatları yerinə yetirmək alınmadı';
+
+  @override
+  String get agentActionsPremium => 'Fəaliyyətlər Premium tələb edir';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Dəyişiklikləri ləğv edin';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Element siyahıya əlavə edildi.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Əvvəlki vəziyyət: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Avtomatik əməliyyatları açmaq üçün Premiuma abunə olun.';
+
+  @override
+  String get viewPlans => 'Planlara baxın';
+
+  @override
+  String get artifactSynced => 'Sinxronlaşdırıldı';
+
+  @override
+  String get artifactBudgetLabel => 'Büdcə:';
+
+  @override
+  String get totalEstimatedLabel => 'Təxmini cəmi';
+
+  @override
+  String get quickActionPantry => 'Anbara baxın';
+
+  @override
+  String get quickActionAi => 'Kipi ilə söhbət edin';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI xidməti xəta qaytardı ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Sorğu çox uzun çəkdi. Yenidən cəhd edin.';
+
+  @override
+  String get aiConnectionError =>
+      'AI xidmətinə qoşulmaq mümkün olmadı. Bağlantınızı yoxlayın.';
+
+  @override
+  String get aiEmptyResponseError => 'Süni intellekt xidməti boş cavab verdi.';
+
+  @override
+  String get aiInvalidResponseError => 'AI xidməti etibarsız cavab qaytardı.';
+
+  @override
+  String get categoryFruits => 'Meyvələr';
+
+  @override
+  String get categoryCleaning => 'Təmizləmə';
+
+  @override
+  String get categoryBeverages => 'İçkilər';
+
+  @override
+  String get categoryBakery => 'Çörəkxana';
+
+  @override
+  String get categoryMeat => 'Ət';
+
+  @override
+  String get categoryDairy => 'Süd məhsulları';
+
+  @override
+  String get categoryVegetables => 'Tərəvəz';
+
+  @override
+  String get categoryGrains => 'Taxıl və dənli bitkilər';
+
+  @override
+  String get categoryHygiene => 'Şəxsi qulluq';
+
+  @override
+  String get categoryFrozen => 'Dondurulmuş qidalar';
+
+  @override
+  String get categoryCanned => 'Konservləşdirilmiş məhsullar';
+
+  @override
+  String get categorySeasonings => 'Ədviyyatlar';
+
+  @override
+  String get categorySweets => 'Şirniyyatlar və desertlər';
+
+  @override
+  String get categoryAlcohol => 'Spirtli içkilər';
+
+  @override
+  String get categoryFish => 'Balıq';
+
+  @override
+  String get categoryColdCuts => 'Soyuq kəsiklər';
+
+  @override
+  String get categoryUtilities => 'Məişət ləvazimatları';
+
+  @override
+  String get categoryPet => 'Heyvan ləvazimatları';
+
+  @override
+  String get categoryBaby => 'Körpə';
+
+  @override
+  String get categoryOthers => 'Digər';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Salam $name, mən Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Salam, mən Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Siyahılar tərtib edirəm, reseptlər təklif edirəm və harada saxlayacağımı tapıram. Haradan başlayaq?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Bir barbekü planlaşdırın';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Təəssüf ki, mən barbekü təşkil edirəm — alış-veriş siyahısını yaratmağa kömək edin';
+
+  @override
+  String get aiRateLimitError =>
+      'Qısa müddətdə çoxlu mesaj. Bir neçə saniyə gözləyin və yenidən cəhd edin.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Bu söhbəti yükləmək mümkün olmadı';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Bizim tərəfimizdən nəsə səhv oldu. Yenidən cəhd etmək üçün yenidən cəhd edin.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Siz oflaynsınız';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'İnternet bağlantınızı yoxlayın və yenidən cəhd edin.';
+
+  @override
+  String get aiGeneratingResponse => 'Cavab yaradılır...';
 }

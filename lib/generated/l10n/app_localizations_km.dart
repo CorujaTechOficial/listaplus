@@ -236,6 +236,11 @@ class AppLocalizationsKm extends AppLocalizations {
   String get noItemsToBuy => 'គ្មានធាតុដែលត្រូវការទិញទេ';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'បាត់ ___$count$unit';
+  }
+
+  @override
   String get newPantryList => 'ទិញពីអាហារដ្ឋាន';
 
   @override
@@ -302,6 +307,12 @@ class AppLocalizationsKm extends AppLocalizations {
   String get settingsAppBar => 'ការកំណត់';
 
   @override
+  String get preferencesSection => 'ចំណូលចិត្ត';
+
+  @override
+  String get aiSection => 'ជំនួយការ AI';
+
+  @override
   String get language => 'ភាសា';
 
   @override
@@ -330,6 +341,12 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get appearance => 'រូបរាង';
+
+  @override
+  String get themeMode => 'របៀបស្បែក';
+
+  @override
+  String get chooseThemeMode => 'ជ្រើសរើសរបៀបប្រធានបទ';
 
   @override
   String get light => 'ភ្លឺ';
@@ -579,6 +596,12 @@ class AppLocalizationsKm extends AppLocalizations {
   String get trackStockInactive => 'មិនបង្កើតការណែនាំទិញទំនិញទេ';
 
   @override
+  String get keepAdding => 'បន្តបន្ថែម';
+
+  @override
+  String get keepAddingSubtitle => 'ទុកសន្លឹកបើកដើម្បីបន្ថែមធាតុជាច្រើន។';
+
+  @override
   String get createListDialog => 'បង្កើតបញ្ជី';
 
   @override
@@ -683,6 +706,36 @@ class AppLocalizationsKm extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'ការឆ្លើយតបល្អ។';
+
+  @override
+  String get badResponse => 'ការឆ្លើយតបមិនល្អ';
+
+  @override
+  String get scrollToBottom => 'រំកិលទៅបាត';
+
+  @override
+  String get somethingWentWrong => 'មានអ្វីមួយខុសប្រក្រតី';
+
+  @override
+  String get editMessage => 'កែសម្រួលសារ';
+
+  @override
+  String get searchConversations => 'ស្វែងរកការសន្ទនា';
+
+  @override
+  String get dateGroupToday => 'ថ្ងៃនេះ';
+
+  @override
+  String get dateGroupYesterday => 'ម្សិលមិញ';
+
+  @override
+  String get dateGroupPrevious7Days => '7 ថ្ងៃមុន។';
+
+  @override
+  String get dateGroupOlder => 'ចាស់ជាង';
+
+  @override
   String get aiAssistantTitle => 'ជំនួយការ AI';
 
   @override
@@ -722,6 +775,33 @@ class AppLocalizationsKm extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'ឈានដល់ដែនកំណត់ AI ប្រចាំខែ។ ដំឡើងកំណែទៅ Pro ដោយគ្មានដែនកំណត់ →';
+
+  @override
+  String get undo => 'មិនធ្វើវិញ';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'បញ្ជី Kipi';
@@ -930,6 +1010,19 @@ class AppLocalizationsKm extends AppLocalizations {
   String get recipeAddToList => 'បញ្ចូលទៅក្នុងបញ្ជីទិញទំនិញ';
 
   @override
+  String get recipeAddError =>
+      'មិនអាចបន្ថែមទៅក្នុងបញ្ជីរបស់អ្នកបានទេ។ សូមព្យាយាមម្តងទៀត។';
+
+  @override
+  String get recipeTapToCheck => 'ប៉ះគ្រឿងផ្សំដើម្បីពិនិត្យមើលវានៅពេលអ្នកចំអិន';
+
+  @override
+  String get recipeIngredientInPantry => 'នៅក្នុង pantry';
+
+  @override
+  String get recipeIngredientLowPantry => 'ទាបនៅក្នុង pantry';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count គ្រឿងផ្សំបន្ថែមទៅ $listName';
   }
@@ -1041,12 +1134,12 @@ class AppLocalizationsKm extends AppLocalizations {
   String get paywallSelectPlan => 'ជ្រើសរើសគម្រោងរបស់អ្នក៖';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'រក្សាទុក $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'ត្រឹមតែ $price/ខែ';
   }
 
@@ -1081,6 +1174,35 @@ class AppLocalizationsKm extends AppLocalizations {
   String get paywallRestore => 'ស្តារ';
 
   @override
+  String get paywallTimelineToday => 'ថ្ងៃនេះ';
+
+  @override
+  String get paywallTimelineTodayDesc => 'ដោះសោការចូលប្រើពេញលេញភ្លាមៗ';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'ថ្ងៃ $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'យើងរំលឹកអ្នក មុនពេលការសាកល្បងបញ្ចប់';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'ការជាវរបស់អ្នកចាប់ផ្តើម — បោះបង់នៅពេលណាក៏បាន';
+
+  @override
+  String get paywallHeroFeatureTitle => 'ជំនួយការការដើរទិញឥវ៉ាន់ AI';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'និយាយ ឬបិទភ្ជាប់បញ្ជីទាំងមូល — AI តម្រៀប ចាត់ថ្នាក់ និងថវិកាវាក្នុងរយៈពេលប៉ុន្មានវិនាទី';
+
+  @override
+  String get paywallBasedOnAnswers => 'កំណត់ផ្ទាល់ខ្លួនពីចម្លើយរបស់អ្នក។';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI តែងតែនៅក្បែរអ្នក។';
 
   @override
@@ -1112,9 +1234,6 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get itemRemoved => 'ធាតុត្រូវបានដកចេញ';
-
-  @override
-  String get undo => 'មិនធ្វើវិញ';
 
   @override
   String get emptyListTitle => 'បញ្ជីរបស់អ្នកទទេ';
@@ -1231,6 +1350,9 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'ធាតុត្រូវបានដកចេញ';
+
+  @override
+  String get pantryItemAdded => 'ធាតុត្រូវបានបន្ថែម';
 
   @override
   String deficitItems(int deficit) {
@@ -1626,6 +1748,33 @@ class AppLocalizationsKm extends AppLocalizations {
   String get prepTimeMinutes => 'រយៈពេលរៀបចំ (នាទី)';
 
   @override
+  String get recipeYieldServings => 'ការបម្រើទិន្នផល';
+
+  @override
+  String get recipeManualTotalCost => 'ការចំណាយសរុបដោយដៃ';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'ទុកទទេដើម្បីប៉ាន់ប្រមាណពីតម្លៃគ្រឿងផ្សំ។';
+
+  @override
+  String get recipeEstimatedTotalCost => 'ការចំណាយសរុបប៉ាន់ស្មាន';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / បម្រើ';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'បម្រើ $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'ការប៉ាន់ប្រមាណដោយផ្នែកដោយផ្អែកលើគ្រឿងផ្សំជាមួយនឹងតម្លៃ។';
+
+  @override
   String get instructionsHint => 'វាយបញ្ចូលមួយជំហានក្នុងមួយជួរ...';
 
   @override
@@ -1753,6 +1902,10 @@ class AppLocalizationsKm extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'ការប៉ាន់ស្មានដោយផ្អែកលើរូបមន្តដែលមានទិន្នន័យតម្លៃមួយផ្នែក។';
+
+  @override
   String get mealPlannerGenerateList => 'បង្កើតបញ្ជីទិញទំនិញ';
 
   @override
@@ -1846,6 +1999,9 @@ class AppLocalizationsKm extends AppLocalizations {
   String get catalogRareSection => 'មិនសូវជារឿងធម្មតាទេនៅក្នុងប្រទេសរបស់អ្នក។';
 
   @override
+  String get catalogRareBadge => 'កម្រណាស់។';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1863,7 +2019,7 @@ class AppLocalizationsKm extends AppLocalizations {
   String get catalogBrowse => 'រកមើលកាតាឡុក';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'ប្រភេទ';
 
   @override
   String get offlineBanner => 'អ្នកគ្មានអ៊ីនធឺណិតទេ។';
@@ -1894,6 +2050,40 @@ class AppLocalizationsKm extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'គ្រប់គ្រងប្រភេទអាហារ';
+
+  @override
+  String get mealPlannerAddType => 'បន្ថែមប្រភេទអាហារ';
+
+  @override
+  String get mealPlannerEditType => 'កែសម្រួលប្រភេទអាហារ';
+
+  @override
+  String get mealPlannerTypeName => 'ឈ្មោះ';
+
+  @override
+  String get mealPlannerTypeColor => 'ពណ៌';
+
+  @override
+  String get mealPlannerTypeIcon => 'រូបតំណាង';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'តើអ្នកប្រាកដថាចង់លុបប្រភេទអាហារនេះទេ? អាហារដែលបានគ្រោងទុកជាមួយប្រភេទនេះនឹងនៅតែមាន។';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'ឈ្មោះមិនអាចទទេបានទេ។';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'មិនអាចលុបប្រភេទអាហារនេះបានទេ។';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'ប្រភេទផ្ទាល់ខ្លួន';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'ប្រភេទលំនាំដើម';
 
   @override
   String get expirationDate => 'កាលបរិច្ឆេទផុតកំណត់';
@@ -1954,6 +2144,9 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'កំហុសក្នុងការផ្ទុកបញ្ជី';
+
+  @override
+  String get errorLoadingItems => 'កំហុសក្នុងការផ្ទុកធាតុ';
 
   @override
   String get noListsFound => 'រកមិនឃើញបញ្ជីទេ។';
@@ -2726,6 +2919,215 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get obLoginError => 'ការចូលបានបរាជ័យ។ ព្យាយាមម្តងទៀត ឬរំលងឥឡូវនេះ។';
+
+  @override
+  String get searchMessages => 'ស្វែងរកសារ...';
+
+  @override
+  String get deletedList => 'បញ្ជីដែលបានលុប';
+
+  @override
+  String get openConversation => 'បើកការសន្ទនា';
+
+  @override
+  String get userRole => 'អ្នក';
+
+  @override
+  String get assistantRole => 'ជំនួយការ';
+
+  @override
+  String get agentActionsRunning => 'កំពុងដំណើរការ...';
+
+  @override
+  String get agentActionsFailed => 'បរាជ័យក្នុងការដំណើរការសកម្មភាព';
+
+  @override
+  String get agentActionsPremium => 'សកម្មភាពទាមទារ Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'មិនធ្វើការផ្លាស់ប្តូរ';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (បុព្វលាភ)';
+  }
+
+  @override
+  String get itemAddedToList => 'ធាតុត្រូវបានបន្ថែមទៅក្នុងបញ្ជី។';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'ស្ថានភាពពីមុន៖ $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'ជាវ Premium ដើម្បីដោះសោសកម្មភាពដោយស្វ័យប្រវត្តិ។';
+
+  @override
+  String get viewPlans => 'មើលផែនការ';
+
+  @override
+  String get artifactSynced => 'បានធ្វើសមកាលកម្ម';
+
+  @override
+  String get artifactBudgetLabel => 'ថវិកា៖';
+
+  @override
+  String get totalEstimatedLabel => 'សរុបប៉ាន់ស្មាន';
+
+  @override
+  String get quickActionPantry => 'មើលកន្លែងដាក់ឥវ៉ាន់';
+
+  @override
+  String get quickActionAi => 'ជជែកជាមួយគីភី';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'សេវា AI បានត្រឡប់កំហុសមួយ ($statusCode) ។';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'សំណើ​នេះ​បាន​ចំណាយ​ពេល​យូរ​ពេក។ សូមព្យាយាមម្តងទៀត។';
+
+  @override
+  String get aiConnectionError =>
+      'មិនអាចភ្ជាប់ទៅសេវាកម្ម AI បានទេ។ ពិនិត្យការតភ្ជាប់របស់អ្នក។';
+
+  @override
+  String get aiEmptyResponseError => 'សេវា AI បានត្រឡប់ការឆ្លើយតបទទេ។';
+
+  @override
+  String get aiInvalidResponseError =>
+      'សេវា AI បានត្រឡប់ការឆ្លើយតបមិនត្រឹមត្រូវ។';
+
+  @override
+  String get categoryFruits => 'ផ្លែឈើ';
+
+  @override
+  String get categoryCleaning => 'ការសម្អាត';
+
+  @override
+  String get categoryBeverages => 'ភេសជ្ជៈ';
+
+  @override
+  String get categoryBakery => 'ហាងនំប៉័ង';
+
+  @override
+  String get categoryMeat => 'សាច់';
+
+  @override
+  String get categoryDairy => 'ទឹកដោះគោ';
+
+  @override
+  String get categoryVegetables => 'បន្លែ';
+
+  @override
+  String get categoryGrains => 'ធញ្ញជាតិនិងធញ្ញជាតិ';
+
+  @override
+  String get categoryHygiene => 'ការថែទាំផ្ទាល់ខ្លួន';
+
+  @override
+  String get categoryFrozen => 'អាហារកក';
+
+  @override
+  String get categoryCanned => 'ទំនិញកំប៉ុង';
+
+  @override
+  String get categorySeasonings => 'គ្រឿងទេស';
+
+  @override
+  String get categorySweets => 'បង្អែមនិងបង្អែម';
+
+  @override
+  String get categoryAlcohol => 'ភេសជ្ជៈមានជាតិអាល់កុល។';
+
+  @override
+  String get categoryFish => 'ត្រី';
+
+  @override
+  String get categoryColdCuts => 'កាត់ត្រជាក់';
+
+  @override
+  String get categoryUtilities => 'សម្ភារៈប្រើប្រាស់ក្នុងផ្ទះ';
+
+  @override
+  String get categoryPet => 'ការផ្គត់ផ្គង់សត្វចិញ្ចឹម';
+
+  @override
+  String get categoryBaby => 'ទារក';
+
+  @override
+  String get categoryOthers => 'ផ្សេងៗ';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'សួស្តី $name ខ្ញុំគឺ Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'សួស្តី ខ្ញុំឈ្មោះ Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'ខ្ញុំបង្កើតបញ្ជី ណែនាំរូបមន្ត និងស្វែងរកកន្លែងដែលត្រូវរក្សាទុក។ តើយើងចាប់ផ្តើមនៅឯណា?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'រៀបចំគម្រោងសាច់អាំង';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi ខ្ញុំកំពុងរៀបចំសាច់អាំង — ជួយខ្ញុំបង្កើតបញ្ជីទិញទំនិញ';
+
+  @override
+  String get aiRateLimitError =>
+      'សារច្រើនពេកក្នុងរយៈពេលខ្លី។ រង់ចាំពីរបីវិនាទី ហើយព្យាយាមម្តងទៀត។';
+
+  @override
+  String get chatHistoryErrorTitle => 'មិនអាចផ្ទុកការសន្ទនានេះបានទេ។';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'មានអ្វីមួយខុសប្រក្រតីនៅចុងបញ្ចប់របស់យើង។ ចុចព្យាយាមម្តងទៀត ដើម្បីព្យាយាមម្តងទៀត។';
+
+  @override
+  String get chatHistoryOfflineTitle => 'អ្នកគ្មានអ៊ីនធឺណិតទេ។';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'ពិនិត្យការតភ្ជាប់អ៊ីនធឺណិតរបស់អ្នក ហើយព្យាយាមម្តងទៀត។';
+
+  @override
+  String get aiGeneratingResponse => 'កំពុងបង្កើតការឆ្លើយតប...';
 }
 
 /// The translations for Khmer Central Khmer, as used in Cambodia (`km_KH`).
@@ -2967,6 +3369,11 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get noItemsToBuy => 'គ្មានធាតុចាំបាច់ត្រូវទិញទេ';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'បាត់ ___$count$unit';
+  }
+
+  @override
   String get newPantryList => 'ការដើរទិញឥវ៉ាន់បន្ថែម';
 
   @override
@@ -3033,6 +3440,12 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get settingsAppBar => 'ការកំណត់';
 
   @override
+  String get preferencesSection => 'ចំណូលចិត្ត';
+
+  @override
+  String get aiSection => 'ជំនួយការ AI';
+
+  @override
   String get language => 'ភាសា';
 
   @override
@@ -3061,6 +3474,12 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get appearance => 'រូបរាង';
+
+  @override
+  String get themeMode => 'របៀបស្បែក';
+
+  @override
+  String get chooseThemeMode => 'ជ្រើសរើសរបៀបប្រធានបទ';
 
   @override
   String get light => 'ភ្លឺ';
@@ -3309,6 +3728,12 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get trackStockInactive => 'មិនបង្កើតការណែនាំការដើរទិញឥវ៉ាន់';
 
   @override
+  String get keepAdding => 'បន្តបន្ថែម';
+
+  @override
+  String get keepAddingSubtitle => 'ទុកសន្លឹកបើកដើម្បីបន្ថែមធាតុជាច្រើន។';
+
+  @override
   String get createListDialog => 'បង្កើតបញ្ជី';
 
   @override
@@ -3413,6 +3838,36 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   }
 
   @override
+  String get goodResponse => 'ការឆ្លើយតបល្អ។';
+
+  @override
+  String get badResponse => 'ការឆ្លើយតបមិនល្អ';
+
+  @override
+  String get scrollToBottom => 'រំកិលទៅបាត';
+
+  @override
+  String get somethingWentWrong => 'មានអ្វីមួយខុសប្រក្រតី';
+
+  @override
+  String get editMessage => 'កែសម្រួលសារ';
+
+  @override
+  String get searchConversations => 'ស្វែងរកការសន្ទនា';
+
+  @override
+  String get dateGroupToday => 'ថ្ងៃនេះ';
+
+  @override
+  String get dateGroupYesterday => 'ម្សិលមិញ';
+
+  @override
+  String get dateGroupPrevious7Days => '7 ថ្ងៃមុន។';
+
+  @override
+  String get dateGroupOlder => 'ចាស់ជាង';
+
+  @override
   String get aiAssistantTitle => 'ជំនួយការ AI';
 
   @override
@@ -3453,6 +3908,9 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   @override
   String get aiUsageExhausted =>
       'ឈានដល់ដែនកំណត់ AI ប្រចាំខែ។ ដំឡើងកំណែទៅ Pro ដោយគ្មានដែនកំណត់ →';
+
+  @override
+  String get undo => 'មិនធ្វើវិញ';
 
   @override
   String get kipiListTitle => 'បញ្ជី Kipi';
@@ -3661,6 +4119,19 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get recipeAddToList => 'បញ្ចូលទៅក្នុងបញ្ជីទិញទំនិញ';
 
   @override
+  String get recipeAddError =>
+      'មិនអាចបន្ថែមទៅក្នុងបញ្ជីរបស់អ្នកបានទេ។ សូមព្យាយាមម្តងទៀត។';
+
+  @override
+  String get recipeTapToCheck => 'ប៉ះគ្រឿងផ្សំដើម្បីពិនិត្យមើលវានៅពេលអ្នកចំអិន';
+
+  @override
+  String get recipeIngredientInPantry => 'នៅក្នុង pantry';
+
+  @override
+  String get recipeIngredientLowPantry => 'ទាបនៅក្នុង pantry';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count គ្រឿងផ្សំបន្ថែមទៅ $listName';
   }
@@ -3772,12 +4243,12 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get paywallSelectPlan => 'ជ្រើសរើសគម្រោងរបស់អ្នក៖';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'រក្សាទុក $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'ត្រឹមតែ $price/ខែ';
   }
 
@@ -3812,6 +4283,35 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get paywallRestore => 'ស្តារ';
 
   @override
+  String get paywallTimelineToday => 'ថ្ងៃនេះ';
+
+  @override
+  String get paywallTimelineTodayDesc => 'ដោះសោការចូលប្រើពេញលេញភ្លាមៗ';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'ថ្ងៃ $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'យើងរំលឹកអ្នក មុនពេលការសាកល្បងបញ្ចប់';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'ការជាវរបស់អ្នកចាប់ផ្តើម — បោះបង់នៅពេលណាក៏បាន';
+
+  @override
+  String get paywallHeroFeatureTitle => 'ជំនួយការការដើរទិញឥវ៉ាន់ AI';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'និយាយ ឬបិទភ្ជាប់បញ្ជីទាំងមូល — AI តម្រៀប ចាត់ថ្នាក់ និងថវិកាវាក្នុងរយៈពេលប៉ុន្មានវិនាទី';
+
+  @override
+  String get paywallBasedOnAnswers => 'កំណត់ផ្ទាល់ខ្លួនពីចម្លើយរបស់អ្នក។';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI តែងតែនៅក្បែរអ្នក។';
 
   @override
@@ -3843,9 +4343,6 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get itemRemoved => 'ធាតុត្រូវបានដកចេញ';
-
-  @override
-  String get undo => 'មិនធ្វើវិញ';
 
   @override
   String get emptyListTitle => 'បញ្ជីរបស់អ្នកទទេ';
@@ -3962,6 +4459,9 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get pantryItemRemoved => 'ធាតុត្រូវបានដកចេញ';
+
+  @override
+  String get pantryItemAdded => 'ធាតុត្រូវបានបន្ថែម';
 
   @override
   String deficitItems(int deficit) {
@@ -4362,6 +4862,33 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get prepTimeMinutes => 'រយៈពេលរៀបចំ (នាទី)';
 
   @override
+  String get recipeYieldServings => 'ការបម្រើទិន្នផល';
+
+  @override
+  String get recipeManualTotalCost => 'ការចំណាយសរុបដោយដៃ';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'ទុកទទេដើម្បីប៉ាន់ប្រមាណពីតម្លៃគ្រឿងផ្សំ។';
+
+  @override
+  String get recipeEstimatedTotalCost => 'ការចំណាយសរុបប៉ាន់ស្មាន';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / បម្រើ';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'បម្រើ $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'ការប៉ាន់ប្រមាណដោយផ្នែកដោយផ្អែកលើគ្រឿងផ្សំជាមួយនឹងតម្លៃ។';
+
+  @override
   String get instructionsHint => 'វាយបញ្ចូលមួយជំហានក្នុងមួយជួរ...';
 
   @override
@@ -4489,6 +5016,10 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'ការប៉ាន់ស្មានដោយផ្អែកលើរូបមន្តដែលមានទិន្នន័យតម្លៃមួយផ្នែក។';
+
+  @override
   String get mealPlannerGenerateList => 'បង្កើតបញ្ជីទិញទំនិញ';
 
   @override
@@ -4582,6 +5113,9 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
   String get catalogRareSection => 'មិនសូវជារឿងធម្មតាទេនៅក្នុងប្រទេសរបស់អ្នក។';
 
   @override
+  String get catalogRareBadge => 'កម្រណាស់។';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4597,6 +5131,9 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get catalogBrowse => 'រកមើលកាតាឡុក';
+
+  @override
+  String get catalogCategories => 'ប្រភេទ';
 
   @override
   String get offlineBanner => 'អ្នកគ្មានអ៊ីនធឺណិតទេ។';
@@ -4627,6 +5164,40 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'គ្រប់គ្រងប្រភេទអាហារ';
+
+  @override
+  String get mealPlannerAddType => 'បន្ថែមប្រភេទអាហារ';
+
+  @override
+  String get mealPlannerEditType => 'កែសម្រួលប្រភេទអាហារ';
+
+  @override
+  String get mealPlannerTypeName => 'ឈ្មោះ';
+
+  @override
+  String get mealPlannerTypeColor => 'ពណ៌';
+
+  @override
+  String get mealPlannerTypeIcon => 'រូបតំណាង';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'តើអ្នកប្រាកដថាចង់លុបប្រភេទអាហារនេះទេ? អាហារដែលបានគ្រោងទុកជាមួយប្រភេទនេះនឹងនៅតែមាន។';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'ឈ្មោះមិនអាចទទេបានទេ។';
+
+  @override
+  String get mealPlannerTypeDeleteError => 'មិនអាចលុបប្រភេទអាហារនេះបានទេ។';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'ប្រភេទផ្ទាល់ខ្លួន';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'ប្រភេទលំនាំដើម';
 
   @override
   String get expirationDate => 'កាលបរិច្ឆេទផុតកំណត់';
@@ -4687,6 +5258,9 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get errorLoadingLists => 'កំហុសក្នុងការផ្ទុកបញ្ជី';
+
+  @override
+  String get errorLoadingItems => 'កំហុសក្នុងការផ្ទុកធាតុ';
 
   @override
   String get noListsFound => 'រកមិនឃើញបញ្ជីទេ។';
@@ -5459,4 +6033,213 @@ class AppLocalizationsKmKh extends AppLocalizationsKm {
 
   @override
   String get obLoginError => 'ការចូលបានបរាជ័យ។ ព្យាយាមម្តងទៀត ឬរំលងឥឡូវនេះ។';
+
+  @override
+  String get searchMessages => 'ស្វែងរកសារ...';
+
+  @override
+  String get deletedList => 'បញ្ជីដែលបានលុប';
+
+  @override
+  String get openConversation => 'បើកការសន្ទនា';
+
+  @override
+  String get userRole => 'អ្នក';
+
+  @override
+  String get assistantRole => 'ជំនួយការ';
+
+  @override
+  String get agentActionsRunning => 'កំពុងដំណើរការ...';
+
+  @override
+  String get agentActionsFailed => 'បរាជ័យក្នុងការដំណើរការសកម្មភាព';
+
+  @override
+  String get agentActionsPremium => 'សកម្មភាពទាមទារ Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'មិនធ្វើការផ្លាស់ប្តូរ';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (បុព្វលាភ)';
+  }
+
+  @override
+  String get itemAddedToList => 'ធាតុត្រូវបានបន្ថែមទៅក្នុងបញ្ជី។';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'ស្ថានភាពពីមុន៖ $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'ជាវ Premium ដើម្បីដោះសោសកម្មភាពដោយស្វ័យប្រវត្តិ។';
+
+  @override
+  String get viewPlans => 'មើលផែនការ';
+
+  @override
+  String get artifactSynced => 'បានធ្វើសមកាលកម្ម';
+
+  @override
+  String get artifactBudgetLabel => 'ថវិកា៖';
+
+  @override
+  String get totalEstimatedLabel => 'សរុបប៉ាន់ស្មាន';
+
+  @override
+  String get quickActionPantry => 'មើលកន្លែងដាក់ឥវ៉ាន់';
+
+  @override
+  String get quickActionAi => 'ជជែកជាមួយគីភី';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'សេវា AI បានត្រឡប់កំហុសមួយ ($statusCode) ។';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'សំណើ​នេះ​បាន​ចំណាយ​ពេល​យូរ​ពេក។ សូមព្យាយាមម្តងទៀត។';
+
+  @override
+  String get aiConnectionError =>
+      'មិនអាចភ្ជាប់ទៅសេវាកម្ម AI បានទេ។ ពិនិត្យការតភ្ជាប់របស់អ្នក។';
+
+  @override
+  String get aiEmptyResponseError => 'សេវា AI បានត្រឡប់ការឆ្លើយតបទទេ។';
+
+  @override
+  String get aiInvalidResponseError =>
+      'សេវា AI បានត្រឡប់ការឆ្លើយតបមិនត្រឹមត្រូវ។';
+
+  @override
+  String get categoryFruits => 'ផ្លែឈើ';
+
+  @override
+  String get categoryCleaning => 'ការសម្អាត';
+
+  @override
+  String get categoryBeverages => 'ភេសជ្ជៈ';
+
+  @override
+  String get categoryBakery => 'ហាងនំប៉័ង';
+
+  @override
+  String get categoryMeat => 'សាច់';
+
+  @override
+  String get categoryDairy => 'ទឹកដោះគោ';
+
+  @override
+  String get categoryVegetables => 'បន្លែ';
+
+  @override
+  String get categoryGrains => 'ធញ្ញជាតិនិងធញ្ញជាតិ';
+
+  @override
+  String get categoryHygiene => 'ការថែទាំផ្ទាល់ខ្លួន';
+
+  @override
+  String get categoryFrozen => 'អាហារកក';
+
+  @override
+  String get categoryCanned => 'ទំនិញកំប៉ុង';
+
+  @override
+  String get categorySeasonings => 'គ្រឿងទេស';
+
+  @override
+  String get categorySweets => 'បង្អែមនិងបង្អែម';
+
+  @override
+  String get categoryAlcohol => 'ភេសជ្ជៈមានជាតិអាល់កុល។';
+
+  @override
+  String get categoryFish => 'ត្រី';
+
+  @override
+  String get categoryColdCuts => 'កាត់ត្រជាក់';
+
+  @override
+  String get categoryUtilities => 'សម្ភារៈប្រើប្រាស់ក្នុងផ្ទះ';
+
+  @override
+  String get categoryPet => 'ការផ្គត់ផ្គង់សត្វចិញ្ចឹម';
+
+  @override
+  String get categoryBaby => 'ទារក';
+
+  @override
+  String get categoryOthers => 'ផ្សេងៗ';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'សួស្តី $name ខ្ញុំគឺ Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'សួស្តី ខ្ញុំឈ្មោះ Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'ខ្ញុំបង្កើតបញ្ជី ណែនាំរូបមន្ត និងស្វែងរកកន្លែងដែលត្រូវរក្សាទុក។ តើយើងចាប់ផ្តើមនៅឯណា?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'រៀបចំគម្រោងសាច់អាំង';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi ខ្ញុំកំពុងរៀបចំសាច់អាំង — ជួយខ្ញុំបង្កើតបញ្ជីទិញទំនិញ';
+
+  @override
+  String get aiRateLimitError =>
+      'សារច្រើនពេកក្នុងរយៈពេលខ្លី។ រង់ចាំពីរបីវិនាទី ហើយព្យាយាមម្តងទៀត។';
+
+  @override
+  String get chatHistoryErrorTitle => 'មិនអាចផ្ទុកការសន្ទនានេះបានទេ។';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'មានអ្វីមួយខុសប្រក្រតីនៅចុងបញ្ចប់របស់យើង។ ចុចព្យាយាមម្តងទៀត ដើម្បីព្យាយាមម្តងទៀត។';
+
+  @override
+  String get chatHistoryOfflineTitle => 'អ្នកគ្មានអ៊ីនធឺណិតទេ។';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'ពិនិត្យការតភ្ជាប់អ៊ីនធឺណិតរបស់អ្នក ហើយព្យាយាមម្តងទៀត។';
+
+  @override
+  String get aiGeneratingResponse => 'កំពុងបង្កើតការឆ្លើយតប...';
 }

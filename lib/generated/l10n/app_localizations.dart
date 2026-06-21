@@ -714,6 +714,12 @@ abstract class AppLocalizations {
   /// **'No items need to be bought'**
   String get noItemsToBuy;
 
+  /// No description provided for @pantryDeficitCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Missing {count}{unit}'**
+  String pantryDeficitCount(int count, String unit);
+
   /// No description provided for @newPantryList.
   ///
   /// In en, this message translates to:
@@ -822,6 +828,18 @@ abstract class AppLocalizations {
   /// **'Settings'**
   String get settingsAppBar;
 
+  /// No description provided for @preferencesSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences'**
+  String get preferencesSection;
+
+  /// No description provided for @aiSection.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Assistant'**
+  String get aiSection;
+
   /// No description provided for @language.
   ///
   /// In en, this message translates to:
@@ -881,6 +899,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Appearance'**
   String get appearance;
+
+  /// No description provided for @themeMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme mode'**
+  String get themeMode;
+
+  /// No description provided for @chooseThemeMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Select theme mode'**
+  String get chooseThemeMode;
 
   /// No description provided for @light.
   ///
@@ -1332,6 +1362,18 @@ abstract class AppLocalizations {
   /// **'Does not generate shopping suggestion'**
   String get trackStockInactive;
 
+  /// No description provided for @keepAdding.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep adding'**
+  String get keepAdding;
+
+  /// No description provided for @keepAddingSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep the sheet open to add multiple items'**
+  String get keepAddingSubtitle;
+
   /// No description provided for @createListDialog.
   ///
   /// In en, this message translates to:
@@ -1518,6 +1560,66 @@ abstract class AppLocalizations {
   /// **'Error loading chat: {error}'**
   String chatError(String error);
 
+  /// No description provided for @goodResponse.
+  ///
+  /// In en, this message translates to:
+  /// **'Good response'**
+  String get goodResponse;
+
+  /// No description provided for @badResponse.
+  ///
+  /// In en, this message translates to:
+  /// **'Bad response'**
+  String get badResponse;
+
+  /// No description provided for @scrollToBottom.
+  ///
+  /// In en, this message translates to:
+  /// **'Scroll to bottom'**
+  String get scrollToBottom;
+
+  /// No description provided for @somethingWentWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong'**
+  String get somethingWentWrong;
+
+  /// No description provided for @editMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit message'**
+  String get editMessage;
+
+  /// No description provided for @searchConversations.
+  ///
+  /// In en, this message translates to:
+  /// **'Search conversations'**
+  String get searchConversations;
+
+  /// No description provided for @dateGroupToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get dateGroupToday;
+
+  /// No description provided for @dateGroupYesterday.
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get dateGroupYesterday;
+
+  /// No description provided for @dateGroupPrevious7Days.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous 7 days'**
+  String get dateGroupPrevious7Days;
+
+  /// No description provided for @dateGroupOlder.
+  ///
+  /// In en, this message translates to:
+  /// **'Older'**
+  String get dateGroupOlder;
+
   /// No description provided for @aiAssistantTitle.
   ///
   /// In en, this message translates to:
@@ -1589,6 +1691,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Monthly AI limit reached. Upgrade to Pro for unlimited →'**
   String get aiUsageExhausted;
+
+  /// Generic undo action label
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get undo;
+
+  /// Snackbar message shown when user starts a new chat session
+  ///
+  /// In en, this message translates to:
+  /// **'New chat started'**
+  String get newChatStarted;
+
+  /// Label for quick-add button in chat input bar that bypasses AI
+  ///
+  /// In en, this message translates to:
+  /// **'Add to list'**
+  String get quickAddToList;
+
+  /// Title for the AI capabilities discovery sheet
+  ///
+  /// In en, this message translates to:
+  /// **'What can I do?'**
+  String get aiCapabilitiesTitle;
+
+  /// Category heading in capabilities sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping Lists'**
+  String get aiCapabilitiesLists;
+
+  /// Category heading in capabilities sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Budget & Prices'**
+  String get aiCapabilitiesBudget;
+
+  /// Category heading in capabilities sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Recipes & Menus'**
+  String get aiCapabilitiesRecipes;
+
+  /// Category heading in capabilities sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Organization'**
+  String get aiCapabilitiesOrganize;
+
+  /// Subtitle for Market Mode menu item
+  ///
+  /// In en, this message translates to:
+  /// **'Check off items as you shop'**
+  String get marketModeDescription;
 
   /// No description provided for @kipiListTitle.
   ///
@@ -1926,6 +2082,30 @@ abstract class AppLocalizations {
   /// **'Add to shopping list'**
   String get recipeAddToList;
 
+  /// No description provided for @recipeAddError.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t add to your list. Please try again.'**
+  String get recipeAddError;
+
+  /// No description provided for @recipeTapToCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap an ingredient to check it off as you cook'**
+  String get recipeTapToCheck;
+
+  /// No description provided for @recipeIngredientInPantry.
+  ///
+  /// In en, this message translates to:
+  /// **'In pantry'**
+  String get recipeIngredientInPantry;
+
+  /// No description provided for @recipeIngredientLowPantry.
+  ///
+  /// In en, this message translates to:
+  /// **'Low in pantry'**
+  String get recipeIngredientLowPantry;
+
   /// No description provided for @recipeAddedConfirmation.
   ///
   /// In en, this message translates to:
@@ -2140,13 +2320,13 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'SAVE {percent}%'**
-  String paywallSavePercent(Object percent);
+  String paywallSavePercent(int percent);
 
   /// No description provided for @paywallPricePerMonth.
   ///
   /// In en, this message translates to:
   /// **'Only {price}/month'**
-  String paywallPricePerMonth(Object price);
+  String paywallPricePerMonth(String price);
 
   /// No description provided for @paywallPackageAnnual.
   ///
@@ -2201,6 +2381,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Restore'**
   String get paywallRestore;
+
+  /// No description provided for @paywallTimelineToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get paywallTimelineToday;
+
+  /// No description provided for @paywallTimelineTodayDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock full access instantly'**
+  String get paywallTimelineTodayDesc;
+
+  /// No description provided for @paywallTimelineDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Day {day}'**
+  String paywallTimelineDay(int day);
+
+  /// No description provided for @paywallTimelineReminderDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'We remind you before the trial ends'**
+  String get paywallTimelineReminderDesc;
+
+  /// No description provided for @paywallTimelineChargeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Your subscription starts — cancel anytime'**
+  String get paywallTimelineChargeDesc;
+
+  /// No description provided for @paywallHeroFeatureTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Shopping Assistant'**
+  String get paywallHeroFeatureTitle;
+
+  /// No description provided for @paywallHeroFeatureDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Speak or paste a whole list — AI sorts, categorizes and budgets it in seconds'**
+  String get paywallHeroFeatureDesc;
+
+  /// No description provided for @paywallBasedOnAnswers.
+  ///
+  /// In en, this message translates to:
+  /// **'Personalized from your answers'**
+  String get paywallBasedOnAnswers;
 
   /// No description provided for @paywallHeroHeadline.
   ///
@@ -2261,12 +2489,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Item removed'**
   String get itemRemoved;
-
-  /// No description provided for @undo.
-  ///
-  /// In en, this message translates to:
-  /// **'Undo'**
-  String get undo;
 
   /// No description provided for @emptyListTitle.
   ///
@@ -2495,6 +2717,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Item removed'**
   String get pantryItemRemoved;
+
+  /// No description provided for @pantryItemAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Item added'**
+  String get pantryItemAdded;
 
   /// No description provided for @deficitItems.
   ///
@@ -3234,6 +3462,48 @@ abstract class AppLocalizations {
   /// **'Prep time (minutes)'**
   String get prepTimeMinutes;
 
+  /// No description provided for @recipeYieldServings.
+  ///
+  /// In en, this message translates to:
+  /// **'Yield servings'**
+  String get recipeYieldServings;
+
+  /// No description provided for @recipeManualTotalCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Manual total cost'**
+  String get recipeManualTotalCost;
+
+  /// No description provided for @recipeManualTotalCostHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave empty to estimate from ingredient prices.'**
+  String get recipeManualTotalCostHint;
+
+  /// No description provided for @recipeEstimatedTotalCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated total cost'**
+  String get recipeEstimatedTotalCost;
+
+  /// No description provided for @recipeEstimatedCostPerServing.
+  ///
+  /// In en, this message translates to:
+  /// **'{cost} / serving'**
+  String recipeEstimatedCostPerServing(String cost);
+
+  /// No description provided for @recipeServesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Serves {count}'**
+  String recipeServesCount(int count);
+
+  /// No description provided for @recipeEstimatePartial.
+  ///
+  /// In en, this message translates to:
+  /// **'Partial estimate based on ingredients with price.'**
+  String get recipeEstimatePartial;
+
   /// No description provided for @instructionsHint.
   ///
   /// In en, this message translates to:
@@ -3468,6 +3738,12 @@ abstract class AppLocalizations {
   /// **'{count} of {total} meals planned'**
   String mealPlannerWeekProgress(int count, int total);
 
+  /// No description provided for @mealPlannerEstimatePartial.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimate based on recipes with partial price data.'**
+  String get mealPlannerEstimatePartial;
+
   /// No description provided for @mealPlannerGenerateList.
   ///
   /// In en, this message translates to:
@@ -3630,6 +3906,12 @@ abstract class AppLocalizations {
   /// **'less common in your country'**
   String get catalogRareSection;
 
+  /// No description provided for @catalogRareBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Rare'**
+  String get catalogRareBadge;
+
   /// No description provided for @catalogAddItems.
   ///
   /// In en, this message translates to:
@@ -3695,6 +3977,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count} {count, plural, one{ingredient} other{ingredients}} missing'**
   String mealPlannerPantryMissing(int count);
+
+  /// No description provided for @mealPlannerManageTypes.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage meal types'**
+  String get mealPlannerManageTypes;
+
+  /// No description provided for @mealPlannerAddType.
+  ///
+  /// In en, this message translates to:
+  /// **'Add meal type'**
+  String get mealPlannerAddType;
+
+  /// No description provided for @mealPlannerEditType.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit meal type'**
+  String get mealPlannerEditType;
+
+  /// No description provided for @mealPlannerTypeName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get mealPlannerTypeName;
+
+  /// No description provided for @mealPlannerTypeColor.
+  ///
+  /// In en, this message translates to:
+  /// **'Color'**
+  String get mealPlannerTypeColor;
+
+  /// No description provided for @mealPlannerTypeIcon.
+  ///
+  /// In en, this message translates to:
+  /// **'Icon'**
+  String get mealPlannerTypeIcon;
+
+  /// No description provided for @mealPlannerTypeDeleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this meal type? Planned meals with this type will remain.'**
+  String get mealPlannerTypeDeleteConfirm;
+
+  /// No description provided for @mealPlannerTypeNameEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Name cannot be empty'**
+  String get mealPlannerTypeNameEmpty;
+
+  /// No description provided for @mealPlannerTypeDeleteError.
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot delete this meal type.'**
+  String get mealPlannerTypeDeleteError;
+
+  /// No description provided for @mealPlannerCustomTypeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom type'**
+  String get mealPlannerCustomTypeLabel;
+
+  /// No description provided for @mealPlannerDefaultTypeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Default type'**
+  String get mealPlannerDefaultTypeLabel;
 
   /// No description provided for @expirationDate.
   ///
@@ -3797,6 +4145,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Error loading lists'**
   String get errorLoadingLists;
+
+  /// Error when items fail to load
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading items'**
+  String get errorLoadingItems;
 
   /// Empty state when user has no lists
   ///
@@ -5153,6 +5507,353 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign-in failed. Try again or skip for now.'**
   String get obLoginError;
+
+  /// No description provided for @searchMessages.
+  ///
+  /// In en, this message translates to:
+  /// **'Search messages...'**
+  String get searchMessages;
+
+  /// No description provided for @deletedList.
+  ///
+  /// In en, this message translates to:
+  /// **'Deleted list'**
+  String get deletedList;
+
+  /// No description provided for @openConversation.
+  ///
+  /// In en, this message translates to:
+  /// **'Open conversation'**
+  String get openConversation;
+
+  /// No description provided for @userRole.
+  ///
+  /// In en, this message translates to:
+  /// **'You'**
+  String get userRole;
+
+  /// No description provided for @assistantRole.
+  ///
+  /// In en, this message translates to:
+  /// **'Assistant'**
+  String get assistantRole;
+
+  /// No description provided for @agentActionsRunning.
+  ///
+  /// In en, this message translates to:
+  /// **'Running actions...'**
+  String get agentActionsRunning;
+
+  /// No description provided for @agentActionsFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to run actions'**
+  String get agentActionsFailed;
+
+  /// No description provided for @agentActionsPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'Actions require Premium'**
+  String get agentActionsPremium;
+
+  /// No description provided for @agentActionsCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'{count,plural, one{1 action completed} other{{count} actions completed}}'**
+  String agentActionsCompleted(int count);
+
+  /// No description provided for @undoChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo changes'**
+  String get undoChanges;
+
+  /// No description provided for @premiumStepDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'{description} (Premium)'**
+  String premiumStepDescription(String description);
+
+  /// No description provided for @itemAddedToList.
+  ///
+  /// In en, this message translates to:
+  /// **'Item added to the list.'**
+  String get itemAddedToList;
+
+  /// No description provided for @previousItemState.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous state: {quantity} {unit} [{category}]{price}'**
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  );
+
+  /// No description provided for @itemsAffectedByAction.
+  ///
+  /// In en, this message translates to:
+  /// **'{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}'**
+  String itemsAffectedByAction(int count);
+
+  /// No description provided for @premiumActionsPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe to Premium to unlock automatic actions.'**
+  String get premiumActionsPrompt;
+
+  /// No description provided for @viewPlans.
+  ///
+  /// In en, this message translates to:
+  /// **'View plans'**
+  String get viewPlans;
+
+  /// No description provided for @artifactSynced.
+  ///
+  /// In en, this message translates to:
+  /// **'Synced'**
+  String get artifactSynced;
+
+  /// No description provided for @artifactBudgetLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget:'**
+  String get artifactBudgetLabel;
+
+  /// No description provided for @totalEstimatedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated total'**
+  String get totalEstimatedLabel;
+
+  /// No description provided for @quickActionPantry.
+  ///
+  /// In en, this message translates to:
+  /// **'View pantry'**
+  String get quickActionPantry;
+
+  /// No description provided for @quickActionAi.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat with Kipi'**
+  String get quickActionAi;
+
+  /// No description provided for @aiApiError.
+  ///
+  /// In en, this message translates to:
+  /// **'The AI service returned an error ({statusCode}).'**
+  String aiApiError(int statusCode);
+
+  /// No description provided for @aiTimeoutError.
+  ///
+  /// In en, this message translates to:
+  /// **'The request took too long. Please try again.'**
+  String get aiTimeoutError;
+
+  /// No description provided for @aiConnectionError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not connect to the AI service. Check your connection.'**
+  String get aiConnectionError;
+
+  /// No description provided for @aiEmptyResponseError.
+  ///
+  /// In en, this message translates to:
+  /// **'The AI service returned an empty response.'**
+  String get aiEmptyResponseError;
+
+  /// No description provided for @aiInvalidResponseError.
+  ///
+  /// In en, this message translates to:
+  /// **'The AI service returned an invalid response.'**
+  String get aiInvalidResponseError;
+
+  /// No description provided for @categoryFruits.
+  ///
+  /// In en, this message translates to:
+  /// **'Fruits'**
+  String get categoryFruits;
+
+  /// No description provided for @categoryCleaning.
+  ///
+  /// In en, this message translates to:
+  /// **'Cleaning'**
+  String get categoryCleaning;
+
+  /// No description provided for @categoryBeverages.
+  ///
+  /// In en, this message translates to:
+  /// **'Beverages'**
+  String get categoryBeverages;
+
+  /// No description provided for @categoryBakery.
+  ///
+  /// In en, this message translates to:
+  /// **'Bakery'**
+  String get categoryBakery;
+
+  /// No description provided for @categoryMeat.
+  ///
+  /// In en, this message translates to:
+  /// **'Meat'**
+  String get categoryMeat;
+
+  /// No description provided for @categoryDairy.
+  ///
+  /// In en, this message translates to:
+  /// **'Dairy'**
+  String get categoryDairy;
+
+  /// No description provided for @categoryVegetables.
+  ///
+  /// In en, this message translates to:
+  /// **'Vegetables'**
+  String get categoryVegetables;
+
+  /// No description provided for @categoryGrains.
+  ///
+  /// In en, this message translates to:
+  /// **'Grains and cereals'**
+  String get categoryGrains;
+
+  /// No description provided for @categoryHygiene.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal care'**
+  String get categoryHygiene;
+
+  /// No description provided for @categoryFrozen.
+  ///
+  /// In en, this message translates to:
+  /// **'Frozen foods'**
+  String get categoryFrozen;
+
+  /// No description provided for @categoryCanned.
+  ///
+  /// In en, this message translates to:
+  /// **'Canned goods'**
+  String get categoryCanned;
+
+  /// No description provided for @categorySeasonings.
+  ///
+  /// In en, this message translates to:
+  /// **'Seasonings'**
+  String get categorySeasonings;
+
+  /// No description provided for @categorySweets.
+  ///
+  /// In en, this message translates to:
+  /// **'Sweets and desserts'**
+  String get categorySweets;
+
+  /// No description provided for @categoryAlcohol.
+  ///
+  /// In en, this message translates to:
+  /// **'Alcoholic beverages'**
+  String get categoryAlcohol;
+
+  /// No description provided for @categoryFish.
+  ///
+  /// In en, this message translates to:
+  /// **'Fish'**
+  String get categoryFish;
+
+  /// No description provided for @categoryColdCuts.
+  ///
+  /// In en, this message translates to:
+  /// **'Cold cuts'**
+  String get categoryColdCuts;
+
+  /// No description provided for @categoryUtilities.
+  ///
+  /// In en, this message translates to:
+  /// **'Household supplies'**
+  String get categoryUtilities;
+
+  /// No description provided for @categoryPet.
+  ///
+  /// In en, this message translates to:
+  /// **'Pet supplies'**
+  String get categoryPet;
+
+  /// No description provided for @categoryBaby.
+  ///
+  /// In en, this message translates to:
+  /// **'Baby'**
+  String get categoryBaby;
+
+  /// No description provided for @categoryOthers.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get categoryOthers;
+
+  /// No description provided for @chatEmptyGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi {name}, I\'m Kipi 👋'**
+  String chatEmptyGreeting(String name);
+
+  /// No description provided for @chatEmptyGreetingNoName.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi, I\'m Kipi 👋'**
+  String get chatEmptyGreetingNoName;
+
+  /// No description provided for @chatEmptyPitch.
+  ///
+  /// In en, this message translates to:
+  /// **'I build lists, suggest recipes, and find where to save. Where do we start?'**
+  String get chatEmptyPitch;
+
+  /// No description provided for @aiWelcomeSuggestBarbecue.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan a barbecue'**
+  String get aiWelcomeSuggestBarbecue;
+
+  /// No description provided for @aiWelcomeSuggestBarbecuePrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Kipi, I\'m hosting a barbecue — help me build the shopping list'**
+  String get aiWelcomeSuggestBarbecuePrompt;
+
+  /// No description provided for @aiRateLimitError.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many messages in a short time. Wait a few seconds and try again.'**
+  String get aiRateLimitError;
+
+  /// No description provided for @chatHistoryErrorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load this conversation'**
+  String get chatHistoryErrorTitle;
+
+  /// No description provided for @chatHistoryErrorBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong on our end. Tap retry to try again.'**
+  String get chatHistoryErrorBody;
+
+  /// No description provided for @chatHistoryOfflineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re offline'**
+  String get chatHistoryOfflineTitle;
+
+  /// No description provided for @chatHistoryOfflineBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your internet connection and try again.'**
+  String get chatHistoryOfflineBody;
+
+  /// No description provided for @aiGeneratingResponse.
+  ///
+  /// In en, this message translates to:
+  /// **'Generating response…'**
+  String get aiGeneratingResponse;
 }
 
 class _AppLocalizationsDelegate

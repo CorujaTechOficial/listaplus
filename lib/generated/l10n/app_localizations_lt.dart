@@ -245,6 +245,11 @@ class AppLocalizationsLt extends AppLocalizations {
   String get noItemsToBuy => 'Nereikia nieko pirkti';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Trūksta $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Sandėliuko pirkiniai';
 
   @override
@@ -311,6 +316,12 @@ class AppLocalizationsLt extends AppLocalizations {
   String get settingsAppBar => 'Nustatymai';
 
   @override
+  String get preferencesSection => 'Parinktys';
+
+  @override
+  String get aiSection => 'AI asistentas';
+
+  @override
   String get language => 'Kalba';
 
   @override
@@ -339,6 +350,12 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get appearance => 'Išvaizda';
+
+  @override
+  String get themeMode => 'Temos režimas';
+
+  @override
+  String get chooseThemeMode => 'Pasirinkite temos režimą';
 
   @override
   String get light => 'Šviesi';
@@ -588,6 +605,13 @@ class AppLocalizationsLt extends AppLocalizations {
   String get trackStockInactive => 'Negeneruoja pirkimo pasiūlymų';
 
   @override
+  String get keepAdding => 'Pridėkite toliau';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Laikykite lapą atidarytą, kad pridėtumėte kelis elementus';
+
+  @override
   String get createListDialog => 'Sukurti sąrašą';
 
   @override
@@ -692,6 +716,36 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Geras atsakymas';
+
+  @override
+  String get badResponse => 'Blogas atsakymas';
+
+  @override
+  String get scrollToBottom => 'Slinkite į apačią';
+
+  @override
+  String get somethingWentWrong => 'Kažkas nutiko';
+
+  @override
+  String get editMessage => 'Redaguoti pranešimą';
+
+  @override
+  String get searchConversations => 'Ieškoti pokalbių';
+
+  @override
+  String get dateGroupToday => 'Šiandien';
+
+  @override
+  String get dateGroupYesterday => 'vakar';
+
+  @override
+  String get dateGroupPrevious7Days => 'Ankstesnės 7 dienos';
+
+  @override
+  String get dateGroupOlder => 'Vyresni';
+
+  @override
   String get aiAssistantTitle => 'AI asistentas';
 
   @override
@@ -732,6 +786,33 @@ class AppLocalizationsLt extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Pasiektas mėnesinis AI limitas. Naujovinkite į Pro, kad gautumėte neribotą skaičių →';
+
+  @override
+  String get undo => 'Atšaukti';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -944,6 +1025,20 @@ class AppLocalizationsLt extends AppLocalizations {
   String get recipeAddToList => 'Pridėti į pirkinių sąrašą';
 
   @override
+  String get recipeAddError =>
+      'Nepavyko įtraukti į sąrašą. Bandykite dar kartą.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Bakstelėkite ingredientą, kad jį patikrintumėte gamindami';
+
+  @override
+  String get recipeIngredientInPantry => 'Sandėlyje';
+
+  @override
+  String get recipeIngredientLowPantry => 'Mažai sandėliukas';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count ingredientai pridėti prie $listName';
   }
@@ -1056,12 +1151,12 @@ class AppLocalizationsLt extends AppLocalizations {
   String get paywallSelectPlan => 'Pasirinkite savo planą:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'SUTAUPYTI $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Tik $price/mėn';
   }
 
@@ -1096,6 +1191,35 @@ class AppLocalizationsLt extends AppLocalizations {
   String get paywallRestore => 'Atkurti';
 
   @override
+  String get paywallTimelineToday => 'Šiandien';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Iškart atrakinkite visą prieigą';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return '$day diena';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Primename prieš pasibaigiant teismo procesui';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Jūsų prenumerata prasideda – atšaukite bet kada';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI apsipirkimo asistentas';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Ištarkite arba įklijuokite visą sąrašą – AI surūšiuoja, suskirsto į kategorijas ir sudaro biudžetą per kelias sekundes';
+
+  @override
+  String get paywallBasedOnAnswers => 'Suasmeninta pagal jūsų atsakymus';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI visada šalia jūsų';
 
   @override
@@ -1128,9 +1252,6 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Prekė pašalinta';
-
-  @override
-  String get undo => 'Atšaukti';
 
   @override
   String get emptyListTitle => 'Jūsų sąrašas tuščias';
@@ -1248,6 +1369,9 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Prekė pašalinta';
+
+  @override
+  String get pantryItemAdded => 'Prekė pridėta';
 
   @override
   String deficitItems(int deficit) {
@@ -1654,6 +1778,33 @@ class AppLocalizationsLt extends AppLocalizations {
   String get prepTimeMinutes => 'Gaminimo laikas (minutėmis)';
 
   @override
+  String get recipeYieldServings => 'Išeiga porcijos';
+
+  @override
+  String get recipeManualTotalCost => 'Visa rankinė kaina';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Palikite tuščią, kad įvertintumėte ingredientų kainas.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Numatomos bendros išlaidos';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / porcija';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Aptarnauja $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Dalinė sąmata, pagrįsta ingredientais ir kaina.';
+
+  @override
   String get instructionsHint => 'Įveskite po vieną žingsnį eilutėje...';
 
   @override
@@ -1784,6 +1935,10 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Sąmata pagrįsta receptais su daliniais kainos duomenimis.';
+
+  @override
   String get mealPlannerGenerateList => 'Sukurti pirkinių sąrašą';
 
   @override
@@ -1878,6 +2033,9 @@ class AppLocalizationsLt extends AppLocalizations {
   String get catalogRareSection => 'mažiau paplitusi jūsų šalyje';
 
   @override
+  String get catalogRareBadge => 'Retas';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1895,7 +2053,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get catalogBrowse => 'Naršyti katalogą';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kategorijos';
 
   @override
   String get offlineBanner => 'Esate neprisijungęs';
@@ -1926,6 +2084,41 @@ class AppLocalizationsLt extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Tvarkykite valgio tipus';
+
+  @override
+  String get mealPlannerAddType => 'Pridėkite valgio tipą';
+
+  @override
+  String get mealPlannerEditType => 'Redaguoti valgio tipą';
+
+  @override
+  String get mealPlannerTypeName => 'Vardas';
+
+  @override
+  String get mealPlannerTypeColor => 'Spalva';
+
+  @override
+  String get mealPlannerTypeIcon => 'Piktograma';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Ar tikrai norite ištrinti šį patiekalo tipą? Suplanuotas maitinimas su šiuo tipu išliks.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Vardo laukas negali būti tuščias';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Negalima ištrinti šio patiekalo tipo.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Pasirinktinis tipas';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Numatytasis tipas';
 
   @override
   String get expirationDate => 'Galiojimo laikas';
@@ -1986,6 +2179,9 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Klaida įkeliant sąrašus';
+
+  @override
+  String get errorLoadingItems => 'Įkeliant elementus įvyko klaida';
 
   @override
   String get noListsFound => 'Sąrašų nerasta';
@@ -2761,4 +2957,213 @@ class AppLocalizationsLt extends AppLocalizations {
   @override
   String get obLoginError =>
       'Nepavyko prisijungti. Bandykite dar kartą arba kol kas praleiskite.';
+
+  @override
+  String get searchMessages => 'Ieškoti žinučių...';
+
+  @override
+  String get deletedList => 'Ištrintas sąrašas';
+
+  @override
+  String get openConversation => 'Atidaryti pokalbį';
+
+  @override
+  String get userRole => 'Jūs';
+
+  @override
+  String get assistantRole => 'Padėjėjas';
+
+  @override
+  String get agentActionsRunning => 'Vykdomi veiksmai...';
+
+  @override
+  String get agentActionsFailed => 'Nepavyko atlikti veiksmų';
+
+  @override
+  String get agentActionsPremium => 'Veiksmams reikalinga „Premium“.';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Anuliuoti pakeitimus';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Elementas įtrauktas į sąrašą.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Ankstesnė būsena: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Prenumeruokite „Premium“, kad atrakintumėte automatinius veiksmus.';
+
+  @override
+  String get viewPlans => 'Žiūrėti planus';
+
+  @override
+  String get artifactSynced => 'Sinchronizuota';
+
+  @override
+  String get artifactBudgetLabel => 'Biudžetas:';
+
+  @override
+  String get totalEstimatedLabel => 'Numatoma bendra suma';
+
+  @override
+  String get quickActionPantry => 'Žiūrėti sandėliuką';
+
+  @override
+  String get quickActionAi => 'Kalbėkitės su Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI paslauga grąžino klaidą ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'Prašymas užtruko per ilgai. Bandykite dar kartą.';
+
+  @override
+  String get aiConnectionError =>
+      'Nepavyko prisijungti prie AI paslaugos. Patikrinkite ryšį.';
+
+  @override
+  String get aiEmptyResponseError => 'AI tarnyba pateikė tuščią atsakymą.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'AI paslauga pateikė neteisingą atsakymą.';
+
+  @override
+  String get categoryFruits => 'Vaisiai';
+
+  @override
+  String get categoryCleaning => 'Valymas';
+
+  @override
+  String get categoryBeverages => 'Gėrimai';
+
+  @override
+  String get categoryBakery => 'Kepyklėlė';
+
+  @override
+  String get categoryMeat => 'Mėsa';
+
+  @override
+  String get categoryDairy => 'Pieno';
+
+  @override
+  String get categoryVegetables => 'Daržovės';
+
+  @override
+  String get categoryGrains => 'Grūdai ir javai';
+
+  @override
+  String get categoryHygiene => 'Asmeninė priežiūra';
+
+  @override
+  String get categoryFrozen => 'Šaldyti maisto produktai';
+
+  @override
+  String get categoryCanned => 'Konservuotos prekės';
+
+  @override
+  String get categorySeasonings => 'Prieskoniai';
+
+  @override
+  String get categorySweets => 'Saldumynai ir desertai';
+
+  @override
+  String get categoryAlcohol => 'Alkoholiniai gėrimai';
+
+  @override
+  String get categoryFish => 'Žuvis';
+
+  @override
+  String get categoryColdCuts => 'Šalčio gabalai';
+
+  @override
+  String get categoryUtilities => 'Namų apyvokos reikmenys';
+
+  @override
+  String get categoryPet => 'Gyvūnų reikmenys';
+
+  @override
+  String get categoryBaby => 'Kūdikis';
+
+  @override
+  String get categoryOthers => 'Kita';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Sveiki, $name, aš Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Sveiki, aš Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Kuriu sąrašus, siūlau receptus ir randu, kur išsaugoti. Nuo ko pradėti?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Suplanuokite kepsninę';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, rengiu kepsninę – padėk man sudaryti pirkinių sąrašą';
+
+  @override
+  String get aiRateLimitError =>
+      'Per daug pranešimų per trumpą laiką. Palaukite kelias sekundes ir bandykite dar kartą.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Nepavyko įkelti šio pokalbio';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Kažkas nutiko mūsų pusėje. Bakstelėkite bandyti dar kartą, kad bandytumėte dar kartą.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Esate neprisijungęs';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Patikrinkite interneto ryšį ir bandykite dar kartą.';
+
+  @override
+  String get aiGeneratingResponse => 'Generuojamas atsakymas…';
 }

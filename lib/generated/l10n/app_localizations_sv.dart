@@ -242,6 +242,11 @@ class AppLocalizationsSv extends AppLocalizations {
   String get noItemsToBuy => 'Inga varor behöver köpas';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Saknar $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Skafferihandling';
 
   @override
@@ -308,6 +313,12 @@ class AppLocalizationsSv extends AppLocalizations {
   String get settingsAppBar => 'Inställningar';
 
   @override
+  String get preferencesSection => 'Inställningar';
+
+  @override
+  String get aiSection => 'AI-assistent';
+
+  @override
   String get language => 'Språk';
 
   @override
@@ -336,6 +347,12 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get appearance => 'Utseende';
+
+  @override
+  String get themeMode => 'Temaläge';
+
+  @override
+  String get chooseThemeMode => 'Välj temaläge';
 
   @override
   String get light => 'Ljust';
@@ -585,6 +602,13 @@ class AppLocalizationsSv extends AppLocalizations {
   String get trackStockInactive => 'Genererar inget shoppingförslag';
 
   @override
+  String get keepAdding => 'Fortsätt lägga till';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Håll arket öppet för att lägga till flera objekt';
+
+  @override
   String get createListDialog => 'Skapa Lista';
 
   @override
@@ -689,6 +713,36 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Bra respons';
+
+  @override
+  String get badResponse => 'Dåligt svar';
+
+  @override
+  String get scrollToBottom => 'Bläddra till botten';
+
+  @override
+  String get somethingWentWrong => 'Något gick fel';
+
+  @override
+  String get editMessage => 'Redigera meddelande';
+
+  @override
+  String get searchConversations => 'Sök konversationer';
+
+  @override
+  String get dateGroupToday => 'I dag';
+
+  @override
+  String get dateGroupYesterday => 'I går';
+
+  @override
+  String get dateGroupPrevious7Days => 'Tidigare 7 dagar';
+
+  @override
+  String get dateGroupOlder => 'Äldre';
+
+  @override
   String get aiAssistantTitle => 'AI-assistent';
 
   @override
@@ -728,6 +782,33 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'Månatlig AI-gräns nådd. Uppgradera till Pro för obegränsat →';
+
+  @override
+  String get undo => 'Ångra';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -935,6 +1016,20 @@ class AppLocalizationsSv extends AppLocalizations {
   String get recipeAddToList => 'Lägg till inköpslista';
 
   @override
+  String get recipeAddError =>
+      'Det gick inte att lägga till i listan. Försök igen.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Tryck på en ingrediens för att bocka av den när du lagar mat';
+
+  @override
+  String get recipeIngredientInPantry => 'I skafferiet';
+
+  @override
+  String get recipeIngredientLowPantry => 'Lågt skafferi';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1052,12 +1147,12 @@ class AppLocalizationsSv extends AppLocalizations {
   String get paywallSelectPlan => 'Välj din plan:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'SPARA $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Endast $price/månad';
   }
 
@@ -1092,6 +1187,35 @@ class AppLocalizationsSv extends AppLocalizations {
   String get paywallRestore => 'Återställa';
 
   @override
+  String get paywallTimelineToday => 'I dag';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Lås upp full åtkomst direkt';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Dag $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Vi påminner dig innan rättegången avslutas';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Ditt abonnemang börjar – avsluta när som helst';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI Shopping Assistant';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Tala eller klistra in en hel lista — AI sorterar, kategoriserar och budgeterar den på några sekunder';
+
+  @override
+  String get paywallBasedOnAnswers => 'Personifierad utifrån dina svar';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI alltid vid din sida';
 
   @override
@@ -1124,9 +1248,6 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Varan borttagen';
-
-  @override
-  String get undo => 'Ångra';
 
   @override
   String get emptyListTitle => 'Din lista är tom';
@@ -1244,6 +1365,9 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Varan borttagen';
+
+  @override
+  String get pantryItemAdded => 'Objekt har lagts till';
 
   @override
   String deficitItems(int deficit) {
@@ -1647,6 +1771,33 @@ class AppLocalizationsSv extends AppLocalizations {
   String get prepTimeMinutes => 'Förberedelsetid (minuter)';
 
   @override
+  String get recipeYieldServings => 'Ge portioner';
+
+  @override
+  String get recipeManualTotalCost => 'Manuell totalkostnad';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Lämna tomt för att uppskatta från ingredienspriser.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Beräknad totalkostnad';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / portion';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Serverar $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Deluppskattning baserad på ingredienser med pris.';
+
+  @override
   String get instructionsHint => 'Skriv ett steg per rad...';
 
   @override
@@ -1775,6 +1926,10 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Uppskattning baserad på recept med partiell prisdata.';
+
+  @override
   String get mealPlannerGenerateList => 'Skapa inköpslista';
 
   @override
@@ -1867,6 +2022,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get catalogRareSection => 'mindre vanligt i ditt land';
 
   @override
+  String get catalogRareBadge => 'Sällsynt';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1885,7 +2043,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get catalogBrowse => 'Bläddra i katalogen';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Kategorier';
 
   @override
   String get offlineBanner => 'Du är offline';
@@ -1916,6 +2074,41 @@ class AppLocalizationsSv extends AppLocalizations {
     );
     return '$count $_temp0 saknas';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Hantera måltidstyper';
+
+  @override
+  String get mealPlannerAddType => 'Lägg till måltidstyp';
+
+  @override
+  String get mealPlannerEditType => 'Redigera måltidstyp';
+
+  @override
+  String get mealPlannerTypeName => 'Namn';
+
+  @override
+  String get mealPlannerTypeColor => 'Färg';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikon';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Är du säker på att du vill ta bort den här måltidstypen? Planerade måltider med denna typ kommer att finnas kvar.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Namnet får inte vara tomt';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Det går inte att ta bort denna måltidstyp.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Anpassad typ';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Standardtyp';
 
   @override
   String get expirationDate => 'Utgångsdatum';
@@ -1976,6 +2169,9 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Det gick inte att ladda listor';
+
+  @override
+  String get errorLoadingItems => 'Det gick inte att läsa in objekt';
 
   @override
   String get noListsFound => 'Inga listor hittades';
@@ -2570,173 +2766,385 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get obHookTitle => 'Smarter shopping starts here';
+  String get obHookTitle => 'Smartare shopping börjar här';
 
   @override
   String get obHookSubtitle =>
-      'AI-powered lists that save you time and money, every single trip.';
+      'AI-drivna listor som sparar tid och pengar, varenda resa.';
 
   @override
-  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+  String get obHookSocial => 'Betrodd av tusentals shoppare över hela världen';
 
   @override
-  String get obHookCta => 'Get Started';
+  String get obHookCta => 'Kom igång';
 
   @override
-  String get obQuizHouseholdTitle => 'Who do you shop for?';
+  String get obQuizHouseholdTitle => 'Vem handlar du åt?';
 
   @override
-  String get obQuizHouseholdSolo => 'Just me';
+  String get obQuizHouseholdSolo => 'Bara jag';
 
   @override
-  String get obQuizHouseholdCouple => 'Me and my partner';
+  String get obQuizHouseholdCouple => 'Jag och min sambo';
 
   @override
-  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+  String get obQuizHouseholdFamilySmall => 'Familj på 3–4';
 
   @override
-  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+  String get obQuizHouseholdFamilyLarge => 'Familj på 5+';
 
   @override
-  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+  String get obQuizFrequencyTitle => 'Hur ofta handlar du matvaror?';
 
   @override
-  String get obQuizFrequencyDaily => 'Almost every day';
+  String get obQuizFrequencyDaily => 'Nästan varje dag';
 
   @override
-  String get obQuizFrequencyWeekly => 'Once a week';
+  String get obQuizFrequencyWeekly => 'En gång i veckan';
 
   @override
-  String get obQuizFrequencyBiweekly => 'Every two weeks';
+  String get obQuizFrequencyBiweekly => 'Varannan vecka';
 
   @override
-  String get obQuizFrequencyMonthly => 'Big monthly haul';
+  String get obQuizFrequencyMonthly => 'Stor månatlig avgång';
 
   @override
-  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+  String get obQuizPainTitle => 'Vad frustrerar dig mest med shopping?';
 
   @override
-  String get obQuizPainForget => 'I always forget items';
+  String get obQuizPainForget => 'Jag glömmer alltid saker';
 
   @override
-  String get obQuizPainOverspend => 'I spend more than planned';
+  String get obQuizPainOverspend => 'Jag spenderar mer än planerat';
 
   @override
-  String get obQuizPainWaste => 'Food goes to waste at home';
+  String get obQuizPainWaste => 'Mat går till spillo hemma';
 
   @override
-  String get obQuizPainTime => 'It takes too much time';
+  String get obQuizPainTime => 'Det tar för mycket tid';
 
   @override
-  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+  String get obQuizSavingsTitle =>
+      'Hur mycket skulle du vilja spara månadsvis?';
 
   @override
-  String get obQuizSavingsSmall => 'A little — every bit counts';
+  String get obQuizSavingsSmall => 'Lite - varje bit räknas';
 
   @override
-  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+  String get obQuizSavingsMedium => 'Cirka 10% av min maträkning';
 
   @override
-  String get obQuizSavingsLarge => 'As much as possible';
+  String get obQuizSavingsLarge => 'Så mycket som möjligt';
 
   @override
-  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+  String get obQuizMethodTitle => 'Hur gör du inköpslistor idag?';
 
   @override
-  String get obQuizMethodPaper => 'Pen and paper';
+  String get obQuizMethodPaper => 'Penna och papper';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'Notes-appen';
 
   @override
-  String get obQuizMethodMemory => 'I keep it in my head';
+  String get obQuizMethodMemory => 'Jag håller det i huvudet';
 
   @override
-  String get obQuizMethodNone => 'I don\'t make lists';
+  String get obQuizMethodNone => 'Jag gör inga listor';
 
   @override
-  String get obSocialTitle => 'You\'re in good company';
+  String get obSocialTitle => 'Du är i gott sällskap';
 
   @override
-  String get obSocialSubtitle =>
-      'Shoppers like you are already saving with KipiList';
+  String get obSocialSubtitle => 'Köpare som du sparar redan med KipiList';
 
   @override
   String get obSocialQuote1 =>
-      'I never forget anything anymore. The AI builds my list in seconds.';
+      'Jag glömmer aldrig något längre. AI:n bygger min lista på några sekunder.';
 
   @override
   String get obSocialQuote2 =>
-      'We cut our grocery bill noticeably in the first month.';
+      'Vi sänkte vår dagligvaruräkning märkbart under den första månaden.';
 
   @override
   String get obSocialQuote3 =>
-      'Sharing the list with my partner ended our shopping chaos.';
+      'Att dela listan med min partner gjorde slut på vårt shoppingkaos.';
 
   @override
-  String get obLoadingTitle => 'Building your personalized plan...';
+  String get obLoadingTitle => 'Skapa din personliga plan...';
 
   @override
-  String get obLoadingStepProfile => 'Adjusting for your household';
+  String get obLoadingStepProfile => 'Anpassning för ditt hushåll';
 
   @override
-  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+  String get obLoadingStepHabits => 'Ställa in din shoppingrutin';
 
   @override
-  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+  String get obLoadingStepSavings => 'Optimera din sparstrategi';
 
   @override
-  String get obLoadingStepLists => 'Preparing your smart lists';
+  String get obLoadingStepLists => 'Förbereder dina smarta listor';
 
   @override
-  String get obRevealTitle => 'Your plan is ready!';
+  String get obRevealTitle => 'Din plan är klar!';
 
   @override
-  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+  String get obRevealSubtitle => 'Så här fungerar KipiList för dig';
 
   @override
-  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+  String get obRevealSavingsCaption =>
+      'Prognostiserade besparingar med KipiList';
 
   @override
   String obRevealMonth(int n) {
-    return 'Month $n';
+    return 'Månad $n';
   }
 
   @override
-  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+  String get obRevealFeatureAi => 'AI bygger och organiserar dina listor';
 
   @override
-  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+  String get obRevealFeatureBudget => 'Utgifterna spåras mot ditt mål';
 
   @override
-  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+  String get obRevealFeaturePantry => 'Skafferispårning minskar matsvinnet';
 
   @override
-  String get obRevealFeatureShare => 'Real-time sharing with your household';
+  String get obRevealFeatureShare => 'Realtidsdelning med ditt hushåll';
 
   @override
-  String get obPaywallTitle => 'Unlock your plan';
+  String get obPaywallTitle => 'Lås upp din plan';
 
   @override
-  String get obPaywallRetry => 'Try again';
+  String get obPaywallRetry => 'Försök igen';
 
   @override
-  String get obLoginTitle => 'Save your plan';
+  String get obLoginTitle => 'Spara din plan';
 
   @override
-  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+  String get obLoginSubtitle =>
+      'Logga in så att dina listor synkroniseras mellan enheter';
 
   @override
-  String get obLoginGoogle => 'Continue with Google';
+  String get obLoginGoogle => 'Fortsätt med Google';
 
   @override
-  String get obLoginApple => 'Continue with Apple';
+  String get obLoginApple => 'Fortsätt med Apple';
 
   @override
-  String get obLoginSkip => 'Not now';
+  String get obLoginSkip => 'Inte nu';
 
   @override
-  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
+  String get obLoginError =>
+      'Inloggningen misslyckades. Försök igen eller hoppa över nu.';
+
+  @override
+  String get searchMessages => 'Sök meddelanden...';
+
+  @override
+  String get deletedList => 'Raderad lista';
+
+  @override
+  String get openConversation => 'Öppna konversation';
+
+  @override
+  String get userRole => 'Du';
+
+  @override
+  String get assistantRole => 'Assistent';
+
+  @override
+  String get agentActionsRunning => 'Kör åtgärder...';
+
+  @override
+  String get agentActionsFailed => 'Det gick inte att köra åtgärder';
+
+  @override
+  String get agentActionsPremium => 'Åtgärder kräver Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Ångra ändringar';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Objekt har lagts till i listan.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Tidigare tillstånd: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Prenumerera på Premium för att låsa upp automatiska åtgärder.';
+
+  @override
+  String get viewPlans => 'Se planer';
+
+  @override
+  String get artifactSynced => 'Synkroniserad';
+
+  @override
+  String get artifactBudgetLabel => 'Budget:';
+
+  @override
+  String get totalEstimatedLabel => 'Beräknad summa';
+
+  @override
+  String get quickActionPantry => 'Visa skafferi';
+
+  @override
+  String get quickActionAi => 'Chatta med Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI-tjänsten returnerade ett fel ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Förfrågan tog för lång tid. Försök igen.';
+
+  @override
+  String get aiConnectionError =>
+      'Det gick inte att ansluta till AI-tjänsten. Kontrollera din anslutning.';
+
+  @override
+  String get aiEmptyResponseError => 'AI-tjänsten returnerade ett tomt svar.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'AI-tjänsten returnerade ett ogiltigt svar.';
+
+  @override
+  String get categoryFruits => 'Frukter';
+
+  @override
+  String get categoryCleaning => 'Rengöring';
+
+  @override
+  String get categoryBeverages => 'Drycker';
+
+  @override
+  String get categoryBakery => 'Bageri';
+
+  @override
+  String get categoryMeat => 'Kött';
+
+  @override
+  String get categoryDairy => 'Mejeri';
+
+  @override
+  String get categoryVegetables => 'Grönsaker';
+
+  @override
+  String get categoryGrains => 'Spannmål och spannmål';
+
+  @override
+  String get categoryHygiene => 'Personlig omvårdnad';
+
+  @override
+  String get categoryFrozen => 'Frysta livsmedel';
+
+  @override
+  String get categoryCanned => 'Konserver';
+
+  @override
+  String get categorySeasonings => 'Kryddor';
+
+  @override
+  String get categorySweets => 'Godis och desserter';
+
+  @override
+  String get categoryAlcohol => 'Alkoholhaltiga drycker';
+
+  @override
+  String get categoryFish => 'Fisk';
+
+  @override
+  String get categoryColdCuts => 'Pålägg';
+
+  @override
+  String get categoryUtilities => 'Hushållsartiklar';
+
+  @override
+  String get categoryPet => 'Husdjursmaterial';
+
+  @override
+  String get categoryBaby => 'Baby';
+
+  @override
+  String get categoryOthers => 'Andra';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hej $name, jag heter Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hej, jag heter Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Jag bygger listor, föreslår recept och hittar var jag kan spara. Var börjar vi?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Planera en grillfest';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, jag är värd för en grillfest — hjälp mig att bygga inköpslistan';
+
+  @override
+  String get aiRateLimitError =>
+      'För många meddelanden på kort tid. Vänta några sekunder och försök igen.';
+
+  @override
+  String get chatHistoryErrorTitle =>
+      'Det gick inte att ladda den här konversationen';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Något gick fel hos oss. Tryck på Försök igen för att försöka igen.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Du är offline';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Kontrollera din internetanslutning och försök igen.';
+
+  @override
+  String get aiGeneratingResponse => 'Genererar svar...';
 }
 
 /// The translations for Swedish, as used in Sweden (`sv_SE`).
@@ -2977,6 +3385,11 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get noItemsToBuy => 'Inga varor behöver köpas';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'Saknar $count$unit';
+  }
+
+  @override
   String get newPantryList => 'Skafferihandling';
 
   @override
@@ -3043,6 +3456,12 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get settingsAppBar => 'Inställningar';
 
   @override
+  String get preferencesSection => 'Inställningar';
+
+  @override
+  String get aiSection => 'AI-assistent';
+
+  @override
   String get language => 'Språk';
 
   @override
@@ -3071,6 +3490,12 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get appearance => 'Utseende';
+
+  @override
+  String get themeMode => 'Temaläge';
+
+  @override
+  String get chooseThemeMode => 'Välj temaläge';
 
   @override
   String get light => 'Ljust';
@@ -3320,6 +3745,13 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get trackStockInactive => 'Genererar inget shoppingförslag';
 
   @override
+  String get keepAdding => 'Fortsätt lägga till';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Håll arket öppet för att lägga till flera objekt';
+
+  @override
   String get createListDialog => 'Skapa Lista';
 
   @override
@@ -3424,6 +3856,36 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   }
 
   @override
+  String get goodResponse => 'Bra respons';
+
+  @override
+  String get badResponse => 'Dåligt svar';
+
+  @override
+  String get scrollToBottom => 'Bläddra till botten';
+
+  @override
+  String get somethingWentWrong => 'Något gick fel';
+
+  @override
+  String get editMessage => 'Redigera meddelande';
+
+  @override
+  String get searchConversations => 'Sök konversationer';
+
+  @override
+  String get dateGroupToday => 'I dag';
+
+  @override
+  String get dateGroupYesterday => 'I går';
+
+  @override
+  String get dateGroupPrevious7Days => 'Tidigare 7 dagar';
+
+  @override
+  String get dateGroupOlder => 'Äldre';
+
+  @override
   String get aiAssistantTitle => 'AI-assistent';
 
   @override
@@ -3463,6 +3925,9 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   @override
   String get aiUsageExhausted =>
       'Månatlig AI-gräns nådd. Uppgradera till Pro för obegränsat →';
+
+  @override
+  String get undo => 'Ångra';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -3670,6 +4135,20 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get recipeAddToList => 'Lägg till inköpslista';
 
   @override
+  String get recipeAddError =>
+      'Det gick inte att lägga till i listan. Försök igen.';
+
+  @override
+  String get recipeTapToCheck =>
+      'Tryck på en ingrediens för att bocka av den när du lagar mat';
+
+  @override
+  String get recipeIngredientInPantry => 'I skafferiet';
+
+  @override
+  String get recipeIngredientLowPantry => 'Lågt skafferi';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -3787,12 +4266,12 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get paywallSelectPlan => 'Välj din plan:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return 'SPARA $percent%';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Endast $price/månad';
   }
 
@@ -3827,6 +4306,35 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get paywallRestore => 'Återställa';
 
   @override
+  String get paywallTimelineToday => 'I dag';
+
+  @override
+  String get paywallTimelineTodayDesc => 'Lås upp full åtkomst direkt';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Dag $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Vi påminner dig innan rättegången avslutas';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Ditt abonnemang börjar – avsluta när som helst';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI Shopping Assistant';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Tala eller klistra in en hel lista — AI sorterar, kategoriserar och budgeterar den på några sekunder';
+
+  @override
+  String get paywallBasedOnAnswers => 'Personifierad utifrån dina svar';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI alltid vid din sida';
 
   @override
@@ -3859,9 +4367,6 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get itemRemoved => 'Varan borttagen';
-
-  @override
-  String get undo => 'Ångra';
 
   @override
   String get emptyListTitle => 'Din lista är tom';
@@ -3979,6 +4484,9 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get pantryItemRemoved => 'Varan borttagen';
+
+  @override
+  String get pantryItemAdded => 'Objekt har lagts till';
 
   @override
   String deficitItems(int deficit) {
@@ -4382,6 +4890,33 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get prepTimeMinutes => 'Förberedelsetid (minuter)';
 
   @override
+  String get recipeYieldServings => 'Ge portioner';
+
+  @override
+  String get recipeManualTotalCost => 'Manuell totalkostnad';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Lämna tomt för att uppskatta från ingredienspriser.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Beräknad totalkostnad';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / portion';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'Serverar $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Deluppskattning baserad på ingredienser med pris.';
+
+  @override
   String get instructionsHint => 'Skriv ett steg per rad...';
 
   @override
@@ -4510,6 +5045,10 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Uppskattning baserad på recept med partiell prisdata.';
+
+  @override
   String get mealPlannerGenerateList => 'Skapa inköpslista';
 
   @override
@@ -4602,6 +5141,9 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get catalogRareSection => 'mindre vanligt i ditt land';
 
   @override
+  String get catalogRareBadge => 'Sällsynt';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4618,6 +5160,9 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get catalogBrowse => 'Bläddra i katalogen';
+
+  @override
+  String get catalogCategories => 'Kategorier';
 
   @override
   String get offlineBanner => 'Du är offline';
@@ -4648,6 +5193,41 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
     );
     return '$count $_temp0 saknas';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Hantera måltidstyper';
+
+  @override
+  String get mealPlannerAddType => 'Lägg till måltidstyp';
+
+  @override
+  String get mealPlannerEditType => 'Redigera måltidstyp';
+
+  @override
+  String get mealPlannerTypeName => 'Namn';
+
+  @override
+  String get mealPlannerTypeColor => 'Färg';
+
+  @override
+  String get mealPlannerTypeIcon => 'Ikon';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Är du säker på att du vill ta bort den här måltidstypen? Planerade måltider med denna typ kommer att finnas kvar.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Namnet får inte vara tomt';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Det går inte att ta bort denna måltidstyp.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Anpassad typ';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Standardtyp';
 
   @override
   String get expirationDate => 'Utgångsdatum';
@@ -4708,6 +5288,9 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get errorLoadingLists => 'Det gick inte att ladda listor';
+
+  @override
+  String get errorLoadingItems => 'Det gick inte att läsa in objekt';
 
   @override
   String get noListsFound => 'Inga listor hittades';
@@ -5302,171 +5885,383 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   }
 
   @override
-  String get obHookTitle => 'Smarter shopping starts here';
+  String get obHookTitle => 'Smartare shopping börjar här';
 
   @override
   String get obHookSubtitle =>
-      'AI-powered lists that save you time and money, every single trip.';
+      'AI-drivna listor som sparar tid och pengar, varenda resa.';
 
   @override
-  String get obHookSocial => 'Trusted by thousands of shoppers worldwide';
+  String get obHookSocial => 'Betrodd av tusentals shoppare över hela världen';
 
   @override
-  String get obHookCta => 'Get Started';
+  String get obHookCta => 'Kom igång';
 
   @override
-  String get obQuizHouseholdTitle => 'Who do you shop for?';
+  String get obQuizHouseholdTitle => 'Vem handlar du åt?';
 
   @override
-  String get obQuizHouseholdSolo => 'Just me';
+  String get obQuizHouseholdSolo => 'Bara jag';
 
   @override
-  String get obQuizHouseholdCouple => 'Me and my partner';
+  String get obQuizHouseholdCouple => 'Jag och min sambo';
 
   @override
-  String get obQuizHouseholdFamilySmall => 'Family of 3–4';
+  String get obQuizHouseholdFamilySmall => 'Familj på 3–4';
 
   @override
-  String get obQuizHouseholdFamilyLarge => 'Family of 5+';
+  String get obQuizHouseholdFamilyLarge => 'Familj på 5+';
 
   @override
-  String get obQuizFrequencyTitle => 'How often do you shop for groceries?';
+  String get obQuizFrequencyTitle => 'Hur ofta handlar du matvaror?';
 
   @override
-  String get obQuizFrequencyDaily => 'Almost every day';
+  String get obQuizFrequencyDaily => 'Nästan varje dag';
 
   @override
-  String get obQuizFrequencyWeekly => 'Once a week';
+  String get obQuizFrequencyWeekly => 'En gång i veckan';
 
   @override
-  String get obQuizFrequencyBiweekly => 'Every two weeks';
+  String get obQuizFrequencyBiweekly => 'Varannan vecka';
 
   @override
-  String get obQuizFrequencyMonthly => 'Big monthly haul';
+  String get obQuizFrequencyMonthly => 'Stor månatlig avgång';
 
   @override
-  String get obQuizPainTitle => 'What frustrates you most about shopping?';
+  String get obQuizPainTitle => 'Vad frustrerar dig mest med shopping?';
 
   @override
-  String get obQuizPainForget => 'I always forget items';
+  String get obQuizPainForget => 'Jag glömmer alltid saker';
 
   @override
-  String get obQuizPainOverspend => 'I spend more than planned';
+  String get obQuizPainOverspend => 'Jag spenderar mer än planerat';
 
   @override
-  String get obQuizPainWaste => 'Food goes to waste at home';
+  String get obQuizPainWaste => 'Mat går till spillo hemma';
 
   @override
-  String get obQuizPainTime => 'It takes too much time';
+  String get obQuizPainTime => 'Det tar för mycket tid';
 
   @override
-  String get obQuizSavingsTitle => 'How much would you like to save monthly?';
+  String get obQuizSavingsTitle =>
+      'Hur mycket skulle du vilja spara månadsvis?';
 
   @override
-  String get obQuizSavingsSmall => 'A little — every bit counts';
+  String get obQuizSavingsSmall => 'Lite - varje bit räknas';
 
   @override
-  String get obQuizSavingsMedium => 'Around 10% of my grocery bill';
+  String get obQuizSavingsMedium => 'Cirka 10% av min maträkning';
 
   @override
-  String get obQuizSavingsLarge => 'As much as possible';
+  String get obQuizSavingsLarge => 'Så mycket som möjligt';
 
   @override
-  String get obQuizMethodTitle => 'How do you make shopping lists today?';
+  String get obQuizMethodTitle => 'Hur gör du inköpslistor idag?';
 
   @override
-  String get obQuizMethodPaper => 'Pen and paper';
+  String get obQuizMethodPaper => 'Penna och papper';
 
   @override
-  String get obQuizMethodNotes => 'Notes app';
+  String get obQuizMethodNotes => 'Notes-appen';
 
   @override
-  String get obQuizMethodMemory => 'I keep it in my head';
+  String get obQuizMethodMemory => 'Jag håller det i huvudet';
 
   @override
-  String get obQuizMethodNone => 'I don\'t make lists';
+  String get obQuizMethodNone => 'Jag gör inga listor';
 
   @override
-  String get obSocialTitle => 'You\'re in good company';
+  String get obSocialTitle => 'Du är i gott sällskap';
 
   @override
-  String get obSocialSubtitle =>
-      'Shoppers like you are already saving with KipiList';
+  String get obSocialSubtitle => 'Köpare som du sparar redan med KipiList';
 
   @override
   String get obSocialQuote1 =>
-      'I never forget anything anymore. The AI builds my list in seconds.';
+      'Jag glömmer aldrig något längre. AI:n bygger min lista på några sekunder.';
 
   @override
   String get obSocialQuote2 =>
-      'We cut our grocery bill noticeably in the first month.';
+      'Vi sänkte vår dagligvaruräkning märkbart under den första månaden.';
 
   @override
   String get obSocialQuote3 =>
-      'Sharing the list with my partner ended our shopping chaos.';
+      'Att dela listan med min partner gjorde slut på vårt shoppingkaos.';
 
   @override
-  String get obLoadingTitle => 'Building your personalized plan...';
+  String get obLoadingTitle => 'Skapa din personliga plan...';
 
   @override
-  String get obLoadingStepProfile => 'Adjusting for your household';
+  String get obLoadingStepProfile => 'Anpassning för ditt hushåll';
 
   @override
-  String get obLoadingStepHabits => 'Tuning to your shopping routine';
+  String get obLoadingStepHabits => 'Ställa in din shoppingrutin';
 
   @override
-  String get obLoadingStepSavings => 'Optimizing your savings strategy';
+  String get obLoadingStepSavings => 'Optimera din sparstrategi';
 
   @override
-  String get obLoadingStepLists => 'Preparing your smart lists';
+  String get obLoadingStepLists => 'Förbereder dina smarta listor';
 
   @override
-  String get obRevealTitle => 'Your plan is ready!';
+  String get obRevealTitle => 'Din plan är klar!';
 
   @override
-  String get obRevealSubtitle => 'Here\'s how KipiList will work for you';
+  String get obRevealSubtitle => 'Så här fungerar KipiList för dig';
 
   @override
-  String get obRevealSavingsCaption => 'Projected savings with KipiList';
+  String get obRevealSavingsCaption =>
+      'Prognostiserade besparingar med KipiList';
 
   @override
   String obRevealMonth(int n) {
-    return 'Month $n';
+    return 'Månad $n';
   }
 
   @override
-  String get obRevealFeatureAi => 'AI builds and organizes your lists';
+  String get obRevealFeatureAi => 'AI bygger och organiserar dina listor';
 
   @override
-  String get obRevealFeatureBudget => 'Spending tracked against your goal';
+  String get obRevealFeatureBudget => 'Utgifterna spåras mot ditt mål';
 
   @override
-  String get obRevealFeaturePantry => 'Pantry tracking cuts food waste';
+  String get obRevealFeaturePantry => 'Skafferispårning minskar matsvinnet';
 
   @override
-  String get obRevealFeatureShare => 'Real-time sharing with your household';
+  String get obRevealFeatureShare => 'Realtidsdelning med ditt hushåll';
 
   @override
-  String get obPaywallTitle => 'Unlock your plan';
+  String get obPaywallTitle => 'Lås upp din plan';
 
   @override
-  String get obPaywallRetry => 'Try again';
+  String get obPaywallRetry => 'Försök igen';
 
   @override
-  String get obLoginTitle => 'Save your plan';
+  String get obLoginTitle => 'Spara din plan';
 
   @override
-  String get obLoginSubtitle => 'Sign in so your lists sync across devices';
+  String get obLoginSubtitle =>
+      'Logga in så att dina listor synkroniseras mellan enheter';
 
   @override
-  String get obLoginGoogle => 'Continue with Google';
+  String get obLoginGoogle => 'Fortsätt med Google';
 
   @override
-  String get obLoginApple => 'Continue with Apple';
+  String get obLoginApple => 'Fortsätt med Apple';
 
   @override
-  String get obLoginSkip => 'Not now';
+  String get obLoginSkip => 'Inte nu';
 
   @override
-  String get obLoginError => 'Sign-in failed. Try again or skip for now.';
+  String get obLoginError =>
+      'Inloggningen misslyckades. Försök igen eller hoppa över nu.';
+
+  @override
+  String get searchMessages => 'Sök meddelanden...';
+
+  @override
+  String get deletedList => 'Raderad lista';
+
+  @override
+  String get openConversation => 'Öppna konversation';
+
+  @override
+  String get userRole => 'Du';
+
+  @override
+  String get assistantRole => 'Assistent';
+
+  @override
+  String get agentActionsRunning => 'Kör åtgärder...';
+
+  @override
+  String get agentActionsFailed => 'Det gick inte att köra åtgärder';
+
+  @override
+  String get agentActionsPremium => 'Åtgärder kräver Premium';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Ångra ändringar';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Premium)';
+  }
+
+  @override
+  String get itemAddedToList => 'Objekt har lagts till i listan.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Tidigare tillstånd: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Prenumerera på Premium för att låsa upp automatiska åtgärder.';
+
+  @override
+  String get viewPlans => 'Se planer';
+
+  @override
+  String get artifactSynced => 'Synkroniserad';
+
+  @override
+  String get artifactBudgetLabel => 'Budget:';
+
+  @override
+  String get totalEstimatedLabel => 'Beräknad summa';
+
+  @override
+  String get quickActionPantry => 'Visa skafferi';
+
+  @override
+  String get quickActionAi => 'Chatta med Kipi';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI-tjänsten returnerade ett fel ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Förfrågan tog för lång tid. Försök igen.';
+
+  @override
+  String get aiConnectionError =>
+      'Det gick inte att ansluta till AI-tjänsten. Kontrollera din anslutning.';
+
+  @override
+  String get aiEmptyResponseError => 'AI-tjänsten returnerade ett tomt svar.';
+
+  @override
+  String get aiInvalidResponseError =>
+      'AI-tjänsten returnerade ett ogiltigt svar.';
+
+  @override
+  String get categoryFruits => 'Frukter';
+
+  @override
+  String get categoryCleaning => 'Rengöring';
+
+  @override
+  String get categoryBeverages => 'Drycker';
+
+  @override
+  String get categoryBakery => 'Bageri';
+
+  @override
+  String get categoryMeat => 'Kött';
+
+  @override
+  String get categoryDairy => 'Mejeri';
+
+  @override
+  String get categoryVegetables => 'Grönsaker';
+
+  @override
+  String get categoryGrains => 'Spannmål och spannmål';
+
+  @override
+  String get categoryHygiene => 'Personlig omvårdnad';
+
+  @override
+  String get categoryFrozen => 'Frysta livsmedel';
+
+  @override
+  String get categoryCanned => 'Konserver';
+
+  @override
+  String get categorySeasonings => 'Kryddor';
+
+  @override
+  String get categorySweets => 'Godis och desserter';
+
+  @override
+  String get categoryAlcohol => 'Alkoholhaltiga drycker';
+
+  @override
+  String get categoryFish => 'Fisk';
+
+  @override
+  String get categoryColdCuts => 'Pålägg';
+
+  @override
+  String get categoryUtilities => 'Hushållsartiklar';
+
+  @override
+  String get categoryPet => 'Husdjursmaterial';
+
+  @override
+  String get categoryBaby => 'Baby';
+
+  @override
+  String get categoryOthers => 'Andra';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Hej $name, jag heter Kipi 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Hej, jag heter Kipi 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Jag bygger listor, föreslår recept och hittar var jag kan spara. Var börjar vi?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Planera en grillfest';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, jag är värd för en grillfest — hjälp mig att bygga inköpslistan';
+
+  @override
+  String get aiRateLimitError =>
+      'För många meddelanden på kort tid. Vänta några sekunder och försök igen.';
+
+  @override
+  String get chatHistoryErrorTitle =>
+      'Det gick inte att ladda den här konversationen';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Något gick fel hos oss. Tryck på Försök igen för att försöka igen.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Du är offline';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Kontrollera din internetanslutning och försök igen.';
+
+  @override
+  String get aiGeneratingResponse => 'Genererar svar...';
 }

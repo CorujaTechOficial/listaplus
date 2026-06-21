@@ -246,6 +246,11 @@ class AppLocalizationsMn extends AppLocalizations {
   String get noItemsToBuy => 'Худалдаж авах зүйл байхгүй';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return '$count$unit дутуу байна';
+  }
+
+  @override
   String get newPantryList => 'Агуулахаас дэлгүүр';
 
   @override
@@ -312,6 +317,12 @@ class AppLocalizationsMn extends AppLocalizations {
   String get settingsAppBar => 'Тохиргоо';
 
   @override
+  String get preferencesSection => 'Сонголтууд';
+
+  @override
+  String get aiSection => 'AI туслах';
+
+  @override
   String get language => 'Хэл';
 
   @override
@@ -340,6 +351,12 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get appearance => 'Гадаад байдал';
+
+  @override
+  String get themeMode => 'Сэдвийн горим';
+
+  @override
+  String get chooseThemeMode => 'Загварын горимыг сонгоно уу';
 
   @override
   String get light => 'Гэрэлтэй';
@@ -590,6 +607,13 @@ class AppLocalizationsMn extends AppLocalizations {
   String get trackStockInactive => 'Дэлгүүрийн зөвлөмж үүсгэхгүй';
 
   @override
+  String get keepAdding => 'Үргэлжлүүлэн нэмээрэй';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Олон зүйл нэмэхийн тулд хуудсыг нээлттэй байлга';
+
+  @override
   String get createListDialog => 'Жагсаалт үүсгэх';
 
   @override
@@ -694,6 +718,36 @@ class AppLocalizationsMn extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'Сайн хариу';
+
+  @override
+  String get badResponse => 'Муу хариу';
+
+  @override
+  String get scrollToBottom => 'Доош гүйлгэх';
+
+  @override
+  String get somethingWentWrong => 'Ямар нэг алдаа гарлаа';
+
+  @override
+  String get editMessage => 'Зурвас засах';
+
+  @override
+  String get searchConversations => 'Харилцан яриа хайх';
+
+  @override
+  String get dateGroupToday => 'Өнөөдөр';
+
+  @override
+  String get dateGroupYesterday => 'Өчигдөр';
+
+  @override
+  String get dateGroupPrevious7Days => 'Өмнөх 7 хоног';
+
+  @override
+  String get dateGroupOlder => 'Хуучин';
+
+  @override
   String get aiAssistantTitle => 'AI туслах';
 
   @override
@@ -734,6 +788,33 @@ class AppLocalizationsMn extends AppLocalizations {
   @override
   String get aiUsageExhausted =>
       'AI-ийн сарын хязгаарт хүрсэн. Хязгааргүй → Pro руу шинэчилнэ үү';
+
+  @override
+  String get undo => 'Буцаах';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -942,6 +1023,19 @@ class AppLocalizationsMn extends AppLocalizations {
   String get recipeAddToList => 'Худалдан авалтын жагсаалтад нэмнэ үү';
 
   @override
+  String get recipeAddError =>
+      'Таны жагсаалтад нэмж чадсангүй. Дахин оролдоно уу.';
+
+  @override
+  String get recipeTapToCheck => 'Хоол хийх явцдаа орцыг нь шалгана уу';
+
+  @override
+  String get recipeIngredientInPantry => 'агуулахад';
+
+  @override
+  String get recipeIngredientLowPantry => 'Хоолны агуулах бага';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count найрлагыг $listName-д нэмсэн';
   }
@@ -1055,12 +1149,12 @@ class AppLocalizationsMn extends AppLocalizations {
   String get paywallSelectPlan => 'Төлөвлөгөөгөө сонгоно уу:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return '$percent% ХЭМНЭХ';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Зөвхөн $price/сар';
   }
 
@@ -1095,6 +1189,36 @@ class AppLocalizationsMn extends AppLocalizations {
   String get paywallRestore => 'Сэргээх';
 
   @override
+  String get paywallTimelineToday => 'Өнөөдөр';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Бүрэн хандалтын түгжээг нэн даруй нээнэ үү';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Өдөр $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Шүүх хурал дуусахаас өмнө бид танд сануулж байна';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Таны захиалга эхэлж байна - хүссэн үедээ цуцлаарай';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI худалдааны туслах';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Жагсаалтыг бүхэлд нь хэлэх эсвэл буулгах - AI үүнийг хэдхэн секундын дотор ангилж, ангилж, төсөвлөнө';
+
+  @override
+  String get paywallBasedOnAnswers => 'Таны хариултаас тохируулсан';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI үргэлж таны хажууд байдаг';
 
   @override
@@ -1126,9 +1250,6 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get itemRemoved => 'Зүйл устгагдлаа';
-
-  @override
-  String get undo => 'Буцаах';
 
   @override
   String get emptyListTitle => 'Таны жагсаалт хоосон байна';
@@ -1245,6 +1366,9 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'Зүйл устгагдлаа';
+
+  @override
+  String get pantryItemAdded => 'Зүйл нэмсэн';
 
   @override
   String deficitItems(int deficit) {
@@ -1649,6 +1773,33 @@ class AppLocalizationsMn extends AppLocalizations {
   String get prepTimeMinutes => 'Бэлтгэх хугацаа (минут)';
 
   @override
+  String get recipeYieldServings => 'Үр порц';
+
+  @override
+  String get recipeManualTotalCost => 'Гарын авлагын нийт зардал';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Найрлагын үнээс тооцоолохын тулд хоосон орхино уу.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Тооцоолсон нийт зардал';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / үйлчлэх';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return '$count үйлчилдэг';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Үнийн хамт найрлагад үндэслэн хэсэгчилсэн тооцоолол.';
+
+  @override
   String get instructionsHint => 'Мөр бүрт нэг алхам бичнэ үү...';
 
   @override
@@ -1777,6 +1928,10 @@ class AppLocalizationsMn extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Хэсэгчилсэн үнийн мэдээлэл бүхий жор дээр үндэслэн тооцоол.';
+
+  @override
   String get mealPlannerGenerateList => 'Шопинг жагсаалт гаргах';
 
   @override
@@ -1871,6 +2026,9 @@ class AppLocalizationsMn extends AppLocalizations {
   String get catalogRareSection => 'танай улсад бага тохиолддог';
 
   @override
+  String get catalogRareBadge => 'Ховор';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1889,7 +2047,7 @@ class AppLocalizationsMn extends AppLocalizations {
   String get catalogBrowse => 'Каталог үзэх';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'Ангилал';
 
   @override
   String get offlineBanner => 'Та офлайн байна';
@@ -1920,6 +2078,41 @@ class AppLocalizationsMn extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Хоолны төрлийг удирдах';
+
+  @override
+  String get mealPlannerAddType => 'Хоолны төрлийг нэмнэ үү';
+
+  @override
+  String get mealPlannerEditType => 'Хоолны төрлийг засах';
+
+  @override
+  String get mealPlannerTypeName => 'Нэр';
+
+  @override
+  String get mealPlannerTypeColor => 'Өнгө';
+
+  @override
+  String get mealPlannerTypeIcon => 'Дүрс';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Та энэ хоолны төрлийг устгахдаа итгэлтэй байна уу? Энэ төрлийн төлөвлөсөн хоол хэвээр байх болно.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Нэр хоосон байж болохгүй';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Энэ төрлийн хоолыг устгах боломжгүй.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Захиалгат төрөл';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Өгөгдмөл төрөл';
 
   @override
   String get expirationDate => 'Хугацаа дуусах хугацаа';
@@ -1980,6 +2173,9 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'Жагсаалтыг ачаалахад алдаа гарлаа';
+
+  @override
+  String get errorLoadingItems => 'Зүйлс ачаалахад алдаа гарлаа';
 
   @override
   String get noListsFound => 'Жагсаалт олдсонгүй';
@@ -2764,6 +2960,213 @@ class AppLocalizationsMn extends AppLocalizations {
   @override
   String get obLoginError =>
       'Нэвтэрч чадсангүй. Дахин оролдох эсвэл одоогоор алгасна уу.';
+
+  @override
+  String get searchMessages => 'Зурвас хайх...';
+
+  @override
+  String get deletedList => 'Жагсаалтыг устгасан';
+
+  @override
+  String get openConversation => 'Нээлттэй харилцан яриа';
+
+  @override
+  String get userRole => 'Та';
+
+  @override
+  String get assistantRole => 'Туслах';
+
+  @override
+  String get agentActionsRunning => 'Ажиллаж байгаа үйлдлүүд...';
+
+  @override
+  String get agentActionsFailed => 'Үйлдлийг гүйцэтгэж чадсангүй';
+
+  @override
+  String get agentActionsPremium => 'Үйлдлүүд нь Premium шаарддаг';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Өөрчлөлтүүдийг буцаах';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Дээд зэрэглэлийн)';
+  }
+
+  @override
+  String get itemAddedToList => 'Жагсаалтад нэмсэн зүйл.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Өмнөх төлөв: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Автомат үйлдлийн түгжээг тайлахын тулд Premium-д бүртгүүлнэ үү.';
+
+  @override
+  String get viewPlans => 'Төлөвлөгөө харах';
+
+  @override
+  String get artifactSynced => 'Синк хийсэн';
+
+  @override
+  String get artifactBudgetLabel => 'Төсөв:';
+
+  @override
+  String get totalEstimatedLabel => 'Тооцоолсон нийт';
+
+  @override
+  String get quickActionPantry => 'агуулах үзэх';
+
+  @override
+  String get quickActionAi => 'Kipi-тэй чатлах';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI үйлчилгээ алдаа буцаасан ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Хүсэлт хэтэрхий удсан. Дахин оролдоно уу.';
+
+  @override
+  String get aiConnectionError =>
+      'AI үйлчилгээнд холбогдож чадсангүй. Холболтоо шалгана уу.';
+
+  @override
+  String get aiEmptyResponseError => 'AI үйлчилгээ хоосон хариулт өгсөн.';
+
+  @override
+  String get aiInvalidResponseError => 'AI үйлчилгээ хүчингүй хариулт өгсөн.';
+
+  @override
+  String get categoryFruits => 'Жимс';
+
+  @override
+  String get categoryCleaning => 'Цэвэрлэгээ';
+
+  @override
+  String get categoryBeverages => 'Ундаа';
+
+  @override
+  String get categoryBakery => 'Талх нарийн боов';
+
+  @override
+  String get categoryMeat => 'Мах';
+
+  @override
+  String get categoryDairy => 'Сүүн бүтээгдэхүүн';
+
+  @override
+  String get categoryVegetables => 'Хүнсний ногоо';
+
+  @override
+  String get categoryGrains => 'Үр тариа, үр тариа';
+
+  @override
+  String get categoryHygiene => 'Хувийн арчилгаа';
+
+  @override
+  String get categoryFrozen => 'Хөлдөөсөн хоол';
+
+  @override
+  String get categoryCanned => 'Лаазалсан бүтээгдэхүүн';
+
+  @override
+  String get categorySeasonings => 'Амтлагч';
+
+  @override
+  String get categorySweets => 'Амттан, амттан';
+
+  @override
+  String get categoryAlcohol => 'Согтууруулах ундаа';
+
+  @override
+  String get categoryFish => 'Загас';
+
+  @override
+  String get categoryColdCuts => 'Хүйтэн зүслэг';
+
+  @override
+  String get categoryUtilities => 'Гэр ахуйн хэрэгсэл';
+
+  @override
+  String get categoryPet => 'Амьтны хангамж';
+
+  @override
+  String get categoryBaby => 'Хонгор минь';
+
+  @override
+  String get categoryOthers => 'Бусад';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Сайн уу $name, намайг Кипи гэдэг 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Сайн уу, намайг Кипи гэдэг 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Би жагсаалт гаргаж, жор санал болгож, хаана хадгалахаа олдог. Бид хаанаас эхлэх вэ?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Шарсан мах төлөвлө';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Кипи, би шарсан мах хийж байна - дэлгүүрийн жагсаалтыг гаргахад тусална уу';
+
+  @override
+  String get aiRateLimitError =>
+      'Богино хугацаанд хэт олон мессеж. Хэдэн секунд хүлээгээд дахин оролдоно уу.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Энэ харилцан яриаг ачаалж чадсангүй';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Бидний талд ямар нэг зүйл буруу болсон. Дахин оролдохын тулд дахин оролдоно уу.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Та офлайн байна';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Интернэт холболтоо шалгаад дахин оролдоно уу.';
+
+  @override
+  String get aiGeneratingResponse => 'Хариулт үүсгэж байна...';
 }
 
 /// The translations for Mongolian, as used in Mongolia (`mn_MN`).
@@ -3002,6 +3405,11 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get noItemsToBuy => 'Худалдаж авах зүйлс байхгүй';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return '$count$unit дутуу байна';
+  }
+
+  @override
   String get newPantryList => 'Агуулахын худалдан авалт';
 
   @override
@@ -3068,6 +3476,12 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get settingsAppBar => 'Тохиргоо';
 
   @override
+  String get preferencesSection => 'Сонголтууд';
+
+  @override
+  String get aiSection => 'AI туслах';
+
+  @override
   String get language => 'Хэл';
 
   @override
@@ -3096,6 +3510,12 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get appearance => 'Гадаад байдал';
+
+  @override
+  String get themeMode => 'Сэдвийн горим';
+
+  @override
+  String get chooseThemeMode => 'Загварын горимыг сонгоно уу';
 
   @override
   String get light => 'Гэрэлтэй';
@@ -3346,6 +3766,13 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get trackStockInactive => 'Дэлгүүрийн зөвлөмж үүсгэхгүй';
 
   @override
+  String get keepAdding => 'Үргэлжлүүлэн нэмээрэй';
+
+  @override
+  String get keepAddingSubtitle =>
+      'Олон зүйл нэмэхийн тулд хуудсыг нээлттэй байлга';
+
+  @override
   String get createListDialog => 'Жагсаалт үүсгэх';
 
   @override
@@ -3450,6 +3877,36 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   }
 
   @override
+  String get goodResponse => 'Сайн хариу';
+
+  @override
+  String get badResponse => 'Муу хариу';
+
+  @override
+  String get scrollToBottom => 'Доош гүйлгэх';
+
+  @override
+  String get somethingWentWrong => 'Ямар нэг алдаа гарлаа';
+
+  @override
+  String get editMessage => 'Зурвас засах';
+
+  @override
+  String get searchConversations => 'Харилцан яриа хайх';
+
+  @override
+  String get dateGroupToday => 'Өнөөдөр';
+
+  @override
+  String get dateGroupYesterday => 'Өчигдөр';
+
+  @override
+  String get dateGroupPrevious7Days => 'Өмнөх 7 хоног';
+
+  @override
+  String get dateGroupOlder => 'Хуучин';
+
+  @override
   String get aiAssistantTitle => 'AI туслах';
 
   @override
@@ -3490,6 +3947,9 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   @override
   String get aiUsageExhausted =>
       'AI-ийн сарын хязгаарт хүрсэн. Хязгааргүй → Pro руу шинэчилнэ үү';
+
+  @override
+  String get undo => 'Буцаах';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -3698,6 +4158,19 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get recipeAddToList => 'Худалдан авалтын жагсаалтад нэмнэ үү';
 
   @override
+  String get recipeAddError =>
+      'Таны жагсаалтад нэмж чадсангүй. Дахин оролдоно уу.';
+
+  @override
+  String get recipeTapToCheck => 'Хоол хийх явцдаа орцыг нь шалгана уу';
+
+  @override
+  String get recipeIngredientInPantry => 'агуулахад';
+
+  @override
+  String get recipeIngredientLowPantry => 'Хоолны агуулах бага';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count найрлагыг $listName-д нэмсэн';
   }
@@ -3811,12 +4284,12 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get paywallSelectPlan => 'Төлөвлөгөөгөө сонгоно уу:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return '$percent% ХЭМНЭХ';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'Зөвхөн $price/сар';
   }
 
@@ -3851,6 +4324,36 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get paywallRestore => 'Сэргээх';
 
   @override
+  String get paywallTimelineToday => 'Өнөөдөр';
+
+  @override
+  String get paywallTimelineTodayDesc =>
+      'Бүрэн хандалтын түгжээг нэн даруй нээнэ үү';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'Өдөр $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'Шүүх хурал дуусахаас өмнө бид танд сануулж байна';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'Таны захиалга эхэлж байна - хүссэн үедээ цуцлаарай';
+
+  @override
+  String get paywallHeroFeatureTitle => 'AI худалдааны туслах';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'Жагсаалтыг бүхэлд нь хэлэх эсвэл буулгах - AI үүнийг хэдхэн секундын дотор ангилж, ангилж, төсөвлөнө';
+
+  @override
+  String get paywallBasedOnAnswers => 'Таны хариултаас тохируулсан';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI үргэлж таны хажууд байдаг';
 
   @override
@@ -3882,9 +4385,6 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get itemRemoved => 'Зүйл устгагдсан';
-
-  @override
-  String get undo => 'Буцаах';
 
   @override
   String get emptyListTitle => 'Таны жагсаалт хоосон байна';
@@ -4001,6 +4501,9 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get pantryItemRemoved => 'Зүйл устгагдсан';
+
+  @override
+  String get pantryItemAdded => 'Зүйл нэмсэн';
 
   @override
   String deficitItems(int deficit) {
@@ -4399,6 +4902,33 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get prepTimeMinutes => 'Бэлтгэх хугацаа (минут)';
 
   @override
+  String get recipeYieldServings => 'Үр порц';
+
+  @override
+  String get recipeManualTotalCost => 'Гарын авлагын нийт зардал';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'Найрлагын үнээс тооцоолохын тулд хоосон орхино уу.';
+
+  @override
+  String get recipeEstimatedTotalCost => 'Тооцоолсон нийт зардал';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / үйлчлэх';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return '$count үйлчилдэг';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'Үнийн хамт найрлагад үндэслэн хэсэгчилсэн тооцоолол.';
+
+  @override
   String get instructionsHint => 'Мөр бүрт нэг алхам бичнэ үү...';
 
   @override
@@ -4527,6 +5057,10 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'Хэсэгчилсэн үнийн мэдээлэл бүхий жор дээр үндэслэн тооцоол.';
+
+  @override
   String get mealPlannerGenerateList => 'Шопинг жагсаалт гаргах';
 
   @override
@@ -4621,6 +5155,9 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   String get catalogRareSection => 'танай улсад бага тохиолддог';
 
   @override
+  String get catalogRareBadge => 'Ховор';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -4637,6 +5174,9 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get catalogBrowse => 'Каталог үзэх';
+
+  @override
+  String get catalogCategories => 'Ангилал';
 
   @override
   String get offlineBanner => 'Та офлайн байна';
@@ -4667,6 +5207,41 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'Хоолны төрлийг удирдах';
+
+  @override
+  String get mealPlannerAddType => 'Хоолны төрлийг нэмнэ үү';
+
+  @override
+  String get mealPlannerEditType => 'Хоолны төрлийг засах';
+
+  @override
+  String get mealPlannerTypeName => 'Нэр';
+
+  @override
+  String get mealPlannerTypeColor => 'Өнгө';
+
+  @override
+  String get mealPlannerTypeIcon => 'Дүрс';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'Та энэ хоолны төрлийг устгахдаа итгэлтэй байна уу? Энэ төрлийн төлөвлөсөн хоол хэвээр байх болно.';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'Нэр хоосон байж болохгүй';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'Энэ төрлийн хоолыг устгах боломжгүй.';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'Захиалгат төрөл';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'Өгөгдмөл төрөл';
 
   @override
   String get expirationDate => 'Хугацаа дуусах хугацаа';
@@ -4727,6 +5302,9 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
 
   @override
   String get errorLoadingLists => 'Жагсаалтыг ачаалахад алдаа гарлаа';
+
+  @override
+  String get errorLoadingItems => 'Зүйлс ачаалахад алдаа гарлаа';
 
   @override
   String get noListsFound => 'Жагсаалт олдсонгүй';
@@ -5511,4 +6089,211 @@ class AppLocalizationsMnMn extends AppLocalizationsMn {
   @override
   String get obLoginError =>
       'Нэвтэрч чадсангүй. Дахин оролдох эсвэл одоогоор алгасна уу.';
+
+  @override
+  String get searchMessages => 'Зурвас хайх...';
+
+  @override
+  String get deletedList => 'Жагсаалтыг устгасан';
+
+  @override
+  String get openConversation => 'Нээлттэй харилцан яриа';
+
+  @override
+  String get userRole => 'Та';
+
+  @override
+  String get assistantRole => 'Туслах';
+
+  @override
+  String get agentActionsRunning => 'Ажиллаж байгаа үйлдлүүд...';
+
+  @override
+  String get agentActionsFailed => 'Үйлдлийг гүйцэтгэж чадсангүй';
+
+  @override
+  String get agentActionsPremium => 'Үйлдлүүд нь Premium шаарддаг';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'Өөрчлөлтүүдийг буцаах';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (Дээд зэрэглэлийн)';
+  }
+
+  @override
+  String get itemAddedToList => 'Жагсаалтад нэмсэн зүйл.';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'Өмнөх төлөв: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'Автомат үйлдлийн түгжээг тайлахын тулд Premium-д бүртгүүлнэ үү.';
+
+  @override
+  String get viewPlans => 'Төлөвлөгөө харах';
+
+  @override
+  String get artifactSynced => 'Синк хийсэн';
+
+  @override
+  String get artifactBudgetLabel => 'Төсөв:';
+
+  @override
+  String get totalEstimatedLabel => 'Тооцоолсон нийт';
+
+  @override
+  String get quickActionPantry => 'агуулах үзэх';
+
+  @override
+  String get quickActionAi => 'Kipi-тэй чатлах';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI үйлчилгээ алдаа буцаасан ($statusCode).';
+  }
+
+  @override
+  String get aiTimeoutError => 'Хүсэлт хэтэрхий удсан. Дахин оролдоно уу.';
+
+  @override
+  String get aiConnectionError =>
+      'AI үйлчилгээнд холбогдож чадсангүй. Холболтоо шалгана уу.';
+
+  @override
+  String get aiEmptyResponseError => 'AI үйлчилгээ хоосон хариулт өгсөн.';
+
+  @override
+  String get aiInvalidResponseError => 'AI үйлчилгээ хүчингүй хариулт өгсөн.';
+
+  @override
+  String get categoryFruits => 'Жимс';
+
+  @override
+  String get categoryCleaning => 'Цэвэрлэгээ';
+
+  @override
+  String get categoryBeverages => 'Ундаа';
+
+  @override
+  String get categoryBakery => 'Талх нарийн боов';
+
+  @override
+  String get categoryMeat => 'Мах';
+
+  @override
+  String get categoryDairy => 'Сүүн бүтээгдэхүүн';
+
+  @override
+  String get categoryVegetables => 'Хүнсний ногоо';
+
+  @override
+  String get categoryGrains => 'Үр тариа, үр тариа';
+
+  @override
+  String get categoryHygiene => 'Хувийн арчилгаа';
+
+  @override
+  String get categoryFrozen => 'Хөлдөөсөн хоол';
+
+  @override
+  String get categoryCanned => 'Лаазалсан бүтээгдэхүүн';
+
+  @override
+  String get categorySeasonings => 'Амтлагч';
+
+  @override
+  String get categorySweets => 'Амттан, амттан';
+
+  @override
+  String get categoryAlcohol => 'Согтууруулах ундаа';
+
+  @override
+  String get categoryFish => 'Загас';
+
+  @override
+  String get categoryColdCuts => 'Хүйтэн зүслэг';
+
+  @override
+  String get categoryUtilities => 'Гэр ахуйн хэрэгсэл';
+
+  @override
+  String get categoryPet => 'Амьтны хангамж';
+
+  @override
+  String get categoryBaby => 'Хонгор минь';
+
+  @override
+  String get categoryOthers => 'Бусад';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'Сайн уу $name, намайг Кипи гэдэг 👋';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'Сайн уу, намайг Кипи гэдэг 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'Би жагсаалт гаргаж, жор санал болгож, хаана хадгалахаа олдог. Бид хаанаас эхлэх вэ?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'Шарсан мах төлөвлө';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Кипи, би шарсан мах хийж байна - дэлгүүрийн жагсаалтыг гаргахад тусална уу';
+
+  @override
+  String get aiRateLimitError =>
+      'Богино хугацаанд хэт олон мессеж. Хэдэн секунд хүлээгээд дахин оролдоно уу.';
+
+  @override
+  String get chatHistoryErrorTitle => 'Энэ харилцан яриаг ачаалж чадсангүй';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'Бидний талд ямар нэг зүйл буруу болсон. Дахин оролдохын тулд дахин оролдоно уу.';
+
+  @override
+  String get chatHistoryOfflineTitle => 'Та офлайн байна';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'Интернэт холболтоо шалгаад дахин оролдоно уу.';
+
+  @override
+  String get aiGeneratingResponse => 'Хариулт үүсгэж байна...';
 }

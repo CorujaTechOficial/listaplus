@@ -243,6 +243,11 @@ class AppLocalizationsPa extends AppLocalizations {
   String get noItemsToBuy => 'ਖਰੀਦਣ ਲਈ ਕੋਈ ਚੀਜ਼ ਨਹੀਂ ਹੈ';
 
   @override
+  String pantryDeficitCount(int count, String unit) {
+    return 'ਗੁੰਮ ${count}PH1__';
+  }
+
+  @override
   String get newPantryList => 'ਪੈਂਟਰੀ ਸ਼ਾਪਿੰਗ';
 
   @override
@@ -309,6 +314,12 @@ class AppLocalizationsPa extends AppLocalizations {
   String get settingsAppBar => 'ਸੈਟਿੰਗਾਂ';
 
   @override
+  String get preferencesSection => 'ਤਰਜੀਹਾਂ';
+
+  @override
+  String get aiSection => 'AI ਸਹਾਇਕ';
+
+  @override
   String get language => 'ਭਾਸ਼ਾ';
 
   @override
@@ -337,6 +348,12 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get appearance => 'ਦਿੱਖ';
+
+  @override
+  String get themeMode => 'ਥੀਮ ਮੋਡ';
+
+  @override
+  String get chooseThemeMode => 'ਥੀਮ ਮੋਡ ਚੁਣੋ';
 
   @override
   String get light => 'ਚਾਨਣ';
@@ -587,6 +604,13 @@ class AppLocalizationsPa extends AppLocalizations {
   String get trackStockInactive => 'ਸ਼ਾਪਿੰਗ ਸੁਝਾਅ ਨਹੀਂ ਬਣਾਉਂਦਾ';
 
   @override
+  String get keepAdding => 'ਜੋੜਦੇ ਰਹੋ';
+
+  @override
+  String get keepAddingSubtitle =>
+      'ਕਈ ਆਈਟਮਾਂ ਨੂੰ ਜੋੜਨ ਲਈ ਸ਼ੀਟ ਨੂੰ ਖੁੱਲ੍ਹਾ ਰੱਖੋ';
+
+  @override
   String get createListDialog => 'ਲਿਸਟ ਬਣਾਓ';
 
   @override
@@ -691,6 +715,36 @@ class AppLocalizationsPa extends AppLocalizations {
   }
 
   @override
+  String get goodResponse => 'ਚੰਗਾ ਹੁੰਗਾਰਾ';
+
+  @override
+  String get badResponse => 'ਮਾੜਾ ਜਵਾਬ';
+
+  @override
+  String get scrollToBottom => 'ਹੇਠਾਂ ਤੱਕ ਸਕ੍ਰੋਲ ਕਰੋ';
+
+  @override
+  String get somethingWentWrong => 'ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ';
+
+  @override
+  String get editMessage => 'ਸੁਨੇਹਾ ਸੰਪਾਦਿਤ ਕਰੋ';
+
+  @override
+  String get searchConversations => 'ਗੱਲਬਾਤ ਖੋਜੋ';
+
+  @override
+  String get dateGroupToday => 'ਅੱਜ';
+
+  @override
+  String get dateGroupYesterday => 'ਕੱਲ੍ਹ';
+
+  @override
+  String get dateGroupPrevious7Days => 'ਪਿਛਲੇ 7 ਦਿਨ';
+
+  @override
+  String get dateGroupOlder => 'ਪੁਰਾਣੀ';
+
+  @override
   String get aiAssistantTitle => 'AI ਸਹਾਇਕ';
 
   @override
@@ -733,7 +787,34 @@ class AppLocalizationsPa extends AppLocalizations {
       'ਮਹੀਨਾਵਾਰ AI ਸੀਮਾ ਪੂਰੀ ਹੋ ਗਈ ਹੈ। ਅਸੀਮਤ → ਲਈ ਪ੍ਰੋ \'ਤੇ ਅੱਪਗ੍ਰੇਡ ਕਰੋ';
 
   @override
-  String get kipiListTitle => 'KipiList';
+  String get undo => 'ਅਣ-ਕਰੋ';
+
+  @override
+  String get newChatStarted => 'New chat started';
+
+  @override
+  String get quickAddToList => 'Add to list';
+
+  @override
+  String get aiCapabilitiesTitle => 'What can I do?';
+
+  @override
+  String get aiCapabilitiesLists => 'Shopping Lists';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget & Prices';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organization';
+
+  @override
+  String get marketModeDescription => 'Check off items as you shop';
+
+  @override
+  String get kipiListTitle => 'ਕਿਪੀਲਿਸਟ';
 
   @override
   String get loginPrompt => 'ਪ੍ਰੀਮੀਅਮ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ\nਅਨਲੌਕ ਕਰਨ ਲਈ ਲੌਗ ਇਨ ਕਰੋ';
@@ -941,6 +1022,20 @@ class AppLocalizationsPa extends AppLocalizations {
   String get recipeAddToList => 'ਖਰੀਦਦਾਰੀ ਸੂਚੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ';
 
   @override
+  String get recipeAddError =>
+      'ਤੁਹਾਡੀ ਸੂਚੀ ਵਿੱਚ ਸ਼ਾਮਲ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।';
+
+  @override
+  String get recipeTapToCheck =>
+      'ਜਦੋਂ ਤੁਸੀਂ ਪਕਾਉਂਦੇ ਹੋ ਤਾਂ ਇਸਨੂੰ ਬੰਦ ਕਰਨ ਲਈ ਕਿਸੇ ਸਮੱਗਰੀ \'ਤੇ ਟੈਪ ਕਰੋ';
+
+  @override
+  String get recipeIngredientInPantry => 'ਪੈਂਟਰੀ ਵਿੱਚ';
+
+  @override
+  String get recipeIngredientLowPantry => 'ਪੈਂਟਰੀ ਵਿੱਚ ਘੱਟ';
+
+  @override
   String recipeAddedConfirmation(int count, String listName) {
     return '$count ਸਮੱਗਰੀ $listName ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤੀ ਗਈ';
   }
@@ -1052,12 +1147,12 @@ class AppLocalizationsPa extends AppLocalizations {
   String get paywallSelectPlan => 'ਆਪਣੀ ਯੋਜਨਾ ਚੁਣੋ:';
 
   @override
-  String paywallSavePercent(Object percent) {
+  String paywallSavePercent(int percent) {
     return '$percent% ਬਚਾਓ';
   }
 
   @override
-  String paywallPricePerMonth(Object price) {
+  String paywallPricePerMonth(String price) {
     return 'ਸਿਰਫ਼ $price/ਮਹੀਨਾ';
   }
 
@@ -1092,6 +1187,35 @@ class AppLocalizationsPa extends AppLocalizations {
   String get paywallRestore => 'ਰੀਸਟੋਰ ਕਰੋ';
 
   @override
+  String get paywallTimelineToday => 'ਅੱਜ';
+
+  @override
+  String get paywallTimelineTodayDesc => 'ਪੂਰੀ ਪਹੁੰਚ ਨੂੰ ਤੁਰੰਤ ਅਨਲੌਕ ਕਰੋ';
+
+  @override
+  String paywallTimelineDay(int day) {
+    return 'ਦਿਨ $day';
+  }
+
+  @override
+  String get paywallTimelineReminderDesc =>
+      'ਮੁਕੱਦਮਾ ਖਤਮ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਅਸੀਂ ਤੁਹਾਨੂੰ ਯਾਦ ਦਿਵਾਉਂਦੇ ਹਾਂ';
+
+  @override
+  String get paywallTimelineChargeDesc =>
+      'ਤੁਹਾਡੀ ਗਾਹਕੀ ਸ਼ੁਰੂ ਹੁੰਦੀ ਹੈ — ਕਿਸੇ ਵੀ ਸਮੇਂ ਰੱਦ ਕਰੋ';
+
+  @override
+  String get paywallHeroFeatureTitle => 'ਏਆਈ ਸ਼ਾਪਿੰਗ ਅਸਿਸਟੈਂਟ';
+
+  @override
+  String get paywallHeroFeatureDesc =>
+      'ਇੱਕ ਪੂਰੀ ਸੂਚੀ ਬੋਲੋ ਜਾਂ ਪੇਸਟ ਕਰੋ — AI ਨੂੰ ਸਕਿੰਟਾਂ ਵਿੱਚ ਕ੍ਰਮਬੱਧ, ਸ਼੍ਰੇਣੀਬੱਧ ਅਤੇ ਬਜਟ ਬਣਾਓ';
+
+  @override
+  String get paywallBasedOnAnswers => 'ਤੁਹਾਡੇ ਜਵਾਬਾਂ ਤੋਂ ਵਿਅਕਤੀਗਤ ਬਣਾਇਆ ਗਿਆ';
+
+  @override
   String get paywallHeroHeadline => 'Kipi AI ਹਮੇਸ਼ਾ ਤੁਹਾਡੇ ਨਾਲ';
 
   @override
@@ -1124,9 +1248,6 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get itemRemoved => 'ਚੀਜ਼ ਹਟਾਈ';
-
-  @override
-  String get undo => 'ਅਣ-ਕਰੋ';
 
   @override
   String get emptyListTitle => 'ਤੁਹਾਡੀ ਲਿਸਟ ਖਾਲੀ ਹੈ';
@@ -1243,6 +1364,9 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get pantryItemRemoved => 'ਚੀਜ਼ ਹਟਾਈ';
+
+  @override
+  String get pantryItemAdded => 'ਆਈਟਮ ਸ਼ਾਮਲ ਕੀਤੀ ਗਈ';
 
   @override
   String deficitItems(int deficit) {
@@ -1644,6 +1768,33 @@ class AppLocalizationsPa extends AppLocalizations {
   String get prepTimeMinutes => 'ਤਿਆਰੀ ਦਾ ਸਮਾਂ (ਮਿੰਟ)';
 
   @override
+  String get recipeYieldServings => 'ਉਪਜ ਸਰਵਿੰਗ';
+
+  @override
+  String get recipeManualTotalCost => 'ਮੈਨੁਅਲ ਕੁੱਲ ਲਾਗਤ';
+
+  @override
+  String get recipeManualTotalCostHint =>
+      'ਸਮੱਗਰੀ ਦੀਆਂ ਕੀਮਤਾਂ ਤੋਂ ਅੰਦਾਜ਼ਾ ਲਗਾਉਣ ਲਈ ਖਾਲੀ ਛੱਡੋ।';
+
+  @override
+  String get recipeEstimatedTotalCost => 'ਅੰਦਾਜ਼ਨ ਕੁੱਲ ਲਾਗਤ';
+
+  @override
+  String recipeEstimatedCostPerServing(String cost) {
+    return '$cost / ਸੇਵਾ ਕਰ ਰਿਹਾ ਹੈ';
+  }
+
+  @override
+  String recipeServesCount(int count) {
+    return 'ਸੇਵਾ ਕਰਦਾ ਹੈ $count';
+  }
+
+  @override
+  String get recipeEstimatePartial =>
+      'ਕੀਮਤ ਵਾਲੀ ਸਮੱਗਰੀ \'ਤੇ ਆਧਾਰਿਤ ਅੰਸ਼ਕ ਅੰਦਾਜ਼ਾ।';
+
+  @override
   String get instructionsHint => 'ਪ੍ਰਤੀ ਲਾਈਨ ਇੱਕ ਕਦਮ ਟਾਈਪ ਕਰੋ...';
 
   @override
@@ -1772,6 +1923,10 @@ class AppLocalizationsPa extends AppLocalizations {
   }
 
   @override
+  String get mealPlannerEstimatePartial =>
+      'ਅੰਸ਼ਕ ਕੀਮਤ ਡੇਟਾ ਦੇ ਨਾਲ ਪਕਵਾਨਾਂ ਦੇ ਆਧਾਰ \'ਤੇ ਅੰਦਾਜ਼ਾ ਲਗਾਓ।';
+
+  @override
   String get mealPlannerGenerateList => 'ਖਰੀਦਦਾਰੀ ਸੂਚੀ ਤਿਆਰ ਕਰੋ';
 
   @override
@@ -1865,6 +2020,9 @@ class AppLocalizationsPa extends AppLocalizations {
   String get catalogRareSection => 'ਤੁਹਾਡੇ ਦੇਸ਼ ਵਿੱਚ ਘੱਟ ਆਮ ਹੈ';
 
   @override
+  String get catalogRareBadge => 'ਦੁਰਲੱਭ';
+
+  @override
   String catalogAddItems(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -1882,7 +2040,7 @@ class AppLocalizationsPa extends AppLocalizations {
   String get catalogBrowse => 'ਕੈਟਾਲਾਗ ਬ੍ਰਾਊਜ਼ ਕਰੋ';
 
   @override
-  String get catalogCategories => 'Categories';
+  String get catalogCategories => 'ਸ਼੍ਰੇਣੀਆਂ';
 
   @override
   String get offlineBanner => 'ਤੁਸੀਂ ਔਫਲਾਈਨ ਹੋ';
@@ -1913,6 +2071,41 @@ class AppLocalizationsPa extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get mealPlannerManageTypes => 'ਭੋਜਨ ਦੀਆਂ ਕਿਸਮਾਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ';
+
+  @override
+  String get mealPlannerAddType => 'ਭੋਜਨ ਦੀ ਕਿਸਮ ਸ਼ਾਮਲ ਕਰੋ';
+
+  @override
+  String get mealPlannerEditType => 'ਭੋਜਨ ਦੀ ਕਿਸਮ ਦਾ ਸੰਪਾਦਨ ਕਰੋ';
+
+  @override
+  String get mealPlannerTypeName => 'ਨਾਮ';
+
+  @override
+  String get mealPlannerTypeColor => 'ਰੰਗ';
+
+  @override
+  String get mealPlannerTypeIcon => 'ਆਈਕਨ';
+
+  @override
+  String get mealPlannerTypeDeleteConfirm =>
+      'ਕੀ ਤੁਸੀਂ ਯਕੀਨੀ ਤੌਰ \'ਤੇ ਇਸ ਭੋਜਨ ਦੀ ਕਿਸਮ ਨੂੰ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ? ਇਸ ਕਿਸਮ ਦੇ ਨਾਲ ਯੋਜਨਾਬੱਧ ਭੋਜਨ ਰਹੇਗਾ।';
+
+  @override
+  String get mealPlannerTypeNameEmpty => 'ਨਾਮ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ';
+
+  @override
+  String get mealPlannerTypeDeleteError =>
+      'ਇਸ ਭੋਜਨ ਦੀ ਕਿਸਮ ਨੂੰ ਨਹੀਂ ਮਿਟਾਇਆ ਜਾ ਸਕਦਾ।';
+
+  @override
+  String get mealPlannerCustomTypeLabel => 'ਕਸਟਮ ਕਿਸਮ';
+
+  @override
+  String get mealPlannerDefaultTypeLabel => 'ਪੂਰਵ-ਨਿਰਧਾਰਤ ਕਿਸਮ';
 
   @override
   String get expirationDate => 'ਅੰਤ ਦੀ ਤਾਰੀਖ';
@@ -1973,6 +2166,9 @@ class AppLocalizationsPa extends AppLocalizations {
 
   @override
   String get errorLoadingLists => 'ਸੂਚੀਆਂ ਨੂੰ ਲੋਡ ਕਰਨ ਵਿੱਚ ਤਰੁੱਟੀ';
+
+  @override
+  String get errorLoadingItems => 'ਆਈਟਮਾਂ ਲੋਡ ਕਰਨ ਵਿੱਚ ਤਰੁੱਟੀ';
 
   @override
   String get noListsFound => 'ਕੋਈ ਸੂਚੀਆਂ ਨਹੀਂ ਮਿਲੀਆਂ';
@@ -2754,4 +2950,212 @@ class AppLocalizationsPa extends AppLocalizations {
   @override
   String get obLoginError =>
       'ਸਾਈਨ-ਇਨ ਅਸਫਲ ਰਿਹਾ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜਾਂ ਹੁਣੇ ਛੱਡੋ।';
+
+  @override
+  String get searchMessages => 'ਸੁਨੇਹੇ ਖੋਜੋ...';
+
+  @override
+  String get deletedList => 'ਮਿਟਾਈ ਗਈ ਸੂਚੀ';
+
+  @override
+  String get openConversation => 'ਗੱਲਬਾਤ ਖੋਲ੍ਹੋ';
+
+  @override
+  String get userRole => 'ਤੁਹਾਨੂੰ';
+
+  @override
+  String get assistantRole => 'ਸਹਾਇਕ';
+
+  @override
+  String get agentActionsRunning => 'ਚੱਲ ਰਹੀਆਂ ਕਾਰਵਾਈਆਂ...';
+
+  @override
+  String get agentActionsFailed => 'ਕਾਰਵਾਈਆਂ ਚਲਾਉਣ ਵਿੱਚ ਅਸਫਲ';
+
+  @override
+  String get agentActionsPremium => 'ਕਾਰਵਾਈਆਂ ਲਈ ਪ੍ਰੀਮੀਅਮ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ';
+
+  @override
+  String agentActionsCompleted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count actions completed',
+      one: '1 action completed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get undoChanges => 'ਤਬਦੀਲੀਆਂ ਨੂੰ ਅਣਕੀਤਾ ਕਰੋ';
+
+  @override
+  String premiumStepDescription(String description) {
+    return '$description (ਪ੍ਰੀਮੀਅਮ)';
+  }
+
+  @override
+  String get itemAddedToList => 'ਸੂਚੀ ਵਿੱਚ ਆਈਟਮ ਸ਼ਾਮਲ ਕੀਤੀ ਗਈ।';
+
+  @override
+  String previousItemState(
+    String quantity,
+    String unit,
+    String category,
+    String price,
+  ) {
+    return 'ਪਿਛਲੀ ਸਥਿਤੀ: $quantity $unit [$category]$price';
+  }
+
+  @override
+  String itemsAffectedByAction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items affected by the action.',
+      one: '1 item affected by the action.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get premiumActionsPrompt =>
+      'ਸਵੈਚਲਿਤ ਕਾਰਵਾਈਆਂ ਨੂੰ ਅਨਲੌਕ ਕਰਨ ਲਈ ਪ੍ਰੀਮੀਅਮ ਦੇ ਗਾਹਕ ਬਣੋ।';
+
+  @override
+  String get viewPlans => 'ਯੋਜਨਾਵਾਂ ਦੇਖੋ';
+
+  @override
+  String get artifactSynced => 'ਸਿੰਕ ਕੀਤਾ ਗਿਆ';
+
+  @override
+  String get artifactBudgetLabel => 'ਬਜਟ:';
+
+  @override
+  String get totalEstimatedLabel => 'ਅੰਦਾਜ਼ਨ ਕੁੱਲ';
+
+  @override
+  String get quickActionPantry => 'ਪੈਂਟਰੀ ਵੇਖੋ';
+
+  @override
+  String get quickActionAi => 'ਕੀਪੀ ਨਾਲ ਗੱਲਬਾਤ ਕਰੋ';
+
+  @override
+  String aiApiError(int statusCode) {
+    return 'AI ਸੇਵਾ ਨੇ ਇੱਕ ਤਰੁੱਟੀ ਵਾਪਸ ਕੀਤੀ ($statusCode)।';
+  }
+
+  @override
+  String get aiTimeoutError =>
+      'ਬੇਨਤੀ ਨੇ ਬਹੁਤ ਲੰਮਾ ਸਮਾਂ ਲਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।';
+
+  @override
+  String get aiConnectionError =>
+      'AI ਸੇਵਾ ਨਾਲ ਕਨੈਕਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ। ਆਪਣੇ ਕਨੈਕਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ।';
+
+  @override
+  String get aiEmptyResponseError => 'AI ਸੇਵਾ ਨੇ ਇੱਕ ਖਾਲੀ ਜਵਾਬ ਵਾਪਸ ਕੀਤਾ।';
+
+  @override
+  String get aiInvalidResponseError => 'AI ਸੇਵਾ ਨੇ ਇੱਕ ਅਵੈਧ ਜਵਾਬ ਵਾਪਸ ਕੀਤਾ।';
+
+  @override
+  String get categoryFruits => 'ਫਲ';
+
+  @override
+  String get categoryCleaning => 'ਸਫਾਈ';
+
+  @override
+  String get categoryBeverages => 'ਪੀਣ ਵਾਲੇ ਪਦਾਰਥ';
+
+  @override
+  String get categoryBakery => 'ਬੇਕਰੀ';
+
+  @override
+  String get categoryMeat => 'ਮੀਟ';
+
+  @override
+  String get categoryDairy => 'ਡੇਅਰੀ';
+
+  @override
+  String get categoryVegetables => 'ਸਬਜ਼ੀਆਂ';
+
+  @override
+  String get categoryGrains => 'ਅਨਾਜ ਅਤੇ ਅਨਾਜ';
+
+  @override
+  String get categoryHygiene => 'ਨਿੱਜੀ ਦੇਖਭਾਲ';
+
+  @override
+  String get categoryFrozen => 'ਜੰਮੇ ਹੋਏ ਭੋਜਨ';
+
+  @override
+  String get categoryCanned => 'ਡੱਬਾਬੰਦ ​​ਮਾਲ';
+
+  @override
+  String get categorySeasonings => 'ਸੀਜ਼ਨਿੰਗਜ਼';
+
+  @override
+  String get categorySweets => 'ਮਿਠਾਈਆਂ ਅਤੇ ਮਿਠਾਈਆਂ';
+
+  @override
+  String get categoryAlcohol => 'ਅਲਕੋਹਲ ਵਾਲੇ ਪੀਣ ਵਾਲੇ ਪਦਾਰਥ';
+
+  @override
+  String get categoryFish => 'ਮੱਛੀ';
+
+  @override
+  String get categoryColdCuts => 'ਠੰਡੇ ਕਟੌਤੀ';
+
+  @override
+  String get categoryUtilities => 'ਘਰੇਲੂ ਸਪਲਾਈ';
+
+  @override
+  String get categoryPet => 'ਪਾਲਤੂ ਜਾਨਵਰਾਂ ਦੀ ਸਪਲਾਈ';
+
+  @override
+  String get categoryBaby => 'ਬੇਬੀ';
+
+  @override
+  String get categoryOthers => 'ਹੋਰ';
+
+  @override
+  String chatEmptyGreeting(String name) {
+    return 'ਹੈਲੋ $name, ਮੈਂ ਕਿਪੀ 👋 ਹਾਂ';
+  }
+
+  @override
+  String get chatEmptyGreetingNoName => 'ਹੈਲੋ, ਮੈਂ ਕਿਪੀ ਹਾਂ 👋';
+
+  @override
+  String get chatEmptyPitch =>
+      'ਮੈਂ ਸੂਚੀਆਂ ਬਣਾਉਂਦਾ ਹਾਂ, ਪਕਵਾਨਾਂ ਦਾ ਸੁਝਾਅ ਦਿੰਦਾ ਹਾਂ, ਅਤੇ ਲੱਭਦਾ ਹਾਂ ਕਿ ਕਿੱਥੇ ਸੁਰੱਖਿਅਤ ਕਰਨਾ ਹੈ। ਅਸੀਂ ਕਿੱਥੇ ਸ਼ੁਰੂ ਕਰੀਏ?';
+
+  @override
+  String get aiWelcomeSuggestBarbecue => 'ਬਾਰਬਿਕਯੂ ਦੀ ਯੋਜਨਾ ਬਣਾਓ';
+
+  @override
+  String get aiWelcomeSuggestBarbecuePrompt =>
+      'Kipi, ਮੈਂ ਇੱਕ ਬਾਰਬਿਕਯੂ ਦੀ ਮੇਜ਼ਬਾਨੀ ਕਰ ਰਿਹਾ/ਰਹੀ ਹਾਂ — ਖਰੀਦਦਾਰੀ ਸੂਚੀ ਬਣਾਉਣ ਵਿੱਚ ਮੇਰੀ ਮਦਦ ਕਰੋ';
+
+  @override
+  String get aiRateLimitError =>
+      'ਥੋੜ੍ਹੇ ਸਮੇਂ ਵਿੱਚ ਬਹੁਤ ਸਾਰੇ ਸੁਨੇਹੇ। ਕੁਝ ਸਕਿੰਟ ਉਡੀਕ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।';
+
+  @override
+  String get chatHistoryErrorTitle => 'ਇਸ ਗੱਲਬਾਤ ਨੂੰ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ';
+
+  @override
+  String get chatHistoryErrorBody =>
+      'ਸਾਡੇ ਵੱਲੋਂ ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰਨ ਲਈ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ \'ਤੇ ਟੈਪ ਕਰੋ।';
+
+  @override
+  String get chatHistoryOfflineTitle => 'ਤੁਸੀਂ ਔਫਲਾਈਨ ਹੋ';
+
+  @override
+  String get chatHistoryOfflineBody =>
+      'ਆਪਣੇ ਇੰਟਰਨੈੱਟ ਕਨੈਕਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।';
+
+  @override
+  String get aiGeneratingResponse => 'ਜਵਾਬ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...';
 }

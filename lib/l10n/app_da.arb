@@ -8,6 +8,20 @@
       }
     }
   },
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -110,6 +124,13 @@
   },
   "@categoryNameHint": {
     "description": "Hint for category name"
+  },
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "@chatError": {
     "placeholders": {
@@ -243,6 +264,9 @@
   "@errorLoadingHistory": {
     "description": "Error loading conversation history"
   },
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
+  },
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
   },
@@ -272,6 +296,13 @@
     "placeholders": {
       "name": {
         "type": "String"
+      }
+    }
+  },
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
       }
     }
   },
@@ -902,6 +933,16 @@
       }
     }
   },
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "@pantryEditTitle": {
     "placeholders": {
       "name": {
@@ -1021,6 +1062,13 @@
   "@paywallTestimonialAuthor": {
     "description": "Testimonial author"
   },
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
   "@paywallTrialDisclaimer": {
     "description": "Trial disclaimer text"
   },
@@ -1059,6 +1107,29 @@
   },
   "@preferredMarketHint": {
     "description": "Hint for preferred market"
+  },
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "@profileDescription": {
     "description": "Label for profile description field"
@@ -1132,7 +1203,21 @@
       }
     }
   },
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
   "@recipeIngredientsPlural": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@recipeServesCount": {
     "placeholders": {
       "count": {
         "type": "int"
@@ -1263,22 +1348,36 @@
   "addToPantryPrompt": "Tilføj \"{name}\" til dit spisekammer?",
   "addedFeedback": "Tilføjet!",
   "advancedFeatures": "Avancerede funktioner",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "agentActionsFailed": "Handlinger kunne ikke køres",
+  "agentActionsPremium": "Handlinger kræver Premium",
+  "agentActionsRunning": "Kører handlinger...",
+  "aiApiError": "AI-tjenesten returnerede en fejl ({statusCode}).",
   "aiAssistant": "AI-assistent",
   "aiAssistantDescription": "Få smarte forslag, opskrifter og personlige tips med vores AI-assistent.",
   "aiAssistantTitle": "AI assistent",
+  "aiConnectionError": "Kunne ikke oprette forbindelse til AI-tjenesten. Tjek din forbindelse.",
   "aiCreditsRemaining": "{remaining} credits tilbage",
+  "aiEmptyResponseError": "AI-tjenesten returnerede et tomt svar.",
   "aiEnergy": "AI energi",
   "aiEnergyLow": "Lav AI-energi",
   "aiError": "Beklager, der opstod en fejl ved behandling af din anmodning. Tjek din forbindelse eller prøv igen senere.",
+  "aiGeneratingResponse": "Genererer svar...",
+  "aiInvalidResponseError": "AI-tjenesten returnerede et ugyldigt svar.",
   "aiLimitAlmostReached": "Næsten ude af AI-meddelelser",
+  "aiRateLimitError": "For mange beskeder på kort tid. Vent et par sekunder, og prøv igen.",
   "aiRemainingFreeToday": "{remaining} {remaining, plural, one{free message} other{free messages}} i dag",
+  "aiSection": "AI assistent",
   "aiSubscribeUnlimited": "Abonner på ubegrænset AI",
   "aiTeaserFallback": "Abonner på Premium for at låse op for det fulde svar og få ubegrænsede AI-tip til dine indkøb...",
+  "aiTimeoutError": "Anmodningen tog for lang tid. Prøv venligst igen.",
   "aiUnlockUnlimited": "Lås op for ubegrænset AI",
   "aiUsageExhausted": "Månedlig AI-grænse nået. Opgrader til Pro for ubegrænset →",
   "aiUsageWarning": "{remaining} AI-handlinger tilbage denne måned - opgrader for ubegrænset",
   "aiVoiceCommandTooltip": "AI-stemmekommando (Premium)",
   "aiWelcomeContent": "Hej! 👋 Jeg er **Kipi**, din personlige indkøbs- og opskriftsassistent!\n\nJeg er her for at hjælpe dig:\n🛒 **Organiser** dine indkøb automatisk efter kategorier\n💰 **Spor** dit budget og giv dig pengebesparende tips\n🍲 **Foreslå** lækre opskrifter med det du allerede har\n\nHvordan kan jeg hjælpe dig i dag? Du kan starte med at oprette din første liste!",
+  "aiWelcomeSuggestBarbecue": "Planlæg en grill",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, jeg er vært for en grillfest – hjælp mig med at lave indkøbslisten",
   "aiWelcomeSuggestCreateList": "Opret min første liste",
   "aiWelcomeSuggestCreateListPrompt": "Kipi, hjælp mig med at lave min første indkøbsliste",
   "aiWelcomeSuggestSave": "Hvordan sparer man penge?",
@@ -1288,9 +1387,12 @@
   "appTitle": "Indkøbsliste",
   "appearance": "Udseende",
   "archiveList": "Arkivér liste",
+  "artifactBudgetLabel": "Budget:",
+  "artifactSynced": "Synkroniseret",
   "assistantHistory": "Assistent historie",
   "assistantHistorySubtitle": "Se din samtalehistorik",
   "assistantName": "Assistent navn",
+  "assistantRole": "Assistent",
   "backToChat": "Tilbage til Chat",
   "backToToday": "Tilbage til i dag",
   "backupExported": "Backup eksporteret!",
@@ -1298,6 +1400,7 @@
   "backupPremiumDescription": "Backup og eksport er en Premium-funktion",
   "backupSubtitle": "Eksportér eller importer dine data",
   "backupTitle": "Backup",
+  "badResponse": "Dårlig respons",
   "badgeBeginner": "Nybegynder",
   "badgeOrganized": "Organiseret",
   "badgeSavingMaster": "Redningsmester",
@@ -1323,9 +1426,11 @@
   "catOthers": "Andet",
   "catalogAddItems": "Tilføj {count} {count, plural, one{item} other{items}} →",
   "catalogBrowse": "Gennemse kataloget",
+  "catalogCategories": "Kategorier",
   "catalogFilterNational": "Nationale",
   "catalogMyFrequents": "Mine hyppige",
   "catalogProductNotFound": "Produktet blev ikke fundet. Indtast navnet",
+  "catalogRareBadge": "Sjælden",
   "catalogRareSection": "mindre almindelig i dit land",
   "catalogSearchGlobal": "Søg efter ethvert produkt...",
   "catalogSearchInCategory": "Søg i {category}...",
@@ -1333,16 +1438,43 @@
   "catalogSortPopular": "Mest populær",
   "catalogTitle": "Katalog",
   "category": "Kategori",
+  "categoryAlcohol": "Alkoholiske drikkevarer",
+  "categoryBaby": "Baby",
+  "categoryBakery": "Bageri",
+  "categoryBeverages": "Drikkevarer",
+  "categoryCanned": "Dåsevarer",
+  "categoryCleaning": "Rensning",
+  "categoryColdCuts": "Pålæg",
   "categoryColorLabel": "Farve",
+  "categoryDairy": "Mejeri",
+  "categoryFish": "Fisk",
+  "categoryFrozen": "Frosne fødevarer",
+  "categoryFruits": "Frugter",
+  "categoryGrains": "Korn og korn",
+  "categoryHygiene": "Personlig pleje",
   "categoryIconLabel": "Ikon",
   "categoryLimitReached": "Kategorigrænsen er nået",
+  "categoryMeat": "Kød",
   "categoryName": "Kategorinavn",
   "categoryNameHint": "Indtast kategorinavn",
+  "categoryOthers": "Andre",
+  "categoryPet": "Kæledyrsforsyninger",
+  "categorySeasonings": "Krydderier",
+  "categorySweets": "Slik og desserter",
+  "categoryUtilities": "Husholdningsartikler",
+  "categoryVegetables": "Grøntsager",
+  "chatEmptyGreeting": "Hej {name}, jeg hedder Kipi 👋",
+  "chatEmptyGreetingNoName": "Hej, jeg hedder Kipi 👋",
+  "chatEmptyPitch": "Jeg bygger lister, foreslår opskrifter og finder, hvor jeg kan gemme. Hvor skal vi starte?",
   "chatEmptySubtitle": "Bed om forslag til ting, opskrifter eller sparetips for at komme i gang.",
   "chatEmptyTitle": "Din chat er tom",
   "chatError": "Fejl ved indlæsning af chat: {error}",
   "chatHint": "Skriv din besked...",
   "chatHintBlocked": "Lås AI op for at chatte",
+  "chatHistoryErrorBody": "Noget gik galt hos os. Tryk på prøv igen for at prøve igen.",
+  "chatHistoryErrorTitle": "Denne samtale kunne ikke indlæses",
+  "chatHistoryOfflineBody": "Tjek din internetforbindelse, og prøv igen.",
+  "chatHistoryOfflineTitle": "Du er offline",
   "chatSubtitle": "Spørg efter vareforslag, opskrifter eller sparetips.",
   "chatSubtitleShort": "Spørg om priser, opskrifter, organisation...",
   "chooseCurrency": "Vælg Valuta",
@@ -1350,6 +1482,7 @@
   "chooseImageSource": "Vælg billedkilde",
   "chooseLanguage": "Vælg sprog",
   "chooseThemeColor": "Vælg temafarve",
+  "chooseThemeMode": "Vælg tematilstand",
   "clear": "Ryd",
   "clearHistory": "Ryd historik",
   "clearHistoryConfirm": "Slet alle meddelelser i denne session?",
@@ -1392,6 +1525,10 @@
   "customizeAssistant": "Tilpas",
   "dark": "Mørk",
   "data": "Data",
+  "dateGroupOlder": "Ældre",
+  "dateGroupPrevious7Days": "Forrige 7 dage",
+  "dateGroupToday": "I dag",
+  "dateGroupYesterday": "I går",
   "deficitItems": "{deficit,plural, one{{deficit} vare skal købes} other{{deficit} varer skal købes}}",
   "delete": "Slet",
   "deleteCategory": "Slet",
@@ -1408,6 +1545,7 @@
   "deleteRecipeConfirmMsg": "Er du sikker på, at du vil slette \"{recipeName}\"? Denne handling kan ikke fortrydes.",
   "deleteSession": "Slet chat",
   "deleteSessionConfirm": "Er du sikker på, at du vil slette denne chat? Beskederne vil blive permanent tabt.",
+  "deletedList": "Slettet liste",
   "deselectAll": "Fravælg alle",
   "dietaryRestrictions": "Kostrestriktioner",
   "dietaryRestrictionsHint": "Er der nogen diætrestriktioner?",
@@ -1420,6 +1558,7 @@
   "editCategoryDialog": "Rediger kategori",
   "editItem": "Redigér vare",
   "editItemPrice": "Anslået pris",
+  "editMessage": "Rediger besked",
   "editPantryItem": "Redigér {name}",
   "editRecipe": "Rediger",
   "editRecipeTitle": "Rediger opskrift",
@@ -1433,6 +1572,7 @@
   "errorLoadingChat": "Ups! Noget gik galt med at indlæse chatten.",
   "errorLoadingChatSubtitle": "Tjek din forbindelse, eller prøv igen senere.",
   "errorLoadingHistory": "Fejl ved indlæsning af historik",
+  "errorLoadingItems": "Fejl ved indlæsning af elementer",
   "errorLoadingLists": "Fejl ved indlæsning af lister",
   "errorLoadingRecipes": "Fejl ved indlæsning af opskrifter",
   "errorLoadingSubscription": "Fejl ved indlæsning af abonnement",
@@ -1485,6 +1625,7 @@
   "generateShoppingList": "Generér indkøbsliste",
   "gestureHint": "Hold nede for at vælge • Stryg for at fjerne",
   "globalAssistant": "Global assistent",
+  "goodResponse": "God respons",
   "howCanIHelp": "Hvordan kan jeg hjælpe?",
   "idealQty": "Ideel ant",
   "idealQuantity": "Ideel mængde",
@@ -1501,14 +1642,18 @@
   "instructionsHint": "Skriv ét trin pr. linje...",
   "inviteToList": "Inviter til liste",
   "itemAddedSnack": "{name} tilføjet",
+  "itemAddedToList": "Element tilføjet til listen.",
   "itemName": "Varenavn",
   "itemRemoved": "Vare fjernet",
   "itemsAddedSuccess": "Varer blev tilføjet til listen!",
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
   "itemsNeedPurchase": "{deficit} vare(r) skal købes",
   "itemsPurchased": "Varer købt",
   "itemsPurchasedCount": "{purchased} af {total} købt",
   "itemsPurchasedShort": "{purchased}/{total} købt",
   "itemsWillBeAdded": "{count} vare(r) vil blive tilføjet",
+  "keepAdding": "Fortsæt med at tilføje",
+  "keepAddingSubtitle": "Hold arket åbent for at tilføje flere elementer",
   "kipiListProActive": "KipiList Pro Active",
   "kipiListTitle": "KipiList",
   "kipiQuickBarHint": "Hvad skal du købe?",
@@ -1544,16 +1689,22 @@
   "marketsToAvoid": "Markeder at undgå",
   "marketsToAvoidHint": "Markeder du helst ikke handler på",
   "mealPlannerAddMeal": "Tilføj måltid",
+  "mealPlannerAddType": "Tilføj måltidstype",
+  "mealPlannerCustomTypeLabel": "Brugerdefineret type",
   "mealPlannerDateLabel": "Dato",
+  "mealPlannerDefaultTypeLabel": "Standardtype",
   "mealPlannerDeleteMeal": "Fjern måltid",
   "mealPlannerEditMeal": "Rediger måltid",
+  "mealPlannerEditType": "Rediger måltidstype",
   "mealPlannerError": "Fejl ved indlæsning af madplan",
+  "mealPlannerEstimatePartial": "Estimat baseret på opskrifter med delvise prisdata.",
   "mealPlannerGenerateList": "Generer indkøbsliste",
   "mealPlannerGenerateListConfirm": "Tilføj alle ingredienser fra planlagte måltider i denne uge til din indkøbsliste?",
   "mealPlannerGenerateListEmpty": "Ingen ingredienser at tilføje. Planlæg nogle måltider med opskrifter først.",
   "mealPlannerGenerateListNoList": "Opret en indkøbsliste først.",
   "mealPlannerGenerateListSuccess": "{count} ingrediens(er) tilføjet til din liste!",
   "mealPlannerLoading": "Indlæser madplan...",
+  "mealPlannerManageTypes": "Administrer måltidstyper",
   "mealPlannerMealDeleted": "Måltid fjernet",
   "mealPlannerMealTypeBreakfast": "Morgenmad",
   "mealPlannerMealTypeDinner": "Aftensmad",
@@ -1573,6 +1724,12 @@
   "mealPlannerServings": "{count,plural, one{{count} portion} other{{count} portioner}}",
   "mealPlannerServingsLabel": "Portioner",
   "mealPlannerTitle": "Madplanlægger",
+  "mealPlannerTypeColor": "Farve",
+  "mealPlannerTypeDeleteConfirm": "Er du sikker på, at du vil slette denne måltidstype? Planlagte måltider med denne type forbliver.",
+  "mealPlannerTypeDeleteError": "Kan ikke slette denne måltidstype.",
+  "mealPlannerTypeIcon": "Ikon",
+  "mealPlannerTypeName": "Navn",
+  "mealPlannerTypeNameEmpty": "Navn må ikke være tomt",
   "mealPlannerViewMonthly": "Månedsvisning",
   "mealPlannerViewWeekly": "Ugevisning",
   "mealPlannerWeekEmpty": "Intet planlagt for denne uge",
@@ -1784,6 +1941,7 @@
   "onboardingViewAllPlans": "Se alle planer",
   "onboardingWelcomeDesc": "Den smarteste måde at organisere din shopping på og spare penge.",
   "onboardingWelcomeTitle": "Velkommen til KipiList",
+  "openConversation": "Åben samtale",
   "openMenu": "Åbn menu",
   "organizeAisles": "Organisér efter gange",
   "organizeAislesPrompt": "Organisér efter butiksgange.",
@@ -1793,14 +1951,17 @@
   "pantryAppBar": "Spisekammer",
   "pantryAvailabilityAll": "Alt klar!",
   "pantryAvailabilityCount": "{availableCount}/{totalCount} i spisekammer",
+  "pantryDeficitCount": "Mangler {count}{unit}",
   "pantryEditTitle": "Redigér {name}",
   "pantryEmpty": "Tomt spisekammer",
   "pantryEmptySubtitle": "Tilføj produkter, du vil have derhjemme",
+  "pantryItemAdded": "Vare tilføjet",
   "pantryItemRemoved": "Vare fjernet",
   "paywallAfterItem1": "Korn",
   "paywallAfterItem2": "Rensning",
   "paywallAfterItem3": "Kød",
   "paywallAfterItem4": "Bageri",
+  "paywallBasedOnAnswers": "Personliggjort ud fra dine svar",
   "paywallBeforeAfterTitle": "AI før og efter:",
   "paywallBeforeItem1": "ris",
   "paywallBeforeItem2": "sæbe",
@@ -1838,6 +1999,8 @@
   "paywallGoalHeadlinePantry": "{name}, spor dit spisekammer perfekt!",
   "paywallGoalHeadlineRecipes": "{name}, opdag nye opskrifter!",
   "paywallGoalHeadlineSaveMoney": "{name}, spar på hver tur!",
+  "paywallHeroFeatureDesc": "Tal eller indsæt en hel liste - AI sorterer, kategoriserer og budgetterer den på få sekunder",
+  "paywallHeroFeatureTitle": "AI indkøbsassistent",
   "paywallHeroHeadline": "Kipi AI altid ved din side",
   "paywallHeroSubtitle": "Tilføj genstande, organiser lister og spar tid med kunstig intelligens i lommen",
   "paywallHeroSubtitlePersonalized": "Hej {name}, organiser din shopping på den rigtige måde.",
@@ -1872,6 +2035,11 @@
   "paywallTestimonial2Text": "Jeg har aldrig glemt et listeelement igen. AI-chatten er sensationel!",
   "paywallTestimonialAuthor": "Ann S.",
   "paywallTestimonialsTitle": "Hvad vores brugere siger:",
+  "paywallTimelineChargeDesc": "Dit abonnement starter – annuller når som helst",
+  "paywallTimelineDay": "Dag {day}",
+  "paywallTimelineReminderDesc": "Vi minder dig om, inden retssagen slutter",
+  "paywallTimelineToday": "I dag",
+  "paywallTimelineTodayDesc": "Lås op for fuld adgang med det samme",
   "paywallTitle": "KipiList Premium",
   "paywallTrialCta": "Start gratis prøveperiode",
   "paywallTrialDays": "{days} DAGE GRATIS",
@@ -1894,11 +2062,15 @@
   "prefSharing": "Del lister",
   "prefUnlimitedLists": "Ubegrænsede lister",
   "prefUnlimitedPantry": "Ubegrænset spisekammer",
+  "preferencesSection": "Præferencer",
   "preferredMarket": "Foretrukken marked",
   "preferredMarketHint": "Hvor plejer du at handle?",
+  "premiumActionsPrompt": "Abonner på Premium for at låse op for automatiske handlinger.",
+  "premiumStepDescription": "{description} (Premium)",
   "premiumUpgrade": "Opgrader for at låse op",
   "prepTime": "Tilberedningstid",
   "prepTimeMinutes": "Tilberedningstid (minutter)",
+  "previousItemState": "Tidligere tilstand: {quantity} {unit} [{category}]{price}",
   "privacy": "Privatliv",
   "product": "Produkt",
   "productName": "Produktnavn",
@@ -1915,21 +2087,34 @@
   "quantityShort": "Ant",
   "quantityUnitWithPrice": "{qty} {unit} — {price}",
   "quantityWithUnit": "{qty} {unit}",
+  "quickActionAi": "Chat med Kipi",
+  "quickActionPantry": "Se spisekammer",
   "quickRecipe": "Hurtig opskrift",
   "quickRecipePrompt": "Foreslå opskrifter med varer fra min liste.",
   "quickReplies": "Hurtige svar:",
   "quickSuggestions": "Hurtige forslag",
+  "recipeAddError": "Kunne ikke føje til din liste. Prøv venligst igen.",
   "recipeAddToList": "Tilføj til indkøbsliste",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} other{listName}",
   "recipeCreated": "Opskrift oprettet!",
   "recipeDeleted": "Opskrift slettet",
+  "recipeEstimatePartial": "Delvist skøn baseret på ingredienser med pris.",
+  "recipeEstimatedCostPerServing": "{cost} / portion",
+  "recipeEstimatedTotalCost": "Anslåede samlede omkostninger",
   "recipeImage": "Opskriftsbillede",
+  "recipeIngredientInPantry": "I spisekammer",
+  "recipeIngredientLowPantry": "Lavt i spisekammer",
   "recipeIngredientSingular": "1 ingrediens",
   "recipeIngredientsPlural": "{count} ingredienser",
+  "recipeManualTotalCost": "Manuelle samlede omkostninger",
+  "recipeManualTotalCostHint": "Lad stå tomt for at estimere fra ingredienspriser.",
   "recipeName": "Navn på opskrift",
   "recipeSaved": "Opskrift gemt!",
+  "recipeServesCount": "Betjener {count}",
   "recipeSuggestion": "Opskriftforslag",
   "recipeTags": "Tags til opskrift",
+  "recipeTapToCheck": "Tryk på en ingrediens for at markere den, mens du laver mad",
+  "recipeYieldServings": "Giv portioner",
   "regenerate": "Regenerér",
   "remove": "Fjern",
   "removeBudget": "Fjern",
@@ -1953,9 +2138,12 @@
   "savings": "Besparelser",
   "scanBarcodeTitle": "Scan stregkode",
   "scanProductTitle": "Scan produkt",
+  "scrollToBottom": "Rul til bunden",
+  "searchConversations": "Søg samtaler",
   "searchCurrency": "Søg i valuta...",
   "searchInConversation": "Søg i samtale...",
   "searchLanguage": "Søg sprog...",
+  "searchMessages": "Søg i beskeder...",
   "searchRecipes": "Søg i opskrifter...",
   "selectAll": "Vælg alle",
   "selectCheaperAlternative": "Vælg et billigere alternativ",
@@ -1989,6 +2177,7 @@
   "signInGoogle": "Log ind med Google",
   "skip": "Springe",
   "smartOrganization": "Smart organisering",
+  "somethingWentWrong": "Noget gik galt",
   "sortCategory": "Kategori",
   "sortDate": "Dato",
   "sortManual": "Manuelt",
@@ -2018,18 +2207,21 @@
   "themeColor": "Temafarve",
   "themeGreen": "Grøn",
   "themeIndigo": "Indigo",
+  "themeMode": "Tematilstand",
   "themeOrange": "Orange",
   "themePink": "Lyserød",
   "themePurple": "Lilla",
   "themeRed": "Rød",
   "themeTeal": "Krikand",
   "totalEstimated": "Anslået i alt: {amount}",
+  "totalEstimatedLabel": "Estimeret total",
   "totalSavings": "Samlet besparelse",
   "totalSpending": "Samlet forbrug",
   "trackStock": "Følg lager",
   "trackStockActive": "Vises i indkøbsforslag",
   "trackStockInactive": "Genererer ikke indkøbsforslag",
   "undo": "Fortryd",
+  "undoChanges": "Fortryd ændringer",
   "unit": "Enhed",
   "unitPack": "pakke",
   "unlockAi": "Lås op for ubegrænset AI",
@@ -2040,6 +2232,7 @@
   "unmark": "Fjern markering",
   "upgrade": "Opgrader",
   "userProfile": "Brugerprofil",
+  "userRole": "Du",
   "validForLimitedTime": "Gyldig i begrænset tid",
   "version": "Version",
   "viewActive": "Se aktive",
@@ -2047,6 +2240,7 @@
   "viewHistory": "Se historik",
   "viewItems": "Se varer",
   "viewList": "Se liste",
+  "viewPlans": "Se planer",
   "viewPro": "Se Pro",
   "viewRecipe": "Vis opskrift",
   "voiceCommandContent": "Tal naturligt for at administrere din liste!\n\nEksempler:\n• 'Tilføj brød, ost og skinke'\n• 'Fjern vaskemiddel'\n• 'Skift tema til blå'\n\nDette er en eksklusiv funktion i KipiList Premium.",

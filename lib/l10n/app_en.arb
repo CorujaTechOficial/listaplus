@@ -127,6 +127,17 @@
     }
   },
   "noItemsToBuy": "No items need to be bought",
+  "pantryDeficitCount": "Missing {count}{unit}",
+  "@pantryDeficitCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "newPantryList": "Pantry Shopping",
   "newListTitle": "New Shopping List",
   "itemsWillBeAdded": "{count} item(s) will be added",
@@ -197,6 +208,8 @@
   "product": "Product",
   "@_Settings": "description: Settings Screen",
   "settingsAppBar": "Settings",
+  "preferencesSection": "Preferences",
+  "aiSection": "AI Assistant",
   "language": "Language",
   "languagePortuguese": "Português (Brasil)",
   "languageEnglish": "English",
@@ -207,6 +220,8 @@
   "chooseCurrency": "Select Currency",
   "searchCurrency": "Search currency...",
   "appearance": "Appearance",
+  "themeMode": "Theme mode",
+  "chooseThemeMode": "Select theme mode",
   "light": "Light",
   "system": "System",
   "dark": "Dark",
@@ -347,6 +362,8 @@
   "trackStock": "Track stock",
   "trackStockActive": "Appears in shopping suggestions",
   "trackStockInactive": "Does not generate shopping suggestion",
+  "keepAdding": "Keep adding",
+  "keepAddingSubtitle": "Keep the sheet open to add multiple items",
   "@_CreateList": "description: Create List Dialog",
   "createListDialog": "Create List",
   "renameListDialog": "Rename List",
@@ -409,6 +426,16 @@
       }
     }
   },
+  "goodResponse": "Good response",
+  "badResponse": "Bad response",
+  "scrollToBottom": "Scroll to bottom",
+  "somethingWentWrong": "Something went wrong",
+  "editMessage": "Edit message",
+  "searchConversations": "Search conversations",
+  "dateGroupToday": "Today",
+  "dateGroupYesterday": "Yesterday",
+  "dateGroupPrevious7Days": "Previous 7 days",
+  "dateGroupOlder": "Older",
   "aiAssistantTitle": "AI Assistant",
   "closeSheet": "Close",
   "scanBarcodeTitle": "Scan Barcode",
@@ -431,6 +458,42 @@
   "aiUsageExhausted": "Monthly AI limit reached. Upgrade to Pro for unlimited →",
   "@aiUsageExhausted": {
     "description": "Banner when AI usage limit is hit"
+  },
+  "undo": "Undo",
+  "@undo": {
+    "description": "Generic undo action label"
+  },
+  "newChatStarted": "New chat started",
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
+  },
+  "quickAddToList": "Add to list",
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
+  "aiCapabilitiesTitle": "What can I do?",
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
+  "aiCapabilitiesLists": "Shopping Lists",
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "aiCapabilitiesBudget": "Budget & Prices",
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "aiCapabilitiesRecipes": "Recipes & Menus",
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "aiCapabilitiesOrganize": "Organization",
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "marketModeDescription": "Check off items as you shop",
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
   },
   "@_Auth": "description: Auth Screen",
   "kipiListTitle": "KipiList",
@@ -620,6 +683,10 @@
   "paywallTrialSubtitle": "Cancel anytime. No charge today.",
   "paywallTrialCta": "Start Free Trial",
   "recipeAddToList": "Add to shopping list",
+  "recipeAddError": "Couldn't add to your list. Please try again.",
+  "recipeTapToCheck": "Tap an ingredient to check it off as you cook",
+  "recipeIngredientInPantry": "In pantry",
+  "recipeIngredientLowPantry": "Low in pantry",
   "recipeAddedConfirmation": "{count} {count, plural, one{ingredient} other{ingredients}} added to {listName}",
   "@recipeAddedConfirmation": {
     "placeholders": {
@@ -683,6 +750,35 @@
   "paywallPolicy": "Privacy Policy",
   "paywallTerms": "Terms of Use",
   "paywallRestore": "Restore",
+  "@paywallSavePercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "@paywallPricePerMonth": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallTimelineToday": "Today",
+  "paywallTimelineTodayDesc": "Unlock full access instantly",
+  "paywallTimelineDay": "Day {day}",
+  "@paywallTimelineDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallTimelineReminderDesc": "We remind you before the trial ends",
+  "paywallTimelineChargeDesc": "Your subscription starts — cancel anytime",
+  "paywallHeroFeatureTitle": "AI Shopping Assistant",
+  "paywallHeroFeatureDesc": "Speak or paste a whole list — AI sorts, categorizes and budgets it in seconds",
+  "paywallBasedOnAnswers": "Personalized from your answers",
   "paywallHeroHeadline": "Kipi without limits",
   "paywallHeroSubtitle": "Unlimited AI, full planning and family lists — all in one app",
   "paywallBenefit1Desc": "No action limits. Kipi always available to act.",
@@ -762,6 +858,7 @@
   },
   "deleteListConfirm": "Delete list",
   "pantryItemRemoved": "Item removed",
+  "pantryItemAdded": "Item added",
   "deficitItems": "{deficit,plural, one{{deficit} item needs to be bought} other{{deficit} items need to be bought}}",
   "@deficitItems": {
     "placeholders": {
@@ -937,6 +1034,27 @@
   "recipeName": "Recipe name",
   "shortDescription": "Short description",
   "prepTimeMinutes": "Prep time (minutes)",
+  "recipeYieldServings": "Yield servings",
+  "recipeManualTotalCost": "Manual total cost",
+  "recipeManualTotalCostHint": "Leave empty to estimate from ingredient prices.",
+  "recipeEstimatedTotalCost": "Estimated total cost",
+  "recipeEstimatedCostPerServing": "{cost} / serving",
+  "@recipeEstimatedCostPerServing": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      }
+    }
+  },
+  "recipeServesCount": "Serves {count}",
+  "@recipeServesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recipeEstimatePartial": "Partial estimate based on ingredients with price.",
   "instructionsHint": "Type one step per line...",
   "addPhoto": "Add photo",
   "imageUrlPlaceholder": "Or paste an image URL",
@@ -994,6 +1112,7 @@
       }
     }
   },
+  "mealPlannerEstimatePartial": "Estimate based on recipes with partial price data.",
   "mealPlannerGenerateList": "Generate shopping list",
   "mealPlannerGenerateListConfirm": "Add all ingredients from planned meals this week to your shopping list?",
   "mealPlannerGenerateListSuccess": "{count} ingredient(s) added to your list!",
@@ -1066,6 +1185,7 @@
   "catalogSortAZ": "A–Z",
   "catalogFilterNational": "Nationals",
   "catalogRareSection": "less common in your country",
+  "catalogRareBadge": "Rare",
   "catalogAddItems": "Add {count} {count, plural, one{item} other{items}} →",
   "@catalogAddItems": {
     "placeholders": {
@@ -1091,6 +1211,17 @@
       }
     }
   },
+  "mealPlannerManageTypes": "Manage meal types",
+  "mealPlannerAddType": "Add meal type",
+  "mealPlannerEditType": "Edit meal type",
+  "mealPlannerTypeName": "Name",
+  "mealPlannerTypeColor": "Color",
+  "mealPlannerTypeIcon": "Icon",
+  "mealPlannerTypeDeleteConfirm": "Are you sure you want to delete this meal type? Planned meals with this type will remain.",
+  "mealPlannerTypeNameEmpty": "Name cannot be empty",
+  "mealPlannerTypeDeleteError": "Cannot delete this meal type.",
+  "mealPlannerCustomTypeLabel": "Custom type",
+  "mealPlannerDefaultTypeLabel": "Default type",
   "expirationDate": "Expiration date",
   "notInformed": "Not set",
   "@_OnboardingAiChat": "description: Onboarding AI Chat flow",
@@ -1167,6 +1298,10 @@
   "errorLoadingLists": "Error loading lists",
   "@errorLoadingLists": {
     "description": "Error when lists fail to load"
+  },
+  "errorLoadingItems": "Error loading items",
+  "@errorLoadingItems": {
+    "description": "Error when items fail to load"
   },
   "noListsFound": "No lists found",
   "@noListsFound": {
@@ -2124,5 +2259,113 @@
   "obLoginError": "Sign-in failed. Try again or skip for now.",
   "@obLoginError": {
     "description": "Quiz login error message"
-  }
+  },
+  "searchMessages": "Search messages...",
+  "deletedList": "Deleted list",
+  "openConversation": "Open conversation",
+  "userRole": "You",
+  "assistantRole": "Assistant",
+  "agentActionsRunning": "Running actions...",
+  "agentActionsFailed": "Failed to run actions",
+  "agentActionsPremium": "Actions require Premium",
+  "agentActionsCompleted": "{count,plural, one{1 action completed} other{{count} actions completed}}",
+  "@agentActionsCompleted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "undoChanges": "Undo changes",
+  "premiumStepDescription": "{description} (Premium)",
+  "@premiumStepDescription": {
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+  "itemAddedToList": "Item added to the list.",
+  "previousItemState": "Previous state: {quantity} {unit} [{category}]{price}",
+  "@previousItemState": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "itemsAffectedByAction": "{count,plural, one{1 item affected by the action.} other{{count} items affected by the action.}}",
+  "@itemsAffectedByAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "premiumActionsPrompt": "Subscribe to Premium to unlock automatic actions.",
+  "viewPlans": "View plans",
+  "artifactSynced": "Synced",
+  "artifactBudgetLabel": "Budget:",
+  "totalEstimatedLabel": "Estimated total",
+  "quickActionPantry": "View pantry",
+  "quickActionAi": "Chat with Kipi",
+  "aiApiError": "The AI service returned an error ({statusCode}).",
+  "@aiApiError": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
+  "aiTimeoutError": "The request took too long. Please try again.",
+  "aiConnectionError": "Could not connect to the AI service. Check your connection.",
+  "aiEmptyResponseError": "The AI service returned an empty response.",
+  "aiInvalidResponseError": "The AI service returned an invalid response.",
+  "categoryFruits": "Fruits",
+  "categoryCleaning": "Cleaning",
+  "categoryBeverages": "Beverages",
+  "categoryBakery": "Bakery",
+  "categoryMeat": "Meat",
+  "categoryDairy": "Dairy",
+  "categoryVegetables": "Vegetables",
+  "categoryGrains": "Grains and cereals",
+  "categoryHygiene": "Personal care",
+  "categoryFrozen": "Frozen foods",
+  "categoryCanned": "Canned goods",
+  "categorySeasonings": "Seasonings",
+  "categorySweets": "Sweets and desserts",
+  "categoryAlcohol": "Alcoholic beverages",
+  "categoryFish": "Fish",
+  "categoryColdCuts": "Cold cuts",
+  "categoryUtilities": "Household supplies",
+  "categoryPet": "Pet supplies",
+  "categoryBaby": "Baby",
+  "categoryOthers": "Other",
+  "chatEmptyGreeting": "Hi {name}, I'm Kipi 👋",
+  "@chatEmptyGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "chatEmptyGreetingNoName": "Hi, I'm Kipi 👋",
+  "chatEmptyPitch": "I build lists, suggest recipes, and find where to save. Where do we start?",
+  "aiWelcomeSuggestBarbecue": "Plan a barbecue",
+  "aiWelcomeSuggestBarbecuePrompt": "Kipi, I'm hosting a barbecue — help me build the shopping list",
+  "aiRateLimitError": "Too many messages in a short time. Wait a few seconds and try again.",
+  "chatHistoryErrorTitle": "Couldn't load this conversation",
+  "chatHistoryErrorBody": "Something went wrong on our end. Tap retry to try again.",
+  "chatHistoryOfflineTitle": "You're offline",
+  "chatHistoryOfflineBody": "Check your internet connection and try again.",
+  "aiGeneratingResponse": "Generating response…"
 }
