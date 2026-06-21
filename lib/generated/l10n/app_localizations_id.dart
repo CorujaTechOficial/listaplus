@@ -785,28 +785,28 @@ class AppLocalizationsId extends AppLocalizations {
   String get undo => 'Urungkan';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Obrolan baru dimulai';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Tambahkan ke daftar';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Apa yang bisa saya lakukan?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Daftar Belanja';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Anggaran & Harga';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Resep & Menu';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organisasi';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Centang item saat Anda berbelanja';
 
   @override
   String get kipiListTitle => 'Daftar Kipi';
@@ -1965,28 +1965,28 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Bulan: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Minggu: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Hari ini: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Hapus tujuan';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Anggaran perencana makanan';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Sasaran pengeluaran bulanan untuk perencanaan makan';
 
   @override
   String mealPlannerPrepTime(int minutes) {

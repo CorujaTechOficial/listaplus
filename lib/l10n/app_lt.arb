@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -465,6 +504,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1276,6 +1318,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1461,6 +1506,11 @@
   "aiAssistantGeneral": "Generalinis asistentas",
   "aiAssistantHistory": "Asistento istorija",
   "aiAssistantTitle": "AI asistentas",
+  "aiCapabilitiesBudget": "Biudžetas ir kainos",
+  "aiCapabilitiesLists": "Pirkinių sąrašai",
+  "aiCapabilitiesOrganize": "Organizacija",
+  "aiCapabilitiesRecipes": "Receptai ir meniu",
+  "aiCapabilitiesTitle": "Ką daryti?",
   "aiConnectionError": "Nepavyko prisijungti prie AI paslaugos. Patikrinkite ryšį.",
   "aiConversationHistory": "Pokalbių istorija",
   "aiCreditsRemaining": "Liko {remaining} kreditų",
@@ -1836,12 +1886,19 @@
   "markAsPurchased": "Pažymėti kaip nupirkta",
   "markItemsToSeeAnalysis": "Pažymėkite prekes kaip nupirktas, kad pamatytumėte analizę.",
   "marketMode": "Rinkos režimas",
+  "marketModeDescription": "Apsipirkdami patikrinkite prekes",
   "marketsToAvoid": "Rinkos, kurių reikia vengti",
   "marketsToAvoidHint": "Rinkos, kuriose nenorite apsipirkti",
   "mealDragHint": "Laikykite, kad vilktumėte ir perkeltumėte",
   "mealNoRecipeFound": "Recepto nerasta",
   "mealPlannerAddMeal": "Pridėti valgį",
   "mealPlannerAddType": "Pridėkite valgio tipą",
+  "mealPlannerBudgetGoalNav": "Maitinimo planuotojo biudžetas",
+  "mealPlannerBudgetGoalSubtitle": "Mėnesio išlaidų tikslas valgio planavimui",
+  "mealPlannerBudgetMonthCost": "Mėnuo: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Pašalinti tikslą",
+  "mealPlannerBudgetTodayCost": "Šiandien: {amount}",
+  "mealPlannerBudgetWeekCost": "Savaitė: {amount}",
   "mealPlannerCustomTypeLabel": "Pasirinktinis tipas",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Numatytasis tipas",
@@ -1903,6 +1960,7 @@
   "navRecipes": "Receptai",
   "newCategoryDialog": "Nauja kategorija",
   "newChat": "Naujas pokalbis",
+  "newChatStarted": "Prasidėjo naujas pokalbis",
   "newListTitle": "Naujas pirkinių sąrašas",
   "newPantryList": "Sandėliuko pirkiniai",
   "newRecipe": "Naujas receptas",
@@ -2269,6 +2327,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Kalbėkitės su Kipi",
   "quickActionPantry": "Žiūrėti sandėliuką",
+  "quickAddToList": "Pridėti į sąrašą",
   "quickRecipe": "Greitas receptas",
   "quickRecipePrompt": "Pasiūlykite receptų su mano sąrašo prekėmis.",
   "quickReplies": "Greiti atsakymai:",

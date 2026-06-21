@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -408,11 +423,35 @@
   "@manageCategoriesTitle": {
     "description": "Title for category management"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -436,6 +475,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1209,6 +1251,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1375,6 +1420,11 @@
   "aiAssistant": "AI Assistant",
   "aiAssistantDescription": "Get smart suggestions, recipes and personalized tips with our AI assistant.",
   "aiAssistantTitle": "AI Assistant",
+  "aiCapabilitiesBudget": "Budget & Prices",
+  "aiCapabilitiesLists": "Shopping Lists",
+  "aiCapabilitiesOrganize": "Organization",
+  "aiCapabilitiesRecipes": "Recipes & Menus",
+  "aiCapabilitiesTitle": "What can I do?",
   "aiConnectionError": "Could not connect to the AI service. Check your connection.",
   "aiCreditsRemaining": "{remaining} credits remaining",
   "aiEmptyResponseError": "The AI service returned an empty response.",
@@ -1705,10 +1755,17 @@
   "markAsPurchased": "Mark as purchased",
   "markItemsToSeeAnalysis": "Mark items as purchased to see the analysis.",
   "marketMode": "Market Mode",
+  "marketModeDescription": "Check off items as you shop",
   "marketsToAvoid": "Markets to avoid",
   "marketsToAvoidHint": "Markets you prefer not to shop at",
   "mealPlannerAddMeal": "Add Meal",
   "mealPlannerAddType": "Add meal type",
+  "mealPlannerBudgetGoalNav": "Meal planner budget",
+  "mealPlannerBudgetGoalSubtitle": "Monthly spending goal for meal planning",
+  "mealPlannerBudgetMonthCost": "Month: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Remove goal",
+  "mealPlannerBudgetTodayCost": "Today: {amount}",
+  "mealPlannerBudgetWeekCost": "Week: {amount}",
   "mealPlannerCustomTypeLabel": "Custom type",
   "mealPlannerDateLabel": "Date",
   "mealPlannerDefaultTypeLabel": "Default type",
@@ -1768,6 +1825,7 @@
   "navRecipes": "Recipes",
   "newCategoryDialog": "New category",
   "newChat": "New Chat",
+  "newChatStarted": "New chat started",
   "newListTitle": "New Shopping List",
   "newPantryList": "Pantry Shopping",
   "newRecipe": "New Recipe",
@@ -2108,6 +2166,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Chat with Kipi",
   "quickActionPantry": "View pantry",
+  "quickAddToList": "Add to list",
   "quickRecipe": "Quick recipe",
   "quickRecipePrompt": "Suggest recipes with items from my list.",
   "quickReplies": "Quick replies:",

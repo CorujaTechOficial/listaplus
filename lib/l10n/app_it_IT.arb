@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -437,11 +452,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
@@ -496,6 +535,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1307,6 +1349,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1492,6 +1537,11 @@
   "aiAssistantGeneral": "Assistente generale",
   "aiAssistantHistory": "Storia dell'Assistente",
   "aiAssistantTitle": "Assistente AI",
+  "aiCapabilitiesBudget": "Budget e prezzi",
+  "aiCapabilitiesLists": "Liste della spesa",
+  "aiCapabilitiesOrganize": "Organizzazione",
+  "aiCapabilitiesRecipes": "Ricette e menu",
+  "aiCapabilitiesTitle": "Cosa posso fare?",
   "aiConnectionError": "Impossibile connettersi al servizio AI. Controlla la tua connessione.",
   "aiConversationHistory": "Cronologia delle conversazioni",
   "aiCreditsRemaining": "{remaining} crediti rimasti",
@@ -1867,12 +1917,19 @@
   "markAsPurchased": "Segna come acquistato",
   "markItemsToSeeAnalysis": "Segna gli elementi come acquistati per vedere l'analisi.",
   "marketMode": "Modalità mercato",
+  "marketModeDescription": "Spunta gli articoli mentre fai acquisti",
   "marketsToAvoid": "Mercati da evitare",
   "marketsToAvoidHint": "Mercati in cui preferisci non fare acquisti",
   "mealDragHint": "Tieni premuto per trascinare e spostare",
   "mealNoRecipeFound": "Nessuna ricetta trovata",
   "mealPlannerAddMeal": "Aggiungi Pasto",
   "mealPlannerAddType": "Aggiungi il tipo di pasto",
+  "mealPlannerBudgetGoalNav": "Budget del pianificatore dei pasti",
+  "mealPlannerBudgetGoalSubtitle": "Obiettivo di spesa mensile per la pianificazione dei pasti",
+  "mealPlannerBudgetMonthCost": "Mese: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Rimuovi obiettivo",
+  "mealPlannerBudgetTodayCost": "Oggi: {amount}",
+  "mealPlannerBudgetWeekCost": "Settimana: {amount}",
   "mealPlannerCustomTypeLabel": "Tipo personalizzato",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Tipo predefinito",
@@ -1934,6 +1991,7 @@
   "navRecipes": "Ricette",
   "newCategoryDialog": "Nuova categoria",
   "newChat": "Nuova chiacchierata",
+  "newChatStarted": "È iniziata una nuova chat",
   "newListTitle": "Nuova Lista della Spesa",
   "newPantryList": "Spesa Dispensa",
   "newRecipe": "Nuova Ricetta",
@@ -2300,6 +2358,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Chatta con Kipi",
   "quickActionPantry": "Visualizza dispensa",
+  "quickAddToList": "Aggiungi all'elenco",
   "quickRecipe": "Ricetta veloce",
   "quickRecipePrompt": "Suggerisci ricette con gli elementi della mia lista.",
   "quickReplies": "Risposte rapide:",

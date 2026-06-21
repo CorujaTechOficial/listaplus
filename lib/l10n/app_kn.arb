@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -458,6 +497,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1269,6 +1311,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1454,6 +1499,11 @@
   "aiAssistantGeneral": "ಸಾಮಾನ್ಯ ಸಹಾಯಕ",
   "aiAssistantHistory": "ಸಹಾಯಕ ಇತಿಹಾಸ",
   "aiAssistantTitle": "AI ಸಹಾಯಕ",
+  "aiCapabilitiesBudget": "ಬಜೆಟ್ ಮತ್ತು ಬೆಲೆಗಳು",
+  "aiCapabilitiesLists": "ಶಾಪಿಂಗ್ ಪಟ್ಟಿಗಳು",
+  "aiCapabilitiesOrganize": "ಸಂಸ್ಥೆ",
+  "aiCapabilitiesRecipes": "ಪಾಕವಿಧಾನಗಳು ಮತ್ತು ಮೆನುಗಳು",
+  "aiCapabilitiesTitle": "ನಾನು ಏನು ಮಾಡಬಹುದು?",
   "aiConnectionError": "AI ಸೇವೆಗೆ ಸಂಪರ್ಕಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ.",
   "aiConversationHistory": "ಸಂಭಾಷಣೆ ಇತಿಹಾಸ",
   "aiCreditsRemaining": "{remaining} ಕ್ರೆಡಿಟ್ಗಳು ಉಳಿದಿವೆ",
@@ -1829,12 +1879,19 @@
   "markAsPurchased": "ಖರೀದಿಸಿದ ಎಂದು ಗುರುತಿಸಿ",
   "markItemsToSeeAnalysis": "ವಿಶ್ಲೇಷಣೆ ನೋಡಲು ಐಟಂಗಳನ್ನು ಖರೀದಿಸಿದ ಎಂದು ಗುರುತಿಸಿ.",
   "marketMode": "ಮಾರುಕಟ್ಟೆ ಮೋಡ್",
+  "marketModeDescription": "ನೀವು ಶಾಪಿಂಗ್ ಮಾಡುವಾಗ ಐಟಂಗಳನ್ನು ಪರಿಶೀಲಿಸಿ",
   "marketsToAvoid": "ತಪ್ಪಿಸಲು ಮಾರುಕಟ್ಟೆಗಳು",
   "marketsToAvoidHint": "ನೀವು ಶಾಪಿಂಗ್ ಮಾಡದಿರಲು ಇಷ್ಟಪಡುವ ಮಾರುಕಟ್ಟೆಗಳು",
   "mealDragHint": "ಎಳೆಯಲು ಮತ್ತು ಸರಿಸಲು ಹಿಡಿದುಕೊಳ್ಳಿ",
   "mealNoRecipeFound": "ಯಾವುದೇ ಪಾಕವಿಧಾನ ಕಂಡುಬಂದಿಲ್ಲ",
   "mealPlannerAddMeal": "ಊಟವನ್ನು ಸೇರಿಸಿ",
   "mealPlannerAddType": "ಊಟದ ಪ್ರಕಾರವನ್ನು ಸೇರಿಸಿ",
+  "mealPlannerBudgetGoalNav": "ಊಟ ಯೋಜಕ ಬಜೆಟ್",
+  "mealPlannerBudgetGoalSubtitle": "ಊಟ ಯೋಜನೆಗಾಗಿ ಮಾಸಿಕ ಖರ್ಚು ಗುರಿ",
+  "mealPlannerBudgetMonthCost": "ತಿಂಗಳು: {amount}",
+  "mealPlannerBudgetRemoveGoal": "ಗುರಿಯನ್ನು ತೆಗೆದುಹಾಕಿ",
+  "mealPlannerBudgetTodayCost": "ಇಂದು: {amount}",
+  "mealPlannerBudgetWeekCost": "ವಾರ: {amount}",
   "mealPlannerCustomTypeLabel": "ಕಸ್ಟಮ್ ಪ್ರಕಾರ",
   "mealPlannerDateLabel": "ದಿನಾಂಕ",
   "mealPlannerDefaultTypeLabel": "ಡೀಫಾಲ್ಟ್ ಪ್ರಕಾರ",
@@ -1896,6 +1953,7 @@
   "navRecipes": "ಪಾಕವಿಧಾನಗಳು",
   "newCategoryDialog": "ಹೊಸ ವರ್ಗ",
   "newChat": "ಹೊಸ ಚಾಟ್",
+  "newChatStarted": "ಹೊಸ ಚಾಟ್ ಪ್ರಾರಂಭವಾಗಿದೆ",
   "newListTitle": "ಹೊಸ ಶಾಪಿಂಗ್ ಪಟ್ಟಿ",
   "newPantryList": "ಪ್ಯಾಂಟ್ರಿ ಶಾಪಿಂಗ್",
   "newRecipe": "ಹೊಸ ಪಾಕವಿಧಾನ",
@@ -2262,6 +2320,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "ಕಿಪಿ ಜೊತೆ ಚಾಟ್ ಮಾಡಿ",
   "quickActionPantry": "ಪ್ಯಾಂಟ್ರಿ ವೀಕ್ಷಿಸಿ",
+  "quickAddToList": "ಪಟ್ಟಿಗೆ ಸೇರಿಸಿ",
   "quickRecipe": "ತ್ವರಿತ ಪಾಕವಿಧಾನ",
   "quickRecipePrompt": "ನನ್ನ ಪಟ್ಟಿಯ ಐಟಂಗಳೊಂದಿಗೆ ಪಾಕವಿಧಾನಗಳನ್ನು ಸೂಚಿಸಿ.",
   "quickReplies": "ತ್ವರಿತ ಪ್ರತ್ಯುತ್ತರಗಳು:",

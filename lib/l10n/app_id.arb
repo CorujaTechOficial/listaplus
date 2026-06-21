@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -437,11 +452,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
@@ -496,6 +535,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1307,6 +1349,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1492,6 +1537,11 @@
   "aiAssistantGeneral": "Asisten Umum",
   "aiAssistantHistory": "Asisten Sejarah",
   "aiAssistantTitle": "Asisten AI",
+  "aiCapabilitiesBudget": "Anggaran & Harga",
+  "aiCapabilitiesLists": "Daftar Belanja",
+  "aiCapabilitiesOrganize": "Organisasi",
+  "aiCapabilitiesRecipes": "Resep & Menu",
+  "aiCapabilitiesTitle": "Apa yang bisa saya lakukan?",
   "aiConnectionError": "Tidak dapat terhubung ke layanan AI. Periksa koneksi Anda.",
   "aiConversationHistory": "Riwayat Percakapan",
   "aiCreditsRemaining": "{remaining} kredit tersisa",
@@ -1867,12 +1917,19 @@
   "markAsPurchased": "Tandai sudah dibeli",
   "markItemsToSeeAnalysis": "Tandai item sebagai dibeli untuk melihat analisis.",
   "marketMode": "Modus Pasar",
+  "marketModeDescription": "Centang item saat Anda berbelanja",
   "marketsToAvoid": "Pasar yang harus dihindari",
   "marketsToAvoidHint": "Pasar yang Anda pilih untuk tidak berbelanja",
   "mealDragHint": "Tahan untuk menyeret dan memindahkan",
   "mealNoRecipeFound": "Tidak ada resep yang ditemukan",
   "mealPlannerAddMeal": "Tambah Makanan",
   "mealPlannerAddType": "Tambahkan jenis makanan",
+  "mealPlannerBudgetGoalNav": "Anggaran perencana makanan",
+  "mealPlannerBudgetGoalSubtitle": "Sasaran pengeluaran bulanan untuk perencanaan makan",
+  "mealPlannerBudgetMonthCost": "Bulan: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Hapus tujuan",
+  "mealPlannerBudgetTodayCost": "Hari ini: {amount}",
+  "mealPlannerBudgetWeekCost": "Minggu: {amount}",
   "mealPlannerCustomTypeLabel": "Tipe khusus",
   "mealPlannerDateLabel": "Tanggal",
   "mealPlannerDefaultTypeLabel": "Tipe bawaan",
@@ -1934,6 +1991,7 @@
   "navRecipes": "Resep",
   "newCategoryDialog": "Kategori baru",
   "newChat": "Obrolan Baru",
+  "newChatStarted": "Obrolan baru dimulai",
   "newListTitle": "Daftar Belanja Baru",
   "newPantryList": "Belanja Dapur",
   "newRecipe": "Resep Baru",
@@ -2300,6 +2358,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Ngobrol dengan Kipi",
   "quickActionPantry": "Lihat dapur",
+  "quickAddToList": "Tambahkan ke daftar",
   "quickRecipe": "Resep cepat",
   "quickRecipePrompt": "Sarankan resep dengan item dari daftar saya.",
   "quickReplies": "Balasan cepat:",

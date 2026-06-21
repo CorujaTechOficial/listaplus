@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -458,6 +497,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1269,6 +1311,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1454,6 +1499,11 @@
   "aiAssistantGeneral": "ຜູ້ຊ່ວຍທົ່ວໄປ",
   "aiAssistantHistory": "ປະຫວັດຜູ້ຊ່ວຍ",
   "aiAssistantTitle": "ຜູ້ຊ່ວຍ AI",
+  "aiCapabilitiesBudget": "ງົບປະມານ & ລາຄາ",
+  "aiCapabilitiesLists": "ລາຍການຊື້ເຄື່ອງ",
+  "aiCapabilitiesOrganize": "ອົງການຈັດຕັ້ງ",
+  "aiCapabilitiesRecipes": "ສູດ ແລະເມນູ",
+  "aiCapabilitiesTitle": "ຂ້ອຍສາມາດເຮັດຫຍັງໄດ້ແດ່?",
   "aiConnectionError": "ບໍ່ສາມາດເຊື່ອມຕໍ່ກັບການບໍລິການ AI ໄດ້. ກວດເບິ່ງການເຊື່ອມຕໍ່ຂອງທ່ານ.",
   "aiConversationHistory": "ປະຫວັດການສົນທະນາ",
   "aiCreditsRemaining": "{remaining} ເຄຣດິດຍັງເຫຼືອ",
@@ -1829,12 +1879,19 @@
   "markAsPurchased": "ໝາຍວ່າຊື້ແລ້ວ",
   "markItemsToSeeAnalysis": "ໝາຍລາຍການວ່າຊື້ແລ້ວເພື່ອເບິ່ງການວິເຄາະ.",
   "marketMode": "ຮູບແບບຕະຫຼາດ",
+  "marketModeDescription": "ກວດເບິ່ງລາຍການໃນຂະນະທີ່ທ່ານຊື້ເຄື່ອງ",
   "marketsToAvoid": "ຕະຫຼາດເພື່ອຫຼີກເວັ້ນການ",
   "marketsToAvoidHint": "ຕະຫຼາດທີ່ເຈົ້າບໍ່ຢາກຊື້ຢູ່",
   "mealDragHint": "ກົດຄ້າງໄວ້ເພື່ອລາກແລະຍ້າຍ",
   "mealNoRecipeFound": "ບໍ່ພົບສູດອາຫານ",
   "mealPlannerAddMeal": "ເພີ່ມຄາບອາຫານ",
   "mealPlannerAddType": "ເພີ່ມປະເພດອາຫານ",
+  "mealPlannerBudgetGoalNav": "ງົບປະມານການວາງແຜນອາຫານ",
+  "mealPlannerBudgetGoalSubtitle": "ເປົ້າຫມາຍການໃຊ້ຈ່າຍປະຈໍາເດືອນສໍາລັບການວາງແຜນອາຫານ",
+  "mealPlannerBudgetMonthCost": "ເດືອນ: {amount}",
+  "mealPlannerBudgetRemoveGoal": "ເອົາເປົ້າໝາຍອອກ",
+  "mealPlannerBudgetTodayCost": "ມື້ນີ້: {amount}",
+  "mealPlannerBudgetWeekCost": "ອາທິດ: {amount}",
   "mealPlannerCustomTypeLabel": "ປະເພດແບບກຳນົດເອງ",
   "mealPlannerDateLabel": "ວັນທີ",
   "mealPlannerDefaultTypeLabel": "ປະເພດເລີ່ມຕົ້ນ",
@@ -1896,6 +1953,7 @@
   "navRecipes": "ສູດ",
   "newCategoryDialog": "ໝວດໝູ່ໃໝ່",
   "newChat": "ສົນທະນາໃໝ່",
+  "newChatStarted": "ເລີ່ມການສົນທະນາໃໝ່ແລ້ວ",
   "newListTitle": "ລາຍການຊື້ເຄື່ອງໃໝ່",
   "newPantryList": "ຊື້ເຄື່ອງເພີ່ມເຕີມ",
   "newRecipe": "ສູດອາຫານໃໝ່",
@@ -2262,6 +2320,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "ສົນທະນາກັບ Kipi",
   "quickActionPantry": "ເບິ່ງ pantry",
+  "quickAddToList": "ເພີ່ມໃສ່ລາຍຊື່",
   "quickRecipe": "ສູດອາຫານດ່ວນ",
   "quickRecipePrompt": "ແນະນຳສູດອາຫານກັບລາຍການຈາກລາຍການຂອງຂ້ອຍ.",
   "quickReplies": "ຕອບກັບດ່ວນ:",

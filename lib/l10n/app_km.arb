@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -458,6 +497,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1269,6 +1311,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1454,6 +1499,11 @@
   "aiAssistantGeneral": "ជំនួយការទូទៅ",
   "aiAssistantHistory": "ប្រវត្តិជំនួយការ",
   "aiAssistantTitle": "ជំនួយការ AI",
+  "aiCapabilitiesBudget": "ថវិកា និងតម្លៃ",
+  "aiCapabilitiesLists": "បញ្ជីទិញទំនិញ",
+  "aiCapabilitiesOrganize": "អង្គការ",
+  "aiCapabilitiesRecipes": "រូបមន្ត & ម៉ឺនុយ",
+  "aiCapabilitiesTitle": "តើខ្ញុំអាចធ្វើអ្វីបាន?",
   "aiConnectionError": "មិនអាចភ្ជាប់ទៅសេវាកម្ម AI បានទេ។ ពិនិត្យការតភ្ជាប់របស់អ្នក។",
   "aiConversationHistory": "ប្រវត្តិនៃការសន្ទនា",
   "aiCreditsRemaining": "នៅសល់ {remaining} ឥណទាន",
@@ -1829,12 +1879,19 @@
   "markAsPurchased": "សម្គាល់ថាបានទិញ",
   "markItemsToSeeAnalysis": "សម្គាល់ធាតុថាបានទិញដើម្បីមើលការវិភាគ។",
   "marketMode": "របៀបទីផ្សារ",
+  "marketModeDescription": "ពិនិត្យទំនិញនៅពេលអ្នកទិញទំនិញ",
   "marketsToAvoid": "ទីផ្សារដែលត្រូវជៀសវាង",
   "marketsToAvoidHint": "ទីផ្សារដែលអ្នកមិនចង់ទិញទំនិញ",
   "mealDragHint": "សង្កត់ដើម្បីអូស និងផ្លាស់ទី",
   "mealNoRecipeFound": "រកមិនឃើញរូបមន្តទេ។",
   "mealPlannerAddMeal": "បន្ថែមអាហារ",
   "mealPlannerAddType": "បន្ថែមប្រភេទអាហារ",
+  "mealPlannerBudgetGoalNav": "ថវិកាផែនការអាហារ",
+  "mealPlannerBudgetGoalSubtitle": "គោលដៅចំណាយប្រចាំខែសម្រាប់ផែនការអាហារ",
+  "mealPlannerBudgetMonthCost": "ខែ៖ {amount}",
+  "mealPlannerBudgetRemoveGoal": "ដកគោលដៅចេញ",
+  "mealPlannerBudgetTodayCost": "ថ្ងៃនេះ៖ {amount}",
+  "mealPlannerBudgetWeekCost": "សប្តាហ៍៖ {amount}",
   "mealPlannerCustomTypeLabel": "ប្រភេទផ្ទាល់ខ្លួន",
   "mealPlannerDateLabel": "កាលបរិច្ឆេទ",
   "mealPlannerDefaultTypeLabel": "ប្រភេទលំនាំដើម",
@@ -1896,6 +1953,7 @@
   "navRecipes": "រូបមន្ត",
   "newCategoryDialog": "ប្រភេទថ្មី។",
   "newChat": "ការជជែកថ្មី។",
+  "newChatStarted": "ការជជែកថ្មីបានចាប់ផ្តើម",
   "newListTitle": "បញ្ជីទិញទំនិញថ្មី",
   "newPantryList": "ទិញពីអាហារដ្ឋាន",
   "newRecipe": "រូបមន្តថ្មី",
@@ -2262,6 +2320,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "ជជែកជាមួយគីភី",
   "quickActionPantry": "មើលកន្លែងដាក់ឥវ៉ាន់",
+  "quickAddToList": "បញ្ចូលទៅក្នុងបញ្ជី",
   "quickRecipe": "រូបមន្តរហ័ស",
   "quickRecipePrompt": "ណែនាំរូបមន្តជាមួយធាតុពីបញ្ជីរបស់ខ្ញុំ។",
   "quickReplies": "ការឆ្លើយតបរហ័ស៖",

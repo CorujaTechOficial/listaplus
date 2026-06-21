@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -458,6 +497,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1269,6 +1311,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1454,6 +1499,11 @@
   "aiAssistantGeneral": "सामान्य सहायक",
   "aiAssistantHistory": "सहायक इतिहास",
   "aiAssistantTitle": "एआई सहायक",
+  "aiCapabilitiesBudget": "बजट और कीमतें",
+  "aiCapabilitiesLists": "खरीदारी सूचियाँ",
+  "aiCapabilitiesOrganize": "संगठन",
+  "aiCapabilitiesRecipes": "व्यंजन विधि एवं मेनू",
+  "aiCapabilitiesTitle": "मैं क्या कर सकता हूँ?",
   "aiConnectionError": "एआई सेवा से कनेक्ट नहीं हो सका. अपना कनेक्शन जांचें.",
   "aiConversationHistory": "बातचीत का इतिहास",
   "aiCreditsRemaining": "{remaining} क्रेडिट शेष",
@@ -1829,12 +1879,19 @@
   "markAsPurchased": "खरीदा गया चिह्नित करें",
   "markItemsToSeeAnalysis": "विश्लेषण देखने के लिए आइटम को खरीदा गया चिह्नित करें।",
   "marketMode": "बाज़ार मोड",
+  "marketModeDescription": "खरीदारी करते समय वस्तुओं की जाँच करें",
   "marketsToAvoid": "बाजारों से बचना चाहिए",
   "marketsToAvoidHint": "वे बाज़ार जहां आप खरीदारी नहीं करना पसंद करते हैं",
   "mealDragHint": "खींचने और ले जाने के लिए पकड़ें",
   "mealNoRecipeFound": "कोई नुस्खा नहीं मिला",
   "mealPlannerAddMeal": "भोजन जोड़ें",
   "mealPlannerAddType": "भोजन का प्रकार जोड़ें",
+  "mealPlannerBudgetGoalNav": "भोजन योजनाकार बजट",
+  "mealPlannerBudgetGoalSubtitle": "भोजन योजना के लिए मासिक व्यय लक्ष्य",
+  "mealPlannerBudgetMonthCost": "महीना: {amount}",
+  "mealPlannerBudgetRemoveGoal": "लक्ष्य हटाएँ",
+  "mealPlannerBudgetTodayCost": "आज: {amount}",
+  "mealPlannerBudgetWeekCost": "सप्ताह: {amount}",
   "mealPlannerCustomTypeLabel": "कस्टम प्रकार",
   "mealPlannerDateLabel": "तिथि",
   "mealPlannerDefaultTypeLabel": "डिफ़ॉल्ट प्रकार",
@@ -1896,6 +1953,7 @@
   "navRecipes": "व्यंजनों",
   "newCategoryDialog": "नई श्रेणी",
   "newChat": "नई चैट",
+  "newChatStarted": "नई चैट शुरू हुई",
   "newListTitle": "नई खरीदारी सूची",
   "newPantryList": "पेंट्री खरीदारी",
   "newRecipe": "नई रेसिपी",
@@ -2262,6 +2320,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "किपी से चैट करें",
   "quickActionPantry": "पेंट्री देखें",
+  "quickAddToList": "सूची में शामिल",
   "quickRecipe": "त्वरित रेसिपी",
   "quickRecipePrompt": "मेरी सूची के आइटम से रेसिपी सुझाएँ।",
   "quickReplies": "त्वरित उत्तर:",

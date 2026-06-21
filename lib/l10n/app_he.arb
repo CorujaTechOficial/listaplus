@@ -22,6 +22,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -404,11 +419,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -432,6 +471,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1243,6 +1285,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1428,6 +1473,11 @@
   "aiAssistantGeneral": "עוזר כללי",
   "aiAssistantHistory": "היסטוריה של עוזר",
   "aiAssistantTitle": "עוזר AI",
+  "aiCapabilitiesBudget": "תקציב ומחירים",
+  "aiCapabilitiesLists": "רשימות קניות",
+  "aiCapabilitiesOrganize": "אִרגוּן",
+  "aiCapabilitiesRecipes": "מתכונים ותפריטים",
+  "aiCapabilitiesTitle": "מה אני יכול לעשות?",
   "aiConnectionError": "לא ניתן להתחבר לשירות AI. בדוק את החיבור שלך.",
   "aiConversationHistory": "היסטוריית שיחות",
   "aiCreditsRemaining": "נותרו {remaining} נקודות זכות",
@@ -1803,12 +1853,19 @@
   "markAsPurchased": "סמן כנרכש",
   "markItemsToSeeAnalysis": "סמן פריטים כנרכשים כדי לראות את הניתוח.",
   "marketMode": "מצב שוק",
+  "marketModeDescription": "סמן פריטים בזמן שאתה קונה",
   "marketsToAvoid": "שווקים שכדאי להימנע מהם",
   "marketsToAvoidHint": "שווקים שאתה מעדיף לא לקנות בהם",
   "mealDragHint": "החזק כדי לגרור ולהזיז",
   "mealNoRecipeFound": "לא נמצא מתכון",
   "mealPlannerAddMeal": "הוסף ארוחה",
   "mealPlannerAddType": "הוסף סוג ארוחה",
+  "mealPlannerBudgetGoalNav": "תקציב מתכנן ארוחות",
+  "mealPlannerBudgetGoalSubtitle": "יעד הוצאה חודשי לתכנון ארוחות",
+  "mealPlannerBudgetMonthCost": "חודש: {amount}",
+  "mealPlannerBudgetRemoveGoal": "הסר את המטרה",
+  "mealPlannerBudgetTodayCost": "היום: {amount}",
+  "mealPlannerBudgetWeekCost": "שבוע: {amount}",
   "mealPlannerCustomTypeLabel": "סוג מותאם אישית",
   "mealPlannerDateLabel": "תאריך",
   "mealPlannerDefaultTypeLabel": "סוג ברירת מחדל",
@@ -1870,6 +1927,7 @@
   "navRecipes": "מתכונים",
   "newCategoryDialog": "קטגוריה חדשה",
   "newChat": "צ'אט חדש",
+  "newChatStarted": "צ'אט חדש התחיל",
   "newListTitle": "רשימת קניות חדשה",
   "newPantryList": "קניית מזווה",
   "newRecipe": "מתכון חדש",
@@ -2236,6 +2294,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "צ'אט עם Kipi",
   "quickActionPantry": "צפה במזווה",
+  "quickAddToList": "הוסף לרשימה",
   "quickRecipe": "מתכון מהיר",
   "quickRecipePrompt": "הצע מתכונים עם פריטים מהרשימה שלי.",
   "quickReplies": "תשובות מהירות:",

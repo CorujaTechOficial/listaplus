@@ -791,28 +791,28 @@ class AppLocalizationsIs extends AppLocalizations {
   String get undo => 'Afturkalla';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Nýtt spjall byrjað';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Bæta við lista';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Hvað get ég gert?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Innkaupalistar';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Fjárhagsáætlun og verð';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Uppskriftir og matseðlar';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Skipulag';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Hakaðu við hluti þegar þú verslar';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1974,28 +1974,28 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Mánuður: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Vika: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Í dag: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Fjarlægðu markið';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Fjárhagsáætlun máltíðarskipulags';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Mánaðarlegt eyðslumarkmið fyrir máltíðarskipulagningu';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -3967,6 +3967,30 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   String get undo => 'Afturkalla';
 
   @override
+  String get newChatStarted => 'Nýtt spjall byrjað';
+
+  @override
+  String get quickAddToList => 'Bæta við lista';
+
+  @override
+  String get aiCapabilitiesTitle => 'Hvað get ég gert?';
+
+  @override
+  String get aiCapabilitiesLists => 'Innkaupalistar';
+
+  @override
+  String get aiCapabilitiesBudget => 'Fjárhagsáætlun og verð';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Uppskriftir og matseðlar';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Skipulag';
+
+  @override
+  String get marketModeDescription => 'Hakaðu við hluti þegar þú verslar';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -5123,6 +5147,31 @@ class AppLocalizationsIsIs extends AppLocalizationsIs {
   @override
   String get mealPlannerWeekEmptyHint =>
       'Smelltu á hvaða dag sem er til að byrja að skipuleggja máltíðirnar þínar!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Mánuður: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Vika: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Í dag: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Fjarlægðu markið';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Fjárhagsáætlun máltíðarskipulags';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Mánaðarlegt eyðslumarkmið fyrir máltíðarskipulagningu';
 
   @override
   String mealPlannerPrepTime(int minutes) {

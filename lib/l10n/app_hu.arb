@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -437,11 +452,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
@@ -496,6 +535,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1307,6 +1349,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1492,6 +1537,11 @@
   "aiAssistantGeneral": "Általános asszisztens",
   "aiAssistantHistory": "Asszisztens Történelem",
   "aiAssistantTitle": "AI asszisztens",
+  "aiCapabilitiesBudget": "Költségvetés és árak",
+  "aiCapabilitiesLists": "Bevásárlólisták",
+  "aiCapabilitiesOrganize": "Szervezet",
+  "aiCapabilitiesRecipes": "Receptek és menük",
+  "aiCapabilitiesTitle": "Mit tehetek?",
   "aiConnectionError": "Nem sikerült csatlakozni az AI-szolgáltatáshoz. Ellenőrizze a kapcsolatot.",
   "aiConversationHistory": "Beszélgetés története",
   "aiCreditsRemaining": "{remaining} kredit maradt",
@@ -1867,12 +1917,19 @@
   "markAsPurchased": "Megvásároltnak jelölés",
   "markItemsToSeeAnalysis": "Jelölje meg a termékeket vásároltként az elemzés megtekintéséhez.",
   "marketMode": "Piaci mód",
+  "marketModeDescription": "Vásárlás közben ellenőrizze a tételeket",
   "marketsToAvoid": "Elkerülendő piacok",
   "marketsToAvoidHint": "Piacok, ahol nem szeretne vásárolni",
   "mealDragHint": "Tartsa lenyomva a húzáshoz és mozgatáshoz",
   "mealNoRecipeFound": "Nem található recept",
   "mealPlannerAddMeal": "Étkezés hozzáadása",
   "mealPlannerAddType": "Adja hozzá az étkezés típusát",
+  "mealPlannerBudgetGoalNav": "Étkezéstervező költségvetés",
+  "mealPlannerBudgetGoalSubtitle": "Havi kiadási cél az étkezés megtervezéséhez",
+  "mealPlannerBudgetMonthCost": "Hónap: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Cél eltávolítása",
+  "mealPlannerBudgetTodayCost": "Ma: {amount}",
+  "mealPlannerBudgetWeekCost": "Hét: {amount}",
   "mealPlannerCustomTypeLabel": "Egyedi típus",
   "mealPlannerDateLabel": "Dátum",
   "mealPlannerDefaultTypeLabel": "Alapértelmezett típus",
@@ -1934,6 +1991,7 @@
   "navRecipes": "Receptek",
   "newCategoryDialog": "Új kategória",
   "newChat": "Új csevegés",
+  "newChatStarted": "Új csevegés kezdődött",
   "newListTitle": "Új bevásárlólista",
   "newPantryList": "Kamra bevásárlás",
   "newRecipe": "Új recept",
@@ -2300,6 +2358,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Csevegés Kipivel",
   "quickActionPantry": "Spájz megtekintése",
+  "quickAddToList": "Hozzáadás a listához",
   "quickRecipe": "Gyors recept",
   "quickRecipePrompt": "Ajánljon recepteket a listám elemeiből.",
   "quickReplies": "Gyors válaszok:",

@@ -579,6 +579,27 @@
       }
     }
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -1932,6 +1953,12 @@
   "marketsToAvoidHint": "De exemplu: Piața Y, Piața Z",
   "mealPlannerAddMeal": "Adăugați masa",
   "mealPlannerAddType": "Adăugați tipul de masă",
+  "mealPlannerBudgetGoalNav": "Bugetul planificatorului de mese",
+  "mealPlannerBudgetGoalSubtitle": "Obiectiv lunar de cheltuieli pentru planificarea mesei",
+  "mealPlannerBudgetMonthCost": "Luna: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Eliminați obiectivul",
+  "mealPlannerBudgetTodayCost": "Astăzi: {amount}",
+  "mealPlannerBudgetWeekCost": "Săptămâna: {amount}",
   "mealPlannerCustomTypeLabel": "Tip personalizat",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Tip implicit",

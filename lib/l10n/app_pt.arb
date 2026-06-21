@@ -414,6 +414,27 @@
   "@kipiQuickBarHint": {
     "description": "Hint for quick add bar"
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -1678,6 +1699,12 @@
   "marketsToAvoidHint": "Ex.: Mercado Y, Mercado Z",
   "mealPlannerAddMeal": "Adicionar Refeição",
   "mealPlannerAddType": "Adicionar tipo de refeição",
+  "mealPlannerBudgetGoalNav": "Orçamento do planejador de refeições",
+  "mealPlannerBudgetGoalSubtitle": "Meta de gastos mensais para planejamento de refeições",
+  "mealPlannerBudgetMonthCost": "Mês: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Remover meta",
+  "mealPlannerBudgetTodayCost": "Hoje: {amount}",
+  "mealPlannerBudgetWeekCost": "Semana: {amount}",
   "mealPlannerCustomTypeLabel": "Tipo personalizado",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Tipo padrão",

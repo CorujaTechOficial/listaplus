@@ -773,28 +773,28 @@ class AppLocalizationsKo extends AppLocalizations {
   String get undo => '실행 취소';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => '새 채팅이 시작되었습니다.';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => '목록에 추가';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => '어떻게 해야 하나요?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => '쇼핑 목록';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => '예산 및 가격';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => '레시피 및 메뉴';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => '조직';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => '쇼핑하면서 품목을 확인하세요';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1908,28 +1908,27 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return '월: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return '주: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return '오늘: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => '목표 삭제';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => '식사 플래너 예산';
 
   @override
-  String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+  String get mealPlannerBudgetGoalSubtitle => '식사 계획을 위한 월간 지출 목표';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -3847,6 +3846,30 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get undo => '실행 취소';
 
   @override
+  String get newChatStarted => '새 채팅이 시작되었습니다.';
+
+  @override
+  String get quickAddToList => '목록에 추가';
+
+  @override
+  String get aiCapabilitiesTitle => '어떻게 해야 하나요?';
+
+  @override
+  String get aiCapabilitiesLists => '쇼핑 목록';
+
+  @override
+  String get aiCapabilitiesBudget => '예산 및 가격';
+
+  @override
+  String get aiCapabilitiesRecipes => '레시피 및 메뉴';
+
+  @override
+  String get aiCapabilitiesOrganize => '조직';
+
+  @override
+  String get marketModeDescription => '쇼핑하면서 품목을 확인하세요';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -4955,6 +4978,30 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get mealPlannerWeekEmptyHint => '식사 계획을 시작하려면 아무 날짜나 탭하세요!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return '월: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return '주: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return '오늘: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => '목표 삭제';
+
+  @override
+  String get mealPlannerBudgetGoalNav => '식사 플래너 예산';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle => '식사 계획을 위한 월간 지출 목표';
 
   @override
   String mealPlannerPrepTime(int minutes) {

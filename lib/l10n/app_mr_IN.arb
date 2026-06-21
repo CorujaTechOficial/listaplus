@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -458,6 +497,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1269,6 +1311,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1454,6 +1499,11 @@
   "aiAssistantGeneral": "जनरल असिस्टंट",
   "aiAssistantHistory": "सहाय्यक इतिहास",
   "aiAssistantTitle": "एआय सहाय्यक",
+  "aiCapabilitiesBudget": "बजेट आणि किंमती",
+  "aiCapabilitiesLists": "खरेदी याद्या",
+  "aiCapabilitiesOrganize": "संघटना",
+  "aiCapabilitiesRecipes": "पाककृती आणि मेनू",
+  "aiCapabilitiesTitle": "मी काय करू शकतो?",
   "aiConnectionError": "AI सेवेशी कनेक्ट करता आले नाही. तुमचे कनेक्शन तपासा.",
   "aiConversationHistory": "संभाषण इतिहास",
   "aiCreditsRemaining": "{remaining} क्रेडिट शिल्लक",
@@ -1829,12 +1879,19 @@
   "markAsPurchased": "खरेदी केले म्हणून चिन्हांकित करा",
   "markItemsToSeeAnalysis": "विश्लेषण पाहण्यासाठी आयटम खरेदी केले म्हणून चिन्हांकित करा.",
   "marketMode": "मार्केट मोड",
+  "marketModeDescription": "तुम्ही खरेदी करता तेव्हा वस्तू तपासा",
   "marketsToAvoid": "बाजार टाळण्यासाठी",
   "marketsToAvoidHint": "ज्या मार्केटमध्ये तुम्ही खरेदी करू नका",
   "mealDragHint": "ड्रॅग आणि हलविण्यासाठी धरून ठेवा",
   "mealNoRecipeFound": "रेसिपी सापडली नाही",
   "mealPlannerAddMeal": "जेवण जोडा",
   "mealPlannerAddType": "जेवणाचा प्रकार जोडा",
+  "mealPlannerBudgetGoalNav": "जेवण नियोजक बजेट",
+  "mealPlannerBudgetGoalSubtitle": "जेवण नियोजनासाठी मासिक खर्चाचे उद्दिष्ट",
+  "mealPlannerBudgetMonthCost": "महिना: {amount}",
+  "mealPlannerBudgetRemoveGoal": "ध्येय काढून टाका",
+  "mealPlannerBudgetTodayCost": "आज: {amount}",
+  "mealPlannerBudgetWeekCost": "आठवडा: {amount}",
   "mealPlannerCustomTypeLabel": "सानुकूल प्रकार",
   "mealPlannerDateLabel": "तारीख",
   "mealPlannerDefaultTypeLabel": "डीफॉल्ट प्रकार",
@@ -1896,6 +1953,7 @@
   "navRecipes": "पाककृती",
   "newCategoryDialog": "नवीन श्रेणी",
   "newChat": "नवीन गप्पा",
+  "newChatStarted": "नव्या गप्पा सुरू झाल्या",
   "newListTitle": "नवीन शॉपिंग लिस्ट",
   "newPantryList": "पॅन्ट्री शॉपिंग",
   "newRecipe": "नवीन रेसिपी",
@@ -2262,6 +2320,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "किपीशी गप्पा मारा",
   "quickActionPantry": "पॅन्ट्री पहा",
+  "quickAddToList": "सूचीमध्ये जोडा",
   "quickRecipe": "त्वरित पाककृती",
   "quickRecipePrompt": "माझ्या लिस्टमधील आयटमसह पाककृती सुचवा.",
   "quickReplies": "द्रुत प्रत्युत्तरे:",

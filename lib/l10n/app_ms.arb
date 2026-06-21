@@ -597,6 +597,27 @@
       }
     }
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
@@ -2030,6 +2051,12 @@
   "mealNoRecipeFound": "Tiada resipi ditemui",
   "mealPlannerAddMeal": "Tambah Hidangan",
   "mealPlannerAddType": "Tambah jenis hidangan",
+  "mealPlannerBudgetGoalNav": "Bajet perancang makan",
+  "mealPlannerBudgetGoalSubtitle": "Matlamat perbelanjaan bulanan untuk perancangan makan",
+  "mealPlannerBudgetMonthCost": "Bulan: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Alih keluar matlamat",
+  "mealPlannerBudgetTodayCost": "Hari ini: {amount}",
+  "mealPlannerBudgetWeekCost": "Minggu: {amount}",
   "mealPlannerCustomTypeLabel": "Jenis tersuai",
   "mealPlannerDateLabel": "Tarikh",
   "mealPlannerDefaultTypeLabel": "Jenis lalai",

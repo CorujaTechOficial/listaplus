@@ -791,28 +791,28 @@ class AppLocalizationsHy extends AppLocalizations {
   String get undo => 'Հետարկել';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Սկսվեց նոր զրույց';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Ավելացնել ցանկին';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Ի՞նչ կարող եմ անել:';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Գնումների ցուցակներ';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Բյուջե և գներ';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Բաղադրատոմսեր և ընտրացանկեր';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Կազմակերպություն';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Գնումներ կատարելիս ստուգեք ապրանքները';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1976,28 +1976,28 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Ամիս՝ $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Շաբաթ՝ $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Այսօր՝ $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Հեռացնել նպատակը';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Սննդի պլանավորողի բյուջեն';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Սննդի պլանավորման ամսական ծախսերի նպատակը';
 
   @override
   String mealPlannerPrepTime(int minutes) {

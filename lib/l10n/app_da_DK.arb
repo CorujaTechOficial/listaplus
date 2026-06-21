@@ -22,6 +22,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -382,11 +397,35 @@
   "@manageCategoriesTitle": {
     "description": "Title for category management"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -417,6 +456,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1190,6 +1232,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1356,6 +1401,11 @@
   "aiAssistant": "AI-assistent",
   "aiAssistantDescription": "Få smarte forslag, opskrifter og personlige tips med vores AI-assistent.",
   "aiAssistantTitle": "AI assistent",
+  "aiCapabilitiesBudget": "Budget og priser",
+  "aiCapabilitiesLists": "Indkøbslister",
+  "aiCapabilitiesOrganize": "Organisation",
+  "aiCapabilitiesRecipes": "Opskrifter og menuer",
+  "aiCapabilitiesTitle": "Hvad kan jeg gøre?",
   "aiConnectionError": "Kunne ikke oprette forbindelse til AI-tjenesten. Tjek din forbindelse.",
   "aiCreditsRemaining": "{remaining} credits tilbage",
   "aiEmptyResponseError": "AI-tjenesten returnerede et tomt svar.",
@@ -1686,10 +1736,17 @@
   "markAsPurchased": "Markér som købt",
   "markItemsToSeeAnalysis": "Markér varer som købt for at se analysen.",
   "marketMode": "Markedstilstand",
+  "marketModeDescription": "Sæt kryds af varer, mens du handler",
   "marketsToAvoid": "Markeder at undgå",
   "marketsToAvoidHint": "Markeder du helst ikke handler på",
   "mealPlannerAddMeal": "Tilføj måltid",
   "mealPlannerAddType": "Tilføj måltidstype",
+  "mealPlannerBudgetGoalNav": "Måltidsplanlægger budget",
+  "mealPlannerBudgetGoalSubtitle": "Månedligt forbrugsmål for måltidsplanlægning",
+  "mealPlannerBudgetMonthCost": "Måned: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Fjern målet",
+  "mealPlannerBudgetTodayCost": "I dag: {amount}",
+  "mealPlannerBudgetWeekCost": "Uge: {amount}",
   "mealPlannerCustomTypeLabel": "Brugerdefineret type",
   "mealPlannerDateLabel": "Dato",
   "mealPlannerDefaultTypeLabel": "Standardtype",
@@ -1749,6 +1806,7 @@
   "navRecipes": "Opskrifter",
   "newCategoryDialog": "Ny kategori",
   "newChat": "Ny chat",
+  "newChatStarted": "Ny chat startet",
   "newListTitle": "Ny indkøbsliste",
   "newPantryList": "Indkøb til spisekammer",
   "newRecipe": "Ny opskrift",
@@ -2089,6 +2147,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Chat med Kipi",
   "quickActionPantry": "Se spisekammer",
+  "quickAddToList": "Tilføj til listen",
   "quickRecipe": "Hurtig opskrift",
   "quickRecipePrompt": "Foreslå opskrifter med varer fra min liste.",
   "quickReplies": "Hurtige svar:",

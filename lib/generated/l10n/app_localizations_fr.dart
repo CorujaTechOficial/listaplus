@@ -797,28 +797,29 @@ class AppLocalizationsFr extends AppLocalizations {
   String get undo => 'Annuler';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Une nouvelle discussion a commencé';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Ajouter à la liste';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Que puis-je faire ?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Listes de courses';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Budget et prix';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Recettes et menus';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organisation';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription =>
+      'Cochez les articles lorsque vous magasinez';
 
   @override
   String get kipiListTitle => 'Liste Kipi';
@@ -1990,28 +1991,28 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Mois : $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Semaine : $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Aujourd\'hui : $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Supprimer l\'objectif';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Budget du planificateur de repas';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Objectif de dépenses mensuel pour la planification des repas';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -4008,6 +4009,31 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
   String get undo => 'Annuler';
 
   @override
+  String get newChatStarted => 'Une nouvelle discussion a commencé';
+
+  @override
+  String get quickAddToList => 'Ajouter à la liste';
+
+  @override
+  String get aiCapabilitiesTitle => 'Que puis-je faire ?';
+
+  @override
+  String get aiCapabilitiesLists => 'Listes de courses';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget et prix';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recettes et menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organisation';
+
+  @override
+  String get marketModeDescription =>
+      'Cochez les articles lorsque vous magasinez';
+
+  @override
   String get kipiListTitle => 'Liste Kipi';
 
   @override
@@ -5174,6 +5200,31 @@ class AppLocalizationsFrCa extends AppLocalizationsFr {
   @override
   String get mealPlannerWeekEmptyHint =>
       'Appuyez sur n\'importe quel jour pour commencer à planifier vos repas !';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Mois : $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Semaine : $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Aujourd\'hui : $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Supprimer l\'objectif';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Budget du planificateur de repas';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Objectif de dépenses mensuel pour la planification des repas';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -7170,6 +7221,31 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   String get undo => 'Annuler';
 
   @override
+  String get newChatStarted => 'Une nouvelle discussion a commencé';
+
+  @override
+  String get quickAddToList => 'Ajouter à la liste';
+
+  @override
+  String get aiCapabilitiesTitle => 'Que puis-je faire ?';
+
+  @override
+  String get aiCapabilitiesLists => 'Listes de courses';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budget et prix';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recettes et menus';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organisation';
+
+  @override
+  String get marketModeDescription =>
+      'Cochez les articles lorsque vous magasinez';
+
+  @override
   String get kipiListTitle => 'Liste Kipi';
 
   @override
@@ -8336,6 +8412,31 @@ class AppLocalizationsFrFr extends AppLocalizationsFr {
   @override
   String get mealPlannerWeekEmptyHint =>
       'Appuyez sur n\'importe quel jour pour commencer à planifier vos repas !';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Mois : $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Semaine : $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Aujourd\'hui : $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Supprimer l\'objectif';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Budget du planificateur de repas';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Objectif de dépenses mensuel pour la planification des repas';
 
   @override
   String mealPlannerPrepTime(int minutes) {

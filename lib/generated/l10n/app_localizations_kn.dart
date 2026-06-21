@@ -791,28 +791,29 @@ class AppLocalizationsKn extends AppLocalizations {
   String get undo => 'ರದ್ದುಮಾಡಿ';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'ಹೊಸ ಚಾಟ್ ಪ್ರಾರಂಭವಾಗಿದೆ';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'ಪಟ್ಟಿಗೆ ಸೇರಿಸಿ';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'ನಾನು ಏನು ಮಾಡಬಹುದು?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'ಶಾಪಿಂಗ್ ಪಟ್ಟಿಗಳು';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'ಬಜೆಟ್ ಮತ್ತು ಬೆಲೆಗಳು';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'ಪಾಕವಿಧಾನಗಳು ಮತ್ತು ಮೆನುಗಳು';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'ಸಂಸ್ಥೆ';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription =>
+      'ನೀವು ಶಾಪಿಂಗ್ ಮಾಡುವಾಗ ಐಟಂಗಳನ್ನು ಪರಿಶೀಲಿಸಿ';
 
   @override
   String get kipiListTitle => 'ಕಿಪಿಲಿಸ್ಟ್';
@@ -1975,28 +1976,27 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'ತಿಂಗಳು: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'ವಾರ: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'ಇಂದು: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'ಗುರಿಯನ್ನು ತೆಗೆದುಹಾಕಿ';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'ಊಟ ಯೋಜಕ ಬಜೆಟ್';
 
   @override
-  String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+  String get mealPlannerBudgetGoalSubtitle => 'ಊಟ ಯೋಜನೆಗಾಗಿ ಮಾಸಿಕ ಖರ್ಚು ಗುರಿ';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -3990,6 +3990,31 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
   String get undo => 'ರದ್ದುಮಾಡಿ';
 
   @override
+  String get newChatStarted => 'ಹೊಸ ಚಾಟ್ ಪ್ರಾರಂಭವಾಗಿದೆ';
+
+  @override
+  String get quickAddToList => 'ಪಟ್ಟಿಗೆ ಸೇರಿಸಿ';
+
+  @override
+  String get aiCapabilitiesTitle => 'ನಾನು ಏನು ಮಾಡಬಹುದು?';
+
+  @override
+  String get aiCapabilitiesLists => 'ಶಾಪಿಂಗ್ ಪಟ್ಟಿಗಳು';
+
+  @override
+  String get aiCapabilitiesBudget => 'ಬಜೆಟ್ ಮತ್ತು ಬೆಲೆಗಳು';
+
+  @override
+  String get aiCapabilitiesRecipes => 'ಪಾಕವಿಧಾನಗಳು ಮತ್ತು ಮೆನುಗಳು';
+
+  @override
+  String get aiCapabilitiesOrganize => 'ಸಂಸ್ಥೆ';
+
+  @override
+  String get marketModeDescription =>
+      'ನೀವು ಶಾಪಿಂಗ್ ಮಾಡುವಾಗ ಐಟಂಗಳನ್ನು ಪರಿಶೀಲಿಸಿ';
+
+  @override
   String get kipiListTitle => 'ಕಿಪಿಲಿಸ್ಟ್';
 
   @override
@@ -5147,6 +5172,30 @@ class AppLocalizationsKnIn extends AppLocalizationsKn {
   @override
   String get mealPlannerWeekEmptyHint =>
       'ನಿಮ್ಮ ಊಟವನ್ನು ಯೋಜಿಸಲು ಪ್ರಾರಂಭಿಸಲು ಯಾವುದೇ ದಿನದ ಮೇಲೆ ಟ್ಯಾಪ್ ಮಾಡಿ!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'ತಿಂಗಳು: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'ವಾರ: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'ಇಂದು: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'ಗುರಿಯನ್ನು ತೆಗೆದುಹಾಕಿ';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'ಊಟ ಯೋಜಕ ಬಜೆಟ್';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle => 'ಊಟ ಯೋಜನೆಗಾಗಿ ಮಾಸಿಕ ಖರ್ಚು ಗುರಿ';
 
   @override
   String mealPlannerPrepTime(int minutes) {

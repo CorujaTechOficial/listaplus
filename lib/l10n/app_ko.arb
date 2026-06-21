@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -458,6 +497,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1269,6 +1311,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1454,6 +1499,11 @@
   "aiAssistantGeneral": "일반 보조원",
   "aiAssistantHistory": "어시스턴트 이력",
   "aiAssistantTitle": "AI 어시스턴트",
+  "aiCapabilitiesBudget": "예산 및 가격",
+  "aiCapabilitiesLists": "쇼핑 목록",
+  "aiCapabilitiesOrganize": "조직",
+  "aiCapabilitiesRecipes": "레시피 및 메뉴",
+  "aiCapabilitiesTitle": "어떻게 해야 하나요?",
   "aiConnectionError": "AI 서비스에 연결할 수 없습니다. 연결을 확인하세요.",
   "aiConversationHistory": "대화 기록",
   "aiCreditsRemaining": "남은 크레딧: {remaining}",
@@ -1829,12 +1879,19 @@
   "markAsPurchased": "구매 완료로 표시",
   "markItemsToSeeAnalysis": "항목을 구매 완료로 표시하면 분석을 볼 수 있습니다.",
   "marketMode": "시장 모드",
+  "marketModeDescription": "쇼핑하면서 품목을 확인하세요",
   "marketsToAvoid": "피해야 할 시장",
   "marketsToAvoidHint": "쇼핑하고 싶지 않은 시장",
   "mealDragHint": "드래그하여 이동하려면 길게 누르세요.",
   "mealNoRecipeFound": "레시피를 찾을 수 없습니다.",
   "mealPlannerAddMeal": "식사 추가",
   "mealPlannerAddType": "식사 유형 추가",
+  "mealPlannerBudgetGoalNav": "식사 플래너 예산",
+  "mealPlannerBudgetGoalSubtitle": "식사 계획을 위한 월간 지출 목표",
+  "mealPlannerBudgetMonthCost": "월: {amount}",
+  "mealPlannerBudgetRemoveGoal": "목표 삭제",
+  "mealPlannerBudgetTodayCost": "오늘: {amount}",
+  "mealPlannerBudgetWeekCost": "주: {amount}",
   "mealPlannerCustomTypeLabel": "맞춤 유형",
   "mealPlannerDateLabel": "날짜",
   "mealPlannerDefaultTypeLabel": "기본 유형",
@@ -1896,6 +1953,7 @@
   "navRecipes": "조리법",
   "newCategoryDialog": "새로운 카테고리",
   "newChat": "새 채팅",
+  "newChatStarted": "새 채팅이 시작되었습니다.",
   "newListTitle": "새 쇼핑 목록",
   "newPantryList": "저장실 쇼핑",
   "newRecipe": "새 레시피",
@@ -2262,6 +2320,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "키피와 채팅",
   "quickActionPantry": "식료품 저장실 보기",
+  "quickAddToList": "목록에 추가",
   "quickRecipe": "빠른 레시피",
   "quickRecipePrompt": "내 목록에 있는 항목으로 레시피를 추천해 주세요.",
   "quickReplies": "빠른 답변:",

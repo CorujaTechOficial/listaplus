@@ -794,28 +794,28 @@ class AppLocalizationsEl extends AppLocalizations {
   String get undo => 'Αναίρεση';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Ξεκίνησε νέα συνομιλία';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Προσθήκη στη λίστα';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Τι μπορώ να κάνω;';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Λίστες αγορών';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Προϋπολογισμός & Τιμές';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Συνταγές & Μενού';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Οργάνωση';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Ελέγξτε τα αντικείμενα καθώς ψωνίζετε';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1993,28 +1993,29 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Μήνας: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Εβδομάδα: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Σήμερα: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Κατάργηση στόχου';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav =>
+      'Προϋπολογισμός προγραμματιστή γευμάτων';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Στόχος μηνιαίων δαπανών για τον προγραμματισμό γευμάτων';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -4006,6 +4007,30 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   String get undo => 'Αναίρεση';
 
   @override
+  String get newChatStarted => 'Ξεκίνησε νέα συνομιλία';
+
+  @override
+  String get quickAddToList => 'Προσθήκη στη λίστα';
+
+  @override
+  String get aiCapabilitiesTitle => 'Τι μπορώ να κάνω;';
+
+  @override
+  String get aiCapabilitiesLists => 'Λίστες αγορών';
+
+  @override
+  String get aiCapabilitiesBudget => 'Προϋπολογισμός & Τιμές';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Συνταγές & Μενού';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Οργάνωση';
+
+  @override
+  String get marketModeDescription => 'Ελέγξτε τα αντικείμενα καθώς ψωνίζετε';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -5178,6 +5203,32 @@ class AppLocalizationsElGr extends AppLocalizationsEl {
   @override
   String get mealPlannerWeekEmptyHint =>
       'Πατήστε οποιαδήποτε ημέρα για να ξεκινήσετε τον προγραμματισμό των γευμάτων σας!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Μήνας: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Εβδομάδα: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Σήμερα: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Κατάργηση στόχου';
+
+  @override
+  String get mealPlannerBudgetGoalNav =>
+      'Προϋπολογισμός προγραμματιστή γευμάτων';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Στόχος μηνιαίων δαπανών για τον προγραμματισμό γευμάτων';
 
   @override
   String mealPlannerPrepTime(int minutes) {

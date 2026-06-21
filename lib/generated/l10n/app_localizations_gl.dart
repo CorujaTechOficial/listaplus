@@ -790,28 +790,28 @@ class AppLocalizationsGl extends AppLocalizations {
   String get undo => 'Desfacer';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Comezou un novo chat';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Engadir á lista';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Que podo facer?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Listas da compra';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Orzamento e prezos';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Receitas e menús';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organización';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Marca os artigos mentres compras';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1980,28 +1980,28 @@ class AppLocalizationsGl extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Mes: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Semana: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Hoxe: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Eliminar gol';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Orzamento do planificador de comidas';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Obxectivo de gasto mensual para a planificación de comidas';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -3977,6 +3977,30 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
   String get undo => 'Desfacer';
 
   @override
+  String get newChatStarted => 'Comezou un novo chat';
+
+  @override
+  String get quickAddToList => 'Engadir á lista';
+
+  @override
+  String get aiCapabilitiesTitle => 'Que podo facer?';
+
+  @override
+  String get aiCapabilitiesLists => 'Listas da compra';
+
+  @override
+  String get aiCapabilitiesBudget => 'Orzamento e prezos';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Receitas e menús';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organización';
+
+  @override
+  String get marketModeDescription => 'Marca os artigos mentres compras';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -5137,6 +5161,31 @@ class AppLocalizationsGlEs extends AppLocalizationsGl {
   @override
   String get mealPlannerWeekEmptyHint =>
       'Toca calquera día para comezar a planificar as túas comidas!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Mes: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Semana: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Hoxe: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Eliminar gol';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Orzamento do planificador de comidas';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Obxectivo de gasto mensual para a planificación de comidas';
 
   @override
   String mealPlannerPrepTime(int minutes) {

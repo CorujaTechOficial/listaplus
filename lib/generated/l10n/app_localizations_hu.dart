@@ -793,28 +793,28 @@ class AppLocalizationsHu extends AppLocalizations {
   String get undo => 'Visszavonás';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Új csevegés kezdődött';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Hozzáadás a listához';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Mit tehetek?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Bevásárlólisták';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Költségvetés és árak';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Receptek és menük';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Szervezet';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Vásárlás közben ellenőrizze a tételeket';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1983,28 +1983,28 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Hónap: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Hét: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Ma: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Cél eltávolítása';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Étkezéstervező költségvetés';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Havi kiadási cél az étkezés megtervezéséhez';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -3982,6 +3982,30 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   String get undo => 'Visszavonás';
 
   @override
+  String get newChatStarted => 'Új csevegés kezdődött';
+
+  @override
+  String get quickAddToList => 'Hozzáadás a listához';
+
+  @override
+  String get aiCapabilitiesTitle => 'Mit tehetek?';
+
+  @override
+  String get aiCapabilitiesLists => 'Bevásárlólisták';
+
+  @override
+  String get aiCapabilitiesBudget => 'Költségvetés és árak';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Receptek és menük';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Szervezet';
+
+  @override
+  String get marketModeDescription => 'Vásárlás közben ellenőrizze a tételeket';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -5145,6 +5169,31 @@ class AppLocalizationsHuHu extends AppLocalizationsHu {
   @override
   String get mealPlannerWeekEmptyHint =>
       'Koppintson bármelyik napra az étkezések tervezésének megkezdéséhez!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Hónap: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Hét: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Ma: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Cél eltávolítása';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Étkezéstervező költségvetés';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Havi kiadási cél az étkezés megtervezéséhez';
 
   @override
   String mealPlannerPrepTime(int minutes) {

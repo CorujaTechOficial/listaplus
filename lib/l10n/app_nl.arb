@@ -571,6 +571,27 @@
       }
     }
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
@@ -2004,6 +2025,12 @@
   "mealNoRecipeFound": "Geen recept gevonden",
   "mealPlannerAddMeal": "Maaltijd toevoegen",
   "mealPlannerAddType": "Maaltijdsoort toevoegen",
+  "mealPlannerBudgetGoalNav": "Budget voor maaltijdplanner",
+  "mealPlannerBudgetGoalSubtitle": "Maandelijks bestedingsdoel voor maaltijdplanning",
+  "mealPlannerBudgetMonthCost": "Maand: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Doel verwijderen",
+  "mealPlannerBudgetTodayCost": "Vandaag: {amount}",
+  "mealPlannerBudgetWeekCost": "Week: {amount}",
   "mealPlannerCustomTypeLabel": "Aangepast type",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDefaultTypeLabel": "Standaardtype",

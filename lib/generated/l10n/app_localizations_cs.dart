@@ -791,28 +791,28 @@ class AppLocalizationsCs extends AppLocalizations {
   String get undo => 'Zpět';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Nový chat byl zahájen';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Přidat do seznamu';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'co můžu dělat?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Nákupní seznamy';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Rozpočet a ceny';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Recepty a menu';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organizace';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Při nákupu si položky odškrtávejte';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1981,28 +1981,28 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Měsíc: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Týden: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Dnes: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Odebrat cíl';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Rozpočet plánovače jídla';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Měsíční cíl výdajů na plánování jídla';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -3966,6 +3966,30 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   String get undo => 'Zpět';
 
   @override
+  String get newChatStarted => 'Nový chat byl zahájen';
+
+  @override
+  String get quickAddToList => 'Přidat do seznamu';
+
+  @override
+  String get aiCapabilitiesTitle => 'co můžu dělat?';
+
+  @override
+  String get aiCapabilitiesLists => 'Nákupní seznamy';
+
+  @override
+  String get aiCapabilitiesBudget => 'Rozpočet a ceny';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Recepty a menu';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organizace';
+
+  @override
+  String get marketModeDescription => 'Při nákupu si položky odškrtávejte';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -5129,6 +5153,31 @@ class AppLocalizationsCsCz extends AppLocalizationsCs {
   @override
   String get mealPlannerWeekEmptyHint =>
       'Klepnutím na jakýkoli den začněte plánovat svá jídla!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Měsíc: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Týden: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Dnes: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Odebrat cíl';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Rozpočet plánovače jídla';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Měsíční cíl výdajů na plánování jídla';
 
   @override
   String mealPlannerPrepTime(int minutes) {

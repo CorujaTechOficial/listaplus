@@ -1970,28 +1970,28 @@ class AppLocalizationsNo extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Måned: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Uke: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'I dag: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Fjern målet';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Måltidsplanleggerbudsjett';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Månedlig utgiftsmål for måltidsplanlegging';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -5108,6 +5108,31 @@ class AppLocalizationsNoNo extends AppLocalizationsNo {
   @override
   String get mealPlannerWeekEmptyHint =>
       'Trykk på hvilken som helst dag for å begynne å planlegge måltidene dine!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Måned: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Uke: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'I dag: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Fjern målet';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Måltidsplanleggerbudsjett';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Månedlig utgiftsmål for måltidsplanlegging';
 
   @override
   String mealPlannerPrepTime(int minutes) {

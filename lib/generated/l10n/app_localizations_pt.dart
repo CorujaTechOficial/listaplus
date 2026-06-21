@@ -1980,28 +1980,28 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Mês: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Semana: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Hoje: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Remover meta';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Orçamento do planejador de refeições';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Meta de gastos mensais para planejamento de refeições';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -5149,6 +5149,31 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
       'Toque em qualquer dia para começar a planejar suas refeições!';
 
   @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Mês: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Semana: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Hoje: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Remover meta';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Orçamento do planejador de refeições';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Meta de gastos mensais para planejamento de refeições';
+
+  @override
   String mealPlannerPrepTime(int minutes) {
     return '$minutes minutos';
   }
@@ -8293,6 +8318,31 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   @override
   String get mealPlannerWeekEmptyHint =>
       'Toque em qualquer dia para começar a planear as suas refeições!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Mês: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Semana: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Hoje: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Remover meta';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Orçamento do planejador de refeições';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Meta de gastos mensais para planejamento de refeições';
 
   @override
   String mealPlannerPrepTime(int minutes) {

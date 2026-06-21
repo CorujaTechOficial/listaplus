@@ -604,6 +604,27 @@
       }
     }
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -2061,6 +2082,12 @@
   "mealNoRecipeFound": "Ingen oppskrift funnet",
   "mealPlannerAddMeal": "Legg til måltid",
   "mealPlannerAddType": "Legg til type måltid",
+  "mealPlannerBudgetGoalNav": "Måltidsplanleggerbudsjett",
+  "mealPlannerBudgetGoalSubtitle": "Månedlig utgiftsmål for måltidsplanlegging",
+  "mealPlannerBudgetMonthCost": "Måned: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Fjern målet",
+  "mealPlannerBudgetTodayCost": "I dag: {amount}",
+  "mealPlannerBudgetWeekCost": "Uke: {amount}",
   "mealPlannerCustomTypeLabel": "Egendefinert type",
   "mealPlannerDateLabel": "Dato",
   "mealPlannerDefaultTypeLabel": "Standardtype",

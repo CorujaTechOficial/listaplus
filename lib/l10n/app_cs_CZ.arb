@@ -22,6 +22,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -382,11 +397,35 @@
   "@manageCategoriesTitle": {
     "description": "Title for category management"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -417,6 +456,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1190,6 +1232,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1356,6 +1401,11 @@
   "aiAssistant": "AI asistent",
   "aiAssistantDescription": "Získej chytré návrhy, recepty a personalizované tipy s naším AI asistentem.",
   "aiAssistantTitle": "Asistent AI",
+  "aiCapabilitiesBudget": "Rozpočet a ceny",
+  "aiCapabilitiesLists": "Nákupní seznamy",
+  "aiCapabilitiesOrganize": "Organizace",
+  "aiCapabilitiesRecipes": "Recepty a menu",
+  "aiCapabilitiesTitle": "co můžu dělat?",
   "aiConnectionError": "Nelze se připojit ke službě AI. Zkontrolujte připojení.",
   "aiCreditsRemaining": "Zbývá {remaining} kreditů",
   "aiEmptyResponseError": "Služba AI vrátila prázdnou odpověď.",
@@ -1686,10 +1736,17 @@
   "markAsPurchased": "Označit jako zakoupené",
   "markItemsToSeeAnalysis": "Označ položky jako zakoupené pro zobrazení analýzy.",
   "marketMode": "Režim trhu",
+  "marketModeDescription": "Při nákupu si položky odškrtávejte",
   "marketsToAvoid": "Trhy, kterým je třeba se vyhnout",
   "marketsToAvoidHint": "Trhy, na kterých raději nenakupujete",
   "mealPlannerAddMeal": "Přidat jídlo",
   "mealPlannerAddType": "Přidejte typ jídla",
+  "mealPlannerBudgetGoalNav": "Rozpočet plánovače jídla",
+  "mealPlannerBudgetGoalSubtitle": "Měsíční cíl výdajů na plánování jídla",
+  "mealPlannerBudgetMonthCost": "Měsíc: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Odebrat cíl",
+  "mealPlannerBudgetTodayCost": "Dnes: {amount}",
+  "mealPlannerBudgetWeekCost": "Týden: {amount}",
   "mealPlannerCustomTypeLabel": "Vlastní typ",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDefaultTypeLabel": "Výchozí typ",
@@ -1749,6 +1806,7 @@
   "navRecipes": "Recepty",
   "newCategoryDialog": "Nová kategorie",
   "newChat": "Nový chat",
+  "newChatStarted": "Nový chat byl zahájen",
   "newListTitle": "Nový nákupní seznam",
   "newPantryList": "Nákup pro spižírnu",
   "newRecipe": "Nový recept",
@@ -2089,6 +2147,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Chatujte s Kipi",
   "quickActionPantry": "Zobrazit spíž",
+  "quickAddToList": "Přidat do seznamu",
   "quickRecipe": "Rychlý recept",
   "quickRecipePrompt": "Navrhni recepty s položkami z mého seznamu.",
   "quickReplies": "Rychlé odpovědi:",

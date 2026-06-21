@@ -1966,28 +1966,28 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'လ- $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'ရက်သတ္တပတ်- $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'ယနေ့- $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'ပန်းတိုင်ကိုဖယ်ရှားပါ။';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'အစားအသောက်စီစဉ်သူဘတ်ဂျက်';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'အစားအသောက်စီစဉ်ခြင်းအတွက် လစဉ်သုံးငွေပန်းတိုင်';
 
   @override
   String mealPlannerPrepTime(int minutes) {

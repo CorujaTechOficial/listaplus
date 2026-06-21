@@ -604,6 +604,27 @@
       }
     }
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -2061,6 +2082,12 @@
   "mealNoRecipeFound": "ਕੋਈ ਵਿਅੰਜਨ ਨਹੀਂ ਮਿਲਿਆ",
   "mealPlannerAddMeal": "ਭੋਜਨ ਸ਼ਾਮਲ ਕਰੋ",
   "mealPlannerAddType": "ਭੋਜਨ ਦੀ ਕਿਸਮ ਸ਼ਾਮਲ ਕਰੋ",
+  "mealPlannerBudgetGoalNav": "ਭੋਜਨ ਯੋਜਨਾਕਾਰ ਬਜਟ",
+  "mealPlannerBudgetGoalSubtitle": "ਭੋਜਨ ਯੋਜਨਾ ਲਈ ਮਹੀਨਾਵਾਰ ਖਰਚ ਦਾ ਟੀਚਾ",
+  "mealPlannerBudgetMonthCost": "ਮਹੀਨਾ: {amount}",
+  "mealPlannerBudgetRemoveGoal": "ਟੀਚਾ ਹਟਾਓ",
+  "mealPlannerBudgetTodayCost": "ਅੱਜ: {amount}",
+  "mealPlannerBudgetWeekCost": "ਹਫ਼ਤਾ: {amount}",
   "mealPlannerCustomTypeLabel": "ਕਸਟਮ ਕਿਸਮ",
   "mealPlannerDateLabel": "ਮਿਤੀ",
   "mealPlannerDefaultTypeLabel": "ਪੂਰਵ-ਨਿਰਧਾਰਤ ਕਿਸਮ",

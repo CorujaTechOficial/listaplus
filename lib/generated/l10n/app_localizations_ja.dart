@@ -774,28 +774,28 @@ class AppLocalizationsJa extends AppLocalizations {
   String get undo => '元に戻す';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => '新しいチャットが始まりました';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'リストに追加';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => '私に何ができる？';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => '買い物リスト';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => '予算と価格';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'レシピとメニュー';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => '組織';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => '買い物をするときに項目にチェックを入れます';
 
   @override
   String get kipiListTitle => 'キピリスト';
@@ -1907,28 +1907,27 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return '月: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return '週: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return '今日: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'ゴールを削除する';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'ミールプランナーの予算';
 
   @override
-  String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+  String get mealPlannerBudgetGoalSubtitle => '食事計画のための月々の支出目標';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -3844,6 +3843,30 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get undo => '元に戻す';
 
   @override
+  String get newChatStarted => '新しいチャットが始まりました';
+
+  @override
+  String get quickAddToList => 'リストに追加';
+
+  @override
+  String get aiCapabilitiesTitle => '私に何ができる？';
+
+  @override
+  String get aiCapabilitiesLists => '買い物リスト';
+
+  @override
+  String get aiCapabilitiesBudget => '予算と価格';
+
+  @override
+  String get aiCapabilitiesRecipes => 'レシピとメニュー';
+
+  @override
+  String get aiCapabilitiesOrganize => '組織';
+
+  @override
+  String get marketModeDescription => '買い物をするときに項目にチェックを入れます';
+
+  @override
   String get kipiListTitle => 'キピリスト';
 
   @override
@@ -4950,6 +4973,30 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get mealPlannerWeekEmptyHint => '日付をタップして食事の計画を始めましょう！';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return '月: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return '週: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return '今日: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'ゴールを削除する';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'ミールプランナーの予算';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle => '食事計画のための月々の支出目標';
 
   @override
   String mealPlannerPrepTime(int minutes) {

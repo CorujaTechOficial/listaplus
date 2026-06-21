@@ -785,28 +785,28 @@ class AppLocalizationsFi extends AppLocalizations {
   String get undo => 'Kumoa';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Uusi chat alkoi';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Lisää luetteloon';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Mitä voin tehdä?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Ostoslistat';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Budjetti ja hinnat';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Reseptit ja menut';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organisaatio';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Tarkista tuotteet ostoksia tehdessäsi';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1958,28 +1958,28 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Kuukausi: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Viikko: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Tänään: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Poista tavoite';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Ruokasuunnittelijan budjetti';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Kuukauden kulutustavoite ateriasuunnittelulle';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -3943,6 +3943,30 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   String get undo => 'Kumoa';
 
   @override
+  String get newChatStarted => 'Uusi chat alkoi';
+
+  @override
+  String get quickAddToList => 'Lisää luetteloon';
+
+  @override
+  String get aiCapabilitiesTitle => 'Mitä voin tehdä?';
+
+  @override
+  String get aiCapabilitiesLists => 'Ostoslistat';
+
+  @override
+  String get aiCapabilitiesBudget => 'Budjetti ja hinnat';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Reseptit ja menut';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Organisaatio';
+
+  @override
+  String get marketModeDescription => 'Tarkista tuotteet ostoksia tehdessäsi';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -5088,6 +5112,31 @@ class AppLocalizationsFiFi extends AppLocalizationsFi {
   @override
   String get mealPlannerWeekEmptyHint =>
       'Napauta mitä tahansa päivää aloittaaksesi aterioiden suunnittelun!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Kuukausi: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Viikko: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Tänään: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Poista tavoite';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Ruokasuunnittelijan budjetti';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Kuukauden kulutustavoite ateriasuunnittelulle';
 
   @override
   String mealPlannerPrepTime(int minutes) {

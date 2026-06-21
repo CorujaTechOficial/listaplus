@@ -22,6 +22,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -382,11 +397,35 @@
   "@manageCategoriesTitle": {
     "description": "Title for category management"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -417,6 +456,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1190,6 +1232,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1356,6 +1401,11 @@
   "aiAssistant": "AI abiline",
   "aiAssistantDescription": "Hangi nutikaid soovitusi, retsepte ja isikupärastatud näpunäiteid meie AI abilisega.",
   "aiAssistantTitle": "AI assistent",
+  "aiCapabilitiesBudget": "Eelarve ja hinnad",
+  "aiCapabilitiesLists": "Ostunimekirjad",
+  "aiCapabilitiesOrganize": "Organisatsioon",
+  "aiCapabilitiesRecipes": "Retseptid ja menüüd",
+  "aiCapabilitiesTitle": "Mida ma saan teha?",
   "aiConnectionError": "AI-teenusega ei saanud ühendust luua. Kontrollige ühendust.",
   "aiCreditsRemaining": "Jäänud {remaining} krediiti",
   "aiEmptyResponseError": "AI-teenus andis tühja vastuse.",
@@ -1686,10 +1736,17 @@
   "markAsPurchased": "Märgi ostetuks",
   "markItemsToSeeAnalysis": "Märgi üksused ostetuks, et näha analüüsi.",
   "marketMode": "Tururežiim",
+  "marketModeDescription": "Kontrollige poes käies tooteid",
   "marketsToAvoid": "Turud, mida vältida",
   "marketsToAvoidHint": "Turud, kus te ei eelista sisseoste teha",
   "mealPlannerAddMeal": "Lisa toidukord",
   "mealPlannerAddType": "Lisage söögi tüüp",
+  "mealPlannerBudgetGoalNav": "Söögiplaneerija eelarve",
+  "mealPlannerBudgetGoalSubtitle": "Igakuine kulueesmärk toidukorra planeerimiseks",
+  "mealPlannerBudgetMonthCost": "Kuu: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Eemalda eesmärk",
+  "mealPlannerBudgetTodayCost": "Täna: {amount}",
+  "mealPlannerBudgetWeekCost": "Nädal: {amount}",
   "mealPlannerCustomTypeLabel": "Kohandatud tüüp",
   "mealPlannerDateLabel": "Kuupäev",
   "mealPlannerDefaultTypeLabel": "Vaikimisi tüüp",
@@ -1749,6 +1806,7 @@
   "navRecipes": "Retseptid",
   "newCategoryDialog": "Uus kategooria",
   "newChat": "Uus vestlus",
+  "newChatStarted": "Uus vestlus algas",
   "newListTitle": "Uus ostunimekiri",
   "newPantryList": "Sahvrioste",
   "newRecipe": "Uus retsept",
@@ -2089,6 +2147,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Vestelge Kipiga",
   "quickActionPantry": "Vaata sahver",
+  "quickAddToList": "Lisa nimekirja",
   "quickRecipe": "Kiire retsept",
   "quickRecipePrompt": "Soovita retsepte minu nimekirja üksustega.",
   "quickReplies": "Kiired vastused:",

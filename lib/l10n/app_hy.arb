@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -437,11 +452,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
@@ -496,6 +535,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1307,6 +1349,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1492,6 +1537,11 @@
   "aiAssistantGeneral": "Գլխավոր օգնական",
   "aiAssistantHistory": "Օգնականի պատմություն",
   "aiAssistantTitle": "AI օգնական",
+  "aiCapabilitiesBudget": "Բյուջե և գներ",
+  "aiCapabilitiesLists": "Գնումների ցուցակներ",
+  "aiCapabilitiesOrganize": "Կազմակերպություն",
+  "aiCapabilitiesRecipes": "Բաղադրատոմսեր և ընտրացանկեր",
+  "aiCapabilitiesTitle": "Ի՞նչ կարող եմ անել:",
   "aiConnectionError": "Չհաջողվեց միանալ AI ծառայությանը: Ստուգեք ձեր կապը:",
   "aiConversationHistory": "Զրույցի պատմություն",
   "aiCreditsRemaining": "{remaining} մնացած կրեդիտ",
@@ -1867,12 +1917,19 @@
   "markAsPurchased": "Նշել որպես գնված",
   "markItemsToSeeAnalysis": "Նշեք կետերը որպես գնված՝ վերլուծությունը տեսնելու համար:",
   "marketMode": "Շուկայական ռեժիմ",
+  "marketModeDescription": "Գնումներ կատարելիս ստուգեք ապրանքները",
   "marketsToAvoid": "Շուկաներ, որոնցից պետք է խուսափել",
   "marketsToAvoidHint": "Շուկաներ, որտեղից նախընտրում եք գնումներ չանել",
   "mealDragHint": "Պահեք՝ քաշելու և տեղափոխելու համար",
   "mealNoRecipeFound": "Ոչ մի բաղադրատոմս չի գտնվել",
   "mealPlannerAddMeal": "Ավելացնել սնունդ",
   "mealPlannerAddType": "Ավելացնել ճաշի տեսակը",
+  "mealPlannerBudgetGoalNav": "Սննդի պլանավորողի բյուջեն",
+  "mealPlannerBudgetGoalSubtitle": "Սննդի պլանավորման ամսական ծախսերի նպատակը",
+  "mealPlannerBudgetMonthCost": "Ամիս՝ {amount}",
+  "mealPlannerBudgetRemoveGoal": "Հեռացնել նպատակը",
+  "mealPlannerBudgetTodayCost": "Այսօր՝ {amount}",
+  "mealPlannerBudgetWeekCost": "Շաբաթ՝ {amount}",
   "mealPlannerCustomTypeLabel": "Պատվերով տեսակ",
   "mealPlannerDateLabel": "Ամսաթիվ",
   "mealPlannerDefaultTypeLabel": "Կանխադրված տեսակը",
@@ -1934,6 +1991,7 @@
   "navRecipes": "Բաղադրատոմսեր",
   "newCategoryDialog": "Նոր կատեգորիա",
   "newChat": "Նոր Զրուցարան",
+  "newChatStarted": "Սկսվեց նոր զրույց",
   "newListTitle": "Նոր Գնումների Ցուցակ",
   "newPantryList": "Մառանից գնումներ",
   "newRecipe": "Նոր բաղադրատոմս",
@@ -2300,6 +2358,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Զրուցեք Kipi-ի հետ",
   "quickActionPantry": "Դիտել մառան",
+  "quickAddToList": "Ավելացնել ցանկին",
   "quickRecipe": "Արագ բաղադրատոմս",
   "quickRecipePrompt": "Առաջարկել բաղադրատոմսեր իմ ցուցակի կետերով:",
   "quickReplies": "Արագ պատասխաններ.",

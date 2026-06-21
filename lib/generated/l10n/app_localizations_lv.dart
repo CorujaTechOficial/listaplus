@@ -791,28 +791,28 @@ class AppLocalizationsLv extends AppLocalizations {
   String get undo => 'Atsaukt';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Sākās jauna tērzēšana';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Pievienot sarakstam';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Ko es varu darīt?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Iepirkumu saraksti';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Budžets un cenas';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Receptes un ēdienkartes';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organizācija';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Iepērkoties pārbaudiet preces';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1979,28 +1979,28 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Mēnesis: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Nedēļa: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Šodien: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Noņemt mērķi';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Ēdienu plānotāja budžets';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Ikmēneša tēriņu mērķis maltītes plānošanai';
 
   @override
   String mealPlannerPrepTime(int minutes) {

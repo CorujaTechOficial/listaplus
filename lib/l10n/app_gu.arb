@@ -22,6 +22,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -404,11 +419,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -432,6 +471,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1243,6 +1285,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1428,6 +1473,11 @@
   "aiAssistantGeneral": "જનરલ આસિસ્ટન્ટ",
   "aiAssistantHistory": "સહાયક ઇતિહાસ",
   "aiAssistantTitle": "એઆઈ સહાયક",
+  "aiCapabilitiesBudget": "બજેટ અને કિંમતો",
+  "aiCapabilitiesLists": "શોપિંગ યાદીઓ",
+  "aiCapabilitiesOrganize": "સંસ્થા",
+  "aiCapabilitiesRecipes": "વાનગીઓ અને મેનુ",
+  "aiCapabilitiesTitle": "હું શું કરી શકું?",
   "aiConnectionError": "AI સેવા સાથે કનેક્ટ કરી શકાયું નથી. તમારું કનેક્શન તપાસો.",
   "aiConversationHistory": "વાર્તાલાપ ઇતિહાસ",
   "aiCreditsRemaining": "{remaining} ક્રેડિટ બાકી",
@@ -1803,12 +1853,19 @@
   "markAsPurchased": "ખરીદેલ તરીકે ચિહ્નિત કરો",
   "markItemsToSeeAnalysis": "વિશ્લેષણ જોવા આઇટમ ખરીદેલ તરીકે ચિહ્નિત કરો.",
   "marketMode": "બજાર મોડ",
+  "marketModeDescription": "જ્યારે તમે ખરીદી કરો ત્યારે વસ્તુઓને ચેક કરો",
   "marketsToAvoid": "ટાળવા માટે બજારો",
   "marketsToAvoidHint": "તમે જે બજારોમાં ખરીદી ન કરવાનું પસંદ કરો છો",
   "mealDragHint": "ખેંચો અને ખસેડવા માટે પકડી રાખો",
   "mealNoRecipeFound": "કોઈ રેસીપી મળી નથી",
   "mealPlannerAddMeal": "ભોજન ઉમેરો",
   "mealPlannerAddType": "ભોજનનો પ્રકાર ઉમેરો",
+  "mealPlannerBudgetGoalNav": "ભોજન આયોજક બજેટ",
+  "mealPlannerBudgetGoalSubtitle": "ભોજન આયોજન માટે માસિક ખર્ચનું લક્ષ્ય",
+  "mealPlannerBudgetMonthCost": "મહિનો: {amount}",
+  "mealPlannerBudgetRemoveGoal": "ધ્યેય દૂર કરો",
+  "mealPlannerBudgetTodayCost": "આજે: {amount}",
+  "mealPlannerBudgetWeekCost": "અઠવાડિયું: {amount}",
   "mealPlannerCustomTypeLabel": "કસ્ટમ પ્રકાર",
   "mealPlannerDateLabel": "તારીખ",
   "mealPlannerDefaultTypeLabel": "ડિફૉલ્ટ પ્રકાર",
@@ -1870,6 +1927,7 @@
   "navRecipes": "વાનગીઓ",
   "newCategoryDialog": "નવી શ્રેણી",
   "newChat": "નવી ચેટ",
+  "newChatStarted": "નવી ચેટ શરૂ થઈ",
   "newListTitle": "નવી શોપિંગ યાદી",
   "newPantryList": "પેન્ટ્રી શોપિંગ",
   "newRecipe": "નવી રેસીપી",
@@ -2236,6 +2294,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "કીપી સાથે ચેટ કરો",
   "quickActionPantry": "પેન્ટ્રી જુઓ",
+  "quickAddToList": "યાદીમાં ઉમેરો",
   "quickRecipe": "ઝડપી રેસીપી",
   "quickRecipePrompt": "મારી યાદીની આઇટમ સાથે રેસિપી સૂચવો.",
   "quickReplies": "ઝડપી જવાબો:",

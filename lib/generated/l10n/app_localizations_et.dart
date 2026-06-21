@@ -784,28 +784,28 @@ class AppLocalizationsEt extends AppLocalizations {
   String get undo => 'Võta tagasi';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Uus vestlus algas';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Lisa nimekirja';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Mida ma saan teha?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Ostunimekirjad';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Eelarve ja hinnad';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Retseptid ja menüüd';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Organisatsioon';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Kontrollige poes käies tooteid';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1966,28 +1966,28 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Kuu: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Nädal: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Täna: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Eemalda eesmärk';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Söögiplaneerija eelarve';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Igakuine kulueesmärk toidukorra planeerimiseks';
 
   @override
   String mealPlannerPrepTime(int minutes) {

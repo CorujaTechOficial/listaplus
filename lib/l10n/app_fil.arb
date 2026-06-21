@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -472,6 +511,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1283,6 +1325,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1468,6 +1513,11 @@
   "aiAssistantGeneral": "General Assistant",
   "aiAssistantHistory": "Kasaysayan ng Katulong",
   "aiAssistantTitle": "AI Assistant",
+  "aiCapabilitiesBudget": "Badyet at Presyo",
+  "aiCapabilitiesLists": "Mga Listahan ng Pamimili",
+  "aiCapabilitiesOrganize": "Organisasyon",
+  "aiCapabilitiesRecipes": "Mga Recipe at Menu",
+  "aiCapabilitiesTitle": "Ano ang magagawa ko?",
   "aiConnectionError": "Hindi makakonekta sa serbisyo ng AI. Suriin ang iyong koneksyon.",
   "aiConversationHistory": "Kasaysayan ng Pag-uusap",
   "aiCreditsRemaining": "{remaining} natitirang credits",
@@ -1843,12 +1893,19 @@
   "markAsPurchased": "Markahan bilang nabili",
   "markItemsToSeeAnalysis": "Markahan ang mga item bilang nabili para makita ang pagsusuri.",
   "marketMode": "Market Mode",
+  "marketModeDescription": "Lagyan ng check ang mga item habang namimili ka",
   "marketsToAvoid": "Mga pamilihan na dapat iwasan",
   "marketsToAvoidHint": "Mga palengke na mas gusto mong hindi mamili",
   "mealDragHint": "Pindutin upang i-drag at ilipat",
   "mealNoRecipeFound": "Walang nakitang recipe",
   "mealPlannerAddMeal": "Magdagdag ng Pagkain",
   "mealPlannerAddType": "Magdagdag ng uri ng pagkain",
+  "mealPlannerBudgetGoalNav": "Badyet ng tagaplano ng pagkain",
+  "mealPlannerBudgetGoalSubtitle": "Buwanang layunin sa paggastos para sa pagpaplano ng pagkain",
+  "mealPlannerBudgetMonthCost": "Buwan: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Alisin ang layunin",
+  "mealPlannerBudgetTodayCost": "Ngayon: {amount}",
+  "mealPlannerBudgetWeekCost": "Linggo: {amount}",
   "mealPlannerCustomTypeLabel": "Pasadyang uri",
   "mealPlannerDateLabel": "Petsa",
   "mealPlannerDefaultTypeLabel": "Default na uri",
@@ -1910,6 +1967,7 @@
   "navRecipes": "Mga recipe",
   "newCategoryDialog": "Bagong kategorya",
   "newChat": "Bagong Chat",
+  "newChatStarted": "Nagsimula ang bagong chat",
   "newListTitle": "Bagong Listahan ng Pamimili",
   "newPantryList": "Pamili mula sa Dispatch",
   "newRecipe": "Bagong Recipe",
@@ -2276,6 +2334,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Makipag-chat kay Kipi",
   "quickActionPantry": "Tingnan ang pantry",
+  "quickAddToList": "Idagdag sa listahan",
   "quickRecipe": "Mabilis na recipe",
   "quickRecipePrompt": "Magmungkahi ng mga recipe gamit ang mga item mula sa aking listahan.",
   "quickReplies": "Mabilis na tugon:",

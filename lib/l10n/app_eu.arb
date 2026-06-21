@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -465,6 +504,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1276,6 +1318,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1461,6 +1506,11 @@
   "aiAssistantGeneral": "Laguntzaile Nagusia",
   "aiAssistantHistory": "Laguntzailea Historia",
   "aiAssistantTitle": "AI Laguntzailea",
+  "aiCapabilitiesBudget": "Aurrekontua eta prezioak",
+  "aiCapabilitiesLists": "Erosketa Zerrendak",
+  "aiCapabilitiesOrganize": "Antolaketa",
+  "aiCapabilitiesRecipes": "Errezetak eta menuak",
+  "aiCapabilitiesTitle": "Zer egin dezaket?",
   "aiConnectionError": "Ezin izan da AI zerbitzura konektatu. Egiaztatu zure konexioa.",
   "aiConversationHistory": "Elkarrizketa historia",
   "aiCreditsRemaining": "{remaining} kreditu geratzen dira",
@@ -1836,12 +1886,19 @@
   "markAsPurchased": "Markatu erosita bezala",
   "markItemsToSeeAnalysis": "Markatu elementuak erosita gisa analisia ikusteko.",
   "marketMode": "Merkatu modua",
+  "marketModeDescription": "Markatu elementuak erosketak egiten dituzun bitartean",
   "marketsToAvoid": "Saihesteko merkatuak",
   "marketsToAvoidHint": "Erosketak egin nahi ez dituzun merkatuetan",
   "mealDragHint": "Eduki sakatuta arrastatu eta mugitzeko",
   "mealNoRecipeFound": "Ez da errezetarik aurkitu",
   "mealPlannerAddMeal": "Gehitu otordua",
   "mealPlannerAddType": "Gehitu otordu mota",
+  "mealPlannerBudgetGoalNav": "Bazkariak antolatzeko aurrekontua",
+  "mealPlannerBudgetGoalSubtitle": "Bazkariak planifikatzeko hileko gastu-helburua",
+  "mealPlannerBudgetMonthCost": "Hilabetea: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Kendu helburua",
+  "mealPlannerBudgetTodayCost": "Gaur: {amount}",
+  "mealPlannerBudgetWeekCost": "Astea: {amount}",
   "mealPlannerCustomTypeLabel": "Mota pertsonalizatua",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Mota lehenetsia",
@@ -1903,6 +1960,7 @@
   "navRecipes": "Errezetak",
   "newCategoryDialog": "Kategoria berria",
   "newChat": "Txat berria",
+  "newChatStarted": "Txat berria hasi da",
   "newListTitle": "Erosketa Zerrenda Berria",
   "newPantryList": "Jakitegiko Erosketa",
   "newRecipe": "Errezeta berria",
@@ -2269,6 +2327,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Txateatu Kipi-rekin",
   "quickActionPantry": "Ikusi despentsa",
+  "quickAddToList": "Gehitu zerrendara",
   "quickRecipe": "Errezeta azkarra",
   "quickRecipePrompt": "Iradoki errezetak nire zerrendako elementuekin.",
   "quickReplies": "Erantzun azkarrak:",

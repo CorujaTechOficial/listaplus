@@ -793,28 +793,28 @@ class AppLocalizationsKy extends AppLocalizations {
   String get undo => 'Артка кайтаруу';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Жаңы чат башталды';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Тизмеге кошуу';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Мен эмне кылсам болот?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Соода тизмелери';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Бюджет жана баалар';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Рецепттер жана менюлар';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Уюштуруу';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'Дүкөндө буюмдарды текшериңиз';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1977,28 +1977,28 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Ай: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Апта: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Бүгүн: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Максатты алып салуу';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Тамактанууну пландаштыруучу бюджет';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Тамактанууну пландаштыруу үчүн айлык чыгымдоо максаты';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -3971,6 +3971,30 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
   String get undo => 'Жокко чыгаруу';
 
   @override
+  String get newChatStarted => 'Жаңы чат башталды';
+
+  @override
+  String get quickAddToList => 'Тизмеге кошуу';
+
+  @override
+  String get aiCapabilitiesTitle => 'Мен эмне кылсам болот?';
+
+  @override
+  String get aiCapabilitiesLists => 'Соода тизмелери';
+
+  @override
+  String get aiCapabilitiesBudget => 'Бюджет жана баалар';
+
+  @override
+  String get aiCapabilitiesRecipes => 'Рецепттер жана менюлар';
+
+  @override
+  String get aiCapabilitiesOrganize => 'Уюштуруу';
+
+  @override
+  String get marketModeDescription => 'Дүкөндө буюмдарды текшериңиз';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -5123,6 +5147,31 @@ class AppLocalizationsKyKg extends AppLocalizationsKy {
   @override
   String get mealPlannerWeekEmptyHint =>
       'Тамактарыңызды пландаштырууну баштоо үчүн каалаган күндү таптаңыз!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'Ай: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'Апта: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'Бүгүн: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'Максатты алып салуу';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'Тамактанууну пландаштыруучу бюджет';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'Тамактанууну пландаштыруу үчүн айлык чыгымдоо максаты';
 
   @override
   String mealPlannerPrepTime(int minutes) {

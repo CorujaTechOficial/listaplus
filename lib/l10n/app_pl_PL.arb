@@ -604,6 +604,27 @@
       }
     }
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -2061,6 +2082,12 @@
   "mealNoRecipeFound": "Nie znaleziono przepisu",
   "mealPlannerAddMeal": "Dodaj posiłek",
   "mealPlannerAddType": "Dodaj rodzaj posiłku",
+  "mealPlannerBudgetGoalNav": "Budżet planowania posiłków",
+  "mealPlannerBudgetGoalSubtitle": "Miesięczny cel wydatków przy planowaniu posiłków",
+  "mealPlannerBudgetMonthCost": "Miesiąc: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Usuń cel",
+  "mealPlannerBudgetTodayCost": "Dzisiaj: {amount}",
+  "mealPlannerBudgetWeekCost": "Tydzień: {amount}",
   "mealPlannerCustomTypeLabel": "Typ niestandardowy",
   "mealPlannerDateLabel": "Data",
   "mealPlannerDefaultTypeLabel": "Typ domyślny",

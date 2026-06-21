@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -465,6 +504,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1276,6 +1318,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1461,6 +1506,11 @@
   "aiAssistantGeneral": "Ģenerālsasistents",
   "aiAssistantHistory": "Asistenta vēsture",
   "aiAssistantTitle": "AI palīgs",
+  "aiCapabilitiesBudget": "Budžets un cenas",
+  "aiCapabilitiesLists": "Iepirkumu saraksti",
+  "aiCapabilitiesOrganize": "Organizācija",
+  "aiCapabilitiesRecipes": "Receptes un ēdienkartes",
+  "aiCapabilitiesTitle": "Ko es varu darīt?",
   "aiConnectionError": "Nevarēja izveidot savienojumu ar AI pakalpojumu. Pārbaudiet savienojumu.",
   "aiConversationHistory": "Sarunu vēsture",
   "aiCreditsRemaining": "Atlikuši {remaining} kredīti",
@@ -1836,12 +1886,19 @@
   "markAsPurchased": "Atzīmēt kā iegādātu",
   "markItemsToSeeAnalysis": "Atzīmējiet vienumus kā iegādātus, lai redzētu analīzi.",
   "marketMode": "Tirgus režīms",
+  "marketModeDescription": "Iepērkoties pārbaudiet preces",
   "marketsToAvoid": "Tirgi, no kuriem jāizvairās",
   "marketsToAvoidHint": "Tirgi, kuros nevēlaties iepirkties",
   "mealDragHint": "Turiet, lai vilktu un pārvietotu",
   "mealNoRecipeFound": "Recepte nav atrasta",
   "mealPlannerAddMeal": "Pievienot maltīti",
   "mealPlannerAddType": "Pievienojiet ēdienreizes veidu",
+  "mealPlannerBudgetGoalNav": "Ēdienu plānotāja budžets",
+  "mealPlannerBudgetGoalSubtitle": "Ikmēneša tēriņu mērķis maltītes plānošanai",
+  "mealPlannerBudgetMonthCost": "Mēnesis: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Noņemt mērķi",
+  "mealPlannerBudgetTodayCost": "Šodien: {amount}",
+  "mealPlannerBudgetWeekCost": "Nedēļa: {amount}",
   "mealPlannerCustomTypeLabel": "Pielāgots veids",
   "mealPlannerDateLabel": "Datums",
   "mealPlannerDefaultTypeLabel": "Noklusējuma veids",
@@ -1903,6 +1960,7 @@
   "navRecipes": "Receptes",
   "newCategoryDialog": "Jauna kategorija",
   "newChat": "Jauna tērzēšana",
+  "newChatStarted": "Sākās jauna tērzēšana",
   "newListTitle": "Jauns iepirkumu saraksts",
   "newPantryList": "Pieliekamā iepirkums",
   "newRecipe": "Jauna recepte",
@@ -2269,6 +2327,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Tērzējiet ar Kipi",
   "quickActionPantry": "Skatīt pieliekamo",
+  "quickAddToList": "Pievienot sarakstam",
   "quickRecipe": "Ātrā recepte",
   "quickRecipePrompt": "Iesakiet receptes ar maniem saraksta vienumiem.",
   "quickReplies": "Ātrās atbildes:",

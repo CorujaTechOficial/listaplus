@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -437,11 +452,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
@@ -496,6 +535,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1307,6 +1349,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1492,6 +1537,11 @@
   "aiAssistantGeneral": "ജനറൽ അസിസ്റ്റൻ്റ്",
   "aiAssistantHistory": "അസിസ്റ്റൻ്റ് ചരിത്രം",
   "aiAssistantTitle": "AI അസിസ്റ്റൻ്റ്",
+  "aiCapabilitiesBudget": "ബജറ്റും വിലകളും",
+  "aiCapabilitiesLists": "ഷോപ്പിംഗ് ലിസ്റ്റുകൾ",
+  "aiCapabilitiesOrganize": "സംഘടന",
+  "aiCapabilitiesRecipes": "പാചകക്കുറിപ്പുകളും മെനുകളും",
+  "aiCapabilitiesTitle": "ഞാൻ എന്താണ് ചെയ്യേണ്ടത്?",
   "aiConnectionError": "AI സേവനവുമായി ബന്ധിപ്പിക്കാൻ കഴിഞ്ഞില്ല. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിക്കുക.",
   "aiConversationHistory": "സംഭാഷണ ചരിത്രം",
   "aiCreditsRemaining": "{remaining} ക്രെഡിറ്റുകൾ ശേഷിക്കുന്നു",
@@ -1867,12 +1917,19 @@
   "markAsPurchased": "വാങ്ങിയതായി അടയാളപ്പെടുത്തുക",
   "markItemsToSeeAnalysis": "വിശകലനം കാണുന്നതിന് ഇനങ്ങൾ വാങ്ങിയതായി അടയാളപ്പെടുത്തുക.",
   "marketMode": "മാർക്കറ്റ് മോഡ്",
+  "marketModeDescription": "സാധനങ്ങൾ വാങ്ങുമ്പോൾ ചെക്ക് ഓഫ് ചെയ്യുക",
   "marketsToAvoid": "ഒഴിവാക്കേണ്ട മാർക്കറ്റുകൾ",
   "marketsToAvoidHint": "ഷോപ്പിംഗ് നടത്താതിരിക്കാൻ നിങ്ങൾ ഇഷ്ടപ്പെടുന്ന മാർക്കറ്റുകൾ",
   "mealDragHint": "വലിച്ചിടാൻ പിടിക്കുക",
   "mealNoRecipeFound": "പാചകക്കുറിപ്പൊന്നും കണ്ടെത്തിയില്ല",
   "mealPlannerAddMeal": "ഭക്ഷണം ചേർക്കുക",
   "mealPlannerAddType": "ഭക്ഷണ തരം ചേർക്കുക",
+  "mealPlannerBudgetGoalNav": "ഭക്ഷണ പ്ലാനർ ബജറ്റ്",
+  "mealPlannerBudgetGoalSubtitle": "ഭക്ഷണ ആസൂത്രണത്തിനായി പ്രതിമാസ ചെലവ് ലക്ഷ്യം",
+  "mealPlannerBudgetMonthCost": "മാസം: {amount}",
+  "mealPlannerBudgetRemoveGoal": "ലക്ഷ്യം നീക്കം ചെയ്യുക",
+  "mealPlannerBudgetTodayCost": "ഇന്ന്: {amount}",
+  "mealPlannerBudgetWeekCost": "ആഴ്ച: {amount}",
   "mealPlannerCustomTypeLabel": "ഇഷ്ടാനുസൃത തരം",
   "mealPlannerDateLabel": "തീയതി",
   "mealPlannerDefaultTypeLabel": "ഡിഫോൾട്ട് തരം",
@@ -1934,6 +1991,7 @@
   "navRecipes": "പാചകക്കുറിപ്പുകൾ",
   "newCategoryDialog": "പുതിയ വിഭാഗം",
   "newChat": "പുതിയ ചാറ്റ്",
+  "newChatStarted": "പുതിയ ചാറ്റ് ആരംഭിച്ചു",
   "newListTitle": "പുതിയ ഷോപ്പിംഗ് ലിസ്റ്റ്",
   "newPantryList": "പാന്ട്രി ഷോപ്പിംഗ്",
   "newRecipe": "പുതിയ റെസിപ്പി",
@@ -2300,6 +2358,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "കിപിയുമായി ചാറ്റ് ചെയ്യുക",
   "quickActionPantry": "കലവറ കാണുക",
+  "quickAddToList": "പട്ടികയിൽ ചേർക്കുക",
   "quickRecipe": "പെട്ടെന്നുള്ള പാചകക്കുറിപ്പ്",
   "quickRecipePrompt": "എന്റെ ലിസ്റ്റിലെ ഇനങ്ങൾ ഉപയോഗിച്ച് പാചകക്കുറിപ്പുകൾ നിർദ്ദേശിക്കുക.",
   "quickReplies": "ദ്രുത മറുപടികൾ:",

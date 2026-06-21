@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -458,6 +497,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1269,6 +1311,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1454,6 +1499,11 @@
   "aiAssistantGeneral": "دستیار عمومی",
   "aiAssistantHistory": "تاریخچه دستیار",
   "aiAssistantTitle": "دستیار هوش مصنوعی",
+  "aiCapabilitiesBudget": "بودجه و قیمت ها",
+  "aiCapabilitiesLists": "لیست های خرید",
+  "aiCapabilitiesOrganize": "سازمان",
+  "aiCapabilitiesRecipes": "دستور غذاها و منوها",
+  "aiCapabilitiesTitle": "چه کاری می توانم انجام دهم؟",
   "aiConnectionError": "به سرویس هوش مصنوعی متصل نشد. اتصال خود را بررسی کنید.",
   "aiConversationHistory": "تاریخچه مکالمه",
   "aiCreditsRemaining": "{remaining} اعتبار باقی‌مانده",
@@ -1829,12 +1879,19 @@
   "markAsPurchased": "علامت‌گذاری به عنوان خریداری شده",
   "markItemsToSeeAnalysis": "آیتم‌ها را به عنوان خریداری شده علامت‌گذاری کنید تا تحلیل را ببینید.",
   "marketMode": "حالت بازار",
+  "marketModeDescription": "هنگام خرید اقلام را بررسی کنید",
   "marketsToAvoid": "بازارهایی که باید اجتناب کرد",
   "marketsToAvoidHint": "بازارهایی که ترجیح می دهید از آنها خرید نکنید",
   "mealDragHint": "برای کشیدن و حرکت نگه دارید",
   "mealNoRecipeFound": "هیچ دستوری یافت نشد",
   "mealPlannerAddMeal": "افزودن وعده غذایی",
   "mealPlannerAddType": "نوع غذا را اضافه کنید",
+  "mealPlannerBudgetGoalNav": "بودجه برنامه ریز غذا",
+  "mealPlannerBudgetGoalSubtitle": "هدف هزینه ماهانه برای برنامه ریزی وعده های غذایی",
+  "mealPlannerBudgetMonthCost": "ماه: {amount}",
+  "mealPlannerBudgetRemoveGoal": "حذف هدف",
+  "mealPlannerBudgetTodayCost": "امروز: {amount}",
+  "mealPlannerBudgetWeekCost": "هفته: {amount}",
   "mealPlannerCustomTypeLabel": "نوع سفارشی",
   "mealPlannerDateLabel": "تاریخ",
   "mealPlannerDefaultTypeLabel": "نوع پیش فرض",
@@ -1896,6 +1953,7 @@
   "navRecipes": "دستور العمل ها",
   "newCategoryDialog": "دسته بندی جدید",
   "newChat": "چت جدید",
+  "newChatStarted": "چت جدید شروع شد",
   "newListTitle": "لیست خرید جدید",
   "newPantryList": "خرید از انباری",
   "newRecipe": "دستور پخت جدید",
@@ -2262,6 +2320,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "با کیپی چت کنید",
   "quickActionPantry": "مشاهده انباری",
+  "quickAddToList": "به لیست اضافه کنید",
   "quickRecipe": "دستور پخت سریع",
   "quickRecipePrompt": "دستور پخت با آیتم‌های لیست من پیشنهاد کن.",
   "quickReplies": "پاسخ های سریع:",

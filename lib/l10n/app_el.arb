@@ -22,6 +22,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -382,11 +397,35 @@
   "@manageCategoriesTitle": {
     "description": "Title for category management"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -410,6 +449,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1183,6 +1225,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1349,6 +1394,11 @@
   "aiAssistant": "Βοηθός AI",
   "aiAssistantDescription": "Λάβετε έξυπνες προτάσεις, συνταγές και εξατομικευμένες συμβουλές με τον βοηθό AI μας.",
   "aiAssistantTitle": "Βοηθός AI",
+  "aiCapabilitiesBudget": "Προϋπολογισμός & Τιμές",
+  "aiCapabilitiesLists": "Λίστες αγορών",
+  "aiCapabilitiesOrganize": "Οργάνωση",
+  "aiCapabilitiesRecipes": "Συνταγές & Μενού",
+  "aiCapabilitiesTitle": "Τι μπορώ να κάνω;",
   "aiConnectionError": "Δεν ήταν δυνατή η σύνδεση με την υπηρεσία AI. Ελέγξτε τη σύνδεσή σας.",
   "aiCreditsRemaining": "Απομένουν {remaining} πιστώσεις",
   "aiEmptyResponseError": "Η υπηρεσία AI επέστρεψε μια κενή απάντηση.",
@@ -1679,10 +1729,17 @@
   "markAsPurchased": "Σημείωση ως αγορασμένο",
   "markItemsToSeeAnalysis": "Σημειώστε τα στοιχεία ως αγορασμένα για να δείτε την ανάλυση.",
   "marketMode": "Λειτουργία αγοράς",
+  "marketModeDescription": "Ελέγξτε τα αντικείμενα καθώς ψωνίζετε",
   "marketsToAvoid": "Αγορές προς αποφυγή",
   "marketsToAvoidHint": "Αγορές στις οποίες προτιμάτε να μην ψωνίζετε",
   "mealPlannerAddMeal": "Προσθήκη γεύματος",
   "mealPlannerAddType": "Προσθήκη τύπου γεύματος",
+  "mealPlannerBudgetGoalNav": "Προϋπολογισμός προγραμματιστή γευμάτων",
+  "mealPlannerBudgetGoalSubtitle": "Στόχος μηνιαίων δαπανών για τον προγραμματισμό γευμάτων",
+  "mealPlannerBudgetMonthCost": "Μήνας: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Κατάργηση στόχου",
+  "mealPlannerBudgetTodayCost": "Σήμερα: {amount}",
+  "mealPlannerBudgetWeekCost": "Εβδομάδα: {amount}",
   "mealPlannerCustomTypeLabel": "Προσαρμοσμένος τύπος",
   "mealPlannerDateLabel": "Ημερομηνία",
   "mealPlannerDefaultTypeLabel": "Προεπιλεγμένος τύπος",
@@ -1742,6 +1799,7 @@
   "navRecipes": "Συνταγές",
   "newCategoryDialog": "Νέα κατηγορία",
   "newChat": "Νέα συνομιλία",
+  "newChatStarted": "Ξεκίνησε νέα συνομιλία",
   "newListTitle": "Νέα λίστα αγορών",
   "newPantryList": "Αγορές ντουλαπιού",
   "newRecipe": "Νέα συνταγή",
@@ -2082,6 +2140,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Συνομιλία με τον Kipi",
   "quickActionPantry": "Προβολή αποθήκης",
+  "quickAddToList": "Προσθήκη στη λίστα",
   "quickRecipe": "Γρήγορη συνταγή",
   "quickRecipePrompt": "Προτείνετε συνταγές με στοιχεία από τη λίστα μου.",
   "quickReplies": "Γρήγορες απαντήσεις:",

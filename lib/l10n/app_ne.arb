@@ -597,6 +597,27 @@
       }
     }
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
@@ -2023,6 +2044,12 @@
   "mealNoRecipeFound": "कुनै नुस्खा फेला परेन",
   "mealPlannerAddMeal": "खाना थप्नुहोस्",
   "mealPlannerAddType": "भोजन प्रकार थप्नुहोस्",
+  "mealPlannerBudgetGoalNav": "भोजन योजनाकार बजेट",
+  "mealPlannerBudgetGoalSubtitle": "भोजन योजनाको लागि मासिक खर्च लक्ष्य",
+  "mealPlannerBudgetMonthCost": "महिना: {amount}",
+  "mealPlannerBudgetRemoveGoal": "लक्ष्य हटाउनुहोस्",
+  "mealPlannerBudgetTodayCost": "आज: {amount}",
+  "mealPlannerBudgetWeekCost": "हप्ता: {amount}",
   "mealPlannerCustomTypeLabel": "अनुकूलन प्रकार",
   "mealPlannerDateLabel": "मिति",
   "mealPlannerDefaultTypeLabel": "पूर्वनिर्धारित प्रकार",

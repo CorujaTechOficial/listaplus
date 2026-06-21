@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -437,11 +452,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
@@ -496,6 +535,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1307,6 +1349,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1492,6 +1537,11 @@
   "aiAssistantGeneral": "Almennur aðstoðarmaður",
   "aiAssistantHistory": "Saga aðstoðarmanns",
   "aiAssistantTitle": "AI aðstoðarmaður",
+  "aiCapabilitiesBudget": "Fjárhagsáætlun og verð",
+  "aiCapabilitiesLists": "Innkaupalistar",
+  "aiCapabilitiesOrganize": "Skipulag",
+  "aiCapabilitiesRecipes": "Uppskriftir og matseðlar",
+  "aiCapabilitiesTitle": "Hvað get ég gert?",
   "aiConnectionError": "Gat ekki tengst gervigreindarþjónustunni. Athugaðu tenginguna þína.",
   "aiConversationHistory": "Saga samtals",
   "aiCreditsRemaining": "{remaining} einingar eftir",
@@ -1867,12 +1917,19 @@
   "markAsPurchased": "Merkja sem keypt",
   "markItemsToSeeAnalysis": "Merktu hluti sem keypta til að sjá greininguna.",
   "marketMode": "Markaðsstilling",
+  "marketModeDescription": "Hakaðu við hluti þegar þú verslar",
   "marketsToAvoid": "Markaðir til að forðast",
   "marketsToAvoidHint": "Markaðir sem þú vilt helst ekki versla á",
   "mealDragHint": "Haltu inni til að draga og færa",
   "mealNoRecipeFound": "Engin uppskrift fannst",
   "mealPlannerAddMeal": "Bæta við máltíð",
   "mealPlannerAddType": "Bæta við tegund máltíðar",
+  "mealPlannerBudgetGoalNav": "Fjárhagsáætlun máltíðarskipulags",
+  "mealPlannerBudgetGoalSubtitle": "Mánaðarlegt eyðslumarkmið fyrir máltíðarskipulagningu",
+  "mealPlannerBudgetMonthCost": "Mánuður: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Fjarlægðu markið",
+  "mealPlannerBudgetTodayCost": "Í dag: {amount}",
+  "mealPlannerBudgetWeekCost": "Vika: {amount}",
   "mealPlannerCustomTypeLabel": "Sérsniðin gerð",
   "mealPlannerDateLabel": "Dagsetning",
   "mealPlannerDefaultTypeLabel": "Sjálfgefin gerð",
@@ -1934,6 +1991,7 @@
   "navRecipes": "Uppskriftir",
   "newCategoryDialog": "Nýr flokkur",
   "newChat": "Nýtt spjall",
+  "newChatStarted": "Nýtt spjall byrjað",
   "newListTitle": "Nýr innkaupalisti",
   "newPantryList": "Búrkukaup",
   "newRecipe": "Ný uppskrift",
@@ -2300,6 +2358,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Spjallaðu við Kipi",
   "quickActionPantry": "Skoða búr",
+  "quickAddToList": "Bæta við lista",
   "quickRecipe": "Fljótleg uppskrift",
   "quickRecipePrompt": "Leggðu til uppskriftir með hlutum af listanum mínum.",
   "quickReplies": "Fljótleg svör:",

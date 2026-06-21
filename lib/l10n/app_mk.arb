@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -437,11 +452,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
@@ -496,6 +535,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1307,6 +1349,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1492,6 +1537,11 @@
   "aiAssistantGeneral": "Генерален асистент",
   "aiAssistantHistory": "Историја на асистент",
   "aiAssistantTitle": "Асистент со вештачка интелигенција",
+  "aiCapabilitiesBudget": "Буџет и цени",
+  "aiCapabilitiesLists": "Списоци за купување",
+  "aiCapabilitiesOrganize": "Организација",
+  "aiCapabilitiesRecipes": "Рецепти и менија",
+  "aiCapabilitiesTitle": "Што можам да направам?",
   "aiConnectionError": "Не може да се поврзе со услугата за вештачка интелигенција. Проверете ја вашата врска.",
   "aiConversationHistory": "Историја на разговори",
   "aiCreditsRemaining": "Преостанати {remaining} кредити",
@@ -1867,12 +1917,19 @@
   "markAsPurchased": "Означи како купено",
   "markItemsToSeeAnalysis": "Означете ги ставките како купени за да ја видите анализата.",
   "marketMode": "Пазарен режим",
+  "marketModeDescription": "Проверете ги предметите додека купувате",
   "marketsToAvoid": "Пазари за избегнување",
   "marketsToAvoidHint": "Пазари од кои претпочитате да не купувате",
   "mealDragHint": "Држете за да влечете и преместите",
   "mealNoRecipeFound": "Не е пронајден рецепт",
   "mealPlannerAddMeal": "Додај оброк",
   "mealPlannerAddType": "Додадете тип на оброк",
+  "mealPlannerBudgetGoalNav": "Буџет за планер за оброци",
+  "mealPlannerBudgetGoalSubtitle": "Месечна цел на трошење за планирање оброци",
+  "mealPlannerBudgetMonthCost": "Месец: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Отстранете ја целта",
+  "mealPlannerBudgetTodayCost": "Денес: {amount}",
+  "mealPlannerBudgetWeekCost": "Недела: {amount}",
   "mealPlannerCustomTypeLabel": "Прилагоден тип",
   "mealPlannerDateLabel": "Датум",
   "mealPlannerDefaultTypeLabel": "Стандарден тип",
@@ -1934,6 +1991,7 @@
   "navRecipes": "Рецепти",
   "newCategoryDialog": "Нова категорија",
   "newChat": "Нов разговор",
+  "newChatStarted": "Започна нов разговор",
   "newListTitle": "Нова листа за шопинг",
   "newPantryList": "Шопинг од шпајз",
   "newRecipe": "Нов рецепт",
@@ -2300,6 +2358,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Разговарајте со Кипи",
   "quickActionPantry": "Погледни оставата, чајната кујна",
+  "quickAddToList": "Додај во списокот",
   "quickRecipe": "Брз рецепт",
   "quickRecipePrompt": "Предложи рецепти со ставки од мојата листа.",
   "quickReplies": "Брзи одговори:",

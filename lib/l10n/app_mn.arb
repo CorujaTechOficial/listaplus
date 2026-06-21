@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -437,11 +452,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
@@ -496,6 +535,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1307,6 +1349,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1492,6 +1537,11 @@
   "aiAssistantGeneral": "Ерөнхий туслах",
   "aiAssistantHistory": "Туслах түүх",
   "aiAssistantTitle": "AI туслах",
+  "aiCapabilitiesBudget": "Төсөв ба үнэ",
+  "aiCapabilitiesLists": "Худалдааны жагсаалт",
+  "aiCapabilitiesOrganize": "Зохион байгуулалт",
+  "aiCapabilitiesRecipes": "Жор ба цэс",
+  "aiCapabilitiesTitle": "Би юу хийж чадах вэ?",
   "aiConnectionError": "AI үйлчилгээнд холбогдож чадсангүй. Холболтоо шалгана уу.",
   "aiConversationHistory": "Харилцааны түүх",
   "aiCreditsRemaining": "{remaining} кредит үлдсэн",
@@ -1867,12 +1917,19 @@
   "markAsPurchased": "Худалдаж авсан гэж тэмдэглэх",
   "markItemsToSeeAnalysis": "Шинжилгээг үзэхийн тулд зүйлсийг худалдаж авсан гэж тэмдэглэнэ үү.",
   "marketMode": "Зах зээлийн горим",
+  "marketModeDescription": "Худалдан авалт хийхдээ бараагаа шалгаарай",
   "marketsToAvoid": "Зайлсхийх зах зээл",
   "marketsToAvoidHint": "Таны худалдан авалт хийхгүй байхыг илүүд үздэг захууд",
   "mealDragHint": "Чирч, зөөхийн тулд удаан дарна уу",
   "mealNoRecipeFound": "Жор олдсонгүй",
   "mealPlannerAddMeal": "Хоол нэмэх",
   "mealPlannerAddType": "Хоолны төрлийг нэмнэ үү",
+  "mealPlannerBudgetGoalNav": "Хоол төлөвлөгчийн төсөв",
+  "mealPlannerBudgetGoalSubtitle": "Хоолны төлөвлөлтийн сарын зарцуулалтын зорилго",
+  "mealPlannerBudgetMonthCost": "Сар: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Зорилгоо арилгах",
+  "mealPlannerBudgetTodayCost": "Өнөөдөр: {amount}",
+  "mealPlannerBudgetWeekCost": "Долоо хоног: {amount}",
   "mealPlannerCustomTypeLabel": "Захиалгат төрөл",
   "mealPlannerDateLabel": "Огноо",
   "mealPlannerDefaultTypeLabel": "Өгөгдмөл төрөл",
@@ -1934,6 +1991,7 @@
   "navRecipes": "Хоолны жор",
   "newCategoryDialog": "Шинэ ангилал",
   "newChat": "Шинэ чат",
+  "newChatStarted": "Шинэ чат эхэллээ",
   "newListTitle": "Шинэ дэлгүүрийн жагсаалт",
   "newPantryList": "Агуулахаас дэлгүүр",
   "newRecipe": "Шинэ жор",
@@ -2300,6 +2358,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Kipi-тэй чатлах",
   "quickActionPantry": "агуулах үзэх",
+  "quickAddToList": "Жагсаалтад нэмнэ үү",
   "quickRecipe": "Түргэн жор",
   "quickRecipePrompt": "Миний жагсаалтаас жор санал болгох.",
   "quickReplies": "Шуурхай хариултууд:",

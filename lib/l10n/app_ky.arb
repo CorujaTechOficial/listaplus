@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -458,6 +497,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1269,6 +1311,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1454,6 +1499,11 @@
   "aiAssistantGeneral": "Башкы жардамчысы",
   "aiAssistantHistory": "Жардамчынын тарыхы",
   "aiAssistantTitle": "AI жардамчысы",
+  "aiCapabilitiesBudget": "Бюджет жана баалар",
+  "aiCapabilitiesLists": "Соода тизмелери",
+  "aiCapabilitiesOrganize": "Уюштуруу",
+  "aiCapabilitiesRecipes": "Рецепттер жана менюлар",
+  "aiCapabilitiesTitle": "Мен эмне кылсам болот?",
   "aiConnectionError": "AI кызматына туташа алган жок. Байланышыңызды текшериңиз.",
   "aiConversationHistory": "Сүйлөшүү тарыхы",
   "aiCreditsRemaining": "{remaining} кредит калды",
@@ -1829,12 +1879,19 @@
   "markAsPurchased": "Сатып алынган деп белгилөө",
   "markItemsToSeeAnalysis": "Талдоо көрүү үчүн буюмдарды сатып алынган деп белгилеңиз.",
   "marketMode": "Базар режими",
+  "marketModeDescription": "Дүкөндө буюмдарды текшериңиз",
   "marketsToAvoid": "Базарлардан качуу керек",
   "marketsToAvoidHint": "Дүкөндөн баш тартууну каалаган базарлар",
   "mealDragHint": "Сүйрөп жана жылдыруу үчүн кармап туруңуз",
   "mealNoRecipeFound": "Рецепт табылган жок",
   "mealPlannerAddMeal": "Тамактанууну кошуу",
   "mealPlannerAddType": "тамак түрүн кошуу",
+  "mealPlannerBudgetGoalNav": "Тамактанууну пландаштыруучу бюджет",
+  "mealPlannerBudgetGoalSubtitle": "Тамактанууну пландаштыруу үчүн айлык чыгымдоо максаты",
+  "mealPlannerBudgetMonthCost": "Ай: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Максатты алып салуу",
+  "mealPlannerBudgetTodayCost": "Бүгүн: {amount}",
+  "mealPlannerBudgetWeekCost": "Апта: {amount}",
   "mealPlannerCustomTypeLabel": "Ыңгайлаштырылган түрү",
   "mealPlannerDateLabel": "Дата",
   "mealPlannerDefaultTypeLabel": "Демейки түрү",
@@ -1896,6 +1953,7 @@
   "navRecipes": "Рецепттер",
   "newCategoryDialog": "Жаңы категория",
   "newChat": "Жаңы чат",
+  "newChatStarted": "Жаңы чат башталды",
   "newListTitle": "Жаңы дүкөн тизмеси",
   "newPantryList": "Кампадан дүкөнгө",
   "newRecipe": "Жаңы рецепт",
@@ -2262,6 +2320,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Kipi менен баарлашуу",
   "quickActionPantry": "Кампаны көрүү",
+  "quickAddToList": "Тизмеге кошуу",
   "quickRecipe": "Тез рецепт",
   "quickRecipePrompt": "Менин тизмедеги буюмдар менен рецепттерди сунуштаңыз.",
   "quickReplies": "Тез жооптор:",

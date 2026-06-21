@@ -22,6 +22,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -404,11 +419,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -439,6 +478,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1250,6 +1292,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1435,6 +1480,11 @@
   "aiAssistantGeneral": "Generalni pomoćnik",
   "aiAssistantHistory": "Povijest pomoćnika",
   "aiAssistantTitle": "AI pomoćnik",
+  "aiCapabilitiesBudget": "Proračun i cijene",
+  "aiCapabilitiesLists": "Popisi za kupovinu",
+  "aiCapabilitiesOrganize": "Organizacija",
+  "aiCapabilitiesRecipes": "Recepti i jelovnici",
+  "aiCapabilitiesTitle": "Što mogu učiniti?",
   "aiConnectionError": "Nije moguće povezati se s AI uslugom. Provjerite vezu.",
   "aiConversationHistory": "Povijest razgovora",
   "aiCreditsRemaining": "Preostalo {remaining} kredita",
@@ -1810,12 +1860,19 @@
   "markAsPurchased": "Označi kao kupljeno",
   "markItemsToSeeAnalysis": "Označi stavke kao kupljene za prikaz analize.",
   "marketMode": "Tržišni način rada",
+  "marketModeDescription": "Označite artikle dok kupujete",
   "marketsToAvoid": "Tržišta koja treba izbjegavati",
   "marketsToAvoidHint": "Tržnice na kojima radije ne kupujete",
   "mealDragHint": "Držite za povlačenje i pomicanje",
   "mealNoRecipeFound": "Recept nije pronađen",
   "mealPlannerAddMeal": "Dodaj obrok",
   "mealPlannerAddType": "Dodajte vrstu obroka",
+  "mealPlannerBudgetGoalNav": "Proračun planera obroka",
+  "mealPlannerBudgetGoalSubtitle": "Mjesečni cilj potrošnje za planiranje obroka",
+  "mealPlannerBudgetMonthCost": "Mjesec: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Ukloni cilj",
+  "mealPlannerBudgetTodayCost": "Danas: {amount}",
+  "mealPlannerBudgetWeekCost": "Tjedan: {amount}",
   "mealPlannerCustomTypeLabel": "Prilagođena vrsta",
   "mealPlannerDateLabel": "Datum",
   "mealPlannerDefaultTypeLabel": "Zadana vrsta",
@@ -1877,6 +1934,7 @@
   "navRecipes": "Recepti",
   "newCategoryDialog": "Nova kategorija",
   "newChat": "Novi razgovor",
+  "newChatStarted": "Započeo je novi chat",
   "newListTitle": "Novi popis za kupnju",
   "newPantryList": "Kupnja za ostavu",
   "newRecipe": "Novi recept",
@@ -2243,6 +2301,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "Razgovaraj s Kipijem",
   "quickActionPantry": "Pogled na ostavu",
+  "quickAddToList": "Dodaj na popis",
   "quickRecipe": "Brzi recept",
   "quickRecipePrompt": "Predloži recepte sa stavkama s mog popisa.",
   "quickReplies": "Brzi odgovori:",

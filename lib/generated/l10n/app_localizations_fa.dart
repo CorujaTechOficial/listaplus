@@ -790,28 +790,28 @@ class AppLocalizationsFa extends AppLocalizations {
   String get undo => 'واگردانی';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'چت جدید شروع شد';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'به لیست اضافه کنید';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'چه کاری می توانم انجام دهم؟';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'لیست های خرید';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'بودجه و قیمت ها';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'دستور غذاها و منوها';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'سازمان';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'هنگام خرید اقلام را بررسی کنید';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1972,28 +1972,28 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'ماه: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'هفته: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'امروز: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'حذف هدف';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'بودجه برنامه ریز غذا';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'هدف هزینه ماهانه برای برنامه ریزی وعده های غذایی';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -3965,6 +3965,30 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   String get undo => 'واگردانی';
 
   @override
+  String get newChatStarted => 'چت جدید شروع شد';
+
+  @override
+  String get quickAddToList => 'به لیست اضافه کنید';
+
+  @override
+  String get aiCapabilitiesTitle => 'چه کاری می توانم انجام دهم؟';
+
+  @override
+  String get aiCapabilitiesLists => 'لیست های خرید';
+
+  @override
+  String get aiCapabilitiesBudget => 'بودجه و قیمت ها';
+
+  @override
+  String get aiCapabilitiesRecipes => 'دستور غذاها و منوها';
+
+  @override
+  String get aiCapabilitiesOrganize => 'سازمان';
+
+  @override
+  String get marketModeDescription => 'هنگام خرید اقلام را بررسی کنید';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -5120,6 +5144,31 @@ class AppLocalizationsFaAe extends AppLocalizationsFa {
   @override
   String get mealPlannerWeekEmptyHint =>
       'برای شروع برنامه‌ریزی، روی هر روزی که می‌خواهید ضربه بزنید!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'ماه: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'هفته: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'امروز: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'حذف هدف';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'بودجه برنامه ریز غذا';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'هدف هزینه ماهانه برای برنامه ریزی وعده های غذایی';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -7091,6 +7140,30 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   String get undo => 'واگردانی';
 
   @override
+  String get newChatStarted => 'چت جدید شروع شد';
+
+  @override
+  String get quickAddToList => 'به لیست اضافه کنید';
+
+  @override
+  String get aiCapabilitiesTitle => 'چه کاری می توانم انجام دهم؟';
+
+  @override
+  String get aiCapabilitiesLists => 'لیست های خرید';
+
+  @override
+  String get aiCapabilitiesBudget => 'بودجه و قیمت ها';
+
+  @override
+  String get aiCapabilitiesRecipes => 'دستور غذاها و منوها';
+
+  @override
+  String get aiCapabilitiesOrganize => 'سازمان';
+
+  @override
+  String get marketModeDescription => 'هنگام خرید اقلام را بررسی کنید';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -8246,6 +8319,31 @@ class AppLocalizationsFaAf extends AppLocalizationsFa {
   @override
   String get mealPlannerWeekEmptyHint =>
       'برای شروع برنامه‌ریزی، روی هر روزی که می‌خواهید ضربه بزنید!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'ماه: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'هفته: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'امروز: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'حذف هدف';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'بودجه برنامه ریز غذا';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'هدف هزینه ماهانه برای برنامه ریزی وعده های غذایی';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -10217,6 +10315,30 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   String get undo => 'واگردانی';
 
   @override
+  String get newChatStarted => 'چت جدید شروع شد';
+
+  @override
+  String get quickAddToList => 'به لیست اضافه کنید';
+
+  @override
+  String get aiCapabilitiesTitle => 'چه کاری می توانم انجام دهم؟';
+
+  @override
+  String get aiCapabilitiesLists => 'لیست های خرید';
+
+  @override
+  String get aiCapabilitiesBudget => 'بودجه و قیمت ها';
+
+  @override
+  String get aiCapabilitiesRecipes => 'دستور غذاها و منوها';
+
+  @override
+  String get aiCapabilitiesOrganize => 'سازمان';
+
+  @override
+  String get marketModeDescription => 'هنگام خرید اقلام را بررسی کنید';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -11372,6 +11494,31 @@ class AppLocalizationsFaIr extends AppLocalizationsFa {
   @override
   String get mealPlannerWeekEmptyHint =>
       'برای شروع برنامه‌ریزی، روی هر روزی که می‌خواهید ضربه بزنید!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'ماه: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'هفته: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'امروز: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'حذف هدف';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'بودجه برنامه ریز غذا';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'هدف هزینه ماهانه برای برنامه ریزی وعده های غذایی';
 
   @override
   String mealPlannerPrepTime(int minutes) {

@@ -48,6 +48,21 @@
       }
     }
   },
+  "@aiCapabilitiesBudget": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesLists": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesOrganize": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesRecipes": {
+    "description": "Category heading in capabilities sheet"
+  },
+  "@aiCapabilitiesTitle": {
+    "description": "Title for the AI capabilities discovery sheet"
+  },
   "@aiCreditsRemaining": {
     "placeholders": {
       "remaining": {
@@ -430,11 +445,35 @@
   "@manageCategoriesSubtitle": {
     "description": "Subtitle for manage categories"
   },
+  "@marketModeDescription": {
+    "description": "Subtitle for Market Mode menu item"
+  },
   "@marketsToAvoid": {
     "description": "Label for markets to avoid field"
   },
   "@marketsToAvoidHint": {
     "description": "Hint for markets to avoid"
+  },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
   },
   "@mealPlannerPantryMissing": {
     "placeholders": {
@@ -458,6 +497,9 @@
   },
   "@newCategoryDialog": {
     "description": "Title for new category dialog"
+  },
+  "@newChatStarted": {
+    "description": "Snackbar message shown when user starts a new chat session"
   },
   "@noConversationsFound": {
     "description": "Empty state for conversation history"
@@ -1269,6 +1311,9 @@
       }
     }
   },
+  "@quickAddToList": {
+    "description": "Label for quick-add button in chat input bar that bypasses AI"
+  },
   "@quickSuggestions": {
     "description": "Quick suggestions section header"
   },
@@ -1454,6 +1499,11 @@
   "aiAssistantGeneral": "გენერალური ასისტენტი",
   "aiAssistantHistory": "ასისტენტის ისტორია",
   "aiAssistantTitle": "AI ასისტენტი",
+  "aiCapabilitiesBudget": "ბიუჯეტი და ფასები",
+  "aiCapabilitiesLists": "სავაჭრო სიები",
+  "aiCapabilitiesOrganize": "ორგანიზაცია",
+  "aiCapabilitiesRecipes": "რეცეპტები და მენიუები",
+  "aiCapabilitiesTitle": "რა ვქნა?",
   "aiConnectionError": "AI სერვისთან დაკავშირება ვერ მოხერხდა. შეამოწმეთ თქვენი კავშირი.",
   "aiConversationHistory": "საუბრის ისტორია",
   "aiCreditsRemaining": "დარჩენილია {remaining} კრედიტი",
@@ -1829,12 +1879,19 @@
   "markAsPurchased": "მონიშვნა როგორც ნაყიდი",
   "markItemsToSeeAnalysis": "მონიშნეთ ელემენტები ნაყიდად ანალიზის სანახავად.",
   "marketMode": "ბაზრის რეჟიმი",
+  "marketModeDescription": "შეამოწმეთ ნივთები ყიდვისას",
   "marketsToAvoid": "ბაზრები, რომლებიც თავიდან უნდა იქნას აცილებული",
   "marketsToAvoidHint": "ბაზრები, რომლებშიც გირჩევნიათ არ იყიდოთ",
   "mealDragHint": "გააჩერეთ გადასატანად და გადასატანად",
   "mealNoRecipeFound": "რეცეპტი ვერ მოიძებნა",
   "mealPlannerAddMeal": "კერძის დამატება",
   "mealPlannerAddType": "დაამატეთ კვების ტიპი",
+  "mealPlannerBudgetGoalNav": "კვების დაგეგმვის ბიუჯეტი",
+  "mealPlannerBudgetGoalSubtitle": "ყოველთვიური ხარჯვის მიზანი კვების დაგეგმვისთვის",
+  "mealPlannerBudgetMonthCost": "თვე: {amount}",
+  "mealPlannerBudgetRemoveGoal": "ამოიღე მიზანი",
+  "mealPlannerBudgetTodayCost": "დღეს: {amount}",
+  "mealPlannerBudgetWeekCost": "კვირა: {amount}",
   "mealPlannerCustomTypeLabel": "მორგებული ტიპი",
   "mealPlannerDateLabel": "თარიღი",
   "mealPlannerDefaultTypeLabel": "ნაგულისხმევი ტიპი",
@@ -1896,6 +1953,7 @@
   "navRecipes": "რეცეპტები",
   "newCategoryDialog": "ახალი კატეგორია",
   "newChat": "ახალი ჩატი",
+  "newChatStarted": "ახალი ჩატი დაიწყო",
   "newListTitle": "ახალი სავაჭრო სია",
   "newPantryList": "საკუჭნაოს შესყიდვა",
   "newRecipe": "ახალი რეცეპტი",
@@ -2262,6 +2320,7 @@
   "quantityWithUnit": "{qty} {unit}",
   "quickActionAi": "ესაუბრეთ Kipi-ს",
   "quickActionPantry": "საკუჭნაოს ნახვა",
+  "quickAddToList": "სიაში დამატება",
   "quickRecipe": "სწრაფი რეცეპტი",
   "quickRecipePrompt": "შემომთავაზეთ რეცეპტები ჩემი სიის ელემენტებით.",
   "quickReplies": "სწრაფი პასუხები:",

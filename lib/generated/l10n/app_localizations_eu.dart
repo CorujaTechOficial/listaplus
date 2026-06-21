@@ -792,28 +792,29 @@ class AppLocalizationsEu extends AppLocalizations {
   String get undo => 'Desegin';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'Txat berria hasi da';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'Gehitu zerrendara';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'Zer egin dezaket?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'Erosketa Zerrendak';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'Aurrekontua eta prezioak';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'Errezetak eta menuak';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'Antolaketa';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription =>
+      'Markatu elementuak erosketak egiten dituzun bitartean';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1975,28 +1976,28 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'Hilabetea: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'Astea: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'Gaur: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'Kendu helburua';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'Bazkariak antolatzeko aurrekontua';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'Bazkariak planifikatzeko hileko gastu-helburua';
 
   @override
   String mealPlannerPrepTime(int minutes) {

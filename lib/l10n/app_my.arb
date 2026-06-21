@@ -597,6 +597,27 @@
       }
     }
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerPantryMissing": {
     "placeholders": {
       "count": {
@@ -2023,6 +2044,12 @@
   "mealNoRecipeFound": "စာရွက်မတွေ့ပါ။",
   "mealPlannerAddMeal": "အစားအစာထည့်ရန်",
   "mealPlannerAddType": "အစာအမျိုးအစားထည့်ပါ။",
+  "mealPlannerBudgetGoalNav": "အစားအသောက်စီစဉ်သူဘတ်ဂျက်",
+  "mealPlannerBudgetGoalSubtitle": "အစားအသောက်စီစဉ်ခြင်းအတွက် လစဉ်သုံးငွေပန်းတိုင်",
+  "mealPlannerBudgetMonthCost": "လ- {amount}",
+  "mealPlannerBudgetRemoveGoal": "ပန်းတိုင်ကိုဖယ်ရှားပါ။",
+  "mealPlannerBudgetTodayCost": "ယနေ့- {amount}",
+  "mealPlannerBudgetWeekCost": "ရက်သတ္တပတ်- {amount}",
   "mealPlannerCustomTypeLabel": "စိတ်ကြိုက်အမျိုးအစား",
   "mealPlannerDateLabel": "ရက်စွဲ",
   "mealPlannerDefaultTypeLabel": "ပုံသေအမျိုးအစား",

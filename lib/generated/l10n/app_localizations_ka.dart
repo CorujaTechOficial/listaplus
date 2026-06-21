@@ -791,28 +791,28 @@ class AppLocalizationsKa extends AppLocalizations {
   String get undo => 'უკან დაბრუნება';
 
   @override
-  String get newChatStarted => 'New chat started';
+  String get newChatStarted => 'ახალი ჩატი დაიწყო';
 
   @override
-  String get quickAddToList => 'Add to list';
+  String get quickAddToList => 'სიაში დამატება';
 
   @override
-  String get aiCapabilitiesTitle => 'What can I do?';
+  String get aiCapabilitiesTitle => 'რა ვქნა?';
 
   @override
-  String get aiCapabilitiesLists => 'Shopping Lists';
+  String get aiCapabilitiesLists => 'სავაჭრო სიები';
 
   @override
-  String get aiCapabilitiesBudget => 'Budget & Prices';
+  String get aiCapabilitiesBudget => 'ბიუჯეტი და ფასები';
 
   @override
-  String get aiCapabilitiesRecipes => 'Recipes & Menus';
+  String get aiCapabilitiesRecipes => 'რეცეპტები და მენიუები';
 
   @override
-  String get aiCapabilitiesOrganize => 'Organization';
+  String get aiCapabilitiesOrganize => 'ორგანიზაცია';
 
   @override
-  String get marketModeDescription => 'Check off items as you shop';
+  String get marketModeDescription => 'შეამოწმეთ ნივთები ყიდვისას';
 
   @override
   String get kipiListTitle => 'KipiList';
@@ -1974,28 +1974,28 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String mealPlannerBudgetMonthCost(String amount) {
-    return 'Month: $amount';
+    return 'თვე: $amount';
   }
 
   @override
   String mealPlannerBudgetWeekCost(String amount) {
-    return 'Week: $amount';
+    return 'კვირა: $amount';
   }
 
   @override
   String mealPlannerBudgetTodayCost(String amount) {
-    return 'Today: $amount';
+    return 'დღეს: $amount';
   }
 
   @override
-  String get mealPlannerBudgetRemoveGoal => 'Remove goal';
+  String get mealPlannerBudgetRemoveGoal => 'ამოიღე მიზანი';
 
   @override
-  String get mealPlannerBudgetGoalNav => 'Meal planner budget';
+  String get mealPlannerBudgetGoalNav => 'კვების დაგეგმვის ბიუჯეტი';
 
   @override
   String get mealPlannerBudgetGoalSubtitle =>
-      'Monthly spending goal for meal planning';
+      'ყოველთვიური ხარჯვის მიზანი კვების დაგეგმვისთვის';
 
   @override
   String mealPlannerPrepTime(int minutes) {
@@ -3962,6 +3962,30 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   String get undo => 'დაბრუნება';
 
   @override
+  String get newChatStarted => 'ახალი ჩატი დაიწყო';
+
+  @override
+  String get quickAddToList => 'სიაში დამატება';
+
+  @override
+  String get aiCapabilitiesTitle => 'რა ვქნა?';
+
+  @override
+  String get aiCapabilitiesLists => 'სავაჭრო სიები';
+
+  @override
+  String get aiCapabilitiesBudget => 'ბიუჯეტი და ფასები';
+
+  @override
+  String get aiCapabilitiesRecipes => 'რეცეპტები და მენიუები';
+
+  @override
+  String get aiCapabilitiesOrganize => 'ორგანიზაცია';
+
+  @override
+  String get marketModeDescription => 'შეამოწმეთ ნივთები ყიდვისას';
+
+  @override
   String get kipiListTitle => 'KipiList';
 
   @override
@@ -5118,6 +5142,31 @@ class AppLocalizationsKaGe extends AppLocalizationsKa {
   @override
   String get mealPlannerWeekEmptyHint =>
       'დააჭირეთ ნებისმიერ დღეს კვების დაგეგმვის დასაწყებად!';
+
+  @override
+  String mealPlannerBudgetMonthCost(String amount) {
+    return 'თვე: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetWeekCost(String amount) {
+    return 'კვირა: $amount';
+  }
+
+  @override
+  String mealPlannerBudgetTodayCost(String amount) {
+    return 'დღეს: $amount';
+  }
+
+  @override
+  String get mealPlannerBudgetRemoveGoal => 'ამოიღე მიზანი';
+
+  @override
+  String get mealPlannerBudgetGoalNav => 'კვების დაგეგმვის ბიუჯეტი';
+
+  @override
+  String get mealPlannerBudgetGoalSubtitle =>
+      'ყოველთვიური ხარჯვის მიზანი კვების დაგეგმვისთვის';
 
   @override
   String mealPlannerPrepTime(int minutes) {

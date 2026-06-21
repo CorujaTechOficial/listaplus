@@ -600,6 +600,27 @@
       }
     }
   },
+  "@mealPlannerBudgetMonthCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetTodayCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@mealPlannerBudgetWeekCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "@mealPlannerGenerateListSuccess": {
     "placeholders": {
       "count": {
@@ -1976,6 +1997,12 @@
   "marketsToAvoidHint": "E.g.: Market Y, Market Z",
   "mealPlannerAddMeal": "Add Meal",
   "mealPlannerAddType": "Add meal type",
+  "mealPlannerBudgetGoalNav": "Meal planner budget",
+  "mealPlannerBudgetGoalSubtitle": "Monthly spending goal for meal planning",
+  "mealPlannerBudgetMonthCost": "Month: {amount}",
+  "mealPlannerBudgetRemoveGoal": "Remove goal",
+  "mealPlannerBudgetTodayCost": "Today: {amount}",
+  "mealPlannerBudgetWeekCost": "Week: {amount}",
   "mealPlannerCustomTypeLabel": "Custom type",
   "mealPlannerDateLabel": "Date",
   "mealPlannerDefaultTypeLabel": "Default type",
